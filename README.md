@@ -30,6 +30,10 @@ A php package for easy integration of the **Domainrobot API** powered by [InterN
 
 ### Installation
 
+```bash
+composer require internetx/php-domainrobot-sdk
+```
+
 ### Basic Use
 
 ```php
@@ -48,7 +52,7 @@ $domainRobot = new DomainRobot([
     "auth" => new DomainRobotAuth([
         "user" => "user",
         "password" => "password",
-        "context" => 4 
+        "context" => 4
     ])
 ]);
 ```

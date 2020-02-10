@@ -1,0 +1,16 @@
+{
+    "name": "internetx/php-domainrobot-sdk",
+    "version": "0.1.0",
+    "description": "A php package for easy integration of the domainrobot API powered by InterNetX GmbH.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "IXDomainRobot\\": "src/",
+            "IXDomainRobot\\Model\\": "src/Model"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}

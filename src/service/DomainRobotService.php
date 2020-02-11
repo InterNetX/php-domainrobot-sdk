@@ -10,6 +10,7 @@ use IXDomainRobot\Lib\DomainRobotConfig;
 use IXDomainRobot\Lib\DomainRobotHeaders;
 use IXDomainRobot\Lib\DomainRobotException;
 use IXDomainRobot\Lib\DomainRobotResult;
+use IXDomainRobot\Model\Certificate;
 use Psr\Http\Message\ResponseInterface;
 
 
@@ -62,6 +63,7 @@ class DomainRobotService
     public function sendPostRequest($url, $params)
     {
         $guzzleClient = new Client($this->guzzleClientConfig);
+
         $promise = $guzzleClient->requestAsync(
               'POST',
               $url,

@@ -2,10 +2,13 @@
 
 namespace IXDomainRobot\Lib;
 
+use ReflectionClass;
+
 class DomainRobotResult {
 
     private $result;
     private $statusCode;
+    private $returnObject;
 
 
     public function __construct($result, $statusCode)
@@ -24,7 +27,7 @@ class DomainRobotResult {
         $this->statusCode = $statusCode;
     }
 
-      public function getResult()
+    public function getResult()
     {
         return $this->result;
     }
@@ -33,5 +36,4 @@ class DomainRobotResult {
     {
         return $this->result = $result;
     }
-
 }

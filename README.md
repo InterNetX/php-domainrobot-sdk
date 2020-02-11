@@ -10,15 +10,20 @@ A php package for easy integration of the **Domainrobot API** powered by [InterN
     - [Installation](#installation)
     - [Basic Use](#basic-use)
   - [Usage](#usage)
+  - [Asynchronous vs Synchronous Requests](#asynchronous-vs-synchronous-requests)
+    - [Example for a synchronous Request](#example-for-a-synchronous-request)
+    - [Example for an asynchronous Request](#example-for-an-asynchronous-request)
     - [Models](#models)
       - [Instantiating](#instantiating)
       - [How to set properties](#how-to-set-properties)
     - [DomainRobotException](#domainrobotexception)
-    - [DomainRobotResult](#domainrobotresult)
+    - [DomainRobotResult (only available for async methods/requests)](#domainrobotresult-only-available-for-async-methodsrequests)
     - [Supported API calls](#supported-api-calls)
       - [Certificate tasks](#certificate-tasks)
         - [Prepare Order](#prepare-order)
         - [Create Realtime](#create-realtime)
+    - [DomainStudio tasks](#domainstudio-tasks)
+      - [Search](#search)
   - [(Custom) Headers](#custom-headers)
     - [Use](#use)
     - [Available Headers](#available-headers)
@@ -63,6 +68,56 @@ $domainRobot = new DomainRobot([
     ** user (mandatory)
     ** password (mandatory)
     ** context (mandatory for "Personal AutoDNS" accounts)
+
+## Asynchronous vs Synchronous Requests
+
+This library is mainly meant to be used with synchronous request but also provides the possibility to be used with asynchronous requests.
+
+The basic difference is that the asynchronous requests will provide you with less guidance than the synchronous requests.
+
+A synchronous requests will return an Object as described in the official swagger documentation, whereas an asynchronous request will give you a DomainRobotResult Object which will only return the response as a plain array. You will then have to handle the data on your own.
+
+Both methods provide certain advantages in certain situations.
+
+Be aware that synchronous request will give you access to the return status code and the plain array result through *DomainRobot::getLastDomainRobotResult()*
+
+Please refer to the examples below for more details.
+
+### Example for a synchronous Request
+
+```php
+try {
+    // this return an instance of new CertificateData() see [Models](#models) for more info
+    $certData = $domainRobot->certificate($certificateModel)->prepareOrder();
+}catch(DomainRobotException $exception){
+    return response()->json($exception->getError(), $exception->getStatusCode());
+}
+
+// access response values through the provided CertificateData Object
+$certData->getName();
+
+// access plain result and statuscode through DomainRobot::getLastDomainRobotResult
+return response()->json(
+    DomainRobot::getLastDomainRobotResult()->getResult(),
+    DomainRobot::getLastDomainRobotResult()->getStatusCode()
+);
+```
+
+### Example for an asynchronous Request
+
+```php
+try {
+    // returns a DomainRobotPromise Object
+    $promise = $domainRobot->certificate($certificateModel)->prepareOrderAsync();
+    // the promise returns a DomainRobotResult Object
+    $result = $promise->wait();
+}catch(DomainRobotException $exception){
+    return response()->json($exception->getError(), $exception->getStatusCode());
+}
+
+// directly access plain result and statuscode through the DomainRobotResult Object
+return response()->json($result->getResult(), $result->getStatusCode());
+```
 
 ### Models
 
@@ -162,9 +217,9 @@ Array
 )
 ```
 
-### DomainRobotResult
+### DomainRobotResult (only available for async methods/requests)
 
-Successful requests will return a DomainRobotResult object which contains the result as an array and the http status code of the request.
+Successful asnychronous requests will return a DomainRobotResult object which contains the result as an array and the http status code of the request.
 
 Example:
 
@@ -217,8 +272,12 @@ See an example of an error below.
 
 All API calls are asynchronous. Asynchronous calls should always be wrapped in a try-catch block to catch
 possible exceptions.
+
 All API calls return a [DomainRobotException](#domainrobotexception) if an error occurs.
-All API calls return a [DomainRobotResult](#domainrobotresult) if the task was successful.
+
+All asnychronous API calls return a [DomainRobotResult](#domainrobotresult) if the task was successful.
+
+All synchronouse API calls return a call specific Object as defined in our [Technical Documentation](https://help.internetx.com/display/APIJSONEN/Technical+Documentation) (Please also refer to the examples of available tasks below for more details.)
 
 #### Certificate tasks
 
@@ -244,8 +303,22 @@ $certificateModel->setCsr(
     "-----END CERTIFICATE REQUEST-----"
 );
 
+// sync version
 try {
-    $promise = $domainRobot->certificate($certificateModel)->prepareOrder();
+    // this return an instance of new IXDomainRobot\Model\CertificateData() see [Models](#models) for more info
+    $certData = $domainRobot->certificate($certificateModel)->prepareOrder();
+}catch(DomainRobotException $exception){
+    return response()->json($exception->getError(), $exception->getStatusCode());
+}
+
+return response()->json(
+    DomainRobot::getLastDomainRobotResult()->getResult(),
+    DomainRobot::getLastDomainRobotResult()->getStatusCode()
+);
+
+// async version
+try {
+    $promise = $domainRobot->certificate($certificateModel)->prepareOrderAsync();
     $result = $promise->wait();
 }catch(DomainRobotException $exception){
     return response()->json($exception->getError(), $exception->getStatusCode());
@@ -281,7 +354,34 @@ $certAuthentication = new CertAuthentication([
 ]);
 $certificateModel->setAuthentication($certAuthentication);
 
-$promise = $domainRobot->certificate($certificateModel)->createRealtime();
+// sync [returns a new IXDomainRobot\Model\Certificate() Object]
+$certificate = $domainRobot->certificate($certificateModel)->createRealtime();
+
+// async [returns a IXDomainRobot\Lib\DomainRobotPromise]
+$promise = $domainRobot->certificate($certificateModel)->createRealtimeAsync();
+```
+
+### DomainStudio tasks
+
+#### Search
+
+```php
+use IXDomainRobot\Model\DomainEnvelopeSearchRequest;
+use IXDomainRobot\Model\DomainStudioSources;
+use IXDomainRobot\Model\DomainStudioSourceSuggestion;
+
+$domainEnvelopeSearchRequest = new DomainEnvelopeSearchRequest();
+$sources = new DomainStudioSources();
+$sources->setSuggestion(new DomainStudioSourceSuggestion(["max" => 5]));
+$domainEnvelopeSearchRequest->setSources($sources);
+$domainEnvelopeSearchRequest->setSearchToken("google");
+$domainEnvelopeSearchRequest->setCurrency("USD");
+
+// sync [returns a new IXDomainRobot\Model\DomainEnvelope() Object]
+$domainEnvelope = $domainRobot->domainStudio($domainEnvelopeSearchRequest)->search();
+
+// async [returns a IXDomainRobot\Lib\DomainRobotPromise]
+$promise = $domainRobot->certificate($certificateModel)->searchAsync();
 ```
 
 ## (Custom) Headers

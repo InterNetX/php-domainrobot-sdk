@@ -65,37 +65,181 @@ class DomainRobotService
         $guzzleClient = new Client($this->guzzleClientConfig);
 
         $promise = $guzzleClient->requestAsync(
-              'POST',
-              $url,
-              [
+            'POST',
+            $url,
+            [
                 "json" => $params
             ]
-          )->then(
+        )->then(
             /**
              * 
              * @return DomainRobotException
-             */  
+             */
             function (ResponseInterface $response) {
-              $rawResponse = $response->getBody()->getContents();
-              $decodedResponse = json_decode($rawResponse, true);
+                $rawResponse = $response->getBody()->getContents();
+                $decodedResponse = json_decode($rawResponse, true);
 
-              return new DomainRobotResult($decodedResponse, $response->getStatusCode());
-          }, 
-          /**
-           *
-           * @throws DomainRobotException
-           */
-          function (\Exception $exception) {
-              if ($exception instanceof ClientException || $exception instanceof ServerException) {
-                  $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
+                return new DomainRobotResult($decodedResponse, $response->getStatusCode());
+            },
+            /**
+             *
+             * @throws DomainRobotException
+             */
+            function (\Exception $exception) {
+                if ($exception instanceof ClientException || $exception instanceof ServerException) {
+                    $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
 
-                  throw new DomainRobotException($contents, $exception->getResponse()->getStatusCode(), "DomainRobot Error");
-              }
-              // RequestException | ClientException
-              $msg=$exception->getMessage();
+                    throw new DomainRobotException($contents, $exception->getResponse()->getStatusCode(), "DomainRobot Error");
+                }
+                // RequestException | ClientException
+                $msg = $exception->getMessage();
 
-              throw new DomainRobotException($msg, $exception->getCode(), "DomainRobot Error");
-          });
+                throw new DomainRobotException($msg, $exception->getCode(), "DomainRobot Error");
+            }
+        );
+
+        return $promise;
+    }
+
+    /**
+     * General guzzle get interface
+     * 
+     * @param string $url
+     * @param array $params
+     *
+     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     */
+
+    public function sendGetRequest($url)
+    {
+        $guzzleClient = new Client($this->guzzleClientConfig);
+
+        $promise = $guzzleClient->requestAsync(
+            'GET',
+            $url
+        )->then(
+            /**
+             * 
+             * @return DomainRobotException
+             */
+            function (ResponseInterface $response) {
+                $rawResponse = $response->getBody()->getContents();
+                $decodedResponse = json_decode($rawResponse, true);
+
+                return new DomainRobotResult($decodedResponse, $response->getStatusCode());
+            },
+            /**
+             *
+             * @throws DomainRobotException
+             */
+            function (\Exception $exception) {
+                if ($exception instanceof ClientException || $exception instanceof ServerException) {
+                    $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
+
+                    throw new DomainRobotException($contents, $exception->getResponse()->getStatusCode(), "DomainRobot Error");
+                }
+                // RequestException | ClientException
+                $msg = $exception->getMessage();
+
+                throw new DomainRobotException($msg, $exception->getCode(), "DomainRobot Error");
+            }
+        );
+
+        return $promise;
+    }
+    /**
+     * General guzzle delete interface
+     * 
+     * @param string $url
+     * @param array $params
+     *
+     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     */
+
+    public function sendDeleteRequest($url)
+    {
+        $guzzleClient = new Client($this->guzzleClientConfig);
+
+        $promise = $guzzleClient->requestAsync(
+            'DELETE',
+            $url
+        )->then(
+            /**
+             * 
+             * @return DomainRobotException
+             */
+            function (ResponseInterface $response) {
+                $rawResponse = $response->getBody()->getContents();
+                $decodedResponse = json_decode($rawResponse, true);
+
+                return new DomainRobotResult($decodedResponse, $response->getStatusCode());
+            },
+            /**
+             *
+             * @throws DomainRobotException
+             */
+            function (\Exception $exception) {
+                if ($exception instanceof ClientException || $exception instanceof ServerException) {
+                    $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
+
+                    throw new DomainRobotException($contents, $exception->getResponse()->getStatusCode(), "DomainRobot Error");
+                }
+                // RequestException | ClientException
+                $msg = $exception->getMessage();
+
+                throw new DomainRobotException($msg, $exception->getCode(), "DomainRobot Error");
+            }
+        );
+
+        return $promise;
+    }
+
+
+    /**
+     * General guzzle put interface
+     * 
+     * @param string $url
+     * @param array $params
+     *
+     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     */
+    public function sendPutRequest($url, $params)
+    {
+        $guzzleClient = new Client($this->guzzleClientConfig);
+
+        $promise = $guzzleClient->requestAsync(
+            'PUT',
+            $url,
+            [
+                "json" => $params
+            ]
+        )->then(
+            /**
+             * 
+             * @return DomainRobotException
+             */
+            function (ResponseInterface $response) {
+                $rawResponse = $response->getBody()->getContents();
+                $decodedResponse = json_decode($rawResponse, true);
+
+                return new DomainRobotResult($decodedResponse, $response->getStatusCode());
+            },
+            /**
+             *
+             * @throws DomainRobotException
+             */
+            function (\Exception $exception) {
+                if ($exception instanceof ClientException || $exception instanceof ServerException) {
+                    $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
+
+                    throw new DomainRobotException($contents, $exception->getResponse()->getStatusCode(), "DomainRobot Error");
+                }
+                // RequestException | ClientException
+                $msg = $exception->getMessage();
+
+                throw new DomainRobotException($msg, $exception->getCode(), "DomainRobot Error");
+            }
+        );
 
         return $promise;
     }

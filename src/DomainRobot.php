@@ -4,10 +4,12 @@ namespace IXDomainRobot;
 
 use IXDomainRobot\Service\CertificateService;
 use IXDomainRobot\Lib\DomainRobotConfig;
+use IXDomainRobot\Model\Certificate;
 use IXDomainRobot\Model\DomainEnvelopeSearchRequest;
 use IXDomainRobot\Service\DomainStudioService;
 
-class DomainRobot {
+class DomainRobot
+{
 
     /**
      *
@@ -32,7 +34,7 @@ class DomainRobot {
 
     public function setDomainRobotConfig(DomainRobotConfig $domainRobotConfig)
     {
-        $this->domainRobotConfig = $domainRobotConfig;        
+        $this->domainRobotConfig = $domainRobotConfig;
     }
 
     /**
@@ -41,8 +43,11 @@ class DomainRobot {
      * @param $model
      * @return void
      */
-    public function certificate($model)
+    public function certificate($model = null)
     {
+        if (empty($model)) {
+            $model = new Certificate();
+        }
         return new CertificateService($model, $this->domainRobotConfig);
     }
 
@@ -52,15 +57,18 @@ class DomainRobot {
      * @param DomainEnvelopeSearchRequest $model
      * @return DomainStudioService
      */
-    public function domainStudio(DomainEnvelopeSearchRequest $model){
+    public function domainStudio(DomainEnvelopeSearchRequest $model)
+    {
         return new DomainStudioService($model, $this->domainRobotConfig);
     }
 
-    static public function setLastDomainRobotResult($lastDomainRobotResult){
+    static public function setLastDomainRobotResult($lastDomainRobotResult)
+    {
         self::$lastDomainRobotResult = $lastDomainRobotResult;
     }
 
-    static public function getLastDomainRobotResult(){
+    static public function getLastDomainRobotResult()
+    {
         return self::$lastDomainRobotResult;
     }
 }

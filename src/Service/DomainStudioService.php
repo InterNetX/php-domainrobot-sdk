@@ -80,7 +80,7 @@ class DomainStudioService extends DomainRobotService
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl()."/domainstudio",
             "POST",
-            $body->toArray(true)
+            ["json" => $body->toArray(true)]
         );
     }
 }

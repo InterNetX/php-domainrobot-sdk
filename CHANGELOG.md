@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.4] - 2020-03-02
+
+* Fix DomainStudio->search() missing body
+
 ## [0.3.3] - 2020-03-02
 
 * Fix imports

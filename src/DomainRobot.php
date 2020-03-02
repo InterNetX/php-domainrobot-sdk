@@ -109,16 +109,16 @@ class DomainRobot
     public function __construct($domainRobotConfig = [])
     {
         $this->setDomainRobotConfig(new DomainRobotConfig($domainRobotConfig));
-        $certificate = new CertificateService($this->domainRobotConfig);
-        $domainStudio = new DomainStudioService($this->domainRobotConfig);
-        $domain = new DomainService($this->domainRobotConfig);
-        $sslContact = new SslContactService($this->domainRobotConfig);
-        $contact = new ContactService($this->domainRobotConfig);
-        $domainCancelation = new DomainCancelationService($this->domainRobotConfig);
-        $poll = new PollMessageService($this->domainRobotConfig);
-        $transferOut = new TransferOutService($this->domainRobotConfig);
-        $trustedApp = new TrustedApplicationService($this->domainRobotConfig);
-        $zone = new ZoneService($this->domainRobotConfig);
+        $this->certificate = new CertificateService($this->domainRobotConfig);
+        $this->domainStudio = new DomainStudioService($this->domainRobotConfig);
+        $this->domain = new DomainService($this->domainRobotConfig);
+        $this->sslContact = new SslContactService($this->domainRobotConfig);
+        $this->contact = new ContactService($this->domainRobotConfig);
+        $this->domainCancelation = new DomainCancelationService($this->domainRobotConfig);
+        $this->poll = new PollMessageService($this->domainRobotConfig);
+        $this->transferOut = new TransferOutService($this->domainRobotConfig);
+        $this->trustedApp = new TrustedApplicationService($this->domainRobotConfig);
+        $this->zone = new ZoneService($this->domainRobotConfig);
     }
 
     public function setDomainRobotConfig(DomainRobotConfig $domainRobotConfig)

@@ -12,27 +12,25 @@ use IXDomainRobot\Service\DomainRobotService;
 
 class ContactService extends DomainRobotService
 {
-    private $contactModel;
 
     /**
      *
-     * @param Contact $contactModel
      * @param DomainRobotConfig $domainRobotConfig
      */
-    public function __construct(Contact $contactModel, DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainRobotConfig $domainRobotConfig)
     {
         parent::__construct($domainRobotConfig);
-        $this->contactModel = $contactModel;
     }
 
     /**
      * Sends a contact create request.
      *
+     * @param Contact $body
      * @return Contact
      */
-    public function create()
+    public function create(Contact $body)
     {
-        $domainRobotPromise = $this->createAsync();
+        $domainRobotPromise = $this->createAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -43,25 +41,27 @@ class ContactService extends DomainRobotService
     /**
      * Sends a contact create request.
      *
+     * @param Contact $body
      * @return DomainRobotPromise
      */
-    public function createAsync()
+    public function createAsync(Contact $body)
     {
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/contact",
             'POST',
-            ["json" => $this->contactModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
     /**
      * Sends a contact list request.
      *
+     * @param Query $body
      * @return Contact[]
      */
-    public function list(Query $query = null)
+    public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($query);
+        $domainRobotPromise = $this->listAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -77,25 +77,20 @@ class ContactService extends DomainRobotService
     /**
      * Sends a contact list request.
      *
+     * @param Query $body
      * @return DomainRobotPromise
      */
-
-    public function listAsync(Query $query = null)
+    public function listAsync(Query $body = null)
     {
-
-        if ($query === null) {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/contact/_search",
-                'POST',
-                ["json" => null]
-            ));
-        } else {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/contact/_search",
-                'POST',
-                ["json" => $query->toArray(true)]
-            ));
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray(true);
         }
+        return new DomainRobotPromise($this->sendRequest(
+            $this->domainRobotConfig->getUrl() . "/contact/_search",
+            'POST',
+            ["json" => $data]
+        ));
     }
 
     /**
@@ -117,7 +112,7 @@ class ContactService extends DomainRobotService
      * Sends a contact info request.
      *
      * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainRobotPromise
      */
     public function infoAsync($id)
     {
@@ -150,19 +145,19 @@ class ContactService extends DomainRobotService
     {
         $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/contact/$id",
-            'DELETE',
+            'DELETE'
         );
     }
 
     /**
      * Sends a contact update request.
      *
-     * @param [int] $id
+     * @param Contact $body
      * @return Contact
      */
-    public function update($id)
+    public function update(Contact $body)
     {
-        $domainRobotPromise = $this->updateAsync($id);
+        $domainRobotPromise = $this->updateAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -173,16 +168,18 @@ class ContactService extends DomainRobotService
     /**
      * Sends a contact update request.
      *
-     * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @param Contact $body
+     * @return DomainRobotPromise
      */
-    public function updateAsync($id)
+    public function updateAsync(Contact $body)
     {
-
+        if ($body->getId() === null) {
+            throw InvalidArgumentException("Field Contact.id is missing.");
+        }
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/contact/$id",
+            $this->domainRobotConfig->getUrl() . "/contact/".$body->getId(),
             'PUT',
-            ["json" => $this->contactModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 }

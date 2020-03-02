@@ -11,47 +11,76 @@ use IXDomainRobot\Model\DomainEnvelope;
 use IXDomainRobot\Model\DomainEnvelopeSearchRequest;
 use IXDomainRobot\Service\DomainRobotService;
 
+/**
+ * Implementation of the domainstudio specific API functions.
+ *
+ * @author Benjamin Krammel
+ */
 class DomainStudioService extends DomainRobotService
 {
-    private $domainEnvelopeSearchRequest;
-
     /**
-    *
-    * @param DomainEnvelopeSearchRequest $domainEnvelopeSearchRequest
-    * @param DomainRobotConfig $domainRobotConfig
-    */
-    public function __construct(DomainEnvelopeSearchRequest $domainEnvelopeSearchRequest, DomainRobotConfig $domainRobotConfig)
+     *
+     * @param DomainRobotConfig $domainRobotConfig
+     */
+    public function __construct(DomainRobotConfig $domainRobotConfig)
     {
         parent::__construct($domainRobotConfig);
-        $this->domainEnvelopeSearchRequest = $domainEnvelopeSearchRequest;
     }
 
     /**
-     * Powerful search api for free domains, premium domains and alternate domain names.
+     * Sends a domainstudio search request.
      *
-     * @return DomainEnvelope
+     * **Note:** By default, search results are provided synchronously. The
+     * search response contains all the additional data for each domain name created.
+     *
+     * With the following header the asynchronous (websocket) mode can be activated:
+     *
+     * * X-Domainrobot-WS : ASYNC
+     *
+     * The additional domain data will then be delivered via websocket.
+     * See the official at https://help.internetx.com/display/APIADDITIONALEN/DomainStudio+Guide for more information.
+     *
+     * @param DomainEnvelopeSearchRequest $body
+     * @return DomainEnvelope[]
      */
-    public function search()
+    public function search(DomainEnvelopeSearchRequest $body)
     {
-        $domainRobotPromise = $this->searchAsync();
+        $domainRobotPromise = $this->searchAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
 
-        return new DomainEnvelope(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        $data = $domainRobotResult->getResult()['data'];
+        $envelopes = array();
+        foreach ($data as $d) {
+            $c = new DomainEnvelope($d);
+            array_push($envelopes, $c);
+        }
+        return $envelopes;
     }
 
     /**
-     * Async version of search()
-     * Powerful search api for free domains, premium domains and alternate domain names.
+     * Sends a domainstudio search request.
      *
-     * @return DomainRobotPromise $promise
+     * **Note:** By default, search results are provided synchronously. The
+     * search response contains all the additional data for each domain name created.
+     *
+     * With the following header the asynchronous (websocket) mode can be activated:
+     *
+     * * X-Domainrobot-WS : ASYNC
+     *
+     * The additional domain data will then be delivered via websocket.
+     * See the official at https://help.internetx.com/display/APIADDITIONALEN/DomainStudio+Guide for more information.
+     *
+     * @param DomainEnvelopeSearchRequest $body
+     * @return DomainRobotPromise
      */
-    public function searchAsync()
+    public function searchAsync(DomainEnvelopeSearchRequest $body)
     {
-        return $this->sendPostRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl()."/domainstudio",
-            $this->domainEnvelopeSearchRequest->toArray(true)
+            "POST",
+            $body->toArray(true)
         );
     }
 }

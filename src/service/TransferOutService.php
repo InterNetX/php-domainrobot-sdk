@@ -14,17 +14,14 @@ use IXDomainRobot\Service\DomainRobotService;
 
 class TransferOutService extends DomainRobotService
 {
-    private $transferOutModel;
 
     /**
      *
-     * @param TransferOut $transferOutModel
      * @param DomainRobotConfig $domainRobotConfig
      */
-    public function __construct(TransferOut $transferOutModel, DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainRobotConfig $domainRobotConfig)
     {
         parent::__construct($domainRobotConfig);
-        $this->transferOutModel = $transferOutModel;
     }
 
     /**
@@ -34,7 +31,7 @@ class TransferOutService extends DomainRobotService
      * @param [string] $type
      * @return TransferOut
      */
-    public function answer($domain, TransferAnswer $answer)
+    public function answer($domain, $answer)
     {
         $domainRobotPromise = $this->answerAsync($domain, $answer);
         $domainRobotResult = $domainRobotPromise->wait();
@@ -47,13 +44,12 @@ class TransferOutService extends DomainRobotService
     /**
      * Answer a transfer for the given domain with the given answer.
      *
-     * @param [string] $domain
-     * @param [string] $type
+     * @param [string] $domain,
+     * @param [string] $answer
      * @return DomainRobotPromise
      */
     public function answerAsync($domain, $answer)
     {
-
         $transformedAnswer = "";
         if ($answer === TransferAnswer::ACK) {
             $transformedAnswer = "ack";
@@ -63,17 +59,16 @@ class TransferOutService extends DomainRobotService
 
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/transferout/$domain/$transformedAnswer",
-            'PUT',
-            ["json" => $this->transferOutModel->toArray(true)]
+            'PUT'
         );
     }
 
     /**
      * Sends a TransferOut list request.
-     * 
+     *
      * The following keys can be used for filtering, ordering or fetching additional
      * data via query parameter:
-     * 
+     *
      * * reminder
      * * created
      * * loosingRegistrar
@@ -89,11 +84,12 @@ class TransferOutService extends DomainRobotService
      * * transaction
      * * status
      *
+     * @param Query $body
      * @return TransferOut[]
      */
-    public function list(Query $query = null)
+    public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($query);
+        $domainRobotPromise = $this->listAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -108,10 +104,10 @@ class TransferOutService extends DomainRobotService
 
     /**
      * Sends a TransferOut list request.
-     * 
+     *
      * The following keys can be used for filtering, ordering or fetching additional
      * data via query parameter:
-     * 
+     *
      * * reminder
      * * created
      * * loosingRegistrar
@@ -127,23 +123,19 @@ class TransferOutService extends DomainRobotService
      * * transaction
      * * status
      *
+     * @param Query $body
      * @return DomainRobotPromise
      */
-
-    public function listAsync(Query $query = null)
+    public function listAsync(Query $body = null)
     {
-        if ($query === null) {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/transferout/_search",
-                'POST',
-                ["json" => null]
-            ));
-        } else {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/transferout/_search",
-                'POST',
-                ["json" => $query->toArray(true)]
-            ));
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray(true);
         }
+        return new DomainRobotPromise($this->sendRequest(
+            $this->domainRobotConfig->getUrl() . "/transferout/_search",
+            'POST',
+            ["json" => $data]
+        ));
     }
 }

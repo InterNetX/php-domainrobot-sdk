@@ -10,9 +10,9 @@ use IXDomainRobot\Lib\DomainRobotConfig;
 use IXDomainRobot\Lib\DomainRobotHeaders;
 use IXDomainRobot\Lib\DomainRobotException;
 use IXDomainRobot\Lib\DomainRobotResult;
+use IXDomainRobot\Lib\DomainRobotPromise;
 use IXDomainRobot\Model\Certificate;
 use Psr\Http\Message\ResponseInterface;
-
 
 class DomainRobotService
 {
@@ -53,12 +53,12 @@ class DomainRobotService
 
     /**
      * General guzzle interface
-     * 
+     *
      * @param string $url
      * @param string $method
      * @param array $options
      *
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainRobotPromise
      */
 
     public function sendRequest($url, $method, $options = [])
@@ -71,7 +71,7 @@ class DomainRobotService
             $options
         )->then(
             /**
-             * 
+             *
              * @return DomainRobotException
              */
             function (ResponseInterface $response) {
@@ -96,8 +96,6 @@ class DomainRobotService
                 throw new DomainRobotException($msg, $exception->getCode(), "DomainRobot Error");
             }
         );
-
-
-        return $promise;
+        return new DomainRobotPromise($promise);
     }
 }

@@ -14,17 +14,14 @@ use IXDomainRobot\Service\DomainRobotService;
 
 class CertificateService extends DomainRobotService
 {
-    private $certificateModel;
 
     /**
      *
-     * @param Certificate $certificateModel
      * @param DomainRobotConfig $domainRobotConfig
      */
-    public function __construct(Certificate $certificateModel, DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainRobotConfig $domainRobotConfig)
     {
         parent::__construct($domainRobotConfig);
-        $this->certificateModel = $certificateModel;
     }
 
     /**
@@ -32,18 +29,18 @@ class CertificateService extends DomainRobotService
      * generate the necessary DCV data. Returns a Job with an id that can be used
      * for polling.
      *
+     * @param Certificate $body
      * @return Objectjob
      */
-    public function create()
+    public function create(Certificate $body)
     {
-        $domainRobotPromise = $this->createAsync();
+        $domainRobotPromise = $this->createAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', ''),
-            "object" => $this->certificateModel->getName()
+            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
         ]);
     }
     /**
@@ -51,31 +48,33 @@ class CertificateService extends DomainRobotService
      * generate the necessary DCV data. Returns a Job with an id that can be used
      * for polling.
      *
+     * @param Certificate $body
      * @return DomainRobotPromise
      */
-    public function createAsync()
+    public function createAsync(Certificate $body)
     {
-        $this->prepareCsr();
+        $this->prepareCsr($body);
 
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate",
             'POST',
-            ["json" => $this->certificateModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
     /**
      * Orders a certificate in realtime. The prepareOrder tasks should be called
      * before to generate the necessary DCV data.
-     * 
+     *
      * **Note:** This works only for certain DV certificate products and dcv
      * methods.
-     * 
+     *
+     * @param Certificate $body
      * @return Certificate
      */
-    public function realtime()
+    public function realtime(Certificate $body)
     {
-        $domainRobotPromise = $this->realtimeAsync();
+        $domainRobotPromise = $this->realtimeAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -86,34 +85,36 @@ class CertificateService extends DomainRobotService
     /**
      * Orders a certificate in realtime. The prepareOrder tasks should be called
      * before to generate the necessary DCV data.
-     * 
+     *
      * **Note:** This works only for certain DV certificate products and dcv
      * methods.
-     * 
+     *
+     * @param Certificate $body
      * @return DomainRobotPromise
      */
-    public function realtimeAsync()
+    public function realtimeAsync(Certificate $body)
     {
-        $this->prepareCsr();
+        $this->prepareCsr($body);
 
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/_realtime",
             'POST',
-            ["json" => $this->certificateModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
     /**
      * Check the csr and generate DCV data for an order, renew and reissue. This
      * should be called everytime before the following tasks :
-     * 
+     *
      * * realtime
      * * create
      * * reissue
      * * renew
-     * 
+     *
+     * @param CertificateData $body
      * @return CertificateData
      */
-    public function prepareOrder()
+    public function prepareOrder(CertificateData $body)
     {
         $domainRobotPromise = $this->prepareOrderAsync();
         $domainRobotResult = $domainRobotPromise->wait();
@@ -126,36 +127,52 @@ class CertificateService extends DomainRobotService
     /**
      * Check the csr and generate DCV data for an order, renew and reissue. This
      * should be called everytime before the following tasks :
-     * 
+     *
      * * realtime
      * * create
      * * reissue
      * * renew
      *
+     * @param CertificateData $body
      * @return DomainRobotPromise
      */
-    public function prepareOrderAsync()
+    public function prepareOrderAsync(CertificateData $body)
     {
-        $this->prepareCsr();
-
-        $certDataModel = new CertificateData();
-        $certDataModel->setPlain($this->certificateModel->getCsr());
+        //$this->prepareCsr();
 
         return new DomainRobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/_prepareOrder",
             'POST',
-            ["json" => $certDataModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         ));
     }
 
     /**
      * Sends a certificate list request.
      *
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * product
+     * * technical
+     * * orderId
+     * * created
+     * * admin
+     * * type
+     * * expire
+     * * domain
+     * * name
+     * * comment
+     * * id
+     * * updated
+     * * authentication
+     *
+     * @param Query $body
      * @return Certificate[]
      */
-    public function list(Query $query = null)
+    public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($query);
+        $domainRobotPromise = $this->listAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -171,32 +188,45 @@ class CertificateService extends DomainRobotService
     /**
      * Sends a certificate list request.
      *
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * product
+     * * technical
+     * * orderId
+     * * created
+     * * admin
+     * * type
+     * * expire
+     * * domain
+     * * name
+     * * comment
+     * * id
+     * * updated
+     * * authentication
+     *
+     * @param Query $body
      * @return DomainRobotPromise
      */
 
-    public function listAsync(Query $query = null)
+    public function listAsync(Query $body = null)
     {
-
-        if ($query === null) {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/certificate/_search",
-                'POST',
-                ["json" => null]
-            ));
-        } else {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/certificate/_search",
-                'POST',
-                ["json" => $query->toArray(true)]
-            ));
+        $data = null;
+        if ($query != null) {
+            $data = $body->toArray(true);
         }
+        return new DomainRobotPromise($this->sendRequest(
+            $this->domainRobotConfig->getUrl() . "/certificate/_search",
+            'POST',
+            ["json" => $data]
+        ));
     }
 
     /**
      * Fetches the information for an existing certificate.
      *
      * @param [int] $id
-     * @return CertificateData
+     * @return Certificate
      */
     public function info($id)
     {
@@ -204,14 +234,14 @@ class CertificateService extends DomainRobotService
         $domainRobotResult = $domainRobotPromise->wait();
 
 
-        return new CertificateData(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Certificate(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Fetches the information for an existing certificate.
      *
      * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainRobotPromise
      */
     public function infoAsync($id)
     {
@@ -234,10 +264,8 @@ class CertificateService extends DomainRobotService
         $domainRobotResult = $domainRobotPromise->wait();
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', ''),
-            "object" => $this->certificateModel->getName()
+            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
         ]);
-        // return new Certificate(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
     }
 
 
@@ -246,13 +274,13 @@ class CertificateService extends DomainRobotService
      * for polling.
      *
      * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainRobotPromise
      */
     public function deleteAsync($id)
     {
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/$id",
-            'DELETE',
+            'DELETE'
         );
     }
 
@@ -262,19 +290,18 @@ class CertificateService extends DomainRobotService
      * generate the necessary DCV data. Returns a Job with an id that can be used
      * for polling.
      *
-     * @param [int] $id
+     * @param Certificate $body
      * @return ObjectJob
      */
-    public function reissue($id)
+    public function reissue(Certificate $body)
     {
-        $domainRobotPromise = $this->reissueAsync($id);
+        $domainRobotPromise = $this->reissueAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', ''),
-            "object" => $this->certificateModel->getName()
+            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -283,17 +310,20 @@ class CertificateService extends DomainRobotService
      * generate the necessary DCV data. Returns a Job with an id that can be used
      * for polling.
      *
-     * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @param Certificate $body
+     * @return DomainRobotPromise
      */
-    public function reissueAsync($id)
+    public function reissueAsync(Certificate $body)
     {
-        $this->prepareCsr();
+        if ($body->getId() === null) {
+            throw InvalidArgumentException("Field Certificate.id is missing.");
+        }
+        $this->prepareCsr($body);
 
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/certificate/$id",
+            $this->domainRobotConfig->getUrl() . "/certificate/".$body->getId(),
             'PUT',
-            ["json" => $this->certificateModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
@@ -303,19 +333,18 @@ class CertificateService extends DomainRobotService
      * generate the necessary DCV data. Returns a Job with an id that can be used
      * for polling.
      *
-     * @param [int] $id
+     * @param Certificate $body
      * @return ObjectJob
      */
-    public function renew($id)
+    public function renew(Certificate $body)
     {
-        $domainRobotPromise = $this->renewAsync($id);
+        $domainRobotPromise = $this->renewAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', ''),
-            "object" => $this->certificateModel->getName()
+            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -324,17 +353,20 @@ class CertificateService extends DomainRobotService
      * generate the necessary DCV data. Returns a Job with an id that can be used
      * for polling.
      *
-     * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @param Certificate $body
+     * @return DomainRobotPromise
      */
-    public function renewAsync($id)
+    public function renewAsync(Certificate $body)
     {
-        $this->prepareCsr();
+        if ($body->getId() === null) {
+            throw InvalidArgumentException("Field Certificate.id is missing.");
+        }
+        $this->prepareCsr($body);
 
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/certificate/$id/_renew",
+            $this->domainRobotConfig->getUrl() . "/certificate/".$body->getId()."/_renew",
             'PUT',
-            ["json" => $this->certificateModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
@@ -342,7 +374,7 @@ class CertificateService extends DomainRobotService
      * Updates the comment for an existing certificate.
      *
      * @param [int] $id, [string] comment
-     * @return 
+     * @return
      */
     public function commentUpdate($id, $comment)
     {
@@ -355,13 +387,11 @@ class CertificateService extends DomainRobotService
     /**
      * Updates the comment for an existing certificate.
      *
-     * @param [int] $id
-     * @return 
+     * @param [int] $id, [string] comment
+     * @return
      */
     public function commentUpdateAsync($id, $comment)
     {
-        $this->prepareCsr();
-
         $cert = new Certificate(['comment' => $comment]);
         $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/$id/_renew",
@@ -372,16 +402,19 @@ class CertificateService extends DomainRobotService
 
     /**
      * make sure the csr has the right format
+     *
+     * @param Certificate $body
+     * @return
      */
-    private function prepareCsr()
+    private function prepareCsr(Certificate $body)
     {
         preg_match(
             "/^(-----BEGIN CERTIFICATE REQUEST-----)(.*)(-----END CERTIFICATE REQUEST-----)$/",
-            trim($this->certificateModel->getCsr()),
+            trim($body->getCsr()),
             $matches
         );
         if (!empty($matches)) {
-            $this->certificateModel->setCsr(implode("\n", [
+            $body->setCsr(implode("\n", [
                 $matches[1],
                 $matches[2],
                 $matches[3]

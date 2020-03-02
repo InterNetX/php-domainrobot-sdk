@@ -12,27 +12,25 @@ use IXDomainRobot\Service\DomainRobotService;
 
 class SSlContactService extends DomainRobotService
 {
-    private $sslContactModel;
 
     /**
      *
-     * @param SslContact $sslContactModel
      * @param DomainRobotConfig $domainRobotConfig
      */
-    public function __construct(SslContact $sslContacteModel, DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainRobotConfig $domainRobotConfig)
     {
         parent::__construct($domainRobotConfig);
-        $this->sslContactModel = $sslContacteModel;
     }
 
     /**
      * Sends a sslcontact create request.
      *
+     * @param SslContact $body
      * @return SslContact
      */
-    public function create()
+    public function create(SslContact $body)
     {
-        $domainRobotPromise = $this->createAsync();
+        $domainRobotPromise = $this->createAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -43,25 +41,27 @@ class SSlContactService extends DomainRobotService
     /**
      * Sends a sslcontact create request.
      *
+     * @param SslContact $body
      * @return DomainRobotPromise
      */
-    public function createAsync()
+    public function createAsync(SslContact $body)
     {
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/sslcontacct",
             'POST',
-            ["json" => $this->sslContactModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
     /**
      * Sends a sslcontact list request.
      *
+     * @param Query $body
      * @return SslContact[]
      */
-    public function list(Query $query = null)
+    public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($query);
+        $domainRobotPromise = $this->listAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -77,25 +77,20 @@ class SSlContactService extends DomainRobotService
     /**
      * Sends a sslcontact list request.
      *
+     * @param Query $body
      * @return DomainRobotPromise
      */
-
-    public function listAsync(Query $query = null)
+    public function listAsync(Query $body = null)
     {
-
-        if ($query === null) {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/sslcontact/_search",
-                'POST',
-                ["json" => null]
-            ));
-        } else {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/sslcontact/_search",
-                'POST',
-                ["json" => $query->toArray(true)]
-            ));
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray(true);
         }
+        return new DomainRobotPromise($this->sendRequest(
+            $this->domainRobotConfig->getUrl() . "/sslcontact/_search",
+            'POST',
+            ["json" => $data]
+        ));
     }
 
     /**
@@ -117,7 +112,7 @@ class SSlContactService extends DomainRobotService
      * Sends a sslcontact info request.
      *
      * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainRobotPromise
      */
     public function infoAsync($id)
     {
@@ -143,25 +138,25 @@ class SSlContactService extends DomainRobotService
      * Sends a sslcontact delete request.
      *
      * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainRobotPromise
      */
     public function deleteAsync($id)
     {
         $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/sslcontact/$id",
-            'DELETE',
+            'DELETE'
         );
     }
 
     /**
      * Sends a sslcontact update request.
      *
-     * @param [int] $id
+     * @param SslContact $body
      * @return SslContact
      */
-    public function update($id)
+    public function update(SslContact $body)
     {
-        $domainRobotPromise = $this->updateAsync($id);
+        $domainRobotPromise = $this->updateAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -172,15 +167,18 @@ class SSlContactService extends DomainRobotService
     /**
      * Sends a sslcontact update request.
      *
-     * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @param SslContact $body
+     * @return DomainRobotPromise
      */
-    public function updateAsync($id)
+    public function updateAsync(SslContact $body)
     {
+        if ($body->getId() === null) {
+            throw InvalidArgumentException("Field SslContact.id is missing.");
+        }
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/sslcontact/$id",
+            $this->domainRobotConfig->getUrl()."/sslcontact/".$body->getId(),
             'PUT',
-            ["json" => $this->sslContactModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 }

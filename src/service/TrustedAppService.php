@@ -12,27 +12,26 @@ use IXDomainRobot\Service\DomainRobotService;
 
 class TrustedApplicationService extends DomainRobotService
 {
-    private $trustedApplicationModel;
+
 
     /**
      *
-     * @param TrustedApplicationModel $trustedApplicationModel
      * @param DomainRobotConfig $domainRobotConfig
      */
-    public function __construct(TrustedApplication $trustedApplicationModel, DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainRobotConfig $domainRobotConfig)
     {
         parent::__construct($domainRobotConfig);
-        $this->trustedApplicationModel = $trustedApplicationModel;
     }
 
     /**
      * Sends a TrustedApplication create request.
      *
+     * @param TrustedApplication $body
      * @return TrustedApplication
      */
-    public function create()
+    public function create(TrustedApplication $body)
     {
-        $domainRobotPromise = $this->createAsync();
+        $domainRobotPromise = $this->createAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -43,14 +42,15 @@ class TrustedApplicationService extends DomainRobotService
     /**
      * Sends a TrustedApplication create request.
      *
+     * @param TrustedApplication $body
      * @return DomainRobotPromise
      */
-    public function createAsync()
+    public function createAsync(TrustedApplication $body)
     {
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/trustedapp",
             'POST',
-            ["json" => $this->trustedApplicationModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
@@ -79,23 +79,17 @@ class TrustedApplicationService extends DomainRobotService
      *
      * @return DomainRobotPromise
      */
-
     public function listAsync(Query $query = null)
     {
-
-        if ($query === null) {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/trustedapp/_search",
-                'POST',
-                ["json" => null]
-            ));
-        } else {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/trustedapp/_search",
-                'POST',
-                ["json" => $query->toArray(true)]
-            ));
+        $body = null;
+        if ($query != null) {
+            $body = $query->toArray(true);
         }
+        return new DomainRobotPromise($this->sendRequest(
+            $this->domainRobotConfig->getUrl() . "/trustedapp/_search",
+            'POST',
+            ["json" => $body]
+        ));
     }
 
     /**
@@ -117,7 +111,7 @@ class TrustedApplicationService extends DomainRobotService
      * Sends a TrustedApplication info request.
      *
      * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainRobotPromise
      */
     public function infoAsync($id)
     {
@@ -144,43 +138,43 @@ class TrustedApplicationService extends DomainRobotService
      * Sends a TrustedApplication delete request.
      *
      * @param [int] $id
-     * @return
+     * @return DomainRobotPromise
      */
     public function deleteAsync($id)
     {
         $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/trustedapp/$id",
-            'DELETE',
+            'DELETE'
         );
     }
 
     /**
      * Sends a TrustedApplication update request.
      *
-     * @param [int] $id
-     * @return
+     * @param TrustedApplication $body
+     * @return TrustedApplication
      */
-    public function update($id)
+    public function update(TrustedApplication $body)
     {
-        $domainRobotPromise = $this->updateAsync($id);
+        $domainRobotPromise = $this->updateAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
-
-        // return new TrustedApplication(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a TrustedApplication update request.
      *
-     * @param [int] $id
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @param TrustedApplication $body
+     * @return DomainRobotPromise
      */
-    public function updateAsync($id)
+    public function updateAsync(TrustedApplication $body)
     {
-
+        if ($body->getId() === null) {
+            throw InvalidArgumentException("Field TrustedApplication.id is missing.");
+        }
         $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/trustedapp/$id",
+            $this->domainRobotConfig->getUrl() . "/trustedapp/".$body->getId(),
             'PUT',
             ["json" => $this->trustedApplicationModel->toArray(true)]
         );

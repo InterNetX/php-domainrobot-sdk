@@ -12,28 +12,25 @@ use IXDomainRobot\Service\DomainRobotService;
 
 class DomainCancelationService extends DomainRobotService
 {
-    private $domainCancelationModel;
 
     /**
      *
-     * @param DomainCancelation $domainCancelationModel
      * @param DomainRobotConfig $domainRobotConfig
      */
-    public function __construct(DomainCancelation $domainCancelationModel, DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainRobotConfig $domainRobotConfig)
     {
         parent::__construct($domainRobotConfig);
-        $this->domainCancelationModel = $domainCancelationModel;
     }
 
     /**
      * Sends a DomainCancelation create request.
      *
-     * @param [string] $name
+     * @param DomainCancelation $body
      * @return DomainCancelation
      */
-    public function create($name)
+    public function create(DomainCancelation $body)
     {
-        $domainRobotPromise = $this->createAsync($name);
+        $domainRobotPromise = $this->createAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -44,24 +41,28 @@ class DomainCancelationService extends DomainRobotService
     /**
      * Sends a DomainCancelation create request.
      *
+     * @param DomainCancelation $body
      * @return DomainRobotPromise
      */
-    public function createAsync($name)
+    public function createAsync(DomainCancelation $body)
     {
+        if ($body->getDomain() === null) {
+            throw InvalidArgumentException("Field DomainCancelation.domain is missing.");
+        }
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/domain/$name/cancelation",
+            $this->domainRobotConfig->getUrl() . "/domain/".$body->getDomain()."/cancelation",
             'POST',
-            ["json" => $this->domainCancelationModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
     /**
      * Sends a DomainCancelation update request.
      *
-     * @param [string] $name
+     * @param DomainCancelation $body
      * @return DomainCancelation
      */
-    public function update($name)
+    public function update(DomainCancelation $body)
     {
         $domainRobotPromise = $this->updateAsync($name);
         $domainRobotResult = $domainRobotPromise->wait();
@@ -74,28 +75,30 @@ class DomainCancelationService extends DomainRobotService
     /**
      * Sends a DomainCancelation update request.
      *
-     * @param [string] $name
+     * @param DomainCancelation $body
      * @return DomainRobotPromise
      */
-    public function updateAsync($name)
+    public function updateAsync(DomainCancelation $body)
     {
-
+        if ($body->getDomain() === null) {
+            throw InvalidArgumentException("Field DomainCancelation.domain is missing.");
+        }
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/domain/$name/cancelation",
+            $this->domainRobotConfig->getUrl() . "/domain/".$body->getDomain()."/cancelation",
             'PUT',
-            ["json" => $this->domainCancelationModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 
     /**
      * Deletes an existing cancelation for the given domain.
      *
-     * @param [string] $name
-     * @return 
+     * @param [string] $domain
+     * @return
      */
-    public function delete($name)
+    public function delete($domain)
     {
-        $domainRobotPromise = $this->deleteAsync($name);
+        $domainRobotPromise = $this->deleteAsync($domain);
         $domainRobotPromise->wait();
     }
 
@@ -103,14 +106,14 @@ class DomainCancelationService extends DomainRobotService
     /**
      * Deletes an existing cancelation for the given domain.
      *
-     * @param [string] $name
+     * @param [string] $domain
      * @return
      */
-    public function deleteAsync($name)
+    public function deleteAsync($domain)
     {
         $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/domain/$name/cancelation",
-            'DELETE',
+            $this->domainRobotConfig->getUrl() . "/domain/$domain/cancelation",
+            'DELETE'
         );
     }
 
@@ -118,12 +121,12 @@ class DomainCancelationService extends DomainRobotService
     /**
      * Fetches the cancelation for the given domain.
      *
-     * @param [string] $name
+     * @param [string] $domain
      * @return DomainCancelation
      */
-    public function info($name)
+    public function info($domain)
     {
-        $domainRobotPromise = $this->infoAsync($name);
+        $domainRobotPromise = $this->infoAsync($domain);
         $domainRobotResult = $domainRobotPromise->wait();
 
 
@@ -133,23 +136,23 @@ class DomainCancelationService extends DomainRobotService
     /**
      * Fetches the cancelation for the given domain.
      *
-     * @param [string] $name
+     * @param [string] $domain
      * @return DomainRobotPromise
      */
-    public function infoAsync($name)
+    public function infoAsync($domain)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/domain/$name/cancelation",
+            $this->domainRobotConfig->getUrl() . "/domain/$domain/cancelation",
             'GET'
         );
     }
 
     /**
      * Sends a DomainCancelation list request.
-     * 
+     *
      * The following keys can be used for filtering, ordering or fetching additional
      * data via query parameter:
-     * 
+     *
      * * disconnect
      * * execdate
      * * ctid
@@ -162,11 +165,12 @@ class DomainCancelationService extends DomainRobotService
      * * gainingRegistrar
      * * updated
      *
+     * @param Query $body
      * @return DomainCancelation[]
      */
-    public function list(Query $query = null)
+    public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($query);
+        $domainRobotPromise = $this->listAsync($body);
         $domainRobotResult = $domainRobotPromise->wait();
 
         DomainRobot::setLastDomainRobotResult($domainRobotResult);
@@ -181,10 +185,10 @@ class DomainCancelationService extends DomainRobotService
 
     /**
      * Sends a DomainCancelation list request.
-     * 
+     *
      * The following keys can be used for filtering, ordering or fetching additional
      * data via query parameter:
-     * 
+     *
      * * disconnect
      * * execdate
      * * ctid
@@ -196,24 +200,21 @@ class DomainCancelationService extends DomainRobotService
      * * subtld
      * * gainingRegistrar
      * * updated
-     * 
+     *
+     * @param Query $body
      * @return DomainRobotPromise
      */
 
-    public function listAsync(Query $query = null)
+    public function listAsync(Query $body = null)
     {
-        if ($query === null) {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/domain/cancelation/_search",
-                'POST',
-                ["json" => null]
-            ));
-        } else {
-            return new DomainRobotPromise($this->sendRequest(
-                $this->domainRobotConfig->getUrl() . "/domain/cancelation/_search",
-                'POST',
-                ["json" => $query->toArray(true)]
-            ));
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray(true);
         }
+        return new DomainRobotPromise($this->sendRequest(
+            $this->domainRobotConfig->getUrl() . "/domain/cancelation/_search",
+            'POST',
+            ["json" => $data]
+        ));
     }
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.1] - 2020-03-02
+
+* Add new services to DomainRobot class.
+
 ## [0.3.0] - 2020-03-02
 
 * Added all important routes from the domainrobot open api documentation

@@ -74,7 +74,7 @@ Please refer to the examples below for more details.
 ```php
 // Sends a synchronous request
 try {
-    $certData = $domainRobot->certificate()->prepareOrder($body);
+    $certData = $domainRobot->certificate->prepareOrder($body);
 }catch(DomainRobotException $exception){
     return response()->json($exception->getError(), $exception->getStatusCode());
 }
@@ -94,7 +94,7 @@ return response()->json(
 ```php
 // Sends an asynchronous request
 try {
-    $promise = $domainRobot->certificate()->prepareOrderAsync($body);
+    $promise = $domainRobot->certificate->prepareOrderAsync($body);
     // Wait for the promise. This will return a DomainRobotResult object
     $result = $promise->wait();
 }catch(DomainRobotException $exception){
@@ -271,7 +271,7 @@ Example:
 
 ```php
  try {
-    $promise = $domainRobot->certificate()->createRealtime($certificate);
+    $promise = $domainRobot->certificate->createRealtime($certificate);
 }catch(DomainRobotException $exception){
     return response()->json($exception->getError(), $exception->getStatusCode());
 }
@@ -349,7 +349,7 @@ See example below.
 ```php
 use IXDomainRobot\Lib\DomainRobotHeaders;
 
-$certificateData = $domainRobot->certificate()
+$certificateData = $domainRobot->certificate
                        ->addHeaders(
                             [DomainRobotHeaders::DOMAINROBOT_HEADER_2FA_TOKEN => "token"]
                        )->prepareOrder($body);

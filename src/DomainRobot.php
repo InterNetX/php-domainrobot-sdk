@@ -2,17 +2,15 @@
 
 namespace IXDomainRobot;
 
-use IXDomainRobot\Service\CertificateService;
 use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Model\Certificate;
-use IXDomainRobot\Model\DomainEnvelopeSearchRequest;
+use IXDomainRobot\Service\CertificateService;
 use IXDomainRobot\Service\DomainStudioService;
 use IXDomainRobot\Service\DomainService;
 use IXDomainRobot\Service\SslContactService;
 use IXDomainRobot\Service\ContactService;
 use IXDomainRobot\Service\DomainCancelationService;
 use IXDomainRobot\Service\TransferOutService;
-use IXDomainRobot\Service\TrustedAppService;
+use IXDomainRobot\Service\TrustedApplicationService;
 use IXDomainRobot\Service\ZoneService;
 use IXDomainRobot\Service\PollMessageService;
 
@@ -88,7 +86,7 @@ class DomainRobot
     /**
      * Interface for all domain trustedApp related requests
      *
-     * @var TrustedAppService
+     * @var TrustedApplicationService
      */
     public $trustedApp;
 
@@ -119,7 +117,7 @@ class DomainRobot
         $domainCancelation = new DomainCancelationService($this->domainRobotConfig);
         $poll = new PollMessageService($this->domainRobotConfig);
         $transferOut = new TransferOutService($this->domainRobotConfig);
-        $trustedApp = new TrustedAppService($this->domainRobotConfig);
+        $trustedApp = new TrustedApplicationService($this->domainRobotConfig);
         $zone = new ZoneService($this->domainRobotConfig);
     }
 

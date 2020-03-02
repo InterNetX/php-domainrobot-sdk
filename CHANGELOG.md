@@ -1,8 +1,12 @@
 # Changelog
 
+## [0.3.2] - 2020-03-02
+
+* Fix imports
+
 ## [0.3.1] - 2020-03-02
 
-* Add new services to DomainRobot class.
+* Add new services to DomainRobot class
 
 ## [0.3.0] - 2020-03-02
 

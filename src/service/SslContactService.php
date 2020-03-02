@@ -10,7 +10,7 @@ use IXDomainRobot\Model\Query;
 use IXDomainRobot\Model\SslContact;
 use IXDomainRobot\Service\DomainRobotService;
 
-class SSlContactService extends DomainRobotService
+class SslContactService extends DomainRobotService
 {
 
     /**

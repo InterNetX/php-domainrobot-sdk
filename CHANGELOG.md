@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.3] - 2020-03-02
+
+* Fix imports
+
 ## [0.3.2] - 2020-03-02
 
 * Fix imports

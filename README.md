@@ -46,7 +46,7 @@ Before you can interact with the API you need to specify your authentication cre
 use IXDomainRobot\DomainRobot;
 
 $domainRobot = new DomainRobot([
-    "url" => "http://dev-proxy-lab.intern.autodns-lab.com:10025",
+    "url" => "<https://api.autodns.com/v1>",
     "auth" => new DomainRobotAuth([
         "user" => "user",
         "password" => "password",

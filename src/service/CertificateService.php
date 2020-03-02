@@ -57,9 +57,10 @@ class CertificateService extends DomainRobotService
     {
         $this->prepareCsr();
 
-        return $this->sendPostRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate",
-            $this->certificateModel->toArray(true)
+            'POST',
+            ["json" => $this->certificateModel->toArray(true)]
         );
     }
 
@@ -95,9 +96,10 @@ class CertificateService extends DomainRobotService
     {
         $this->prepareCsr();
 
-        return $this->sendPostRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/_realtime",
-            $this->certificateModel->toArray(true)
+            'POST',
+            ["json" => $this->certificateModel->toArray(true)]
         );
     }
     /**
@@ -139,9 +141,10 @@ class CertificateService extends DomainRobotService
         $certDataModel = new CertificateData();
         $certDataModel->setPlain($this->certificateModel->getCsr());
 
-        return new DomainRobotPromise($this->sendPostRequest(
+        return new DomainRobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/_prepareOrder",
-            $certDataModel->toArray(true)
+            'POST',
+            ["json" => $certDataModel->toArray(true)]
         ));
     }
 
@@ -175,14 +178,16 @@ class CertificateService extends DomainRobotService
     {
 
         if ($query === null) {
-            return new DomainRobotPromise($this->sendPostRequest(
+            return new DomainRobotPromise($this->sendRequest(
                 $this->domainRobotConfig->getUrl() . "/certificate/_search",
-                null
+                'POST',
+                ["json" => null]
             ));
         } else {
-            return new DomainRobotPromise($this->sendPostRequest(
+            return new DomainRobotPromise($this->sendRequest(
                 $this->domainRobotConfig->getUrl() . "/certificate/_search",
-                $query->toArray(true)
+                'POST',
+                ["json" => $query->toArray(true)]
             ));
         }
     }
@@ -210,8 +215,9 @@ class CertificateService extends DomainRobotService
      */
     public function infoAsync($id)
     {
-        return $this->sendGetRequest(
-            $this->domainRobotConfig->getUrl() . "/certificate/$id"
+        return $this->sendRequest(
+            $this->domainRobotConfig->getUrl() . "/certificate/$id",
+            'GET'
         );
     }
 
@@ -220,14 +226,18 @@ class CertificateService extends DomainRobotService
      * for polling.
      *
      * @param [int] $id
-     * @return Certificate
+     * @return ObjectJob
      */
     public function delete($id)
     {
         $domainRobotPromise = $this->deleteAsync($id);
         $domainRobotResult = $domainRobotPromise->wait();
 
-        return new Certificate(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', ''),
+            "object" => $this->certificateModel->getName()
+        ]);
+        // return new Certificate(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
     }
 
 
@@ -240,9 +250,9 @@ class CertificateService extends DomainRobotService
      */
     public function deleteAsync($id)
     {
-        return $this->sendDeleteRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/$id",
-            // $this->certificateModel->toArray(true)
+            'DELETE',
         );
     }
 
@@ -278,9 +288,12 @@ class CertificateService extends DomainRobotService
      */
     public function reissueAsync($id)
     {
-        return $this->sendPutRequest(
+        $this->prepareCsr();
+
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/$id",
-            $this->certificateModel->toArray(true)
+            'PUT',
+            ["json" => $this->certificateModel->toArray(true)]
         );
     }
 
@@ -316,9 +329,12 @@ class CertificateService extends DomainRobotService
      */
     public function renewAsync($id)
     {
-        return $this->sendPutRequest(
+        $this->prepareCsr();
+
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/$id/_renew",
-            $this->certificateModel->toArray(true)
+            'PUT',
+            ["json" => $this->certificateModel->toArray(true)]
         );
     }
 
@@ -326,7 +342,7 @@ class CertificateService extends DomainRobotService
      * Updates the comment for an existing certificate.
      *
      * @param [int] $id, [string] comment
-     * @return void
+     * @return 
      */
     public function commentUpdate($id, $comment)
     {
@@ -340,14 +356,17 @@ class CertificateService extends DomainRobotService
      * Updates the comment for an existing certificate.
      *
      * @param [int] $id
-     * @return void
+     * @return 
      */
     public function commentUpdateAsync($id, $comment)
     {
+        $this->prepareCsr();
+
         $cert = new Certificate(['comment' => $comment]);
-        $this->sendPutRequest(
+        $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/$id/_renew",
-            $cert->toArray(true)
+            'PUT',
+            ["json" => $cert->toArray(true)]
         );
     }
 

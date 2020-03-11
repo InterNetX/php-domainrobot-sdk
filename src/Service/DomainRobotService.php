@@ -32,10 +32,16 @@ class DomainRobotService
     {
         $this->domainRobotConfig = $domainRobotConfig;
 
+        // get current version of the SDK
+        $handle = fopen(__DIR__."/../../composer.json", "r");
+        $contents = fread($handle, filesize(__DIR__."/../../composer.json"));
+        fclose($handle);
+        preg_match("/version.+(\d+\.\d+\.\d+)/",$contents,$matches);
+
         $this->guzzleClientConfig = [
             'headers' => [
                 DomainRobotHeaders::DOMAINROBOT_CONTENT_TYPE => "application/json",
-                DomainRobotHeaders::DOMAINROBOT_USER_AGENT => "PHPDomainrobotSdk/version",
+                DomainRobotHeaders::DOMAINROBOT_USER_AGENT => "PHPDomainrobotSdk/$matches[1]",
                 DomainRobotHeaders::DOMAINROBOT_HEADER_CONTEXT => $this->domainRobotConfig->getAuth()->getContext()
             ],
             'auth' => [

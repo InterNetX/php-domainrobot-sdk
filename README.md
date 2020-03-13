@@ -19,7 +19,9 @@ A php package for easy integration of the **Domainrobot API** powered by [InterN
 
 ## Preamble
 
-This Maven package is not available via known repositories. It must be manually installed into a local Maven repository.
+This composer package can be used within every composer project, including projects based on frameworks like [Laravel](https://laravel.com), [CodeIgniter](https://codeigniter.com/), [Symfony](https://symfony.com/) and many more.
+
+**Note:** Feel free to contribute by creating pull requests or file an issue for bugs, questions and feature requests.
 
 ## Install and Use
 

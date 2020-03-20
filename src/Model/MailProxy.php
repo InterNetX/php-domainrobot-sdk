@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * MailProxy Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,19 +61,19 @@ class MailProxy implements ModelInterface, ArrayAccess
         'idn' => 'string',
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'target' => 'string',
         'admin' => 'string',
-        'protection' => '\IXDomainRobot\Model\ProtectionConstants',
+        'protection' => '\Domainrobot\Model\ProtectionConstants',
         'greylisting' => 'bool',
         'virus' => 'string',
         'bannedFiles' => 'string',
         'header' => 'string',
-        'spam' => '\IXDomainRobot\Model\SpamPolicy',
-        'whitelist' => '\IXDomainRobot\Model\MailList',
-        'blacklist' => '\IXDomainRobot\Model\MailList',
-        'excludelist' => '\IXDomainRobot\Model\MailList'
+        'spam' => '\Domainrobot\Model\SpamPolicy',
+        'whitelist' => '\Domainrobot\Model\MailList',
+        'blacklist' => '\Domainrobot\Model\MailList',
+        'excludelist' => '\Domainrobot\Model\MailList'
     ];
 
     /**
@@ -486,7 +486,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -496,7 +496,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the entry
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the entry
      *
      * @return $this
      */
@@ -510,7 +510,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -520,7 +520,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The last updater of the entry
+     * @param \Domainrobot\Model\BasicUser $updater The last updater of the entry
      *
      * @return $this
      */
@@ -582,7 +582,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets protection
      *
-     * @return \IXDomainRobot\Model\ProtectionConstants
+     * @return \Domainrobot\Model\ProtectionConstants
      */
     public function getProtection()
     {
@@ -592,7 +592,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets protection
      *
-     * @param \IXDomainRobot\Model\ProtectionConstants $protection The protection level
+     * @param \Domainrobot\Model\ProtectionConstants $protection The protection level
      *
      * @return $this
      */
@@ -729,7 +729,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets spam
      *
-     * @return \IXDomainRobot\Model\SpamPolicy
+     * @return \Domainrobot\Model\SpamPolicy
      */
     public function getSpam()
     {
@@ -739,7 +739,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets spam
      *
-     * @param \IXDomainRobot\Model\SpamPolicy $spam The spam policy options
+     * @param \Domainrobot\Model\SpamPolicy $spam The spam policy options
      *
      * @return $this
      */
@@ -753,7 +753,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets whitelist
      *
-     * @return \IXDomainRobot\Model\MailList
+     * @return \Domainrobot\Model\MailList
      */
     public function getWhitelist()
     {
@@ -763,7 +763,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets whitelist
      *
-     * @param \IXDomainRobot\Model\MailList $whitelist The white listed email addresses
+     * @param \Domainrobot\Model\MailList $whitelist The white listed email addresses
      *
      * @return $this
      */
@@ -777,7 +777,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets blacklist
      *
-     * @return \IXDomainRobot\Model\MailList
+     * @return \Domainrobot\Model\MailList
      */
     public function getBlacklist()
     {
@@ -787,7 +787,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets blacklist
      *
-     * @param \IXDomainRobot\Model\MailList $blacklist The black listed email addresses
+     * @param \Domainrobot\Model\MailList $blacklist The black listed email addresses
      *
      * @return $this
      */
@@ -801,7 +801,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets excludelist
      *
-     * @return \IXDomainRobot\Model\MailList
+     * @return \Domainrobot\Model\MailList
      */
     public function getExcludelist()
     {
@@ -811,7 +811,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets excludelist
      *
-     * @param \IXDomainRobot\Model\MailList $excludelist The exculded listed email addresses
+     * @param \Domainrobot\Model\MailList $excludelist The exculded listed email addresses
      *
      * @return $this
      */

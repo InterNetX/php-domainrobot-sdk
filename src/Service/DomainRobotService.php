@@ -1,17 +1,17 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 
 use GuzzleHttp\Client;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotHeaders;
-use IXDomainRobot\Lib\DomainRobotException;
-use IXDomainRobot\Lib\DomainRobotResult;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\Certificate;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Lib\DomainRobotHeaders;
+use Domainrobot\Lib\DomainRobotException;
+use Domainrobot\Lib\DomainRobotResult;
+use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Model\Certificate;
 use Psr\Http\Message\ResponseInterface;
 
 class DomainRobotService

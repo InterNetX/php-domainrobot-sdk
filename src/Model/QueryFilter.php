@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * QueryFilter Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,9 +59,9 @@ class QueryFilter implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'key' => 'string',
         'value' => 'string',
-        'operator' => '\IXDomainRobot\Model\Operator',
-        'link' => '\IXDomainRobot\Model\ConditionType',
-        'filters' => '\IXDomainRobot\Model\QueryFilter[]'
+        'operator' => '\Domainrobot\Model\Operator',
+        'link' => '\Domainrobot\Model\ConditionType',
+        'filters' => '\Domainrobot\Model\QueryFilter[]'
     ];
 
     /**
@@ -279,7 +279,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Gets operator
      *
-     * @return \IXDomainRobot\Model\Operator
+     * @return \Domainrobot\Model\Operator
      */
     public function getOperator()
     {
@@ -289,7 +289,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets operator
      *
-     * @param \IXDomainRobot\Model\Operator $operator Lorem Ipsum
+     * @param \Domainrobot\Model\Operator $operator Lorem Ipsum
      *
      * @return $this
      */
@@ -303,7 +303,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Gets link
      *
-     * @return \IXDomainRobot\Model\ConditionType
+     * @return \Domainrobot\Model\ConditionType
      */
     public function getLink()
     {
@@ -313,7 +313,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \IXDomainRobot\Model\ConditionType $link Lorem Ipsum
+     * @param \Domainrobot\Model\ConditionType $link Lorem Ipsum
      *
      * @return $this
      */
@@ -327,7 +327,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Gets filters
      *
-     * @return \IXDomainRobot\Model\QueryFilter[]
+     * @return \Domainrobot\Model\QueryFilter[]
      */
     public function getFilters()
     {
@@ -337,7 +337,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets filters
      *
-     * @param \IXDomainRobot\Model\QueryFilter[] $filters Lorem Ipsum
+     * @param \Domainrobot\Model\QueryFilter[] $filters Lorem Ipsum
      *
      * @return $this
      */

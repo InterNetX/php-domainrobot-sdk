@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * BulkRedirectPostRequest Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class BulkRedirectPostRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'objects' => '\IXDomainRobot\Model\Redirect[]',
-        'template' => '\IXDomainRobot\Model\Redirect'
+        'objects' => '\Domainrobot\Model\Redirect[]',
+        'template' => '\Domainrobot\Model\Redirect'
     ];
 
     /**
@@ -213,7 +213,7 @@ class BulkRedirectPostRequest implements ModelInterface, ArrayAccess
     /**
      * Gets objects
      *
-     * @return \IXDomainRobot\Model\Redirect[]
+     * @return \Domainrobot\Model\Redirect[]
      */
     public function getObjects()
     {
@@ -223,7 +223,7 @@ class BulkRedirectPostRequest implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \IXDomainRobot\Model\Redirect[] $objects The objects to process
+     * @param \Domainrobot\Model\Redirect[] $objects The objects to process
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class BulkRedirectPostRequest implements ModelInterface, ArrayAccess
     /**
      * Gets template
      *
-     * @return \IXDomainRobot\Model\Redirect
+     * @return \Domainrobot\Model\Redirect
      */
     public function getTemplate()
     {
@@ -247,7 +247,7 @@ class BulkRedirectPostRequest implements ModelInterface, ArrayAccess
     /**
      * Sets template
      *
-     * @param \IXDomainRobot\Model\Redirect $template The template for objects to process
+     * @param \Domainrobot\Model\Redirect $template The template for objects to process
      *
      * @return $this
      */

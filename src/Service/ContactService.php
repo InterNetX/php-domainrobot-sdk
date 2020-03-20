@@ -1,14 +1,14 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\Query;
-use IXDomainRobot\Model\Contact;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\DomainRobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Model\Query;
+use Domainrobot\Model\Contact;
+use Domainrobot\Service\DomainRobotService;
 
 class ContactService extends DomainRobotService
 {

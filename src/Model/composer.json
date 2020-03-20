@@ -28,9 +28,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "IXDomainRobot\\" : "lib/" }
+        "psr-4": { "Domainrobot\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "IXDomainRobot\\" : "test/" }
+        "psr-4": { "Domainrobot\\" : "test/" }
     }
 }

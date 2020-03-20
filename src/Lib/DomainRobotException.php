@@ -1,6 +1,6 @@
 <?php
 
-namespace IXDomainRobot\Lib;
+namespace Domainrobot\Lib;
 
 class DomainRobotException extends \Exception {
 

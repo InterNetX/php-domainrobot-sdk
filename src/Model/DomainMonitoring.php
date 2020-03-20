@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainMonitoring Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,15 +59,15 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'name' => 'string',
         'idn' => 'string',
-        'notificationMobiles' => '\IXDomainRobot\Model\Phone[]',
+        'notificationMobiles' => '\Domainrobot\Model\Phone[]',
         'ocval' => 'bool',
         'cancelation' => 'bool',
         'removed' => 'bool',
-        'monitoringSetups' => '\IXDomainRobot\Model\DomainMonitoringSetup[]',
+        'monitoringSetups' => '\Domainrobot\Model\DomainMonitoringSetup[]',
         'notificationEmails' => 'string[]'
     ];
 
@@ -324,7 +324,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -334,7 +334,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -348,7 +348,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -358,7 +358,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Gets notificationMobiles
      *
-     * @return \IXDomainRobot\Model\Phone[]
+     * @return \Domainrobot\Model\Phone[]
      */
     public function getNotificationMobiles()
     {
@@ -430,7 +430,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets notificationMobiles
      *
-     * @param \IXDomainRobot\Model\Phone[] $notificationMobiles The notification mobile phone numbers.
+     * @param \Domainrobot\Model\Phone[] $notificationMobiles The notification mobile phone numbers.
      *
      * @return $this
      */
@@ -516,7 +516,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Gets monitoringSetups
      *
-     * @return \IXDomainRobot\Model\DomainMonitoringSetup[]
+     * @return \Domainrobot\Model\DomainMonitoringSetup[]
      */
     public function getMonitoringSetups()
     {
@@ -526,7 +526,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets monitoringSetups
      *
-     * @param \IXDomainRobot\Model\DomainMonitoringSetup[] $monitoringSetups The monitoringSetups
+     * @param \Domainrobot\Model\DomainMonitoringSetup[] $monitoringSetups The monitoringSetups
      *
      * @return $this
      */

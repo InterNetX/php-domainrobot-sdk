@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Query Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,9 +57,9 @@ class Query implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filters' => '\IXDomainRobot\Model\QueryFilter[]',
-        'view' => '\IXDomainRobot\Model\QueryView',
-        'orders' => '\IXDomainRobot\Model\QueryOrder[]'
+        'filters' => '\Domainrobot\Model\QueryFilter[]',
+        'view' => '\Domainrobot\Model\QueryView',
+        'orders' => '\Domainrobot\Model\QueryOrder[]'
     ];
 
     /**
@@ -219,7 +219,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Gets filters
      *
-     * @return \IXDomainRobot\Model\QueryFilter[]
+     * @return \Domainrobot\Model\QueryFilter[]
      */
     public function getFilters()
     {
@@ -229,7 +229,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Sets filters
      *
-     * @param \IXDomainRobot\Model\QueryFilter[] $filters Lorem Ipsum
+     * @param \Domainrobot\Model\QueryFilter[] $filters Lorem Ipsum
      *
      * @return $this
      */
@@ -243,7 +243,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Gets view
      *
-     * @return \IXDomainRobot\Model\QueryView
+     * @return \Domainrobot\Model\QueryView
      */
     public function getView()
     {
@@ -253,7 +253,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Sets view
      *
-     * @param \IXDomainRobot\Model\QueryView $view Lorem Ipsum
+     * @param \Domainrobot\Model\QueryView $view Lorem Ipsum
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Gets orders
      *
-     * @return \IXDomainRobot\Model\QueryOrder[]
+     * @return \Domainrobot\Model\QueryOrder[]
      */
     public function getOrders()
     {
@@ -277,7 +277,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Sets orders
      *
-     * @param \IXDomainRobot\Model\QueryOrder[] $orders Lorem Ipsum
+     * @param \Domainrobot\Model\QueryOrder[] $orders Lorem Ipsum
      *
      * @return $this
      */

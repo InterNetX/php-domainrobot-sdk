@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,14 +27,14 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
-use \IXDomainRobot\ObjectSerializer;
+namespace Domainrobot\Model;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainStudioServiceStatus Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

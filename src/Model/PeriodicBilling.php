@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * PeriodicBilling Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,15 +59,15 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
-        'status' => '\IXDomainRobot\Model\BillingStatus',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'status' => '\Domainrobot\Model\BillingStatus',
         'object' => 'string',
         'description' => 'string',
-        'period' => '\IXDomainRobot\Model\TimePeriod',
+        'period' => '\Domainrobot\Model\TimePeriod',
         'articleTypeLabel' => 'string',
         'articleLabel' => 'string',
-        'item' => '\IXDomainRobot\Model\PeriodicBilling[]',
+        'item' => '\Domainrobot\Model\PeriodicBilling[]',
         'businessCase' => 'string'
     ];
 
@@ -321,7 +321,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -331,7 +331,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -355,7 +355,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\BillingStatus
+     * @return \Domainrobot\Model\BillingStatus
      */
     public function getStatus()
     {
@@ -379,7 +379,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\BillingStatus $status The actual status of the entry, active means ok.
+     * @param \Domainrobot\Model\BillingStatus $status The actual status of the entry, active means ok.
      *
      * @return $this
      */
@@ -441,7 +441,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Gets period
      *
-     * @return \IXDomainRobot\Model\TimePeriod
+     * @return \Domainrobot\Model\TimePeriod
      */
     public function getPeriod()
     {
@@ -451,7 +451,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param \IXDomainRobot\Model\TimePeriod $period The period used by the subscription, e.g. 1 month
+     * @param \Domainrobot\Model\TimePeriod $period The period used by the subscription, e.g. 1 month
      *
      * @return $this
      */
@@ -513,7 +513,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Gets item
      *
-     * @return \IXDomainRobot\Model\PeriodicBilling[]
+     * @return \Domainrobot\Model\PeriodicBilling[]
      */
     public function getItem()
     {
@@ -523,7 +523,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     /**
      * Sets item
      *
-     * @param \IXDomainRobot\Model\PeriodicBilling[] $item The items of the subscription
+     * @param \Domainrobot\Model\PeriodicBilling[] $item The items of the subscription
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Certificate Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,36 +59,36 @@ class Certificate implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
-        'extension' => '\IXDomainRobot\Model\ExtendedValidationExtension',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'extension' => '\Domainrobot\Model\ExtendedValidationExtension',
         'id' => 'int',
         'partnerOrderId' => 'string',
         'orderId' => 'string',
-        'adminContact' => '\IXDomainRobot\Model\SslContact',
-        'technicalContact' => '\IXDomainRobot\Model\SslContact',
+        'adminContact' => '\Domainrobot\Model\SslContact',
+        'technicalContact' => '\Domainrobot\Model\SslContact',
         'name' => 'string',
-        'lifetime' => '\IXDomainRobot\Model\TimePeriod',
-        'software' => '\IXDomainRobot\Model\ServerSoftwareTypeConstants',
+        'lifetime' => '\Domainrobot\Model\TimePeriod',
+        'software' => '\Domainrobot\Model\ServerSoftwareTypeConstants',
         'comment' => 'string',
         'csr' => 'string',
         'server' => 'string',
         'serialNumber' => 'string',
         'product' => 'string',
-        'codeSigningType' => '\IXDomainRobot\Model\CodeSigningType',
-        'certificateType' => '\IXDomainRobot\Model\CertificateType',
-        'signatureHashAlgorithm' => '\IXDomainRobot\Model\SignatureHashAlgorithmConstants',
+        'codeSigningType' => '\Domainrobot\Model\CodeSigningType',
+        'certificateType' => '\Domainrobot\Model\CertificateType',
+        'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
         'expire' => '\DateTime',
-        'subjectAlternativeNames' => '\IXDomainRobot\Model\SubjectAlternativeName[]',
-        'histories' => '\IXDomainRobot\Model\CertificateHistory[]',
-        'certificationAuthority' => '\IXDomainRobot\Model\CaCertificate[]',
+        'subjectAlternativeNames' => '\Domainrobot\Model\SubjectAlternativeName[]',
+        'histories' => '\Domainrobot\Model\CertificateHistory[]',
+        'certificationAuthority' => '\Domainrobot\Model\CaCertificate[]',
         'password' => 'string',
         'firstname' => 'string',
         'lastname' => 'string',
         'organizationUnitName' => 'string',
-        'authentication' => '\IXDomainRobot\Model\CertAuthentication',
+        'authentication' => '\Domainrobot\Model\CertAuthentication',
         'certificateTransparency' => 'bool',
-        'certificateTransparencyPrivacy' => '\IXDomainRobot\Model\CertificateTransparencyPrivacyConstants',
+        'certificateTransparencyPrivacy' => '\Domainrobot\Model\CertificateTransparencyPrivacyConstants',
         'domain' => 'string',
         'hasCsr' => 'bool',
         'idn' => 'string'
@@ -472,7 +472,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -482,7 +482,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -496,7 +496,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -506,7 +506,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets extension
      *
-     * @return \IXDomainRobot\Model\ExtendedValidationExtension
+     * @return \Domainrobot\Model\ExtendedValidationExtension
      */
     public function getExtension()
     {
@@ -530,7 +530,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets extension
      *
-     * @param \IXDomainRobot\Model\ExtendedValidationExtension $extension The certificate extensions for comodo.
+     * @param \Domainrobot\Model\ExtendedValidationExtension $extension The certificate extensions for comodo.
      *
      * @return $this
      */
@@ -616,7 +616,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets adminContact
      *
-     * @return \IXDomainRobot\Model\SslContact
+     * @return \Domainrobot\Model\SslContact
      */
     public function getAdminContact()
     {
@@ -626,7 +626,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets adminContact
      *
-     * @param \IXDomainRobot\Model\SslContact $adminContact The administrative contact
+     * @param \Domainrobot\Model\SslContact $adminContact The administrative contact
      *
      * @return $this
      */
@@ -640,7 +640,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets technicalContact
      *
-     * @return \IXDomainRobot\Model\SslContact
+     * @return \Domainrobot\Model\SslContact
      */
     public function getTechnicalContact()
     {
@@ -650,7 +650,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets technicalContact
      *
-     * @param \IXDomainRobot\Model\SslContact $technicalContact The technical contact
+     * @param \Domainrobot\Model\SslContact $technicalContact The technical contact
      *
      * @return $this
      */
@@ -688,7 +688,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets lifetime
      *
-     * @return \IXDomainRobot\Model\TimePeriod
+     * @return \Domainrobot\Model\TimePeriod
      */
     public function getLifetime()
     {
@@ -698,7 +698,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets lifetime
      *
-     * @param \IXDomainRobot\Model\TimePeriod $lifetime The certificate term in months
+     * @param \Domainrobot\Model\TimePeriod $lifetime The certificate term in months
      *
      * @return $this
      */
@@ -712,7 +712,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets software
      *
-     * @return \IXDomainRobot\Model\ServerSoftwareTypeConstants
+     * @return \Domainrobot\Model\ServerSoftwareTypeConstants
      */
     public function getSoftware()
     {
@@ -722,7 +722,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets software
      *
-     * @param \IXDomainRobot\Model\ServerSoftwareTypeConstants $software The webserver software in use, relevant values: 'II5' for Mircosoft, 'APACHE2' for Linux
+     * @param \Domainrobot\Model\ServerSoftwareTypeConstants $software The webserver software in use, relevant values: 'II5' for Mircosoft, 'APACHE2' for Linux
      *
      * @return $this
      */
@@ -856,7 +856,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets codeSigningType
      *
-     * @return \IXDomainRobot\Model\CodeSigningType
+     * @return \Domainrobot\Model\CodeSigningType
      */
     public function getCodeSigningType()
     {
@@ -866,7 +866,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets codeSigningType
      *
-     * @param \IXDomainRobot\Model\CodeSigningType $codeSigningType The type of code signing
+     * @param \Domainrobot\Model\CodeSigningType $codeSigningType The type of code signing
      *
      * @return $this
      */
@@ -880,7 +880,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets certificateType
      *
-     * @return \IXDomainRobot\Model\CertificateType
+     * @return \Domainrobot\Model\CertificateType
      */
     public function getCertificateType()
     {
@@ -890,7 +890,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets certificateType
      *
-     * @param \IXDomainRobot\Model\CertificateType $certificateType The type of the certificate
+     * @param \Domainrobot\Model\CertificateType $certificateType The type of the certificate
      *
      * @return $this
      */
@@ -904,7 +904,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets signatureHashAlgorithm
      *
-     * @return \IXDomainRobot\Model\SignatureHashAlgorithmConstants
+     * @return \Domainrobot\Model\SignatureHashAlgorithmConstants
      */
     public function getSignatureHashAlgorithm()
     {
@@ -914,7 +914,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets signatureHashAlgorithm
      *
-     * @param \IXDomainRobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The signature hash algorithm which was used
+     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The signature hash algorithm which was used
      *
      * @return $this
      */
@@ -952,7 +952,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets subjectAlternativeNames
      *
-     * @return \IXDomainRobot\Model\SubjectAlternativeName[]
+     * @return \Domainrobot\Model\SubjectAlternativeName[]
      */
     public function getSubjectAlternativeNames()
     {
@@ -962,7 +962,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets subjectAlternativeNames
      *
-     * @param \IXDomainRobot\Model\SubjectAlternativeName[] $subjectAlternativeNames Subject Alternative Names (SANs)
+     * @param \Domainrobot\Model\SubjectAlternativeName[] $subjectAlternativeNames Subject Alternative Names (SANs)
      *
      * @return $this
      */
@@ -976,7 +976,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets histories
      *
-     * @return \IXDomainRobot\Model\CertificateHistory[]
+     * @return \Domainrobot\Model\CertificateHistory[]
      */
     public function getHistories()
     {
@@ -986,7 +986,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets histories
      *
-     * @param \IXDomainRobot\Model\CertificateHistory[] $histories The history of the certificate (old certificate versions)
+     * @param \Domainrobot\Model\CertificateHistory[] $histories The history of the certificate (old certificate versions)
      *
      * @return $this
      */
@@ -1000,7 +1000,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets certificationAuthority
      *
-     * @return \IXDomainRobot\Model\CaCertificate[]
+     * @return \Domainrobot\Model\CaCertificate[]
      */
     public function getCertificationAuthority()
     {
@@ -1010,7 +1010,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets certificationAuthority
      *
-     * @param \IXDomainRobot\Model\CaCertificate[] $certificationAuthority The certificate authority chain
+     * @param \Domainrobot\Model\CaCertificate[] $certificationAuthority The certificate authority chain
      *
      * @return $this
      */
@@ -1125,7 +1125,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets authentication
      *
-     * @return \IXDomainRobot\Model\CertAuthentication
+     * @return \Domainrobot\Model\CertAuthentication
      */
     public function getAuthentication()
     {
@@ -1135,7 +1135,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets authentication
      *
-     * @param \IXDomainRobot\Model\CertAuthentication $authentication The authentication of the certificate
+     * @param \Domainrobot\Model\CertAuthentication $authentication The authentication of the certificate
      *
      * @return $this
      */
@@ -1173,7 +1173,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets certificateTransparencyPrivacy
      *
-     * @return \IXDomainRobot\Model\CertificateTransparencyPrivacyConstants
+     * @return \Domainrobot\Model\CertificateTransparencyPrivacyConstants
      */
     public function getCertificateTransparencyPrivacy()
     {
@@ -1183,7 +1183,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets certificateTransparencyPrivacy
      *
-     * @param \IXDomainRobot\Model\CertificateTransparencyPrivacyConstants $certificateTransparencyPrivacy The privacy settings for certificate transparency. Default is \"Redacted\".
+     * @param \Domainrobot\Model\CertificateTransparencyPrivacyConstants $certificateTransparencyPrivacy The privacy settings for certificate transparency. Default is \"Redacted\".
      *
      * @return $this
      */

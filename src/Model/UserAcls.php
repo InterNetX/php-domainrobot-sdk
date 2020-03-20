@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * UserAcls Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class UserAcls implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user' => '\IXDomainRobot\Model\BasicUser',
-        'acls' => '\IXDomainRobot\Model\UserAcl[]'
+        'user' => '\Domainrobot\Model\BasicUser',
+        'acls' => '\Domainrobot\Model\UserAcl[]'
     ];
 
     /**
@@ -216,7 +216,7 @@ class UserAcls implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUser()
     {
@@ -226,7 +226,7 @@ class UserAcls implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \IXDomainRobot\Model\BasicUser $user The user which has been effected
+     * @param \Domainrobot\Model\BasicUser $user The user which has been effected
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class UserAcls implements ModelInterface, ArrayAccess
     /**
      * Gets acls
      *
-     * @return \IXDomainRobot\Model\UserAcl[]
+     * @return \Domainrobot\Model\UserAcl[]
      */
     public function getAcls()
     {
@@ -250,7 +250,7 @@ class UserAcls implements ModelInterface, ArrayAccess
     /**
      * Sets acls
      *
-     * @param \IXDomainRobot\Model\UserAcl[] $acls The acls of the user.
+     * @param \Domainrobot\Model\UserAcl[] $acls The acls of the user.
      *
      * @return $this
      */

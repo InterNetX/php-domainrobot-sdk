@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainStudioService Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,9 +57,9 @@ class DomainStudioService implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'whois' => '\IXDomainRobot\Model\WhoisServiceData',
-        'price' => '\IXDomainRobot\Model\PriceServiceData',
-        'estimation' => '\IXDomainRobot\Model\EstimationServiceData'
+        'whois' => '\Domainrobot\Model\WhoisServiceData',
+        'price' => '\Domainrobot\Model\PriceServiceData',
+        'estimation' => '\Domainrobot\Model\EstimationServiceData'
     ];
 
     /**
@@ -219,7 +219,7 @@ class DomainStudioService implements ModelInterface, ArrayAccess
     /**
      * Gets whois
      *
-     * @return \IXDomainRobot\Model\WhoisServiceData
+     * @return \Domainrobot\Model\WhoisServiceData
      */
     public function getWhois()
     {
@@ -229,7 +229,7 @@ class DomainStudioService implements ModelInterface, ArrayAccess
     /**
      * Sets whois
      *
-     * @param \IXDomainRobot\Model\WhoisServiceData $whois The data for the whois service
+     * @param \Domainrobot\Model\WhoisServiceData $whois The data for the whois service
      *
      * @return $this
      */
@@ -243,7 +243,7 @@ class DomainStudioService implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return \IXDomainRobot\Model\PriceServiceData
+     * @return \Domainrobot\Model\PriceServiceData
      */
     public function getPrice()
     {
@@ -253,7 +253,7 @@ class DomainStudioService implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param \IXDomainRobot\Model\PriceServiceData $price The data for the price service
+     * @param \Domainrobot\Model\PriceServiceData $price The data for the price service
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class DomainStudioService implements ModelInterface, ArrayAccess
     /**
      * Gets estimation
      *
-     * @return \IXDomainRobot\Model\EstimationServiceData
+     * @return \Domainrobot\Model\EstimationServiceData
      */
     public function getEstimation()
     {
@@ -277,7 +277,7 @@ class DomainStudioService implements ModelInterface, ArrayAccess
     /**
      * Sets estimation
      *
-     * @param \IXDomainRobot\Model\EstimationServiceData $estimation The data for the estimation service
+     * @param \Domainrobot\Model\EstimationServiceData $estimation The data for the estimation service
      *
      * @return $this
      */

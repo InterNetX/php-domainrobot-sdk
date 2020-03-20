@@ -1,15 +1,15 @@
 <?php
 
-namespace IXDomainrobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
+use Domainrobot\DomainRobot;
 
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\DomainEnvelope;
-use IXDomainRobot\Model\DomainEnvelopeSearchRequest;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Model\DomainEnvelope;
+use Domainrobot\Model\DomainEnvelopeSearchRequest;
+use Domainrobot\Service\DomainRobotService;
 
 /**
  * Implementation of the domainstudio specific API functions.

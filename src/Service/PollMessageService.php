@@ -1,13 +1,13 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Model\PollMessage;
-use IXDomainRobot\Model\DomainRobotPromise;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\DomainRobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Model\PollMessage;
+use Domainrobot\Model\DomainRobotPromise;
+use Domainrobot\Service\DomainRobotService;
 
 class PollMessageService extends DomainRobotService
 {

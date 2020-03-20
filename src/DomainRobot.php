@@ -1,18 +1,18 @@
 <?php
 
-namespace IXDomainRobot;
+namespace Domainrobot;
 
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Service\CertificateService;
-use IXDomainRobot\Service\DomainStudioService;
-use IXDomainRobot\Service\DomainService;
-use IXDomainRobot\Service\SslContactService;
-use IXDomainRobot\Service\ContactService;
-use IXDomainRobot\Service\DomainCancelationService;
-use IXDomainRobot\Service\TransferOutService;
-use IXDomainRobot\Service\TrustedApplicationService;
-use IXDomainRobot\Service\ZoneService;
-use IXDomainRobot\Service\PollMessageService;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Service\CertificateService;
+use Domainrobot\Service\DomainStudioService;
+use Domainrobot\Service\DomainService;
+use Domainrobot\Service\SslContactService;
+use Domainrobot\Service\ContactService;
+use Domainrobot\Service\DomainCancelationService;
+use Domainrobot\Service\TransferOutService;
+use Domainrobot\Service\TrustedApplicationService;
+use Domainrobot\Service\ZoneService;
+use Domainrobot\Service\PollMessageService;
 
 class DomainRobot
 {

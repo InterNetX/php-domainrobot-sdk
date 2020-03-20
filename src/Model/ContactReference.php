@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactReference Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,10 +57,10 @@ class ContactReference implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'nic' => '\IXDomainRobot\Model\NicMember',
-        'status' => '\IXDomainRobot\Model\ObjectStatus',
-        'type' => '\IXDomainRobot\Model\ContactReferenceType',
-        'role' => '\IXDomainRobot\Model\ContactReferenceType',
+        'nic' => '\Domainrobot\Model\NicMember',
+        'status' => '\Domainrobot\Model\ObjectStatus',
+        'type' => '\Domainrobot\Model\ContactReferenceType',
+        'role' => '\Domainrobot\Model\ContactReferenceType',
         'name' => 'string'
     ];
 
@@ -231,7 +231,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Gets nic
      *
-     * @return \IXDomainRobot\Model\NicMember
+     * @return \Domainrobot\Model\NicMember
      */
     public function getNic()
     {
@@ -241,7 +241,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Sets nic
      *
-     * @param \IXDomainRobot\Model\NicMember $nic The nic
+     * @param \Domainrobot\Model\NicMember $nic The nic
      *
      * @return $this
      */
@@ -255,7 +255,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\ObjectStatus
+     * @return \Domainrobot\Model\ObjectStatus
      */
     public function getStatus()
     {
@@ -265,7 +265,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\ObjectStatus $status The status
+     * @param \Domainrobot\Model\ObjectStatus $status The status
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\ContactReferenceType
+     * @return \Domainrobot\Model\ContactReferenceType
      */
     public function getType()
     {
@@ -289,7 +289,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\ContactReferenceType $type The contact reference type
+     * @param \Domainrobot\Model\ContactReferenceType $type The contact reference type
      *
      * @return $this
      */
@@ -303,7 +303,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Gets role
      *
-     * @return \IXDomainRobot\Model\ContactReferenceType
+     * @return \Domainrobot\Model\ContactReferenceType
      */
     public function getRole()
     {
@@ -313,7 +313,7 @@ class ContactReference implements ModelInterface, ArrayAccess
     /**
      * Sets role
      *
-     * @param \IXDomainRobot\Model\ContactReferenceType $role The role as contact reference type
+     * @param \Domainrobot\Model\ContactReferenceType $role The role as contact reference type
      *
      * @return $this
      */

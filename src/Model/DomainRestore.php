@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainRestore Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,33 +59,33 @@ class DomainRestore implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'name' => 'string',
         'idn' => 'string',
         'nicMemberLabel' => 'string',
-        'registryStatus' => '\IXDomainRobot\Model\RegistryStatusConstants',
-        'nameServers' => '\IXDomainRobot\Model\NameServer[]',
+        'registryStatus' => '\Domainrobot\Model\RegistryStatusConstants',
+        'nameServers' => '\Domainrobot\Model\NameServer[]',
         'nameServerEntries' => 'string[]',
-        'period' => '\IXDomainRobot\Model\TimePeriod',
+        'period' => '\Domainrobot\Model\TimePeriod',
         'trustee' => 'bool',
         'privacy' => 'bool',
         'authinfo' => 'string',
         'domainsafe' => 'bool',
-        'parking' => '\IXDomainRobot\Model\ParkingProviderConstants',
-        'extensions' => '\IXDomainRobot\Model\DomainExtensions',
+        'parking' => '\Domainrobot\Model\ParkingProviderConstants',
+        'extensions' => '\Domainrobot\Model\DomainExtensions',
         'logId' => 'int',
-        'nsCheck' => '\IXDomainRobot\Model\DNSCheck',
+        'nsCheck' => '\Domainrobot\Model\DNSCheck',
         'confirmOrder' => 'bool',
         'confirmOwnerConsent' => 'bool',
         'ignoreWhois' => 'bool',
         'comment' => 'string',
         'includeWWW' => 'bool',
         'includeWildcard' => 'bool',
-        'registrarStatus' => '\IXDomainRobot\Model\RegistryStatusConstants',
+        'registrarStatus' => '\Domainrobot\Model\RegistryStatusConstants',
         'registrarStatusReason' => 'string',
         'removeCancelation' => 'bool',
-        'autodnsSecJob' => '\IXDomainRobot\Model\DNSSecJob',
+        'autodnsSecJob' => '\Domainrobot\Model\DNSSecJob',
         'priceClass' => 'string',
         'priceClassRenew' => 'string',
         'abuseEmail' => 'string',
@@ -93,25 +93,25 @@ class DomainRestore implements ModelInterface, ArrayAccess
         'privacyPlusMail' => 'string',
         'privacyPlus' => 'bool',
         'nameServerGroup' => 'string',
-        'rddsOptIn' => '\IXDomainRobot\Model\RddsOptInConstants',
-        'servicesAdd' => '\IXDomainRobot\Model\DomainServices',
-        'servicesRem' => '\IXDomainRobot\Model\DomainServices',
+        'rddsOptIn' => '\Domainrobot\Model\RddsOptInConstants',
+        'servicesAdd' => '\Domainrobot\Model\DomainServices',
+        'servicesRem' => '\Domainrobot\Model\DomainServices',
         'deleted' => '\DateTime',
         'restorePhaseEnd' => '\DateTime',
-        'ownerc' => '\IXDomainRobot\Model\Contact',
-        'adminc' => '\IXDomainRobot\Model\Contact',
-        'techc' => '\IXDomainRobot\Model\Contact',
-        'zonec' => '\IXDomainRobot\Model\Contact',
+        'ownerc' => '\Domainrobot\Model\Contact',
+        'adminc' => '\Domainrobot\Model\Contact',
+        'techc' => '\Domainrobot\Model\Contact',
+        'zonec' => '\Domainrobot\Model\Contact',
         'expire' => '\DateTime',
         'payable' => '\DateTime',
-        'action' => '\IXDomainRobot\Model\DomainActionConstants',
+        'action' => '\Domainrobot\Model\DomainActionConstants',
         'autoDnssec' => 'bool',
         'dnssec' => 'bool',
         'validCertificate' => 'bool',
-        'cancelationStatus' => '\IXDomainRobot\Model\CancelationStatusConstants',
-        'autoRenewStatus' => '\IXDomainRobot\Model\AutoRenewStatusConstants',
-        'dnssecData' => '\IXDomainRobot\Model\DNSSec[]',
-        'zone' => '\IXDomainRobot\Model\Zone'
+        'cancelationStatus' => '\Domainrobot\Model\CancelationStatusConstants',
+        'autoRenewStatus' => '\Domainrobot\Model\AutoRenewStatusConstants',
+        'dnssecData' => '\Domainrobot\Model\DNSSec[]',
+        'zone' => '\Domainrobot\Model\Zone'
     ];
 
     /**
@@ -588,7 +588,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -598,7 +598,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -612,7 +612,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -622,7 +622,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -708,7 +708,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets registryStatus
      *
-     * @return \IXDomainRobot\Model\RegistryStatusConstants
+     * @return \Domainrobot\Model\RegistryStatusConstants
      */
     public function getRegistryStatus()
     {
@@ -718,7 +718,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets registryStatus
      *
-     * @param \IXDomainRobot\Model\RegistryStatusConstants $registryStatus The registry status.
+     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus The registry status.
      *
      * @return $this
      */
@@ -732,7 +732,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets nameServers
      *
-     * @return \IXDomainRobot\Model\NameServer[]
+     * @return \Domainrobot\Model\NameServer[]
      */
     public function getNameServers()
     {
@@ -742,7 +742,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets nameServers
      *
-     * @param \IXDomainRobot\Model\NameServer[] $nameServers The nameservers.
+     * @param \Domainrobot\Model\NameServer[] $nameServers The nameservers.
      *
      * @return $this
      */
@@ -780,7 +780,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets period
      *
-     * @return \IXDomainRobot\Model\TimePeriod
+     * @return \Domainrobot\Model\TimePeriod
      */
     public function getPeriod()
     {
@@ -790,7 +790,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param \IXDomainRobot\Model\TimePeriod $period The renew period in years.
+     * @param \Domainrobot\Model\TimePeriod $period The renew period in years.
      *
      * @return $this
      */
@@ -900,7 +900,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets parking
      *
-     * @return \IXDomainRobot\Model\ParkingProviderConstants
+     * @return \Domainrobot\Model\ParkingProviderConstants
      */
     public function getParking()
     {
@@ -910,7 +910,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets parking
      *
-     * @param \IXDomainRobot\Model\ParkingProviderConstants $parking The parking provider.
+     * @param \Domainrobot\Model\ParkingProviderConstants $parking The parking provider.
      *
      * @return $this
      */
@@ -924,7 +924,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets extensions
      *
-     * @return \IXDomainRobot\Model\DomainExtensions
+     * @return \Domainrobot\Model\DomainExtensions
      */
     public function getExtensions()
     {
@@ -934,7 +934,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets extensions
      *
-     * @param \IXDomainRobot\Model\DomainExtensions $extensions The domain extensions.
+     * @param \Domainrobot\Model\DomainExtensions $extensions The domain extensions.
      *
      * @return $this
      */
@@ -972,7 +972,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets nsCheck
      *
-     * @return \IXDomainRobot\Model\DNSCheck
+     * @return \Domainrobot\Model\DNSCheck
      */
     public function getNsCheck()
     {
@@ -982,7 +982,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets nsCheck
      *
-     * @param \IXDomainRobot\Model\DNSCheck $nsCheck An additional nameserver check will be carried out.
+     * @param \Domainrobot\Model\DNSCheck $nsCheck An additional nameserver check will be carried out.
      *
      * @return $this
      */
@@ -1140,7 +1140,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets registrarStatus
      *
-     * @return \IXDomainRobot\Model\RegistryStatusConstants
+     * @return \Domainrobot\Model\RegistryStatusConstants
      */
     public function getRegistrarStatus()
     {
@@ -1150,7 +1150,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets registrarStatus
      *
-     * @param \IXDomainRobot\Model\RegistryStatusConstants $registrarStatus The registrar status.
+     * @param \Domainrobot\Model\RegistryStatusConstants $registrarStatus The registrar status.
      *
      * @return $this
      */
@@ -1212,7 +1212,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets autodnsSecJob
      *
-     * @return \IXDomainRobot\Model\DNSSecJob
+     * @return \Domainrobot\Model\DNSSecJob
      */
     public function getAutodnsSecJob()
     {
@@ -1222,7 +1222,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets autodnsSecJob
      *
-     * @param \IXDomainRobot\Model\DNSSecJob $autodnsSecJob AutodnsSecJob
+     * @param \Domainrobot\Model\DNSSecJob $autodnsSecJob AutodnsSecJob
      *
      * @return $this
      */
@@ -1404,7 +1404,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets rddsOptIn
      *
-     * @return \IXDomainRobot\Model\RddsOptInConstants
+     * @return \Domainrobot\Model\RddsOptInConstants
      */
     public function getRddsOptIn()
     {
@@ -1414,7 +1414,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets rddsOptIn
      *
-     * @param \IXDomainRobot\Model\RddsOptInConstants $rddsOptIn Enables the whois output to show redacted contacts.
+     * @param \Domainrobot\Model\RddsOptInConstants $rddsOptIn Enables the whois output to show redacted contacts.
      *
      * @return $this
      */
@@ -1428,7 +1428,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets servicesAdd
      *
-     * @return \IXDomainRobot\Model\DomainServices
+     * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesAdd()
     {
@@ -1438,7 +1438,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets servicesAdd
      *
-     * @param \IXDomainRobot\Model\DomainServices $servicesAdd Adds pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\DomainServices $servicesAdd Adds pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
@@ -1452,7 +1452,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets servicesRem
      *
-     * @return \IXDomainRobot\Model\DomainServices
+     * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesRem()
     {
@@ -1462,7 +1462,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets servicesRem
      *
-     * @param \IXDomainRobot\Model\DomainServices $servicesRem Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\DomainServices $servicesRem Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
@@ -1524,7 +1524,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets ownerc
      *
-     * @return \IXDomainRobot\Model\Contact
+     * @return \Domainrobot\Model\Contact
      */
     public function getOwnerc()
     {
@@ -1534,7 +1534,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets ownerc
      *
-     * @param \IXDomainRobot\Model\Contact $ownerc The owner contact.
+     * @param \Domainrobot\Model\Contact $ownerc The owner contact.
      *
      * @return $this
      */
@@ -1548,7 +1548,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets adminc
      *
-     * @return \IXDomainRobot\Model\Contact
+     * @return \Domainrobot\Model\Contact
      */
     public function getAdminc()
     {
@@ -1558,7 +1558,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets adminc
      *
-     * @param \IXDomainRobot\Model\Contact $adminc The administrative contact.
+     * @param \Domainrobot\Model\Contact $adminc The administrative contact.
      *
      * @return $this
      */
@@ -1572,7 +1572,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets techc
      *
-     * @return \IXDomainRobot\Model\Contact
+     * @return \Domainrobot\Model\Contact
      */
     public function getTechc()
     {
@@ -1582,7 +1582,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets techc
      *
-     * @param \IXDomainRobot\Model\Contact $techc The technical contact reference.
+     * @param \Domainrobot\Model\Contact $techc The technical contact reference.
      *
      * @return $this
      */
@@ -1596,7 +1596,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets zonec
      *
-     * @return \IXDomainRobot\Model\Contact
+     * @return \Domainrobot\Model\Contact
      */
     public function getZonec()
     {
@@ -1606,7 +1606,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets zonec
      *
-     * @param \IXDomainRobot\Model\Contact $zonec The dns contact.
+     * @param \Domainrobot\Model\Contact $zonec The dns contact.
      *
      * @return $this
      */
@@ -1668,7 +1668,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets action
      *
-     * @return \IXDomainRobot\Model\DomainActionConstants
+     * @return \Domainrobot\Model\DomainActionConstants
      */
     public function getAction()
     {
@@ -1678,7 +1678,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets action
      *
-     * @param \IXDomainRobot\Model\DomainActionConstants $action The last action.
+     * @param \Domainrobot\Model\DomainActionConstants $action The last action.
      *
      * @return $this
      */
@@ -1764,7 +1764,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets cancelationStatus
      *
-     * @return \IXDomainRobot\Model\CancelationStatusConstants
+     * @return \Domainrobot\Model\CancelationStatusConstants
      */
     public function getCancelationStatus()
     {
@@ -1774,7 +1774,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets cancelationStatus
      *
-     * @param \IXDomainRobot\Model\CancelationStatusConstants $cancelationStatus The cancelation status.
+     * @param \Domainrobot\Model\CancelationStatusConstants $cancelationStatus The cancelation status.
      *
      * @return $this
      */
@@ -1788,7 +1788,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets autoRenewStatus
      *
-     * @return \IXDomainRobot\Model\AutoRenewStatusConstants
+     * @return \Domainrobot\Model\AutoRenewStatusConstants
      */
     public function getAutoRenewStatus()
     {
@@ -1798,7 +1798,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets autoRenewStatus
      *
-     * @param \IXDomainRobot\Model\AutoRenewStatusConstants $autoRenewStatus The autorenew status.
+     * @param \Domainrobot\Model\AutoRenewStatusConstants $autoRenewStatus The autorenew status.
      *
      * @return $this
      */
@@ -1812,7 +1812,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets dnssecData
      *
-     * @return \IXDomainRobot\Model\DNSSec[]
+     * @return \Domainrobot\Model\DNSSec[]
      */
     public function getDnssecData()
     {
@@ -1822,7 +1822,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets dnssecData
      *
-     * @param \IXDomainRobot\Model\DNSSec[] $dnssecData Submits the key material to the registry. If the list is empty, the key material is deleted at the registry. If the key is omitted during an update, the data is retained.
+     * @param \Domainrobot\Model\DNSSec[] $dnssecData Submits the key material to the registry. If the list is empty, the key material is deleted at the registry. If the key is omitted during an update, the data is retained.
      *
      * @return $this
      */
@@ -1836,7 +1836,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets zone
      *
-     * @return \IXDomainRobot\Model\Zone
+     * @return \Domainrobot\Model\Zone
      */
     public function getZone()
     {
@@ -1846,7 +1846,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets zone
      *
-     * @param \IXDomainRobot\Model\Zone $zone The zone to create.
+     * @param \Domainrobot\Model\Zone $zone The zone to create.
      *
      * @return $this
      */

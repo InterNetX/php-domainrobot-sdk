@@ -1,9 +1,9 @@
 <?php
 
-namespace IXDomainRobot\Lib;
+namespace Domainrobot\Lib;
 
-use IXDomainRobot\Lib\DomainRobotAuth;
-use IXDomainRobot\DomainRobotConstants;
+use Domainrobot\Lib\DomainRobotAuth;
+use Domainrobot\DomainRobotConstants;
 
 class DomainRobotConfig {
 

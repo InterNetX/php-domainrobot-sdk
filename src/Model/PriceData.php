@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * PriceData Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class PriceData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'prices' => '\IXDomainRobot\Model\SimplePrice[]'
+        'prices' => '\Domainrobot\Model\SimplePrice[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class PriceData implements ModelInterface, ArrayAccess
     /**
      * Gets prices
      *
-     * @return \IXDomainRobot\Model\SimplePrice[]
+     * @return \Domainrobot\Model\SimplePrice[]
      */
     public function getPrices()
     {
@@ -217,7 +217,7 @@ class PriceData implements ModelInterface, ArrayAccess
     /**
      * Sets prices
      *
-     * @param \IXDomainRobot\Model\SimplePrice[] $prices The subject products
+     * @param \Domainrobot\Model\SimplePrice[] $prices The subject products
      *
      * @return $this
      */

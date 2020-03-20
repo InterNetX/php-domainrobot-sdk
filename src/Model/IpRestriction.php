@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * IpRestriction Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class IpRestriction implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'type' => '\IXDomainRobot\Model\IpRestrictionTypeConstants',
+        'type' => '\Domainrobot\Model\IpRestrictionTypeConstants',
         'address' => 'string'
     ];
 
@@ -279,7 +279,7 @@ class IpRestriction implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\IpRestrictionTypeConstants
+     * @return \Domainrobot\Model\IpRestrictionTypeConstants
      */
     public function getType()
     {
@@ -289,7 +289,7 @@ class IpRestriction implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\IpRestrictionTypeConstants $type The restriction level
+     * @param \Domainrobot\Model\IpRestrictionTypeConstants $type The restriction level
      *
      * @return $this
      */

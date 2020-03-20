@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * UserAcl Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,13 +58,13 @@ class UserAcl implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'functionCode' => 'string',
-        'children' => '\IXDomainRobot\Model\BasicUser[]',
+        'children' => '\Domainrobot\Model\BasicUser[]',
         'childrenLocked' => 'bool',
         'userLocked' => 'bool',
         'effective' => 'bool',
-        'childrenRem' => '\IXDomainRobot\Model\BasicUser[]',
-        'childrenAdd' => '\IXDomainRobot\Model\BasicUser[]',
-        'restriction' => '\IXDomainRobot\Model\ACLRestriction'
+        'childrenRem' => '\Domainrobot\Model\BasicUser[]',
+        'childrenAdd' => '\Domainrobot\Model\BasicUser[]',
+        'restriction' => '\Domainrobot\Model\ACLRestriction'
     ];
 
     /**
@@ -273,7 +273,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Gets children
      *
-     * @return \IXDomainRobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\BasicUser[]
      */
     public function getChildren()
     {
@@ -283,7 +283,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets children
      *
-     * @param \IXDomainRobot\Model\BasicUser[] $children The none locked children
+     * @param \Domainrobot\Model\BasicUser[] $children The none locked children
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Gets childrenRem
      *
-     * @return \IXDomainRobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\BasicUser[]
      */
     public function getChildrenRem()
     {
@@ -379,7 +379,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets childrenRem
      *
-     * @param \IXDomainRobot\Model\BasicUser[] $childrenRem Children to remove from the exception list
+     * @param \Domainrobot\Model\BasicUser[] $childrenRem Children to remove from the exception list
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Gets childrenAdd
      *
-     * @return \IXDomainRobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\BasicUser[]
      */
     public function getChildrenAdd()
     {
@@ -403,7 +403,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets childrenAdd
      *
-     * @param \IXDomainRobot\Model\BasicUser[] $childrenAdd Children to add to the exception list
+     * @param \Domainrobot\Model\BasicUser[] $childrenAdd Children to add to the exception list
      *
      * @return $this
      */
@@ -417,7 +417,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Gets restriction
      *
-     * @return \IXDomainRobot\Model\ACLRestriction
+     * @return \Domainrobot\Model\ACLRestriction
      */
     public function getRestriction()
     {
@@ -427,7 +427,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets restriction
      *
-     * @param \IXDomainRobot\Model\ACLRestriction $restriction The human readable restriction mode
+     * @param \Domainrobot\Model\ACLRestriction $restriction The human readable restriction mode
      *
      * @return $this
      */

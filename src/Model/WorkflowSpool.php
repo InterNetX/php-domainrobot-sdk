@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * WorkflowSpool Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,9 +59,9 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
-        'status' => '\IXDomainRobot\Model\JobStatusConstants',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'status' => '\Domainrobot\Model\JobStatusConstants',
         'subStatus' => 'string',
         'execution' => '\DateTime',
         'id' => 'int'
@@ -297,7 +297,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -307,7 +307,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -321,7 +321,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -331,7 +331,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\JobStatusConstants
+     * @return \Domainrobot\Model\JobStatusConstants
      */
     public function getStatus()
     {
@@ -355,7 +355,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\JobStatusConstants $status The status of the job.
+     * @param \Domainrobot\Model\JobStatusConstants $status The status of the job.
      *
      * @return $this
      */

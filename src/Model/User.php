@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * User Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -64,19 +64,19 @@ class User implements ModelInterface, ArrayAccess
         'defaultEmail' => 'string',
         'status' => 'int',
         'substatus' => 'int',
-        'authType' => '\IXDomainRobot\Model\AuthType',
-        'details' => '\IXDomainRobot\Model\UserDetails',
-        'lock' => '\IXDomainRobot\Model\UserLock',
-        'acls' => '\IXDomainRobot\Model\UserAcls',
-        'profiles' => '\IXDomainRobot\Model\UserProfileViews',
-        'ancestors' => '\IXDomainRobot\Model\BasicUser[]',
-        'customer' => '\IXDomainRobot\Model\BasicCustomer',
-        'nameServerGroups' => '\IXDomainRobot\Model\VirtualNameServerGroup[]',
-        'subscriptions' => '\IXDomainRobot\Model\Subscription[]',
-        'applications' => '\IXDomainRobot\Model\TrustedApplication[]',
+        'authType' => '\Domainrobot\Model\AuthType',
+        'details' => '\Domainrobot\Model\UserDetails',
+        'lock' => '\Domainrobot\Model\UserLock',
+        'acls' => '\Domainrobot\Model\UserAcls',
+        'profiles' => '\Domainrobot\Model\UserProfileViews',
+        'ancestors' => '\Domainrobot\Model\BasicUser[]',
+        'customer' => '\Domainrobot\Model\BasicCustomer',
+        'nameServerGroups' => '\Domainrobot\Model\VirtualNameServerGroup[]',
+        'subscriptions' => '\Domainrobot\Model\Subscription[]',
+        'applications' => '\Domainrobot\Model\TrustedApplication[]',
         'user' => 'string',
         'language' => 'string',
-        'parent' => '\IXDomainRobot\Model\User'
+        'parent' => '\Domainrobot\Model\User'
     ];
 
     /**
@@ -499,7 +499,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets authType
      *
-     * @return \IXDomainRobot\Model\AuthType
+     * @return \Domainrobot\Model\AuthType
      */
     public function getAuthType()
     {
@@ -509,7 +509,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets authType
      *
-     * @param \IXDomainRobot\Model\AuthType $authType The users authorization method.
+     * @param \Domainrobot\Model\AuthType $authType The users authorization method.
      *
      * @return $this
      */
@@ -523,7 +523,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets details
      *
-     * @return \IXDomainRobot\Model\UserDetails
+     * @return \Domainrobot\Model\UserDetails
      */
     public function getDetails()
     {
@@ -533,7 +533,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets details
      *
-     * @param \IXDomainRobot\Model\UserDetails $details The user details.
+     * @param \Domainrobot\Model\UserDetails $details The user details.
      *
      * @return $this
      */
@@ -547,7 +547,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets lock
      *
-     * @return \IXDomainRobot\Model\UserLock
+     * @return \Domainrobot\Model\UserLock
      */
     public function getLock()
     {
@@ -557,7 +557,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets lock
      *
-     * @param \IXDomainRobot\Model\UserLock $lock The lock status of the user.
+     * @param \Domainrobot\Model\UserLock $lock The lock status of the user.
      *
      * @return $this
      */
@@ -571,7 +571,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets acls
      *
-     * @return \IXDomainRobot\Model\UserAcls
+     * @return \Domainrobot\Model\UserAcls
      */
     public function getAcls()
     {
@@ -581,7 +581,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets acls
      *
-     * @param \IXDomainRobot\Model\UserAcls $acls Wrapper for the user acls.
+     * @param \Domainrobot\Model\UserAcls $acls Wrapper for the user acls.
      *
      * @return $this
      */
@@ -595,7 +595,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets profiles
      *
-     * @return \IXDomainRobot\Model\UserProfileViews
+     * @return \Domainrobot\Model\UserProfileViews
      */
     public function getProfiles()
     {
@@ -605,7 +605,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets profiles
      *
-     * @param \IXDomainRobot\Model\UserProfileViews $profiles Wrapper for the user profiles.
+     * @param \Domainrobot\Model\UserProfileViews $profiles Wrapper for the user profiles.
      *
      * @return $this
      */
@@ -619,7 +619,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets ancestors
      *
-     * @return \IXDomainRobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\BasicUser[]
      */
     public function getAncestors()
     {
@@ -629,7 +629,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets ancestors
      *
-     * @param \IXDomainRobot\Model\BasicUser[] $ancestors The ancestors of the user.
+     * @param \Domainrobot\Model\BasicUser[] $ancestors The ancestors of the user.
      *
      * @return $this
      */
@@ -643,7 +643,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets customer
      *
-     * @return \IXDomainRobot\Model\BasicCustomer
+     * @return \Domainrobot\Model\BasicCustomer
      */
     public function getCustomer()
     {
@@ -653,7 +653,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \IXDomainRobot\Model\BasicCustomer $customer The customer belonging to the user.
+     * @param \Domainrobot\Model\BasicCustomer $customer The customer belonging to the user.
      *
      * @return $this
      */
@@ -667,7 +667,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets nameServerGroups
      *
-     * @return \IXDomainRobot\Model\VirtualNameServerGroup[]
+     * @return \Domainrobot\Model\VirtualNameServerGroup[]
      */
     public function getNameServerGroups()
     {
@@ -677,7 +677,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets nameServerGroups
      *
-     * @param \IXDomainRobot\Model\VirtualNameServerGroup[] $nameServerGroups The available name server groups
+     * @param \Domainrobot\Model\VirtualNameServerGroup[] $nameServerGroups The available name server groups
      *
      * @return $this
      */
@@ -691,7 +691,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets subscriptions
      *
-     * @return \IXDomainRobot\Model\Subscription[]
+     * @return \Domainrobot\Model\Subscription[]
      */
     public function getSubscriptions()
     {
@@ -701,7 +701,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets subscriptions
      *
-     * @param \IXDomainRobot\Model\Subscription[] $subscriptions Wrapper for the subscriptions.
+     * @param \Domainrobot\Model\Subscription[] $subscriptions Wrapper for the subscriptions.
      *
      * @return $this
      */
@@ -715,7 +715,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets applications
      *
-     * @return \IXDomainRobot\Model\TrustedApplication[]
+     * @return \Domainrobot\Model\TrustedApplication[]
      */
     public function getApplications()
     {
@@ -725,7 +725,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets applications
      *
-     * @param \IXDomainRobot\Model\TrustedApplication[] $applications Holds the used applications.
+     * @param \Domainrobot\Model\TrustedApplication[] $applications Holds the used applications.
      *
      * @return $this
      */
@@ -792,7 +792,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets parent
      *
-     * @return \IXDomainRobot\Model\User
+     * @return \Domainrobot\Model\User
      */
     public function getParent()
     {
@@ -802,7 +802,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets parent
      *
-     * @param \IXDomainRobot\Model\User $parent The parent.
+     * @param \Domainrobot\Model\User $parent The parent.
      *
      * @return $this
      */

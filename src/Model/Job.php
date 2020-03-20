@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Job Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,12 +59,12 @@ class Job implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
-        'status' => '\IXDomainRobot\Model\JobStatusConstants',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'status' => '\Domainrobot\Model\JobStatusConstants',
         'subStatus' => 'string',
         'execution' => '\DateTime',
-        'events' => '\IXDomainRobot\Model\WorkflowEvent[]',
+        'events' => '\Domainrobot\Model\WorkflowEvent[]',
         'subType' => 'string',
         'action' => 'string',
         'id' => 'int'
@@ -315,7 +315,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -325,7 +325,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -339,7 +339,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -349,7 +349,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\JobStatusConstants
+     * @return \Domainrobot\Model\JobStatusConstants
      */
     public function getStatus()
     {
@@ -373,7 +373,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\JobStatusConstants $status The status of the job.
+     * @param \Domainrobot\Model\JobStatusConstants $status The status of the job.
      *
      * @return $this
      */
@@ -435,7 +435,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Gets events
      *
-     * @return \IXDomainRobot\Model\WorkflowEvent[]
+     * @return \Domainrobot\Model\WorkflowEvent[]
      */
     public function getEvents()
     {
@@ -445,7 +445,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Sets events
      *
-     * @param \IXDomainRobot\Model\WorkflowEvent[] $events The events.
+     * @param \Domainrobot\Model\WorkflowEvent[] $events The events.
      *
      * @return $this
      */

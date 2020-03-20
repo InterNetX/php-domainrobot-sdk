@@ -1,16 +1,16 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\Domain;
-use IXDomainRobot\Model\DomainRestore;
-use IXDomainRobot\Model\ObjectJob;
-use IXDomainRobot\Model\Query;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\DomainRobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Model\Domain;
+use Domainrobot\Model\DomainRestore;
+use Domainrobot\Model\ObjectJob;
+use Domainrobot\Model\Query;
+use Domainrobot\Service\DomainRobotService;
 
 class DomainService extends DomainRobotService
 {

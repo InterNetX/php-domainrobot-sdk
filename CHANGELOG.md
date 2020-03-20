@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.6] - 2020-03-19
+
+* Rename namespace from IXDomainRobot to Domainrobot
+
+## [0.3.5] - 2020-03-11
+
+* Add automatic sdk version resolution
+
 ## [0.3.4] - 2020-03-02
 
 * Fix DomainStudio->search() missing body

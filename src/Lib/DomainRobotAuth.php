@@ -1,9 +1,9 @@
 <?php
 
-namespace IXDomainRobot\Lib;
+namespace Domainrobot\Lib;
 
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\DomainRobotConstants;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\DomainRobotConstants;
 
 
 class DomainRobotAuth

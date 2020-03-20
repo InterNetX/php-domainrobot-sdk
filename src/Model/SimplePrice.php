@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * SimplePrice Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,9 +57,9 @@ class SimplePrice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'price' => '\IXDomainRobot\Model\ExchangedPrice',
+        'price' => '\Domainrobot\Model\ExchangedPrice',
         'businessCase' => 'string',
-        'period' => '\IXDomainRobot\Model\TimePeriod'
+        'period' => '\Domainrobot\Model\TimePeriod'
     ];
 
     /**
@@ -219,7 +219,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return \IXDomainRobot\Model\ExchangedPrice
+     * @return \Domainrobot\Model\ExchangedPrice
      */
     public function getPrice()
     {
@@ -229,7 +229,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param \IXDomainRobot\Model\ExchangedPrice $price The price
+     * @param \Domainrobot\Model\ExchangedPrice $price The price
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
     /**
      * Gets period
      *
-     * @return \IXDomainRobot\Model\TimePeriod
+     * @return \Domainrobot\Model\TimePeriod
      */
     public function getPeriod()
     {
@@ -277,7 +277,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param \IXDomainRobot\Model\TimePeriod $period The period for the price
+     * @param \Domainrobot\Model\TimePeriod $period The period for the price
      *
      * @return $this
      */

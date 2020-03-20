@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * BulkZonePostRequest Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class BulkZonePostRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'objects' => '\IXDomainRobot\Model\Zone[]',
-        'template' => '\IXDomainRobot\Model\Zone'
+        'objects' => '\Domainrobot\Model\Zone[]',
+        'template' => '\Domainrobot\Model\Zone'
     ];
 
     /**
@@ -213,7 +213,7 @@ class BulkZonePostRequest implements ModelInterface, ArrayAccess
     /**
      * Gets objects
      *
-     * @return \IXDomainRobot\Model\Zone[]
+     * @return \Domainrobot\Model\Zone[]
      */
     public function getObjects()
     {
@@ -223,7 +223,7 @@ class BulkZonePostRequest implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \IXDomainRobot\Model\Zone[] $objects The objects to process
+     * @param \Domainrobot\Model\Zone[] $objects The objects to process
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class BulkZonePostRequest implements ModelInterface, ArrayAccess
     /**
      * Gets template
      *
-     * @return \IXDomainRobot\Model\Zone
+     * @return \Domainrobot\Model\Zone
      */
     public function getTemplate()
     {
@@ -247,7 +247,7 @@ class BulkZonePostRequest implements ModelInterface, ArrayAccess
     /**
      * Sets template
      *
-     * @param \IXDomainRobot\Model\Zone $template The template for objects to process
+     * @param \Domainrobot\Model\Zone $template The template for objects to process
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ResponseStatus Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class ResponseStatus implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'string',
         'text' => 'string',
-        'type' => '\IXDomainRobot\Model\StatusType'
+        'type' => '\Domainrobot\Model\StatusType'
     ];
 
     /**
@@ -267,7 +267,7 @@ class ResponseStatus implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\StatusType
+     * @return \Domainrobot\Model\StatusType
      */
     public function getType()
     {
@@ -277,7 +277,7 @@ class ResponseStatus implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\StatusType $type The status of the response.
+     * @param \Domainrobot\Model\StatusType $type The status of the response.
      *
      * @return $this
      */

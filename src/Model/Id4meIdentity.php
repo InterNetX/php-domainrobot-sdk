@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Id4meIdentity Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,18 +59,18 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
-        'agent' => '\IXDomainRobot\Model\Id4MeAgent',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'agent' => '\Domainrobot\Model\Id4MeAgent',
         'verifyExpire' => '\DateTime',
-        'addons' => '\IXDomainRobot\Model\Configuration',
+        'addons' => '\Domainrobot\Model\Configuration',
         'magicLink' => 'string',
-        'claims' => '\IXDomainRobot\Model\Claims',
+        'claims' => '\Domainrobot\Model\Claims',
         'showClaims' => 'bool',
         'resetUrl' => 'string',
         'resetUrlExpire' => '\DateTime',
         'name' => 'string',
-        'status' => '\IXDomainRobot\Model\IdentityStatus',
+        'status' => '\Domainrobot\Model\IdentityStatus',
         'language' => 'string',
         'record' => 'string[]'
     ];
@@ -351,7 +351,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -361,7 +361,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -375,7 +375,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -385,7 +385,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -399,7 +399,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Gets agent
      *
-     * @return \IXDomainRobot\Model\Id4MeAgent
+     * @return \Domainrobot\Model\Id4MeAgent
      */
     public function getAgent()
     {
@@ -409,7 +409,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Sets agent
      *
-     * @param \IXDomainRobot\Model\Id4MeAgent $agent The ID4ME agent
+     * @param \Domainrobot\Model\Id4MeAgent $agent The ID4ME agent
      *
      * @return $this
      */
@@ -447,7 +447,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Gets addons
      *
-     * @return \IXDomainRobot\Model\Configuration
+     * @return \Domainrobot\Model\Configuration
      */
     public function getAddons()
     {
@@ -457,7 +457,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Sets addons
      *
-     * @param \IXDomainRobot\Model\Configuration $addons Additional information
+     * @param \Domainrobot\Model\Configuration $addons Additional information
      *
      * @return $this
      */
@@ -495,7 +495,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Gets claims
      *
-     * @return \IXDomainRobot\Model\Claims
+     * @return \Domainrobot\Model\Claims
      */
     public function getClaims()
     {
@@ -505,7 +505,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Sets claims
      *
-     * @param \IXDomainRobot\Model\Claims $claims The initial claims
+     * @param \Domainrobot\Model\Claims $claims The initial claims
      *
      * @return $this
      */
@@ -615,7 +615,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\IdentityStatus
+     * @return \Domainrobot\Model\IdentityStatus
      */
     public function getStatus()
     {
@@ -625,7 +625,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\IdentityStatus $status status
+     * @param \Domainrobot\Model\IdentityStatus $status status
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * BulkZonePatchRequest Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,10 +57,10 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'objects' => '\IXDomainRobot\Model\ZoneBasePatchRequest[]',
-        'template' => '\IXDomainRobot\Model\ZoneBasePatchRequest',
-        'query' => '\IXDomainRobot\Model\Query',
-        'modifiers' => '\IXDomainRobot\Model\Modifier[]'
+        'objects' => '\Domainrobot\Model\ZoneBasePatchRequest[]',
+        'template' => '\Domainrobot\Model\ZoneBasePatchRequest',
+        'query' => '\Domainrobot\Model\Query',
+        'modifiers' => '\Domainrobot\Model\Modifier[]'
     ];
 
     /**
@@ -225,7 +225,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets objects
      *
-     * @return \IXDomainRobot\Model\ZoneBasePatchRequest[]
+     * @return \Domainrobot\Model\ZoneBasePatchRequest[]
      */
     public function getObjects()
     {
@@ -235,7 +235,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \IXDomainRobot\Model\ZoneBasePatchRequest[] $objects The objects to process
+     * @param \Domainrobot\Model\ZoneBasePatchRequest[] $objects The objects to process
      *
      * @return $this
      */
@@ -249,7 +249,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets template
      *
-     * @return \IXDomainRobot\Model\ZoneBasePatchRequest
+     * @return \Domainrobot\Model\ZoneBasePatchRequest
      */
     public function getTemplate()
     {
@@ -259,7 +259,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets template
      *
-     * @param \IXDomainRobot\Model\ZoneBasePatchRequest $template The template for objects to process
+     * @param \Domainrobot\Model\ZoneBasePatchRequest $template The template for objects to process
      *
      * @return $this
      */
@@ -273,7 +273,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets query
      *
-     * @return \IXDomainRobot\Model\Query
+     * @return \Domainrobot\Model\Query
      */
     public function getQuery()
     {
@@ -283,7 +283,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets query
      *
-     * @param \IXDomainRobot\Model\Query $query The query to fetch the object instead of defined list
+     * @param \Domainrobot\Model\Query $query The query to fetch the object instead of defined list
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets modifiers
      *
-     * @return \IXDomainRobot\Model\Modifier[]
+     * @return \Domainrobot\Model\Modifier[]
      */
     public function getModifiers()
     {
@@ -307,7 +307,7 @@ class BulkZonePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets modifiers
      *
-     * @param \IXDomainRobot\Model\Modifier[] $modifiers The modifer to apply on the objects
+     * @param \Domainrobot\Model\Modifier[] $modifiers The modifer to apply on the objects
      *
      * @return $this
      */

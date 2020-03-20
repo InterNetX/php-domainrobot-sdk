@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot\Model
+ * @package  Domainrobot\Model
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,12 +27,12 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package IXDomainRobot\Model
+ * @package Domainrobot\Model
  * @author  Swagger Codegen team
  */
 interface ModelInterface

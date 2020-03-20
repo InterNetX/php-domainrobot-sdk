@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ZoneStream Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class ZoneStream implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'adds' => '\IXDomainRobot\Model\ResourceRecord[]',
-        'rems' => '\IXDomainRobot\Model\ResourceRecord[]'
+        'adds' => '\Domainrobot\Model\ResourceRecord[]',
+        'rems' => '\Domainrobot\Model\ResourceRecord[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class ZoneStream implements ModelInterface, ArrayAccess
     /**
      * Gets adds
      *
-     * @return \IXDomainRobot\Model\ResourceRecord[]
+     * @return \Domainrobot\Model\ResourceRecord[]
      */
     public function getAdds()
     {
@@ -223,7 +223,7 @@ class ZoneStream implements ModelInterface, ArrayAccess
     /**
      * Sets adds
      *
-     * @param \IXDomainRobot\Model\ResourceRecord[] $adds the records to add.
+     * @param \Domainrobot\Model\ResourceRecord[] $adds the records to add.
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class ZoneStream implements ModelInterface, ArrayAccess
     /**
      * Gets rems
      *
-     * @return \IXDomainRobot\Model\ResourceRecord[]
+     * @return \Domainrobot\Model\ResourceRecord[]
      */
     public function getRems()
     {
@@ -247,7 +247,7 @@ class ZoneStream implements ModelInterface, ArrayAccess
     /**
      * Sets rems
      *
-     * @param \IXDomainRobot\Model\ResourceRecord[] $rems the records to remove.
+     * @param \Domainrobot\Model\ResourceRecord[] $rems the records to remove.
      *
      * @return $this
      */

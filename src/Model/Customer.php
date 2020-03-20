@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Customer Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -63,30 +63,30 @@ class Customer implements ModelInterface, ArrayAccess
         'name' => 'string',
         'organization' => 'string',
         'vatNumber' => 'string',
-        'gender' => '\IXDomainRobot\Model\GenderConstants',
+        'gender' => '\Domainrobot\Model\GenderConstants',
         'title' => 'string',
         'addressLines' => 'string[]',
         'city' => 'string',
         'state' => 'string',
         'country' => 'string',
-        'phone' => '\IXDomainRobot\Model\Phone',
-        'fax' => '\IXDomainRobot\Model\Phone',
+        'phone' => '\Domainrobot\Model\Phone',
+        'fax' => '\Domainrobot\Model\Phone',
         'emails' => 'string[]',
         'billingEmails' => 'string[]',
-        'payment' => '\IXDomainRobot\Model\PaymentConstants',
+        'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
-        'paymentCurrency' => '\IXDomainRobot\Model\Currency',
+        'paymentCurrency' => '\Domainrobot\Model\Currency',
         'invoiceLanguage' => 'string',
         'taxable' => 'bool',
-        'card' => '\IXDomainRobot\Model\Card',
-        'contracts' => '\IXDomainRobot\Model\CustomerContract[]',
-        'billingUsers' => '\IXDomainRobot\Model\BasicUser[]',
-        'account' => '\IXDomainRobot\Model\Account',
-        'clearAccount' => '\IXDomainRobot\Model\ClearAccountPeriod',
+        'card' => '\Domainrobot\Model\Card',
+        'contracts' => '\Domainrobot\Model\CustomerContract[]',
+        'billingUsers' => '\Domainrobot\Model\BasicUser[]',
+        'account' => '\Domainrobot\Model\Account',
+        'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
-        'sepa' => '\IXDomainRobot\Model\SEPAMandate'
+        'sepa' => '\Domainrobot\Model\SEPAMandate'
     ];
 
     /**
@@ -610,7 +610,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets gender
      *
-     * @return \IXDomainRobot\Model\GenderConstants
+     * @return \Domainrobot\Model\GenderConstants
      */
     public function getGender()
     {
@@ -620,7 +620,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param \IXDomainRobot\Model\GenderConstants $gender The gender of the person.
+     * @param \Domainrobot\Model\GenderConstants $gender The gender of the person.
      *
      * @return $this
      */
@@ -754,7 +754,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets phone
      *
-     * @return \IXDomainRobot\Model\Phone
+     * @return \Domainrobot\Model\Phone
      */
     public function getPhone()
     {
@@ -764,7 +764,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param \IXDomainRobot\Model\Phone $phone The phone number.
+     * @param \Domainrobot\Model\Phone $phone The phone number.
      *
      * @return $this
      */
@@ -778,7 +778,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets fax
      *
-     * @return \IXDomainRobot\Model\Phone
+     * @return \Domainrobot\Model\Phone
      */
     public function getFax()
     {
@@ -788,7 +788,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets fax
      *
-     * @param \IXDomainRobot\Model\Phone $fax The fax number.
+     * @param \Domainrobot\Model\Phone $fax The fax number.
      *
      * @return $this
      */
@@ -850,7 +850,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets payment
      *
-     * @return \IXDomainRobot\Model\PaymentConstants
+     * @return \Domainrobot\Model\PaymentConstants
      */
     public function getPayment()
     {
@@ -860,7 +860,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets payment
      *
-     * @param \IXDomainRobot\Model\PaymentConstants $payment The payment typ of the customer.
+     * @param \Domainrobot\Model\PaymentConstants $payment The payment typ of the customer.
      *
      * @return $this
      */
@@ -898,7 +898,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets paymentCurrency
      *
-     * @return \IXDomainRobot\Model\Currency
+     * @return \Domainrobot\Model\Currency
      */
     public function getPaymentCurrency()
     {
@@ -908,7 +908,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets paymentCurrency
      *
-     * @param \IXDomainRobot\Model\Currency $paymentCurrency The payment currency of the customer.
+     * @param \Domainrobot\Model\Currency $paymentCurrency The payment currency of the customer.
      *
      * @return $this
      */
@@ -970,7 +970,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets card
      *
-     * @return \IXDomainRobot\Model\Card
+     * @return \Domainrobot\Model\Card
      */
     public function getCard()
     {
@@ -980,7 +980,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets card
      *
-     * @param \IXDomainRobot\Model\Card $card The customers minimal credit card data if payament was post with credit card.
+     * @param \Domainrobot\Model\Card $card The customers minimal credit card data if payament was post with credit card.
      *
      * @return $this
      */
@@ -994,7 +994,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets contracts
      *
-     * @return \IXDomainRobot\Model\CustomerContract[]
+     * @return \Domainrobot\Model\CustomerContract[]
      */
     public function getContracts()
     {
@@ -1004,7 +1004,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets contracts
      *
-     * @param \IXDomainRobot\Model\CustomerContract[] $contracts The customers contracts.
+     * @param \Domainrobot\Model\CustomerContract[] $contracts The customers contracts.
      *
      * @return $this
      */
@@ -1018,7 +1018,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets billingUsers
      *
-     * @return \IXDomainRobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\BasicUser[]
      */
     public function getBillingUsers()
     {
@@ -1028,7 +1028,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets billingUsers
      *
-     * @param \IXDomainRobot\Model\BasicUser[] $billingUsers The billing users.
+     * @param \Domainrobot\Model\BasicUser[] $billingUsers The billing users.
      *
      * @return $this
      */
@@ -1042,7 +1042,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets account
      *
-     * @return \IXDomainRobot\Model\Account
+     * @return \Domainrobot\Model\Account
      */
     public function getAccount()
     {
@@ -1052,7 +1052,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets account
      *
-     * @param \IXDomainRobot\Model\Account $account The account of the customer in case of prepayment or if the customer has a credit limit
+     * @param \Domainrobot\Model\Account $account The account of the customer in case of prepayment or if the customer has a credit limit
      *
      * @return $this
      */
@@ -1066,7 +1066,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets clearAccount
      *
-     * @return \IXDomainRobot\Model\ClearAccountPeriod
+     * @return \Domainrobot\Model\ClearAccountPeriod
      */
     public function getClearAccount()
     {
@@ -1076,7 +1076,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets clearAccount
      *
-     * @param \IXDomainRobot\Model\ClearAccountPeriod $clearAccount The period after the post payment account will be cleared to zero
+     * @param \Domainrobot\Model\ClearAccountPeriod $clearAccount The period after the post payment account will be cleared to zero
      *
      * @return $this
      */
@@ -1176,7 +1176,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets sepa
      *
-     * @return \IXDomainRobot\Model\SEPAMandate
+     * @return \Domainrobot\Model\SEPAMandate
      */
     public function getSepa()
     {
@@ -1186,7 +1186,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets sepa
      *
-     * @param \IXDomainRobot\Model\SEPAMandate $sepa The customers sepa mandate if payament was post with sepa.
+     * @param \Domainrobot\Model\SEPAMandate $sepa The customers sepa mandate if payament was post with sepa.
      *
      * @return $this
      */

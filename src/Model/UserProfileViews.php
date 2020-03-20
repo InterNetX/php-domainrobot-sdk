@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * UserProfileViews Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class UserProfileViews implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'profiles' => '\IXDomainRobot\Model\UserProfile[]'
+        'profiles' => '\Domainrobot\Model\UserProfile[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class UserProfileViews implements ModelInterface, ArrayAccess
     /**
      * Gets profiles
      *
-     * @return \IXDomainRobot\Model\UserProfile[]
+     * @return \Domainrobot\Model\UserProfile[]
      */
     public function getProfiles()
     {
@@ -217,7 +217,7 @@ class UserProfileViews implements ModelInterface, ArrayAccess
     /**
      * Sets profiles
      *
-     * @param \IXDomainRobot\Model\UserProfile[] $profiles profiles
+     * @param \Domainrobot\Model\UserProfile[] $profiles profiles
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ObjectJob Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class ObjectJob implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'job' => '\IXDomainRobot\Model\Job',
-        'object' => '\IXDomainRobot\Model\ResponseObject'
+        'job' => '\Domainrobot\Model\Job',
+        'object' => '\Domainrobot\Model\ResponseObject'
     ];
 
     /**
@@ -213,7 +213,7 @@ class ObjectJob implements ModelInterface, ArrayAccess
     /**
      * Gets job
      *
-     * @return \IXDomainRobot\Model\Job
+     * @return \Domainrobot\Model\Job
      */
     public function getJob()
     {
@@ -223,7 +223,7 @@ class ObjectJob implements ModelInterface, ArrayAccess
     /**
      * Sets job
      *
-     * @param \IXDomainRobot\Model\Job $job The related job.
+     * @param \Domainrobot\Model\Job $job The related job.
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class ObjectJob implements ModelInterface, ArrayAccess
     /**
      * Gets object
      *
-     * @return \IXDomainRobot\Model\ResponseObject
+     * @return \Domainrobot\Model\ResponseObject
      */
     public function getObject()
     {
@@ -247,7 +247,7 @@ class ObjectJob implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \IXDomainRobot\Model\ResponseObject $object The object of the job or notify.
+     * @param \Domainrobot\Model\ResponseObject $object The object of the job or notify.
      *
      * @return $this
      */

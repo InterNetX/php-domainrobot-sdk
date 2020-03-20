@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * BulkDomainCancelationPostRequest Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class BulkDomainCancelationPostRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'objects' => '\IXDomainRobot\Model\DomainCancelation[]',
-        'template' => '\IXDomainRobot\Model\DomainCancelation'
+        'objects' => '\Domainrobot\Model\DomainCancelation[]',
+        'template' => '\Domainrobot\Model\DomainCancelation'
     ];
 
     /**
@@ -213,7 +213,7 @@ class BulkDomainCancelationPostRequest implements ModelInterface, ArrayAccess
     /**
      * Gets objects
      *
-     * @return \IXDomainRobot\Model\DomainCancelation[]
+     * @return \Domainrobot\Model\DomainCancelation[]
      */
     public function getObjects()
     {
@@ -223,7 +223,7 @@ class BulkDomainCancelationPostRequest implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \IXDomainRobot\Model\DomainCancelation[] $objects The objects to process
+     * @param \Domainrobot\Model\DomainCancelation[] $objects The objects to process
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class BulkDomainCancelationPostRequest implements ModelInterface, ArrayAccess
     /**
      * Gets template
      *
-     * @return \IXDomainRobot\Model\DomainCancelation
+     * @return \Domainrobot\Model\DomainCancelation
      */
     public function getTemplate()
     {
@@ -247,7 +247,7 @@ class BulkDomainCancelationPostRequest implements ModelInterface, ArrayAccess
     /**
      * Sets template
      *
-     * @param \IXDomainRobot\Model\DomainCancelation $template The template for objects to process
+     * @param \Domainrobot\Model\DomainCancelation $template The template for objects to process
      *
      * @return $this
      */

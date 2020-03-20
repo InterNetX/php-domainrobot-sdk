@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * PriceServiceEntity Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class PriceServiceEntity implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'configuration' => 'map[string,object]',
-        'condition' => '\IXDomainRobot\Model\ServiceEntity'
+        'condition' => '\Domainrobot\Model\ServiceEntity'
     ];
 
     /**
@@ -237,7 +237,7 @@ class PriceServiceEntity implements ModelInterface, ArrayAccess
     /**
      * Gets condition
      *
-     * @return \IXDomainRobot\Model\ServiceEntity
+     * @return \Domainrobot\Model\ServiceEntity
      */
     public function getCondition()
     {
@@ -247,7 +247,7 @@ class PriceServiceEntity implements ModelInterface, ArrayAccess
     /**
      * Sets condition
      *
-     * @param \IXDomainRobot\Model\ServiceEntity $condition Lorem Ipum
+     * @param \Domainrobot\Model\ServiceEntity $condition Lorem Ipum
      *
      * @return $this
      */

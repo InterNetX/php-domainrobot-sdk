@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * BulkDomainCommentRequest Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,9 +57,9 @@ class BulkDomainCommentRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'objects' => '\IXDomainRobot\Model\Domain[]',
-        'template' => '\IXDomainRobot\Model\Domain',
-        'query' => '\IXDomainRobot\Model\Query'
+        'objects' => '\Domainrobot\Model\Domain[]',
+        'template' => '\Domainrobot\Model\Domain',
+        'query' => '\Domainrobot\Model\Query'
     ];
 
     /**
@@ -219,7 +219,7 @@ class BulkDomainCommentRequest implements ModelInterface, ArrayAccess
     /**
      * Gets objects
      *
-     * @return \IXDomainRobot\Model\Domain[]
+     * @return \Domainrobot\Model\Domain[]
      */
     public function getObjects()
     {
@@ -229,7 +229,7 @@ class BulkDomainCommentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \IXDomainRobot\Model\Domain[] $objects The objects to process
+     * @param \Domainrobot\Model\Domain[] $objects The objects to process
      *
      * @return $this
      */
@@ -243,7 +243,7 @@ class BulkDomainCommentRequest implements ModelInterface, ArrayAccess
     /**
      * Gets template
      *
-     * @return \IXDomainRobot\Model\Domain
+     * @return \Domainrobot\Model\Domain
      */
     public function getTemplate()
     {
@@ -253,7 +253,7 @@ class BulkDomainCommentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets template
      *
-     * @param \IXDomainRobot\Model\Domain $template The template for objects to process
+     * @param \Domainrobot\Model\Domain $template The template for objects to process
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class BulkDomainCommentRequest implements ModelInterface, ArrayAccess
     /**
      * Gets query
      *
-     * @return \IXDomainRobot\Model\Query
+     * @return \Domainrobot\Model\Query
      */
     public function getQuery()
     {
@@ -277,7 +277,7 @@ class BulkDomainCommentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets query
      *
-     * @param \IXDomainRobot\Model\Query $query The query to fetch the object instead of defined list
+     * @param \Domainrobot\Model\Query $query The query to fetch the object instead of defined list
      *
      * @return $this
      */

@@ -1,16 +1,16 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\Query;
-use IXDomainRobot\Model\DomainCancelation;
-use IXDomainRobot\Model\TransferAnswer;
-use IXDomainRobot\Model\TransferOut;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\DomainRobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Model\Query;
+use Domainrobot\Model\DomainCancelation;
+use Domainrobot\Model\TransferAnswer;
+use Domainrobot\Model\TransferOut;
+use Domainrobot\Service\DomainRobotService;
 
 class TransferOutService extends DomainRobotService
 {

@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot;
+namespace Domainrobot;
 
 /**
  * ObjectSerializer Class Doc Comment

@@ -34,7 +34,7 @@ composer require internetx/php-domainrobot-sdk
 ### Basic Use
 
 ```php
-use IXDomainRobot\DomainRobot;
+use Domainrobot\DomainRobot;
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ Before you can interact with the API you need to specify your authentication cre
 * Demo System: <https://api.demo.autodns.com/v1>
 
 ```php
-use IXDomainRobot\DomainRobot;
+use Domainrobot\DomainRobot;
 
 $domainRobot = new DomainRobot([
     "url" => "https://api.autodns.com/v1",
@@ -118,7 +118,7 @@ Modles are instantiated by using the provided Models in this package.
 See an example below:
 
 ```php
-use IXDomainRobot\Model\Certificate;
+use Domainrobot\Model\Certificate;
 
 $certificateModel = new Certificate();
 ```
@@ -135,7 +135,7 @@ Properties can be set while creating a new model or a after a model has been cre
 The following examples are valid:
 
 ```php
-use IXDomainRobot\Model\Certificate;
+use Domainrobot\Model\Certificate;
 
 $timePeriod = new TimePeriod([
     "unit" => "MONTH",
@@ -148,8 +148,8 @@ $certificateModel = new Certificate([
 ```
 
 ```php
-use IXDomainRobot\Model\Certificate;
-use IXDomainRobot\Model\TimePeriod;
+use Domainrobot\Model\Certificate;
+use Domainrobot\Model\TimePeriod;
 
 $certificateModel = new Certificate();
 $timePeriod = new TimePeriod([
@@ -315,7 +315,7 @@ Array
 ### Use
 
 ```php
-use IXDomainRobot\Lib\DomainRobotHeaders;
+use Domainrobot\Lib\DomainRobotHeaders;
 ```
 
 ### Available Headers
@@ -349,7 +349,7 @@ Custom Headers (see available headers in [Available Headers](#available-headers)
 See example below.
 
 ```php
-use IXDomainRobot\Lib\DomainRobotHeaders;
+use Domainrobot\Lib\DomainRobotHeaders;
 
 $certificateData = $domainRobot->certificate
                        ->addHeaders(

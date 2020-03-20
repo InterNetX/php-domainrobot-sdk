@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * JsonResponseDataListJsonResponseDataRedirect Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,10 +58,10 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
       */
     protected static $swaggerTypes = [
         'stid' => 'string',
-        'messages' => '\IXDomainRobot\Model\Message[]',
-        'status' => '\IXDomainRobot\Model\ResponseStatus',
-        'object' => '\IXDomainRobot\Model\ResponseObject',
-        'data' => '\IXDomainRobot\Model\JsonResponseDataRedirect[][]',
+        'messages' => '\Domainrobot\Model\Message[]',
+        'status' => '\Domainrobot\Model\ResponseStatus',
+        'object' => '\Domainrobot\Model\ResponseObject',
+        'data' => '\Domainrobot\Model\JsonResponseDataRedirect[][]',
         'ctid' => 'string'
     ];
 
@@ -261,7 +261,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Gets messages
      *
-     * @return \IXDomainRobot\Model\Message[]
+     * @return \Domainrobot\Model\Message[]
      */
     public function getMessages()
     {
@@ -271,7 +271,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Sets messages
      *
-     * @param \IXDomainRobot\Model\Message[] $messages The messages belonging to the response.
+     * @param \Domainrobot\Model\Message[] $messages The messages belonging to the response.
      *
      * @return $this
      */
@@ -285,7 +285,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\ResponseStatus
+     * @return \Domainrobot\Model\ResponseStatus
      */
     public function getStatus()
     {
@@ -295,7 +295,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\ResponseStatus $status The status of the response.
+     * @param \Domainrobot\Model\ResponseStatus $status The status of the response.
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Gets object
      *
-     * @return \IXDomainRobot\Model\ResponseObject
+     * @return \Domainrobot\Model\ResponseObject
      */
     public function getObject()
     {
@@ -319,7 +319,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Sets object
      *
-     * @param \IXDomainRobot\Model\ResponseObject $object The object of the response.
+     * @param \Domainrobot\Model\ResponseObject $object The object of the response.
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Gets data
      *
-     * @return \IXDomainRobot\Model\JsonResponseDataRedirect[][]
+     * @return \Domainrobot\Model\JsonResponseDataRedirect[][]
      */
     public function getData()
     {
@@ -343,7 +343,7 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
     /**
      * Sets data
      *
-     * @param \IXDomainRobot\Model\JsonResponseDataRedirect[][] $data The data for the response. The type of the objects are depending on the request and are also specified in the responseObject value of the response.
+     * @param \Domainrobot\Model\JsonResponseDataRedirect[][] $data The data for the response. The type of the objects are depending on the request and are also specified in the responseObject value of the response.
      *
      * @return $this
      */

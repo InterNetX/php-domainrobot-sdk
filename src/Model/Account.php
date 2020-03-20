@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Account Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class Account implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'customer' => '\IXDomainRobot\Model\GenericCustomer',
+        'customer' => '\Domainrobot\Model\GenericCustomer',
         'currentAccountBalance' => 'double',
         'runningTotal' => 'double',
         'creditLimit' => 'double',
@@ -66,7 +66,7 @@ class Account implements ModelInterface, ArrayAccess
         'minRunningTotalNotificationEmail' => 'string',
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'view' => '\IXDomainRobot\Model\CurrencyRate'
+        'view' => '\Domainrobot\Model\CurrencyRate'
     ];
 
     /**
@@ -264,7 +264,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Gets customer
      *
-     * @return \IXDomainRobot\Model\GenericCustomer
+     * @return \Domainrobot\Model\GenericCustomer
      */
     public function getCustomer()
     {
@@ -274,7 +274,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \IXDomainRobot\Model\GenericCustomer $customer The customer itself
+     * @param \Domainrobot\Model\GenericCustomer $customer The customer itself
      *
      * @return $this
      */
@@ -480,7 +480,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Gets view
      *
-     * @return \IXDomainRobot\Model\CurrencyRate
+     * @return \Domainrobot\Model\CurrencyRate
      */
     public function getView()
     {
@@ -490,7 +490,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets view
      *
-     * @param \IXDomainRobot\Model\CurrencyRate $view The selected exchange for the account
+     * @param \Domainrobot\Model\CurrencyRate $view The selected exchange for the account
      *
      * @return $this
      */

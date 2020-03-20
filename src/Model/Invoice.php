@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Invoice Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,12 +59,12 @@ class Invoice implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'id' => 'int',
         'number' => 'string',
-        'customer' => '\IXDomainRobot\Model\Customer',
-        'payment' => '\IXDomainRobot\Model\PaymentConstants',
+        'customer' => '\Domainrobot\Model\Customer',
+        'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
         'paymentTransaction' => 'string',
         'subType' => 'string',
@@ -72,12 +72,12 @@ class Invoice implements ModelInterface, ArrayAccess
         'sepaMandateCollection' => '\DateTime',
         'amount' => 'double',
         'vatAmount' => 'double',
-        'status' => '\IXDomainRobot\Model\InvoiceStatusConstants',
-        'type' => '\IXDomainRobot\Model\AccountingDocumentTypeConstants',
+        'status' => '\Domainrobot\Model\InvoiceStatusConstants',
+        'type' => '\Domainrobot\Model\AccountingDocumentTypeConstants',
         'failed' => 'bool',
         'currency' => 'string',
         'paid' => '\DateTime',
-        'document' => '\IXDomainRobot\Model\Document',
+        'document' => '\Domainrobot\Model\Document',
         'comment' => 'string'
     ];
 
@@ -381,7 +381,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -391,7 +391,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -415,7 +415,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -477,7 +477,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets customer
      *
-     * @return \IXDomainRobot\Model\Customer
+     * @return \Domainrobot\Model\Customer
      */
     public function getCustomer()
     {
@@ -487,7 +487,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \IXDomainRobot\Model\Customer $customer Lorem Ipum
+     * @param \Domainrobot\Model\Customer $customer Lorem Ipum
      *
      * @return $this
      */
@@ -501,7 +501,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets payment
      *
-     * @return \IXDomainRobot\Model\PaymentConstants
+     * @return \Domainrobot\Model\PaymentConstants
      */
     public function getPayment()
     {
@@ -511,7 +511,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets payment
      *
-     * @param \IXDomainRobot\Model\PaymentConstants $payment Lorem Ipsum
+     * @param \Domainrobot\Model\PaymentConstants $payment Lorem Ipsum
      *
      * @return $this
      */
@@ -693,7 +693,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\InvoiceStatusConstants
+     * @return \Domainrobot\Model\InvoiceStatusConstants
      */
     public function getStatus()
     {
@@ -703,7 +703,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\InvoiceStatusConstants $status Lorem Ipsum
+     * @param \Domainrobot\Model\InvoiceStatusConstants $status Lorem Ipsum
      *
      * @return $this
      */
@@ -717,7 +717,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\AccountingDocumentTypeConstants
+     * @return \Domainrobot\Model\AccountingDocumentTypeConstants
      */
     public function getType()
     {
@@ -727,7 +727,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\AccountingDocumentTypeConstants $type Lorem Ipsum
+     * @param \Domainrobot\Model\AccountingDocumentTypeConstants $type Lorem Ipsum
      *
      * @return $this
      */
@@ -813,7 +813,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets document
      *
-     * @return \IXDomainRobot\Model\Document
+     * @return \Domainrobot\Model\Document
      */
     public function getDocument()
     {
@@ -823,7 +823,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets document
      *
-     * @param \IXDomainRobot\Model\Document $document Lorem Ipsum
+     * @param \Domainrobot\Model\Document $document Lorem Ipsum
      *
      * @return $this
      */

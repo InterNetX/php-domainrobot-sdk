@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Id4MeAgent Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,13 +59,13 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'externalReference' => 'string',
-        'certificate' => '\IXDomainRobot\Model\VhostCertificate',
-        'layoutAddon' => '\IXDomainRobot\Model\Configuration',
+        'certificate' => '\Domainrobot\Model\VhostCertificate',
+        'layoutAddon' => '\Domainrobot\Model\Configuration',
         'name' => 'string',
-        'status' => '\IXDomainRobot\Model\Id4MeAgentStatus',
+        'status' => '\Domainrobot\Model\Id4MeAgentStatus',
         'records' => 'string[]'
     ];
 
@@ -312,7 +312,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -322,7 +322,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -336,7 +336,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -346,7 +346,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -384,7 +384,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Gets certificate
      *
-     * @return \IXDomainRobot\Model\VhostCertificate
+     * @return \Domainrobot\Model\VhostCertificate
      */
     public function getCertificate()
     {
@@ -394,7 +394,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Sets certificate
      *
-     * @param \IXDomainRobot\Model\VhostCertificate $certificate Virtual host with certificate data
+     * @param \Domainrobot\Model\VhostCertificate $certificate Virtual host with certificate data
      *
      * @return $this
      */
@@ -408,7 +408,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Gets layoutAddon
      *
-     * @return \IXDomainRobot\Model\Configuration
+     * @return \Domainrobot\Model\Configuration
      */
     public function getLayoutAddon()
     {
@@ -418,7 +418,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Sets layoutAddon
      *
-     * @param \IXDomainRobot\Model\Configuration $layoutAddon Layout properties
+     * @param \Domainrobot\Model\Configuration $layoutAddon Layout properties
      *
      * @return $this
      */
@@ -456,7 +456,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\Id4MeAgentStatus
+     * @return \Domainrobot\Model\Id4MeAgentStatus
      */
     public function getStatus()
     {
@@ -466,7 +466,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\Id4MeAgentStatus $status Agent status
+     * @param \Domainrobot\Model\Id4MeAgentStatus $status Agent status
      *
      * @return $this
      */

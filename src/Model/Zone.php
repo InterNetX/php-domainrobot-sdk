@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Zone Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,25 +61,25 @@ class Zone implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'origin' => 'string',
         'idn' => 'string',
-        'soa' => '\IXDomainRobot\Model\Soa',
+        'soa' => '\Domainrobot\Model\Soa',
         'dnssec' => 'bool',
         'nameServerGroup' => 'string',
         'allowTransfer' => 'bool',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'logId' => 'int',
         'comment' => 'string',
         'domainsafe' => 'bool',
         'source' => 'string',
         'sourceVirtualHostname' => 'string',
-        'nameServers' => '\IXDomainRobot\Model\NameServer[]',
-        'main' => '\IXDomainRobot\Model\MainIp',
+        'nameServers' => '\Domainrobot\Model\NameServer[]',
+        'main' => '\Domainrobot\Model\MainIp',
         'wwwInclude' => 'bool',
         'virtualNameServer' => 'string',
         'freeText' => 'string[]',
-        'action' => '\IXDomainRobot\Model\NameserverActionConstants',
+        'action' => '\Domainrobot\Model\NameserverActionConstants',
         'grants' => 'string[]',
-        'resourceRecords' => '\IXDomainRobot\Model\ResourceRecord[]',
+        'resourceRecords' => '\Domainrobot\Model\ResourceRecord[]',
         'roid' => 'int'
     ];
 
@@ -444,7 +444,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Gets soa
      *
-     * @return \IXDomainRobot\Model\Soa
+     * @return \Domainrobot\Model\Soa
      */
     public function getSoa()
     {
@@ -454,7 +454,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets soa
      *
-     * @param \IXDomainRobot\Model\Soa $soa Only for ns_action: \"primary\"  and \"complete\"
+     * @param \Domainrobot\Model\Soa $soa Only for ns_action: \"primary\"  and \"complete\"
      *
      * @return $this
      */
@@ -540,7 +540,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -550,7 +550,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object
      *
      * @return $this
      */
@@ -564,7 +564,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -574,7 +574,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object
      *
      * @return $this
      */
@@ -708,7 +708,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Gets nameServers
      *
-     * @return \IXDomainRobot\Model\NameServer[]
+     * @return \Domainrobot\Model\NameServer[]
      */
     public function getNameServers()
     {
@@ -718,7 +718,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets nameServers
      *
-     * @param \IXDomainRobot\Model\NameServer[] $nameServers List of name servers
+     * @param \Domainrobot\Model\NameServer[] $nameServers List of name servers
      *
      * @return $this
      */
@@ -732,7 +732,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Gets main
      *
-     * @return \IXDomainRobot\Model\MainIp
+     * @return \Domainrobot\Model\MainIp
      */
     public function getMain()
     {
@@ -742,7 +742,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets main
      *
-     * @param \IXDomainRobot\Model\MainIp $main IP address of the zone (A record)
+     * @param \Domainrobot\Model\MainIp $main IP address of the zone (A record)
      *
      * @return $this
      */
@@ -828,7 +828,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Gets action
      *
-     * @return \IXDomainRobot\Model\NameserverActionConstants
+     * @return \Domainrobot\Model\NameserverActionConstants
      */
     public function getAction()
     {
@@ -838,7 +838,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets action
      *
-     * @param \IXDomainRobot\Model\NameserverActionConstants $action Additional nameserver check is proceeded
+     * @param \Domainrobot\Model\NameserverActionConstants $action Additional nameserver check is proceeded
      *
      * @return $this
      */
@@ -876,7 +876,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Gets resourceRecords
      *
-     * @return \IXDomainRobot\Model\ResourceRecord[]
+     * @return \Domainrobot\Model\ResourceRecord[]
      */
     public function getResourceRecords()
     {
@@ -886,7 +886,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets resourceRecords
      *
-     * @param \IXDomainRobot\Model\ResourceRecord[] $resourceRecords The resource records.
+     * @param \Domainrobot\Model\ResourceRecord[] $resourceRecords The resource records.
      *
      * @return $this
      */

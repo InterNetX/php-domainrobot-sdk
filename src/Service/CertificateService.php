@@ -1,16 +1,16 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\Certificate;
-use IXDomainRobot\Model\CertificateData;
-use IXDomainRobot\Model\ObjectJob;
-use IXDomainRobot\Model\Query;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\DomainRobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Model\Certificate;
+use Domainrobot\Model\CertificateData;
+use Domainrobot\Model\ObjectJob;
+use Domainrobot\Model\Query;
+use Domainrobot\Service\DomainRobotService;
 
 class CertificateService extends DomainRobotService
 {

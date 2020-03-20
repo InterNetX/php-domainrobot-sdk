@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactVerificationMessage Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'mail' => '\IXDomainRobot\Model\Message',
-        'status' => '\IXDomainRobot\Model\GenericStatusConstants'
+        'mail' => '\Domainrobot\Model\Message',
+        'status' => '\Domainrobot\Model\GenericStatusConstants'
     ];
 
     /**
@@ -273,7 +273,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Gets mail
      *
-     * @return \IXDomainRobot\Model\Message
+     * @return \Domainrobot\Model\Message
      */
     public function getMail()
     {
@@ -283,7 +283,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets mail
      *
-     * @param \IXDomainRobot\Model\Message $mail the email of the VerificationMessage
+     * @param \Domainrobot\Model\Message $mail the email of the VerificationMessage
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\GenericStatusConstants
+     * @return \Domainrobot\Model\GenericStatusConstants
      */
     public function getStatus()
     {
@@ -307,7 +307,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\GenericStatusConstants $status the status of the VerificationMessage
+     * @param \Domainrobot\Model\GenericStatusConstants $status the status of the VerificationMessage
      *
      * @return $this
      */

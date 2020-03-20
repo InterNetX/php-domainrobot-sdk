@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.7] - 2020-03-19
+
+* Rename all DomainRobot string to Domainrobot
+
 ## [0.3.6] - 2020-03-19
 
 * Rename namespace from IXDomainRobot to Domainrobot

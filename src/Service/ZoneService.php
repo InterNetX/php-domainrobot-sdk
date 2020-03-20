@@ -2,25 +2,25 @@
 
 namespace Domainrobot\Service;
 
-use Domainrobot\DomainRobot;
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
-use Domainrobot\Lib\DomainRobotConfig;
-use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Zone;
 use Domainrobot\Model\ZoneStream;
 use Domainrobot\Model\Query;
-use Domainrobot\Service\DomainRobotService;
+use Domainrobot\Service\DomainrobotService;
 
-class ZoneService extends DomainRobotService
+class ZoneService extends DomainrobotService
 {
 
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
     /**
@@ -31,19 +31,19 @@ class ZoneService extends DomainRobotService
      */
     public function create(Zone $body)
     {
-        $domainRobotPromise = $this->createAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Zone(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Zone(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a zone create request.
      *
      * @param Zone $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function createAsync(Zone $body)
     {
@@ -63,12 +63,12 @@ class ZoneService extends DomainRobotService
      */
     public function stream($origin, ZoneStream $body)
     {
-        $domainRobotPromise = $this->streamAsync($origin, $body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->streamAsync($origin, $body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Zone(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Zone(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -77,7 +77,7 @@ class ZoneService extends DomainRobotService
      *
      * @param [string] $origin
      * @param ZoneStream $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function streamAsync($origin, ZoneStream $body)
     {
@@ -96,26 +96,26 @@ class ZoneService extends DomainRobotService
      */
     public function importZone(Zone $body)
     {
-        $domainRobotPromise = $this->importZoneAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->importZoneAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Zone(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Zone(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Imports an existing zone.
      *
      * @param Zone $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function importZoneAsync(Zone $body)
     {
         $name = $body->getOrigin();
         $systemNameServer = $body->getVirtualNameServer();
 
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/zone/$name/$systemNameServer/_import",
             'POST',
             ["json" => $body->toArray(true)]
@@ -152,11 +152,11 @@ class ZoneService extends DomainRobotService
      */
     public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
-        $data = $domainRobotResult->getResult()['data'];
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        $data = $domainrobotResult->getResult()['data'];
         $zones = array();
         foreach ($data as $d) {
             $z = new Zone($d);
@@ -191,7 +191,7 @@ class ZoneService extends DomainRobotService
      * * changed
      *
      * @param Query $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function listAsync(Query $body = null)
     {
@@ -199,7 +199,7 @@ class ZoneService extends DomainRobotService
         if ($body != null) {
             $data = $body->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/zone/_search",
             'POST',
             ["json" => $data]
@@ -215,10 +215,10 @@ class ZoneService extends DomainRobotService
      */
     public function info($name, $systemNameServer)
     {
-        $domainRobotPromise = $this->infoAsync($name, $systemNameServer);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->infoAsync($name, $systemNameServer);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        return new Zone(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Zone(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -226,7 +226,7 @@ class ZoneService extends DomainRobotService
      *
      * @param [string] $name
      * @param [string] $systemNameServer
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function infoAsync($name, $systemNameServer)
     {
@@ -245,8 +245,8 @@ class ZoneService extends DomainRobotService
      */
     public function delete($name, $systemNameServer)
     {
-        $domainRobotPromise = $this->deleteAsync($name, $systemNameServer);
-        $domainRobotPromise->wait();
+        $domainrobotPromise = $this->deleteAsync($name, $systemNameServer);
+        $domainrobotPromise->wait();
     }
 
     /**
@@ -272,12 +272,12 @@ class ZoneService extends DomainRobotService
      */
     public function update(Zone $body)
     {
-        $domainRobotPromise = $this->updateAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->updateAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Zone(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Zone(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace Domainrobot;
 
-use Domainrobot\Lib\DomainRobotConfig;
+use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Service\CertificateService;
 use Domainrobot\Service\DomainStudioService;
 use Domainrobot\Service\DomainService;
@@ -14,16 +14,16 @@ use Domainrobot\Service\TrustedApplicationService;
 use Domainrobot\Service\ZoneService;
 use Domainrobot\Service\PollMessageService;
 
-class DomainRobot
+class Domainrobot
 {
 
     /**
      *
-     * @var DomainRobotConfig
+     * @var DomainrobotConfig
      */
-    private $domainRobotConfig;
+    private $domainrobotConfig;
 
-    private static $lastDomainRobotResult;
+    private static $lastDomainrobotResult;
 
     /**
      * Interface for all Certificate related requests
@@ -101,38 +101,38 @@ class DomainRobot
     /**
      * [
      *   "url" => string, //optional
-     *   "auth" => DomainRobotAuth //optional
+     *   "auth" => DomainrobotAuth //optional
      * ]
      *
-     * @param array $domainRobotConfig
+     * @param array $domainrobotConfig
      */
-    public function __construct($domainRobotConfig = [])
+    public function __construct($domainrobotConfig = [])
     {
-        $this->setDomainRobotConfig(new DomainRobotConfig($domainRobotConfig));
-        $this->certificate = new CertificateService($this->domainRobotConfig);
-        $this->domainStudio = new DomainStudioService($this->domainRobotConfig);
-        $this->domain = new DomainService($this->domainRobotConfig);
-        $this->sslContact = new SslContactService($this->domainRobotConfig);
-        $this->contact = new ContactService($this->domainRobotConfig);
-        $this->domainCancelation = new DomainCancelationService($this->domainRobotConfig);
-        $this->poll = new PollMessageService($this->domainRobotConfig);
-        $this->transferOut = new TransferOutService($this->domainRobotConfig);
-        $this->trustedApp = new TrustedApplicationService($this->domainRobotConfig);
-        $this->zone = new ZoneService($this->domainRobotConfig);
+        $this->setDomainrobotConfig(new DomainrobotConfig($domainrobotConfig));
+        $this->certificate = new CertificateService($this->domainrobotConfig);
+        $this->domainStudio = new DomainStudioService($this->domainrobotConfig);
+        $this->domain = new DomainService($this->domainrobotConfig);
+        $this->sslContact = new SslContactService($this->domainrobotConfig);
+        $this->contact = new ContactService($this->domainrobotConfig);
+        $this->domainCancelation = new DomainCancelationService($this->domainrobotConfig);
+        $this->poll = new PollMessageService($this->domainrobotConfig);
+        $this->transferOut = new TransferOutService($this->domainrobotConfig);
+        $this->trustedApp = new TrustedApplicationService($this->domainrobotConfig);
+        $this->zone = new ZoneService($this->domainrobotConfig);
     }
 
-    public function setDomainRobotConfig(DomainRobotConfig $domainRobotConfig)
+    public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)
     {
-        $this->domainRobotConfig = $domainRobotConfig;
+        $this->domainrobotConfig = $domainrobotConfig;
     }
 
-    public static function setLastDomainRobotResult($lastDomainRobotResult)
+    public static function setLastDomainrobotResult($lastDomainrobotResult)
     {
-        self::$lastDomainRobotResult = $lastDomainRobotResult;
+        self::$lastDomainrobotResult = $lastDomainrobotResult;
     }
 
-    public static function getLastDomainRobotResult()
+    public static function getLastDomainrobotResult()
     {
-        return self::$lastDomainRobotResult;
+        return self::$lastDomainrobotResult;
     }
 }

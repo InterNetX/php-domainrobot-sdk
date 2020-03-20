@@ -6,21 +6,21 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 
 use GuzzleHttp\Client;
-use Domainrobot\Lib\DomainRobotConfig;
-use Domainrobot\Lib\DomainRobotHeaders;
-use Domainrobot\Lib\DomainRobotException;
-use Domainrobot\Lib\DomainRobotResult;
-use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotHeaders;
+use Domainrobot\Lib\DomainrobotException;
+use Domainrobot\Lib\DomainrobotResult;
+use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Certificate;
 use Psr\Http\Message\ResponseInterface;
 
-class DomainRobotService
+class DomainrobotService
 {
     /**
      *
-     * @var DomainRobotConfig
+     * @var DomainrobotConfig
      */
-    protected $domainRobotConfig;
+    protected $domainrobotConfig;
 
     /**
      *
@@ -28,9 +28,9 @@ class DomainRobotService
      */
     protected $guzzleClientConfig;
 
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        $this->domainRobotConfig = $domainRobotConfig;
+        $this->domainRobotConfig = $domainrobotConfig;
 
         // get current version of the SDK
         $handle = fopen(__DIR__."/../../composer.json", "r");
@@ -40,9 +40,9 @@ class DomainRobotService
 
         $this->guzzleClientConfig = [
             'headers' => [
-                DomainRobotHeaders::DOMAINROBOT_CONTENT_TYPE => "application/json",
-                DomainRobotHeaders::DOMAINROBOT_USER_AGENT => "PHPDomainrobotSdk/$matches[1]",
-                DomainRobotHeaders::DOMAINROBOT_HEADER_CONTEXT => $this->domainRobotConfig->getAuth()->getContext()
+                DomainrobotHeaders::DOMAINROBOT_CONTENT_TYPE => "application/json",
+                DomainrobotHeaders::DOMAINROBOT_USER_AGENT => "PHPDomainrobotSdk/$matches[1]",
+                DomainrobotHeaders::DOMAINROBOT_HEADER_CONTEXT => $this->domainRobotConfig->getAuth()->getContext()
             ],
             'auth' => [
                 $this->domainRobotConfig->getAuth()->getUser(),
@@ -64,7 +64,7 @@ class DomainRobotService
      * @param string $method
      * @param array $options
      *
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
 
     public function sendRequest($url, $method, $options = [])
@@ -78,30 +78,30 @@ class DomainRobotService
         )->then(
             /**
              *
-             * @return DomainRobotException
+             * @return DomainrobotException
              */
             function (ResponseInterface $response) {
                 $rawResponse = $response->getBody()->getContents();
                 $decodedResponse = json_decode($rawResponse, true);
 
-                return new DomainRobotResult($decodedResponse, $response->getStatusCode());
+                return new DomainrobotResult($decodedResponse, $response->getStatusCode());
             },
             /**
              *
-             * @throws DomainRobotException
+             * @throws DomainrobotException
              */
             function (\Exception $exception) {
                 if ($exception instanceof ClientException || $exception instanceof ServerException) {
                     $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
 
-                    throw new DomainRobotException($contents, $exception->getResponse()->getStatusCode(), "DomainRobot Error");
+                    throw new DomainrobotException($contents, $exception->getResponse()->getStatusCode(), "Domainrobot Error");
                 }
                 // RequestException | ClientException
                 $msg = $exception->getMessage();
 
-                throw new DomainRobotException($msg, $exception->getCode(), "DomainRobot Error");
+                throw new DomainrobotException($msg, $exception->getCode(), "Domainrobot Error");
             }
         );
-        return new DomainRobotPromise($promise);
+        return new DomainrobotPromise($promise);
     }
 }

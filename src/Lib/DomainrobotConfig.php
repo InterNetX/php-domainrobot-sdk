@@ -2,10 +2,10 @@
 
 namespace Domainrobot\Lib;
 
-use Domainrobot\Lib\DomainRobotAuth;
-use Domainrobot\DomainRobotConstants;
+use Domainrobot\Lib\DomainrobotAuth;
+use Domainrobot\DomainrobotConstants;
 
-class DomainRobotConfig {
+class DomainrobotConfig {
 
     /**
      * AutoDNS Base URL
@@ -16,22 +16,22 @@ class DomainRobotConfig {
     /**
      * AutoDNS Auth
      *
-     * @var DomainRobotAuth
+     * @var DomainrobotAuth
      */
     private $auth;
 
     /**
      * [
      *   "url" => string, //optional
-     *   "auth" => DomainRobotAuth //optional
+     *   "auth" => DomainrobotAuth //optional
      * ]
      *
      * @param array $config
      */
     public function __construct($config = [])
     {
-        $this->setUrl(ArrayHelper::getValueFromArray($config, 'url', DomainRobotConstants::AUTODNS_URL));
-        $this->setAuth(ArrayHelper::getValueFromArray($config, 'auth', new DomainRobotAuth()));
+        $this->setUrl(ArrayHelper::getValueFromArray($config, 'url', DomainrobotConstants::AUTODNS_URL));
+        $this->setAuth(ArrayHelper::getValueFromArray($config, 'auth', new DomainrobotAuth()));
     }
 
     private function setUrl(string $url)
@@ -39,9 +39,9 @@ class DomainRobotConfig {
         $this->url = $url;
     }
 
-    private function setAuth(DomainRobotAuth $domainRobotAuth)
+    private function setAuth(DomainrobotAuth $domainrobotAuth)
     {
-        $this->auth = $domainRobotAuth;
+        $this->auth = $domainrobotAuth;
     }
 
     public function getUrl() :string
@@ -49,7 +49,7 @@ class DomainRobotConfig {
         return $this->url;
     }
 
-    public function getAuth() :DomainRobotAuth
+    public function getAuth() :DomainrobotAuth
     {
         return $this->auth;
     }

@@ -34,7 +34,7 @@ composer require internetx/php-domainrobot-sdk
 ### Basic Use
 
 ```php
-use Domainrobot\DomainRobot;
+use Domainrobot\Domainrobot;
 ```
 
 ## Usage
@@ -45,11 +45,11 @@ Before you can interact with the API you need to specify your authentication cre
 * Demo System: <https://api.demo.autodns.com/v1>
 
 ```php
-use Domainrobot\DomainRobot;
+use Domainrobot\Domainrobot;
 
-$domainRobot = new DomainRobot([
+$domainrobot = new Domainrobot([
     "url" => "https://api.autodns.com/v1",
-    "auth" => new DomainRobotAuth([
+    "auth" => new DomainrobotAuth([
         "user" => "user",
         "password" => "password",
         "context" => 4
@@ -63,11 +63,11 @@ This library is mainly meant to be used with synchronous request but also provid
 
 The basic difference is that the asynchronous requests will provide you with less guidance than the synchronous requests.
 
-A synchronous requests will return an Object as described in the official swagger documentation, whereas an asynchronous request will give you a DomainRobotResult Object which will only return the response as a plain array. You will then have to handle the data on your own.
+A synchronous requests will return an Object as described in the official swagger documentation, whereas an asynchronous request will give you a DomainrobotResult Object which will only return the response as a plain array. You will then have to handle the data on your own.
 
 Both methods provide certain advantages in certain situations.
 
-Be aware that synchronous request will give you access to the return status code and the plain array result through *DomainRobot::getLastDomainRobotResult()*
+Be aware that synchronous request will give you access to the return status code and the plain array result through *Domainrobot::getLastDomainrobotResult()*
 
 Please refer to the examples below for more details.
 
@@ -76,18 +76,18 @@ Please refer to the examples below for more details.
 ```php
 // Sends a synchronous request
 try {
-    $certData = $domainRobot->certificate->prepareOrder($body);
-}catch(DomainRobotException $exception){
+    $certData = $domainrobot->certificate->prepareOrder($body);
+}catch(DomainrobotException $exception){
     return response()->json($exception->getError(), $exception->getStatusCode());
 }
 
 // Access response values through the provided CertificateData object
 $certData->getName();
 
-// Access plain result and statuscode through DomainRobot::getLastDomainRobotResult
+// Access plain result and statuscode through Domainrobot::getLastDomainrobotResult
 return response()->json(
-    DomainRobot::getLastDomainRobotResult()->getResult(),
-    DomainRobot::getLastDomainRobotResult()->getStatusCode()
+    Domainrobot::getLastDomainrobotResult()->getResult(),
+    Domainrobot::getLastDomainrobotResult()->getStatusCode()
 );
 ```
 
@@ -96,14 +96,14 @@ return response()->json(
 ```php
 // Sends an asynchronous request
 try {
-    $promise = $domainRobot->certificate->prepareOrderAsync($body);
-    // Wait for the promise. This will return a DomainRobotResult object
+    $promise = $domainrobot->certificate->prepareOrderAsync($body);
+    // Wait for the promise. This will return a DomainrobotResult object
     $result = $promise->wait();
-}catch(DomainRobotException $exception){
+}catch(DomainrobotException $exception){
     return response()->json($exception->getError(), $exception->getStatusCode());
 }
 
-// Access response values through the provided DomainRobotResult object
+// Access response values through the provided DomainrobotResult object
 $statusCode = $result->getStatusCode();
 $data = $result->getData()
 ```
@@ -267,14 +267,14 @@ function list(Query $body = null);
 
 ### Exception handling
 
-If there is any error response from the API, the services will throw a DomainRobotException, which contains information about the error.
+If there is any error response from the API, the services will throw a DomainrobotException, which contains information about the error.
 
 Example:
 
 ```php
  try {
-    $promise = $domainRobot->certificate->createRealtime($certificate);
-}catch(DomainRobotException $exception){
+    $promise = $domainrobot->certificate->createRealtime($certificate);
+}catch(DomainrobotException $exception){
     return response()->json($exception->getError(), $exception->getStatusCode());
 }
 ```
@@ -315,7 +315,7 @@ Array
 ### Use
 
 ```php
-use Domainrobot\Lib\DomainRobotHeaders;
+use Domainrobot\Lib\DomainrobotHeaders;
 ```
 
 ### Available Headers
@@ -349,11 +349,11 @@ Custom Headers (see available headers in [Available Headers](#available-headers)
 See example below.
 
 ```php
-use Domainrobot\Lib\DomainRobotHeaders;
+use Domainrobot\Lib\DomainrobotHeaders;
 
-$certificateData = $domainRobot->certificate
+$certificateData = $domainrobot->certificate
                        ->addHeaders(
-                            [DomainRobotHeaders::DOMAINROBOT_HEADER_2FA_TOKEN => "token"]
+                            [DomainrobotHeaders::DOMAINROBOT_HEADER_2FA_TOKEN => "token"]
                        )->prepareOrder($body);
 ```
 

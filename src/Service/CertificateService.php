@@ -2,26 +2,26 @@
 
 namespace Domainrobot\Service;
 
-use Domainrobot\DomainRobot;
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
-use Domainrobot\Lib\DomainRobotConfig;
-use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Certificate;
 use Domainrobot\Model\CertificateData;
 use Domainrobot\Model\ObjectJob;
 use Domainrobot\Model\Query;
-use Domainrobot\Service\DomainRobotService;
+use Domainrobot\Service\DomainrobotService;
 
-class CertificateService extends DomainRobotService
+class CertificateService extends DomainrobotService
 {
 
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
     /**
@@ -34,13 +34,13 @@ class CertificateService extends DomainRobotService
      */
     public function create(Certificate $body)
     {
-        $domainRobotPromise = $this->createAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
     /**
@@ -49,7 +49,7 @@ class CertificateService extends DomainRobotService
      * for polling.
      *
      * @param Certificate $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function createAsync(Certificate $body)
     {
@@ -74,12 +74,12 @@ class CertificateService extends DomainRobotService
      */
     public function realtime(Certificate $body)
     {
-        $domainRobotPromise = $this->realtimeAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->realtimeAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Certificate(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Certificate(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -90,7 +90,7 @@ class CertificateService extends DomainRobotService
      * methods.
      *
      * @param Certificate $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function realtimeAsync(Certificate $body)
     {
@@ -116,12 +116,12 @@ class CertificateService extends DomainRobotService
      */
     public function prepareOrder(CertificateData $body)
     {
-        $domainRobotPromise = $this->prepareOrderAsync();
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->prepareOrderAsync();
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new CertificateData(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new CertificateData(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -134,13 +134,13 @@ class CertificateService extends DomainRobotService
      * * renew
      *
      * @param CertificateData $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function prepareOrderAsync(CertificateData $body)
     {
         //$this->prepareCsr();
 
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/_prepareOrder",
             'POST',
             ["json" => $body->toArray(true)]
@@ -172,11 +172,11 @@ class CertificateService extends DomainRobotService
      */
     public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
-        $data = $domainRobotResult->getResult()['data'];
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        $data = $domainrobotResult->getResult()['data'];
         $certs = array();
         foreach ($data as $d) {
             $c = new Certificate($d);
@@ -206,7 +206,7 @@ class CertificateService extends DomainRobotService
      * * authentication
      *
      * @param Query $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
 
     public function listAsync(Query $body = null)
@@ -215,7 +215,7 @@ class CertificateService extends DomainRobotService
         if ($query != null) {
             $data = $body->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/certificate/_search",
             'POST',
             ["json" => $data]
@@ -230,18 +230,18 @@ class CertificateService extends DomainRobotService
      */
     public function info($id)
     {
-        $domainRobotPromise = $this->infoAsync($id);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->infoAsync($id);
+        $domainrobotResult = $domainrobotPromise->wait();
 
 
-        return new Certificate(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Certificate(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Fetches the information for an existing certificate.
      *
      * @param [int] $id
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function infoAsync($id)
     {
@@ -260,11 +260,11 @@ class CertificateService extends DomainRobotService
      */
     public function delete($id)
     {
-        $domainRobotPromise = $this->deleteAsync($id);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->deleteAsync($id);
+        $domainrobotResult = $domainrobotPromise->wait();
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -274,7 +274,7 @@ class CertificateService extends DomainRobotService
      * for polling.
      *
      * @param [int] $id
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function deleteAsync($id)
     {
@@ -295,13 +295,13 @@ class CertificateService extends DomainRobotService
      */
     public function reissue(Certificate $body)
     {
-        $domainRobotPromise = $this->reissueAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->reissueAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -311,7 +311,7 @@ class CertificateService extends DomainRobotService
      * for polling.
      *
      * @param Certificate $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function reissueAsync(Certificate $body)
     {
@@ -338,13 +338,13 @@ class CertificateService extends DomainRobotService
      */
     public function renew(Certificate $body)
     {
-        $domainRobotPromise = $this->renewAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->renewAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -354,7 +354,7 @@ class CertificateService extends DomainRobotService
      * for polling.
      *
      * @param Certificate $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function renewAsync(Certificate $body)
     {
@@ -378,10 +378,10 @@ class CertificateService extends DomainRobotService
      */
     public function commentUpdate($id, $comment)
     {
-        $domainRobotPromise = $this->commentUpdateAsync($id, $comment);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->commentUpdateAsync($id, $comment);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
     }
 
     /**

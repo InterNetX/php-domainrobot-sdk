@@ -2,26 +2,26 @@
 
 namespace Domainrobot\Service;
 
-use Domainrobot\DomainRobot;
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
-use Domainrobot\Lib\DomainRobotConfig;
-use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Domain;
 use Domainrobot\Model\DomainRestore;
 use Domainrobot\Model\ObjectJob;
 use Domainrobot\Model\Query;
-use Domainrobot\Service\DomainRobotService;
+use Domainrobot\Service\DomainrobotService;
 
-class DomainService extends DomainRobotService
+class DomainService extends DomainrobotService
 {
 
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
     /**
@@ -32,13 +32,13 @@ class DomainService extends DomainRobotService
      */
     public function create(Domain $body)
     {
-        $domainRobotPromise = $this->createAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -46,7 +46,7 @@ class DomainService extends DomainRobotService
      * Sends a Domain create request.
      *
      * @param Domain $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function createAsync(Domain $body)
     {
@@ -65,19 +65,19 @@ class DomainService extends DomainRobotService
      */
     public function createAuthinfo1($name)
     {
-        $domainRobotPromise = $this->createAuthinfo1Async($name);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAuthinfo1Async($name);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Domain(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a authinfo1 create request.
      *
      * @param [string] $name
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function createAuthinfo1Async($name)
     {
@@ -95,8 +95,8 @@ class DomainService extends DomainRobotService
      */
     public function createAuthinfo2($name)
     {
-        $domainRobotPromise = $this->createAuthinfo2Async($name);
-        $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAuthinfo2Async($name);
+        $domainrobotPromise->wait();
     }
 
     /**
@@ -121,13 +121,13 @@ class DomainService extends DomainRobotService
      */
     public function renew(Domain $body)
     {
-        $domainRobotPromise = $this->renewAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->renewAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -135,7 +135,7 @@ class DomainService extends DomainRobotService
      * Sends a Domain renew request.
      *
      * @param Domain $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function renewAsync(Domain $body)
     {
@@ -157,13 +157,13 @@ class DomainService extends DomainRobotService
      */
     public function transfer(Domain $body)
     {
-        $domainRobotPromise = $this->transferAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->transferAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -171,7 +171,7 @@ class DomainService extends DomainRobotService
      * Sends a Domain transfer request.
      *
      * @param Domain $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function transferAsync(Domain $body)
     {
@@ -191,8 +191,8 @@ class DomainService extends DomainRobotService
      */
     public function updateStatus(Domain $body)
     {
-        $domainRobotPromise = $this->updateStatusAsync($name);
-        $domainRobotPromise->wait();
+        $domainrobotPromise = $this->updateStatusAsync($name);
+        $domainrobotPromise->wait();
     }
 
     /**
@@ -242,11 +242,11 @@ class DomainService extends DomainRobotService
      */
     public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
-        $data = $domainRobotResult->getResult()['data'];
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        $data = $domainrobotResult->getResult()['data'];
         $domains = array();
         foreach ($data as $d) {
             $do = new Domain($d);
@@ -280,7 +280,7 @@ class DomainService extends DomainRobotService
      * * autorenew
      *
      * @param Query $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function listAsync(Query $body = null)
     {
@@ -288,7 +288,7 @@ class DomainService extends DomainRobotService
         if ($body != null) {
             $data = $body->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/domain/_search",
             'POST',
             ["json" => $data]
@@ -333,12 +333,12 @@ class DomainService extends DomainRobotService
      */
     public function restoreList(Query $body = null)
     {
-        $domainRobotPromise = $this->restoreListAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->restoreListAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        $data = $domainRobotResult->getResult()['data'];
+        $data = $domainrobotResult->getResult()['data'];
         $domainRestores = array();
         foreach ($data as $d) {
             $dr = new DomainRestore($d);
@@ -381,7 +381,7 @@ class DomainService extends DomainRobotService
      * * status
      *
      * @param Query $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function restoreListAsync(Query $body = null)
     {
@@ -389,7 +389,7 @@ class DomainService extends DomainRobotService
         if ($body != null) {
             $data = $body->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/domain/restore/_search",
             'POST',
             ["json" => $data]
@@ -404,17 +404,17 @@ class DomainService extends DomainRobotService
      */
     public function info($name)
     {
-        $domainRobotPromise = $this->infoAsync($name);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->infoAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        return new Domain(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a Domain info request.
      *
      * @param [string] $name
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function infoAsync($name)
     {
@@ -432,8 +432,8 @@ class DomainService extends DomainRobotService
      */
     public function deleteAuthinfo1($name)
     {
-        $domainRobotPromise = $this->deleteAuthinfo1Async($name);
-        $domainRobotPromise->wait();
+        $domainrobotPromise = $this->deleteAuthinfo1Async($name);
+        $domainrobotPromise->wait();
     }
 
     /**
@@ -458,13 +458,13 @@ class DomainService extends DomainRobotService
      */
     public function update(Domain $body)
     {
-        $domainRobotPromise = $this->updateAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->updateAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -472,7 +472,7 @@ class DomainService extends DomainRobotService
      * Sends a Domain update request.
      *
      * @param Domain $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function updateAsync(Domain $body)
     {
@@ -494,13 +494,13 @@ class DomainService extends DomainRobotService
      */
     public function restore(DomainRestore $body)
     {
-        $domainRobotPromise = $this->restoreAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->restoreAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
         ]);
     }
 
@@ -508,7 +508,7 @@ class DomainService extends DomainRobotService
      * Sends a Domain restore request.
      *
      * @param DomainRestore $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function restoreAsync(DomainRestore $body)
     {

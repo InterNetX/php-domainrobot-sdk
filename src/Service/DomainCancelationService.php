@@ -2,24 +2,24 @@
 
 namespace Domainrobot\Service;
 
-use Domainrobot\DomainRobot;
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
-use Domainrobot\Lib\DomainRobotConfig;
-use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\DomainCancelation;
-use Domainrobot\Service\DomainRobotService;
+use Domainrobot\Service\DomainrobotService;
 
-class DomainCancelationService extends DomainRobotService
+class DomainCancelationService extends DomainrobotService
 {
 
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
     /**
@@ -30,19 +30,19 @@ class DomainCancelationService extends DomainRobotService
      */
     public function create(DomainCancelation $body)
     {
-        $domainRobotPromise = $this->createAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new DomainCancelation(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a DomainCancelation create request.
      *
      * @param DomainCancelation $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function createAsync(DomainCancelation $body)
     {
@@ -64,19 +64,19 @@ class DomainCancelationService extends DomainRobotService
      */
     public function update(DomainCancelation $body)
     {
-        $domainRobotPromise = $this->updateAsync($name);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->updateAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new DomainCancelation(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a DomainCancelation update request.
      *
      * @param DomainCancelation $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function updateAsync(DomainCancelation $body)
     {
@@ -98,8 +98,8 @@ class DomainCancelationService extends DomainRobotService
      */
     public function delete($domain)
     {
-        $domainRobotPromise = $this->deleteAsync($domain);
-        $domainRobotPromise->wait();
+        $domainrobotPromise = $this->deleteAsync($domain);
+        $domainrobotPromise->wait();
     }
 
 
@@ -126,18 +126,18 @@ class DomainCancelationService extends DomainRobotService
      */
     public function info($domain)
     {
-        $domainRobotPromise = $this->infoAsync($domain);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->infoAsync($domain);
+        $domainrobotResult = $domainrobotPromise->wait();
 
 
-        return new DomainCancelation(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Fetches the cancelation for the given domain.
      *
      * @param [string] $domain
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function infoAsync($domain)
     {
@@ -170,11 +170,11 @@ class DomainCancelationService extends DomainRobotService
      */
     public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
-        $data = $domainRobotResult->getResult()['data'];
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        $data = $domainrobotResult->getResult()['data'];
         $domainCancelations = array();
         foreach ($data as $d) {
             $dc = new DomainCancelation($d);
@@ -202,7 +202,7 @@ class DomainCancelationService extends DomainRobotService
      * * updated
      *
      * @param Query $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
 
     public function listAsync(Query $body = null)
@@ -211,7 +211,7 @@ class DomainCancelationService extends DomainRobotService
         if ($body != null) {
             $data = $body->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/domain/cancelation/_search",
             'POST',
             ["json" => $data]

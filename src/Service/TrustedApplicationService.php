@@ -2,25 +2,25 @@
 
 namespace Domainrobot\Service;
 
-use Domainrobot\DomainRobot;
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
-use Domainrobot\Lib\DomainRobotConfig;
-use Domainrobot\Lib\DomainRobotPromise;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\TrustedApplication;
-use Domainrobot\Service\DomainRobotService;
+use Domainrobot\Service\DomainrobotService;
 
-class TrustedApplicationService extends DomainRobotService
+class TrustedApplicationService extends DomainrobotService
 {
 
 
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
     /**
@@ -31,19 +31,19 @@ class TrustedApplicationService extends DomainRobotService
      */
     public function create(TrustedApplication $body)
     {
-        $domainRobotPromise = $this->createAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new TrustedApplication(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new TrustedApplication(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a TrustedApplication create request.
      *
      * @param TrustedApplication $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function createAsync(TrustedApplication $body)
     {
@@ -61,11 +61,11 @@ class TrustedApplicationService extends DomainRobotService
      */
     public function list(Query $query = null)
     {
-        $domainRobotPromise = $this->listAsync($query);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->listAsync($query);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
-        $data = $domainRobotResult->getResult()['data'];
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        $data = $domainrobotResult->getResult()['data'];
         $trustedApps = array();
         foreach ($data as $d) {
             $t = new TrustedApplication($d);
@@ -77,7 +77,7 @@ class TrustedApplicationService extends DomainRobotService
     /**
      *  Sends a TrustedApplication list request.
      *
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function listAsync(Query $query = null)
     {
@@ -85,7 +85,7 @@ class TrustedApplicationService extends DomainRobotService
         if ($query != null) {
             $body = $query->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/trustedapp/_search",
             'POST',
             ["json" => $body]
@@ -100,18 +100,18 @@ class TrustedApplicationService extends DomainRobotService
      */
     public function info($id)
     {
-        $domainRobotPromise = $this->infoAsync($id);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->infoAsync($id);
+        $domainrobotResult = $domainrobotPromise->wait();
 
 
-        return new TrustedApplication(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new TrustedApplication(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a TrustedApplication info request.
      *
      * @param [int] $id
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function infoAsync($id)
     {
@@ -129,8 +129,8 @@ class TrustedApplicationService extends DomainRobotService
      */
     public function delete($id)
     {
-        $domainRobotPromise = $this->deleteAsync($id);
-        $domainRobotPromise->wait();
+        $domainrobotPromise = $this->deleteAsync($id);
+        $domainrobotPromise->wait();
     }
 
 
@@ -138,7 +138,7 @@ class TrustedApplicationService extends DomainRobotService
      * Sends a TrustedApplication delete request.
      *
      * @param [int] $id
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function deleteAsync($id)
     {
@@ -156,17 +156,17 @@ class TrustedApplicationService extends DomainRobotService
      */
     public function update(TrustedApplication $body)
     {
-        $domainRobotPromise = $this->updateAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->updateAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
     }
 
     /**
      * Sends a TrustedApplication update request.
      *
      * @param TrustedApplication $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function updateAsync(TrustedApplication $body)
     {

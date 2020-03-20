@@ -2,7 +2,7 @@
 
 namespace Domainrobot\Lib;
 
-class DomainRobotHeaders
+class DomainrobotHeaders
 {
     const DOMAINROBOT_HEADER_DOMAINROBOT_STID = "X-Domainrobot-Stid";
 

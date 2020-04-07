@@ -1,8 +1,8 @@
 <?php
 
-namespace IXDomainRobot\Lib;
+namespace Domainrobot\Lib;
 
-class DomainRobotPromise {
+class DomainrobotPromise {
 
     private $promise;
 
@@ -13,7 +13,7 @@ class DomainRobotPromise {
     /**
      * Undocumented function
      *
-     * @return DomainRobotResult
+     * @return DomainrobotResult
      */
     public function wait(){
         return $this->promise->wait();

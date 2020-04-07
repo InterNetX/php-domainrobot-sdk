@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * SEPAMandate Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,11 +61,11 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'reference' => 'string',
         'confirmSignature' => '\DateTime',
-        'confirmIp' => '\IXDomainRobot\Model\InetAddress',
+        'confirmIp' => '\Domainrobot\Model\InetAddress',
         'confirmUseragent' => 'string',
         'confirmChecked' => 'bool',
         'expire' => '\DateTime',
-        'histories' => '\IXDomainRobot\Model\SEPAMandate[]',
+        'histories' => '\Domainrobot\Model\SEPAMandate[]',
         'accountHolder' => 'string',
         'iban' => 'string',
         'bic' => 'string'
@@ -378,7 +378,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     /**
      * Gets confirmIp
      *
-     * @return \IXDomainRobot\Model\InetAddress
+     * @return \Domainrobot\Model\InetAddress
      */
     public function getConfirmIp()
     {
@@ -388,7 +388,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     /**
      * Sets confirmIp
      *
-     * @param \IXDomainRobot\Model\InetAddress $confirmIp The address of the confirm signature
+     * @param \Domainrobot\Model\InetAddress $confirmIp The address of the confirm signature
      *
      * @return $this
      */
@@ -474,7 +474,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     /**
      * Gets histories
      *
-     * @return \IXDomainRobot\Model\SEPAMandate[]
+     * @return \Domainrobot\Model\SEPAMandate[]
      */
     public function getHistories()
     {
@@ -484,7 +484,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     /**
      * Sets histories
      *
-     * @param \IXDomainRobot\Model\SEPAMandate[] $histories A list of historized sepa mandates
+     * @param \Domainrobot\Model\SEPAMandate[] $histories A list of historized sepa mandates
      *
      * @return $this
      */

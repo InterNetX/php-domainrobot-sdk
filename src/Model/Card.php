@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Card Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class Card implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'type' => '\IXDomainRobot\Model\CreditCardVendor',
-        'status' => '\IXDomainRobot\Model\CardStatus',
+        'type' => '\Domainrobot\Model\CreditCardVendor',
+        'status' => '\Domainrobot\Model\CardStatus',
         'validFrom' => '\DateTime',
         'validTo' => '\DateTime'
     ];
@@ -285,7 +285,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\CreditCardVendor
+     * @return \Domainrobot\Model\CreditCardVendor
      */
     public function getType()
     {
@@ -295,7 +295,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\CreditCardVendor $type The credit card vendor
+     * @param \Domainrobot\Model\CreditCardVendor $type The credit card vendor
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\CardStatus
+     * @return \Domainrobot\Model\CardStatus
      */
     public function getStatus()
     {
@@ -319,7 +319,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\CardStatus $status The actual status of the credit card
+     * @param \Domainrobot\Model\CardStatus $status The actual status of the credit card
      *
      * @return $this
      */

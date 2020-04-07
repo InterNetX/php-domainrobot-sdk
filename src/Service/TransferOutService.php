@@ -1,27 +1,27 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\Query;
-use IXDomainRobot\Model\DomainCancelation;
-use IXDomainRobot\Model\TransferAnswer;
-use IXDomainRobot\Model\TransferOut;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\Domainrobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
+use Domainrobot\Model\Query;
+use Domainrobot\Model\DomainCancelation;
+use Domainrobot\Model\TransferAnswer;
+use Domainrobot\Model\TransferOut;
+use Domainrobot\Service\DomainrobotService;
 
-class TransferOutService extends DomainRobotService
+class TransferOutService extends DomainrobotService
 {
 
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
     /**
@@ -33,12 +33,12 @@ class TransferOutService extends DomainRobotService
      */
     public function answer($domain, $answer)
     {
-        $domainRobotPromise = $this->answerAsync($domain, $answer);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->answerAsync($domain, $answer);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new TransferOut(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new TransferOut(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -46,7 +46,7 @@ class TransferOutService extends DomainRobotService
      *
      * @param [string] $domain,
      * @param [string] $answer
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function answerAsync($domain, $answer)
     {
@@ -89,11 +89,11 @@ class TransferOutService extends DomainRobotService
      */
     public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
-        $data = $domainRobotResult->getResult()['data'];
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        $data = $domainrobotResult->getResult()['data'];
         $transferOuts = array();
         foreach ($data as $d) {
             $t = new TransferOut($d);
@@ -124,7 +124,7 @@ class TransferOutService extends DomainRobotService
      * * status
      *
      * @param Query $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function listAsync(Query $body = null)
     {
@@ -132,7 +132,7 @@ class TransferOutService extends DomainRobotService
         if ($body != null) {
             $data = $body->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/transferout/_search",
             'POST',
             ["json" => $data]

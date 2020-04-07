@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * OTPAuth Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,15 +59,15 @@ class OTPAuth implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
-        'protocolType' => '\IXDomainRobot\Model\ProtocolTypeConstants',
-        'algorithm' => '\IXDomainRobot\Model\CryptoFormatConstants',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'protocolType' => '\Domainrobot\Model\ProtocolTypeConstants',
+        'algorithm' => '\Domainrobot\Model\CryptoFormatConstants',
         'timeout' => 'int',
         'digits' => 'int',
         'secret' => 'string',
         'tokens' => 'string[]',
-        'qrCode' => '\IXDomainRobot\Model\BasicDocument'
+        'qrCode' => '\Domainrobot\Model\BasicDocument'
     ];
 
     /**
@@ -335,7 +335,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -345,7 +345,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -369,7 +369,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Gets protocolType
      *
-     * @return \IXDomainRobot\Model\ProtocolTypeConstants
+     * @return \Domainrobot\Model\ProtocolTypeConstants
      */
     public function getProtocolType()
     {
@@ -393,7 +393,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Sets protocolType
      *
-     * @param \IXDomainRobot\Model\ProtocolTypeConstants $protocolType The type of protocol
+     * @param \Domainrobot\Model\ProtocolTypeConstants $protocolType The type of protocol
      *
      * @return $this
      */
@@ -407,7 +407,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Gets algorithm
      *
-     * @return \IXDomainRobot\Model\CryptoFormatConstants
+     * @return \Domainrobot\Model\CryptoFormatConstants
      */
     public function getAlgorithm()
     {
@@ -417,7 +417,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Sets algorithm
      *
-     * @param \IXDomainRobot\Model\CryptoFormatConstants $algorithm Crypto algorithm
+     * @param \Domainrobot\Model\CryptoFormatConstants $algorithm Crypto algorithm
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Gets qrCode
      *
-     * @return \IXDomainRobot\Model\BasicDocument
+     * @return \Domainrobot\Model\BasicDocument
      */
     public function getQrCode()
     {
@@ -545,7 +545,7 @@ class OTPAuth implements ModelInterface, ArrayAccess
     /**
      * Sets qrCode
      *
-     * @param \IXDomainRobot\Model\BasicDocument $qrCode The generated qr code png.
+     * @param \Domainrobot\Model\BasicDocument $qrCode The generated qr code png.
      *
      * @return $this
      */

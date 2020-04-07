@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * QueryOrder Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class QueryOrder implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'key' => 'string',
         'ins' => 'string[]',
-        'type' => '\IXDomainRobot\Model\OrderType'
+        'type' => '\Domainrobot\Model\OrderType'
     ];
 
     /**
@@ -267,7 +267,7 @@ class QueryOrder implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\OrderType
+     * @return \Domainrobot\Model\OrderType
      */
     public function getType()
     {
@@ -277,7 +277,7 @@ class QueryOrder implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\OrderType $type Lorem Ipsum
+     * @param \Domainrobot\Model\OrderType $type Lorem Ipsum
      *
      * @return $this
      */

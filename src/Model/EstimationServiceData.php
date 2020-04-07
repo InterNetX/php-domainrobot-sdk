@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * EstimationServiceData Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,9 +58,9 @@ class EstimationServiceData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'debugTime' => 'int',
-        'status' => '\IXDomainRobot\Model\DomainStudioServiceStatus',
+        'status' => '\Domainrobot\Model\DomainStudioServiceStatus',
         'message' => 'string',
-        'data' => '\IXDomainRobot\Model\EstimationData'
+        'data' => '\Domainrobot\Model\EstimationData'
     ];
 
     /**
@@ -249,7 +249,7 @@ class EstimationServiceData implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\DomainStudioServiceStatus
+     * @return \Domainrobot\Model\DomainStudioServiceStatus
      */
     public function getStatus()
     {
@@ -259,7 +259,7 @@ class EstimationServiceData implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\DomainStudioServiceStatus $status The status
+     * @param \Domainrobot\Model\DomainStudioServiceStatus $status The status
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class EstimationServiceData implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \IXDomainRobot\Model\EstimationData
+     * @return \Domainrobot\Model\EstimationData
      */
     public function getData()
     {
@@ -307,7 +307,7 @@ class EstimationServiceData implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \IXDomainRobot\Model\EstimationData $data The service data
+     * @param \Domainrobot\Model\EstimationData $data The service data
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactVerificationDomain Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class ContactVerificationDomain implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'name' => 'string',
         'idn' => 'string',
-        'status' => '\IXDomainRobot\Model\GenericStatusConstants',
+        'status' => '\Domainrobot\Model\GenericStatusConstants',
         'deactivation' => '\DateTime'
     ];
 
@@ -333,7 +333,7 @@ class ContactVerificationDomain implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\GenericStatusConstants
+     * @return \Domainrobot\Model\GenericStatusConstants
      */
     public function getStatus()
     {
@@ -343,7 +343,7 @@ class ContactVerificationDomain implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\GenericStatusConstants $status the status of the domain Verification
+     * @param \Domainrobot\Model\GenericStatusConstants $status the status of the domain Verification
      *
      * @return $this
      */

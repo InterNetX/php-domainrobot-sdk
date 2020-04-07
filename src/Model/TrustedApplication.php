@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * TrustedApplication Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,14 +59,14 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
-        'user' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'user' => '\Domainrobot\Model\BasicUser',
         'uuid' => 'string',
         'password' => 'string',
-        'application' => '\IXDomainRobot\Model\Application',
-        'functions' => '\IXDomainRobot\Model\TrustedApplicationFunctions',
-        'restrictions' => '\IXDomainRobot\Model\IpRestrictions',
+        'application' => '\Domainrobot\Model\Application',
+        'functions' => '\Domainrobot\Model\TrustedApplicationFunctions',
+        'restrictions' => '\Domainrobot\Model\IpRestrictions',
         'device' => 'string',
         'comment' => 'string'
     ];
@@ -327,7 +327,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -337,7 +337,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -351,7 +351,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -361,7 +361,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
      *
      * @return $this
      */
@@ -375,7 +375,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUser()
     {
@@ -385,7 +385,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \IXDomainRobot\Model\BasicUser $user The user the trusted application belongs to.
+     * @param \Domainrobot\Model\BasicUser $user The user the trusted application belongs to.
      *
      * @return $this
      */
@@ -447,7 +447,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Gets application
      *
-     * @return \IXDomainRobot\Model\Application
+     * @return \Domainrobot\Model\Application
      */
     public function getApplication()
     {
@@ -457,7 +457,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Sets application
      *
-     * @param \IXDomainRobot\Model\Application $application The kind of application.
+     * @param \Domainrobot\Model\Application $application The kind of application.
      *
      * @return $this
      */
@@ -471,7 +471,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Gets functions
      *
-     * @return \IXDomainRobot\Model\TrustedApplicationFunctions
+     * @return \Domainrobot\Model\TrustedApplicationFunctions
      */
     public function getFunctions()
     {
@@ -481,7 +481,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Sets functions
      *
-     * @param \IXDomainRobot\Model\TrustedApplicationFunctions $functions The wrapper of the allowed functions for the trusted application.
+     * @param \Domainrobot\Model\TrustedApplicationFunctions $functions The wrapper of the allowed functions for the trusted application.
      *
      * @return $this
      */
@@ -495,7 +495,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Gets restrictions
      *
-     * @return \IXDomainRobot\Model\IpRestrictions
+     * @return \Domainrobot\Model\IpRestrictions
      */
     public function getRestrictions()
     {
@@ -505,7 +505,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     /**
      * Sets restrictions
      *
-     * @param \IXDomainRobot\Model\IpRestrictions $restrictions The wrapper of the ip restrictions for the trusted application.
+     * @param \Domainrobot\Model\IpRestrictions $restrictions The wrapper of the ip restrictions for the trusted application.
      *
      * @return $this
      */

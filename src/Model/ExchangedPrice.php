@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ExchangedPrice Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,20 +59,20 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'amount' => 'double',
-        'type' => '\IXDomainRobot\Model\PriceTypeConstants',
+        'type' => '\Domainrobot\Model\PriceTypeConstants',
         'currency' => 'string',
-        'priority' => '\IXDomainRobot\Model\PriorityConstants',
-        'customer' => '\IXDomainRobot\Model\Customer',
-        'period' => '\IXDomainRobot\Model\TimePeriod',
+        'priority' => '\Domainrobot\Model\PriorityConstants',
+        'customer' => '\Domainrobot\Model\Customer',
+        'period' => '\Domainrobot\Model\TimePeriod',
         'discountable' => 'bool',
         'logId' => 'int',
         'refund' => 'int',
-        'priceConditions' => '\IXDomainRobot\Model\PriceServiceEntity[]',
+        'priceConditions' => '\Domainrobot\Model\PriceServiceEntity[]',
         'comment' => 'string',
-        'normalPrice' => '\IXDomainRobot\Model\ExchangedPrice',
+        'normalPrice' => '\Domainrobot\Model\ExchangedPrice',
         'valid' => '\DateTime',
         'vatRate' => 'double',
         'vatAmount' => 'double',
@@ -372,7 +372,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -382,7 +382,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -396,7 +396,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -406,7 +406,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
      *
      * @return $this
      */
@@ -444,7 +444,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\PriceTypeConstants
+     * @return \Domainrobot\Model\PriceTypeConstants
      */
     public function getType()
     {
@@ -454,7 +454,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\PriceTypeConstants $type Lorem Ipum
+     * @param \Domainrobot\Model\PriceTypeConstants $type Lorem Ipum
      *
      * @return $this
      */
@@ -492,7 +492,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets priority
      *
-     * @return \IXDomainRobot\Model\PriorityConstants
+     * @return \Domainrobot\Model\PriorityConstants
      */
     public function getPriority()
     {
@@ -502,7 +502,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets priority
      *
-     * @param \IXDomainRobot\Model\PriorityConstants $priority Lorem Ipum
+     * @param \Domainrobot\Model\PriorityConstants $priority Lorem Ipum
      *
      * @return $this
      */
@@ -516,7 +516,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets customer
      *
-     * @return \IXDomainRobot\Model\Customer
+     * @return \Domainrobot\Model\Customer
      */
     public function getCustomer()
     {
@@ -526,7 +526,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \IXDomainRobot\Model\Customer $customer Lorem Ipum
+     * @param \Domainrobot\Model\Customer $customer Lorem Ipum
      *
      * @return $this
      */
@@ -540,7 +540,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets period
      *
-     * @return \IXDomainRobot\Model\TimePeriod
+     * @return \Domainrobot\Model\TimePeriod
      */
     public function getPeriod()
     {
@@ -550,7 +550,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param \IXDomainRobot\Model\TimePeriod $period Lorem Ipum
+     * @param \Domainrobot\Model\TimePeriod $period Lorem Ipum
      *
      * @return $this
      */
@@ -636,7 +636,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets priceConditions
      *
-     * @return \IXDomainRobot\Model\PriceServiceEntity[]
+     * @return \Domainrobot\Model\PriceServiceEntity[]
      */
     public function getPriceConditions()
     {
@@ -646,7 +646,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets priceConditions
      *
-     * @param \IXDomainRobot\Model\PriceServiceEntity[] $priceConditions Lorem Ipum
+     * @param \Domainrobot\Model\PriceServiceEntity[] $priceConditions Lorem Ipum
      *
      * @return $this
      */
@@ -684,7 +684,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets normalPrice
      *
-     * @return \IXDomainRobot\Model\ExchangedPrice
+     * @return \Domainrobot\Model\ExchangedPrice
      */
     public function getNormalPrice()
     {
@@ -694,7 +694,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets normalPrice
      *
-     * @param \IXDomainRobot\Model\ExchangedPrice $normalPrice Lorem Ipum
+     * @param \Domainrobot\Model\ExchangedPrice $normalPrice Lorem Ipum
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainExtensions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'parkingExtensions' => '\IXDomainRobot\Model\DomainParkingExtensions',
-        'tmchClaimsNoticeExtensions' => '\IXDomainRobot\Model\DomainTmchClaimNoticeExtensions'
+        'parkingExtensions' => '\Domainrobot\Model\DomainParkingExtensions',
+        'tmchClaimsNoticeExtensions' => '\Domainrobot\Model\DomainTmchClaimNoticeExtensions'
     ];
 
     /**
@@ -213,7 +213,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets parkingExtensions
      *
-     * @return \IXDomainRobot\Model\DomainParkingExtensions
+     * @return \Domainrobot\Model\DomainParkingExtensions
      */
     public function getParkingExtensions()
     {
@@ -223,7 +223,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets parkingExtensions
      *
-     * @param \IXDomainRobot\Model\DomainParkingExtensions $parkingExtensions parkingExtensions
+     * @param \Domainrobot\Model\DomainParkingExtensions $parkingExtensions parkingExtensions
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets tmchClaimsNoticeExtensions
      *
-     * @return \IXDomainRobot\Model\DomainTmchClaimNoticeExtensions
+     * @return \Domainrobot\Model\DomainTmchClaimNoticeExtensions
      */
     public function getTmchClaimsNoticeExtensions()
     {
@@ -247,7 +247,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets tmchClaimsNoticeExtensions
      *
-     * @param \IXDomainRobot\Model\DomainTmchClaimNoticeExtensions $tmchClaimsNoticeExtensions tmchClaimsNoticeExtensions
+     * @param \Domainrobot\Model\DomainTmchClaimNoticeExtensions $tmchClaimsNoticeExtensions tmchClaimsNoticeExtensions
      *
      * @return $this
      */

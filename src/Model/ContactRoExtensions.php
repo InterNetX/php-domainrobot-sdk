@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactRoExtensions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'personType' => '\IXDomainRobot\Model\RoPersonTypeConstants'
+        'personType' => '\Domainrobot\Model\RoPersonTypeConstants'
     ];
 
     /**
@@ -207,7 +207,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets personType
      *
-     * @return \IXDomainRobot\Model\RoPersonTypeConstants
+     * @return \Domainrobot\Model\RoPersonTypeConstants
      */
     public function getPersonType()
     {
@@ -217,7 +217,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets personType
      *
-     * @param \IXDomainRobot\Model\RoPersonTypeConstants $personType The entity person type.
+     * @param \Domainrobot\Model\RoPersonTypeConstants $personType The entity person type.
      *
      * @return $this
      */

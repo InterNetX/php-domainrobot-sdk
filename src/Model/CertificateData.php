@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * CertificateData Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,7 +60,7 @@ class CertificateData implements ModelInterface, ArrayAccess
         'plain' => 'string',
         'name' => 'string',
         'san' => 'string[]',
-        'histories' => '\IXDomainRobot\Model\CertificateHistory[]',
+        'histories' => '\Domainrobot\Model\CertificateHistory[]',
         'keySize' => 'int',
         'countryCode' => 'string',
         'challengePassword' => 'string',
@@ -70,9 +70,9 @@ class CertificateData implements ModelInterface, ArrayAccess
         'organizationUnit' => 'string',
         'email' => 'string',
         'product' => 'string',
-        'authentication' => '\IXDomainRobot\Model\CertAuthentication[]',
-        'algorithm' => '\IXDomainRobot\Model\CsrHashAlgorithmConstants',
-        'signatureHashAlgorithm' => '\IXDomainRobot\Model\SignatureHashAlgorithmConstants',
+        'authentication' => '\Domainrobot\Model\CertAuthentication[]',
+        'algorithm' => '\Domainrobot\Model\CsrHashAlgorithmConstants',
+        'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
         'idn' => 'string',
         'checkCaa' => 'bool'
     ];
@@ -381,7 +381,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Gets histories
      *
-     * @return \IXDomainRobot\Model\CertificateHistory[]
+     * @return \Domainrobot\Model\CertificateHistory[]
      */
     public function getHistories()
     {
@@ -391,7 +391,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets histories
      *
-     * @param \IXDomainRobot\Model\CertificateHistory[] $histories The certificate history.
+     * @param \Domainrobot\Model\CertificateHistory[] $histories The certificate history.
      *
      * @return $this
      */
@@ -621,7 +621,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Gets authentication
      *
-     * @return \IXDomainRobot\Model\CertAuthentication[]
+     * @return \Domainrobot\Model\CertAuthentication[]
      */
     public function getAuthentication()
     {
@@ -631,7 +631,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets authentication
      *
-     * @param \IXDomainRobot\Model\CertAuthentication[] $authentication The authentication data.
+     * @param \Domainrobot\Model\CertAuthentication[] $authentication The authentication data.
      *
      * @return $this
      */
@@ -645,7 +645,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Gets algorithm
      *
-     * @return \IXDomainRobot\Model\CsrHashAlgorithmConstants
+     * @return \Domainrobot\Model\CsrHashAlgorithmConstants
      */
     public function getAlgorithm()
     {
@@ -655,7 +655,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets algorithm
      *
-     * @param \IXDomainRobot\Model\CsrHashAlgorithmConstants $algorithm The csr algorithm.
+     * @param \Domainrobot\Model\CsrHashAlgorithmConstants $algorithm The csr algorithm.
      *
      * @return $this
      */
@@ -669,7 +669,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Gets signatureHashAlgorithm
      *
-     * @return \IXDomainRobot\Model\SignatureHashAlgorithmConstants
+     * @return \Domainrobot\Model\SignatureHashAlgorithmConstants
      */
     public function getSignatureHashAlgorithm()
     {
@@ -679,7 +679,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets signatureHashAlgorithm
      *
-     * @param \IXDomainRobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The signature hash algorithm.
+     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The signature hash algorithm.
      *
      * @return $this
      */

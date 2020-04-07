@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactExtensions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,26 +57,26 @@ class ContactExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'aero' => '\IXDomainRobot\Model\ContactAeroExtensions',
-        'au' => '\IXDomainRobot\Model\ContactAuExtensions',
-        'cat' => '\IXDomainRobot\Model\ContactCatExtensions',
-        'jobs' => '\IXDomainRobot\Model\ContactJobsExtensions',
-        'it' => '\IXDomainRobot\Model\ContactItExtensions',
-        'jp' => '\IXDomainRobot\Model\ContactJpExtensions',
-        'xxx' => '\IXDomainRobot\Model\ContactXxxExtensions',
-        'hk' => '\IXDomainRobot\Model\ContactHkExtensions',
-        'bank' => '\IXDomainRobot\Model\ContactBankExtensions',
-        'swiss' => '\IXDomainRobot\Model\ContactSwissExtensions',
-        'ru' => '\IXDomainRobot\Model\ContactRuExtensions',
-        'uk' => '\IXDomainRobot\Model\ContactUkExtensions',
-        'ca' => '\IXDomainRobot\Model\ContactCaExtensions',
-        'ro' => '\IXDomainRobot\Model\ContactRoExtensions',
-        'barcelona' => '\IXDomainRobot\Model\ContactBarcelonaExtensions',
-        'general' => '\IXDomainRobot\Model\ContactGeneralExtensions',
-        'nz' => '\IXDomainRobot\Model\ContactNzExtensions',
-        'sport' => '\IXDomainRobot\Model\ContactSportExtensions',
-        'luxe' => '\IXDomainRobot\Model\ContactLuxeExtensions',
-        'madrid' => '\IXDomainRobot\Model\ContactMadridExtensions'
+        'aero' => '\Domainrobot\Model\ContactAeroExtensions',
+        'au' => '\Domainrobot\Model\ContactAuExtensions',
+        'cat' => '\Domainrobot\Model\ContactCatExtensions',
+        'jobs' => '\Domainrobot\Model\ContactJobsExtensions',
+        'it' => '\Domainrobot\Model\ContactItExtensions',
+        'jp' => '\Domainrobot\Model\ContactJpExtensions',
+        'xxx' => '\Domainrobot\Model\ContactXxxExtensions',
+        'hk' => '\Domainrobot\Model\ContactHkExtensions',
+        'bank' => '\Domainrobot\Model\ContactBankExtensions',
+        'swiss' => '\Domainrobot\Model\ContactSwissExtensions',
+        'ru' => '\Domainrobot\Model\ContactRuExtensions',
+        'uk' => '\Domainrobot\Model\ContactUkExtensions',
+        'ca' => '\Domainrobot\Model\ContactCaExtensions',
+        'ro' => '\Domainrobot\Model\ContactRoExtensions',
+        'barcelona' => '\Domainrobot\Model\ContactBarcelonaExtensions',
+        'general' => '\Domainrobot\Model\ContactGeneralExtensions',
+        'nz' => '\Domainrobot\Model\ContactNzExtensions',
+        'sport' => '\Domainrobot\Model\ContactSportExtensions',
+        'luxe' => '\Domainrobot\Model\ContactLuxeExtensions',
+        'madrid' => '\Domainrobot\Model\ContactMadridExtensions'
     ];
 
     /**
@@ -321,7 +321,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets aero
      *
-     * @return \IXDomainRobot\Model\ContactAeroExtensions
+     * @return \Domainrobot\Model\ContactAeroExtensions
      */
     public function getAero()
     {
@@ -331,7 +331,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets aero
      *
-     * @param \IXDomainRobot\Model\ContactAeroExtensions $aero The .aero contact extensions.
+     * @param \Domainrobot\Model\ContactAeroExtensions $aero The .aero contact extensions.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets au
      *
-     * @return \IXDomainRobot\Model\ContactAuExtensions
+     * @return \Domainrobot\Model\ContactAuExtensions
      */
     public function getAu()
     {
@@ -355,7 +355,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets au
      *
-     * @param \IXDomainRobot\Model\ContactAuExtensions $au The .au contact extensions.
+     * @param \Domainrobot\Model\ContactAuExtensions $au The .au contact extensions.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets cat
      *
-     * @return \IXDomainRobot\Model\ContactCatExtensions
+     * @return \Domainrobot\Model\ContactCatExtensions
      */
     public function getCat()
     {
@@ -379,7 +379,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets cat
      *
-     * @param \IXDomainRobot\Model\ContactCatExtensions $cat The .cat contact extensions.
+     * @param \Domainrobot\Model\ContactCatExtensions $cat The .cat contact extensions.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets jobs
      *
-     * @return \IXDomainRobot\Model\ContactJobsExtensions
+     * @return \Domainrobot\Model\ContactJobsExtensions
      */
     public function getJobs()
     {
@@ -403,7 +403,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets jobs
      *
-     * @param \IXDomainRobot\Model\ContactJobsExtensions $jobs The .jobs contact extensions.
+     * @param \Domainrobot\Model\ContactJobsExtensions $jobs The .jobs contact extensions.
      *
      * @return $this
      */
@@ -417,7 +417,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets it
      *
-     * @return \IXDomainRobot\Model\ContactItExtensions
+     * @return \Domainrobot\Model\ContactItExtensions
      */
     public function getIt()
     {
@@ -427,7 +427,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets it
      *
-     * @param \IXDomainRobot\Model\ContactItExtensions $it The .it contact extensions.
+     * @param \Domainrobot\Model\ContactItExtensions $it The .it contact extensions.
      *
      * @return $this
      */
@@ -441,7 +441,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets jp
      *
-     * @return \IXDomainRobot\Model\ContactJpExtensions
+     * @return \Domainrobot\Model\ContactJpExtensions
      */
     public function getJp()
     {
@@ -451,7 +451,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets jp
      *
-     * @param \IXDomainRobot\Model\ContactJpExtensions $jp The .jp contact extensions.
+     * @param \Domainrobot\Model\ContactJpExtensions $jp The .jp contact extensions.
      *
      * @return $this
      */
@@ -465,7 +465,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets xxx
      *
-     * @return \IXDomainRobot\Model\ContactXxxExtensions
+     * @return \Domainrobot\Model\ContactXxxExtensions
      */
     public function getXxx()
     {
@@ -475,7 +475,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets xxx
      *
-     * @param \IXDomainRobot\Model\ContactXxxExtensions $xxx The .xxx contact extensions.
+     * @param \Domainrobot\Model\ContactXxxExtensions $xxx The .xxx contact extensions.
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets hk
      *
-     * @return \IXDomainRobot\Model\ContactHkExtensions
+     * @return \Domainrobot\Model\ContactHkExtensions
      */
     public function getHk()
     {
@@ -499,7 +499,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets hk
      *
-     * @param \IXDomainRobot\Model\ContactHkExtensions $hk The .hk contact extensions.
+     * @param \Domainrobot\Model\ContactHkExtensions $hk The .hk contact extensions.
      *
      * @return $this
      */
@@ -513,7 +513,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets bank
      *
-     * @return \IXDomainRobot\Model\ContactBankExtensions
+     * @return \Domainrobot\Model\ContactBankExtensions
      */
     public function getBank()
     {
@@ -523,7 +523,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets bank
      *
-     * @param \IXDomainRobot\Model\ContactBankExtensions $bank The .bank contact extensions.
+     * @param \Domainrobot\Model\ContactBankExtensions $bank The .bank contact extensions.
      *
      * @return $this
      */
@@ -537,7 +537,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets swiss
      *
-     * @return \IXDomainRobot\Model\ContactSwissExtensions
+     * @return \Domainrobot\Model\ContactSwissExtensions
      */
     public function getSwiss()
     {
@@ -547,7 +547,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets swiss
      *
-     * @param \IXDomainRobot\Model\ContactSwissExtensions $swiss The .swiss contact extensions.
+     * @param \Domainrobot\Model\ContactSwissExtensions $swiss The .swiss contact extensions.
      *
      * @return $this
      */
@@ -561,7 +561,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets ru
      *
-     * @return \IXDomainRobot\Model\ContactRuExtensions
+     * @return \Domainrobot\Model\ContactRuExtensions
      */
     public function getRu()
     {
@@ -571,7 +571,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets ru
      *
-     * @param \IXDomainRobot\Model\ContactRuExtensions $ru The .ru contact extensions.
+     * @param \Domainrobot\Model\ContactRuExtensions $ru The .ru contact extensions.
      *
      * @return $this
      */
@@ -585,7 +585,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets uk
      *
-     * @return \IXDomainRobot\Model\ContactUkExtensions
+     * @return \Domainrobot\Model\ContactUkExtensions
      */
     public function getUk()
     {
@@ -595,7 +595,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets uk
      *
-     * @param \IXDomainRobot\Model\ContactUkExtensions $uk The .uk contact extensions.
+     * @param \Domainrobot\Model\ContactUkExtensions $uk The .uk contact extensions.
      *
      * @return $this
      */
@@ -609,7 +609,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets ca
      *
-     * @return \IXDomainRobot\Model\ContactCaExtensions
+     * @return \Domainrobot\Model\ContactCaExtensions
      */
     public function getCa()
     {
@@ -619,7 +619,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets ca
      *
-     * @param \IXDomainRobot\Model\ContactCaExtensions $ca The .ca contact extensions.
+     * @param \Domainrobot\Model\ContactCaExtensions $ca The .ca contact extensions.
      *
      * @return $this
      */
@@ -633,7 +633,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets ro
      *
-     * @return \IXDomainRobot\Model\ContactRoExtensions
+     * @return \Domainrobot\Model\ContactRoExtensions
      */
     public function getRo()
     {
@@ -643,7 +643,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets ro
      *
-     * @param \IXDomainRobot\Model\ContactRoExtensions $ro The .ro contact extensions.
+     * @param \Domainrobot\Model\ContactRoExtensions $ro The .ro contact extensions.
      *
      * @return $this
      */
@@ -657,7 +657,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets barcelona
      *
-     * @return \IXDomainRobot\Model\ContactBarcelonaExtensions
+     * @return \Domainrobot\Model\ContactBarcelonaExtensions
      */
     public function getBarcelona()
     {
@@ -667,7 +667,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets barcelona
      *
-     * @param \IXDomainRobot\Model\ContactBarcelonaExtensions $barcelona The .barcelona contact extensions.
+     * @param \Domainrobot\Model\ContactBarcelonaExtensions $barcelona The .barcelona contact extensions.
      *
      * @return $this
      */
@@ -681,7 +681,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets general
      *
-     * @return \IXDomainRobot\Model\ContactGeneralExtensions
+     * @return \Domainrobot\Model\ContactGeneralExtensions
      */
     public function getGeneral()
     {
@@ -691,7 +691,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets general
      *
-     * @param \IXDomainRobot\Model\ContactGeneralExtensions $general The general contact extensions.
+     * @param \Domainrobot\Model\ContactGeneralExtensions $general The general contact extensions.
      *
      * @return $this
      */
@@ -705,7 +705,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets nz
      *
-     * @return \IXDomainRobot\Model\ContactNzExtensions
+     * @return \Domainrobot\Model\ContactNzExtensions
      */
     public function getNz()
     {
@@ -715,7 +715,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets nz
      *
-     * @param \IXDomainRobot\Model\ContactNzExtensions $nz The .nz contact extensions
+     * @param \Domainrobot\Model\ContactNzExtensions $nz The .nz contact extensions
      *
      * @return $this
      */
@@ -729,7 +729,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets sport
      *
-     * @return \IXDomainRobot\Model\ContactSportExtensions
+     * @return \Domainrobot\Model\ContactSportExtensions
      */
     public function getSport()
     {
@@ -739,7 +739,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets sport
      *
-     * @param \IXDomainRobot\Model\ContactSportExtensions $sport The .sport contact extensions.
+     * @param \Domainrobot\Model\ContactSportExtensions $sport The .sport contact extensions.
      *
      * @return $this
      */
@@ -753,7 +753,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets luxe
      *
-     * @return \IXDomainRobot\Model\ContactLuxeExtensions
+     * @return \Domainrobot\Model\ContactLuxeExtensions
      */
     public function getLuxe()
     {
@@ -763,7 +763,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets luxe
      *
-     * @param \IXDomainRobot\Model\ContactLuxeExtensions $luxe The .luxe contact extensions.
+     * @param \Domainrobot\Model\ContactLuxeExtensions $luxe The .luxe contact extensions.
      *
      * @return $this
      */
@@ -777,7 +777,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets madrid
      *
-     * @return \IXDomainRobot\Model\ContactMadridExtensions
+     * @return \Domainrobot\Model\ContactMadridExtensions
      */
     public function getMadrid()
     {
@@ -787,7 +787,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets madrid
      *
-     * @param \IXDomainRobot\Model\ContactMadridExtensions $madrid The .madrid contact extensions.
+     * @param \Domainrobot\Model\ContactMadridExtensions $madrid The .madrid contact extensions.
      *
      * @return $this
      */

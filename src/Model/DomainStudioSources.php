@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainStudioSources Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,12 +57,12 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'initial' => '\IXDomainRobot\Model\DomainStudioSourceInitial',
-        'suggestion' => '\IXDomainRobot\Model\DomainStudioSourceSuggestion',
-        'premium' => '\IXDomainRobot\Model\DomainStudioSourcePremium',
-        'geo' => '\IXDomainRobot\Model\DomainStudioSourceGeo',
-        'similar' => '\IXDomainRobot\Model\DomainStudioSourceSimilar',
-        'recommended' => '\IXDomainRobot\Model\DomainStudioSourceSimilar'
+        'initial' => '\Domainrobot\Model\DomainStudioSourceInitial',
+        'suggestion' => '\Domainrobot\Model\DomainStudioSourceSuggestion',
+        'premium' => '\Domainrobot\Model\DomainStudioSourcePremium',
+        'geo' => '\Domainrobot\Model\DomainStudioSourceGeo',
+        'similar' => '\Domainrobot\Model\DomainStudioSourceSimilar',
+        'recommended' => '\Domainrobot\Model\DomainStudioSourceSimilar'
     ];
 
     /**
@@ -237,7 +237,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Gets initial
      *
-     * @return \IXDomainRobot\Model\DomainStudioSourceInitial
+     * @return \Domainrobot\Model\DomainStudioSourceInitial
      */
     public function getInitial()
     {
@@ -247,7 +247,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Sets initial
      *
-     * @param \IXDomainRobot\Model\DomainStudioSourceInitial $initial The configuration for the initial source
+     * @param \Domainrobot\Model\DomainStudioSourceInitial $initial The configuration for the initial source
      *
      * @return $this
      */
@@ -261,7 +261,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Gets suggestion
      *
-     * @return \IXDomainRobot\Model\DomainStudioSourceSuggestion
+     * @return \Domainrobot\Model\DomainStudioSourceSuggestion
      */
     public function getSuggestion()
     {
@@ -271,7 +271,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Sets suggestion
      *
-     * @param \IXDomainRobot\Model\DomainStudioSourceSuggestion $suggestion The configuration for the suggestion source
+     * @param \Domainrobot\Model\DomainStudioSourceSuggestion $suggestion The configuration for the suggestion source
      *
      * @return $this
      */
@@ -285,7 +285,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Gets premium
      *
-     * @return \IXDomainRobot\Model\DomainStudioSourcePremium
+     * @return \Domainrobot\Model\DomainStudioSourcePremium
      */
     public function getPremium()
     {
@@ -295,7 +295,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Sets premium
      *
-     * @param \IXDomainRobot\Model\DomainStudioSourcePremium $premium The configuration for the premium source
+     * @param \Domainrobot\Model\DomainStudioSourcePremium $premium The configuration for the premium source
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Gets geo
      *
-     * @return \IXDomainRobot\Model\DomainStudioSourceGeo
+     * @return \Domainrobot\Model\DomainStudioSourceGeo
      */
     public function getGeo()
     {
@@ -319,7 +319,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Sets geo
      *
-     * @param \IXDomainRobot\Model\DomainStudioSourceGeo $geo The configuration for the geo source
+     * @param \Domainrobot\Model\DomainStudioSourceGeo $geo The configuration for the geo source
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Gets similar
      *
-     * @return \IXDomainRobot\Model\DomainStudioSourceSimilar
+     * @return \Domainrobot\Model\DomainStudioSourceSimilar
      */
     public function getSimilar()
     {
@@ -343,7 +343,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Sets similar
      *
-     * @param \IXDomainRobot\Model\DomainStudioSourceSimilar $similar The configuration for the similar source
+     * @param \Domainrobot\Model\DomainStudioSourceSimilar $similar The configuration for the similar source
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Gets recommended
      *
-     * @return \IXDomainRobot\Model\DomainStudioSourceSimilar
+     * @return \Domainrobot\Model\DomainStudioSourceSimilar
      */
     public function getRecommended()
     {
@@ -367,7 +367,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Sets recommended
      *
-     * @param \IXDomainRobot\Model\DomainStudioSourceSimilar $recommended The configuration for the recommended source
+     * @param \Domainrobot\Model\DomainStudioSourceSimilar $recommended The configuration for the recommended source
      *
      * @return $this
      */

@@ -1,12 +1,12 @@
 <?php
 
-namespace IXDomainRobot\Lib;
+namespace Domainrobot\Lib;
 
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\DomainRobotConstants;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\DomainrobotConstants;
 
 
-class DomainRobotAuth
+class DomainrobotAuth
 {
     /**
      * AutoDNS User
@@ -31,7 +31,7 @@ class DomainRobotAuth
     {
         $this->setUser(ArrayHelper::getValueFromArray($config, 'user', ''));
         $this->setPassword(ArrayHelper::getValueFromArray($config, 'password', ''));
-        $this->setContext(ArrayHelper::getValueFromArray($config, 'context', DomainRobotConstants::AUTODNS_CONTEXT));
+        $this->setContext(ArrayHelper::getValueFromArray($config, 'context', DomainrobotConstants::AUTODNS_CONTEXT));
     }
 
     private function setUser($user)

@@ -1,10 +1,10 @@
 <?php
 
-namespace IXDomainRobot\Lib;
+namespace Domainrobot\Lib;
 
 use ReflectionClass;
 
-class DomainRobotResult {
+class DomainrobotResult {
 
     private $result;
     private $statusCode;

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainServices Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,10 +57,10 @@ class DomainServices implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'backupMx' => '\IXDomainRobot\Model\BackupMx[]',
-        'mailProxy' => '\IXDomainRobot\Model\MailProxy[]',
-        'redirect' => '\IXDomainRobot\Model\Redirect[]',
-        'domainMonitoring' => '\IXDomainRobot\Model\DomainMonitoring[]'
+        'backupMx' => '\Domainrobot\Model\BackupMx[]',
+        'mailProxy' => '\Domainrobot\Model\MailProxy[]',
+        'redirect' => '\Domainrobot\Model\Redirect[]',
+        'domainMonitoring' => '\Domainrobot\Model\DomainMonitoring[]'
     ];
 
     /**
@@ -225,7 +225,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Gets backupMx
      *
-     * @return \IXDomainRobot\Model\BackupMx[]
+     * @return \Domainrobot\Model\BackupMx[]
      */
     public function getBackupMx()
     {
@@ -235,7 +235,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets backupMx
      *
-     * @param \IXDomainRobot\Model\BackupMx[] $backupMx Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\BackupMx[] $backupMx Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
@@ -249,7 +249,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Gets mailProxy
      *
-     * @return \IXDomainRobot\Model\MailProxy[]
+     * @return \Domainrobot\Model\MailProxy[]
      */
     public function getMailProxy()
     {
@@ -259,7 +259,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets mailProxy
      *
-     * @param \IXDomainRobot\Model\MailProxy[] $mailProxy Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\MailProxy[] $mailProxy Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
@@ -273,7 +273,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Gets redirect
      *
-     * @return \IXDomainRobot\Model\Redirect[]
+     * @return \Domainrobot\Model\Redirect[]
      */
     public function getRedirect()
     {
@@ -283,7 +283,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets redirect
      *
-     * @param \IXDomainRobot\Model\Redirect[] $redirect Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\Redirect[] $redirect Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Gets domainMonitoring
      *
-     * @return \IXDomainRobot\Model\DomainMonitoring[]
+     * @return \Domainrobot\Model\DomainMonitoring[]
      */
     public function getDomainMonitoring()
     {
@@ -307,7 +307,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets domainMonitoring
      *
-     * @param \IXDomainRobot\Model\DomainMonitoring[] $domainMonitoring Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\DomainMonitoring[] $domainMonitoring Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */

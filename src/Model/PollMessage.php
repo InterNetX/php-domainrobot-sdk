@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * PollMessage Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,15 +58,15 @@ class PollMessage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'job' => '\IXDomainRobot\Model\WorkflowSpool',
-        'notify' => '\IXDomainRobot\Model\NotifyMessage',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'job' => '\Domainrobot\Model\WorkflowSpool',
+        'notify' => '\Domainrobot\Model\NotifyMessage',
         'stid' => 'string',
         'ctid' => 'string',
-        'messages' => '\IXDomainRobot\Model\Message[]',
+        'messages' => '\Domainrobot\Model\Message[]',
         'flags' => 'string',
         'created' => '\DateTime',
-        'object' => '\IXDomainRobot\Model\ResponseObject'
+        'object' => '\Domainrobot\Model\ResponseObject'
     ];
 
     /**
@@ -285,7 +285,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -295,7 +295,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the message.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the message.
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Gets job
      *
-     * @return \IXDomainRobot\Model\WorkflowSpool
+     * @return \Domainrobot\Model\WorkflowSpool
      */
     public function getJob()
     {
@@ -319,7 +319,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets job
      *
-     * @param \IXDomainRobot\Model\WorkflowSpool $job The job data. Available if the message is a job message
+     * @param \Domainrobot\Model\WorkflowSpool $job The job data. Available if the message is a job message
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Gets notify
      *
-     * @return \IXDomainRobot\Model\NotifyMessage
+     * @return \Domainrobot\Model\NotifyMessage
      */
     public function getNotify()
     {
@@ -343,7 +343,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets notify
      *
-     * @param \IXDomainRobot\Model\NotifyMessage $notify The notification data. Available if the message is a notification message
+     * @param \Domainrobot\Model\NotifyMessage $notify The notification data. Available if the message is a notification message
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Gets messages
      *
-     * @return \IXDomainRobot\Model\Message[]
+     * @return \Domainrobot\Model\Message[]
      */
     public function getMessages()
     {
@@ -415,7 +415,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets messages
      *
-     * @param \IXDomainRobot\Model\Message[] $messages The general localized messages.
+     * @param \Domainrobot\Model\Message[] $messages The general localized messages.
      *
      * @return $this
      */
@@ -477,7 +477,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Gets object
      *
-     * @return \IXDomainRobot\Model\ResponseObject
+     * @return \Domainrobot\Model\ResponseObject
      */
     public function getObject()
     {
@@ -487,7 +487,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \IXDomainRobot\Model\ResponseObject $object The object of the job or notify.
+     * @param \Domainrobot\Model\ResponseObject $object The object of the job or notify.
      *
      * @return $this
      */

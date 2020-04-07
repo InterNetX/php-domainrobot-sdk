@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * CertAuthentication Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'method' => '\IXDomainRobot\Model\AuthMethodConstants',
+        'method' => '\Domainrobot\Model\AuthMethodConstants',
         'dns' => 'string',
         'fileName' => 'string',
         'fileContent' => 'string',
@@ -267,7 +267,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     /**
      * Gets method
      *
-     * @return \IXDomainRobot\Model\AuthMethodConstants
+     * @return \Domainrobot\Model\AuthMethodConstants
      */
     public function getMethod()
     {
@@ -277,7 +277,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     /**
      * Sets method
      *
-     * @param \IXDomainRobot\Model\AuthMethodConstants $method The authentication method.
+     * @param \Domainrobot\Model\AuthMethodConstants $method The authentication method.
      *
      * @return $this
      */

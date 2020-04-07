@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Contact Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,31 +60,31 @@ class Contact implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'id' => 'int',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'alias' => 'string',
-        'type' => '\IXDomainRobot\Model\ContactTypeConstants',
+        'type' => '\Domainrobot\Model\ContactTypeConstants',
         'organization' => 'string',
         'title' => 'string',
         'city' => 'string',
         'country' => 'string',
         'state' => 'string',
         'email' => 'string',
-        'protection' => '\IXDomainRobot\Model\ContactProtectionConstants',
+        'protection' => '\Domainrobot\Model\ContactProtectionConstants',
         'sip' => 'string',
         'remarks' => 'string[]',
         'domainsafe' => 'bool',
         'confirmOwnerConsent' => 'bool',
         'comment' => 'string',
-        'verification' => '\IXDomainRobot\Model\GenericStatusConstants',
+        'verification' => '\Domainrobot\Model\GenericStatusConstants',
         'fname' => 'string',
         'lname' => 'string',
         'address' => 'string[]',
         'pcode' => 'string',
         'phone' => 'string',
         'fax' => 'string',
-        'nicRef' => '\IXDomainRobot\Model\ContactReference[]',
-        'extensions' => '\IXDomainRobot\Model\ContactExtensions'
+        'nicRef' => '\Domainrobot\Model\ContactReference[]',
+        'extensions' => '\Domainrobot\Model\ContactExtensions'
     ];
 
     /**
@@ -459,7 +459,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -469,7 +469,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -483,7 +483,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -493,7 +493,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
      *
      * @return $this
      */
@@ -531,7 +531,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\ContactTypeConstants
+     * @return \Domainrobot\Model\ContactTypeConstants
      */
     public function getType()
     {
@@ -541,7 +541,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\ContactTypeConstants $type The type of the contact
+     * @param \Domainrobot\Model\ContactTypeConstants $type The type of the contact
      *
      * @return $this
      */
@@ -699,7 +699,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets protection
      *
-     * @return \IXDomainRobot\Model\ContactProtectionConstants
+     * @return \Domainrobot\Model\ContactProtectionConstants
      */
     public function getProtection()
     {
@@ -709,7 +709,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets protection
      *
-     * @param \IXDomainRobot\Model\ContactProtectionConstants $protection The protection of the contact
+     * @param \Domainrobot\Model\ContactProtectionConstants $protection The protection of the contact
      *
      * @return $this
      */
@@ -843,7 +843,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets verification
      *
-     * @return \IXDomainRobot\Model\GenericStatusConstants
+     * @return \Domainrobot\Model\GenericStatusConstants
      */
     public function getVerification()
     {
@@ -853,7 +853,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets verification
      *
-     * @param \IXDomainRobot\Model\GenericStatusConstants $verification The verification status of the contact
+     * @param \Domainrobot\Model\GenericStatusConstants $verification The verification status of the contact
      *
      * @return $this
      */
@@ -1011,7 +1011,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets nicRef
      *
-     * @return \IXDomainRobot\Model\ContactReference[]
+     * @return \Domainrobot\Model\ContactReference[]
      */
     public function getNicRef()
     {
@@ -1021,7 +1021,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets nicRef
      *
-     * @param \IXDomainRobot\Model\ContactReference[] $nicRef The nic references of the contact
+     * @param \Domainrobot\Model\ContactReference[] $nicRef The nic references of the contact
      *
      * @return $this
      */
@@ -1035,7 +1035,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets extensions
      *
-     * @return \IXDomainRobot\Model\ContactExtensions
+     * @return \Domainrobot\Model\ContactExtensions
      */
     public function getExtensions()
     {
@@ -1045,7 +1045,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets extensions
      *
-     * @param \IXDomainRobot\Model\ContactExtensions $extensions The contact extensions.
+     * @param \Domainrobot\Model\ContactExtensions $extensions The contact extensions.
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * BulkRedirectDeleteRequest Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class BulkRedirectDeleteRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'objects' => '\IXDomainRobot\Model\Redirect[]',
-        'query' => '\IXDomainRobot\Model\Query'
+        'objects' => '\Domainrobot\Model\Redirect[]',
+        'query' => '\Domainrobot\Model\Query'
     ];
 
     /**
@@ -213,7 +213,7 @@ class BulkRedirectDeleteRequest implements ModelInterface, ArrayAccess
     /**
      * Gets objects
      *
-     * @return \IXDomainRobot\Model\Redirect[]
+     * @return \Domainrobot\Model\Redirect[]
      */
     public function getObjects()
     {
@@ -223,7 +223,7 @@ class BulkRedirectDeleteRequest implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \IXDomainRobot\Model\Redirect[] $objects The objects to process
+     * @param \Domainrobot\Model\Redirect[] $objects The objects to process
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class BulkRedirectDeleteRequest implements ModelInterface, ArrayAccess
     /**
      * Gets query
      *
-     * @return \IXDomainRobot\Model\Query
+     * @return \Domainrobot\Model\Query
      */
     public function getQuery()
     {
@@ -247,7 +247,7 @@ class BulkRedirectDeleteRequest implements ModelInterface, ArrayAccess
     /**
      * Sets query
      *
-     * @param \IXDomainRobot\Model\Query $query The query to fetch the object instead of defined list
+     * @param \Domainrobot\Model\Query $query The query to fetch the object instead of defined list
      *
      * @return $this
      */

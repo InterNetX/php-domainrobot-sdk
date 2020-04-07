@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * IpRestrictions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class IpRestrictions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'acls' => '\IXDomainRobot\Model\IpRestriction[]'
+        'acls' => '\Domainrobot\Model\IpRestriction[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class IpRestrictions implements ModelInterface, ArrayAccess
     /**
      * Gets acls
      *
-     * @return \IXDomainRobot\Model\IpRestriction[]
+     * @return \Domainrobot\Model\IpRestriction[]
      */
     public function getAcls()
     {
@@ -217,7 +217,7 @@ class IpRestrictions implements ModelInterface, ArrayAccess
     /**
      * Sets acls
      *
-     * @param \IXDomainRobot\Model\IpRestriction[] $acls A list of ip restrictions
+     * @param \Domainrobot\Model\IpRestriction[] $acls A list of ip restrictions
      *
      * @return $this
      */

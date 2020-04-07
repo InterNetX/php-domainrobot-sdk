@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainEnvelope Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'domain' => 'string',
         'idn' => 'string',
-        'source' => '\IXDomainRobot\Model\DomainStudioDomainSource',
-        'services' => '\IXDomainRobot\Model\DomainStudioService',
+        'source' => '\Domainrobot\Model\DomainStudioDomainSource',
+        'services' => '\Domainrobot\Model\DomainStudioService',
         'debugTime' => 'bool'
     ];
 
@@ -279,7 +279,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return \IXDomainRobot\Model\DomainStudioDomainSource
+     * @return \Domainrobot\Model\DomainStudioDomainSource
      */
     public function getSource()
     {
@@ -289,7 +289,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \IXDomainRobot\Model\DomainStudioDomainSource $source Source
+     * @param \Domainrobot\Model\DomainStudioDomainSource $source Source
      *
      * @return $this
      */
@@ -303,7 +303,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     /**
      * Gets services
      *
-     * @return \IXDomainRobot\Model\DomainStudioService
+     * @return \Domainrobot\Model\DomainStudioService
      */
     public function getServices()
     {
@@ -313,7 +313,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     /**
      * Sets services
      *
-     * @param \IXDomainRobot\Model\DomainStudioService $services Source
+     * @param \Domainrobot\Model\DomainStudioService $services Source
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ExtendedValidationExtension Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'joiCountryName' => 'string',
         'companyNumber' => 'string',
-        'businessCategory' => '\IXDomainRobot\Model\BusinessCategory'
+        'businessCategory' => '\Domainrobot\Model\BusinessCategory'
     ];
 
     /**
@@ -267,7 +267,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     /**
      * Gets businessCategory
      *
-     * @return \IXDomainRobot\Model\BusinessCategory
+     * @return \Domainrobot\Model\BusinessCategory
      */
     public function getBusinessCategory()
     {
@@ -277,7 +277,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     /**
      * Sets businessCategory
      *
-     * @param \IXDomainRobot\Model\BusinessCategory $businessCategory Additional validation data required for certain Comodo products.
+     * @param \Domainrobot\Model\BusinessCategory $businessCategory Additional validation data required for certain Comodo products.
      *
      * @return $this
      */

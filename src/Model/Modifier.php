@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Modifier Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class Modifier implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'search' => 'string',
         'replace' => 'string',
-        'type' => '\IXDomainRobot\Model\ModifierConstants'
+        'type' => '\Domainrobot\Model\ModifierConstants'
     ];
 
     /**
@@ -270,7 +270,7 @@ class Modifier implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\ModifierConstants
+     * @return \Domainrobot\Model\ModifierConstants
      */
     public function getType()
     {
@@ -280,7 +280,7 @@ class Modifier implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\ModifierConstants $type The modifiers type, e.g. NAME_SERVER
+     * @param \Domainrobot\Model\ModifierConstants $type The modifiers type, e.g. NAME_SERVER
      *
      * @return $this
      */

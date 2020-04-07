@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainEnvelopeSearchRequest Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'currency' => 'string',
         'debug' => 'bool',
         'checkPortfolio' => 'bool',
-        'sources' => '\IXDomainRobot\Model\DomainStudioSources',
+        'sources' => '\Domainrobot\Model\DomainStudioSources',
         'clientIp' => 'string'
     ];
 
@@ -333,7 +333,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets sources
      *
-     * @return \IXDomainRobot\Model\DomainStudioSources
+     * @return \Domainrobot\Model\DomainStudioSources
      */
     public function getSources()
     {
@@ -343,7 +343,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets sources
      *
-     * @param \IXDomainRobot\Model\DomainStudioSources $sources Wrapper for the configuration for each source
+     * @param \Domainrobot\Model\DomainStudioSources $sources Wrapper for the configuration for each source
      *
      * @return $this
      */

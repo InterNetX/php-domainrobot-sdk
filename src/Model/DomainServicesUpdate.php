@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainServicesUpdate Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,9 +57,9 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'domains' => '\IXDomainRobot\Model\Domain[]',
-        'servicesAdd' => '\IXDomainRobot\Model\DomainServices',
-        'servicesRem' => '\IXDomainRobot\Model\DomainServices'
+        'domains' => '\Domainrobot\Model\Domain[]',
+        'servicesAdd' => '\Domainrobot\Model\DomainServices',
+        'servicesRem' => '\Domainrobot\Model\DomainServices'
     ];
 
     /**
@@ -219,7 +219,7 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     /**
      * Gets domains
      *
-     * @return \IXDomainRobot\Model\Domain[]
+     * @return \Domainrobot\Model\Domain[]
      */
     public function getDomains()
     {
@@ -229,7 +229,7 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     /**
      * Sets domains
      *
-     * @param \IXDomainRobot\Model\Domain[] $domains The name of the domain.
+     * @param \Domainrobot\Model\Domain[] $domains The name of the domain.
      *
      * @return $this
      */
@@ -243,7 +243,7 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     /**
      * Gets servicesAdd
      *
-     * @return \IXDomainRobot\Model\DomainServices
+     * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesAdd()
     {
@@ -253,7 +253,7 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     /**
      * Sets servicesAdd
      *
-     * @param \IXDomainRobot\Model\DomainServices $servicesAdd The services to add.
+     * @param \Domainrobot\Model\DomainServices $servicesAdd The services to add.
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     /**
      * Gets servicesRem
      *
-     * @return \IXDomainRobot\Model\DomainServices
+     * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesRem()
     {
@@ -277,7 +277,7 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     /**
      * Sets servicesRem
      *
-     * @param \IXDomainRobot\Model\DomainServices $servicesRem The services to remove.
+     * @param \Domainrobot\Model\DomainServices $servicesRem The services to remove.
      *
      * @return $this
      */

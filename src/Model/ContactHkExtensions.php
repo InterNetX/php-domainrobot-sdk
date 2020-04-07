@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactHkExtensions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,12 +57,12 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'documentType' => '\IXDomainRobot\Model\HkDocumentTypeConstants',
+        'documentType' => '\Domainrobot\Model\HkDocumentTypeConstants',
         'others' => 'string',
         'documentNumber' => 'string',
         'documentOrigin' => 'string',
         'above18' => 'bool',
-        'industryType' => '\IXDomainRobot\Model\HkIndustryTypeConstants'
+        'industryType' => '\Domainrobot\Model\HkIndustryTypeConstants'
     ];
 
     /**
@@ -237,7 +237,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets documentType
      *
-     * @return \IXDomainRobot\Model\HkDocumentTypeConstants
+     * @return \Domainrobot\Model\HkDocumentTypeConstants
      */
     public function getDocumentType()
     {
@@ -247,7 +247,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets documentType
      *
-     * @param \IXDomainRobot\Model\HkDocumentTypeConstants $documentType The document types.
+     * @param \Domainrobot\Model\HkDocumentTypeConstants $documentType The document types.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets industryType
      *
-     * @return \IXDomainRobot\Model\HkIndustryTypeConstants
+     * @return \Domainrobot\Model\HkIndustryTypeConstants
      */
     public function getIndustryType()
     {
@@ -367,7 +367,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets industryType
      *
-     * @param \IXDomainRobot\Model\HkIndustryTypeConstants $industryType The industry types.
+     * @param \Domainrobot\Model\HkIndustryTypeConstants $industryType The industry types.
      *
      * @return $this
      */

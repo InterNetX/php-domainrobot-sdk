@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactAuExtensions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,12 +58,12 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'eligibilityId' => 'string',
-        'eligibilityIdType' => '\IXDomainRobot\Model\AuEligibilityIdTypeConstants',
+        'eligibilityIdType' => '\Domainrobot\Model\AuEligibilityIdTypeConstants',
         'eligibilityName' => 'string',
-        'eligibilityType' => '\IXDomainRobot\Model\AuEligibilityTypeConstants',
+        'eligibilityType' => '\Domainrobot\Model\AuEligibilityTypeConstants',
         'policyReason' => 'int',
         'registrantId' => 'string',
-        'registrantIdType' => '\IXDomainRobot\Model\AuRegistrantIdTypeConstants',
+        'registrantIdType' => '\Domainrobot\Model\AuRegistrantIdTypeConstants',
         'registrantName' => 'string'
     ];
 
@@ -273,7 +273,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets eligibilityIdType
      *
-     * @return \IXDomainRobot\Model\AuEligibilityIdTypeConstants
+     * @return \Domainrobot\Model\AuEligibilityIdTypeConstants
      */
     public function getEligibilityIdType()
     {
@@ -283,7 +283,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets eligibilityIdType
      *
-     * @param \IXDomainRobot\Model\AuEligibilityIdTypeConstants $eligibilityIdType The type of Eligibility ID.
+     * @param \Domainrobot\Model\AuEligibilityIdTypeConstants $eligibilityIdType The type of Eligibility ID.
      *
      * @return $this
      */
@@ -321,7 +321,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets eligibilityType
      *
-     * @return \IXDomainRobot\Model\AuEligibilityTypeConstants
+     * @return \Domainrobot\Model\AuEligibilityTypeConstants
      */
     public function getEligibilityType()
     {
@@ -331,7 +331,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets eligibilityType
      *
-     * @param \IXDomainRobot\Model\AuEligibilityTypeConstants $eligibilityType The type of entity that the registrant is.
+     * @param \Domainrobot\Model\AuEligibilityTypeConstants $eligibilityType The type of entity that the registrant is.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets registrantIdType
      *
-     * @return \IXDomainRobot\Model\AuRegistrantIdTypeConstants
+     * @return \Domainrobot\Model\AuRegistrantIdTypeConstants
      */
     public function getRegistrantIdType()
     {
@@ -403,7 +403,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets registrantIdType
      *
-     * @param \IXDomainRobot\Model\AuRegistrantIdTypeConstants $registrantIdType Concerns the Registrant ID which you have selected in the Registrant ID form field.
+     * @param \Domainrobot\Model\AuRegistrantIdTypeConstants $registrantIdType Concerns the Registrant ID which you have selected in the Registrant ID form field.
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Claims Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -63,18 +63,18 @@ class Claims implements ModelInterface, ArrayAccess
         'middleName' => 'string',
         'nickname' => 'string',
         'preferredUsername' => 'string',
-        'profile' => '\IXDomainRobot\Model\UrlEntity',
-        'picture' => '\IXDomainRobot\Model\UrlEntity',
-        'website' => '\IXDomainRobot\Model\UrlEntity',
+        'profile' => '\Domainrobot\Model\UrlEntity',
+        'picture' => '\Domainrobot\Model\UrlEntity',
+        'website' => '\Domainrobot\Model\UrlEntity',
         'email' => 'string',
         'emailVerified' => 'bool',
-        'gender' => '\IXDomainRobot\Model\GenderConstants',
+        'gender' => '\Domainrobot\Model\GenderConstants',
         'birthdate' => '\DateTime',
         'zoneinfo' => 'string',
         'locale' => 'string',
-        'phoneNumber' => '\IXDomainRobot\Model\Phone',
+        'phoneNumber' => '\Domainrobot\Model\Phone',
         'phoneNumberVerified' => 'bool',
-        'address' => '\IXDomainRobot\Model\AddressClaim',
+        'address' => '\Domainrobot\Model\AddressClaim',
         'organization' => 'string'
     ];
 
@@ -459,7 +459,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Gets profile
      *
-     * @return \IXDomainRobot\Model\UrlEntity
+     * @return \Domainrobot\Model\UrlEntity
      */
     public function getProfile()
     {
@@ -469,7 +469,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Sets profile
      *
-     * @param \IXDomainRobot\Model\UrlEntity $profile URL of the End-User's profile page. The contents of this Web page SHOULD be about the End-User.
+     * @param \Domainrobot\Model\UrlEntity $profile URL of the End-User's profile page. The contents of this Web page SHOULD be about the End-User.
      *
      * @return $this
      */
@@ -483,7 +483,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Gets picture
      *
-     * @return \IXDomainRobot\Model\UrlEntity
+     * @return \Domainrobot\Model\UrlEntity
      */
     public function getPicture()
     {
@@ -493,7 +493,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Sets picture
      *
-     * @param \IXDomainRobot\Model\UrlEntity $picture URL of the End-User's profile picture.
+     * @param \Domainrobot\Model\UrlEntity $picture URL of the End-User's profile picture.
      *
      * @return $this
      */
@@ -507,7 +507,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Gets website
      *
-     * @return \IXDomainRobot\Model\UrlEntity
+     * @return \Domainrobot\Model\UrlEntity
      */
     public function getWebsite()
     {
@@ -517,7 +517,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Sets website
      *
-     * @param \IXDomainRobot\Model\UrlEntity $website URL of the End-User's Web page or blog. This Web page SHOULD contain information published by the End-User or an organization that the End-User is affiliated with.
+     * @param \Domainrobot\Model\UrlEntity $website URL of the End-User's Web page or blog. This Web page SHOULD contain information published by the End-User or an organization that the End-User is affiliated with.
      *
      * @return $this
      */
@@ -579,7 +579,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Gets gender
      *
-     * @return \IXDomainRobot\Model\GenderConstants
+     * @return \Domainrobot\Model\GenderConstants
      */
     public function getGender()
     {
@@ -589,7 +589,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param \IXDomainRobot\Model\GenderConstants $gender URL of the End-User's profile picture.
+     * @param \Domainrobot\Model\GenderConstants $gender URL of the End-User's profile picture.
      *
      * @return $this
      */
@@ -675,7 +675,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Gets phoneNumber
      *
-     * @return \IXDomainRobot\Model\Phone
+     * @return \Domainrobot\Model\Phone
      */
     public function getPhoneNumber()
     {
@@ -685,7 +685,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Sets phoneNumber
      *
-     * @param \IXDomainRobot\Model\Phone $phoneNumber End-User's preferred telephone number. E.164 [E.164] is RECOMMENDED as the format of this Claim, for example, +1 (425) 555-1212 or +56 (2) 687 2400. .
+     * @param \Domainrobot\Model\Phone $phoneNumber End-User's preferred telephone number. E.164 [E.164] is RECOMMENDED as the format of this Claim, for example, +1 (425) 555-1212 or +56 (2) 687 2400. .
      *
      * @return $this
      */
@@ -723,7 +723,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \IXDomainRobot\Model\AddressClaim
+     * @return \Domainrobot\Model\AddressClaim
      */
     public function getAddress()
     {
@@ -733,7 +733,7 @@ class Claims implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \IXDomainRobot\Model\AddressClaim $address End-user's address
+     * @param \Domainrobot\Model\AddressClaim $address End-user's address
      *
      * @return $this
      */

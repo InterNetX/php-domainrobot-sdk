@@ -1,23 +1,23 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Model\PollMessage;
-use IXDomainRobot\Model\DomainRobotPromise;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\Domainrobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Model\PollMessage;
+use Domainrobot\Model\DomainrobotPromise;
+use Domainrobot\Service\DomainrobotService;
 
-class PollMessageService extends DomainRobotService
+class PollMessageService extends DomainrobotService
 {
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
 
@@ -32,10 +32,10 @@ class PollMessageService extends DomainRobotService
      */
     public function info()
     {
-        $domainRobotPromise = $this->infoAsync();
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->infoAsync();
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        return new PollMessage(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new PollMessage(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -64,17 +64,17 @@ class PollMessageService extends DomainRobotService
      */
     public function confirm($id)
     {
-        $domainRobotPromise = $this->confirmAsync($id);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->confirmAsync($id);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
     }
 
     /**
      * Confirms the PollMessage with the given id.
      *
      * @param [int] $id
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function confirmAsync($id)
     {

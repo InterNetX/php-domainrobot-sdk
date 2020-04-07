@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Message Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,10 +58,10 @@ class Message implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'text' => 'string',
-        'messages' => '\IXDomainRobot\Model\Message[]',
-        'objects' => '\IXDomainRobot\Model\GenericObject[]',
+        'messages' => '\Domainrobot\Model\Message[]',
+        'objects' => '\Domainrobot\Model\GenericObject[]',
         'code' => 'string',
-        'status' => '\IXDomainRobot\Model\StatusType'
+        'status' => '\Domainrobot\Model\StatusType'
     ];
 
     /**
@@ -255,7 +255,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Gets messages
      *
-     * @return \IXDomainRobot\Model\Message[]
+     * @return \Domainrobot\Model\Message[]
      */
     public function getMessages()
     {
@@ -265,7 +265,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets messages
      *
-     * @param \IXDomainRobot\Model\Message[] $messages The messages.
+     * @param \Domainrobot\Model\Message[] $messages The messages.
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Gets objects
      *
-     * @return \IXDomainRobot\Model\GenericObject[]
+     * @return \Domainrobot\Model\GenericObject[]
      */
     public function getObjects()
     {
@@ -289,7 +289,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \IXDomainRobot\Model\GenericObject[] $objects The objects.
+     * @param \Domainrobot\Model\GenericObject[] $objects The objects.
      *
      * @return $this
      */
@@ -327,7 +327,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\StatusType
+     * @return \Domainrobot\Model\StatusType
      */
     public function getStatus()
     {
@@ -337,7 +337,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\StatusType $status The status of the message code.
+     * @param \Domainrobot\Model\StatusType $status The status of the message code.
      *
      * @return $this
      */

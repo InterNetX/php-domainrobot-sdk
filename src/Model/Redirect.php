@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * Redirect Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,12 +59,12 @@ class Redirect implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'source' => 'string',
         'target' => 'string',
-        'type' => '\IXDomainRobot\Model\RedirectTypeConstants',
-        'mode' => '\IXDomainRobot\Model\RedirectModeConstants',
+        'type' => '\Domainrobot\Model\RedirectTypeConstants',
+        'mode' => '\Domainrobot\Model\RedirectModeConstants',
         'domain' => 'string',
         'title' => 'string',
         'backups' => 'string[]',
@@ -339,7 +339,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -349,7 +349,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -373,7 +373,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -435,7 +435,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\RedirectTypeConstants
+     * @return \Domainrobot\Model\RedirectTypeConstants
      */
     public function getType()
     {
@@ -445,7 +445,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\RedirectTypeConstants $type Redirect type
+     * @param \Domainrobot\Model\RedirectTypeConstants $type Redirect type
      *
      * @return $this
      */
@@ -459,7 +459,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Gets mode
      *
-     * @return \IXDomainRobot\Model\RedirectModeConstants
+     * @return \Domainrobot\Model\RedirectModeConstants
      */
     public function getMode()
     {
@@ -469,7 +469,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets mode
      *
-     * @param \IXDomainRobot\Model\RedirectModeConstants $mode Redirect mode
+     * @param \Domainrobot\Model\RedirectModeConstants $mode Redirect mode
      *
      * @return $this
      */

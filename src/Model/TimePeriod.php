@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * TimePeriod Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class TimePeriod implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'unit' => '\IXDomainRobot\Model\TimeUnitConstants',
+        'unit' => '\Domainrobot\Model\TimeUnitConstants',
         'period' => 'int'
     ];
 
@@ -213,7 +213,7 @@ class TimePeriod implements ModelInterface, ArrayAccess
     /**
      * Gets unit
      *
-     * @return \IXDomainRobot\Model\TimeUnitConstants
+     * @return \Domainrobot\Model\TimeUnitConstants
      */
     public function getUnit()
     {
@@ -223,7 +223,7 @@ class TimePeriod implements ModelInterface, ArrayAccess
     /**
      * Sets unit
      *
-     * @param \IXDomainRobot\Model\TimeUnitConstants $unit The unit of the period
+     * @param \Domainrobot\Model\TimeUnitConstants $unit The unit of the period
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * WhoisStatus Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class WhoisStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'status' => '\IXDomainRobot\Model\DomainStudioDomainStatus'
+        'status' => '\Domainrobot\Model\DomainStudioDomainStatus'
     ];
 
     /**
@@ -207,7 +207,7 @@ class WhoisStatus implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \IXDomainRobot\Model\DomainStudioDomainStatus
+     * @return \Domainrobot\Model\DomainStudioDomainStatus
      */
     public function getStatus()
     {
@@ -217,7 +217,7 @@ class WhoisStatus implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \IXDomainRobot\Model\DomainStudioDomainStatus $status The whois status
+     * @param \Domainrobot\Model\DomainStudioDomainStatus $status The whois status
      *
      * @return $this
      */

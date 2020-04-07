@@ -1,25 +1,25 @@
 <?php
 
-namespace IXDomainRobot\Service;
+namespace Domainrobot\Service;
 
-use IXDomainRobot\DomainRobot;
-use IXDomainRobot\Lib\ArrayHelper;
-use IXDomainRobot\Lib\DomainRobotConfig;
-use IXDomainRobot\Lib\DomainRobotPromise;
-use IXDomainRobot\Model\Query;
-use IXDomainRobot\Model\SslContact;
-use IXDomainRobot\Service\DomainRobotService;
+use Domainrobot\Domainrobot;
+use Domainrobot\Lib\ArrayHelper;
+use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
+use Domainrobot\Model\Query;
+use Domainrobot\Model\SslContact;
+use Domainrobot\Service\DomainrobotService;
 
-class SslContactService extends DomainRobotService
+class SslContactService extends DomainrobotService
 {
 
     /**
      *
-     * @param DomainRobotConfig $domainRobotConfig
+     * @param DomainrobotConfig $domainrobotConfig
      */
-    public function __construct(DomainRobotConfig $domainRobotConfig)
+    public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        parent::__construct($domainRobotConfig);
+        parent::__construct($domainrobotConfig);
     }
 
     /**
@@ -30,19 +30,19 @@ class SslContactService extends DomainRobotService
      */
     public function create(SslContact $body)
     {
-        $domainRobotPromise = $this->createAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new SslContact(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new SslContact(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a sslcontact create request.
      *
      * @param SslContact $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function createAsync(SslContact $body)
     {
@@ -61,11 +61,11 @@ class SslContactService extends DomainRobotService
      */
     public function list(Query $body = null)
     {
-        $domainRobotPromise = $this->listAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
-        $data = $domainRobotResult->getResult()['data'];
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        $data = $domainrobotResult->getResult()['data'];
         $contacts = array();
         foreach ($data as $d) {
             $c = new SslContact($d);
@@ -78,7 +78,7 @@ class SslContactService extends DomainRobotService
      * Sends a sslcontact list request.
      *
      * @param Query $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function listAsync(Query $body = null)
     {
@@ -86,7 +86,7 @@ class SslContactService extends DomainRobotService
         if ($body != null) {
             $data = $body->toArray(true);
         }
-        return new DomainRobotPromise($this->sendRequest(
+        return new DomainrobotPromise($this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/sslcontact/_search",
             'POST',
             ["json" => $data]
@@ -101,18 +101,18 @@ class SslContactService extends DomainRobotService
      */
     public function info($id)
     {
-        $domainRobotPromise = $this->infoAsync($id);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->infoAsync($id);
+        $domainrobotResult = $domainrobotPromise->wait();
 
 
-        return new SslContact(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new SslContact(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a sslcontact info request.
      *
      * @param [int] $id
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function infoAsync($id)
     {
@@ -130,15 +130,15 @@ class SslContactService extends DomainRobotService
      */
     public function delete($id)
     {
-        $domainRobotPromise = $this->deleteAsync($id);
-        $domainRobotPromise->wait();
+        $domainrobotPromise = $this->deleteAsync($id);
+        $domainrobotPromise->wait();
     }
 
     /**
      * Sends a sslcontact delete request.
      *
      * @param [int] $id
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function deleteAsync($id)
     {
@@ -156,19 +156,19 @@ class SslContactService extends DomainRobotService
      */
     public function update(SslContact $body)
     {
-        $domainRobotPromise = $this->updateAsync($body);
-        $domainRobotResult = $domainRobotPromise->wait();
+        $domainrobotPromise = $this->updateAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
 
-        DomainRobot::setLastDomainRobotResult($domainRobotResult);
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new SslContact(ArrayHelper::getValueFromArray($domainRobotResult->getResult(), 'data.0', []));
+        return new SslContact(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
      * Sends a sslcontact update request.
      *
      * @param SslContact $body
-     * @return DomainRobotPromise
+     * @return DomainrobotPromise
      */
     public function updateAsync(SslContact $body)
     {

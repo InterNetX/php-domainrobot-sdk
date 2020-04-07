@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * VirtualNameServer Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,11 +59,11 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'active' => 'bool',
-        'name' => '\IXDomainRobot\Model\Name',
-        'mainAddress' => '\IXDomainRobot\Model\InetAddress',
+        'name' => '\Domainrobot\Model\Name',
+        'mainAddress' => '\Domainrobot\Model\InetAddress',
         'ipAddresses' => 'string[]'
     ];
 
@@ -297,7 +297,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -307,7 +307,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -321,7 +321,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -331,7 +331,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Gets name
      *
-     * @return \IXDomainRobot\Model\Name
+     * @return \Domainrobot\Model\Name
      */
     public function getName()
     {
@@ -379,7 +379,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param \IXDomainRobot\Model\Name $name Host name of the nameserver.
+     * @param \Domainrobot\Model\Name $name Host name of the nameserver.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Gets mainAddress
      *
-     * @return \IXDomainRobot\Model\InetAddress
+     * @return \Domainrobot\Model\InetAddress
      */
     public function getMainAddress()
     {
@@ -403,7 +403,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     /**
      * Sets mainAddress
      *
-     * @param \IXDomainRobot\Model\InetAddress $mainAddress The mainAddress
+     * @param \Domainrobot\Model\InetAddress $mainAddress The mainAddress
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainStudioSourceSuggestion Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'services' => '\IXDomainRobot\Model\DomainEnvelopeSearchService[]',
+        'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
         'language' => 'string',
         'max' => 'int',
         'maxSldLength' => 'int',
@@ -249,7 +249,7 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     /**
      * Gets services
      *
-     * @return \IXDomainRobot\Model\DomainEnvelopeSearchService[]
+     * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
      */
     public function getServices()
     {
@@ -259,7 +259,7 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     /**
      * Sets services
      *
-     * @param \IXDomainRobot\Model\DomainEnvelopeSearchService[] $services The services to fetch extra data from for this source
+     * @param \Domainrobot\Model\DomainEnvelopeSearchService[] $services The services to fetch extra data from for this source
      *
      * @return $this
      */

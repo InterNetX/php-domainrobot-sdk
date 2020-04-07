@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * HandleVerification Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,18 +59,18 @@ class HandleVerification implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'reference' => 'string',
         'messageSend' => '\DateTime',
         'confirmed' => '\DateTime',
-        'confirmIp' => '\IXDomainRobot\Model\InetAddress',
+        'confirmIp' => '\Domainrobot\Model\InetAddress',
         'failed' => '\DateTime',
-        'domain' => '\IXDomainRobot\Model\ContactVerificationDomain[]',
-        'verificationMail' => '\IXDomainRobot\Model\ContactVerificationMessage[]',
+        'domain' => '\Domainrobot\Model\ContactVerificationDomain[]',
+        'verificationMail' => '\Domainrobot\Model\ContactVerificationMessage[]',
         'comment' => 'string',
         'action' => 'string',
-        'handle' => '\IXDomainRobot\Model\Contact'
+        'handle' => '\Domainrobot\Model\Contact'
     ];
 
     /**
@@ -339,7 +339,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -349,7 +349,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -373,7 +373,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -459,7 +459,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Gets confirmIp
      *
-     * @return \IXDomainRobot\Model\InetAddress
+     * @return \Domainrobot\Model\InetAddress
      */
     public function getConfirmIp()
     {
@@ -469,7 +469,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Sets confirmIp
      *
-     * @param \IXDomainRobot\Model\InetAddress $confirmIp the confirmIp of the Verification
+     * @param \Domainrobot\Model\InetAddress $confirmIp the confirmIp of the Verification
      *
      * @return $this
      */
@@ -507,7 +507,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Gets domain
      *
-     * @return \IXDomainRobot\Model\ContactVerificationDomain[]
+     * @return \Domainrobot\Model\ContactVerificationDomain[]
      */
     public function getDomain()
     {
@@ -517,7 +517,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Sets domain
      *
-     * @param \IXDomainRobot\Model\ContactVerificationDomain[] $domain the domains of the Verification
+     * @param \Domainrobot\Model\ContactVerificationDomain[] $domain the domains of the Verification
      *
      * @return $this
      */
@@ -531,7 +531,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Gets verificationMail
      *
-     * @return \IXDomainRobot\Model\ContactVerificationMessage[]
+     * @return \Domainrobot\Model\ContactVerificationMessage[]
      */
     public function getVerificationMail()
     {
@@ -541,7 +541,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Sets verificationMail
      *
-     * @param \IXDomainRobot\Model\ContactVerificationMessage[] $verificationMail the messages of the Verification
+     * @param \Domainrobot\Model\ContactVerificationMessage[] $verificationMail the messages of the Verification
      *
      * @return $this
      */
@@ -603,7 +603,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Gets handle
      *
-     * @return \IXDomainRobot\Model\Contact
+     * @return \Domainrobot\Model\Contact
      */
     public function getHandle()
     {
@@ -613,7 +613,7 @@ class HandleVerification implements ModelInterface, ArrayAccess
     /**
      * Sets handle
      *
-     * @param \IXDomainRobot\Model\Contact $handle the contact of the Verification
+     * @param \Domainrobot\Model\Contact $handle the contact of the Verification
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * DomainCancelation Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,17 +59,17 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\IXDomainRobot\Model\BasicUser',
-        'updater' => '\IXDomainRobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'domain' => 'string',
         'registryWhen' => '\DateTime',
         'gainingRegistrar' => 'string',
         'disconnect' => 'bool',
         'notice' => 'string',
         'logId' => 'int',
-        'registryStatus' => '\IXDomainRobot\Model\RegistryStatusConstants',
-        'type' => '\IXDomainRobot\Model\CancelationTypeConstants',
-        'execution' => '\IXDomainRobot\Model\ExecutionTypeConstants'
+        'registryStatus' => '\Domainrobot\Model\RegistryStatusConstants',
+        'type' => '\Domainrobot\Model\CancelationTypeConstants',
+        'execution' => '\Domainrobot\Model\ExecutionTypeConstants'
     ];
 
     /**
@@ -339,7 +339,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -349,7 +349,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \IXDomainRobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \IXDomainRobot\Model\BasicUser
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -373,7 +373,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \IXDomainRobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -531,7 +531,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Gets registryStatus
      *
-     * @return \IXDomainRobot\Model\RegistryStatusConstants
+     * @return \Domainrobot\Model\RegistryStatusConstants
      */
     public function getRegistryStatus()
     {
@@ -541,7 +541,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets registryStatus
      *
-     * @param \IXDomainRobot\Model\RegistryStatusConstants $registryStatus Lorem Ipsum
+     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus Lorem Ipsum
      *
      * @return $this
      */
@@ -555,7 +555,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \IXDomainRobot\Model\CancelationTypeConstants
+     * @return \Domainrobot\Model\CancelationTypeConstants
      */
     public function getType()
     {
@@ -565,7 +565,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \IXDomainRobot\Model\CancelationTypeConstants $type The cancelation type. TRANSIT is only possible for certain TLDs.
+     * @param \Domainrobot\Model\CancelationTypeConstants $type The cancelation type. TRANSIT is only possible for certain TLDs.
      *
      * @return $this
      */
@@ -579,7 +579,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Gets execution
      *
-     * @return \IXDomainRobot\Model\ExecutionTypeConstants
+     * @return \Domainrobot\Model\ExecutionTypeConstants
      */
     public function getExecution()
     {
@@ -589,7 +589,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets execution
      *
-     * @param \IXDomainRobot\Model\ExecutionTypeConstants $execution The execution type.
+     * @param \Domainrobot\Model\ExecutionTypeConstants $execution The execution type.
      *
      * @return $this
      */

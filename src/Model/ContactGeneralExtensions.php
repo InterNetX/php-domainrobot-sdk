@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactGeneralExtensions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,12 +57,12 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'birth' => '\IXDomainRobot\Model\ContactBirthExtensions',
-        'trademark' => '\IXDomainRobot\Model\ContactTrademarkExtensions',
-        'identification' => '\IXDomainRobot\Model\ContactIdentificationExtensions',
+        'birth' => '\Domainrobot\Model\ContactBirthExtensions',
+        'trademark' => '\Domainrobot\Model\ContactTrademarkExtensions',
+        'identification' => '\Domainrobot\Model\ContactIdentificationExtensions',
         'language' => 'string',
         'companyNumber' => 'string',
-        'gender' => '\IXDomainRobot\Model\GenderConstants',
+        'gender' => '\Domainrobot\Model\GenderConstants',
         'vatNumber' => 'string',
         'citizenship' => 'string',
         'mobilePhone' => 'string'
@@ -255,7 +255,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets birth
      *
-     * @return \IXDomainRobot\Model\ContactBirthExtensions
+     * @return \Domainrobot\Model\ContactBirthExtensions
      */
     public function getBirth()
     {
@@ -265,7 +265,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets birth
      *
-     * @param \IXDomainRobot\Model\ContactBirthExtensions $birth The birth extensions.
+     * @param \Domainrobot\Model\ContactBirthExtensions $birth The birth extensions.
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets trademark
      *
-     * @return \IXDomainRobot\Model\ContactTrademarkExtensions
+     * @return \Domainrobot\Model\ContactTrademarkExtensions
      */
     public function getTrademark()
     {
@@ -289,7 +289,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets trademark
      *
-     * @param \IXDomainRobot\Model\ContactTrademarkExtensions $trademark The trademark extensions.
+     * @param \Domainrobot\Model\ContactTrademarkExtensions $trademark The trademark extensions.
      *
      * @return $this
      */
@@ -303,7 +303,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets identification
      *
-     * @return \IXDomainRobot\Model\ContactIdentificationExtensions
+     * @return \Domainrobot\Model\ContactIdentificationExtensions
      */
     public function getIdentification()
     {
@@ -313,7 +313,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets identification
      *
-     * @param \IXDomainRobot\Model\ContactIdentificationExtensions $identification The identification extensions.
+     * @param \Domainrobot\Model\ContactIdentificationExtensions $identification The identification extensions.
      *
      * @return $this
      */
@@ -375,7 +375,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets gender
      *
-     * @return \IXDomainRobot\Model\GenderConstants
+     * @return \Domainrobot\Model\GenderConstants
      */
     public function getGender()
     {
@@ -385,7 +385,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param \IXDomainRobot\Model\GenderConstants $gender The gender.
+     * @param \Domainrobot\Model\GenderConstants $gender The gender.
      *
      * @return $this
      */

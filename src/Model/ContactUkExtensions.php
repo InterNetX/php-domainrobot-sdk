@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * ContactUkExtensions Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entityType' => '\IXDomainRobot\Model\UkTypeConstants'
+        'entityType' => '\Domainrobot\Model\UkTypeConstants'
     ];
 
     /**
@@ -207,7 +207,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets entityType
      *
-     * @return \IXDomainRobot\Model\UkTypeConstants
+     * @return \Domainrobot\Model\UkTypeConstants
      */
     public function getEntityType()
     {
@@ -217,7 +217,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets entityType
      *
-     * @param \IXDomainRobot\Model\UkTypeConstants $entityType The entity type.
+     * @param \Domainrobot\Model\UkTypeConstants $entityType The entity type.
      *
      * @return $this
      */

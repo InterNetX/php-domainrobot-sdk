@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace IXDomainRobot\Model;
+namespace Domainrobot\Model;
 
 use \ArrayAccess;
-use \IXDomainRobot\ObjectSerializer;
+use \Domainrobot\ObjectSerializer;
 
 /**
  * UserProfile Class Doc Comment
  *
  * @category Class
- * @package  IXDomainRobot
+ * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class UserProfile implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'flag' => '\IXDomainRobot\Model\UserProfileFlag',
+        'flag' => '\Domainrobot\Model\UserProfileFlag',
         'key' => 'string',
         'value' => 'string',
         'readonly' => 'bool'
@@ -234,7 +234,7 @@ class UserProfile implements ModelInterface, ArrayAccess
     /**
      * Gets flag
      *
-     * @return \IXDomainRobot\Model\UserProfileFlag
+     * @return \Domainrobot\Model\UserProfileFlag
      */
     public function getFlag()
     {
@@ -244,7 +244,7 @@ class UserProfile implements ModelInterface, ArrayAccess
     /**
      * Sets flag
      *
-     * @param \IXDomainRobot\Model\UserProfileFlag $flag The mode of the entry
+     * @param \Domainrobot\Model\UserProfileFlag $flag The mode of the entry
      *
      * @return $this
      */

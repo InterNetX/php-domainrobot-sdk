@@ -422,24 +422,26 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
      * @param array $retrieveKeys [list of keys to get back in any case]
      * 
      * Examples:
-     * toArray() => returns all values
-     * toArray(true) => returns only non empty values
-     * toArray(true, ["key"]) => returns all non empty values and "key" even if empty
-     * toArray(true, ["key:no_empty_value"]) => returns all non empty values and "key" if not empty
+     * toArray() => returns only non empty values
+     * toArray(true) => returns all values
      */
-    public function toArray($removeEmptyValues = false, $retrieveKeys = []){
+    public function toArray($retrieveAllValues = false){
         $container = $this->container;
         foreach($container as $key => &$value){
-            if(!in_array($key, $retrieveKeys) && $removeEmptyValues && empty($value)){
+            if(!$retrieveAllValues && empty($value)){
                 unset($container[$key]);
                 continue;
             }
-            if(in_array($key.":no_empty_value", $retrieveKeys)){
-                unset($container[$key]);
-                continue;
-            }
+            
             if(gettype($value) === "object"){
                 $value = $value->toArray();
+            }
+            if(is_array($value)){
+                foreach($value as &$v){
+                    if (gettype($v) === "object") {
+                        $v = $v->toArray();
+                    }
+                }
             }
         };
         return $container;

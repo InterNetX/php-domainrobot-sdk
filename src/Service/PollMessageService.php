@@ -78,7 +78,7 @@ class PollMessageService extends DomainrobotService
      */
     public function confirmAsync($id)
     {
-        $this->sendRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/poll/$id",
             'PUT'
         );

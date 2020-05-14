@@ -104,7 +104,6 @@ class SslContactService extends DomainrobotService
         $domainrobotPromise = $this->infoAsync($id);
         $domainrobotResult = $domainrobotPromise->wait();
 
-
         return new SslContact(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
@@ -131,7 +130,9 @@ class SslContactService extends DomainrobotService
     public function delete($id)
     {
         $domainrobotPromise = $this->deleteAsync($id);
-        $domainrobotPromise->wait();
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
     }
 
     /**
@@ -142,7 +143,7 @@ class SslContactService extends DomainrobotService
      */
     public function deleteAsync($id)
     {
-        $this->sendRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/sslcontact/$id",
             'DELETE'
         );

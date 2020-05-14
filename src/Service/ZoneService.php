@@ -246,7 +246,10 @@ class ZoneService extends DomainrobotService
     public function delete($name, $systemNameServer)
     {
         $domainrobotPromise = $this->deleteAsync($name, $systemNameServer);
-        $domainrobotPromise->wait();
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
     }
 
     /**
@@ -258,7 +261,7 @@ class ZoneService extends DomainrobotService
      */
     public function deleteAsync($name, $systemNameServer)
     {
-        $this->sendRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/zone/$name/$systemNameServer",
             'DELETE'
         );

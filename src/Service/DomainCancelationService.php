@@ -99,7 +99,9 @@ class DomainCancelationService extends DomainrobotService
     public function delete($domain)
     {
         $domainrobotPromise = $this->deleteAsync($domain);
-        $domainrobotPromise->wait();
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
     }
 
 
@@ -111,7 +113,7 @@ class DomainCancelationService extends DomainrobotService
      */
     public function deleteAsync($domain)
     {
-        $this->sendRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/domain/$domain/cancelation",
             'DELETE'
         );

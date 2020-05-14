@@ -130,7 +130,9 @@ class TrustedApplicationService extends DomainrobotService
     public function delete($id)
     {
         $domainrobotPromise = $this->deleteAsync($id);
-        $domainrobotPromise->wait();
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
     }
 
 
@@ -142,7 +144,7 @@ class TrustedApplicationService extends DomainrobotService
      */
     public function deleteAsync($id)
     {
-        $this->sendRequest(
+        return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/trustedapp/$id",
             'DELETE'
         );

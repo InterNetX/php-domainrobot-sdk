@@ -12,6 +12,7 @@ use Domainrobot\Lib\DomainrobotException;
 use Domainrobot\Lib\DomainrobotResult;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Certificate;
+use Illuminate\Support\Facades\Log;
 use Psr\Http\Message\ResponseInterface;
 
 class DomainrobotService
@@ -28,6 +29,9 @@ class DomainrobotService
      */
     protected $guzzleClientConfig;
 
+    private $logRequestCallback = null;
+    private $logReesponseCallback = null;
+
     public function __construct(DomainrobotConfig $domainrobotConfig)
     {
         $this->domainRobotConfig = $domainrobotConfig;
@@ -36,7 +40,7 @@ class DomainrobotService
         $handle = fopen(__DIR__."/../../composer.json", "r");
         $contents = fread($handle, filesize(__DIR__."/../../composer.json"));
         fclose($handle);
-        preg_match("/version.+(\d+\.\d+\.\d+)/",$contents,$matches);
+        preg_match("/version.+(\d+\.\d+\.\d+)/", $contents, $matches);
 
         $this->guzzleClientConfig = [
             'headers' => [
@@ -49,6 +53,18 @@ class DomainrobotService
                 $this->domainRobotConfig->getAuth()->getPassword()
             ]
         ];
+    }
+
+    public function logRequest($callback)
+    {
+        $this->logRequestCallback = $callback;
+        return $this;
+    }
+
+    public function logResponse($callback)
+    {
+        $this->logResponseCallback = $callback;
+        return $this;
     }
 
     public function addHeaders($headers = [])
@@ -71,6 +87,16 @@ class DomainrobotService
     {
         $guzzleClient = new Client($this->guzzleClientConfig);
 
+        if ($this->logRequestCallback!==null) {
+            $this->logRequestCallback->call(
+                $this,
+                $method,
+                $url,
+                $options
+            );
+        }
+        $startTime = microtime(true);
+
         $promise = $guzzleClient->requestAsync(
             $method,
             $url,
@@ -80,9 +106,19 @@ class DomainrobotService
              *
              * @return DomainrobotException
              */
-            function (ResponseInterface $response) {
+            function (ResponseInterface $response) use ($url, $startTime) {
                 $rawResponse = $response->getBody()->getContents();
                 $decodedResponse = json_decode($rawResponse, true);
+
+                if ($this->logResponseCallback!==null) {
+                    $this->logResponseCallback->call(
+                        $this,
+                        $url,
+                        $rawResponse,
+                        $response->getStatusCode(),
+                        microtime(true) - $startTime
+                    );
+                }
 
                 return new DomainrobotResult($decodedResponse, $response->getStatusCode());
             },

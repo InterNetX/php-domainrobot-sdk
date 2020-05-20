@@ -30,7 +30,7 @@ class DomainrobotService
     protected $guzzleClientConfig;
 
     private $logRequestCallback = null;
-    private $logReesponseCallback = null;
+    private $logResponseCallback = null;
 
     public function __construct(DomainrobotConfig $domainrobotConfig)
     {

@@ -55,6 +55,25 @@ class SslContactService extends DomainrobotService
 
     /**
      * Sends a sslcontact list request.
+     * 
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * country
+     * * fname
+     * * address
+     * * city
+     * * created
+     * * title
+     * * lname
+     * * phone
+     * * organization
+     * * state
+     * * id
+     * * fax
+     * * pcode
+     * * updated
+     * * email
      *
      * @param Query $body
      * @return SslContact[]
@@ -76,6 +95,25 @@ class SslContactService extends DomainrobotService
 
     /**
      * Sends a sslcontact list request.
+     * 
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * country
+     * * fname
+     * * address
+     * * city
+     * * created
+     * * title
+     * * lname
+     * * phone
+     * * organization
+     * * state
+     * * id
+     * * fax
+     * * pcode
+     * * updated
+     * * email
      *
      * @param Query $body
      * @return DomainrobotPromise

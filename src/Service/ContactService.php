@@ -55,6 +55,31 @@ class ContactService extends DomainrobotService
 
     /**
      * Sends a contact list request.
+     * 
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * country
+     * * pcode
+     * * city
+     * * type
+     * * title
+     * * lname
+     * * alias
+     * * state
+     * * id
+     * * sip
+     * * fax
+     * * verification
+     * * email
+     * * fname
+     * * address
+     * * created
+     * * phone
+     * * organization
+     * * domainsafe
+     * * comment
+     * * updated
      *
      * @param Query $body
      * @return Contact[]
@@ -76,6 +101,31 @@ class ContactService extends DomainrobotService
 
     /**
      * Sends a contact list request.
+     * 
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * country
+     * * pcode
+     * * city
+     * * type
+     * * title
+     * * lname
+     * * alias
+     * * state
+     * * id
+     * * sip
+     * * fax
+     * * verification
+     * * email
+     * * fname
+     * * address
+     * * created
+     * * phone
+     * * organization
+     * * domainsafe
+     * * comment
+     * * updated
      *
      * @param Query $body
      * @return DomainrobotPromise

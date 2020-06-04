@@ -56,6 +56,16 @@ class TrustedApplicationService extends DomainrobotService
 
     /**
      *  Sends a TrustedApplication list request.
+     * 
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * created
+     * * comment
+     * * uuid
+     * * device
+     * * updated
+     * * application
      *
      * @return TrustedApplication[]
      */
@@ -76,6 +86,16 @@ class TrustedApplicationService extends DomainrobotService
 
     /**
      *  Sends a TrustedApplication list request.
+     * 
+     * The following keys can be used for filtering, ordering or fetching additional
+     * data via query parameter:
+     *
+     * * created
+     * * comment
+     * * uuid
+     * * device
+     * * updated
+     * * application
      *
      * @return DomainrobotPromise
      */

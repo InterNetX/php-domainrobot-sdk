@@ -293,9 +293,13 @@ class ZoneService extends DomainrobotService
     {
         if ($body->getOrigin() === null) {
             throw InvalidArgumentException("Field Zone.origin is missing.");
+        } else {
+            $name = $body->getOrigin();
         }
         if ($body->getVirtualNameServer() === null) {
             throw InvalidArgumentException("Field Zone.virtualNameServer is missing.");
+        } else {
+            $systemNameServer = $body->getVirtualNameServer();
         }
         return $this->sendRequest(
             $this->domainRobotConfig->getUrl() . "/zone/$name/$systemNameServer",

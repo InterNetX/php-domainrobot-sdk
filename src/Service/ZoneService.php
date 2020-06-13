@@ -48,7 +48,7 @@ class ZoneService extends DomainrobotService
     public function createAsync(Zone $body)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/zone",
+            $this->domainrobotConfig->getUrl() . "/zone",
             'POST',
             ["json" => $body->toArray(true)]
         );
@@ -58,7 +58,7 @@ class ZoneService extends DomainrobotService
      * Sends a zone stream request to add and/or remove records for every zone with
      * the given origin.
      *
-     * @param [string] $origin
+     * @param string $origin
      * @param ZoneStream $body
      */
     public function stream($origin, ZoneStream $body)
@@ -75,14 +75,14 @@ class ZoneService extends DomainrobotService
      * Sends a zone stream request to add and/or remove records for every zone with
      * the given origin.
      *
-     * @param [string] $origin
+     * @param string $origin
      * @param ZoneStream $body
      * @return DomainrobotPromise
      */
     public function streamAsync($origin, ZoneStream $body)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/zone/$origin/_stream",
+            $this->domainrobotConfig->getUrl() . "/zone/$origin/_stream",
             'POST',
             ["json" => $body->toArray(true)]
         );
@@ -116,7 +116,7 @@ class ZoneService extends DomainrobotService
         $systemNameServer = $body->getVirtualNameServer();
 
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/zone/$name/$systemNameServer/_import",
+            $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer/_import",
             'POST',
             ["json" => $body->toArray(true)]
         ));
@@ -147,7 +147,7 @@ class ZoneService extends DomainrobotService
      * * primary
      * * changed
      *
-     * @param Query $body
+     * @param Query|null $body
      * @return Zone[]
      */
     public function list(Query $body = null)
@@ -190,7 +190,7 @@ class ZoneService extends DomainrobotService
      * * primary
      * * changed
      *
-     * @param Query $body
+     * @param Query|null $body
      * @return DomainrobotPromise
      */
     public function listAsync(Query $body = null)
@@ -200,7 +200,7 @@ class ZoneService extends DomainrobotService
             $data = $body->toArray(true);
         }
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/zone/_search",
+            $this->domainrobotConfig->getUrl() . "/zone/_search",
             'POST',
             ["json" => $data]
         ));
@@ -209,8 +209,8 @@ class ZoneService extends DomainrobotService
     /**
      * Sends a zone info request.
      *
-     * @param [string] $name
-     * @param [string] $systemNameServer
+     * @param string $name
+     * @param string $systemNameServer
      * @return Zone
      */
     public function info($name, $systemNameServer)
@@ -224,14 +224,14 @@ class ZoneService extends DomainrobotService
     /**
      * Sends a zone info request.
      *
-     * @param [string] $name
-     * @param [string] $systemNameServer
+     * @param string $name
+     * @param string $systemNameServer
      * @return DomainrobotPromise
      */
     public function infoAsync($name, $systemNameServer)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/zone/$name/$systemNameServer",
+            $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer",
             'GET'
         );
     }
@@ -239,9 +239,9 @@ class ZoneService extends DomainrobotService
     /**
      * Sends a zone delete request.
      *
-     * @param [string] $name
-     * @param [string] $systemNameServer
-     * @return
+     * @param string $name
+     * @param string $systemNameServer
+     * @return void
      */
     public function delete($name, $systemNameServer)
     {
@@ -249,20 +249,19 @@ class ZoneService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
     }
 
     /**
      * Sends a zone delete request.
      *
-     * @param [string] $name
-     * @param [string] $systemNameServer
-     * @return
+     * @param string $name
+     * @param string $systemNameServer
+     * @return DomainrobotPromise
      */
     public function deleteAsync($name, $systemNameServer)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/zone/$name/$systemNameServer",
+            $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer",
             'DELETE'
         );
     }
@@ -287,22 +286,22 @@ class ZoneService extends DomainrobotService
      * Sends a zone update request.
      *
      * @param Zone $body
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainrobotPromise
      */
     public function updateAsync(Zone $body)
     {
         if ($body->getOrigin() === null) {
-            throw InvalidArgumentException("Field Zone.origin is missing.");
+            throw new \InvalidArgumentException("Field Zone.origin is missing.");
         } else {
             $name = $body->getOrigin();
         }
         if ($body->getVirtualNameServer() === null) {
-            throw InvalidArgumentException("Field Zone.virtualNameServer is missing.");
+            throw new \InvalidArgumentException("Field Zone.virtualNameServer is missing.");
         } else {
             $systemNameServer = $body->getVirtualNameServer();
         }
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/zone/$name/$systemNameServer",
+            $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer",
             'PUT',
             ["json" => $body->toArray(true)]
         );

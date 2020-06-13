@@ -34,7 +34,7 @@ class DomainrobotService
 
     public function __construct(DomainrobotConfig $domainrobotConfig)
     {
-        $this->domainRobotConfig = $domainrobotConfig;
+        $this->domainrobotConfig = $domainrobotConfig;
 
         // get current version of the SDK
         $handle = fopen(__DIR__."/../../composer.json", "r");
@@ -46,11 +46,11 @@ class DomainrobotService
             'headers' => [
                 DomainrobotHeaders::DOMAINROBOT_CONTENT_TYPE => "application/json",
                 DomainrobotHeaders::DOMAINROBOT_USER_AGENT => "PHPDomainrobotSdk/$matches[1]",
-                DomainrobotHeaders::DOMAINROBOT_HEADER_CONTEXT => $this->domainRobotConfig->getAuth()->getContext()
+                DomainrobotHeaders::DOMAINROBOT_HEADER_CONTEXT => $this->domainrobotConfig->getAuth()->getContext()
             ],
             'auth' => [
-                $this->domainRobotConfig->getAuth()->getUser(),
-                $this->domainRobotConfig->getAuth()->getPassword()
+                $this->domainrobotConfig->getAuth()->getUser(),
+                $this->domainrobotConfig->getAuth()->getPassword()
             ]
         ];
     }
@@ -82,7 +82,6 @@ class DomainrobotService
      *
      * @return DomainrobotPromise
      */
-
     public function sendRequest($url, $method, $options = [])
     {
         $guzzleClient = new Client($this->guzzleClientConfig);

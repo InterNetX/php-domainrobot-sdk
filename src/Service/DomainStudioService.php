@@ -78,7 +78,7 @@ class DomainStudioService extends DomainrobotService
     public function searchAsync(DomainEnvelopeSearchRequest $body)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl()."/domainstudio",
+            $this->domainrobotConfig->getUrl()."/domainstudio",
             "POST",
             ["json" => $body->toArray(true)]
         );

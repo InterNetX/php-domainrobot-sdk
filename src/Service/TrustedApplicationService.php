@@ -48,7 +48,7 @@ class TrustedApplicationService extends DomainrobotService
     public function createAsync(TrustedApplication $body)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/trustedapp",
+            $this->domainrobotConfig->getUrl() . "/trustedapp",
             'POST',
             ["json" => $body->toArray(true)]
         );
@@ -86,7 +86,7 @@ class TrustedApplicationService extends DomainrobotService
             $body = $query->toArray(true);
         }
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/trustedapp/_search",
+            $this->domainrobotConfig->getUrl() . "/trustedapp/_search",
             'POST',
             ["json" => $body]
         ));
@@ -95,7 +95,7 @@ class TrustedApplicationService extends DomainrobotService
     /**
      * Sends a TrustedApplication info request.
      *
-     * @param [int] $id
+     * @param int $id
      * @return TrustedApplication
      */
     public function info($id)
@@ -110,13 +110,13 @@ class TrustedApplicationService extends DomainrobotService
     /**
      * Sends a TrustedApplication info request.
      *
-     * @param [int] $id
+     * @param int $id
      * @return DomainrobotPromise
      */
     public function infoAsync($id)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/trustedapp/$id",
+            $this->domainrobotConfig->getUrl() . "/trustedapp/$id",
             'GET'
         );
     }
@@ -124,8 +124,8 @@ class TrustedApplicationService extends DomainrobotService
     /**
      * Sends a TrustedApplication delete request.
      *
-     * @param [int] $id
-     * @return
+     * @param int $id
+     * @return void
      */
     public function delete($id)
     {
@@ -139,13 +139,13 @@ class TrustedApplicationService extends DomainrobotService
     /**
      * Sends a TrustedApplication delete request.
      *
-     * @param [int] $id
+     * @param int $id
      * @return DomainrobotPromise
      */
     public function deleteAsync($id)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/trustedapp/$id",
+            $this->domainrobotConfig->getUrl() . "/trustedapp/$id",
             'DELETE'
         );
     }
@@ -154,7 +154,7 @@ class TrustedApplicationService extends DomainrobotService
      * Sends a TrustedApplication update request.
      *
      * @param TrustedApplication $body
-     * @return TrustedApplication
+     * @return void
      */
     public function update(TrustedApplication $body)
     {
@@ -172,13 +172,13 @@ class TrustedApplicationService extends DomainrobotService
      */
     public function updateAsync(TrustedApplication $body)
     {
-        if ($body->getId() === null) {
-            throw InvalidArgumentException("Field TrustedApplication.id is missing.");
+        if ($body->getUuId() === null) {
+            throw new \InvalidArgumentException("Field TrustedApplication.id is missing.");
         }
-        $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/trustedapp/".$body->getId(),
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/trustedapp/".$body->getUuId(),
             'PUT',
-            ["json" => $this->trustedApplicationModel->toArray(true)]
+            ["json" => $body->toArray(true)]
         );
     }
 }

@@ -5,8 +5,8 @@ namespace Domainrobot\Service;
 use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\PollMessage;
-use Domainrobot\Model\DomainrobotPromise;
 use Domainrobot\Service\DomainrobotService;
 
 class PollMessageService extends DomainrobotService
@@ -45,12 +45,12 @@ class PollMessageService extends DomainrobotService
      * The poll system works according to the "First In First Out (FIFO)" principle.
      * More information at https://help.internetx.com/display/APIPROCESSEN/Asynchronous+Notifications#AsynchronousNotifications-Polling
      *
-     * @return GuzzleHttp\Promise\PromiseInterface $promise
+     * @return DomainrobotPromise
      */
     public function infoAsync()
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/poll",
+            $this->domainrobotConfig->getUrl() . "/poll",
             'GET'
         );
     }
@@ -59,8 +59,8 @@ class PollMessageService extends DomainrobotService
     /**
      * Confirms the PollMessage with the given id.
      *
-     * @param [int] $id
-     * @return
+     * @param int $id
+     * @return void
      */
     public function confirm($id)
     {
@@ -73,13 +73,13 @@ class PollMessageService extends DomainrobotService
     /**
      * Confirms the PollMessage with the given id.
      *
-     * @param [int] $id
+     * @param int $id
      * @return DomainrobotPromise
      */
     public function confirmAsync($id)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/poll/$id",
+            $this->domainrobotConfig->getUrl() . "/poll/$id",
             'PUT'
         );
     }

@@ -47,7 +47,7 @@ class ContactService extends DomainrobotService
     public function createAsync(Contact $body)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/contact",
+            $this->domainrobotConfig->getUrl() . "/contact",
             'POST',
             ["json" => $body->toArray(true)]
         );
@@ -81,7 +81,7 @@ class ContactService extends DomainrobotService
      * * comment
      * * updated
      *
-     * @param Query $body
+     * @param Query|null $body
      * @return Contact[]
      */
     public function list(Query $body = null)
@@ -127,7 +127,7 @@ class ContactService extends DomainrobotService
      * * comment
      * * updated
      *
-     * @param Query $body
+     * @param Query|null $body
      * @return DomainrobotPromise
      */
     public function listAsync(Query $body = null)
@@ -137,7 +137,7 @@ class ContactService extends DomainrobotService
             $data = $body->toArray(true);
         }
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/contact/_search",
+            $this->domainrobotConfig->getUrl() . "/contact/_search",
             'POST',
             ["json" => $data]
         ));
@@ -146,7 +146,7 @@ class ContactService extends DomainrobotService
     /**
      * Sends a contact info request.
      *
-     * @param [int] $id
+     * @param int $id
      * @return Contact
      */
     public function info($id)
@@ -161,13 +161,13 @@ class ContactService extends DomainrobotService
     /**
      * Sends a contact info request.
      *
-     * @param [int] $id
+     * @param int $id
      * @return DomainrobotPromise
      */
     public function infoAsync($id)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/contact/$id",
+            $this->domainrobotConfig->getUrl() . "/contact/$id",
             'GET'
         );
     }
@@ -175,8 +175,8 @@ class ContactService extends DomainrobotService
     /**
      * Sends a contact delete request.
      *
-     * @param [int] $id
-     * @return
+     * @param int $id
+     * @return void
      */
     public function delete($id)
     {
@@ -190,13 +190,13 @@ class ContactService extends DomainrobotService
     /**
      * Sends a contact delete request.
      *
-     * @param [int] $id
-     * @return
+     * @param int $id
+     * @return DomainrobotPromise
      */
     public function deleteAsync($id)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/contact/$id",
+            $this->domainrobotConfig->getUrl() . "/contact/$id",
             'DELETE'
         );
     }
@@ -226,10 +226,10 @@ class ContactService extends DomainrobotService
     public function updateAsync(Contact $body)
     {
         if ($body->getId() === null) {
-            throw InvalidArgumentException("Field Contact.id is missing.");
+            throw new \InvalidArgumentException("Field Contact.id is missing.");
         }
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/contact/".$body->getId(),
+            $this->domainrobotConfig->getUrl() . "/contact/".$body->getId(),
             'PUT',
             ["json" => $body->toArray(true)]
         );

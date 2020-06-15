@@ -7,7 +7,6 @@ use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Query;
-use Domainrobot\Model\DomainCancelation;
 use Domainrobot\Model\TransferAnswer;
 use Domainrobot\Model\TransferOut;
 use Domainrobot\Service\DomainrobotService;
@@ -27,8 +26,8 @@ class TransferOutService extends DomainrobotService
     /**
      * Answer a transfer for the given domain with the given answer.
      *
-     * @param [string] $domain
-     * @param [string] $type
+     * @param string $domain
+     * @param string $answer
      * @return TransferOut
      */
     public function answer($domain, $answer)
@@ -44,8 +43,8 @@ class TransferOutService extends DomainrobotService
     /**
      * Answer a transfer for the given domain with the given answer.
      *
-     * @param [string] $domain,
-     * @param [string] $answer
+     * @param string $domain,
+     * @param string $answer
      * @return DomainrobotPromise
      */
     public function answerAsync($domain, $answer)
@@ -58,7 +57,7 @@ class TransferOutService extends DomainrobotService
         }
 
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/transferout/$domain/$transformedAnswer",
+            $this->domainrobotConfig->getUrl() . "/transferout/$domain/$transformedAnswer",
             'PUT'
         );
     }
@@ -84,7 +83,7 @@ class TransferOutService extends DomainrobotService
      * * transaction
      * * status
      *
-     * @param Query $body
+     * @param Query|null $body
      * @return TransferOut[]
      */
     public function list(Query $body = null)
@@ -123,7 +122,7 @@ class TransferOutService extends DomainrobotService
      * * transaction
      * * status
      *
-     * @param Query $body
+     * @param Query|null $body
      * @return DomainrobotPromise
      */
     public function listAsync(Query $body = null)
@@ -133,7 +132,7 @@ class TransferOutService extends DomainrobotService
             $data = $body->toArray(true);
         }
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/transferout/_search",
+            $this->domainrobotConfig->getUrl() . "/transferout/_search",
             'POST',
             ["json" => $data]
         ));

@@ -50,7 +50,7 @@ class ZoneService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -84,7 +84,7 @@ class ZoneService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone/$origin/_stream",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -118,7 +118,7 @@ class ZoneService extends DomainrobotService
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer/_import",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         ));
     }
 
@@ -197,7 +197,7 @@ class ZoneService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone/_search",
@@ -303,7 +303,7 @@ class ZoneService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer",
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 }

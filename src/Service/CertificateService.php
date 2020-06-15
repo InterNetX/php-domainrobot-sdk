@@ -58,7 +58,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -99,7 +99,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/_realtime",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -144,7 +144,7 @@ class CertificateService extends DomainrobotService
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/_prepareOrder",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         ));
     }
 
@@ -214,7 +214,7 @@ class CertificateService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/_search",
@@ -324,7 +324,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/".$body->getId(),
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -367,7 +367,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/".$body->getId()."/_renew",
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 

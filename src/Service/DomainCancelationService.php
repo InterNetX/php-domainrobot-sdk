@@ -52,7 +52,7 @@ class DomainCancelationService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/".$body->getDomain()."/cancelation",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -86,7 +86,7 @@ class DomainCancelationService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/".$body->getDomain()."/cancelation",
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -211,7 +211,7 @@ class DomainCancelationService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/cancelation/_search",

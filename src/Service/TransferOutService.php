@@ -129,7 +129,7 @@ class TransferOutService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/transferout/_search",

@@ -53,7 +53,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -145,7 +145,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/".$body->getName()."/_renew",
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -178,7 +178,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_transfer",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -210,7 +210,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/".$body->getName()."/_statusUpdate",
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -287,7 +287,7 @@ class DomainService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_search",
@@ -388,7 +388,7 @@ class DomainService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/restore/_search",
@@ -483,7 +483,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/".$body->getName(),
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -519,7 +519,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/".$body->getName()."/_restore",
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 }

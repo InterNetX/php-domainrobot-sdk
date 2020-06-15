@@ -49,7 +49,7 @@ class ContactService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/contact",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -134,7 +134,7 @@ class ContactService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/contact/_search",
@@ -231,7 +231,7 @@ class ContactService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/contact/".$body->getId(),
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 }

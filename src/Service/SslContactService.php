@@ -49,7 +49,7 @@ class SslContactService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/sslcontacct",
             'POST',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 
@@ -122,7 +122,7 @@ class SslContactService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray(true);
+            $data = $body->toArray();
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/sslcontact/_search",
@@ -217,7 +217,7 @@ class SslContactService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl()."/sslcontact/".$body->getId(),
             'PUT',
-            ["json" => $body->toArray(true)]
+            ["json" => $body->toArray()]
         );
     }
 }

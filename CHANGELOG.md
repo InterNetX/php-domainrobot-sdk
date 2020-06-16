@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.2] - 2020-06-16
+
+* Fixed printing null or empty values (#8)
+* Fixed warnings found by code analysis (PR #8)
+* Improve code documentation (PR #6)
+
 ## [0.3.7] - 2020-03-19
 
 * Rename all DomainRobot string to Domainrobot

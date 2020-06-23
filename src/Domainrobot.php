@@ -13,6 +13,7 @@ use Domainrobot\Service\TransferOutService;
 use Domainrobot\Service\TrustedApplicationService;
 use Domainrobot\Service\ZoneService;
 use Domainrobot\Service\PollMessageService;
+use Domainrobot\Service\UserService;
 
 class Domainrobot
 {
@@ -99,6 +100,13 @@ class Domainrobot
     public $zone;
 
     /**
+     * Interface for all zone related requests
+     *
+     * @var UserService
+     */
+    public $user;
+
+    /**
      * [
      *   "url" => string, //optional
      *   "auth" => DomainrobotAuth //optional
@@ -119,6 +127,7 @@ class Domainrobot
         $this->transferOut = new TransferOutService($this->domainrobotConfig);
         $this->trustedApp = new TrustedApplicationService($this->domainrobotConfig);
         $this->zone = new ZoneService($this->domainrobotConfig);
+        $this->user = new UserService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

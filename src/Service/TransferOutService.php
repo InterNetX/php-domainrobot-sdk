@@ -92,8 +92,10 @@ class TransferOutService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
         $data = $domainrobotResult->getResult()['data'];
         $transferOuts = array();
+        
         foreach ($data as $d) {
             $t = new TransferOut($d);
             array_push($transferOuts, $t);

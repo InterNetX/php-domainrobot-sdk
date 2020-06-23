@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.6.0] - 2020-06-23
+
+* added possibility to gain direct access to response and request through callback methods
+* added User info and list tasks
+* added examples for some basic tasks
+    ** more examples (hopefully for all tasks) will be added in future versions
+* fixed some tasks that did not give correct access to the DomainrobotResult
+* improved documentation and readme
+
 ## [0.5.2] - 2020-06-16
 
 * Fixed printing null or empty values (#8)

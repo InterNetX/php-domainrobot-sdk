@@ -408,6 +408,8 @@ class DomainService extends DomainrobotService
         $domainrobotPromise = $this->infoAsync($name);
         $domainrobotResult = $domainrobotPromise->wait();
 
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
         return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 

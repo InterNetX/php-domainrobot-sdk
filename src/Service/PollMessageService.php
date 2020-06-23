@@ -35,6 +35,8 @@ class PollMessageService extends DomainrobotService
         $domainrobotPromise = $this->infoAsync();
         $domainrobotResult = $domainrobotPromise->wait();
 
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        
         return new PollMessage(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 

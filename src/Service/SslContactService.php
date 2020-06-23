@@ -84,8 +84,10 @@ class SslContactService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        
         $data = $domainrobotResult->getResult()['data'];
         $contacts = array();
+
         foreach ($data as $d) {
             $c = new SslContact($d);
             array_push($contacts, $c);
@@ -141,6 +143,8 @@ class SslContactService extends DomainrobotService
     {
         $domainrobotPromise = $this->infoAsync($id);
         $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new SslContact(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }

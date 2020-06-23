@@ -131,6 +131,7 @@ class DomainCancelationService extends DomainrobotService
         $domainrobotPromise = $this->infoAsync($domain);
         $domainrobotResult = $domainrobotPromise->wait();
 
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
@@ -176,8 +177,10 @@ class DomainCancelationService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
         $data = $domainrobotResult->getResult()['data'];
         $domainCancelations = array();
+
         foreach ($data as $d) {
             $dc = new DomainCancelation($d);
             array_push($domainCancelations, $dc);
@@ -213,6 +216,7 @@ class DomainCancelationService extends DomainrobotService
         if ($body != null) {
             $data = $body->toArray();
         }
+        
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/cancelation/_search",
             'POST',

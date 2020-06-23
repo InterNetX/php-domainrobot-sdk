@@ -8,14 +8,16 @@ A php package for easy integration of the **Domainrobot API** powered by [InterN
 2. [Install and Use](#install-and-use)
    * [Installation](#installation)
    * [Basic Use](#basic-use)
-3. [Usage](#usage)
+3. [Example Implementations](#example-implementations)
+4. [Usage](#usage)
+   * [Logging Requests and Responses](#logging-requests-and-responses)
    * [Asynchronous vs Synchronous Requests](#asynchronous-vs-synchronous-requests)
    * [Models](#models)
    * [Supported API calls](#supported-api-calls)
    * [Exception handling](#exception-handling)
    * [(Custom) Headers](#custom-headers)
-4. [Changelog](#changelog)
-5. [Copyright and license](#copyright-and-license)
+5. [Changelog](#changelog)
+6. [Copyright and license](#copyright-and-license)
 
 ## Preamble
 
@@ -37,6 +39,11 @@ composer require internetx/php-domainrobot-sdk
 use Domainrobot\Domainrobot;
 ```
 
+## Example Implementations
+
+You can find some example implemnation in the *example* Folder in the source code.
+We will add examples for all or at least most tasks in the next versions of this SDK.
+
 ## Usage
 
 Before you can interact with the API you need to specify your authentication credentials, the baseurl and the context.
@@ -46,6 +53,7 @@ Before you can interact with the API you need to specify your authentication cre
 
 ```php
 use Domainrobot\Domainrobot;
+use Domainrobot\Lib\DomainrobotAuth;
 
 $domainrobot = new Domainrobot([
     "url" => "https://api.autodns.com/v1",
@@ -55,6 +63,22 @@ $domainrobot = new Domainrobot([
         "context" => 4
     ])
 ]);
+```
+
+### Logging Requests and Responses
+
+There may be certain circumstances where you may want to log your requests and responses.
+For this cases we provide you with two integrated callback methods you can use for this purpose.
+Find an example on how to use them below.
+
+```php
+$domainrobot->domain->logRequest(function($method, $url, $options) use ($user){
+    // execute your code here
+    print_r($method);
+})->logResponse(function($url, $response, $statusCode, $exectime) use ($user){
+    // execute your code here
+     print_r($user);
+})->info("example.com");
 ```
 
 ### Asynchronous vs Synchronous Requests
@@ -262,6 +286,13 @@ function confirm($id);
 
 ```php
 function answer($domain, $answer);
+function list(Query $body = null);
+```
+
+#### User tasks
+
+```php
+function info($user, $context);
 function list(Query $body = null);
 ```
 

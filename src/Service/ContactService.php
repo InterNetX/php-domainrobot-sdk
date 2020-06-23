@@ -90,12 +90,15 @@ class ContactService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
         $data = $domainrobotResult->getResult()['data'];
         $contacts = array();
+
         foreach ($data as $d) {
             $c = new Contact($d);
             array_push($contacts, $c);
         }
+
         return $contacts;
     }
 
@@ -136,6 +139,7 @@ class ContactService extends DomainrobotService
         if ($body != null) {
             $data = $body->toArray();
         }
+
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/contact/_search",
             'POST',
@@ -154,6 +158,7 @@ class ContactService extends DomainrobotService
         $domainrobotPromise = $this->infoAsync($id);
         $domainrobotResult = $domainrobotPromise->wait();
 
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new Contact(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }

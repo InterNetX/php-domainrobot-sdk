@@ -234,6 +234,7 @@ class CertificateService extends DomainrobotService
         $domainrobotPromise = $this->infoAsync($id);
         $domainrobotResult = $domainrobotPromise->wait();
 
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new Certificate(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
@@ -263,6 +264,8 @@ class CertificateService extends DomainrobotService
     {
         $domainrobotPromise = $this->deleteAsync($id);
         $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
             "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')

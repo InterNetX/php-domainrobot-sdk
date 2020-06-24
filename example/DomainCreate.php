@@ -12,7 +12,7 @@ use Domainrobot\Model\ObjectJob;
 class SDKController
 {
     /**
-     * Inquire user by context and return found user as model
+     * Create a Domain
      *
      * @return ObjectJob
      */

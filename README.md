@@ -41,7 +41,7 @@ use Domainrobot\Domainrobot;
 
 ## Example Implementations
 
-You can find some example implemnation in the *example* Folder in the source code.
+You can find some example implementation in the *example* Folder in the source code.
 We will add examples for all or at least most tasks in the next versions of this SDK.
 
 ## Usage
@@ -68,7 +68,7 @@ $domainrobot = new Domainrobot([
 ### Logging Requests and Responses
 
 There may be certain circumstances where you may want to log your requests and responses.
-For this cases we provide you with two integrated callback methods you can use for this purpose.
+For these cases we provide you with two integrated callback methods you can use for this purpose.
 Find an example on how to use them below.
 
 ```php

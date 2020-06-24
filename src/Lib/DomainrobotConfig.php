@@ -20,6 +20,9 @@ class DomainrobotConfig {
      */
     private $auth;
 
+    private $logRequestCallback = null;
+    private $logResponseCallback = null;
+
     /**
      * [
      *   "url" => string, //optional
@@ -32,6 +35,8 @@ class DomainrobotConfig {
     {
         $this->setUrl(ArrayHelper::getValueFromArray($config, 'url', DomainrobotConstants::AUTODNS_URL));
         $this->setAuth(ArrayHelper::getValueFromArray($config, 'auth', new DomainrobotAuth()));
+        $this->setLogRequestCallback(ArrayHelper::getValueFromArray($config, 'logRequestCallback', null));
+        $this->setLogResponseCallback(ArrayHelper::getValueFromArray($config, 'logResponseCallback', null));
     }
 
     private function setUrl(string $url)
@@ -52,5 +57,33 @@ class DomainrobotConfig {
     public function getAuth() :DomainrobotAuth
     {
         return $this->auth;
+    }
+
+    public function logRequest()
+    {
+        return $this->logRequestCallback;
+    }
+
+    public function logResponse()
+    {
+        return $this->logResponseCallback;
+    }
+
+    public function setLogRequestCallback($callback)
+    {
+        $this->logRequestCallback = $callback;
+    }
+
+    public function setLogResponseCallback($callback)
+    {
+        $this->logResponseCallback = $callback;
+    }
+
+    public function hasLogRequestCallback(){
+        return $this->logRequestCallback !== null;
+    }
+
+    public function hasLogResponseCallback(){
+        return $this->logResponseCallback !== null;
     }
 }

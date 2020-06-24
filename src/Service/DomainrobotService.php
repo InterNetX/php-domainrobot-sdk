@@ -86,14 +86,7 @@ class DomainrobotService
     {
         $guzzleClient = new Client($this->guzzleClientConfig);
 
-        if ($this->logRequestCallback!==null) {
-            $this->logRequestCallback->call(
-                $this,
-                $method,
-                $url,
-                $options
-            );
-        }
+        $this->logRequestIfCallbackSet($method, $url, $options, $this->guzzleClientConfig['headers']);
         $startTime = microtime(true);
 
         $promise = $guzzleClient->requestAsync(
@@ -109,15 +102,12 @@ class DomainrobotService
                 $rawResponse = $response->getBody()->getContents();
                 $decodedResponse = json_decode($rawResponse, true);
 
-                if ($this->logResponseCallback!==null) {
-                    $this->logResponseCallback->call(
-                        $this,
-                        $url,
-                        $rawResponse,
-                        $response->getStatusCode(),
-                        microtime(true) - $startTime
-                    );
-                }
+               $this->logResponseIfCallbackSet(    
+                    $url,
+                    $rawResponse,
+                    $response->getStatusCode(),
+                    microtime(true) - $startTime
+                );
 
                 return new DomainrobotResult($decodedResponse, $response->getStatusCode());
             },
@@ -138,5 +128,47 @@ class DomainrobotService
             }
         );
         return new DomainrobotPromise($promise);
+    }
+
+    private function logRequestIfCallbackSet($method, $url, $requestOptions, $headers)
+    {
+        if ($this->logRequestCallback!==null) {
+            $this->logRequestCallback->call(
+                $this,
+                $method,
+                $url,
+                $requestOptions,
+                $headers
+            );
+        }
+
+        if ($this->domainrobotConfig->hasLogRequestCallback()) {
+            $this->domainrobotConfig->logRequest()->call(
+                $this,
+                $method,
+                $url,
+                $requestOptions,
+                $headers
+            );
+        }
+    }
+
+    private function logResponseIfCallbackSet($url, $rawResponse, $statusCode, $execTime){
+        if ($this->logResponseCallback!==null) {
+            $this->logResponseCallback->call(
+                $this,
+                $url, $rawResponse, $statusCode, $execTime
+            );
+            return;
+        }
+
+        if ($this->domainrobotConfig->hasLogResponseCallback()) {
+            $this->domainrobotConfig->logResponse()->call(
+                $this,
+                $url, $rawResponse, $statusCode, $execTime
+            );
+            return;
+        }
+
     }
 }

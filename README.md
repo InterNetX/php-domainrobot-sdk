@@ -1,6 +1,16 @@
-# php-domainrobot-sdk
+# php-domainrobot-sdk Documentation
 
-> Documenation for the php-domainrbot-sdk composer package by InterNetX GmbH
+> Documenation for the php-domainrobot-sdk composer package by InterNetX GmbH
+
+## Setup
+
+Checkout this repository then execute
+
+```bash
+yarn
+```
+
+to install all dependencies. Done!
 
 ## Development
 
@@ -9,5 +19,14 @@ yarn dev
 yarn build
 ```
 
-For more details, please head VuePress's [documentation](https://v1.vuepress.vuejs.org/).
+For more details, please head to VuePress's [documentation](https://v1.vuepress.vuejs.org/).
 
+## Release
+
+In order to push a new release of this documenation to the github pages branch execute this script:
+
+```bash
+sh gh-pages.sh
+```
+
+It will build a new distribuation and push it into the *gh-pages* branch.

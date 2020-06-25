@@ -4,7 +4,7 @@
 
 ## Setup
 
-Checkout this repository then execute
+Checkout this branch then execute
 
 ```bash
 yarn
@@ -29,4 +29,4 @@ In order to push a new release of this documenation to the github pages branch e
 sh gh-pages.sh
 ```
 
-It will build a new distribuation and push it into the *gh-pages* branch.
+It will build a new distribution and push it into the *gh-pages* branch.

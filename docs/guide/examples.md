@@ -1,6 +1,6 @@
 # Example Implementations
 
-You can find some example implementation in the *example* Folder in the source code.
+You can find some example implementations in the *example* Folder in the source code.
 
 [https://github.com/InterNetX/php-domainrobot-sdk/tree/master/example](https://github.com/InterNetX/php-domainrobot-sdk/tree/master/example)
 

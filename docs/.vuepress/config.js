@@ -20,7 +20,7 @@ module.exports = {
 		["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
 		["meta", { name: "apple-mobile-web-app-status-bar-style", content: "black" }],
 	],
-
+	base: "/php-domainrobot-sdk/",
 	/**
 	 * Theme configuration, here is the default theme configuration for VuePress.
 	 *
@@ -35,11 +35,19 @@ module.exports = {
 		nav: [
 			{
 				text: "Guide",
-				link: "/guide/",
+				link: "/guide/preamble.html",
 			},
 			{
 				text: "InterNetX",
 				link: "https://internetx.com",
+			},
+			{
+				text: "Imprint",
+				link: "https: //www.internetx.com/en/legal/imprint/",
+			},
+			{
+				text: "Terms and conditions",
+				link: "https://www.internetx.com/en/legal/terms-and-conditions/",
 			},
 		],
 		sidebar: {
@@ -76,6 +84,11 @@ module.exports = {
 						"api_tasks/zone",
 					],
 				},
+				{
+					title: "Available Constants",
+					collapsable: false,
+					children: ["constants/contact_types", "constants/registry_status"],
+				},
 			],
 		},
 	},
@@ -85,7 +98,8 @@ module.exports = {
 	 */
 	plugins: [
 		"@vuepress/plugin-back-to-top",
-		"@vuepress/plugin-medium-zoom",
+        "@vuepress/plugin-medium-zoom",
+        "vuepress-plugin-smooth-scroll",
 		[
 			"vuepress-plugin-container",
 			{

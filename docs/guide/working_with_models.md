@@ -6,7 +6,7 @@ If you are in doubt about which properties are accepted by a specific model you 
 
 To build a certain request, for example to create a domain, you will first have to create the general Domainrobot instance and then provide it with a Domain Model which itself is containing other Models as well.
 
-Take a look at this [example](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/DomainCreate.php):
+Take a look at this [example](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainCreate.php):
 
 ```php
 // create and configure the Domainrobot instance

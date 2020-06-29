@@ -1,8 +1,8 @@
 # Exception handling
 
-:::: tip DomainrobotException
+::: tip DomainrobotException
 If there is any error response from the API, the services will throw a DomainrobotException, which contains information about the error.
-::::
+:::
 
 Therefore you should call all SDK tasks inside a try/catch block.
 
@@ -13,7 +13,7 @@ Therefore you should call all SDK tasks inside a try/catch block.
     $promise = $domainrobot->certificate->createRealtime($certificate);
 }catch(DomainrobotException $exception){
     return response()->json(
-        $exception->getError(), 
+        $exception->getError(),
         $exception->getStatusCode()
     );
 }
@@ -22,7 +22,6 @@ Therefore you should call all SDK tasks inside a try/catch block.
 The specific **error message** is stored in $exception->error and can be accessed with $exception->getError().
 
 The specific **http status** code can be accessed with $exception->getStatusCode().
-
 
 ## Error message example
 

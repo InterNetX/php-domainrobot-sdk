@@ -1,8 +1,8 @@
 # Asynchronous vs Synchronous Requests
 
-:::: tip Hint
+::: noheader
 This library is mainly meant to be used with **synchronous** request but also provides the possibility to be used with **asynchronous** requests.
-::::
+:::
 
 ----
 

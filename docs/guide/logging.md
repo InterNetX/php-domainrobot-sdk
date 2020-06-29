@@ -48,7 +48,7 @@ Local defintions for log callbacks will always overwrite global definitions.
 * **$method**: the HTTP Method used for the call
 * **$url**: the URL the call is sent to
 * **$requestOptions**: the request options that are sent with the call; contains query params and other settings
-* **$headres**: the headers sent with the call
+* **$headers**: the headers sent with the call
 
 ## Response parameters
 

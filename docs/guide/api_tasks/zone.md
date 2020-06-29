@@ -1,11 +1,15 @@
 # Zone
 
+General call of tasks:
+
 ```php
-function create(Zone $body);
-function update(Zone $body);
-function delete($name, $systemNameServer);
-function info($name, $systemNameServer);
-function list(Query $body = null);
-function stream($origin, ZoneStream $body);
-function importZone(Zone $body);
+ $zone = $domainrobot->zone->create($zone);
 ```
+
+* create(Zone $zone);
+* update(Zone $zone);
+* delete(string $name, string $systemNameServer);
+* info(string $name, string $systemNameServer);
+* list(Query $query = null);
+* stream(string $origin, ZoneStream $zonestream);
+* importZone(Zone $zone);

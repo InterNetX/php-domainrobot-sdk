@@ -1,6 +1,10 @@
 # Transferout
 
+General call of tasks:
+
 ```php
-function answer($domain, $answer);
-function list(Query $body = null);
+ $transferOut = $domainrobot->transferOut->answer($domain, $answer)
 ```
+
+* answer(string $domain, string $answer)
+* list(Query $query = null)

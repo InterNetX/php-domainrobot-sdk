@@ -1,9 +1,13 @@
 # TrustedApplication
 
+General call of tasks:
+
 ```php
-function create(TrustedApplication $body);
-function update(TrustedApplication $body);
-function delete($id);
-function info($id);
-function list(Query $body = null);
+ $trustedApplication = $domainrobot->trustedApp->create($trustedApplication);
 ```
+
+* create(TrustedApplication $trustedApplication);
+* update(TrustedApplication $trustedApplication);
+* delete(int $id);
+* info(int $id);
+* list(Query $query = null);

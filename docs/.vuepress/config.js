@@ -9,7 +9,7 @@ module.exports = {
 	 * Ref：https://v1.vuepress.vuejs.org/config/#description
 	 */
 	description: description,
-
+	theme: "vuepress-theme-thindark",
 	/**
 	 * Extra tags to be injected to the page HTML `<head>`
 	 *
@@ -43,7 +43,7 @@ module.exports = {
 			},
 			{
 				text: "Imprint",
-				link: "https: //www.internetx.com/en/legal/imprint/",
+				link: "https://www.internetx.com/en/legal/imprint/",
 			},
 			{
 				text: "Terms and conditions",
@@ -87,7 +87,13 @@ module.exports = {
 				{
 					title: "Available Constants",
 					collapsable: false,
-					children: ["constants/contact_types", "constants/registry_status"],
+					children: [
+						"constants/acl_restriction",
+						"constants/crypto",
+						"constants/contact_types",
+						"constants/registry_status",
+						"constants/time_unit",
+					],
 				},
 			],
 		},
@@ -98,8 +104,8 @@ module.exports = {
 	 */
 	plugins: [
 		"@vuepress/plugin-back-to-top",
-        "@vuepress/plugin-medium-zoom",
-        "vuepress-plugin-smooth-scroll",
+		"@vuepress/plugin-medium-zoom",
+		"vuepress-plugin-smooth-scroll",
 		[
 			"vuepress-plugin-container",
 			{
@@ -107,11 +113,19 @@ module.exports = {
 				defaultTitle: "",
 			},
 		],
+		[
+			"vuepress-plugin-container",
+			{
+				type: "unobtrusive-info",
+				defaultTitle: "",
+			},
+		],
 	],
 
 	markdown: {
 		extendMarkdown: (md) => {
-			// md.set({ html: true })
+			md.set({ html: true });
+			md.use(require("markdown-it-include"), "docs/guide/");
 			// md.use(require('markdown-it-katex'))
 			// md.use(require('markdown-it-plantuml'))
 			//md.use(require("markdown-it-admonition"));

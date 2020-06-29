@@ -27,7 +27,7 @@ require_once "vendor/autoload.php";
 use Domainrobot\Domainrobot;
 ```
 
-internetx/php-domainrobot-sdk uses the [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/) so once you installed the package via composer and required the autoload.php file you can start to implement your first task.
+internetx/php-domainrobot-sdk uses the [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/) so once you've installed the package via composer and the required autoload.php file, you can start to implement your first task.
 
 ## Usage
 
@@ -51,5 +51,5 @@ $domainrobot = new Domainrobot([
 You need an account in at last one of these two systems to be able to use this SDK.
 :::
 
-* Productive System: <https://api.autodns.com/v1>
+* Production System: <https://api.autodns.com/v1>
 * Demo System: <https://api.demo.autodns.com/v1>

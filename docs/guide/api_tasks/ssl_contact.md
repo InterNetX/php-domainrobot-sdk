@@ -1,9 +1,17 @@
 # SslContact
 
+::: unobtrusive-info
+Contact tasks used for all certificate tasks.
+:::
+
+General call of tasks:
+
 ```php
-function create(SslContact $body);
-function update(SslContact $body);
-function delete($id);
-function info($id);
-function list(Query $body = null);
+ $sslContact = $domainrobot->sslContact->create($sslContact);
 ```
+
+* create(SslContact $sslContact);
+* update(SslContact $sslContact);
+* delete(int $id);
+* info(int $id);
+* list(Query $query = null);

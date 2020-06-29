@@ -1,6 +1,10 @@
 # Poll
 
+General call of tasks:
+
 ```php
-function info();
-function confirm($id);
+ $pollMessage = $domainrobot->domainCancelation->info();
 ```
+
+* info()
+* confirm($id)

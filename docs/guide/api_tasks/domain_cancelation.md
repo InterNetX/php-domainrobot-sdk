@@ -1,9 +1,13 @@
 # Domain cancelation
 
+General call of tasks:
+
 ```php
-function create(DomainCancelation $body);
-function update(DomainCancelation $body);
-function delete($domain);
-function info($domain);
-function list(Query $body = null);
+ $domainCancelation = $domainrobot->domainCancelation->create($domainCancelation);
 ```
+
+* create(DomainCancelation $domainCancelation);
+* update(DomainCancelation $domainCancelation);
+* delete(string $domain);
+* info(string $domain);
+* list(Query $query = null);

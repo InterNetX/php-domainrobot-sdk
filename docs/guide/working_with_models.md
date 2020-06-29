@@ -1,8 +1,12 @@
+---
+title: Models
+---
+
 # Models
 
 This SDK heavily relies on Models which are generated from our official [Swagger documentation](https://help.internetx.com/display/APIJSONEN/Technical+Documentation).
 
-If you are in doubt about which properties are accepted by a specific model you can always refer to this documentation or take a look at the [examples](https://github.com/InterNetX/php-domainrobot-sdk/tree/master/example) we provied in the source code of the SDK.
+If you are in doubt about which properties are accepted by a specific model you can always refer to this documentation or take a look at the [examples](https://github.com/InterNetX/php-domainrobot-sdk/tree/master/example) we provide in the source code of the SDK.
 
 To build a certain request, for example to create a domain, you will first have to create the general Domainrobot instance and then provide it with a Domain Model which itself is containing other Models as well.
 
@@ -53,4 +57,4 @@ return response()->json(
 );
 ```
 
-Specific examples for certain models can be found in the section [Supported API calls](#supported-api-calls)
+Specific examples for certain models can be found in the section **Supported API calls** which you can find in the left hand side menu.

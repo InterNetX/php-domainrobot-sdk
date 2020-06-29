@@ -96,7 +96,11 @@ class DomainService extends DomainrobotService
     public function createAuthinfo2($name)
     {
         $domainrobotPromise = $this->createAuthinfo2Async($name);
-        $domainrobotPromise->wait();
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -436,7 +440,10 @@ class DomainService extends DomainrobotService
     public function deleteAuthinfo1($name)
     {
         $domainrobotPromise = $this->deleteAuthinfo1Async($name);
-        $domainrobotPromise->wait();
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
     }
 
     /**

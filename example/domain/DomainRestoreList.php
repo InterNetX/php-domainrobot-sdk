@@ -19,7 +19,7 @@ class SDKController
      *
      * @return Domain[]
      */
-    public function domainListOfSubuser()
+    public function domainRestoreList()
     {
       $domainrobot = new Domainrobot([
             "url" => "https://api.demo.autodns.com/v1",
@@ -42,10 +42,7 @@ class SDKController
                     'limit' => 10
                 ])
             ]);
-            $domainList = $domainrobot->domain->addHeaders([
-                DomainrobotHeaders::DOMAINROBOT_HEADER_OWNER => "ownername",
-                DomainrobotHeaders::DOMAINROBOT_HEADER_OWNER_CONTEXT => 797095
-            ])->list($query);
+            $domainList = $domainrobot->domain->restoreList($query);
         } catch (DomainrobotException $exception) {
             return $exception;
         }

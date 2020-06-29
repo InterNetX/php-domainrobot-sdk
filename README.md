@@ -58,7 +58,7 @@ use Domainrobot\Lib\DomainrobotAuth;
 $domainrobot = new Domainrobot([
     "url" => "https://api.autodns.com/v1",
     "auth" => new DomainrobotAuth([
-        "user" => "user",
+        "user" => "user",lo
         "password" => "password",
         "context" => 4
     ])
@@ -129,7 +129,7 @@ try {
 
 // Access response values through the provided DomainrobotResult object
 $statusCode = $result->getStatusCode();
-$data = $result->getData()
+$data = $result->getResult()
 ```
 
 ### Models

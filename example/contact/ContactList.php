@@ -5,21 +5,20 @@ namespace Example;
 use Domainrobot\Domainrobot;
 use Domainrobot\Lib\DomainrobotAuth;
 use Domainrobot\Lib\DomainrobotException;
-use Domainrobot\Lib\DomainrobotHeaders;
+use Domainrobot\Model\Contact;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\QueryFilter;
 use Domainrobot\Model\QueryView;
-use Domainrobot\Model\User;
 
 class SDKController
 {
     /**
-     * Inquire a list of domains of a subuser
-     * returns an array of Domainrobot\Model\Domain
+     * Inquire a list of contacts with filters
+     * returns an array of Domainrobot\Model\Contact
      *
-     * @return [ Domain ]
+     * @return Contact[]
      */
-    public function domainListOfSubuser()
+    public function contactList()
     {
       $domainrobot = new Domainrobot([
             "url" => "https://api.demo.autodns.com/v1",
@@ -33,8 +32,12 @@ class SDKController
         try {
             $query = new Query([
                 'filters' => [ new QueryFilter([
-                    'key' => 'name',
-                    'value' => 'flutter%',
+                    'key' => 'fname',
+                    'value' => 'Test%',
+                    'operator' => 'LIKE'
+                ]), new QueryFilter([
+                    'key' => 'lname',
+                    'value' => 'Test%',
                     'operator' => 'LIKE'
                 ])],
                 'view' => new QueryView([
@@ -42,10 +45,7 @@ class SDKController
                     'limit' => 10
                 ])
             ]);
-            $domainList = $domainrobot->domain->addHeaders([
-                DomainrobotHeaders::DOMAINROBOT_HEADER_OWNER => "fluttershy",
-                DomainrobotHeaders::DOMAINROBOT_HEADER_OWNER_CONTEXT => 797095
-            ])->list($query);
+            $contactist = $domainrobot->contact->list($query);
         } catch (DomainrobotException $exception) {
             return $exception;
         }
@@ -55,6 +55,6 @@ class SDKController
         // if you need the http status code of the last request/response
         Domainrobot::getLastDomainrobotResult()->getStatusCode();
 
-        return $domainList;
+        return $contactist;
     }
 }

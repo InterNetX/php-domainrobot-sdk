@@ -17,10 +17,10 @@ There are two possible ways to use these methods.
             "password" => "password",
             "context" => 4
         ]),
-        "logRequestCallback" => function ($method, $url, $requestOptions, $headers) use ($user) {
+        "logRequestCallback" => function ($method, $url, $requestOptions, $headers){
             LogCallback::dailyRequest($method, $url, $options, $user);
         },
-        "logResponseCallback" => function ($url, $response, $statusCode, $exectime) use ($user) {
+        "logResponseCallback" => function ($url, $response, $statusCode, $exectime){
             LogCallback::dailyResponse($url, $response, $statusCode, $exectime, $user);
         }
     ]);
@@ -30,6 +30,8 @@ There are two possible ways to use these methods.
 2. Define them locally for a single request
 
     ```php
+    $user = User::find(1);
+
     $domainrobot->domain->logRequest(function($method, $url, $requestOptions, $headers) use ($user){
         // execute your code here
         print_r($method);
@@ -39,9 +41,12 @@ There are two possible ways to use these methods.
     })->info("example.com");
     ```
 
-ATTENTION:
+&nbsp;  
+&nbsp;  
 
+::: warning ATTENTION:
 Local defintions for log callbacks will always overwrite global definitions.
+:::
 
 ## Request parameters
 

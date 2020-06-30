@@ -53,3 +53,13 @@ You need an account in at last one of these two systems to be able to use this S
 
 * Production System: <https://api.autodns.com/v1>
 * Demo System: <https://api.demo.autodns.com/v1>
+
+## Domainrobot configuration parameters
+
+* url
+* auth: Domainrobot\Lib\DomainrobotAuth
+  * user
+  * password
+  * context
+* logRequestCallback
+* logResponseCallback

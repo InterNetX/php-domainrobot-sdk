@@ -5,15 +5,16 @@ namespace Example;
 use Domainrobot\Domainrobot;
 use Domainrobot\Lib\DomainrobotAuth;
 use Domainrobot\Lib\DomainrobotException;
+use Domainrobot\Model\Certificate;
 
 class SDKController
 {
     /**
-     * Delete a contact
+     * Inquire a certificate
      *
-     * @return array
+     * @return Certificate
      */
-    public function contactDelete()
+    public function certificateInfo()
     {
         $domainrobot = new Domainrobot([
             'url' => 'https://api.autodns.com/v1',
@@ -25,13 +26,11 @@ class SDKController
         ]);
 
         try {
-            
-            $domainrobot->contact->delete(234234234);
-
+            $certificate = $domainrobot->certificate->info(234234234);
         } catch (DomainrobotException $exception) {
-            return $exception;
+            return $exception->getError();
         }
         
-        return Domainrobot::getLastDomainrobotResult()->getResult();
+        return $certificate;
     }
 }

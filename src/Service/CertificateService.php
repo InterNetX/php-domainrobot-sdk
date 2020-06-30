@@ -28,12 +28,12 @@ class CertificateService extends DomainrobotService
      * generate the necessary DCV data. Returns a Job with an id that can be used
      * for polling.
      *
-     * @param Certificate $body
+     * @param Certificate $certificate
      * @return ObjectJob
      */
-    public function create(Certificate $body)
+    public function create(Certificate $certificate)
     {
-        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotPromise = $this->createAsync($certificate);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -115,9 +115,9 @@ class CertificateService extends DomainrobotService
      * @param CertificateData $body
      * @return CertificateData
      */
-    public function prepareOrder(CertificateData $body)
+    public function prepareOrder(CertificateData $certificateData)
     {
-        $domainrobotPromise = $this->prepareOrderAsync($body);
+        $domainrobotPromise = $this->prepareOrderAsync($certificateData);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);

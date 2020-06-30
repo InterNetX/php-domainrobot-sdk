@@ -9,11 +9,11 @@ use Domainrobot\Lib\DomainrobotException;
 class SDKController
 {
     /**
-     * Delete a contact
+     * Delete a certificate
      *
      * @return array
      */
-    public function contactDelete()
+    public function certificateDelete()
     {
         $domainrobot = new Domainrobot([
             'url' => 'https://api.autodns.com/v1',
@@ -26,7 +26,7 @@ class SDKController
 
         try {
             
-            $domainrobot->contact->delete(234234234);
+            $objectJob = $domainrobot->certificate->delete(234234234);
 
         } catch (DomainrobotException $exception) {
             return $exception;

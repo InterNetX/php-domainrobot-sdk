@@ -5,7 +5,7 @@ namespace Example;
 use Domainrobot\Domainrobot;
 use Domainrobot\Lib\DomainrobotAuth;
 use Domainrobot\Lib\DomainrobotException;
-use Domainrobot\Model\Contact;
+use Domainrobot\Model\Certificate;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\QueryFilter;
 use Domainrobot\Model\QueryView;
@@ -13,12 +13,12 @@ use Domainrobot\Model\QueryView;
 class SDKController
 {
     /**
-     * Inquire a list of contacts with filters
-     * returns an array of Domainrobot\Model\Contact
+     * Inquire a list of certificates with filters
+     * returns an array of Domainrobot\Model\Certificate
      *
-     * @return Contact[]
+     * @return Certificate[]
      */
-    public function contactList()
+    public function certificateList()
     {
       $domainrobot = new Domainrobot([
             "url" => "https://api.demo.autodns.com/v1",
@@ -32,11 +32,7 @@ class SDKController
         try {
             $query = new Query([
                 'filters' => [ new QueryFilter([
-                    'key' => 'fname',
-                    'value' => 'Test%',
-                    'operator' => 'LIKE'
-                ]), new QueryFilter([
-                    'key' => 'lname',
+                    'key' => 'name',
                     'value' => 'Test%',
                     'operator' => 'LIKE'
                 ])],
@@ -45,7 +41,7 @@ class SDKController
                     'limit' => 10
                 ])
             ]);
-            $contactList = $domainrobot->contact->list($query);
+            $certificateList = $domainrobot->certificate->list($query);
         } catch (DomainrobotException $exception) {
             return $exception;
         }
@@ -55,6 +51,6 @@ class SDKController
         // if you need the http status code of the last request/response
         Domainrobot::getLastDomainrobotResult()->getStatusCode();
 
-        return $contactList;
+        return $certificateList;
     }
 }

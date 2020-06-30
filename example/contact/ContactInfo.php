@@ -10,7 +10,7 @@ use Domainrobot\Model\Contact;
 class SDKController
 {
     /**
-     * Create a contact
+     * Inquire a contact
      *
      * @return Contact
      */

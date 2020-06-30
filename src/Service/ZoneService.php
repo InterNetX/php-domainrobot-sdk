@@ -29,9 +29,9 @@ class ZoneService extends DomainrobotService
      * @param Zone $body
      * @return Zone
      */
-    public function create(Zone $body)
+    public function create(Zone $zone)
     {
-        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotPromise = $this->createAsync($zone);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -42,15 +42,15 @@ class ZoneService extends DomainrobotService
     /**
      * Sends a zone create request.
      *
-     * @param Zone $body
+     * @param Zone $zone
      * @return DomainrobotPromise
      */
-    public function createAsync(Zone $body)
+    public function createAsync(Zone $zone)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone",
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $zone->toArray()]
         );
     }
 

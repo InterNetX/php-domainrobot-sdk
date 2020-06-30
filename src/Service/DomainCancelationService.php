@@ -25,12 +25,12 @@ class DomainCancelationService extends DomainrobotService
     /**
      * Sends a DomainCancelation create request.
      *
-     * @param DomainCancelation $body
+     * @param DomainCancelation $domainCancelation
      * @return DomainCancelation
      */
-    public function create(DomainCancelation $body)
+    public function create(DomainCancelation $domainCancelation)
     {
-        $domainrobotPromise = $this->createAsync($body);
+        $domainrobotPromise = $this->createAsync($domainCancelation);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -41,18 +41,18 @@ class DomainCancelationService extends DomainrobotService
     /**
      * Sends a DomainCancelation create request.
      *
-     * @param DomainCancelation $body
+     * @param DomainCancelation $domainCancelation
      * @return DomainrobotPromise
      */
-    public function createAsync(DomainCancelation $body)
+    public function createAsync(DomainCancelation $domainCancelation)
     {
-        if ($body->getDomain() === null) {
+        if ($domainCancelation->getDomain() === null) {
             throw new \InvalidArgumentException("Field DomainCancelation.domain is missing.");
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/".$body->getDomain()."/cancelation",
+            $this->domainrobotConfig->getUrl() . "/domain/".$domainCancelation->getDomain()."/cancelation",
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $domainCancelation->toArray()]
         );
     }
 
@@ -62,9 +62,9 @@ class DomainCancelationService extends DomainrobotService
      * @param DomainCancelation $body
      * @return DomainCancelation
      */
-    public function update(DomainCancelation $body)
+    public function update(DomainCancelation $domainCancelation)
     {
-        $domainrobotPromise = $this->updateAsync($body);
+        $domainrobotPromise = $this->updateAsync($domainCancelation);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -78,15 +78,15 @@ class DomainCancelationService extends DomainrobotService
      * @param DomainCancelation $body
      * @return DomainrobotPromise
      */
-    public function updateAsync(DomainCancelation $body)
+    public function updateAsync(DomainCancelation $domainCancelation)
     {
-        if ($body->getDomain() === null) {
+        if ($domainCancelation->getDomain() === null) {
             throw new \InvalidArgumentException("Field DomainCancelation.domain is missing.");
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/".$body->getDomain()."/cancelation",
+            $this->domainrobotConfig->getUrl() . "/domain/".$domainCancelation->getDomain()."/cancelation",
             'PUT',
-            ["json" => $body->toArray()]
+            ["json" => $domainCancelation->toArray()]
         );
     }
 
@@ -168,12 +168,12 @@ class DomainCancelationService extends DomainrobotService
      * * gainingRegistrar
      * * updated
      *
-     * @param Query|null $body
+     * @param Query|null $query
      * @return DomainCancelation[]
      */
-    public function list(Query $body = null)
+    public function list(Query $query = null)
     {
-        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotPromise = $this->listAsync($query);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -206,15 +206,15 @@ class DomainCancelationService extends DomainrobotService
      * * gainingRegistrar
      * * updated
      *
-     * @param Query|null $body
+     * @param Query|null $query
      * @return DomainrobotPromise
      */
 
-    public function listAsync(Query $body = null)
+    public function listAsync(Query $query = null)
     {
         $data = null;
-        if ($body != null) {
-            $data = $body->toArray();
+        if ($query != null) {
+            $data = $query->toArray();
         }
         
         return new DomainrobotPromise($this->sendRequest(

@@ -3,8 +3,8 @@
 General call of tasks:
 
 ```php
- $pollMessage = $domainrobot->domainCancelation->info();
+ $pollMessage = $domainrobot->poll->info();
 ```
 
-* info()
-* confirm($id)
+* [info](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/poll/ConfirmPollMessage.php)
+* [confirm](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/poll/ConfirmPollMessage.php)(int $id)

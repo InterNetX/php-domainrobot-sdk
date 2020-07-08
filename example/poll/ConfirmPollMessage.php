@@ -68,7 +68,6 @@ class SDKController
 
         // if you neeed/want to you can return the status and result of the confirmation
         return Domainrobot::getLastDomainrobotResult();
-
     }
 
 }

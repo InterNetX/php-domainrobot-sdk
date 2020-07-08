@@ -9,6 +9,20 @@ use Domainrobot\Lib\DomainrobotException;
 class SDKController
 {
 
+    // create statement for the table poll_messages which we use in this example
+    //
+    // CREATE TABLE `poll_messages` (
+    //   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+    //   `poll_id` bigint(20) DEFAULT NULL,
+    //   `job_id` bigint(20) NOT NULL,
+    //   `status` varchar(10) NOT NULL DEFAULT '',
+    //   `message` json NOT NULL,
+    //   `confirmed` timestamp NULL DEFAULT NULL,
+    //   `created_at` timestamp NULL DEFAULT NULL,
+    //   `updated_at` timestamp NULL DEFAULT NULL,
+    //   PRIMARY KEY (`id`)
+    // )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
     public function confirmPollMessage(){
         // get a new domainrobot instance
         $domainrobot = new Domainrobot([

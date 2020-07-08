@@ -6,6 +6,7 @@ This composer package can be used within every composer project, including proje
 
 **Note:** Feel free to contribute by creating pull requests or file an issue for bugs, questions and feature requests.
 
+
 ## Copyright and license
 
 MIT License

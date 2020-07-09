@@ -15,6 +15,7 @@ use Domainrobot\Service\ZoneService;
 use Domainrobot\Service\PollMessageService;
 use Domainrobot\Service\UserService;
 use Domainrobot\Service\PriceService;
+use Domainrobot\Service\JobService;
 
 class Domainrobot
 {
@@ -112,8 +113,14 @@ class Domainrobot
      * 
      * @var PriceService
      */
-
     public $price;
+
+    /**
+     * Interface for Accounting Requests
+     * 
+     * @var JobService
+     */
+    public $job;
 
     /**
      * [
@@ -138,6 +145,7 @@ class Domainrobot
         $this->zone = new ZoneService($this->domainrobotConfig);
         $this->user = new UserService($this->domainrobotConfig);
         $this->price = new PriceService($this->domainrobotConfig);
+        $this->job = new JobService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

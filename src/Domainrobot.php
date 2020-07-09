@@ -14,6 +14,7 @@ use Domainrobot\Service\TrustedApplicationService;
 use Domainrobot\Service\ZoneService;
 use Domainrobot\Service\PollMessageService;
 use Domainrobot\Service\UserService;
+use Domainrobot\Service\PriceService;
 
 class Domainrobot
 {
@@ -107,6 +108,14 @@ class Domainrobot
     public $user;
 
     /**
+     * Interface for Accounting Requests
+     * 
+     * @var PriceService
+     */
+
+    public $price;
+
+    /**
      * [
      *   "url" => string, //optional
      *   "auth" => DomainrobotAuth //optional
@@ -128,6 +137,7 @@ class Domainrobot
         $this->trustedApp = new TrustedApplicationService($this->domainrobotConfig);
         $this->zone = new ZoneService($this->domainrobotConfig);
         $this->user = new UserService($this->domainrobotConfig);
+        $this->price = new PriceService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

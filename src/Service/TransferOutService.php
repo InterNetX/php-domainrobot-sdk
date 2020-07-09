@@ -25,12 +25,29 @@ class TransferOutService extends DomainrobotService
 
     /**
      * Answer a transfer for the given domain with the given answer.
+     * 
+     * The following values are possible for $answer argument :
+     * 
+     * * TRANSFER_OUT_ACK
+     * * TRANSFER_OUT_NACK
+     * 
+     * or use the TransferAnswer class.
+     * 
+     * The following values are possible for the $reason argument :
+     * 
+     * * 1 = Evidence of fraud
+     * * 2 = Current UDRP action
+     * * 3 = Court order
+     * * 4 = Identity dispute
+     * * 5 = No payment for previous registration period
+     * * 6 = Express written objection to the transfer from the transfer contact. 
      *
-     * @param string $domain
+     * @param string $domain,
      * @param string $answer
+     * @param int reason
      * @return TransferOut
      */
-    public function answer($domain, $answer)
+    public function answer($domain, $answer, $reason = null)
     {
         $domainrobotPromise = $this->answerAsync($domain, $answer);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -42,23 +59,48 @@ class TransferOutService extends DomainrobotService
 
     /**
      * Answer a transfer for the given domain with the given answer.
+     * 
+     * The following values are possible for $answer argument :
+     * 
+     * * TRANSFER_OUT_ACK
+     * * TRANSFER_OUT_NACK
+     * 
+     * or use the TransferAnswer class.
+     * 
+     * The following values are possible for the $reason argument :
+     * 
+     * * 1 = Evidence of fraud
+     * * 2 = Current UDRP action
+     * * 3 = Court order
+     * * 4 = Identity dispute
+     * * 5 = No payment for previous registration period
+     * * 6 = Express written objection to the transfer from the transfer contact. 
      *
      * @param string $domain,
      * @param string $answer
+     * @param int reason
      * @return DomainrobotPromise
      */
-    public function answerAsync($domain, $answer)
+    public function answerAsync($domain, $answer, $reason = null)
     {
         $transformedAnswer = "";
         if ($answer === TransferAnswer::ACK) {
             $transformedAnswer = "ack";
-        } else {
+        } else if($answer === TransferAnswer::NACK){
             $transformedAnswer = "nack";
+        } else {
+            throw new InvalidArgumentException('Invalid answer value, use constants of the TransferAnswer class.');
+        }
+
+        $data = null;
+        if ($reason != null) {
+            $data = array("nackReason" => $reason);
         }
 
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/transferout/$domain/$transformedAnswer",
-            'PUT'
+            'PUT',
+            ["json" => $data]
         );
     }
 

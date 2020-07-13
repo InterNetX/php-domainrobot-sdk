@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.1] - 2020-07-13
+
+* Added new RestoreService class (#11)
+* Added new JobService class (#10)
+* Improved functionality and documentation of the TransferOut->answer() method. (#12)
+
 ## [0.6.0] - 2020-06-23
 
 * added possibility to gain direct access to response and request through callback methods

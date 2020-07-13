@@ -14,6 +14,7 @@ use Domainrobot\Service\TrustedApplicationService;
 use Domainrobot\Service\ZoneService;
 use Domainrobot\Service\PollMessageService;
 use Domainrobot\Service\UserService;
+use Domainrobot\Service\RestoreService;
 
 class Domainrobot
 {
@@ -100,11 +101,18 @@ class Domainrobot
     public $zone;
 
     /**
-     * Interface for all zone related requests
+     * Interface for all user related requests
      *
      * @var UserService
      */
     public $user;
+
+    /**
+     * Interface for all restore related requests
+     *
+     * @var RestoreService
+     */
+    public $restore;
 
     /**
      * [
@@ -128,6 +136,7 @@ class Domainrobot
         $this->trustedApp = new TrustedApplicationService($this->domainrobotConfig);
         $this->zone = new ZoneService($this->domainrobotConfig);
         $this->user = new UserService($this->domainrobotConfig);
+        $this->restore = new RestoreService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

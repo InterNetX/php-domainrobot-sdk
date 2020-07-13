@@ -36,4 +36,8 @@ class DomainrobotResult {
     {
         return $this->result = $result;
     }
+
+    public function isSuccess(){
+        return ArrayHelper::getValueFromArray($this->result, 'status.type', 'ERROR') === 'SUCCESS';
+    }
 }

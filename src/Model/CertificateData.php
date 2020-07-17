@@ -73,8 +73,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'authentication' => '\Domainrobot\Model\CertAuthentication[]',
         'algorithm' => '\Domainrobot\Model\CsrHashAlgorithmConstants',
         'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
+        'certificate' => '\Domainrobot\Model\Certificate',
         'idn' => 'string',
-        'checkCaa' => 'bool'
+        'checkCaa' => 'bool',
+        'businessCase' => 'string'
     ];
 
     /**
@@ -99,8 +101,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'authentication' => null,
         'algorithm' => null,
         'signatureHashAlgorithm' => null,
+        'certificate' => null,
         'idn' => null,
-        'checkCaa' => null
+        'checkCaa' => null,
+        'businessCase' => null
     ];
 
     /**
@@ -146,8 +150,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'authentication' => 'authentication',
         'algorithm' => 'algorithm',
         'signatureHashAlgorithm' => 'signatureHashAlgorithm',
+        'certificate' => 'certificate',
         'idn' => 'idn',
-        'checkCaa' => 'checkCaa'
+        'checkCaa' => 'checkCaa',
+        'businessCase' => 'businessCase'
     ];
 
     /**
@@ -172,8 +178,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'authentication' => 'setAuthentication',
         'algorithm' => 'setAlgorithm',
         'signatureHashAlgorithm' => 'setSignatureHashAlgorithm',
+        'certificate' => 'setCertificate',
         'idn' => 'setIdn',
-        'checkCaa' => 'setCheckCaa'
+        'checkCaa' => 'setCheckCaa',
+        'businessCase' => 'setBusinessCase'
     ];
 
     /**
@@ -198,8 +206,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'authentication' => 'getAuthentication',
         'algorithm' => 'getAlgorithm',
         'signatureHashAlgorithm' => 'getSignatureHashAlgorithm',
+        'certificate' => 'getCertificate',
         'idn' => 'getIdn',
-        'checkCaa' => 'getCheckCaa'
+        'checkCaa' => 'getCheckCaa',
+        'businessCase' => 'getBusinessCase'
     ];
 
     /**
@@ -278,8 +288,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         $this->container['authentication'] = isset($data['authentication']) ? $data['authentication'] : null;
         $this->container['algorithm'] = isset($data['algorithm']) ? $data['algorithm'] : null;
         $this->container['signatureHashAlgorithm'] = isset($data['signatureHashAlgorithm']) ? $data['signatureHashAlgorithm'] : null;
+        $this->container['certificate'] = isset($data['certificate']) ? $data['certificate'] : null;
         $this->container['idn'] = isset($data['idn']) ? $data['idn'] : null;
         $this->container['checkCaa'] = isset($data['checkCaa']) ? $data['checkCaa'] : null;
+        $this->container['businessCase'] = isset($data['businessCase']) ? $data['businessCase'] : null;
     }
 
     /**
@@ -691,6 +703,30 @@ class CertificateData implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets certificate
+     *
+     * @return \Domainrobot\Model\Certificate
+     */
+    public function getCertificate()
+    {
+        return $this->container['certificate'];
+    }
+
+    /**
+     * Sets certificate
+     *
+     * @param \Domainrobot\Model\Certificate $certificate The certificat. Only necessary if used before reissue, renew and delete.
+     *
+     * @return $this
+     */
+    public function setCertificate($certificate)
+    {
+        $this->container['certificate'] = $certificate;
+
+        return $this;
+    }
+
+    /**
      * Gets idn
      *
      * @return string
@@ -734,6 +770,30 @@ class CertificateData implements ModelInterface, ArrayAccess
     public function setCheckCaa($checkCaa)
     {
         $this->container['checkCaa'] = $checkCaa;
+
+        return $this;
+    }
+
+    /**
+     * Gets businessCase
+     *
+     * @return string
+     */
+    public function getBusinessCase()
+    {
+        return $this->container['businessCase'];
+    }
+
+    /**
+     * Sets businessCase
+     *
+     * @param string $businessCase Describes the business case (CREATE, RENEW, REISSUE, DELETE) for which preparation is to be performed.
+     *
+     * @return $this
+     */
+    public function setBusinessCase($businessCase)
+    {
+        $this->container['businessCase'] = $businessCase;
 
         return $this;
     }

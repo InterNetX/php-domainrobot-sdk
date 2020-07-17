@@ -69,7 +69,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'city' => 'string',
         'state' => 'string',
         'country' => 'string',
-        'phone' => '\Domainrobot\Model\Phone',
+        'phone' => 'string',
         'fax' => '\Domainrobot\Model\Phone',
         'emails' => 'string[]',
         'billingEmails' => 'string[]',
@@ -455,7 +455,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param int $number Lorem Ipsum
+     * @param int $number number
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets client
      *
-     * @param string $client Lorem Ipsum
+     * @param string $client client
      *
      * @return $this
      */
@@ -510,7 +510,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets group
      *
-     * @param int $group Lorem Ipsum
+     * @param int $group group
      *
      * @return $this
      */
@@ -754,7 +754,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Gets phone
      *
-     * @return \Domainrobot\Model\Phone
+     * @return string
      */
     public function getPhone()
     {
@@ -764,7 +764,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param \Domainrobot\Model\Phone $phone The phone number.
+     * @param string $phone The phone number of the customer
      *
      * @return $this
      */

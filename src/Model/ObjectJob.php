@@ -58,7 +58,10 @@ class ObjectJob implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'job' => '\Domainrobot\Model\Job',
-        'object' => '\Domainrobot\Model\ResponseObject'
+        'object' => '\Domainrobot\Model\ResponseObject',
+        'niccomLogs' => '\Domainrobot\Model\NiccomLog[]',
+        'authentication' => '\Domainrobot\Model\CertAuthenticationStatus[]',
+        'dcvAuth' => '\Domainrobot\Model\DomainControllValidationStatus[]'
     ];
 
     /**
@@ -68,7 +71,10 @@ class ObjectJob implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'job' => null,
-        'object' => null
+        'object' => null,
+        'niccomLogs' => null,
+        'authentication' => null,
+        'dcvAuth' => null
     ];
 
     /**
@@ -99,7 +105,10 @@ class ObjectJob implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'job' => 'job',
-        'object' => 'object'
+        'object' => 'object',
+        'niccomLogs' => 'niccomLogs',
+        'authentication' => 'authentication',
+        'dcvAuth' => 'dcvAuth'
     ];
 
     /**
@@ -109,7 +118,10 @@ class ObjectJob implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'job' => 'setJob',
-        'object' => 'setObject'
+        'object' => 'setObject',
+        'niccomLogs' => 'setNiccomLogs',
+        'authentication' => 'setAuthentication',
+        'dcvAuth' => 'setDcvAuth'
     ];
 
     /**
@@ -119,7 +131,10 @@ class ObjectJob implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'job' => 'getJob',
-        'object' => 'getObject'
+        'object' => 'getObject',
+        'niccomLogs' => 'getNiccomLogs',
+        'authentication' => 'getAuthentication',
+        'dcvAuth' => 'getDcvAuth'
     ];
 
     /**
@@ -184,6 +199,9 @@ class ObjectJob implements ModelInterface, ArrayAccess
     {
         $this->container['job'] = isset($data['job']) ? $data['job'] : null;
         $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['niccomLogs'] = isset($data['niccomLogs']) ? $data['niccomLogs'] : null;
+        $this->container['authentication'] = isset($data['authentication']) ? $data['authentication'] : null;
+        $this->container['dcvAuth'] = isset($data['dcvAuth']) ? $data['dcvAuth'] : null;
     }
 
     /**
@@ -254,6 +272,78 @@ class ObjectJob implements ModelInterface, ArrayAccess
     public function setObject($object)
     {
         $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets niccomLogs
+     *
+     * @return \Domainrobot\Model\NiccomLog[]
+     */
+    public function getNiccomLogs()
+    {
+        return $this->container['niccomLogs'];
+    }
+
+    /**
+     * Sets niccomLogs
+     *
+     * @param \Domainrobot\Model\NiccomLog[] $niccomLogs The niccom logs.
+     *
+     * @return $this
+     */
+    public function setNiccomLogs($niccomLogs)
+    {
+        $this->container['niccomLogs'] = $niccomLogs;
+
+        return $this;
+    }
+
+    /**
+     * Gets authentication
+     *
+     * @return \Domainrobot\Model\CertAuthenticationStatus[]
+     */
+    public function getAuthentication()
+    {
+        return $this->container['authentication'];
+    }
+
+    /**
+     * Sets authentication
+     *
+     * @param \Domainrobot\Model\CertAuthenticationStatus[] $authentication The overall authentication status for a certificate request.
+     *
+     * @return $this
+     */
+    public function setAuthentication($authentication)
+    {
+        $this->container['authentication'] = $authentication;
+
+        return $this;
+    }
+
+    /**
+     * Gets dcvAuth
+     *
+     * @return \Domainrobot\Model\DomainControllValidationStatus[]
+     */
+    public function getDcvAuth()
+    {
+        return $this->container['dcvAuth'];
+    }
+
+    /**
+     * Sets dcvAuth
+     *
+     * @param \Domainrobot\Model\DomainControllValidationStatus[] $dcvAuth The domain controll validation status for each domain.
+     *
+     * @return $this
+     */
+    public function setDcvAuth($dcvAuth)
+    {
+        $this->container['dcvAuth'] = $dcvAuth;
 
         return $this;
     }

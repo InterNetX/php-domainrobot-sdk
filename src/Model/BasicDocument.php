@@ -346,7 +346,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id Lorem Ipsum
+     * @param int $id id
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets comment
      *
-     * @param string $comment Lorem Ipsum
+     * @param string $comment comment
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type Lorem Ipsum
+     * @param string $type type
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets mimeType
      *
-     * @param string $mimeType Lorem Ipsum
+     * @param string $mimeType mimeType
      *
      * @return $this
      */
@@ -442,7 +442,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param string $data Lorem Ipsum
+     * @param string $data data
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets size
      *
-     * @param int $size Lorem Ipsum
+     * @param int $size size
      *
      * @return $this
      */
@@ -490,7 +490,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name Lorem Ipsum
+     * @param string $name name
      *
      * @return $this
      */
@@ -514,7 +514,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param string $link Lorem Ipsum
+     * @param string $link link
      *
      * @return $this
      */

@@ -397,7 +397,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets domain
      *
-     * @param string $domain Lorem Ipsum
+     * @param string $domain domain
      *
      * @return $this
      */
@@ -445,7 +445,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets gainingRegistrar
      *
-     * @param string $gainingRegistrar Lorem Ipsum
+     * @param string $gainingRegistrar gainingRegistrar
      *
      * @return $this
      */
@@ -469,7 +469,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets disconnect
      *
-     * @param bool $disconnect Lorem Ipsum
+     * @param bool $disconnect disconnect
      *
      * @return $this
      */
@@ -517,7 +517,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets logId
      *
-     * @param int $logId Lorem Ipsum
+     * @param int $logId logId
      *
      * @return $this
      */
@@ -541,7 +541,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets registryStatus
      *
-     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus Lorem Ipsum
+     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus registryStatus
      *
      * @return $this
      */

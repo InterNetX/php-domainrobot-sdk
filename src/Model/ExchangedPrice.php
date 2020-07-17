@@ -742,7 +742,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets vatRate
      *
-     * @param double $vatRate Lorem Ipsum
+     * @param double $vatRate The vat rate of the price
      *
      * @return $this
      */
@@ -766,7 +766,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets vatAmount
      *
-     * @param double $vatAmount Lorem Ipsum
+     * @param double $vatAmount The calculated vat amount
      *
      * @return $this
      */
@@ -790,7 +790,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets rate
      *
-     * @param double $rate Lorem Ipsum
+     * @param double $rate The exchnage rate between account and price
      *
      * @return $this
      */

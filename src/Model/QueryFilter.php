@@ -241,7 +241,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets key
      *
-     * @param string $key Lorem Ipsum
+     * @param string $key key
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Lorem Ipsum
+     * @param string $value value
      *
      * @return $this
      */
@@ -289,7 +289,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets operator
      *
-     * @param \Domainrobot\Model\Operator $operator Lorem Ipsum
+     * @param \Domainrobot\Model\Operator $operator operator
      *
      * @return $this
      */
@@ -313,7 +313,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param \Domainrobot\Model\ConditionType $link Lorem Ipsum
+     * @param \Domainrobot\Model\ConditionType $link link
      *
      * @return $this
      */
@@ -337,7 +337,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets filters
      *
-     * @param \Domainrobot\Model\QueryFilter[] $filters Lorem Ipsum
+     * @param \Domainrobot\Model\QueryFilter[] $filters filters
      *
      * @return $this
      */

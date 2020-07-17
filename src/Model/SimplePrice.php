@@ -57,9 +57,15 @@ class SimplePrice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'amount' => 'double',
+        'netAmount' => 'double',
+        'vatAmount' => 'double',
+        'currency' => 'string',
         'price' => '\Domainrobot\Model\ExchangedPrice',
         'businessCase' => 'string',
-        'period' => '\Domainrobot\Model\TimePeriod'
+        'period' => '\Domainrobot\Model\TimePeriod',
+        'customs' => '\Domainrobot\Model\Custom[]',
+        'view' => '\Domainrobot\Model\CurrencyRate'
     ];
 
     /**
@@ -68,9 +74,15 @@ class SimplePrice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'amount' => 'double',
+        'netAmount' => 'double',
+        'vatAmount' => 'double',
+        'currency' => null,
         'price' => null,
         'businessCase' => null,
-        'period' => null
+        'period' => null,
+        'customs' => null,
+        'view' => null
     ];
 
     /**
@@ -100,9 +112,15 @@ class SimplePrice implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'amount' => 'amount',
+        'netAmount' => 'netAmount',
+        'vatAmount' => 'vatAmount',
+        'currency' => 'currency',
         'price' => 'price',
         'businessCase' => 'businessCase',
-        'period' => 'period'
+        'period' => 'period',
+        'customs' => 'customs',
+        'view' => 'view'
     ];
 
     /**
@@ -111,9 +129,15 @@ class SimplePrice implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'amount' => 'setAmount',
+        'netAmount' => 'setNetAmount',
+        'vatAmount' => 'setVatAmount',
+        'currency' => 'setCurrency',
         'price' => 'setPrice',
         'businessCase' => 'setBusinessCase',
-        'period' => 'setPeriod'
+        'period' => 'setPeriod',
+        'customs' => 'setCustoms',
+        'view' => 'setView'
     ];
 
     /**
@@ -122,9 +146,15 @@ class SimplePrice implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'amount' => 'getAmount',
+        'netAmount' => 'getNetAmount',
+        'vatAmount' => 'getVatAmount',
+        'currency' => 'getCurrency',
         'price' => 'getPrice',
         'businessCase' => 'getBusinessCase',
-        'period' => 'getPeriod'
+        'period' => 'getPeriod',
+        'customs' => 'getCustoms',
+        'view' => 'getView'
     ];
 
     /**
@@ -187,9 +217,15 @@ class SimplePrice implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['netAmount'] = isset($data['netAmount']) ? $data['netAmount'] : null;
+        $this->container['vatAmount'] = isset($data['vatAmount']) ? $data['vatAmount'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['businessCase'] = isset($data['businessCase']) ? $data['businessCase'] : null;
         $this->container['period'] = isset($data['period']) ? $data['period'] : null;
+        $this->container['customs'] = isset($data['customs']) ? $data['customs'] : null;
+        $this->container['view'] = isset($data['view']) ? $data['view'] : null;
     }
 
     /**
@@ -217,6 +253,102 @@ class SimplePrice implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets amount
+     *
+     * @return double
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param double $amount The gross amount of the calculation
+     *
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets netAmount
+     *
+     * @return double
+     */
+    public function getNetAmount()
+    {
+        return $this->container['netAmount'];
+    }
+
+    /**
+     * Sets netAmount
+     *
+     * @param double $netAmount The net amount of the calculation
+     *
+     * @return $this
+     */
+    public function setNetAmount($netAmount)
+    {
+        $this->container['netAmount'] = $netAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets vatAmount
+     *
+     * @return double
+     */
+    public function getVatAmount()
+    {
+        return $this->container['vatAmount'];
+    }
+
+    /**
+     * Sets vatAmount
+     *
+     * @param double $vatAmount The calculated vat amount
+     *
+     * @return $this
+     */
+    public function setVatAmount($vatAmount)
+    {
+        $this->container['vatAmount'] = $vatAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency The billing currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
      * Gets price
      *
      * @return \Domainrobot\Model\ExchangedPrice
@@ -229,7 +361,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param \Domainrobot\Model\ExchangedPrice $price The price
+     * @param \Domainrobot\Model\ExchangedPrice $price The price. Note the currency can be differ from the billing currency
      *
      * @return $this
      */
@@ -277,13 +409,61 @@ class SimplePrice implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param \Domainrobot\Model\TimePeriod $period The period for the price
+     * @param \Domainrobot\Model\TimePeriod $period The period for the price calculation
      *
      * @return $this
      */
     public function setPeriod($period)
     {
         $this->container['period'] = $period;
+
+        return $this;
+    }
+
+    /**
+     * Gets customs
+     *
+     * @return \Domainrobot\Model\Custom[]
+     */
+    public function getCustoms()
+    {
+        return $this->container['customs'];
+    }
+
+    /**
+     * Sets customs
+     *
+     * @param \Domainrobot\Model\Custom[] $customs Custom values,such as price class
+     *
+     * @return $this
+     */
+    public function setCustoms($customs)
+    {
+        $this->container['customs'] = $customs;
+
+        return $this;
+    }
+
+    /**
+     * Gets view
+     *
+     * @return \Domainrobot\Model\CurrencyRate
+     */
+    public function getView()
+    {
+        return $this->container['view'];
+    }
+
+    /**
+     * Sets view
+     *
+     * @param \Domainrobot\Model\CurrencyRate $view The currency rate for the view currency
+     *
+     * @return $this
+     */
+    public function setView($view)
+    {
+        $this->container['view'] = $view;
 
         return $this;
     }

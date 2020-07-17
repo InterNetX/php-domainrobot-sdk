@@ -259,7 +259,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets parkingCategory
      *
-     * @param string $parkingCategory Lorem Ipsum
+     * @param string $parkingCategory parkingCategory
      *
      * @return $this
      */

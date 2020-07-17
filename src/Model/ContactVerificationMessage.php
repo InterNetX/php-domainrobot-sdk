@@ -59,7 +59,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'mail' => '\Domainrobot\Model\Message',
+        'mail' => '\Domainrobot\Model\MailServiceMessage',
         'status' => '\Domainrobot\Model\GenericStatusConstants'
     ];
 
@@ -273,7 +273,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Gets mail
      *
-     * @return \Domainrobot\Model\Message
+     * @return \Domainrobot\Model\MailServiceMessage
      */
     public function getMail()
     {
@@ -283,7 +283,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets mail
      *
-     * @param \Domainrobot\Model\Message $mail the email of the VerificationMessage
+     * @param \Domainrobot\Model\MailServiceMessage $mail the email of the VerificationMessage
      *
      * @return $this
      */

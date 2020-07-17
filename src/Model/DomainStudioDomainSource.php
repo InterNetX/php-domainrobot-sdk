@@ -49,6 +49,8 @@ class DomainStudioDomainSource
     const GEO = 'GEO';
     const SIMILAR = 'SIMILAR';
     const RECOMMENDED = 'RECOMMENDED';
+    const CUSTOM = 'CUSTOM';
+    const ONLINE_PRESENCE = 'ONLINE_PRESENCE';
     
     /**
      * Gets allowable values of the enum
@@ -63,6 +65,8 @@ class DomainStudioDomainSource
             self::GEO,
             self::SIMILAR,
             self::RECOMMENDED,
+            self::CUSTOM,
+            self::ONLINE_PRESENCE,
         ];
     }
 }

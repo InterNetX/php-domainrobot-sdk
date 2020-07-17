@@ -58,7 +58,8 @@ class DomainStudioSourceSimilar implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
-        'max' => 'int'
+        'max' => 'int',
+        'tlds' => 'string[]'
     ];
 
     /**
@@ -68,7 +69,8 @@ class DomainStudioSourceSimilar implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'services' => null,
-        'max' => 'int32'
+        'max' => 'int32',
+        'tlds' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class DomainStudioSourceSimilar implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'services' => 'services',
-        'max' => 'max'
+        'max' => 'max',
+        'tlds' => 'tlds'
     ];
 
     /**
@@ -109,7 +112,8 @@ class DomainStudioSourceSimilar implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'services' => 'setServices',
-        'max' => 'setMax'
+        'max' => 'setMax',
+        'tlds' => 'setTlds'
     ];
 
     /**
@@ -119,7 +123,8 @@ class DomainStudioSourceSimilar implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'services' => 'getServices',
-        'max' => 'getMax'
+        'max' => 'getMax',
+        'tlds' => 'getTlds'
     ];
 
     /**
@@ -184,6 +189,7 @@ class DomainStudioSourceSimilar implements ModelInterface, ArrayAccess
     {
         $this->container['services'] = isset($data['services']) ? $data['services'] : null;
         $this->container['max'] = isset($data['max']) ? $data['max'] : null;
+        $this->container['tlds'] = isset($data['tlds']) ? $data['tlds'] : null;
     }
 
     /**
@@ -254,6 +260,30 @@ class DomainStudioSourceSimilar implements ModelInterface, ArrayAccess
     public function setMax($max)
     {
         $this->container['max'] = $max;
+
+        return $this;
+    }
+
+    /**
+     * Gets tlds
+     *
+     * @return string[]
+     */
+    public function getTlds()
+    {
+        return $this->container['tlds'];
+    }
+
+    /**
+     * Sets tlds
+     *
+     * @param string[] $tlds Selected tlds
+     *
+     * @return $this
+     */
+    public function setTlds($tlds)
+    {
+        $this->container['tlds'] = $tlds;
 
         return $this;
     }

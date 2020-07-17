@@ -229,7 +229,7 @@ class QueryOrder implements ModelInterface, ArrayAccess
     /**
      * Sets key
      *
-     * @param string $key Lorem Ipsum
+     * @param string $key key
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class QueryOrder implements ModelInterface, ArrayAccess
     /**
      * Sets ins
      *
-     * @param string[] $ins Lorem Ipsum
+     * @param string[] $ins ins
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class QueryOrder implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\OrderType $type Lorem Ipsum
+     * @param \Domainrobot\Model\OrderType $type type
      *
      * @return $this
      */

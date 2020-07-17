@@ -57,9 +57,13 @@ class UserProfile implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'flag' => '\Domainrobot\Model\UserProfileFlag',
+        'created' => '\DateTime',
+        'updated' => '\DateTime',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'key' => 'string',
         'value' => 'string',
+        'flag' => '\Domainrobot\Model\UserProfileFlag',
         'readonly' => 'bool'
     ];
 
@@ -69,9 +73,13 @@ class UserProfile implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'flag' => null,
+        'created' => 'date-time',
+        'updated' => 'date-time',
+        'owner' => null,
+        'updater' => null,
         'key' => null,
         'value' => null,
+        'flag' => null,
         'readonly' => null
     ];
 
@@ -102,9 +110,13 @@ class UserProfile implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'flag' => 'flag',
+        'created' => 'created',
+        'updated' => 'updated',
+        'owner' => 'owner',
+        'updater' => 'updater',
         'key' => 'key',
         'value' => 'value',
+        'flag' => 'flag',
         'readonly' => 'readonly'
     ];
 
@@ -114,9 +126,13 @@ class UserProfile implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'flag' => 'setFlag',
+        'created' => 'setCreated',
+        'updated' => 'setUpdated',
+        'owner' => 'setOwner',
+        'updater' => 'setUpdater',
         'key' => 'setKey',
         'value' => 'setValue',
+        'flag' => 'setFlag',
         'readonly' => 'setReadonly'
     ];
 
@@ -126,9 +142,13 @@ class UserProfile implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'flag' => 'getFlag',
+        'created' => 'getCreated',
+        'updated' => 'getUpdated',
+        'owner' => 'getOwner',
+        'updater' => 'getUpdater',
         'key' => 'getKey',
         'value' => 'getValue',
+        'flag' => 'getFlag',
         'readonly' => 'getReadonly'
     ];
 
@@ -192,9 +212,13 @@ class UserProfile implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['flag'] = isset($data['flag']) ? $data['flag'] : null;
+        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
+        $this->container['owner'] = isset($data['owner']) ? $data['owner'] : null;
+        $this->container['updater'] = isset($data['updater']) ? $data['updater'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['flag'] = isset($data['flag']) ? $data['flag'] : null;
         $this->container['readonly'] = isset($data['readonly']) ? $data['readonly'] : null;
     }
 
@@ -207,14 +231,14 @@ class UserProfile implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['flag'] === null) {
-            $invalidProperties[] = "'flag' can't be null";
-        }
         if ($this->container['key'] === null) {
             $invalidProperties[] = "'key' can't be null";
         }
         if ($this->container['value'] === null) {
             $invalidProperties[] = "'value' can't be null";
+        }
+        if ($this->container['flag'] === null) {
+            $invalidProperties[] = "'flag' can't be null";
         }
         return $invalidProperties;
     }
@@ -232,25 +256,97 @@ class UserProfile implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets flag
+     * Gets created
      *
-     * @return \Domainrobot\Model\UserProfileFlag
+     * @return \DateTime
      */
-    public function getFlag()
+    public function getCreated()
     {
-        return $this->container['flag'];
+        return $this->container['created'];
     }
 
     /**
-     * Sets flag
+     * Sets created
      *
-     * @param \Domainrobot\Model\UserProfileFlag $flag The mode of the entry
+     * @param \DateTime $created The created date.
      *
      * @return $this
      */
-    public function setFlag($flag)
+    public function setCreated($created)
     {
-        $this->container['flag'] = $flag;
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     *
+     * @param \DateTime $updated The updated date.
+     *
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets owner
+     *
+     * @return \Domainrobot\Model\BasicUser
+     */
+    public function getOwner()
+    {
+        return $this->container['owner'];
+    }
+
+    /**
+     * Sets owner
+     *
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     *
+     * @return $this
+     */
+    public function setOwner($owner)
+    {
+        $this->container['owner'] = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Gets updater
+     *
+     * @return \Domainrobot\Model\BasicUser
+     */
+    public function getUpdater()
+    {
+        return $this->container['updater'];
+    }
+
+    /**
+     * Sets updater
+     *
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     *
+     * @return $this
+     */
+    public function setUpdater($updater)
+    {
+        $this->container['updater'] = $updater;
 
         return $this;
     }
@@ -299,6 +395,30 @@ class UserProfile implements ModelInterface, ArrayAccess
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets flag
+     *
+     * @return \Domainrobot\Model\UserProfileFlag
+     */
+    public function getFlag()
+    {
+        return $this->container['flag'];
+    }
+
+    /**
+     * Sets flag
+     *
+     * @param \Domainrobot\Model\UserProfileFlag $flag The mode of the entry
+     *
+     * @return $this
+     */
+    public function setFlag($flag)
+    {
+        $this->container['flag'] = $flag;
 
         return $this;
     }

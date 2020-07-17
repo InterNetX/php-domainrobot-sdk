@@ -301,7 +301,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets articleLabel
      *
-     * @param string $articleLabel Lorem Ipsum
+     * @param string $articleLabel articleLabel
      *
      * @return $this
      */
@@ -325,7 +325,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets limitSelf
      *
-     * @param int $limitSelf Lorem Ipsum
+     * @param int $limitSelf limitSelf
      *
      * @return $this
      */
@@ -349,7 +349,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets limitChildren
      *
-     * @param int $limitChildren Lorem Ipsum
+     * @param int $limitChildren limitChildren
      *
      * @return $this
      */
@@ -373,7 +373,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets articleTypeLabel
      *
-     * @param string $articleTypeLabel Lorem Ipsum
+     * @param string $articleTypeLabel articleTypeLabel
      *
      * @return $this
      */

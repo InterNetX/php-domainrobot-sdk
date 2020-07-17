@@ -223,7 +223,7 @@ class MainIp implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param string $address Lorem Ipsum
+     * @param string $address address
      *
      * @return $this
      */

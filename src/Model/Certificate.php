@@ -85,6 +85,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'password' => 'string',
         'firstname' => 'string',
         'lastname' => 'string',
+        'technicalContactEmail' => 'string',
         'organizationUnitName' => 'string',
         'authentication' => '\Domainrobot\Model\CertAuthentication',
         'certificateTransparency' => 'bool',
@@ -128,6 +129,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'password' => null,
         'firstname' => null,
         'lastname' => null,
+        'technicalContactEmail' => null,
         'organizationUnitName' => null,
         'authentication' => null,
         'certificateTransparency' => null,
@@ -192,6 +194,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'password' => 'password',
         'firstname' => 'firstname',
         'lastname' => 'lastname',
+        'technicalContactEmail' => 'technicalContactEmail',
         'organizationUnitName' => 'organizationUnitName',
         'authentication' => 'authentication',
         'certificateTransparency' => 'certificateTransparency',
@@ -235,6 +238,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'password' => 'setPassword',
         'firstname' => 'setFirstname',
         'lastname' => 'setLastname',
+        'technicalContactEmail' => 'setTechnicalContactEmail',
         'organizationUnitName' => 'setOrganizationUnitName',
         'authentication' => 'setAuthentication',
         'certificateTransparency' => 'setCertificateTransparency',
@@ -278,6 +282,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'password' => 'getPassword',
         'firstname' => 'getFirstname',
         'lastname' => 'getLastname',
+        'technicalContactEmail' => 'getTechnicalContactEmail',
         'organizationUnitName' => 'getOrganizationUnitName',
         'authentication' => 'getAuthentication',
         'certificateTransparency' => 'getCertificateTransparency',
@@ -375,6 +380,7 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
         $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
+        $this->container['technicalContactEmail'] = isset($data['technicalContactEmail']) ? $data['technicalContactEmail'] : null;
         $this->container['organizationUnitName'] = isset($data['organizationUnitName']) ? $data['organizationUnitName'] : null;
         $this->container['authentication'] = isset($data['authentication']) ? $data['authentication'] : null;
         $this->container['certificateTransparency'] = isset($data['certificateTransparency']) ? $data['certificateTransparency'] : null;
@@ -402,8 +408,8 @@ class Certificate implements ModelInterface, ArrayAccess
         if ($this->container['product'] === null) {
             $invalidProperties[] = "'product' can't be null";
         }
-        if (!is_null($this->container['password']) && !preg_match("/^[-a-zA-Z0-9 ]{8,32}$/", $this->container['password'])) {
-            $invalidProperties[] = "invalid value for 'password', must be conform to the pattern /^[-a-zA-Z0-9 ]{8,32}$/.";
+        if (!is_null($this->container['password']) && !preg_match("/^[-a-zA-Z0-9]{8,32}$/", $this->container['password'])) {
+            $invalidProperties[] = "invalid value for 'password', must be conform to the pattern /^[-a-zA-Z0-9]{8,32}$/.";
         }
 
         return $invalidProperties;
@@ -1041,8 +1047,8 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setPassword($password)
     {
 
-        if (!is_null($password) && (!preg_match("/^[-a-zA-Z0-9 ]{8,32}$/", $password))) {
-            throw new \InvalidArgumentException("invalid value for $password when calling Certificate., must conform to the pattern /^[-a-zA-Z0-9 ]{8,32}$/.");
+        if (!is_null($password) && (!preg_match("/^[-a-zA-Z0-9]{8,32}$/", $password))) {
+            throw new \InvalidArgumentException("invalid value for $password when calling Certificate., must conform to the pattern /^[-a-zA-Z0-9]{8,32}$/.");
         }
 
         $this->container['password'] = $password;
@@ -1094,6 +1100,30 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setLastname($lastname)
     {
         $this->container['lastname'] = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Gets technicalContactEmail
+     *
+     * @return string
+     */
+    public function getTechnicalContactEmail()
+    {
+        return $this->container['technicalContactEmail'];
+    }
+
+    /**
+     * Sets technicalContactEmail
+     *
+     * @param string $technicalContactEmail The technical contact email address. Only used in realtime orders!
+     *
+     * @return $this
+     */
+    public function setTechnicalContactEmail($technicalContactEmail)
+    {
+        $this->container['technicalContactEmail'] = $technicalContactEmail;
 
         return $this;
     }

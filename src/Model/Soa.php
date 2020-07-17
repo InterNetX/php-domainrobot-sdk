@@ -316,7 +316,7 @@ class Soa implements ModelInterface, ArrayAccess
     /**
      * Sets ttl
      *
-     * @param int $ttl Lorem Ipsum
+     * @param int $ttl ttl
      *
      * @return $this
      */

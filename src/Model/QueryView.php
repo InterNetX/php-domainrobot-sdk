@@ -241,7 +241,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets limit
      *
-     * @param int $limit Lorem Ipsum
+     * @param int $limit limit
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets offset
      *
-     * @param int $offset Lorem Ipsum
+     * @param int $offset offset
      *
      * @return $this
      */
@@ -289,7 +289,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets children
      *
-     * @param bool $children Lorem Ipsum
+     * @param bool $children children
      *
      * @return $this
      */
@@ -313,7 +313,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets from
      *
-     * @param \DateTime $from Lorem Ipsum
+     * @param \DateTime $from from
      *
      * @return $this
      */
@@ -337,7 +337,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param \DateTime $to Lorem Ipsum
+     * @param \DateTime $to to
      *
      * @return $this
      */

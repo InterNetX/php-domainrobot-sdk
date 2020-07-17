@@ -243,7 +243,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param int $number Lorem Ipsum
+     * @param int $number number
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets client
      *
-     * @param string $client Lorem Ipsum
+     * @param string $client client
      *
      * @return $this
      */
@@ -298,7 +298,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets group
      *
-     * @param int $group Lorem Ipsum
+     * @param int $group group
      *
      * @return $this
      */

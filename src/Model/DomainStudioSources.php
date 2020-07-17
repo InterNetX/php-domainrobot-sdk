@@ -62,7 +62,9 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'premium' => '\Domainrobot\Model\DomainStudioSourcePremium',
         'geo' => '\Domainrobot\Model\DomainStudioSourceGeo',
         'similar' => '\Domainrobot\Model\DomainStudioSourceSimilar',
-        'recommended' => '\Domainrobot\Model\DomainStudioSourceSimilar'
+        'recommended' => '\Domainrobot\Model\DomainStudioSourceRecommended',
+        'custom' => '\Domainrobot\Model\DomainStudioSourceCustom',
+        'onlinePresence' => '\Domainrobot\Model\DomainStudioSourceOnlinePresence'
     ];
 
     /**
@@ -76,7 +78,9 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'premium' => null,
         'geo' => null,
         'similar' => null,
-        'recommended' => null
+        'recommended' => null,
+        'custom' => null,
+        'onlinePresence' => null
     ];
 
     /**
@@ -111,7 +115,9 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'premium' => 'premium',
         'geo' => 'geo',
         'similar' => 'similar',
-        'recommended' => 'recommended'
+        'recommended' => 'recommended',
+        'custom' => 'custom',
+        'onlinePresence' => 'onlinePresence'
     ];
 
     /**
@@ -125,7 +131,9 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'premium' => 'setPremium',
         'geo' => 'setGeo',
         'similar' => 'setSimilar',
-        'recommended' => 'setRecommended'
+        'recommended' => 'setRecommended',
+        'custom' => 'setCustom',
+        'onlinePresence' => 'setOnlinePresence'
     ];
 
     /**
@@ -139,7 +147,9 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'premium' => 'getPremium',
         'geo' => 'getGeo',
         'similar' => 'getSimilar',
-        'recommended' => 'getRecommended'
+        'recommended' => 'getRecommended',
+        'custom' => 'getCustom',
+        'onlinePresence' => 'getOnlinePresence'
     ];
 
     /**
@@ -208,6 +218,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         $this->container['geo'] = isset($data['geo']) ? $data['geo'] : null;
         $this->container['similar'] = isset($data['similar']) ? $data['similar'] : null;
         $this->container['recommended'] = isset($data['recommended']) ? $data['recommended'] : null;
+        $this->container['custom'] = isset($data['custom']) ? $data['custom'] : null;
+        $this->container['onlinePresence'] = isset($data['onlinePresence']) ? $data['onlinePresence'] : null;
     }
 
     /**
@@ -357,7 +369,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Gets recommended
      *
-     * @return \Domainrobot\Model\DomainStudioSourceSimilar
+     * @return \Domainrobot\Model\DomainStudioSourceRecommended
      */
     public function getRecommended()
     {
@@ -367,13 +379,61 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     /**
      * Sets recommended
      *
-     * @param \Domainrobot\Model\DomainStudioSourceSimilar $recommended The configuration for the recommended source
+     * @param \Domainrobot\Model\DomainStudioSourceRecommended $recommended The configuration for the recommended source
      *
      * @return $this
      */
     public function setRecommended($recommended)
     {
         $this->container['recommended'] = $recommended;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom
+     *
+     * @return \Domainrobot\Model\DomainStudioSourceCustom
+     */
+    public function getCustom()
+    {
+        return $this->container['custom'];
+    }
+
+    /**
+     * Sets custom
+     *
+     * @param \Domainrobot\Model\DomainStudioSourceCustom $custom The configuration for the custom source
+     *
+     * @return $this
+     */
+    public function setCustom($custom)
+    {
+        $this->container['custom'] = $custom;
+
+        return $this;
+    }
+
+    /**
+     * Gets onlinePresence
+     *
+     * @return \Domainrobot\Model\DomainStudioSourceOnlinePresence
+     */
+    public function getOnlinePresence()
+    {
+        return $this->container['onlinePresence'];
+    }
+
+    /**
+     * Sets onlinePresence
+     *
+     * @param \Domainrobot\Model\DomainStudioSourceOnlinePresence $onlinePresence The configuration for the online presence source
+     *
+     * @return $this
+     */
+    public function setOnlinePresence($onlinePresence)
+    {
+        $this->container['onlinePresence'] = $onlinePresence;
 
         return $this;
     }

@@ -57,7 +57,7 @@ class ContactItExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entityType' => 'int'
+        'entityType' => '\Domainrobot\Model\ItEntityTypeConstants'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ContactItExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'entityType' => 'int32'
+        'entityType' => null
     ];
 
     /**
@@ -207,7 +207,7 @@ class ContactItExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets entityType
      *
-     * @return int
+     * @return \Domainrobot\Model\ItEntityTypeConstants
      */
     public function getEntityType()
     {
@@ -217,7 +217,7 @@ class ContactItExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets entityType
      *
-     * @param int $entityType The number of the matching entity.
+     * @param \Domainrobot\Model\ItEntityTypeConstants $entityType The number of the matching entity.
      *
      * @return $this
      */

@@ -69,14 +69,17 @@ class User implements ModelInterface, ArrayAccess
         'lock' => '\Domainrobot\Model\UserLock',
         'acls' => '\Domainrobot\Model\UserAcls',
         'profiles' => '\Domainrobot\Model\UserProfileViews',
+        'serviceProfiles' => '\Domainrobot\Model\ServiceProfiles',
         'ancestors' => '\Domainrobot\Model\BasicUser[]',
         'customer' => '\Domainrobot\Model\BasicCustomer',
         'nameServerGroups' => '\Domainrobot\Model\VirtualNameServerGroup[]',
         'subscriptions' => '\Domainrobot\Model\Subscription[]',
         'applications' => '\Domainrobot\Model\TrustedApplication[]',
+        'restrictions' => '\Domainrobot\Model\IpRestrictions',
         'user' => 'string',
         'language' => 'string',
-        'parent' => '\Domainrobot\Model\User'
+        'parent' => '\Domainrobot\Model\User',
+        'directCustomer' => 'bool'
     ];
 
     /**
@@ -97,14 +100,17 @@ class User implements ModelInterface, ArrayAccess
         'lock' => null,
         'acls' => null,
         'profiles' => null,
+        'serviceProfiles' => null,
         'ancestors' => null,
         'customer' => null,
         'nameServerGroups' => null,
         'subscriptions' => null,
         'applications' => null,
+        'restrictions' => null,
         'user' => null,
         'language' => null,
-        'parent' => null
+        'parent' => null,
+        'directCustomer' => null
     ];
 
     /**
@@ -146,14 +152,17 @@ class User implements ModelInterface, ArrayAccess
         'lock' => 'lock',
         'acls' => 'acls',
         'profiles' => 'profiles',
+        'serviceProfiles' => 'serviceProfiles',
         'ancestors' => 'ancestors',
         'customer' => 'customer',
         'nameServerGroups' => 'nameServerGroups',
         'subscriptions' => 'subscriptions',
         'applications' => 'applications',
+        'restrictions' => 'restrictions',
         'user' => 'user',
         'language' => 'language',
-        'parent' => 'parent'
+        'parent' => 'parent',
+        'directCustomer' => 'directCustomer'
     ];
 
     /**
@@ -174,14 +183,17 @@ class User implements ModelInterface, ArrayAccess
         'lock' => 'setLock',
         'acls' => 'setAcls',
         'profiles' => 'setProfiles',
+        'serviceProfiles' => 'setServiceProfiles',
         'ancestors' => 'setAncestors',
         'customer' => 'setCustomer',
         'nameServerGroups' => 'setNameServerGroups',
         'subscriptions' => 'setSubscriptions',
         'applications' => 'setApplications',
+        'restrictions' => 'setRestrictions',
         'user' => 'setUser',
         'language' => 'setLanguage',
-        'parent' => 'setParent'
+        'parent' => 'setParent',
+        'directCustomer' => 'setDirectCustomer'
     ];
 
     /**
@@ -202,14 +214,17 @@ class User implements ModelInterface, ArrayAccess
         'lock' => 'getLock',
         'acls' => 'getAcls',
         'profiles' => 'getProfiles',
+        'serviceProfiles' => 'getServiceProfiles',
         'ancestors' => 'getAncestors',
         'customer' => 'getCustomer',
         'nameServerGroups' => 'getNameServerGroups',
         'subscriptions' => 'getSubscriptions',
         'applications' => 'getApplications',
+        'restrictions' => 'getRestrictions',
         'user' => 'getUser',
         'language' => 'getLanguage',
-        'parent' => 'getParent'
+        'parent' => 'getParent',
+        'directCustomer' => 'getDirectCustomer'
     ];
 
     /**
@@ -284,14 +299,17 @@ class User implements ModelInterface, ArrayAccess
         $this->container['lock'] = isset($data['lock']) ? $data['lock'] : null;
         $this->container['acls'] = isset($data['acls']) ? $data['acls'] : null;
         $this->container['profiles'] = isset($data['profiles']) ? $data['profiles'] : null;
+        $this->container['serviceProfiles'] = isset($data['serviceProfiles']) ? $data['serviceProfiles'] : null;
         $this->container['ancestors'] = isset($data['ancestors']) ? $data['ancestors'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['nameServerGroups'] = isset($data['nameServerGroups']) ? $data['nameServerGroups'] : null;
         $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
         $this->container['applications'] = isset($data['applications']) ? $data['applications'] : null;
+        $this->container['restrictions'] = isset($data['restrictions']) ? $data['restrictions'] : null;
         $this->container['user'] = isset($data['user']) ? $data['user'] : null;
         $this->container['language'] = isset($data['language']) ? $data['language'] : null;
         $this->container['parent'] = isset($data['parent']) ? $data['parent'] : null;
+        $this->container['directCustomer'] = isset($data['directCustomer']) ? $data['directCustomer'] : null;
     }
 
     /**
@@ -617,6 +635,30 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets serviceProfiles
+     *
+     * @return \Domainrobot\Model\ServiceProfiles
+     */
+    public function getServiceProfiles()
+    {
+        return $this->container['serviceProfiles'];
+    }
+
+    /**
+     * Sets serviceProfiles
+     *
+     * @param \Domainrobot\Model\ServiceProfiles $serviceProfiles Wrapper for the service user profiles.
+     *
+     * @return $this
+     */
+    public function setServiceProfiles($serviceProfiles)
+    {
+        $this->container['serviceProfiles'] = $serviceProfiles;
+
+        return $this;
+    }
+
+    /**
      * Gets ancestors
      *
      * @return \Domainrobot\Model\BasicUser[]
@@ -737,6 +779,30 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets restrictions
+     *
+     * @return \Domainrobot\Model\IpRestrictions
+     */
+    public function getRestrictions()
+    {
+        return $this->container['restrictions'];
+    }
+
+    /**
+     * Sets restrictions
+     *
+     * @param \Domainrobot\Model\IpRestrictions $restrictions The wrapper of the ip restrictions for the user.
+     *
+     * @return $this
+     */
+    public function setRestrictions($restrictions)
+    {
+        $this->container['restrictions'] = $restrictions;
+
+        return $this;
+    }
+
+    /**
      * Gets user
      *
      * @return string
@@ -809,6 +875,30 @@ class User implements ModelInterface, ArrayAccess
     public function setParent($parent)
     {
         $this->container['parent'] = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Gets directCustomer
+     *
+     * @return bool
+     */
+    public function getDirectCustomer()
+    {
+        return $this->container['directCustomer'];
+    }
+
+    /**
+     * Sets directCustomer
+     *
+     * @param bool $directCustomer directCustomer
+     *
+     * @return $this
+     */
+    public function setDirectCustomer($directCustomer)
+    {
+        $this->container['directCustomer'] = $directCustomer;
 
         return $this;
     }

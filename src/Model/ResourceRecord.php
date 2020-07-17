@@ -61,7 +61,8 @@ class ResourceRecord implements ModelInterface, ArrayAccess
         'ttl' => 'int',
         'type' => 'string',
         'value' => 'string',
-        'pref' => 'int'
+        'pref' => 'int',
+        'raw' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class ResourceRecord implements ModelInterface, ArrayAccess
         'ttl' => 'int64',
         'type' => null,
         'value' => null,
-        'pref' => 'int32'
+        'pref' => 'int32',
+        'raw' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class ResourceRecord implements ModelInterface, ArrayAccess
         'ttl' => 'ttl',
         'type' => 'type',
         'value' => 'value',
-        'pref' => 'pref'
+        'pref' => 'pref',
+        'raw' => 'raw'
     ];
 
     /**
@@ -121,7 +124,8 @@ class ResourceRecord implements ModelInterface, ArrayAccess
         'ttl' => 'setTtl',
         'type' => 'setType',
         'value' => 'setValue',
-        'pref' => 'setPref'
+        'pref' => 'setPref',
+        'raw' => 'setRaw'
     ];
 
     /**
@@ -134,7 +138,8 @@ class ResourceRecord implements ModelInterface, ArrayAccess
         'ttl' => 'getTtl',
         'type' => 'getType',
         'value' => 'getValue',
-        'pref' => 'getPref'
+        'pref' => 'getPref',
+        'raw' => 'getRaw'
     ];
 
     /**
@@ -202,6 +207,7 @@ class ResourceRecord implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['pref'] = isset($data['pref']) ? $data['pref'] : null;
+        $this->container['raw'] = isset($data['raw']) ? $data['raw'] : null;
     }
 
     /**
@@ -356,6 +362,30 @@ class ResourceRecord implements ModelInterface, ArrayAccess
         }
 
         $this->container['pref'] = $pref;
+
+        return $this;
+    }
+
+    /**
+     * Gets raw
+     *
+     * @return string
+     */
+    public function getRaw()
+    {
+        return $this->container['raw'];
+    }
+
+    /**
+     * Sets raw
+     *
+     * @param string $raw The bind notation of the record. Only used by the zone stream task!
+     *
+     * @return $this
+     */
+    public function setRaw($raw)
+    {
+        $this->container['raw'] = $raw;
 
         return $this;
     }

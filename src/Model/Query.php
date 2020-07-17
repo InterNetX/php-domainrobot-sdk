@@ -229,7 +229,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Sets filters
      *
-     * @param \Domainrobot\Model\QueryFilter[] $filters Lorem Ipsum
+     * @param \Domainrobot\Model\QueryFilter[] $filters filters
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Sets view
      *
-     * @param \Domainrobot\Model\QueryView $view Lorem Ipsum
+     * @param \Domainrobot\Model\QueryView $view view
      *
      * @return $this
      */
@@ -277,7 +277,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Sets orders
      *
-     * @param \Domainrobot\Model\QueryOrder[] $orders Lorem Ipsum
+     * @param \Domainrobot\Model\QueryOrder[] $orders orders
      *
      * @return $this
      */

@@ -10,7 +10,16 @@
             "Domainrobot\\Model\\": "src/Model"
         }
     },
+    "require-dev": {
+        "internetx/internetx-swagger-files": "dev-master"
+    },
     "require": {
         "guzzlehttp/guzzle": "~6.0"
+    },
+    "repositories": {
+        "internetx/internetx-swagger-files": {
+            "type": "git",
+            "url": "git@github.com:InterNetX/internetx-swagger-files.git"
+        }
     }
 }

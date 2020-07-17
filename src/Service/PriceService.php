@@ -31,7 +31,7 @@ class PriceService extends DomainrobotService
     public function article_search($query)
     {
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/price/article/_search",
+            $this->domainrobotConfig->getUrl() . "/price/article/_search",
             'POST',
             ["json" => $query]
         ));

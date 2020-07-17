@@ -28,7 +28,6 @@ In depth documentation and examples can be found here:
 
 [https://internetx.github.io/php-domainrobot-sdk/](https://internetx.github.io/php-domainrobot-sdk/)
 
-
 ## Changelog
 
 For a detailed changelog, see the [CHANGELOG.md](CHANGELOG.md) file.

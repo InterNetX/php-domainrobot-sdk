@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.2] - 2020-07-29
+
+* Added new PriceService class
+
 ## [0.6.1] - 2020-07-13
 
 * Added new RestoreService class (#11)

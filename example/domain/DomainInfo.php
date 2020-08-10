@@ -28,7 +28,7 @@ class SDKController
         try {
             $domain = $domainrobot->domain->info("example.com");
         } catch (DomainrobotException $exception) {
-            return$exception;
+            return $exception;
         }
         
         return $domain;

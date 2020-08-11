@@ -50,7 +50,7 @@ class UserService extends DomainrobotService
     public function infoAsync($user, $context)
     {
         return $this->sendRequest(
-            $this->domainRobotConfig->getUrl() . "/user/$user/$context",
+            $this->domainrobotConfig->getUrl() . "/user/$user/$context",
             'GET'
         );
     }

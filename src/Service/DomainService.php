@@ -443,7 +443,6 @@ class DomainService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
     }
 
     /**

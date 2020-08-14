@@ -37,6 +37,8 @@ class UserService extends DomainrobotService
         $domainrobotPromise = $this->infoAsync($user, $context);
         $domainrobotResult = $domainrobotPromise->wait();
 
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
         return new User(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
@@ -66,7 +68,7 @@ class UserService extends DomainrobotService
      * * context
      *
      * @param Query|null $body
-     * @return Domain[]
+     * @return User[]
      */
     public function list(Query $body = null)
     {
@@ -74,13 +76,16 @@ class UserService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
         $data = $domainrobotResult->getResult()['data'];
-        $domains = array();
+
+        $users = array();
         foreach ($data as $d) {
-            $do = new User($d);
-            array_push($domains, $do);
+            $u = new User($d);
+            array_push($users, $u);
         }
-        return $domains;
+        
+        return $users;
     }
 
     /**
@@ -102,6 +107,7 @@ class UserService extends DomainrobotService
         if ($body != null) {
             $data = $body->toArray();
         }
+
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/user/_search",
             'POST',

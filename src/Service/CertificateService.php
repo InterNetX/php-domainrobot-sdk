@@ -11,6 +11,7 @@ use Domainrobot\Model\CertificateData;
 use Domainrobot\Model\ObjectJob;
 use Domainrobot\Model\Query;
 use Domainrobot\Service\DomainrobotService;
+use Illuminate\Support\Facades\Log;
 
 class CertificateService extends DomainrobotService
 {
@@ -139,7 +140,7 @@ class CertificateService extends DomainrobotService
      */
     public function prepareOrderAsync(CertificateData $body)
     {
-        //$this->prepareCsr();
+        $this->prepareCsr($body);
 
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/_prepareOrder",
@@ -409,18 +410,27 @@ class CertificateService extends DomainrobotService
     /**
      * make sure the csr has the right format
      *
-     * @param Certificate $body
+     * @param Certificate|CertificateData $body
      * @return void
      */
-    private function prepareCsr(Certificate $body)
+    private function prepareCsr($body)
     {
+        if (get_class($body) === "Domainrobot\Model\Certificate") {
+            $getMethod = "getCsr";
+            $setMethod = "setCsr";
+        } else {
+            $getMethod = "getPlain";
+            $setMethod = "setPlain";
+        }
+
         preg_match(
             "/^(-----BEGIN CERTIFICATE REQUEST-----)(.*)(-----END CERTIFICATE REQUEST-----)$/",
-            trim($body->getCsr()),
+            preg_replace("/\r|\n/", "", trim($body->$getMethod())),
             $matches
         );
+
         if (!empty($matches)) {
-            $body->setCsr(implode("\n", [
+            $body->$setMethod(implode("\n", [
                 $matches[1],
                 $matches[2],
                 $matches[3]

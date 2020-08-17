@@ -47,7 +47,7 @@ class SslContactService extends DomainrobotService
     public function createAsync(SslContact $body)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/sslcontacct",
+            $this->domainrobotConfig->getUrl() . "/sslcontact",
             'POST',
             ["json" => $body->toArray()]
         );

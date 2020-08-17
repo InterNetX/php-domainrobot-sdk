@@ -28,7 +28,7 @@ class SDKController
         try {
             $domain = $domainrobot->domain->createAuthinfo2("example.de");
         } catch (DomainrobotException $exception) {
-            return$exception;
+            return $exception;
         }
         
         return $domain;

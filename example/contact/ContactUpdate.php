@@ -32,6 +32,7 @@ class SDKController
 
         try {
             $contact = new Contact();
+            $contact->setId(234234234);
 
             $contact->setCity('city');
             $contact->setCountry('country');

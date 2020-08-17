@@ -37,12 +37,8 @@ class SDKController
             $contact->setType(ContactTypeConstants::PERSON);
 
             // mandatory if type = ContactTypeConstants::ORG
-            //$contact->setOrganization('Organization Name');
+            // $contact->setOrganization('Organization Name');
 
-            $contact->setOwner(new BasicUser([
-                'user' => 'username',
-                'context' => 4 //context number of user
-            ]));
             $contact->setAlias('contact_alias');
 
             $contact->setCity('city');

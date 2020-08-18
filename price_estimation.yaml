@@ -1,0 +1,230 @@
+swagger: "2.0"
+info:
+  description: The documentation for the price estimation API by InterNetX GmbH.
+  version: 1.0.2
+  title: Price Estimation API
+host: pc.domains
+basePath: /api
+tags:
+  - name: estimation
+    description: Estimate the value for domains
+schemes:
+  - https
+paths:
+  '/estimation/{domain}':
+    get:
+      tags:
+        - estimation
+      summary: Estimate the value for the given domain
+      description: Estimate the value for the given domain
+      produces:
+        - application/json
+      parameters:
+        - name: domain
+          in: path
+          description: The domain name for the estimation
+          required: true
+          type: string
+        - name: currency
+          in: query
+          description: >-
+            Currency of the estimation value<br>Available: USD, EUR, GBP, CNY,
+            CHF, JPY
+          required: false
+          type: string
+        - name: get_similar
+          in: query
+          description: Set to false to omit similarDomains
+          required: false
+          type: string
+        - name: get_parameters
+          in: query
+          description: Set to false to omit parameters
+          required: false
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiEstimationResponse'
+        '400':
+          description: an error occured
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+      security:
+        - Bearer: []
+  '/kwe/{keyword}':
+    get:
+      tags:
+        - keyword
+      summary: Get Google Ad Words data for given keyword
+      description: Get Google Ad Words data for given keyword
+      produces:
+        - application/json
+      parameters:
+        - name: keyword
+          in: path
+          description: Keyword to get the data for
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiKeywordResponse'
+      security:
+        - Bearer: []
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  ApiEstimationResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseStatus'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Estimation'
+  ApiEstimationErrorResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseStatus'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+  ApiKeywordResponse:
+    type: object
+    properties:
+      status:
+        $ref: '#/definitions/ApiResponseStatus'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Keyword'
+  ApiResponseStatus:
+    type: object
+    properties:
+      code:
+        type: string
+      text:
+        type: string
+      type:
+        type: string
+  ApiResponseObject:
+    type: object
+    properties:
+      type:
+        type: string
+      value:
+        type: string
+  Estimation:
+    type: object
+    properties:
+      domain:
+        type: string
+      estimation:
+        type: number
+        format: double
+      quantity:
+        type: integer
+        format: int32
+      parameters:
+        $ref: '#/definitions/EstimationParameters'
+      similarDomains:
+        type: array
+        items:
+          $ref: '#/definitions/SimilarDomain'
+  EstimationParameters:
+    type: object
+    properties:
+      averageKeywordFrequency:
+        type: string
+      averageKeywordPrice:
+        type: string
+      averageLengthFrequency:
+        type: string
+      averageLengthPrice:
+        type: string
+      averageTldFrequency:
+        type: string
+      averageTldPrice:
+        type: string
+      char:
+        type: string
+      comDomain:
+        type: string
+      completelyNum:
+        type: string
+      foundKeywords:
+        type: string
+      foundPrefix:
+        type: string
+      foundSuffix:
+        type: string
+      hyph:
+        type: string
+      idnEncoding:
+        type: string
+      keywordCount:
+        type: string
+      majesticsGlobalRank:
+        type: string
+      majesticsPrevGlobalRank:
+        type: string
+      majesticsPrevRefIPs:
+        type: string
+      majesticsPrevRefSubNets:
+        type: string
+      majesticsPrevTldRank:
+        type: string
+      majesticsRefIPs:
+        type: string
+      majesticsRefSubNets:
+        type: string
+      majesticsTldRank:
+        type: string
+      nameSeg:
+        type: string
+      num:
+        type: string
+      numWords:
+        type: string
+      tld:
+        type: string
+      tldNumDomains:
+        type: string
+  Keyword:
+    type: object
+    properties:
+      competition:
+        type: number
+        format: double
+      keyword:
+        type: string
+      cpc:
+        type: string
+      vol:
+        type: string
+  SimilarDomain:
+    type: object
+    properties:
+      relatedDomainPrice:
+        type: number
+        format: double
+      relatedDomains:
+        type: string
+externalDocs:
+  description: Find out more about InterNetX API(s).
+  url: 'http://help.internetx.com'

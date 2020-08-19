@@ -6,9 +6,9 @@ use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
-use Domainrobot\Model\Currency;
 use Domainrobot\Model\Estimation;
-use Domainrobot\Model\Keyword;
+use Domainrobot\Model\Keywords;
+use Domainrobot\Model\Domains;
 use Domainrobot\Service\DomainrobotService;
 
 class PcDomainsService extends DomainrobotService
@@ -29,9 +29,9 @@ class PcDomainsService extends DomainrobotService
      * @param Estimation $estimation
      * @return void
      */
-    public function priceEstimation(Estimation $estimation)
+    public function estimation(Estimation $estimation)
     {
-        $domainrobotPromise = $this->priceEstimationAsync($estimation);
+        $domainrobotPromise = $this->estimationAsync($estimation);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -39,11 +39,12 @@ class PcDomainsService extends DomainrobotService
 
     /**
      * Sends an Estimation Request
+     * Estimates the value for the given domain
      *
      * @param Estimation $estimation
      * @return DomainrobotPromise
      */
-    public function priceEstimationAsync(Estimation $estimation)
+    public function estimationAsync(Estimation $estimation)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/v1/estimate",
@@ -58,9 +59,9 @@ class PcDomainsService extends DomainrobotService
      * @param string $domain
      * @return void
      */
-    public function alexaSiteInfo($domain)
+    public function alexa($domain)
     {
-        $domainrobotPromise = $this->alexaSiteInfoAsync($domain);
+        $domainrobotPromise = $this->alexaAsync($domain);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -72,7 +73,7 @@ class PcDomainsService extends DomainrobotService
      * @param string $domain
      * @return DomainrobotPromise
      */
-    public function alexaSiteInfoAsync($domain)
+    public function alexaAsync($domain)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/alexasiteinfo/$domain",
@@ -87,9 +88,9 @@ class PcDomainsService extends DomainrobotService
      * @param string $targetCurrency
      * @return void
      */
-    public function currencyExchangerate($sourceCurrency, $targetCurrency)
+    public function exchangerate($sourceCurrency, $targetCurrency)
     {
-        $domainrobotPromise = $this->currencyExchangerateAsync($sourceCurrency, $targetCurrency);
+        $domainrobotPromise = $this->exchangerateAsync($sourceCurrency, $targetCurrency);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -102,7 +103,7 @@ class PcDomainsService extends DomainrobotService
      * @param string $targetCurrency
      * @return DomainrobotPromise
      */
-    public function currencyExchangerateAsync($sourceCurrency, $targetCurrency)
+    public function exchangerateAsync($sourceCurrency, $targetCurrency)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/v1/exchangerate/$sourceCurrency/$targetCurrency",
@@ -117,9 +118,9 @@ class PcDomainsService extends DomainrobotService
      * @param string $keyword
      * @return void
      */
-    public function domainStudioSuggestion($keyword)
+    public function domainstudio($keyword)
     {
-        $domainrobotPromise = $this->domainStudioSuggestionAsync($keyword);
+        $domainrobotPromise = $this->domainstudioAsync($keyword);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -132,7 +133,7 @@ class PcDomainsService extends DomainrobotService
      * @param string $keyword
      * @return DomainrobotPromise
      */
-    public function domainStudioSuggestionAsync($keyword)
+    public function domainstudioAsync($keyword)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domainstudio/suggest/$keyword",
@@ -144,12 +145,12 @@ class PcDomainsService extends DomainrobotService
      * Sends an Keyword Request
      * Get Google Ad Words Data
      *
-     * @param Keyword $keyword
+     * @param Keywords $keyword
      * @return void
      */
-    public function googleAdWordsKeywordInfo(Keyword $keyword)
+    public function keyword(Keywords $keyword)
     {
-        $domainrobotPromise = $this->googleAdWordsKeywordInfoAsync($keyword);
+        $domainrobotPromise = $this->keywordAsync($keyword);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -159,10 +160,10 @@ class PcDomainsService extends DomainrobotService
      * Sends an Keyword Request
      * Get Google Ad Words Data
      *
-     * @param Keyword $keyword
+     * @param Keywords $keyword
      * @return DomainrobotPromise
      */
-    public function googleAdWordsKeywordInfoAsync(Keyword $keyword)
+    public function keywordAsync(Keywords $keyword)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/kwe",
@@ -178,9 +179,9 @@ class PcDomainsService extends DomainrobotService
      * @param string $domain
      * @return void
      */
-    public function metaInfo($domain)
+    public function meta($domain)
     {
-        $domainrobotPromise = $this->metaInfoAsync($domain);
+        $domainrobotPromise = $this->metaAsync($domain);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -193,7 +194,7 @@ class PcDomainsService extends DomainrobotService
      * @param string $domain
      * @return DomainrobotPromise
      */
-    public function metaInfoAsync($domain)
+    public function metaAsync($domain)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/meta/$domain",
@@ -208,9 +209,9 @@ class PcDomainsService extends DomainrobotService
      * @param string $country
      * @return void
      */
-    public function sistrixInfo($domain, $country)
+    public function sistrix($domain, $country)
     {
-        $domainrobotPromise = $this->sistrixInfoAsync($domain, $country);
+        $domainrobotPromise = $this->sistrixAsync($domain, $country);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -223,7 +224,7 @@ class PcDomainsService extends DomainrobotService
      * @param string $country
      * @return DomainrobotPromise
      */
-    public function sistrixInfoAsync($domain, $country)
+    public function sistrixAsync($domain, $country)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/sistrix/$domain/$country",
@@ -234,12 +235,12 @@ class PcDomainsService extends DomainrobotService
     /**
      * Sends an Majestic Request
      *
-     * @param array|string $domain
+     * @param Domains $domain
      * @return void
      */
-    public function majesticInfo($domain)
+    public function majestic(Domains $domains)
     {
-        $domainrobotPromise = $this->majesticInfoAsync($domain);
+        $domainrobotPromise = $this->majesticAsync($domains);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -248,22 +249,16 @@ class PcDomainsService extends DomainrobotService
     /**
      * Sends an Majestic Request
      *
-     * @param array|string $domain
+     * @param Domains $domain
      * @return DomainrobotPromise
      */
-    public function majesticInfoAsync($domain)
+    public function majesticAsync(Domains $domains)
     {
-        $data = [];
-        if ( is_array($domain) === FALSE ) {
-            $data[] = $domain;
-        } else {
-            $data = $domain;
-        }
 
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/majestic",
             'POST',
-            ["json" => $data]
+            ["json" => $domains->toArray()]
         );
     }
 
@@ -274,9 +269,9 @@ class PcDomainsService extends DomainrobotService
      * @param string $username
      * @return void
      */
-    public function socialMediaUserCheck($username)
+    public function smuCheck($username)
     {
-        $domainrobotPromise = $this->socialMediaUserCheckAsync($username);
+        $domainrobotPromise = $this->smuCheckAsync($username);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -289,7 +284,7 @@ class PcDomainsService extends DomainrobotService
      * @param string $username
      * @return DomainrobotPromise
      */
-    public function socialMediaUserCheckAsync($username)
+    public function smuCheckAsync($username)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/smu_check/$username",
@@ -304,9 +299,9 @@ class PcDomainsService extends DomainrobotService
      * @param string $domain
      * @return void
      */
-    public function waybackInfo($domain)
+    public function wayback($domain)
     {
-        $domainrobotPromise = $this->waybackInfoAsync($domain);
+        $domainrobotPromise = $this->waybackAsync($domain);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -319,7 +314,7 @@ class PcDomainsService extends DomainrobotService
      * @param string $domain
      * @return DomainrobotPromise
      */
-    public function waybackInfoAsync($domain)
+    public function waybackAsync($domain)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/wayback/$domain",

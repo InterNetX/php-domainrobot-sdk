@@ -16,6 +16,7 @@ use Domainrobot\Service\PollMessageService;
 use Domainrobot\Service\UserService;
 use Domainrobot\Service\PriceService;
 use Domainrobot\Service\JobService;
+use Domainrobot\Service\PcDomainsService;
 use Domainrobot\Service\RestoreService;
 
 class Domainrobot
@@ -155,11 +156,17 @@ class Domainrobot
         $this->price = new PriceService($this->domainrobotConfig);
         $this->job = new JobService($this->domainrobotConfig);
         $this->restore = new RestoreService($this->domainrobotConfig);
+        $this->pcDomains = new PcDomainsService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)
     {
         $this->domainrobotConfig = $domainrobotConfig;
+    }
+    
+    public function getDomainrobotConfig()
+    {
+        return $this->domainrobotConfig;
     }
 
     public static function setLastDomainrobotResult($lastDomainrobotResult)

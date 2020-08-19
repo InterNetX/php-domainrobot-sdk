@@ -617,9 +617,12 @@ definitions:
           codeltaunty:
             type: string
   Domains:
-    type: array
-    items:
-      type: string
+    type: object
+    properties:
+      domains: 
+        type: array
+        items:
+          type: string
   DomainStudio:
     type: array
     items:

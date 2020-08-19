@@ -8,6 +8,7 @@ use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\Contact;
+use Domainrobot\Model\JsonNoData;
 use Domainrobot\Service\DomainrobotService;
 
 class ContactService extends DomainrobotService
@@ -181,7 +182,7 @@ class ContactService extends DomainrobotService
      * Sends a contact delete request.
      *
      * @param int $id
-     * @return void
+     * @return JsonNoData
      */
     public function delete($id)
     {
@@ -189,6 +190,8 @@ class ContactService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new JsonNoData();
     }
 
 

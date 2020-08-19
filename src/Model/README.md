@@ -69,8 +69,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [](docs/Model/.md)
- - [1](docs/Model/1.md)
  - [AlexaSiteInfo](docs/Model/AlexaSiteInfo.md)
  - [AlexaSiteInfoHighestRankedIncountry](docs/Model/AlexaSiteInfoHighestRankedIncountry.md)
  - [AlexaSiteInfoPageViewsPerDay](docs/Model/AlexaSiteInfoPageViewsPerDay.md)
@@ -109,6 +107,7 @@ Class | Method | HTTP request | Description
  - [ExchangeRate](docs/Model/ExchangeRate.md)
  - [HistoryUser](docs/Model/HistoryUser.md)
  - [Keyword](docs/Model/Keyword.md)
+ - [Keywords](docs/Model/Keywords.md)
  - [Majestic](docs/Model/Majestic.md)
  - [Meta](docs/Model/Meta.md)
  - [SimilarDomain](docs/Model/SimilarDomain.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Estimation
+ * Keywords
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * Estimation Class Doc Comment
+ * Keywords Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Estimation implements ModelInterface, ArrayAccess
+class Keywords implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Estimation implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Estimation';
+    protected static $swaggerModelName = 'Keywords';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class Estimation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'domains' => 'string[]',
-        'currency' => 'string'
+        'keywords' => 'string[]'
     ];
 
     /**
@@ -67,8 +66,7 @@ class Estimation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'domains' => null,
-        'currency' => null
+        'keywords' => null
     ];
 
     /**
@@ -98,8 +96,7 @@ class Estimation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'domains' => 'domains',
-        'currency' => 'currency'
+        'keywords' => 'keywords'
     ];
 
     /**
@@ -108,8 +105,7 @@ class Estimation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'domains' => 'setDomains',
-        'currency' => 'setCurrency'
+        'keywords' => 'setKeywords'
     ];
 
     /**
@@ -118,8 +114,7 @@ class Estimation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'domains' => 'getDomains',
-        'currency' => 'getCurrency'
+        'keywords' => 'getKeywords'
     ];
 
     /**
@@ -182,8 +177,7 @@ class Estimation implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['domains'] = isset($data['domains']) ? $data['domains'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['keywords'] = isset($data['keywords']) ? $data['keywords'] : null;
     }
 
     /**
@@ -211,49 +205,25 @@ class Estimation implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets domains
+     * Gets keywords
      *
      * @return string[]
      */
-    public function getDomains()
+    public function getKeywords()
     {
-        return $this->container['domains'];
+        return $this->container['keywords'];
     }
 
     /**
-     * Sets domains
+     * Sets keywords
      *
-     * @param string[] $domains domains
+     * @param string[] $keywords keywords
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setKeywords($keywords)
     {
-        $this->container['domains'] = $domains;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string $currency currency
-     *
-     * @return $this
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
+        $this->container['keywords'] = $keywords;
 
         return $this;
     }

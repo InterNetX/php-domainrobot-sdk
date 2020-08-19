@@ -45,16 +45,7 @@ paths:
         - in: body
           name: ''
           schema:
-            type: object
-            required:
-              - domains
-            properties:
-              domains:
-                type: array
-                items:
-                  type: string
-              currency:
-                type: string
+             $ref: '#/definitions/Estimation'
       responses:
         '200':
           description: successful operation
@@ -165,14 +156,7 @@ paths:
         - in: body
           name: ''
           schema:
-            type: object
-            required: 
-              - keywords
-            properties:
-              keywords:
-                type: array
-                items:
-                  type: string
+             $ref: '#/definitions/Keywords'
       responses:
         '200':
           description: successful operation
@@ -654,20 +638,12 @@ definitions:
   Estimation:
     type: object
     properties:
-      domain:
-        type: string
-      estimation:
-        type: number
-        format: double
-      quantity:
-        type: integer
-        format: int32
-      parameters:
-        $ref: '#/definitions/EstimationParameters'
-      similarDomains:
+      domains:
         type: array
         items:
-          $ref: '#/definitions/SimilarDomain'
+            type: string
+      currency:
+        type: string      
   EstimationV1:
     type: object
     properties:
@@ -1082,6 +1058,13 @@ definitions:
         type: string
       vol:
         type: string
+  Keywords:
+    type: object
+    properties:
+      keywords:
+        type: array
+        items:
+          type: string
   Meta:
     type: object
     properties:

@@ -57,7 +57,7 @@ class Domains implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'domains' => 'string[]'
     ];
 
     /**
@@ -66,7 +66,7 @@ class Domains implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'domains' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class Domains implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'domains' => 'domains'
     ];
 
     /**
@@ -105,7 +105,7 @@ class Domains implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'domains' => 'setDomains'
     ];
 
     /**
@@ -114,7 +114,7 @@ class Domains implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'domains' => 'getDomains'
     ];
 
     /**
@@ -177,6 +177,7 @@ class Domains implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['domains'] = isset($data['domains']) ? $data['domains'] : null;
     }
 
     /**
@@ -186,7 +187,7 @@ class Domains implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
@@ -202,6 +203,30 @@ class Domains implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets domains
+     *
+     * @return string[]
+     */
+    public function getDomains()
+    {
+        return $this->container['domains'];
+    }
+
+    /**
+     * Sets domains
+     *
+     * @param string[] $domains domains
+     *
+     * @return $this
+     */
+    public function setDomains($domains)
+    {
+        $this->container['domains'] = $domains;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

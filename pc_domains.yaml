@@ -1,0 +1,1202 @@
+swagger: '2.0'
+info:
+  description: 'The documentation for the internal price estimation API.<br>
+  Every request expects the following headers:<ul><li>Content-Type: application/json</li><li>Accept: application/json</li></ul>'
+  version: 1.2.0
+  title: Service Pricer API
+host: api.autodns.com
+basePath: /v1/service/pricer
+tags:
+  - name: estimation
+    description: Estimate the value for domains
+schemes:
+  - https
+paths:
+  '/alexasiteinfo/{domain}':
+    get:
+      tags:
+         - alexa site info
+      summary: Get AlexaSiteInfo(Amazon) data
+      description: Get AlexaSiteInfo(Amazon) data
+      produces:
+        - application/json
+      parameters:
+        - name: domain
+          in: path
+          description: Domain to get the data for
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiAlexaSiteInfoResponse'
+  '/v1/estimate':
+    post:
+      tags:
+        - estimation
+      summary: Estimate the value for the given domain
+      description: Estimate the value for the given domain
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: ''
+          schema:
+            type: object
+            required:
+              - domains
+            properties:
+              domains:
+                type: array
+                items:
+                  type: string
+              currency:
+                type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiV1EstimationResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/v1/exchangerate/{source}/{target}':
+    get:
+      tags:
+         - currency, exchangerate
+      summary: Get an exchangerate for a currency
+      description: Get an exchangerate for for source-currency to target-currency
+      produces:
+        - application/json
+      parameters:
+        - name: source
+          in: path
+          description: Source Currency
+          required: true
+          type: string
+        - name: target
+          in: path
+          description: Target Currency
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiExchangeRateResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/domainstudio/suggest/{keyword}':
+    get:
+      tags:
+         - DomainStudio
+      summary: Get a list of domain name suggestions
+      description: Get a list of domain name suggestions
+      produces:
+        - application/json
+      parameters:
+        - name: keyword
+          in: path
+          description: Keyword to get the suggestions for
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiDomainStudioResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/kwe':
+    post:
+      tags:
+        - keyword
+      summary: Get Google Ad Words data for given keywords
+      description: Get Google Ad Words data for given keywords
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: ''
+          schema:
+            type: object
+            required: 
+              - keywords
+            properties:
+              keywords:
+                type: array
+                items:
+                  type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiKeywordResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/meta/{domain}':
+     get:
+      tags:
+        - meta
+      summary: Get meta information like online status, site title/description etc.
+      description: Get meta information like online status, site title/des
+      produces:
+        - application/json
+      parameters:
+        - name: domain
+          in: path
+          description: Domain to get the data for
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiMetaResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/sistrix/{domain}[/{country}]':
+    get:
+      tags:
+         - Sistrix
+      summary: Get Sistrix data
+      description: Get Sistrix data
+      produces:
+        - application/json
+      parameters:
+        - name: domain
+          in: path
+          description: Domain to get the data for
+          required: true
+          type: string
+        - name: country
+          in: path
+          description: Country (ISO Code) to get the data for
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiStatisticsResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/majestic':
+    post:
+      tags:
+         - Majestic
+      summary: Get Majestic data
+      description: Get Majestic data
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: domain
+          in: body
+          description: Domains to get the data for
+          required: true
+          schema: 
+            $ref: '#/definitions/Domains'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiMajesticResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/smu_check/{username}':
+    get:
+      tags:
+         - social media
+      summary: Check if usernames are available on different social media plattforms
+      description: Check if usernames are available on different social media plattform
+      produces:
+        - application/json
+      parameters:
+        - name: username
+          in: path
+          description: Username to check
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiSocialMediaResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/wayback/{domain}':
+    get:
+      tags:
+         - wayback
+      summary: Retrieve info from Wayback snapshot archive
+      description: Retrieve info from Wayback snapshot archive
+      produces:
+        - application/json
+      parameters:
+        - name: domain
+          in: path
+          description: Domain to get the data for
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiWaybackResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  ApiAlexaSiteInfoResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/AlexaSiteInfo'
+  ApiDomainStudioResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/DomainStudio'
+  ApiV1EstimationResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/EstimationV1'
+  ApiEstimationResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Estimation'
+  ApiEstimationErrorResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      status: 
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+        items:
+            $ref: '#/definitions/Keyword'
+  ApiExchangeRateResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/ExchangeRate'
+  ApiHistoryUserResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/HistoryUser'
+  ApiKeywordResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Keyword'
+  ApiSistrixResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+            $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Sistrix'
+  ApiSocialMediaResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+            $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/SocialMedia'
+  ApiStatisticsResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/EstimationStatistics'
+  ApiUserStatisticsResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+            $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/UserEstimationStatistics'
+  ApiMajesticResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Majestic'
+  ApiMetaResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Meta'
+  ApiWaybackResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/ApiResponseMessages'
+      object:
+        $ref: '#/definitions/ApiResponseObject'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Wayback'
+  ApiResponseMessages:
+    type: object
+    properties:
+      code:
+        type: string
+      text:
+        type: string
+      type:
+        type: string
+  ApiResponseObject:
+    type: object
+    properties:
+      type:
+        type: string
+      value:
+        type: string
+  AlexaSiteInfo:
+    type: object
+    properties:
+      sitesLinkingIn:
+        type: integer
+      rank:
+        type: integer
+      loadingTime:
+        type: string
+      adultContent:
+        type: string
+      siteLanguage:
+        type: string
+      siteData:
+        type: object
+        properties:
+          title:
+            type: string
+          description:
+            type: string
+          onlineSince:
+            type: string
+      highestRankedIncountry:
+        type: object
+        properties:
+          contribution:
+            type: string
+          rank:
+            type: integer
+          county:
+            type: string
+      pageViewsPerDay:
+        type: object
+        properties:
+          perUser:
+            type: integer
+          codeltaunty:
+            type: string
+  Domains:
+    type: array
+    items:
+      type: string
+  DomainStudio:
+    type: array
+    items:
+      $ref: '#/definitions/DomainStudioItem'
+  DomainStudioItem:
+    type: object
+    properties:
+      name:
+        type: string
+      availability:
+        type: string
+      status:
+        type: string
+      domain:
+        type: string
+  Estimation:
+    type: object
+    properties:
+      domain:
+        type: string
+      estimation:
+        type: number
+        format: double
+      quantity:
+        type: integer
+        format: int32
+      parameters:
+        $ref: '#/definitions/EstimationParameters'
+      similarDomains:
+        type: array
+        items:
+          $ref: '#/definitions/SimilarDomain'
+  EstimationV1:
+    type: object
+    properties:
+      domain:
+        type: string
+      domain_idn:
+        type: string
+      currency:
+        type: string
+      exchangerate:
+        type: number
+        format: float
+      estimation:
+        type: number
+        format: double
+      quantity:
+        type: integer
+        format: int32
+      features:
+        $ref: '#/definitions/EstimationParametersV1'
+  EstimationStatistics:
+    type: object
+    properties:
+      queriesLast24Hours:
+          $ref: '#/definitions/StatisticsParameters'
+      queriesThisMonth:
+          $ref: '#/definitions/StatisticsParameters'
+      queriesThisYear:
+          $ref: '#/definitions/StatisticsParameters'
+  EstimationParameters:
+    type: object
+    properties:
+      averageKeywordFrequency:
+        type: string
+      averageKeywordPrice:
+        type: string
+      averageLengthFrequency:
+        type: string
+      averageLengthPrice:
+        type: string
+      averageTldFrequency:
+        type: string
+      averageTldPrice:
+        type: string
+      char:
+        type: string
+      comDomain:
+        type: string
+      completelyNum:
+        type: string
+      foundKeywords:
+        type: string
+      foundPrefix:
+        type: string
+      foundSuffix:
+        type: string
+      hyph:
+        type: string
+      idnEncoding:
+        type: string
+      keywordCount:
+        type: string
+      majesticsGlobalRank:
+        type: string
+      majesticsPrevGlobalRank:
+        type: string
+      majesticsPrevRefIPs:
+        type: string
+      majesticsPrevRefSubNets:
+        type: string
+      majesticsPrevTldRank:
+        type: string
+      majesticsRefIPs:
+        type: string
+      majesticsRefSubNets:
+        type: string
+      majesticsTldRank:
+        type: string
+      nameSeg:
+        type: string
+      num:
+        type: string
+      numWords:
+        type: string
+      tld:
+        type: string
+      tldNumDomains:
+        type: string
+  EstimationParametersV1:
+    type: object
+    properties:
+      nameBased:
+        type: object
+        properties:
+          name:
+            type: string
+          pattern:
+            type: string
+          segements: 
+            type: array
+            items:
+               type: string
+          keywords: 
+            type: array
+            items:
+               type: string
+          numWords:
+            type: string
+          isIDN:
+            type: boolean
+          numDigits:
+            type: number
+          numHyph:
+            type: number
+          numChar:
+            type: number
+          completelyNum:
+            type: number
+          averageKeywordFrequency:
+            type: number
+          averageKeywordPrice:
+            type: number
+          averageLengthFrequency:
+            type: number
+          averageLengthPrice:
+            type: number
+          prefix:
+            type: string
+          averagePrefixFrequency:
+            type: number
+          averagePrefixPrice:
+            type: number
+          suffix:
+            type: string
+          averageSuffixFrequency:
+            type: number
+          averageSuffixPrice:
+            type: number
+      keywordBased:
+        type: object
+        properties:
+          word: string,
+          version: string,
+          segments:
+            type: array
+            items:
+              type: string,
+          numWords: number,
+          keywords:  
+            type: array
+            items:
+              type: string,
+          numKeywords: number,
+          averageKeywordFrequency: number,
+          averageKeywordPrice: number,
+          prefix": string,
+          averagePrefixFrequency: number,
+          averagePrefixPrice: number,
+          suffix": string,
+          averageSuffixFrequency: number,
+          averageSuffixPrice": number
+      tldBased:
+        type: object
+        properties:
+          tld:
+            type: string
+          subtld:
+            type: string
+          averageTldFrequency:
+            type: number
+          averageTldPrice:
+            type: number
+          averagSubtTldFrequency:
+            type: number
+          averageSubtldPrice:
+            type: number
+          tldNumDomains:
+            type: number
+          tldGlobaleRank:
+            type: number
+          subtldNumDomains:
+            type: number
+          subtldGlobaleRank:
+            type: number
+          languageTldMatch:
+            type: number
+      pagerank:
+        type: object
+        properties:
+          globalRank:
+            type: number
+          tldRank:
+            type: number
+          refSubNets:
+            type: number
+          refIPs:
+            type: number
+          prevGlobalRank:
+            type: number
+          prevTldRank:
+            type: number
+          pPrevRefSubNets:
+            type: number
+          prevRefIPs:
+            type: string
+      language:
+        type: object
+        properties:
+          en:
+            type: number
+          de:
+            type: number
+          fr:
+            type: number
+          it:
+            type: number
+          es:
+            type: number
+      wikipediaPageview:
+        type: object
+        properties:
+          article:
+            type: string
+          averagePageviewsPerDay:
+            type: string
+  Majestic:
+    type: object
+    properties:
+      ItemNu: 
+        type: string
+      Item: 
+        type: string
+      ResultCode: 
+        type: string
+      Status: 
+        type: string
+      ExtBackLinks: 
+        type: string
+      RefDomains: 
+        type: string
+      AnalysisResUnitsCost: 
+        type: string
+      ACRank: 
+        type: string
+      ItemType: 
+        type: string
+      IndexedURLs: 
+        type: string
+      GetTopBackLinksAnalysisResUnitsCost: 
+        type: string
+      DownloadBacklinksAnalysisResUnitsCost: 
+        type: string
+      DownloadRefDomainBacklinksAnalysisResUnitsCost: 
+        type: string
+      RefIPs: 
+        type: string
+      RefSubNets: 
+        type: string
+      RefDomainsEDU: 
+        type: string
+      ExtBackLinksEDU: 
+        type: string
+      RefDomainsGOV: 
+        type: string
+      ExtBackLinksGOV: 
+        type: string
+      RefDomainsEDU_Exact: 
+        type: string
+      ExtBackLinksEDU_Exact: 
+        type: string
+      RefDomainsGOV_Exact: 
+        type: string
+      ExtBackLinksGOV_Exact: 
+        type: string
+      CrawledFlag: 
+        type: string
+      LastCrawlDate: 
+        type: string
+      LastCrawlResult: 
+        type: string
+      RedirectFlag: 
+        type: string
+      FinalRedirectResult: 
+        type: string
+      OutDomainsExternal: 
+        type: string
+      OutLinksExternal: 
+        type: string
+      OutLinksInternal: 
+        type: string
+      OutLinksPages: 
+        type: string
+      LastSeen: 
+        type: string
+      Title: 
+        type: string
+      RedirectTo: 
+        type: string
+      Language: 
+        type: string
+      LanguageDesc: 
+        type: string
+      LanguageConfidence: 
+        type: string
+      LanguagePageRatios: 
+        type: string
+      LanguageTotalPages: 
+        type: string
+      RefLanguage: 
+        type: string
+      RefLanguageDesc: 
+        type: string
+      RefLanguageConfidence: 
+        type: string
+      RefLanguagePageRatios: 
+        type: string
+      RefLanguageTotalPages: 
+        type: string
+      CrawledURLs: 
+        type: string
+      RootDomainIPAddress: 
+        type: string
+      TotalNonUniqueLinks: 
+        type: string
+      NonUniqueLinkTypeHomepages: 
+        type: string
+      NonUniqueLinkTypeIndirect: 
+        type: string
+      NonUniqueLinkTypeDeleted: 
+        type: string
+      NonUniqueLinkTypeNoFollow: 
+        type: string
+      NonUniqueLinkTypeProtocolHTTPS: 
+        type: string
+      NonUniqueLinkTypeFrame: 
+        type: string
+      NonUniqueLinkTypeImageLink: 
+        type: string
+      NonUniqueLinkTypeRedirect: 
+        type: string
+      NonUniqueLinkTypeTextLink: 
+        type: string
+      RefDomainTypeLive: 
+        type: string
+      RefDomainTypeFollow: 
+        type: string
+      RefDomainTypeHomepageLink: 
+        type: string
+      RefDomainTypeDirect: 
+        type: string
+      RefDomainTypeProtocolHTTPS: 
+        type: string
+      CanonicalURL: 
+        type: string
+      CitationFlow: 
+        type: string
+      TrustFlow: 
+        type: string
+      TrustMetric: 
+        type: string
+      TopicalTrustFlow_Topic_0: 
+        type: string
+      TopicalTrustFlow_Value_0: 
+        type: string
+      TopicalTrustFlow_Topic_1: 
+        type: string
+      TopicalTrustFlow_Value_1: 
+        type: string
+      TopicalTrustFlow_Topic_2: 
+        type: string
+      TopicalTrustFlow_Value_2: 
+        type: string
+  ExchangeRate:
+    type: object
+    properties:
+      currency:
+        type: string
+      rate:
+        type: number
+  HistoryUser:
+    type: object
+    properties:
+      id:
+        type: integer
+      domain:
+        type: string
+      execution_time:
+        type: string
+      price:
+        type: string
+      data:
+        type: string
+      ip:
+        type: string
+      user:
+        type: string
+      request_type:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+  Keyword:
+    type: object
+    properties:
+      competition:
+        type: number
+        format: double
+      keyword:
+        type: string
+      cpc:
+        type: string
+      vol:
+        type: string
+  Meta:
+    type: object
+    properties:
+      online:
+        type: boolean
+      dnssec:
+        type: boolean
+      description:
+        type: string
+      title:
+        type: string
+      certificateIssure:
+        type: string
+      certificateValid:
+        type: boolean
+      ipv4:
+        type: array
+        items:
+          type: string
+      ipv6:
+        type: array
+        items: 
+          type: string
+      mx:
+        type: array
+        items: 
+          type: string
+      ns:
+        type: array
+        items: 
+          type: string
+  UserEstimationStatistics:
+    type: object
+    properties:
+      queriesLast24Hours:
+        $ref: '#/definitions/StatisticsParameters'
+      queriesThisMonth:
+        $ref: '#/definitions/StatisticsParameters'
+      queriesThisYear:
+        $ref: '#/definitions/StatisticsParameters'
+      last12MonthsDevelopment:
+        type: object
+        properties:
+          totalQueries:
+            type: object
+          webQueries:
+            type: object
+          apiQueries:
+            type: object
+  Sistrix:
+    type: object
+    properties:
+      sichtbarkeitsindex:
+        type: string
+      pages:
+        type: integer
+      kwcount_seo:
+        type: integer
+      kwcount_sem:
+        type: integer
+  SocialMedia:
+    type: object
+    properties:
+      facebook:
+        type: boolean
+      instagram:
+        type: boolean
+      pinterest:
+        type: boolean
+      twitter:
+        type: boolean
+      youtube:
+        type: boolean
+  StatisticsParameters:
+    type: object
+    properties:
+      totalQueries:
+        type: number
+        format: integer
+      webQueries:
+        type: number
+        format: integer
+      apiQueries:
+        type: number
+        format: integer
+      queryPercentage:
+        type: number
+        format: integer
+  SimilarDomain:
+    type: object
+    properties:
+      relatedDomainPrice:
+        type: number
+        format: double
+      relatedDomains:
+        type: string
+  Wayback:
+    type: object
+    properties:
+      wayback:
+        type: object
+        properties:
+          url:
+            type: string
+          archived_snapshots:
+            type: object
+            properties:
+              closest:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  available:
+                    type: boolean
+                  url:
+                    type: string
+                  timestamp:
+                    type: string

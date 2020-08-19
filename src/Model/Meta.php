@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * Meta
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * Meta Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class Meta implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'Meta';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'online' => 'bool',
+        'dnssec' => 'bool',
+        'description' => 'string',
+        'title' => 'string',
+        'certificateIssure' => 'string',
+        'certificateValid' => 'bool',
+        'ipv4' => 'string[]',
+        'ipv6' => 'string[]',
+        'mx' => 'string[]',
+        'ns' => 'string[]'
     ];
 
     /**
@@ -68,9 +75,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'online' => null,
+        'dnssec' => null,
+        'description' => null,
+        'title' => null,
+        'certificateIssure' => null,
+        'certificateValid' => null,
+        'ipv4' => null,
+        'ipv6' => null,
+        'mx' => null,
+        'ns' => null
     ];
 
     /**
@@ -100,9 +114,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'online' => 'online',
+        'dnssec' => 'dnssec',
+        'description' => 'description',
+        'title' => 'title',
+        'certificateIssure' => 'certificateIssure',
+        'certificateValid' => 'certificateValid',
+        'ipv4' => 'ipv4',
+        'ipv6' => 'ipv6',
+        'mx' => 'mx',
+        'ns' => 'ns'
     ];
 
     /**
@@ -111,9 +132,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'online' => 'setOnline',
+        'dnssec' => 'setDnssec',
+        'description' => 'setDescription',
+        'title' => 'setTitle',
+        'certificateIssure' => 'setCertificateIssure',
+        'certificateValid' => 'setCertificateValid',
+        'ipv4' => 'setIpv4',
+        'ipv6' => 'setIpv6',
+        'mx' => 'setMx',
+        'ns' => 'setNs'
     ];
 
     /**
@@ -122,9 +150,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'online' => 'getOnline',
+        'dnssec' => 'getDnssec',
+        'description' => 'getDescription',
+        'title' => 'getTitle',
+        'certificateIssure' => 'getCertificateIssure',
+        'certificateValid' => 'getCertificateValid',
+        'ipv4' => 'getIpv4',
+        'ipv6' => 'getIpv6',
+        'mx' => 'getMx',
+        'ns' => 'getNs'
     ];
 
     /**
@@ -187,9 +222,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['online'] = isset($data['online']) ? $data['online'] : null;
+        $this->container['dnssec'] = isset($data['dnssec']) ? $data['dnssec'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['certificateIssure'] = isset($data['certificateIssure']) ? $data['certificateIssure'] : null;
+        $this->container['certificateValid'] = isset($data['certificateValid']) ? $data['certificateValid'] : null;
+        $this->container['ipv4'] = isset($data['ipv4']) ? $data['ipv4'] : null;
+        $this->container['ipv6'] = isset($data['ipv6']) ? $data['ipv6'] : null;
+        $this->container['mx'] = isset($data['mx']) ? $data['mx'] : null;
+        $this->container['ns'] = isset($data['ns']) ? $data['ns'] : null;
     }
 
     /**
@@ -217,73 +259,241 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets online
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return bool
      */
-    public function getMessages()
+    public function getOnline()
     {
-        return $this->container['messages'];
+        return $this->container['online'];
     }
 
     /**
-     * Sets messages
+     * Sets online
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param bool $online online
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setOnline($online)
     {
-        $this->container['messages'] = $messages;
+        $this->container['online'] = $online;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets dnssec
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return bool
      */
-    public function getObject()
+    public function getDnssec()
     {
-        return $this->container['object'];
+        return $this->container['dnssec'];
     }
 
     /**
-     * Sets object
+     * Sets dnssec
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param bool $dnssec dnssec
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setDnssec($dnssec)
     {
-        $this->container['object'] = $object;
+        $this->container['dnssec'] = $dnssec;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets description
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
-    public function getData()
+    public function getDescription()
     {
-        return $this->container['data'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets data
+     * Sets description
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $description description
      *
      * @return $this
      */
-    public function setData($data)
+    public function setDescription($description)
     {
-        $this->container['data'] = $data;
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets certificateIssure
+     *
+     * @return string
+     */
+    public function getCertificateIssure()
+    {
+        return $this->container['certificateIssure'];
+    }
+
+    /**
+     * Sets certificateIssure
+     *
+     * @param string $certificateIssure certificateIssure
+     *
+     * @return $this
+     */
+    public function setCertificateIssure($certificateIssure)
+    {
+        $this->container['certificateIssure'] = $certificateIssure;
+
+        return $this;
+    }
+
+    /**
+     * Gets certificateValid
+     *
+     * @return bool
+     */
+    public function getCertificateValid()
+    {
+        return $this->container['certificateValid'];
+    }
+
+    /**
+     * Sets certificateValid
+     *
+     * @param bool $certificateValid certificateValid
+     *
+     * @return $this
+     */
+    public function setCertificateValid($certificateValid)
+    {
+        $this->container['certificateValid'] = $certificateValid;
+
+        return $this;
+    }
+
+    /**
+     * Gets ipv4
+     *
+     * @return string[]
+     */
+    public function getIpv4()
+    {
+        return $this->container['ipv4'];
+    }
+
+    /**
+     * Sets ipv4
+     *
+     * @param string[] $ipv4 ipv4
+     *
+     * @return $this
+     */
+    public function setIpv4($ipv4)
+    {
+        $this->container['ipv4'] = $ipv4;
+
+        return $this;
+    }
+
+    /**
+     * Gets ipv6
+     *
+     * @return string[]
+     */
+    public function getIpv6()
+    {
+        return $this->container['ipv6'];
+    }
+
+    /**
+     * Sets ipv6
+     *
+     * @param string[] $ipv6 ipv6
+     *
+     * @return $this
+     */
+    public function setIpv6($ipv6)
+    {
+        $this->container['ipv6'] = $ipv6;
+
+        return $this;
+    }
+
+    /**
+     * Gets mx
+     *
+     * @return string[]
+     */
+    public function getMx()
+    {
+        return $this->container['mx'];
+    }
+
+    /**
+     * Sets mx
+     *
+     * @param string[] $mx mx
+     *
+     * @return $this
+     */
+    public function setMx($mx)
+    {
+        $this->container['mx'] = $mx;
+
+        return $this;
+    }
+
+    /**
+     * Gets ns
+     *
+     * @return string[]
+     */
+    public function getNs()
+    {
+        return $this->container['ns'];
+    }
+
+    /**
+     * Sets ns
+     *
+     * @param string[] $ns ns
+     *
+     * @return $this
+     */
+    public function setNs($ns)
+    {
+        $this->container['ns'] = $ns;
 
         return $this;
     }

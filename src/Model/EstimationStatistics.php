@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * EstimationStatistics
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * EstimationStatistics Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class EstimationStatistics implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'EstimationStatistics';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'queriesLast24Hours' => '\Domainrobot\Model\StatisticsParameters',
+        'queriesThisMonth' => '\Domainrobot\Model\StatisticsParameters',
+        'queriesThisYear' => '\Domainrobot\Model\StatisticsParameters'
     ];
 
     /**
@@ -68,9 +68,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'queriesLast24Hours' => null,
+        'queriesThisMonth' => null,
+        'queriesThisYear' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'queriesLast24Hours' => 'queriesLast24Hours',
+        'queriesThisMonth' => 'queriesThisMonth',
+        'queriesThisYear' => 'queriesThisYear'
     ];
 
     /**
@@ -111,9 +111,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'queriesLast24Hours' => 'setQueriesLast24Hours',
+        'queriesThisMonth' => 'setQueriesThisMonth',
+        'queriesThisYear' => 'setQueriesThisYear'
     ];
 
     /**
@@ -122,9 +122,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'queriesLast24Hours' => 'getQueriesLast24Hours',
+        'queriesThisMonth' => 'getQueriesThisMonth',
+        'queriesThisYear' => 'getQueriesThisYear'
     ];
 
     /**
@@ -187,9 +187,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['queriesLast24Hours'] = isset($data['queriesLast24Hours']) ? $data['queriesLast24Hours'] : null;
+        $this->container['queriesThisMonth'] = isset($data['queriesThisMonth']) ? $data['queriesThisMonth'] : null;
+        $this->container['queriesThisYear'] = isset($data['queriesThisYear']) ? $data['queriesThisYear'] : null;
     }
 
     /**
@@ -217,73 +217,73 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets queriesLast24Hours
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return \Domainrobot\Model\StatisticsParameters
      */
-    public function getMessages()
+    public function getQueriesLast24Hours()
     {
-        return $this->container['messages'];
+        return $this->container['queriesLast24Hours'];
     }
 
     /**
-     * Sets messages
+     * Sets queriesLast24Hours
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param \Domainrobot\Model\StatisticsParameters $queriesLast24Hours queriesLast24Hours
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setQueriesLast24Hours($queriesLast24Hours)
     {
-        $this->container['messages'] = $messages;
+        $this->container['queriesLast24Hours'] = $queriesLast24Hours;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets queriesThisMonth
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return \Domainrobot\Model\StatisticsParameters
      */
-    public function getObject()
+    public function getQueriesThisMonth()
     {
-        return $this->container['object'];
+        return $this->container['queriesThisMonth'];
     }
 
     /**
-     * Sets object
+     * Sets queriesThisMonth
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param \Domainrobot\Model\StatisticsParameters $queriesThisMonth queriesThisMonth
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setQueriesThisMonth($queriesThisMonth)
     {
-        $this->container['object'] = $object;
+        $this->container['queriesThisMonth'] = $queriesThisMonth;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets queriesThisYear
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return \Domainrobot\Model\StatisticsParameters
      */
-    public function getData()
+    public function getQueriesThisYear()
     {
-        return $this->container['data'];
+        return $this->container['queriesThisYear'];
     }
 
     /**
-     * Sets data
+     * Sets queriesThisYear
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param \Domainrobot\Model\StatisticsParameters $queriesThisYear queriesThisYear
      *
      * @return $this
      */
-    public function setData($data)
+    public function setQueriesThisYear($queriesThisYear)
     {
-        $this->container['data'] = $data;
+        $this->container['queriesThisYear'] = $queriesThisYear;
 
         return $this;
     }

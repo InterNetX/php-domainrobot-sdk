@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * UserEstimationStatisticsLast12MonthsDevelopment
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * UserEstimationStatisticsLast12MonthsDevelopment Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'UserEstimationStatistics_last12MonthsDevelopment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'totalQueries' => 'object',
+        'webQueries' => 'object',
+        'apiQueries' => 'object'
     ];
 
     /**
@@ -68,9 +68,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'totalQueries' => null,
+        'webQueries' => null,
+        'apiQueries' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'totalQueries' => 'totalQueries',
+        'webQueries' => 'webQueries',
+        'apiQueries' => 'apiQueries'
     ];
 
     /**
@@ -111,9 +111,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'totalQueries' => 'setTotalQueries',
+        'webQueries' => 'setWebQueries',
+        'apiQueries' => 'setApiQueries'
     ];
 
     /**
@@ -122,9 +122,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'totalQueries' => 'getTotalQueries',
+        'webQueries' => 'getWebQueries',
+        'apiQueries' => 'getApiQueries'
     ];
 
     /**
@@ -187,9 +187,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['totalQueries'] = isset($data['totalQueries']) ? $data['totalQueries'] : null;
+        $this->container['webQueries'] = isset($data['webQueries']) ? $data['webQueries'] : null;
+        $this->container['apiQueries'] = isset($data['apiQueries']) ? $data['apiQueries'] : null;
     }
 
     /**
@@ -217,73 +217,73 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets totalQueries
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return object
      */
-    public function getMessages()
+    public function getTotalQueries()
     {
-        return $this->container['messages'];
+        return $this->container['totalQueries'];
     }
 
     /**
-     * Sets messages
+     * Sets totalQueries
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param object $totalQueries totalQueries
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setTotalQueries($totalQueries)
     {
-        $this->container['messages'] = $messages;
+        $this->container['totalQueries'] = $totalQueries;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets webQueries
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return object
      */
-    public function getObject()
+    public function getWebQueries()
     {
-        return $this->container['object'];
+        return $this->container['webQueries'];
     }
 
     /**
-     * Sets object
+     * Sets webQueries
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param object $webQueries webQueries
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setWebQueries($webQueries)
     {
-        $this->container['object'] = $object;
+        $this->container['webQueries'] = $webQueries;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets apiQueries
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return object
      */
-    public function getData()
+    public function getApiQueries()
     {
-        return $this->container['data'];
+        return $this->container['apiQueries'];
     }
 
     /**
-     * Sets data
+     * Sets apiQueries
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param object $apiQueries apiQueries
      *
      * @return $this
      */
-    public function setData($data)
+    public function setApiQueries($apiQueries)
     {
-        $this->container['data'] = $data;
+        $this->container['apiQueries'] = $apiQueries;
 
         return $this;
     }

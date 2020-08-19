@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * 1
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * 1 Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class 1 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = '_1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'keywords' => 'string[]'
     ];
 
     /**
@@ -68,9 +66,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'keywords' => null
     ];
 
     /**
@@ -100,9 +96,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'keywords' => 'keywords'
     ];
 
     /**
@@ -111,9 +105,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'keywords' => 'setKeywords'
     ];
 
     /**
@@ -122,9 +114,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'keywords' => 'getKeywords'
     ];
 
     /**
@@ -187,9 +177,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['keywords'] = isset($data['keywords']) ? $data['keywords'] : null;
     }
 
     /**
@@ -201,6 +189,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['keywords'] === null) {
+            $invalidProperties[] = "'keywords' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -217,73 +208,25 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets keywords
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return string[]
      */
-    public function getMessages()
+    public function getKeywords()
     {
-        return $this->container['messages'];
+        return $this->container['keywords'];
     }
 
     /**
-     * Sets messages
+     * Sets keywords
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param string[] $keywords keywords
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setKeywords($keywords)
     {
-        $this->container['messages'] = $messages;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
-     *
-     * @return \Domainrobot\Model\ApiResponseObject
-     */
-    public function getObject()
-    {
-        return $this->container['object'];
-    }
-
-    /**
-     * Sets object
-     *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
-     *
-     * @return $this
-     */
-    public function setObject($object)
-    {
-        $this->container['object'] = $object;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \Domainrobot\Model\Estimation[]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \Domainrobot\Model\Estimation[] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
+        $this->container['keywords'] = $keywords;
 
         return $this;
     }

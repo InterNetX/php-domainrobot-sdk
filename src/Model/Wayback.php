@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * Wayback
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * Wayback Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class Wayback implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'Wayback';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'wayback' => '\Domainrobot\Model\WaybackWayback'
     ];
 
     /**
@@ -68,9 +66,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'wayback' => null
     ];
 
     /**
@@ -100,9 +96,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'wayback' => 'wayback'
     ];
 
     /**
@@ -111,9 +105,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'wayback' => 'setWayback'
     ];
 
     /**
@@ -122,9 +114,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'wayback' => 'getWayback'
     ];
 
     /**
@@ -187,9 +177,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['wayback'] = isset($data['wayback']) ? $data['wayback'] : null;
     }
 
     /**
@@ -217,73 +205,25 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets wayback
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return \Domainrobot\Model\WaybackWayback
      */
-    public function getMessages()
+    public function getWayback()
     {
-        return $this->container['messages'];
+        return $this->container['wayback'];
     }
 
     /**
-     * Sets messages
+     * Sets wayback
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param \Domainrobot\Model\WaybackWayback $wayback wayback
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setWayback($wayback)
     {
-        $this->container['messages'] = $messages;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
-     *
-     * @return \Domainrobot\Model\ApiResponseObject
-     */
-    public function getObject()
-    {
-        return $this->container['object'];
-    }
-
-    /**
-     * Sets object
-     *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
-     *
-     * @return $this
-     */
-    public function setObject($object)
-    {
-        $this->container['object'] = $object;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \Domainrobot\Model\Estimation[]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \Domainrobot\Model\Estimation[] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
+        $this->container['wayback'] = $wayback;
 
         return $this;
     }

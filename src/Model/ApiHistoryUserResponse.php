@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * ApiHistoryUserResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * ApiHistoryUserResponse Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class ApiHistoryUserResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'ApiHistoryUserResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
         'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'data' => '\Domainrobot\Model\HistoryUser[]'
     ];
 
     /**
@@ -267,7 +267,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return \Domainrobot\Model\HistoryUser[]
      */
     public function getData()
     {
@@ -277,7 +277,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param \Domainrobot\Model\HistoryUser[] $data data
      *
      * @return $this
      */

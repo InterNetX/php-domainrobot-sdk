@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * EstimationV1
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * EstimationV1 Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class EstimationV1 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'EstimationV1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,13 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'domain' => 'string',
+        'domainIdn' => 'string',
+        'currency' => 'string',
+        'exchangerate' => 'float',
+        'estimation' => 'double',
+        'quantity' => 'int',
+        'features' => '\Domainrobot\Model\EstimationParametersV1'
     ];
 
     /**
@@ -68,9 +72,13 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'domain' => null,
+        'domainIdn' => null,
+        'currency' => null,
+        'exchangerate' => 'float',
+        'estimation' => 'double',
+        'quantity' => 'int32',
+        'features' => null
     ];
 
     /**
@@ -100,9 +108,13 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'domain' => 'domain',
+        'domainIdn' => 'domain_idn',
+        'currency' => 'currency',
+        'exchangerate' => 'exchangerate',
+        'estimation' => 'estimation',
+        'quantity' => 'quantity',
+        'features' => 'features'
     ];
 
     /**
@@ -111,9 +123,13 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'domain' => 'setDomain',
+        'domainIdn' => 'setDomainIdn',
+        'currency' => 'setCurrency',
+        'exchangerate' => 'setExchangerate',
+        'estimation' => 'setEstimation',
+        'quantity' => 'setQuantity',
+        'features' => 'setFeatures'
     ];
 
     /**
@@ -122,9 +138,13 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'domain' => 'getDomain',
+        'domainIdn' => 'getDomainIdn',
+        'currency' => 'getCurrency',
+        'exchangerate' => 'getExchangerate',
+        'estimation' => 'getEstimation',
+        'quantity' => 'getQuantity',
+        'features' => 'getFeatures'
     ];
 
     /**
@@ -187,9 +207,13 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
+        $this->container['domainIdn'] = isset($data['domainIdn']) ? $data['domainIdn'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['exchangerate'] = isset($data['exchangerate']) ? $data['exchangerate'] : null;
+        $this->container['estimation'] = isset($data['estimation']) ? $data['estimation'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['features'] = isset($data['features']) ? $data['features'] : null;
     }
 
     /**
@@ -217,73 +241,169 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets domain
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return string
      */
-    public function getMessages()
+    public function getDomain()
     {
-        return $this->container['messages'];
+        return $this->container['domain'];
     }
 
     /**
-     * Sets messages
+     * Sets domain
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param string $domain domain
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setDomain($domain)
     {
-        $this->container['messages'] = $messages;
+        $this->container['domain'] = $domain;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets domainIdn
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return string
      */
-    public function getObject()
+    public function getDomainIdn()
     {
-        return $this->container['object'];
+        return $this->container['domainIdn'];
     }
 
     /**
-     * Sets object
+     * Sets domainIdn
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param string $domainIdn domainIdn
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setDomainIdn($domainIdn)
     {
-        $this->container['object'] = $object;
+        $this->container['domainIdn'] = $domainIdn;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets currency
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
-    public function getData()
+    public function getCurrency()
     {
-        return $this->container['data'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets data
+     * Sets currency
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $currency currency
      *
      * @return $this
      */
-    public function setData($data)
+    public function setCurrency($currency)
     {
-        $this->container['data'] = $data;
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets exchangerate
+     *
+     * @return float
+     */
+    public function getExchangerate()
+    {
+        return $this->container['exchangerate'];
+    }
+
+    /**
+     * Sets exchangerate
+     *
+     * @param float $exchangerate exchangerate
+     *
+     * @return $this
+     */
+    public function setExchangerate($exchangerate)
+    {
+        $this->container['exchangerate'] = $exchangerate;
+
+        return $this;
+    }
+
+    /**
+     * Gets estimation
+     *
+     * @return double
+     */
+    public function getEstimation()
+    {
+        return $this->container['estimation'];
+    }
+
+    /**
+     * Sets estimation
+     *
+     * @param double $estimation estimation
+     *
+     * @return $this
+     */
+    public function setEstimation($estimation)
+    {
+        $this->container['estimation'] = $estimation;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param int $quantity quantity
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets features
+     *
+     * @return \Domainrobot\Model\EstimationParametersV1
+     */
+    public function getFeatures()
+    {
+        return $this->container['features'];
+    }
+
+    /**
+     * Sets features
+     *
+     * @param \Domainrobot\Model\EstimationParametersV1 $features features
+     *
+     * @return $this
+     */
+    public function setFeatures($features)
+    {
+        $this->container['features'] = $features;
 
         return $this;
     }

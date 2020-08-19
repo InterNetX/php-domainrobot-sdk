@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * AlexaSiteInfoSiteData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * AlexaSiteInfoSiteData Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'AlexaSiteInfo_siteData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'title' => 'string',
+        'description' => 'string',
+        'onlineSince' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'title' => null,
+        'description' => null,
+        'onlineSince' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'title' => 'title',
+        'description' => 'description',
+        'onlineSince' => 'onlineSince'
     ];
 
     /**
@@ -111,9 +111,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'title' => 'setTitle',
+        'description' => 'setDescription',
+        'onlineSince' => 'setOnlineSince'
     ];
 
     /**
@@ -122,9 +122,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'title' => 'getTitle',
+        'description' => 'getDescription',
+        'onlineSince' => 'getOnlineSince'
     ];
 
     /**
@@ -187,9 +187,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['onlineSince'] = isset($data['onlineSince']) ? $data['onlineSince'] : null;
     }
 
     /**
@@ -217,73 +217,73 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets title
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return string
      */
-    public function getMessages()
+    public function getTitle()
     {
-        return $this->container['messages'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets messages
+     * Sets title
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param string $title title
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setTitle($title)
     {
-        $this->container['messages'] = $messages;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets description
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return string
      */
-    public function getObject()
+    public function getDescription()
     {
-        return $this->container['object'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets object
+     * Sets description
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param string $description description
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setDescription($description)
     {
-        $this->container['object'] = $object;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets onlineSince
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
-    public function getData()
+    public function getOnlineSince()
     {
-        return $this->container['data'];
+        return $this->container['onlineSince'];
     }
 
     /**
-     * Sets data
+     * Sets onlineSince
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $onlineSince onlineSince
      *
      * @return $this
      */
-    public function setData($data)
+    public function setOnlineSince($onlineSince)
     {
-        $this->container['data'] = $data;
+        $this->container['onlineSince'] = $onlineSince;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * EstimationParametersV1Language
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * EstimationParametersV1Language Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class EstimationParametersV1Language implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'EstimationParametersV1_language';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'en' => 'float',
+        'de' => 'float',
+        'fr' => 'float',
+        'it' => 'float',
+        'es' => 'float'
     ];
 
     /**
@@ -68,9 +70,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'en' => null,
+        'de' => null,
+        'fr' => null,
+        'it' => null,
+        'es' => null
     ];
 
     /**
@@ -100,9 +104,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'en' => 'en',
+        'de' => 'de',
+        'fr' => 'fr',
+        'it' => 'it',
+        'es' => 'es'
     ];
 
     /**
@@ -111,9 +117,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'en' => 'setEn',
+        'de' => 'setDe',
+        'fr' => 'setFr',
+        'it' => 'setIt',
+        'es' => 'setEs'
     ];
 
     /**
@@ -122,9 +130,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'en' => 'getEn',
+        'de' => 'getDe',
+        'fr' => 'getFr',
+        'it' => 'getIt',
+        'es' => 'getEs'
     ];
 
     /**
@@ -187,9 +197,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['en'] = isset($data['en']) ? $data['en'] : null;
+        $this->container['de'] = isset($data['de']) ? $data['de'] : null;
+        $this->container['fr'] = isset($data['fr']) ? $data['fr'] : null;
+        $this->container['it'] = isset($data['it']) ? $data['it'] : null;
+        $this->container['es'] = isset($data['es']) ? $data['es'] : null;
     }
 
     /**
@@ -217,73 +229,121 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets en
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return float
      */
-    public function getMessages()
+    public function getEn()
     {
-        return $this->container['messages'];
+        return $this->container['en'];
     }
 
     /**
-     * Sets messages
+     * Sets en
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param float $en en
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setEn($en)
     {
-        $this->container['messages'] = $messages;
+        $this->container['en'] = $en;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets de
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return float
      */
-    public function getObject()
+    public function getDe()
     {
-        return $this->container['object'];
+        return $this->container['de'];
     }
 
     /**
-     * Sets object
+     * Sets de
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param float $de de
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setDe($de)
     {
-        $this->container['object'] = $object;
+        $this->container['de'] = $de;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets fr
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return float
      */
-    public function getData()
+    public function getFr()
     {
-        return $this->container['data'];
+        return $this->container['fr'];
     }
 
     /**
-     * Sets data
+     * Sets fr
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param float $fr fr
      *
      * @return $this
      */
-    public function setData($data)
+    public function setFr($fr)
     {
-        $this->container['data'] = $data;
+        $this->container['fr'] = $fr;
+
+        return $this;
+    }
+
+    /**
+     * Gets it
+     *
+     * @return float
+     */
+    public function getIt()
+    {
+        return $this->container['it'];
+    }
+
+    /**
+     * Sets it
+     *
+     * @param float $it it
+     *
+     * @return $this
+     */
+    public function setIt($it)
+    {
+        $this->container['it'] = $it;
+
+        return $this;
+    }
+
+    /**
+     * Gets es
+     *
+     * @return float
+     */
+    public function getEs()
+    {
+        return $this->container['es'];
+    }
+
+    /**
+     * Sets es
+     *
+     * @param float $es es
+     *
+     * @return $this
+     */
+    public function setEs($es)
+    {
+        $this->container['es'] = $es;
 
         return $this;
     }

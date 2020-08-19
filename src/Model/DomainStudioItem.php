@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * DomainStudioItem
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * DomainStudioItem Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class DomainStudioItem implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'DomainStudioItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'name' => 'string',
+        'availability' => 'string',
+        'status' => 'string',
+        'domain' => 'string'
     ];
 
     /**
@@ -68,9 +69,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'name' => null,
+        'availability' => null,
+        'status' => null,
+        'domain' => null
     ];
 
     /**
@@ -100,9 +102,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'name' => 'name',
+        'availability' => 'availability',
+        'status' => 'status',
+        'domain' => 'domain'
     ];
 
     /**
@@ -111,9 +114,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'name' => 'setName',
+        'availability' => 'setAvailability',
+        'status' => 'setStatus',
+        'domain' => 'setDomain'
     ];
 
     /**
@@ -122,9 +126,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'name' => 'getName',
+        'availability' => 'getAvailability',
+        'status' => 'getStatus',
+        'domain' => 'getDomain'
     ];
 
     /**
@@ -187,9 +192,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['availability'] = isset($data['availability']) ? $data['availability'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
     }
 
     /**
@@ -217,73 +223,97 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets name
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return string
      */
-    public function getMessages()
+    public function getName()
     {
-        return $this->container['messages'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets messages
+     * Sets name
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param string $name name
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setName($name)
     {
-        $this->container['messages'] = $messages;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets availability
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return string
      */
-    public function getObject()
+    public function getAvailability()
     {
-        return $this->container['object'];
+        return $this->container['availability'];
     }
 
     /**
-     * Sets object
+     * Sets availability
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param string $availability availability
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setAvailability($availability)
     {
-        $this->container['object'] = $object;
+        $this->container['availability'] = $availability;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets status
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
-    public function getData()
+    public function getStatus()
     {
-        return $this->container['data'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets data
+     * Sets status
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $status status
      *
      * @return $this
      */
-    public function setData($data)
+    public function setStatus($status)
     {
-        $this->container['data'] = $data;
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain
+     *
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->container['domain'];
+    }
+
+    /**
+     * Sets domain
+     *
+     * @param string $domain domain
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->container['domain'] = $domain;
 
         return $this;
     }

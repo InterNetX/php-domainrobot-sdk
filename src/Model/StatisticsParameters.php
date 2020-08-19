@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * StatisticsParameters
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * StatisticsParameters Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class StatisticsParameters implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'StatisticsParameters';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'totalQueries' => 'float',
+        'webQueries' => 'float',
+        'apiQueries' => 'float',
+        'queryPercentage' => 'float'
     ];
 
     /**
@@ -68,9 +69,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'totalQueries' => 'integer',
+        'webQueries' => 'integer',
+        'apiQueries' => 'integer',
+        'queryPercentage' => 'integer'
     ];
 
     /**
@@ -100,9 +102,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'totalQueries' => 'totalQueries',
+        'webQueries' => 'webQueries',
+        'apiQueries' => 'apiQueries',
+        'queryPercentage' => 'queryPercentage'
     ];
 
     /**
@@ -111,9 +114,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'totalQueries' => 'setTotalQueries',
+        'webQueries' => 'setWebQueries',
+        'apiQueries' => 'setApiQueries',
+        'queryPercentage' => 'setQueryPercentage'
     ];
 
     /**
@@ -122,9 +126,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'totalQueries' => 'getTotalQueries',
+        'webQueries' => 'getWebQueries',
+        'apiQueries' => 'getApiQueries',
+        'queryPercentage' => 'getQueryPercentage'
     ];
 
     /**
@@ -187,9 +192,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['totalQueries'] = isset($data['totalQueries']) ? $data['totalQueries'] : null;
+        $this->container['webQueries'] = isset($data['webQueries']) ? $data['webQueries'] : null;
+        $this->container['apiQueries'] = isset($data['apiQueries']) ? $data['apiQueries'] : null;
+        $this->container['queryPercentage'] = isset($data['queryPercentage']) ? $data['queryPercentage'] : null;
     }
 
     /**
@@ -217,73 +223,97 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets totalQueries
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return float
      */
-    public function getMessages()
+    public function getTotalQueries()
     {
-        return $this->container['messages'];
+        return $this->container['totalQueries'];
     }
 
     /**
-     * Sets messages
+     * Sets totalQueries
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param float $totalQueries totalQueries
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setTotalQueries($totalQueries)
     {
-        $this->container['messages'] = $messages;
+        $this->container['totalQueries'] = $totalQueries;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets webQueries
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return float
      */
-    public function getObject()
+    public function getWebQueries()
     {
-        return $this->container['object'];
+        return $this->container['webQueries'];
     }
 
     /**
-     * Sets object
+     * Sets webQueries
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param float $webQueries webQueries
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setWebQueries($webQueries)
     {
-        $this->container['object'] = $object;
+        $this->container['webQueries'] = $webQueries;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets apiQueries
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return float
      */
-    public function getData()
+    public function getApiQueries()
     {
-        return $this->container['data'];
+        return $this->container['apiQueries'];
     }
 
     /**
-     * Sets data
+     * Sets apiQueries
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param float $apiQueries apiQueries
      *
      * @return $this
      */
-    public function setData($data)
+    public function setApiQueries($apiQueries)
     {
-        $this->container['data'] = $data;
+        $this->container['apiQueries'] = $apiQueries;
+
+        return $this;
+    }
+
+    /**
+     * Gets queryPercentage
+     *
+     * @return float
+     */
+    public function getQueryPercentage()
+    {
+        return $this->container['queryPercentage'];
+    }
+
+    /**
+     * Sets queryPercentage
+     *
+     * @param float $queryPercentage queryPercentage
+     *
+     * @return $this
+     */
+    public function setQueryPercentage($queryPercentage)
+    {
+        $this->container['queryPercentage'] = $queryPercentage;
 
         return $this;
     }

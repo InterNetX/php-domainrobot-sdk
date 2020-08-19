@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * EstimationParametersV1Pagerank
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * EstimationParametersV1Pagerank Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'EstimationParametersV1_pagerank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'globalRank' => 'float',
+        'tldRank' => 'float',
+        'refSubNets' => 'float',
+        'refIPs' => 'float',
+        'prevGlobalRank' => 'float',
+        'prevTldRank' => 'float',
+        'pPrevRefSubNets' => 'float',
+        'prevRefIPs' => 'string'
     ];
 
     /**
@@ -68,9 +73,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'globalRank' => null,
+        'tldRank' => null,
+        'refSubNets' => null,
+        'refIPs' => null,
+        'prevGlobalRank' => null,
+        'prevTldRank' => null,
+        'pPrevRefSubNets' => null,
+        'prevRefIPs' => null
     ];
 
     /**
@@ -100,9 +110,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'globalRank' => 'globalRank',
+        'tldRank' => 'tldRank',
+        'refSubNets' => 'refSubNets',
+        'refIPs' => 'refIPs',
+        'prevGlobalRank' => 'prevGlobalRank',
+        'prevTldRank' => 'prevTldRank',
+        'pPrevRefSubNets' => 'pPrevRefSubNets',
+        'prevRefIPs' => 'prevRefIPs'
     ];
 
     /**
@@ -111,9 +126,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'globalRank' => 'setGlobalRank',
+        'tldRank' => 'setTldRank',
+        'refSubNets' => 'setRefSubNets',
+        'refIPs' => 'setRefIPs',
+        'prevGlobalRank' => 'setPrevGlobalRank',
+        'prevTldRank' => 'setPrevTldRank',
+        'pPrevRefSubNets' => 'setPPrevRefSubNets',
+        'prevRefIPs' => 'setPrevRefIPs'
     ];
 
     /**
@@ -122,9 +142,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'globalRank' => 'getGlobalRank',
+        'tldRank' => 'getTldRank',
+        'refSubNets' => 'getRefSubNets',
+        'refIPs' => 'getRefIPs',
+        'prevGlobalRank' => 'getPrevGlobalRank',
+        'prevTldRank' => 'getPrevTldRank',
+        'pPrevRefSubNets' => 'getPPrevRefSubNets',
+        'prevRefIPs' => 'getPrevRefIPs'
     ];
 
     /**
@@ -187,9 +212,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['globalRank'] = isset($data['globalRank']) ? $data['globalRank'] : null;
+        $this->container['tldRank'] = isset($data['tldRank']) ? $data['tldRank'] : null;
+        $this->container['refSubNets'] = isset($data['refSubNets']) ? $data['refSubNets'] : null;
+        $this->container['refIPs'] = isset($data['refIPs']) ? $data['refIPs'] : null;
+        $this->container['prevGlobalRank'] = isset($data['prevGlobalRank']) ? $data['prevGlobalRank'] : null;
+        $this->container['prevTldRank'] = isset($data['prevTldRank']) ? $data['prevTldRank'] : null;
+        $this->container['pPrevRefSubNets'] = isset($data['pPrevRefSubNets']) ? $data['pPrevRefSubNets'] : null;
+        $this->container['prevRefIPs'] = isset($data['prevRefIPs']) ? $data['prevRefIPs'] : null;
     }
 
     /**
@@ -217,73 +247,193 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets globalRank
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return float
      */
-    public function getMessages()
+    public function getGlobalRank()
     {
-        return $this->container['messages'];
+        return $this->container['globalRank'];
     }
 
     /**
-     * Sets messages
+     * Sets globalRank
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param float $globalRank globalRank
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setGlobalRank($globalRank)
     {
-        $this->container['messages'] = $messages;
+        $this->container['globalRank'] = $globalRank;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets tldRank
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return float
      */
-    public function getObject()
+    public function getTldRank()
     {
-        return $this->container['object'];
+        return $this->container['tldRank'];
     }
 
     /**
-     * Sets object
+     * Sets tldRank
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param float $tldRank tldRank
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setTldRank($tldRank)
     {
-        $this->container['object'] = $object;
+        $this->container['tldRank'] = $tldRank;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets refSubNets
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return float
      */
-    public function getData()
+    public function getRefSubNets()
     {
-        return $this->container['data'];
+        return $this->container['refSubNets'];
     }
 
     /**
-     * Sets data
+     * Sets refSubNets
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param float $refSubNets refSubNets
      *
      * @return $this
      */
-    public function setData($data)
+    public function setRefSubNets($refSubNets)
     {
-        $this->container['data'] = $data;
+        $this->container['refSubNets'] = $refSubNets;
+
+        return $this;
+    }
+
+    /**
+     * Gets refIPs
+     *
+     * @return float
+     */
+    public function getRefIPs()
+    {
+        return $this->container['refIPs'];
+    }
+
+    /**
+     * Sets refIPs
+     *
+     * @param float $refIPs refIPs
+     *
+     * @return $this
+     */
+    public function setRefIPs($refIPs)
+    {
+        $this->container['refIPs'] = $refIPs;
+
+        return $this;
+    }
+
+    /**
+     * Gets prevGlobalRank
+     *
+     * @return float
+     */
+    public function getPrevGlobalRank()
+    {
+        return $this->container['prevGlobalRank'];
+    }
+
+    /**
+     * Sets prevGlobalRank
+     *
+     * @param float $prevGlobalRank prevGlobalRank
+     *
+     * @return $this
+     */
+    public function setPrevGlobalRank($prevGlobalRank)
+    {
+        $this->container['prevGlobalRank'] = $prevGlobalRank;
+
+        return $this;
+    }
+
+    /**
+     * Gets prevTldRank
+     *
+     * @return float
+     */
+    public function getPrevTldRank()
+    {
+        return $this->container['prevTldRank'];
+    }
+
+    /**
+     * Sets prevTldRank
+     *
+     * @param float $prevTldRank prevTldRank
+     *
+     * @return $this
+     */
+    public function setPrevTldRank($prevTldRank)
+    {
+        $this->container['prevTldRank'] = $prevTldRank;
+
+        return $this;
+    }
+
+    /**
+     * Gets pPrevRefSubNets
+     *
+     * @return float
+     */
+    public function getPPrevRefSubNets()
+    {
+        return $this->container['pPrevRefSubNets'];
+    }
+
+    /**
+     * Sets pPrevRefSubNets
+     *
+     * @param float $pPrevRefSubNets pPrevRefSubNets
+     *
+     * @return $this
+     */
+    public function setPPrevRefSubNets($pPrevRefSubNets)
+    {
+        $this->container['pPrevRefSubNets'] = $pPrevRefSubNets;
+
+        return $this;
+    }
+
+    /**
+     * Gets prevRefIPs
+     *
+     * @return string
+     */
+    public function getPrevRefIPs()
+    {
+        return $this->container['prevRefIPs'];
+    }
+
+    /**
+     * Sets prevRefIPs
+     *
+     * @param string $prevRefIPs prevRefIPs
+     *
+     * @return $this
+     */
+    public function setPrevRefIPs($prevRefIPs)
+    {
+        $this->container['prevRefIPs'] = $prevRefIPs;
 
         return $this;
     }

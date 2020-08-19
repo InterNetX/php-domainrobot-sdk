@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * AlexaSiteInfo
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * AlexaSiteInfo Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class AlexaSiteInfo implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'AlexaSiteInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'sitesLinkingIn' => 'int',
+        'rank' => 'int',
+        'loadingTime' => 'string',
+        'adultContent' => 'string',
+        'siteLanguage' => 'string',
+        'siteData' => '\Domainrobot\Model\AlexaSiteInfoSiteData',
+        'highestRankedIncountry' => '\Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry',
+        'pageViewsPerDay' => '\Domainrobot\Model\AlexaSiteInfoPageViewsPerDay'
     ];
 
     /**
@@ -68,9 +73,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'sitesLinkingIn' => null,
+        'rank' => null,
+        'loadingTime' => null,
+        'adultContent' => null,
+        'siteLanguage' => null,
+        'siteData' => null,
+        'highestRankedIncountry' => null,
+        'pageViewsPerDay' => null
     ];
 
     /**
@@ -100,9 +110,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'sitesLinkingIn' => 'sitesLinkingIn',
+        'rank' => 'rank',
+        'loadingTime' => 'loadingTime',
+        'adultContent' => 'adultContent',
+        'siteLanguage' => 'siteLanguage',
+        'siteData' => 'siteData',
+        'highestRankedIncountry' => 'highestRankedIncountry',
+        'pageViewsPerDay' => 'pageViewsPerDay'
     ];
 
     /**
@@ -111,9 +126,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'sitesLinkingIn' => 'setSitesLinkingIn',
+        'rank' => 'setRank',
+        'loadingTime' => 'setLoadingTime',
+        'adultContent' => 'setAdultContent',
+        'siteLanguage' => 'setSiteLanguage',
+        'siteData' => 'setSiteData',
+        'highestRankedIncountry' => 'setHighestRankedIncountry',
+        'pageViewsPerDay' => 'setPageViewsPerDay'
     ];
 
     /**
@@ -122,9 +142,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'sitesLinkingIn' => 'getSitesLinkingIn',
+        'rank' => 'getRank',
+        'loadingTime' => 'getLoadingTime',
+        'adultContent' => 'getAdultContent',
+        'siteLanguage' => 'getSiteLanguage',
+        'siteData' => 'getSiteData',
+        'highestRankedIncountry' => 'getHighestRankedIncountry',
+        'pageViewsPerDay' => 'getPageViewsPerDay'
     ];
 
     /**
@@ -187,9 +212,14 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['sitesLinkingIn'] = isset($data['sitesLinkingIn']) ? $data['sitesLinkingIn'] : null;
+        $this->container['rank'] = isset($data['rank']) ? $data['rank'] : null;
+        $this->container['loadingTime'] = isset($data['loadingTime']) ? $data['loadingTime'] : null;
+        $this->container['adultContent'] = isset($data['adultContent']) ? $data['adultContent'] : null;
+        $this->container['siteLanguage'] = isset($data['siteLanguage']) ? $data['siteLanguage'] : null;
+        $this->container['siteData'] = isset($data['siteData']) ? $data['siteData'] : null;
+        $this->container['highestRankedIncountry'] = isset($data['highestRankedIncountry']) ? $data['highestRankedIncountry'] : null;
+        $this->container['pageViewsPerDay'] = isset($data['pageViewsPerDay']) ? $data['pageViewsPerDay'] : null;
     }
 
     /**
@@ -217,73 +247,193 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets sitesLinkingIn
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return int
      */
-    public function getMessages()
+    public function getSitesLinkingIn()
     {
-        return $this->container['messages'];
+        return $this->container['sitesLinkingIn'];
     }
 
     /**
-     * Sets messages
+     * Sets sitesLinkingIn
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param int $sitesLinkingIn sitesLinkingIn
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setSitesLinkingIn($sitesLinkingIn)
     {
-        $this->container['messages'] = $messages;
+        $this->container['sitesLinkingIn'] = $sitesLinkingIn;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets rank
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return int
      */
-    public function getObject()
+    public function getRank()
     {
-        return $this->container['object'];
+        return $this->container['rank'];
     }
 
     /**
-     * Sets object
+     * Sets rank
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param int $rank rank
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setRank($rank)
     {
-        $this->container['object'] = $object;
+        $this->container['rank'] = $rank;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets loadingTime
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
-    public function getData()
+    public function getLoadingTime()
     {
-        return $this->container['data'];
+        return $this->container['loadingTime'];
     }
 
     /**
-     * Sets data
+     * Sets loadingTime
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $loadingTime loadingTime
      *
      * @return $this
      */
-    public function setData($data)
+    public function setLoadingTime($loadingTime)
     {
-        $this->container['data'] = $data;
+        $this->container['loadingTime'] = $loadingTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets adultContent
+     *
+     * @return string
+     */
+    public function getAdultContent()
+    {
+        return $this->container['adultContent'];
+    }
+
+    /**
+     * Sets adultContent
+     *
+     * @param string $adultContent adultContent
+     *
+     * @return $this
+     */
+    public function setAdultContent($adultContent)
+    {
+        $this->container['adultContent'] = $adultContent;
+
+        return $this;
+    }
+
+    /**
+     * Gets siteLanguage
+     *
+     * @return string
+     */
+    public function getSiteLanguage()
+    {
+        return $this->container['siteLanguage'];
+    }
+
+    /**
+     * Sets siteLanguage
+     *
+     * @param string $siteLanguage siteLanguage
+     *
+     * @return $this
+     */
+    public function setSiteLanguage($siteLanguage)
+    {
+        $this->container['siteLanguage'] = $siteLanguage;
+
+        return $this;
+    }
+
+    /**
+     * Gets siteData
+     *
+     * @return \Domainrobot\Model\AlexaSiteInfoSiteData
+     */
+    public function getSiteData()
+    {
+        return $this->container['siteData'];
+    }
+
+    /**
+     * Sets siteData
+     *
+     * @param \Domainrobot\Model\AlexaSiteInfoSiteData $siteData siteData
+     *
+     * @return $this
+     */
+    public function setSiteData($siteData)
+    {
+        $this->container['siteData'] = $siteData;
+
+        return $this;
+    }
+
+    /**
+     * Gets highestRankedIncountry
+     *
+     * @return \Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry
+     */
+    public function getHighestRankedIncountry()
+    {
+        return $this->container['highestRankedIncountry'];
+    }
+
+    /**
+     * Sets highestRankedIncountry
+     *
+     * @param \Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry $highestRankedIncountry highestRankedIncountry
+     *
+     * @return $this
+     */
+    public function setHighestRankedIncountry($highestRankedIncountry)
+    {
+        $this->container['highestRankedIncountry'] = $highestRankedIncountry;
+
+        return $this;
+    }
+
+    /**
+     * Gets pageViewsPerDay
+     *
+     * @return \Domainrobot\Model\AlexaSiteInfoPageViewsPerDay
+     */
+    public function getPageViewsPerDay()
+    {
+        return $this->container['pageViewsPerDay'];
+    }
+
+    /**
+     * Sets pageViewsPerDay
+     *
+     * @param \Domainrobot\Model\AlexaSiteInfoPageViewsPerDay $pageViewsPerDay pageViewsPerDay
+     *
+     * @return $this
+     */
+    public function setPageViewsPerDay($pageViewsPerDay)
+    {
+        $this->container['pageViewsPerDay'] = $pageViewsPerDay;
 
         return $this;
     }

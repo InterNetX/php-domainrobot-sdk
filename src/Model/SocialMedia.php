@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * SocialMedia
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * SocialMedia Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class SocialMedia implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'SocialMedia';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'facebook' => 'bool',
+        'instagram' => 'bool',
+        'pinterest' => 'bool',
+        'twitter' => 'bool',
+        'youtube' => 'bool'
     ];
 
     /**
@@ -68,9 +70,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'facebook' => null,
+        'instagram' => null,
+        'pinterest' => null,
+        'twitter' => null,
+        'youtube' => null
     ];
 
     /**
@@ -100,9 +104,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'facebook' => 'facebook',
+        'instagram' => 'instagram',
+        'pinterest' => 'pinterest',
+        'twitter' => 'twitter',
+        'youtube' => 'youtube'
     ];
 
     /**
@@ -111,9 +117,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'facebook' => 'setFacebook',
+        'instagram' => 'setInstagram',
+        'pinterest' => 'setPinterest',
+        'twitter' => 'setTwitter',
+        'youtube' => 'setYoutube'
     ];
 
     /**
@@ -122,9 +130,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'facebook' => 'getFacebook',
+        'instagram' => 'getInstagram',
+        'pinterest' => 'getPinterest',
+        'twitter' => 'getTwitter',
+        'youtube' => 'getYoutube'
     ];
 
     /**
@@ -187,9 +197,11 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['facebook'] = isset($data['facebook']) ? $data['facebook'] : null;
+        $this->container['instagram'] = isset($data['instagram']) ? $data['instagram'] : null;
+        $this->container['pinterest'] = isset($data['pinterest']) ? $data['pinterest'] : null;
+        $this->container['twitter'] = isset($data['twitter']) ? $data['twitter'] : null;
+        $this->container['youtube'] = isset($data['youtube']) ? $data['youtube'] : null;
     }
 
     /**
@@ -217,73 +229,121 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets facebook
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return bool
      */
-    public function getMessages()
+    public function getFacebook()
     {
-        return $this->container['messages'];
+        return $this->container['facebook'];
     }
 
     /**
-     * Sets messages
+     * Sets facebook
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param bool $facebook facebook
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setFacebook($facebook)
     {
-        $this->container['messages'] = $messages;
+        $this->container['facebook'] = $facebook;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets instagram
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return bool
      */
-    public function getObject()
+    public function getInstagram()
     {
-        return $this->container['object'];
+        return $this->container['instagram'];
     }
 
     /**
-     * Sets object
+     * Sets instagram
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param bool $instagram instagram
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setInstagram($instagram)
     {
-        $this->container['object'] = $object;
+        $this->container['instagram'] = $instagram;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets pinterest
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return bool
      */
-    public function getData()
+    public function getPinterest()
     {
-        return $this->container['data'];
+        return $this->container['pinterest'];
     }
 
     /**
-     * Sets data
+     * Sets pinterest
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param bool $pinterest pinterest
      *
      * @return $this
      */
-    public function setData($data)
+    public function setPinterest($pinterest)
     {
-        $this->container['data'] = $data;
+        $this->container['pinterest'] = $pinterest;
+
+        return $this;
+    }
+
+    /**
+     * Gets twitter
+     *
+     * @return bool
+     */
+    public function getTwitter()
+    {
+        return $this->container['twitter'];
+    }
+
+    /**
+     * Sets twitter
+     *
+     * @param bool $twitter twitter
+     *
+     * @return $this
+     */
+    public function setTwitter($twitter)
+    {
+        $this->container['twitter'] = $twitter;
+
+        return $this;
+    }
+
+    /**
+     * Gets youtube
+     *
+     * @return bool
+     */
+    public function getYoutube()
+    {
+        return $this->container['youtube'];
+    }
+
+    /**
+     * Sets youtube
+     *
+     * @param bool $youtube youtube
+     *
+     * @return $this
+     */
+    public function setYoutube($youtube)
+    {
+        $this->container['youtube'] = $youtube;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * WaybackWaybackArchivedSnapshotsClosest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * WaybackWaybackArchivedSnapshotsClosest Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class WaybackWaybackArchivedSnapshotsClosest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'Wayback_wayback_archived_snapshots_closest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'status' => 'string',
+        'available' => 'bool',
+        'url' => 'string',
+        'timestamp' => 'string'
     ];
 
     /**
@@ -68,9 +69,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'status' => null,
+        'available' => null,
+        'url' => null,
+        'timestamp' => null
     ];
 
     /**
@@ -100,9 +102,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'status' => 'status',
+        'available' => 'available',
+        'url' => 'url',
+        'timestamp' => 'timestamp'
     ];
 
     /**
@@ -111,9 +114,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'status' => 'setStatus',
+        'available' => 'setAvailable',
+        'url' => 'setUrl',
+        'timestamp' => 'setTimestamp'
     ];
 
     /**
@@ -122,9 +126,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'status' => 'getStatus',
+        'available' => 'getAvailable',
+        'url' => 'getUrl',
+        'timestamp' => 'getTimestamp'
     ];
 
     /**
@@ -187,9 +192,10 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['available'] = isset($data['available']) ? $data['available'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
     }
 
     /**
@@ -217,73 +223,97 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets status
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return string
      */
-    public function getMessages()
+    public function getStatus()
     {
-        return $this->container['messages'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets messages
+     * Sets status
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param string $status status
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setStatus($status)
     {
-        $this->container['messages'] = $messages;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets available
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return bool
      */
-    public function getObject()
+    public function getAvailable()
     {
-        return $this->container['object'];
+        return $this->container['available'];
     }
 
     /**
-     * Sets object
+     * Sets available
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param bool $available available
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setAvailable($available)
     {
-        $this->container['object'] = $object;
+        $this->container['available'] = $available;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets url
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
-    public function getData()
+    public function getUrl()
     {
-        return $this->container['data'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets data
+     * Sets url
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $url url
      *
      * @return $this
      */
-    public function setData($data)
+    public function setUrl($url)
     {
-        $this->container['data'] = $data;
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets timestamp
+     *
+     * @return string
+     */
+    public function getTimestamp()
+    {
+        return $this->container['timestamp'];
+    }
+
+    /**
+     * Sets timestamp
+     *
+     * @param string $timestamp timestamp
+     *
+     * @return $this
+     */
+    public function setTimestamp($timestamp)
+    {
+        $this->container['timestamp'] = $timestamp;
 
         return $this;
     }

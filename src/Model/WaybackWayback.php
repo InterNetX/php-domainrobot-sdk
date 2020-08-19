@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * WaybackWayback
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * WaybackWayback Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class WaybackWayback implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'Wayback_wayback';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'url' => 'string',
+        'archivedSnapshots' => '\Domainrobot\Model\WaybackWaybackArchivedSnapshots'
     ];
 
     /**
@@ -68,9 +67,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'url' => null,
+        'archivedSnapshots' => null
     ];
 
     /**
@@ -100,9 +98,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'url' => 'url',
+        'archivedSnapshots' => 'archived_snapshots'
     ];
 
     /**
@@ -111,9 +108,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'url' => 'setUrl',
+        'archivedSnapshots' => 'setArchivedSnapshots'
     ];
 
     /**
@@ -122,9 +118,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'url' => 'getUrl',
+        'archivedSnapshots' => 'getArchivedSnapshots'
     ];
 
     /**
@@ -187,9 +182,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['archivedSnapshots'] = isset($data['archivedSnapshots']) ? $data['archivedSnapshots'] : null;
     }
 
     /**
@@ -217,73 +211,49 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets url
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return string
      */
-    public function getMessages()
+    public function getUrl()
     {
-        return $this->container['messages'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets messages
+     * Sets url
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param string $url url
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setUrl($url)
     {
-        $this->container['messages'] = $messages;
+        $this->container['url'] = $url;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets archivedSnapshots
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return \Domainrobot\Model\WaybackWaybackArchivedSnapshots
      */
-    public function getObject()
+    public function getArchivedSnapshots()
     {
-        return $this->container['object'];
+        return $this->container['archivedSnapshots'];
     }
 
     /**
-     * Sets object
+     * Sets archivedSnapshots
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param \Domainrobot\Model\WaybackWaybackArchivedSnapshots $archivedSnapshots archivedSnapshots
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setArchivedSnapshots($archivedSnapshots)
     {
-        $this->container['object'] = $object;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \Domainrobot\Model\Estimation[]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \Domainrobot\Model\Estimation[] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
+        $this->container['archivedSnapshots'] = $archivedSnapshots;
 
         return $this;
     }

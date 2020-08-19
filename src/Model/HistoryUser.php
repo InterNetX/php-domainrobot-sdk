@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * HistoryUser
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * HistoryUser Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class HistoryUser implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'HistoryUser';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'id' => 'int',
+        'domain' => 'string',
+        'executionTime' => 'string',
+        'price' => 'string',
+        'data' => 'string',
+        'ip' => 'string',
+        'user' => 'string',
+        'requestType' => 'string',
+        'createdAt' => 'string',
+        'updatedAt' => 'string'
     ];
 
     /**
@@ -68,9 +75,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'id' => null,
+        'domain' => null,
+        'executionTime' => null,
+        'price' => null,
+        'data' => null,
+        'ip' => null,
+        'user' => null,
+        'requestType' => null,
+        'createdAt' => null,
+        'updatedAt' => null
     ];
 
     /**
@@ -100,9 +114,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'id' => 'id',
+        'domain' => 'domain',
+        'executionTime' => 'execution_time',
+        'price' => 'price',
+        'data' => 'data',
+        'ip' => 'ip',
+        'user' => 'user',
+        'requestType' => 'request_type',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at'
     ];
 
     /**
@@ -111,9 +132,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'id' => 'setId',
+        'domain' => 'setDomain',
+        'executionTime' => 'setExecutionTime',
+        'price' => 'setPrice',
+        'data' => 'setData',
+        'ip' => 'setIp',
+        'user' => 'setUser',
+        'requestType' => 'setRequestType',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt'
     ];
 
     /**
@@ -122,9 +150,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'id' => 'getId',
+        'domain' => 'getDomain',
+        'executionTime' => 'getExecutionTime',
+        'price' => 'getPrice',
+        'data' => 'getData',
+        'ip' => 'getIp',
+        'user' => 'getUser',
+        'requestType' => 'getRequestType',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt'
     ];
 
     /**
@@ -187,9 +222,16 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
+        $this->container['executionTime'] = isset($data['executionTime']) ? $data['executionTime'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['requestType'] = isset($data['requestType']) ? $data['requestType'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
     }
 
     /**
@@ -217,49 +259,97 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets id
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return int
      */
-    public function getMessages()
+    public function getId()
     {
-        return $this->container['messages'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets messages
+     * Sets id
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param int $id id
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setId($id)
     {
-        $this->container['messages'] = $messages;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets domain
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return string
      */
-    public function getObject()
+    public function getDomain()
     {
-        return $this->container['object'];
+        return $this->container['domain'];
     }
 
     /**
-     * Sets object
+     * Sets domain
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param string $domain domain
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setDomain($domain)
     {
-        $this->container['object'] = $object;
+        $this->container['domain'] = $domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets executionTime
+     *
+     * @return string
+     */
+    public function getExecutionTime()
+    {
+        return $this->container['executionTime'];
+    }
+
+    /**
+     * Sets executionTime
+     *
+     * @param string $executionTime executionTime
+     *
+     * @return $this
+     */
+    public function setExecutionTime($executionTime)
+    {
+        $this->container['executionTime'] = $executionTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     *
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param string $price price
+     *
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
 
         return $this;
     }
@@ -267,7 +357,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
     public function getData()
     {
@@ -277,13 +367,133 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $data data
      *
      * @return $this
      */
     public function setData($data)
     {
         $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets ip
+     *
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->container['ip'];
+    }
+
+    /**
+     * Sets ip
+     *
+     * @param string $ip ip
+     *
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->container['ip'] = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Gets user
+     *
+     * @return string
+     */
+    public function getUser()
+    {
+        return $this->container['user'];
+    }
+
+    /**
+     * Sets user
+     *
+     * @param string $user user
+     *
+     * @return $this
+     */
+    public function setUser($user)
+    {
+        $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets requestType
+     *
+     * @return string
+     */
+    public function getRequestType()
+    {
+        return $this->container['requestType'];
+    }
+
+    /**
+     * Sets requestType
+     *
+     * @param string $requestType requestType
+     *
+     * @return $this
+     */
+    public function setRequestType($requestType)
+    {
+        $this->container['requestType'] = $requestType;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param string $createdAt createdAt
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets updatedAt
+     *
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updatedAt'];
+    }
+
+    /**
+     * Sets updatedAt
+     *
+     * @param string $updatedAt updatedAt
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

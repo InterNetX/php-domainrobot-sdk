@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * AlexaSiteInfoPageViewsPerDay
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * AlexaSiteInfoPageViewsPerDay Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'AlexaSiteInfo_pageViewsPerDay';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'perUser' => 'int',
+        'codeltaunty' => 'string'
     ];
 
     /**
@@ -68,9 +67,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'perUser' => null,
+        'codeltaunty' => null
     ];
 
     /**
@@ -100,9 +98,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'perUser' => 'perUser',
+        'codeltaunty' => 'codeltaunty'
     ];
 
     /**
@@ -111,9 +108,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'perUser' => 'setPerUser',
+        'codeltaunty' => 'setCodeltaunty'
     ];
 
     /**
@@ -122,9 +118,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'perUser' => 'getPerUser',
+        'codeltaunty' => 'getCodeltaunty'
     ];
 
     /**
@@ -187,9 +182,8 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['perUser'] = isset($data['perUser']) ? $data['perUser'] : null;
+        $this->container['codeltaunty'] = isset($data['codeltaunty']) ? $data['codeltaunty'] : null;
     }
 
     /**
@@ -217,73 +211,49 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets perUser
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return int
      */
-    public function getMessages()
+    public function getPerUser()
     {
-        return $this->container['messages'];
+        return $this->container['perUser'];
     }
 
     /**
-     * Sets messages
+     * Sets perUser
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param int $perUser perUser
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setPerUser($perUser)
     {
-        $this->container['messages'] = $messages;
+        $this->container['perUser'] = $perUser;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets codeltaunty
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return string
      */
-    public function getObject()
+    public function getCodeltaunty()
     {
-        return $this->container['object'];
+        return $this->container['codeltaunty'];
     }
 
     /**
-     * Sets object
+     * Sets codeltaunty
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param string $codeltaunty codeltaunty
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setCodeltaunty($codeltaunty)
     {
-        $this->container['object'] = $object;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \Domainrobot\Model\Estimation[]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \Domainrobot\Model\Estimation[] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
+        $this->container['codeltaunty'] = $codeltaunty;
 
         return $this;
     }

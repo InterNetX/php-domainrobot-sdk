@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiEstimationResponse
+ * ApiResponseMessages
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ApiEstimationResponse Class Doc Comment
+ * ApiResponseMessages Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiEstimationResponse implements ModelInterface, ArrayAccess
+class ApiResponseMessages implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiEstimationResponse';
+    protected static $swaggerModelName = 'ApiResponseMessages';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages' => '\Domainrobot\Model\ApiResponseMessages[]',
-        'object' => '\Domainrobot\Model\ApiResponseObject',
-        'data' => '\Domainrobot\Model\Estimation[]'
+        'code' => 'string',
+        'text' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages' => null,
-        'object' => null,
-        'data' => null
+        'code' => null,
+        'text' => null,
+        'type' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages' => 'messages',
-        'object' => 'object',
-        'data' => 'data'
+        'code' => 'code',
+        'text' => 'text',
+        'type' => 'type'
     ];
 
     /**
@@ -111,9 +111,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages' => 'setMessages',
-        'object' => 'setObject',
-        'data' => 'setData'
+        'code' => 'setCode',
+        'text' => 'setText',
+        'type' => 'setType'
     ];
 
     /**
@@ -122,9 +122,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages' => 'getMessages',
-        'object' => 'getObject',
-        'data' => 'getData'
+        'code' => 'getCode',
+        'text' => 'getText',
+        'type' => 'getType'
     ];
 
     /**
@@ -187,9 +187,9 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -217,73 +217,73 @@ class ApiEstimationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messages
+     * Gets code
      *
-     * @return \Domainrobot\Model\ApiResponseMessages[]
+     * @return string
      */
-    public function getMessages()
+    public function getCode()
     {
-        return $this->container['messages'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets messages
+     * Sets code
      *
-     * @param \Domainrobot\Model\ApiResponseMessages[] $messages messages
+     * @param string $code code
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setCode($code)
     {
-        $this->container['messages'] = $messages;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets text
      *
-     * @return \Domainrobot\Model\ApiResponseObject
+     * @return string
      */
-    public function getObject()
+    public function getText()
     {
-        return $this->container['object'];
+        return $this->container['text'];
     }
 
     /**
-     * Sets object
+     * Sets text
      *
-     * @param \Domainrobot\Model\ApiResponseObject $object object
+     * @param string $text text
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setText($text)
     {
-        $this->container['object'] = $object;
+        $this->container['text'] = $text;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets type
      *
-     * @return \Domainrobot\Model\Estimation[]
+     * @return string
      */
-    public function getData()
+    public function getType()
     {
-        return $this->container['data'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets data
+     * Sets type
      *
-     * @param \Domainrobot\Model\Estimation[] $data data
+     * @param string $type type
      *
      * @return $this
      */
-    public function setData($data)
+    public function setType($type)
     {
-        $this->container['data'] = $data;
+        $this->container['type'] = $type;
 
         return $this;
     }

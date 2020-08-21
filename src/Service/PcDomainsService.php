@@ -37,7 +37,7 @@ class PcDomainsService extends DomainrobotService
      * @param Estimation $estimation
      * @return EstimationV1[]
      */
-    public function estimation(Estimation $estimation):Array
+    public function estimation(Estimation $estimation)
     {
         $domainrobotPromise = $this->estimationAsync($estimation);
         $domainrobotResult = $domainrobotPromise->wait();

@@ -76,6 +76,7 @@ module.exports = {
 						"api_tasks/domain",
 						"api_tasks/domain_cancelation",
 						"api_tasks/domainstudio",
+						"api_tasks/pc_domains",
 						"api_tasks/poll",
 						"api_tasks/ssl_contact",
 						"api_tasks/transfer_out",

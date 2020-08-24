@@ -6,10 +6,18 @@ use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
-use Domainrobot\Model\Estimation;
-use Domainrobot\Model\Keywords;
-use Domainrobot\Model\Domains;
 use Domainrobot\Service\DomainrobotService;
+use Domainrobot\Model\Estimation;
+use Domainrobot\Model\EstimationV1;
+use Domainrobot\Model\AlexaSiteInfo;
+use Domainrobot\Model\Keywords;
+use Domainrobot\Model\Keyword;
+use Domainrobot\Model\Domains;
+use Domainrobot\Model\Meta;
+use Domainrobot\Model\Sistrix;
+use Domainrobot\Model\Majestic;
+use Domainrobot\Model\SocialMedia;
+use Domainrobot\Model\Wayback;
 
 class PcDomainsService extends DomainrobotService
 {
@@ -27,7 +35,7 @@ class PcDomainsService extends DomainrobotService
      * Estimates the value for the given domain
      *
      * @param Estimation $estimation
-     * @return void
+     * @return EstimationV1[]
      */
     public function estimation(Estimation $estimation)
     {
@@ -35,6 +43,15 @@ class PcDomainsService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        $estimations = ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data', []);
+
+        $estimationObjects = [];
+        foreach ( $estimations as $estimation ) {
+            $estimationObjects[] = new EstimationV1($estimation);
+        }
+
+        return $estimationObjects;
     }
 
     /**
@@ -57,7 +74,7 @@ class PcDomainsService extends DomainrobotService
      * Sends an Alexa Site Info Request
      *
      * @param string $domain
-     * @return void
+     * @return AlexaSiteInfo
      */
     public function alexa($domain)
     {
@@ -65,6 +82,8 @@ class PcDomainsService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new AlexaSiteInfo(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', NULL));
     }
 
     /**
@@ -82,93 +101,42 @@ class PcDomainsService extends DomainrobotService
     }
 
     /**
-     * Sends an Exchangerate Request
+     * Sends an Keyword Request
+     * Get Google Ad Words Data
      *
-     * @param string $sourceCurrency
-     * @param string $targetCurrency
-     * @return void
+     * @param Keywords $keywords
+     * @return Keyword[]
      */
-    public function exchangerate($sourceCurrency, $targetCurrency)
+    public function keyword(Keywords $keywords)
     {
-        $domainrobotPromise = $this->exchangerateAsync($sourceCurrency, $targetCurrency);
+        $domainrobotPromise = $this->keywordAsync($keywords);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
-    }
 
-    /**
-     * Sends an Exchangerate Request
-     *
-     * @param string $sourceCurrency
-     * @param string $targetCurrency
-     * @return DomainrobotPromise
-     */
-    public function exchangerateAsync($sourceCurrency, $targetCurrency)
-    {
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/v1/exchangerate/$sourceCurrency/$targetCurrency",
-            'GET'
-        );
-    }
+        $keywords = ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data', []);
 
-    /**
-     * Sends an DomainStudio Request
-     * Get a list of domain name suggestions
-     *
-     * @param string $keyword
-     * @return void
-     */
-    public function domainstudio($keyword)
-    {
-        $domainrobotPromise = $this->domainstudioAsync($keyword);
-        $domainrobotResult = $domainrobotPromise->wait();
+        $keywordObjects = [];
+        foreach ( $keywords as $keyword ) {
+            $keywordObjects[] = new Keyword($keyword);
+        }
 
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-    }
-
-    /**
-     * Sends an DomainStudio Request
-     * Get a list of domain name suggestions
-     *
-     * @param string $keyword
-     * @return DomainrobotPromise
-     */
-    public function domainstudioAsync($keyword)
-    {
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domainstudio/suggest/$keyword",
-            'GET'
-        );
+        return $keywordObjects;
     }
 
     /**
      * Sends an Keyword Request
      * Get Google Ad Words Data
      *
-     * @param Keywords $keyword
-     * @return void
-     */
-    public function keyword(Keywords $keyword)
-    {
-        $domainrobotPromise = $this->keywordAsync($keyword);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-    }
-
-    /**
-     * Sends an Keyword Request
-     * Get Google Ad Words Data
-     *
-     * @param Keywords $keyword
+     * @param Keywords $keywords
      * @return DomainrobotPromise
      */
-    public function keywordAsync(Keywords $keyword)
+    public function keywordAsync(Keywords $keywords)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/kwe",
             'POST',
-            ["json" => $keyword->toArray()]
+            ["json" => $keywords->toArray()]
         );
     }
 
@@ -177,7 +145,7 @@ class PcDomainsService extends DomainrobotService
      * Get Meta Information like Online Status, Site Title, Site Description 
      *
      * @param string $domain
-     * @return void
+     * @return Meta
      */
     public function meta($domain)
     {
@@ -185,6 +153,8 @@ class PcDomainsService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Meta(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', NULL));
     }
 
     /**
@@ -207,7 +177,7 @@ class PcDomainsService extends DomainrobotService
      *
      * @param string $domain
      * @param string $country
-     * @return void
+     * @return Sistrix
      */
     public function sistrix($domain, $country)
     {
@@ -215,6 +185,8 @@ class PcDomainsService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Sistrix(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', NULL));
     }
 
     /**
@@ -235,8 +207,8 @@ class PcDomainsService extends DomainrobotService
     /**
      * Sends an Majestic Request
      *
-     * @param Domains $domain
-     * @return void
+     * @param Domains $domains
+     * @return Majestic[]
      */
     public function majestic(Domains $domains)
     {
@@ -244,12 +216,21 @@ class PcDomainsService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        $majesticResults = ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data', []);
+
+        $majesticObjects = [];
+        foreach ( $majesticResults as $majesticItem ) {
+            $majesticObjects[] = new Majestic($majesticItem);
+        }
+
+        return $majesticObjects;
     }
 
     /**
      * Sends an Majestic Request
      *
-     * @param Domains $domain
+     * @param Domains $domains
      * @return DomainrobotPromise
      */
     public function majesticAsync(Domains $domains)
@@ -267,7 +248,7 @@ class PcDomainsService extends DomainrobotService
      * Checks if Username is available on different Social Media Platforms
      *
      * @param string $username
-     * @return void
+     * @return SocialMedia
      */
     public function smuCheck($username)
     {
@@ -275,6 +256,8 @@ class PcDomainsService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new SocialMedia(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', NULL));
     }
 
     /**
@@ -294,10 +277,10 @@ class PcDomainsService extends DomainrobotService
 
     /**
      * Sends an Wayback Request
-     * Retrieve Info rom Wayback Snapshot Archive
+     * Retrieve Info from Wayback Snapshot Archive
      *
      * @param string $domain
-     * @return void
+     * @return Wayback
      */
     public function wayback($domain)
     {
@@ -305,11 +288,13 @@ class PcDomainsService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Wayback(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', NULL));
     }
 
     /**
      * Sends an Wayback Request
-     * Retrieve Info rom Wayback Snapshot Archive
+     * Retrieve Info from Wayback Snapshot Archive
      *
      * @param string $domain
      * @return DomainrobotPromise

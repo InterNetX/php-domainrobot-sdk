@@ -1,7 +1,7 @@
 {
   "name": "php-domainrobot-sdk-documentation",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Documentation package for internetx/php-domainrobot-sdk",
   "main": "index.js",
   "authors": {
     "name": "InterNetX GmbH",

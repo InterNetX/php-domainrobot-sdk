@@ -1,7 +1,8 @@
 # Example Implementations
 
-You can find some example implementations in the *example* Folder in the source code.
+You can find example implementations for almost all routes in the *example* Folder in the source code.
 
 [https://github.com/InterNetX/php-domainrobot-sdk/tree/master/example](https://github.com/InterNetX/php-domainrobot-sdk/tree/master/example)
 
-We will add examples for all or at least most tasks in the next versions of this SDK.
+On top of that, you can find a completely working example implementation of the php-domainrobot-sdk with [Laravel](https://laravel.com) here:
+[@InterNetX/php-domainrobot-sdk-laravel](https://github.com/InterNetX/php-domainrobot-sdk-laravel)

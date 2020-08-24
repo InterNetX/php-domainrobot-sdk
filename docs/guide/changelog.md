@@ -1,11 +1,20 @@
 # Changelog
 
+## [0.7.0] - 2020-08-25
+
+* added pc.domains Service from InterNetX GmbH for Domain price checks
+  * for more information visit [pc.domains](https://pc.domains)
+* added more examples and fixed broken examples
+* rebuilt src/Model Structure to allow unlimited depth and stacking of models
+* reworked Model constructors
+* added Models for all pc.domains routes
+
 ## [0.6.0] - 2020-06-23
 
 * added possibility to gain direct access to response and request through callback methods
 * added User info and list tasks
 * added examples for some basic tasks
-    ** more examples (hopefully for all tasks) will be added in future versions
+  * more examples (hopefully for all tasks) will be added in future versions
 * fixed some tasks that did not give correct access to the DomainrobotResult
 * improved documentation and readme
 

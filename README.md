@@ -7,8 +7,9 @@ A php package for easy integration of the **Domainrobot API** powered by [InterN
 1. [Preamble](#preamble)
 2. [Installation](#installation)
 3. [Documentation](#documentation)
-4. [Changelog](#changelog)
-5. [Copyright and license](#copyright-and-license)
+4. [Example Implementation](#example-implementation)
+5. [Changelog](#changelog)
+6. [Copyright and license](#copyright-and-license)
 
 ## Preamble
 
@@ -27,6 +28,11 @@ composer require internetx/php-domainrobot-sdk
 In depth documentation and examples can be found here:
 
 [https://internetx.github.io/php-domainrobot-sdk/](https://internetx.github.io/php-domainrobot-sdk/)
+
+## Example implementation
+
+Find an example implementation of the php-domainrobot-sdk with [Laravel](https://laravel.com) here:
+[@InterNetX/php-domainrobot-sdk-laravel](https://github.com/InterNetX/php-domainrobot-sdk-laravel)
 
 ## Changelog
 

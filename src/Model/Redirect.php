@@ -68,9 +68,9 @@ class Redirect implements ModelInterface, ArrayAccess
         'domain' => 'string',
         'title' => 'string',
         'backups' => 'string[]',
-        'source_idn' => 'string',
-        'target_idn' => 'string',
-        'last_seen' => '\DateTime'
+        'sourceIdn' => 'string',
+        'targetIdn' => 'string',
+        'lastSeen' => '\DateTime'
     ];
 
     /**
@@ -90,9 +90,9 @@ class Redirect implements ModelInterface, ArrayAccess
         'domain' => null,
         'title' => null,
         'backups' => null,
-        'source_idn' => null,
-        'target_idn' => null,
-        'last_seen' => 'date-time'
+        'sourceIdn' => null,
+        'targetIdn' => null,
+        'lastSeen' => 'date-time'
     ];
 
     /**
@@ -133,9 +133,9 @@ class Redirect implements ModelInterface, ArrayAccess
         'domain' => 'domain',
         'title' => 'title',
         'backups' => 'backups',
-        'source_idn' => 'sourceIdn',
-        'target_idn' => 'targetIdn',
-        'last_seen' => 'lastSeen'
+        'sourceIdn' => 'sourceIdn',
+        'targetIdn' => 'targetIdn',
+        'lastSeen' => 'lastSeen'
     ];
 
     /**
@@ -155,9 +155,9 @@ class Redirect implements ModelInterface, ArrayAccess
         'domain' => 'setDomain',
         'title' => 'setTitle',
         'backups' => 'setBackups',
-        'source_idn' => 'setSourceIdn',
-        'target_idn' => 'setTargetIdn',
-        'last_seen' => 'setLastSeen'
+        'sourceIdn' => 'setSourceIdn',
+        'targetIdn' => 'setTargetIdn',
+        'lastSeen' => 'setLastSeen'
     ];
 
     /**
@@ -177,9 +177,9 @@ class Redirect implements ModelInterface, ArrayAccess
         'domain' => 'getDomain',
         'title' => 'getTitle',
         'backups' => 'getBackups',
-        'source_idn' => 'getSourceIdn',
-        'target_idn' => 'getTargetIdn',
-        'last_seen' => 'getLastSeen'
+        'sourceIdn' => 'getSourceIdn',
+        'targetIdn' => 'getTargetIdn',
+        'lastSeen' => 'getLastSeen'
     ];
 
     /**
@@ -253,9 +253,9 @@ class Redirect implements ModelInterface, ArrayAccess
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
         $this->container['backups'] = isset($data['backups']) ? $this->createData($data['backups'], 'backups')  : null;
-        $this->container['source_idn'] = isset($data['source_idn']) ? $this->createData($data['source_idn'], 'source_idn')  : null;
-        $this->container['target_idn'] = isset($data['target_idn']) ? $this->createData($data['target_idn'], 'target_idn')  : null;
-        $this->container['last_seen'] = isset($data['last_seen']) ? $this->createData($data['last_seen'], 'last_seen')  : null;
+        $this->container['sourceIdn'] = isset($data['sourceIdn']) ? $this->createData($data['sourceIdn'], 'sourceIdn')  : null;
+        $this->container['targetIdn'] = isset($data['targetIdn']) ? $this->createData($data['targetIdn'], 'targetIdn')  : null;
+        $this->container['lastSeen'] = isset($data['lastSeen']) ? $this->createData($data['lastSeen'], 'lastSeen')  : null;
     }
 
     /**
@@ -593,73 +593,73 @@ class Redirect implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets source_idn
+     * Gets sourceIdn
      *
      * @return string
      */
     public function getSourceIdn()
     {
-        return $this->container['source_idn'];
+        return $this->container['sourceIdn'];
     }
 
     /**
-     * Sets source_idn
+     * Sets sourceIdn
      *
-     * @param string $source_idn The IDN version of the domain to be redirected. Enter the domain with or without \"www\".
+     * @param string $sourceIdn The IDN version of the domain to be redirected. Enter the domain with or without \"www\".
      *
      * @return $this
      */
-    public function setSourceIdn($source_idn)
+    public function setSourceIdn($sourceIdn)
     {
-        $this->container['source_idn'] = $source_idn;
+        $this->container['sourceIdn'] = $sourceIdn;
 
         return $this;
     }
 
     /**
-     * Gets target_idn
+     * Gets targetIdn
      *
      * @return string
      */
     public function getTargetIdn()
     {
-        return $this->container['target_idn'];
+        return $this->container['targetIdn'];
     }
 
     /**
-     * Sets target_idn
+     * Sets targetIdn
      *
-     * @param string $target_idn The IDN version of the URL of the target domain. Enter the domain without \"http://\"
+     * @param string $targetIdn The IDN version of the URL of the target domain. Enter the domain without \"http://\"
      *
      * @return $this
      */
-    public function setTargetIdn($target_idn)
+    public function setTargetIdn($targetIdn)
     {
-        $this->container['target_idn'] = $target_idn;
+        $this->container['targetIdn'] = $targetIdn;
 
         return $this;
     }
 
     /**
-     * Gets last_seen
+     * Gets lastSeen
      *
      * @return \DateTime
      */
     public function getLastSeen()
     {
-        return $this->container['last_seen'];
+        return $this->container['lastSeen'];
     }
 
     /**
-     * Sets last_seen
+     * Sets lastSeen
      *
-     * @param \DateTime $last_seen The last dns connection.
+     * @param \DateTime $lastSeen The last dns connection.
      *
      * @return $this
      */
-    public function setLastSeen($last_seen)
+    public function setLastSeen($lastSeen)
     {
-        $this->container['last_seen'] = $last_seen;
+        $this->container['lastSeen'] = $lastSeen;
 
         return $this;
     }

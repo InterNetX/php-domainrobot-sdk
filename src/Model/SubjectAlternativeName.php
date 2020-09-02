@@ -58,8 +58,8 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'approver_email' => 'string',
-        'order_id' => 'string'
+        'approverEmail' => 'string',
+        'orderId' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'approver_email' => null,
-        'order_id' => null
+        'approverEmail' => null,
+        'orderId' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'approver_email' => 'approverEmail',
-        'order_id' => 'orderId'
+        'approverEmail' => 'approverEmail',
+        'orderId' => 'orderId'
     ];
 
     /**
@@ -112,8 +112,8 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'approver_email' => 'setApproverEmail',
-        'order_id' => 'setOrderId'
+        'approverEmail' => 'setApproverEmail',
+        'orderId' => 'setOrderId'
     ];
 
     /**
@@ -123,8 +123,8 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'approver_email' => 'getApproverEmail',
-        'order_id' => 'getOrderId'
+        'approverEmail' => 'getApproverEmail',
+        'orderId' => 'getOrderId'
     ];
 
     /**
@@ -188,8 +188,8 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['approver_email'] = isset($data['approver_email']) ? $this->createData($data['approver_email'], 'approver_email')  : null;
-        $this->container['order_id'] = isset($data['order_id']) ? $this->createData($data['order_id'], 'order_id')  : null;
+        $this->container['approverEmail'] = isset($data['approverEmail']) ? $this->createData($data['approverEmail'], 'approverEmail')  : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $this->createData($data['orderId'], 'orderId')  : null;
     }
 
     /**
@@ -281,49 +281,49 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets approver_email
+     * Gets approverEmail
      *
      * @return string
      */
     public function getApproverEmail()
     {
-        return $this->container['approver_email'];
+        return $this->container['approverEmail'];
     }
 
     /**
-     * Sets approver_email
+     * Sets approverEmail
      *
-     * @param string $approver_email The approver email of the san.
+     * @param string $approverEmail The approver email of the san.
      *
      * @return $this
      */
-    public function setApproverEmail($approver_email)
+    public function setApproverEmail($approverEmail)
     {
-        $this->container['approver_email'] = $approver_email;
+        $this->container['approverEmail'] = $approverEmail;
 
         return $this;
     }
 
     /**
-     * Gets order_id
+     * Gets orderId
      *
      * @return string
      */
     public function getOrderId()
     {
-        return $this->container['order_id'];
+        return $this->container['orderId'];
     }
 
     /**
-     * Sets order_id
+     * Sets orderId
      *
-     * @param string $order_id The order id of the san.
+     * @param string $orderId The order id of the san.
      *
      * @return $this
      */
-    public function setOrderId($order_id)
+    public function setOrderId($orderId)
     {
-        $this->container['order_id'] = $order_id;
+        $this->container['orderId'] = $orderId;
 
         return $this;
     }

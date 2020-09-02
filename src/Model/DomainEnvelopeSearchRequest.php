@@ -57,12 +57,12 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'search_token' => 'string',
+        'searchToken' => 'string',
         'currency' => 'string',
         'debug' => 'bool',
-        'check_portfolio' => 'bool',
+        'checkPortfolio' => 'bool',
         'sources' => '\Domainrobot\Model\DomainStudioSources',
-        'client_ip' => 'string'
+        'clientIp' => 'string'
     ];
 
     /**
@@ -71,12 +71,12 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'search_token' => null,
+        'searchToken' => null,
         'currency' => null,
         'debug' => null,
-        'check_portfolio' => null,
+        'checkPortfolio' => null,
         'sources' => null,
-        'client_ip' => null
+        'clientIp' => null
     ];
 
     /**
@@ -106,12 +106,12 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'search_token' => 'searchToken',
+        'searchToken' => 'searchToken',
         'currency' => 'currency',
         'debug' => 'debug',
-        'check_portfolio' => 'checkPortfolio',
+        'checkPortfolio' => 'checkPortfolio',
         'sources' => 'sources',
-        'client_ip' => 'clientIp'
+        'clientIp' => 'clientIp'
     ];
 
     /**
@@ -120,12 +120,12 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'search_token' => 'setSearchToken',
+        'searchToken' => 'setSearchToken',
         'currency' => 'setCurrency',
         'debug' => 'setDebug',
-        'check_portfolio' => 'setCheckPortfolio',
+        'checkPortfolio' => 'setCheckPortfolio',
         'sources' => 'setSources',
-        'client_ip' => 'setClientIp'
+        'clientIp' => 'setClientIp'
     ];
 
     /**
@@ -134,12 +134,12 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'search_token' => 'getSearchToken',
+        'searchToken' => 'getSearchToken',
         'currency' => 'getCurrency',
         'debug' => 'getDebug',
-        'check_portfolio' => 'getCheckPortfolio',
+        'checkPortfolio' => 'getCheckPortfolio',
         'sources' => 'getSources',
-        'client_ip' => 'getClientIp'
+        'clientIp' => 'getClientIp'
     ];
 
     /**
@@ -202,12 +202,12 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['search_token'] = isset($data['search_token']) ? $this->createData($data['search_token'], 'search_token')  : null;
+        $this->container['searchToken'] = isset($data['searchToken']) ? $this->createData($data['searchToken'], 'searchToken')  : null;
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
         $this->container['debug'] = isset($data['debug']) ? $this->createData($data['debug'], 'debug')  : null;
-        $this->container['check_portfolio'] = isset($data['check_portfolio']) ? $this->createData($data['check_portfolio'], 'check_portfolio')  : null;
+        $this->container['checkPortfolio'] = isset($data['checkPortfolio']) ? $this->createData($data['checkPortfolio'], 'checkPortfolio')  : null;
         $this->container['sources'] = isset($data['sources']) ? $this->createData($data['sources'], 'sources')  : null;
-        $this->container['client_ip'] = isset($data['client_ip']) ? $this->createData($data['client_ip'], 'client_ip')  : null;
+        $this->container['clientIp'] = isset($data['clientIp']) ? $this->createData($data['clientIp'], 'clientIp')  : null;
     }
 
     /**
@@ -275,25 +275,25 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets search_token
+     * Gets searchToken
      *
      * @return string
      */
     public function getSearchToken()
     {
-        return $this->container['search_token'];
+        return $this->container['searchToken'];
     }
 
     /**
-     * Sets search_token
+     * Sets searchToken
      *
-     * @param string $search_token Domain search token
+     * @param string $searchToken Domain search token
      *
      * @return $this
      */
-    public function setSearchToken($search_token)
+    public function setSearchToken($searchToken)
     {
-        $this->container['search_token'] = $search_token;
+        $this->container['searchToken'] = $searchToken;
 
         return $this;
     }
@@ -347,25 +347,25 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets check_portfolio
+     * Gets checkPortfolio
      *
      * @return bool
      */
     public function getCheckPortfolio()
     {
-        return $this->container['check_portfolio'];
+        return $this->container['checkPortfolio'];
     }
 
     /**
-     * Sets check_portfolio
+     * Sets checkPortfolio
      *
-     * @param bool $check_portfolio Activates the check for each domain whether the user already owns it.
+     * @param bool $checkPortfolio Activates the check for each domain whether the user already owns it.
      *
      * @return $this
      */
-    public function setCheckPortfolio($check_portfolio)
+    public function setCheckPortfolio($checkPortfolio)
     {
-        $this->container['check_portfolio'] = $check_portfolio;
+        $this->container['checkPortfolio'] = $checkPortfolio;
 
         return $this;
     }
@@ -395,25 +395,25 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets client_ip
+     * Gets clientIp
      *
      * @return string
      */
     public function getClientIp()
     {
-        return $this->container['client_ip'];
+        return $this->container['clientIp'];
     }
 
     /**
-     * Sets client_ip
+     * Sets clientIp
      *
-     * @param string $client_ip The ip of the client
+     * @param string $clientIp The ip of the client
      *
      * @return $this
      */
-    public function setClientIp($client_ip)
+    public function setClientIp($clientIp)
     {
-        $this->container['client_ip'] = $client_ip;
+        $this->container['clientIp'] = $clientIp;
 
         return $this;
     }

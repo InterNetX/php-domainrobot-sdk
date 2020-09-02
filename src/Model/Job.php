@@ -62,10 +62,10 @@ class Job implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'status' => '\Domainrobot\Model\JobStatusConstants',
-        'sub_status' => 'string',
+        'subStatus' => 'string',
         'execution' => '\DateTime',
         'events' => '\Domainrobot\Model\WorkflowEvent[]',
-        'sub_type' => 'string',
+        'subType' => 'string',
         'action' => 'string',
         'id' => 'int'
     ];
@@ -81,10 +81,10 @@ class Job implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'status' => null,
-        'sub_status' => null,
+        'subStatus' => null,
         'execution' => 'date-time',
         'events' => null,
-        'sub_type' => null,
+        'subType' => null,
         'action' => null,
         'id' => 'int64'
     ];
@@ -121,10 +121,10 @@ class Job implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'status' => 'status',
-        'sub_status' => 'subStatus',
+        'subStatus' => 'subStatus',
         'execution' => 'execution',
         'events' => 'events',
-        'sub_type' => 'subType',
+        'subType' => 'subType',
         'action' => 'action',
         'id' => 'id'
     ];
@@ -140,10 +140,10 @@ class Job implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'status' => 'setStatus',
-        'sub_status' => 'setSubStatus',
+        'subStatus' => 'setSubStatus',
         'execution' => 'setExecution',
         'events' => 'setEvents',
-        'sub_type' => 'setSubType',
+        'subType' => 'setSubType',
         'action' => 'setAction',
         'id' => 'setId'
     ];
@@ -159,10 +159,10 @@ class Job implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'status' => 'getStatus',
-        'sub_status' => 'getSubStatus',
+        'subStatus' => 'getSubStatus',
         'execution' => 'getExecution',
         'events' => 'getEvents',
-        'sub_type' => 'getSubType',
+        'subType' => 'getSubType',
         'action' => 'getAction',
         'id' => 'getId'
     ];
@@ -232,10 +232,10 @@ class Job implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['sub_status'] = isset($data['sub_status']) ? $this->createData($data['sub_status'], 'sub_status')  : null;
+        $this->container['subStatus'] = isset($data['subStatus']) ? $this->createData($data['subStatus'], 'subStatus')  : null;
         $this->container['execution'] = isset($data['execution']) ? $this->createData($data['execution'], 'execution')  : null;
         $this->container['events'] = isset($data['events']) ? $this->createData($data['events'], 'events')  : null;
-        $this->container['sub_type'] = isset($data['sub_type']) ? $this->createData($data['sub_type'], 'sub_type')  : null;
+        $this->container['subType'] = isset($data['subType']) ? $this->createData($data['subType'], 'subType')  : null;
         $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
     }
@@ -425,25 +425,25 @@ class Job implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets sub_status
+     * Gets subStatus
      *
      * @return string
      */
     public function getSubStatus()
     {
-        return $this->container['sub_status'];
+        return $this->container['subStatus'];
     }
 
     /**
-     * Sets sub_status
+     * Sets subStatus
      *
-     * @param string $sub_status The substatus of the job.
+     * @param string $subStatus The substatus of the job.
      *
      * @return $this
      */
-    public function setSubStatus($sub_status)
+    public function setSubStatus($subStatus)
     {
-        $this->container['sub_status'] = $sub_status;
+        $this->container['subStatus'] = $subStatus;
 
         return $this;
     }
@@ -497,25 +497,25 @@ class Job implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets sub_type
+     * Gets subType
      *
      * @return string
      */
     public function getSubType()
     {
-        return $this->container['sub_type'];
+        return $this->container['subType'];
     }
 
     /**
-     * Sets sub_type
+     * Sets subType
      *
-     * @param string $sub_type The job subtype.
+     * @param string $subType The job subtype.
      *
      * @return $this
      */
-    public function setSubType($sub_type)
+    public function setSubType($subType)
     {
-        $this->container['sub_type'] = $sub_type;
+        $this->container['subType'] = $subType;
 
         return $this;
     }

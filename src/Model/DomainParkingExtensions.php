@@ -57,14 +57,14 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'parking_category' => 'string',
+        'parkingCategory' => 'string',
         'currency' => 'string',
-        'domain_language' => 'string',
-        'for_sale' => 'bool',
+        'domainLanguage' => 'string',
+        'forSale' => 'bool',
         'keyword' => 'string',
         'price' => 'double',
-        'fixed_price' => 'bool',
-        'min_price' => 'double'
+        'fixedPrice' => 'bool',
+        'minPrice' => 'double'
     ];
 
     /**
@@ -73,14 +73,14 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'parking_category' => null,
+        'parkingCategory' => null,
         'currency' => null,
-        'domain_language' => null,
-        'for_sale' => null,
+        'domainLanguage' => null,
+        'forSale' => null,
         'keyword' => null,
         'price' => 'double',
-        'fixed_price' => null,
-        'min_price' => 'double'
+        'fixedPrice' => null,
+        'minPrice' => 'double'
     ];
 
     /**
@@ -110,14 +110,14 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'parking_category' => 'parkingCategory',
+        'parkingCategory' => 'parkingCategory',
         'currency' => 'currency',
-        'domain_language' => 'domainLanguage',
-        'for_sale' => 'forSale',
+        'domainLanguage' => 'domainLanguage',
+        'forSale' => 'forSale',
         'keyword' => 'keyword',
         'price' => 'price',
-        'fixed_price' => 'fixedPrice',
-        'min_price' => 'minPrice'
+        'fixedPrice' => 'fixedPrice',
+        'minPrice' => 'minPrice'
     ];
 
     /**
@@ -126,14 +126,14 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'parking_category' => 'setParkingCategory',
+        'parkingCategory' => 'setParkingCategory',
         'currency' => 'setCurrency',
-        'domain_language' => 'setDomainLanguage',
-        'for_sale' => 'setForSale',
+        'domainLanguage' => 'setDomainLanguage',
+        'forSale' => 'setForSale',
         'keyword' => 'setKeyword',
         'price' => 'setPrice',
-        'fixed_price' => 'setFixedPrice',
-        'min_price' => 'setMinPrice'
+        'fixedPrice' => 'setFixedPrice',
+        'minPrice' => 'setMinPrice'
     ];
 
     /**
@@ -142,14 +142,14 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'parking_category' => 'getParkingCategory',
+        'parkingCategory' => 'getParkingCategory',
         'currency' => 'getCurrency',
-        'domain_language' => 'getDomainLanguage',
-        'for_sale' => 'getForSale',
+        'domainLanguage' => 'getDomainLanguage',
+        'forSale' => 'getForSale',
         'keyword' => 'getKeyword',
         'price' => 'getPrice',
-        'fixed_price' => 'getFixedPrice',
-        'min_price' => 'getMinPrice'
+        'fixedPrice' => 'getFixedPrice',
+        'minPrice' => 'getMinPrice'
     ];
 
     /**
@@ -212,14 +212,14 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['parking_category'] = isset($data['parking_category']) ? $this->createData($data['parking_category'], 'parking_category')  : null;
+        $this->container['parkingCategory'] = isset($data['parkingCategory']) ? $this->createData($data['parkingCategory'], 'parkingCategory')  : null;
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
-        $this->container['domain_language'] = isset($data['domain_language']) ? $this->createData($data['domain_language'], 'domain_language')  : null;
-        $this->container['for_sale'] = isset($data['for_sale']) ? $this->createData($data['for_sale'], 'for_sale')  : null;
+        $this->container['domainLanguage'] = isset($data['domainLanguage']) ? $this->createData($data['domainLanguage'], 'domainLanguage')  : null;
+        $this->container['forSale'] = isset($data['forSale']) ? $this->createData($data['forSale'], 'forSale')  : null;
         $this->container['keyword'] = isset($data['keyword']) ? $this->createData($data['keyword'], 'keyword')  : null;
         $this->container['price'] = isset($data['price']) ? $this->createData($data['price'], 'price')  : null;
-        $this->container['fixed_price'] = isset($data['fixed_price']) ? $this->createData($data['fixed_price'], 'fixed_price')  : null;
-        $this->container['min_price'] = isset($data['min_price']) ? $this->createData($data['min_price'], 'min_price')  : null;
+        $this->container['fixedPrice'] = isset($data['fixedPrice']) ? $this->createData($data['fixedPrice'], 'fixedPrice')  : null;
+        $this->container['minPrice'] = isset($data['minPrice']) ? $this->createData($data['minPrice'], 'minPrice')  : null;
     }
 
     /**
@@ -287,25 +287,25 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets parking_category
+     * Gets parkingCategory
      *
      * @return string
      */
     public function getParkingCategory()
     {
-        return $this->container['parking_category'];
+        return $this->container['parkingCategory'];
     }
 
     /**
-     * Sets parking_category
+     * Sets parkingCategory
      *
-     * @param string $parking_category parking_category
+     * @param string $parkingCategory parkingCategory
      *
      * @return $this
      */
-    public function setParkingCategory($parking_category)
+    public function setParkingCategory($parkingCategory)
     {
-        $this->container['parking_category'] = $parking_category;
+        $this->container['parkingCategory'] = $parkingCategory;
 
         return $this;
     }
@@ -335,49 +335,49 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets domain_language
+     * Gets domainLanguage
      *
      * @return string
      */
     public function getDomainLanguage()
     {
-        return $this->container['domain_language'];
+        return $this->container['domainLanguage'];
     }
 
     /**
-     * Sets domain_language
+     * Sets domainLanguage
      *
-     * @param string $domain_language The parking
+     * @param string $domainLanguage The parking
      *
      * @return $this
      */
-    public function setDomainLanguage($domain_language)
+    public function setDomainLanguage($domainLanguage)
     {
-        $this->container['domain_language'] = $domain_language;
+        $this->container['domainLanguage'] = $domainLanguage;
 
         return $this;
     }
 
     /**
-     * Gets for_sale
+     * Gets forSale
      *
      * @return bool
      */
     public function getForSale()
     {
-        return $this->container['for_sale'];
+        return $this->container['forSale'];
     }
 
     /**
-     * Sets for_sale
+     * Sets forSale
      *
-     * @param bool $for_sale Should the domain be listed for sale
+     * @param bool $forSale Should the domain be listed for sale
      *
      * @return $this
      */
-    public function setForSale($for_sale)
+    public function setForSale($forSale)
     {
-        $this->container['for_sale'] = $for_sale;
+        $this->container['forSale'] = $forSale;
 
         return $this;
     }
@@ -431,49 +431,49 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets fixed_price
+     * Gets fixedPrice
      *
      * @return bool
      */
     public function getFixedPrice()
     {
-        return $this->container['fixed_price'];
+        return $this->container['fixedPrice'];
     }
 
     /**
-     * Sets fixed_price
+     * Sets fixedPrice
      *
-     * @param bool $fixed_price Is the price fix
+     * @param bool $fixedPrice Is the price fix
      *
      * @return $this
      */
-    public function setFixedPrice($fixed_price)
+    public function setFixedPrice($fixedPrice)
     {
-        $this->container['fixed_price'] = $fixed_price;
+        $this->container['fixedPrice'] = $fixedPrice;
 
         return $this;
     }
 
     /**
-     * Gets min_price
+     * Gets minPrice
      *
      * @return double
      */
     public function getMinPrice()
     {
-        return $this->container['min_price'];
+        return $this->container['minPrice'];
     }
 
     /**
-     * Sets min_price
+     * Sets minPrice
      *
-     * @param double $min_price The minimum of price
+     * @param double $minPrice The minimum of price
      *
      * @return $this
      */
-    public function setMinPrice($min_price)
+    public function setMinPrice($minPrice)
     {
-        $this->container['min_price'] = $min_price;
+        $this->container['minPrice'] = $minPrice;
 
         return $this;
     }

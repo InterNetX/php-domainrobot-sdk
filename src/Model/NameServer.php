@@ -59,7 +59,7 @@ class NameServer implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'ttl' => 'int',
-        'ip_addresses' => 'string[]'
+        'ipAddresses' => 'string[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class NameServer implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'name' => null,
         'ttl' => 'int64',
-        'ip_addresses' => null
+        'ipAddresses' => null
     ];
 
     /**
@@ -102,7 +102,7 @@ class NameServer implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'ttl' => 'ttl',
-        'ip_addresses' => 'ipAddresses'
+        'ipAddresses' => 'ipAddresses'
     ];
 
     /**
@@ -113,7 +113,7 @@ class NameServer implements ModelInterface, ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'ttl' => 'setTtl',
-        'ip_addresses' => 'setIpAddresses'
+        'ipAddresses' => 'setIpAddresses'
     ];
 
     /**
@@ -124,7 +124,7 @@ class NameServer implements ModelInterface, ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'ttl' => 'getTtl',
-        'ip_addresses' => 'getIpAddresses'
+        'ipAddresses' => 'getIpAddresses'
     ];
 
     /**
@@ -189,7 +189,7 @@ class NameServer implements ModelInterface, ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['ttl'] = isset($data['ttl']) ? $this->createData($data['ttl'], 'ttl')  : null;
-        $this->container['ip_addresses'] = isset($data['ip_addresses']) ? $this->createData($data['ip_addresses'], 'ip_addresses')  : null;
+        $this->container['ipAddresses'] = isset($data['ipAddresses']) ? $this->createData($data['ipAddresses'], 'ipAddresses')  : null;
     }
 
     /**
@@ -308,25 +308,25 @@ class NameServer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets ip_addresses
+     * Gets ipAddresses
      *
      * @return string[]
      */
     public function getIpAddresses()
     {
-        return $this->container['ip_addresses'];
+        return $this->container['ipAddresses'];
     }
 
     /**
-     * Sets ip_addresses
+     * Sets ipAddresses
      *
-     * @param string[] $ip_addresses The ip addresses.
+     * @param string[] $ipAddresses The ip addresses.
      *
      * @return $this
      */
-    public function setIpAddresses($ip_addresses)
+    public function setIpAddresses($ipAddresses)
     {
-        $this->container['ip_addresses'] = $ip_addresses;
+        $this->container['ipAddresses'] = $ipAddresses;
 
         return $this;
     }

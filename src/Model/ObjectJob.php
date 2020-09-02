@@ -59,9 +59,9 @@ class ObjectJob implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'job' => '\Domainrobot\Model\Job',
         'object' => '\Domainrobot\Model\ResponseObject',
-        'niccom_logs' => '\Domainrobot\Model\NiccomLog[]',
+        'niccomLogs' => '\Domainrobot\Model\NiccomLog[]',
         'authentication' => '\Domainrobot\Model\CertAuthenticationStatus[]',
-        'dcv_auth' => '\Domainrobot\Model\DomainControllValidationStatus[]'
+        'dcvAuth' => '\Domainrobot\Model\DomainControllValidationStatus[]'
     ];
 
     /**
@@ -72,9 +72,9 @@ class ObjectJob implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'job' => null,
         'object' => null,
-        'niccom_logs' => null,
+        'niccomLogs' => null,
         'authentication' => null,
-        'dcv_auth' => null
+        'dcvAuth' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class ObjectJob implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'job' => 'job',
         'object' => 'object',
-        'niccom_logs' => 'niccomLogs',
+        'niccomLogs' => 'niccomLogs',
         'authentication' => 'authentication',
-        'dcv_auth' => 'dcvAuth'
+        'dcvAuth' => 'dcvAuth'
     ];
 
     /**
@@ -119,9 +119,9 @@ class ObjectJob implements ModelInterface, ArrayAccess
     protected static $setters = [
         'job' => 'setJob',
         'object' => 'setObject',
-        'niccom_logs' => 'setNiccomLogs',
+        'niccomLogs' => 'setNiccomLogs',
         'authentication' => 'setAuthentication',
-        'dcv_auth' => 'setDcvAuth'
+        'dcvAuth' => 'setDcvAuth'
     ];
 
     /**
@@ -132,9 +132,9 @@ class ObjectJob implements ModelInterface, ArrayAccess
     protected static $getters = [
         'job' => 'getJob',
         'object' => 'getObject',
-        'niccom_logs' => 'getNiccomLogs',
+        'niccomLogs' => 'getNiccomLogs',
         'authentication' => 'getAuthentication',
-        'dcv_auth' => 'getDcvAuth'
+        'dcvAuth' => 'getDcvAuth'
     ];
 
     /**
@@ -199,9 +199,9 @@ class ObjectJob implements ModelInterface, ArrayAccess
     {
         $this->container['job'] = isset($data['job']) ? $this->createData($data['job'], 'job')  : null;
         $this->container['object'] = isset($data['object']) ? $this->createData($data['object'], 'object')  : null;
-        $this->container['niccom_logs'] = isset($data['niccom_logs']) ? $this->createData($data['niccom_logs'], 'niccom_logs')  : null;
+        $this->container['niccomLogs'] = isset($data['niccomLogs']) ? $this->createData($data['niccomLogs'], 'niccomLogs')  : null;
         $this->container['authentication'] = isset($data['authentication']) ? $this->createData($data['authentication'], 'authentication')  : null;
-        $this->container['dcv_auth'] = isset($data['dcv_auth']) ? $this->createData($data['dcv_auth'], 'dcv_auth')  : null;
+        $this->container['dcvAuth'] = isset($data['dcvAuth']) ? $this->createData($data['dcvAuth'], 'dcvAuth')  : null;
     }
 
     /**
@@ -317,25 +317,25 @@ class ObjectJob implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets niccom_logs
+     * Gets niccomLogs
      *
      * @return \Domainrobot\Model\NiccomLog[]
      */
     public function getNiccomLogs()
     {
-        return $this->container['niccom_logs'];
+        return $this->container['niccomLogs'];
     }
 
     /**
-     * Sets niccom_logs
+     * Sets niccomLogs
      *
-     * @param \Domainrobot\Model\NiccomLog[] $niccom_logs The niccom logs.
+     * @param \Domainrobot\Model\NiccomLog[] $niccomLogs The niccom logs.
      *
      * @return $this
      */
-    public function setNiccomLogs($niccom_logs)
+    public function setNiccomLogs($niccomLogs)
     {
-        $this->container['niccom_logs'] = $niccom_logs;
+        $this->container['niccomLogs'] = $niccomLogs;
 
         return $this;
     }
@@ -365,25 +365,25 @@ class ObjectJob implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets dcv_auth
+     * Gets dcvAuth
      *
      * @return \Domainrobot\Model\DomainControllValidationStatus[]
      */
     public function getDcvAuth()
     {
-        return $this->container['dcv_auth'];
+        return $this->container['dcvAuth'];
     }
 
     /**
-     * Sets dcv_auth
+     * Sets dcvAuth
      *
-     * @param \Domainrobot\Model\DomainControllValidationStatus[] $dcv_auth The domain controll validation status for each domain.
+     * @param \Domainrobot\Model\DomainControllValidationStatus[] $dcvAuth The domain controll validation status for each domain.
      *
      * @return $this
      */
-    public function setDcvAuth($dcv_auth)
+    public function setDcvAuth($dcvAuth)
     {
-        $this->container['dcv_auth'] = $dcv_auth;
+        $this->container['dcvAuth'] = $dcvAuth;
 
         return $this;
     }

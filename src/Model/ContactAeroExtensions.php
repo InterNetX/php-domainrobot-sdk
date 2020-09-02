@@ -57,8 +57,8 @@ class ContactAeroExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ens_auth_id' => 'string',
-        'ens_key' => 'string'
+        'ensAuthId' => 'string',
+        'ensKey' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ContactAeroExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'ens_auth_id' => null,
-        'ens_key' => null
+        'ensAuthId' => null,
+        'ensKey' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class ContactAeroExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'ens_auth_id' => 'ensAuthId',
-        'ens_key' => 'ensKey'
+        'ensAuthId' => 'ensAuthId',
+        'ensKey' => 'ensKey'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ContactAeroExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'ens_auth_id' => 'setEnsAuthId',
-        'ens_key' => 'setEnsKey'
+        'ensAuthId' => 'setEnsAuthId',
+        'ensKey' => 'setEnsKey'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ContactAeroExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'ens_auth_id' => 'getEnsAuthId',
-        'ens_key' => 'getEnsKey'
+        'ensAuthId' => 'getEnsAuthId',
+        'ensKey' => 'getEnsKey'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ContactAeroExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['ens_auth_id'] = isset($data['ens_auth_id']) ? $this->createData($data['ens_auth_id'], 'ens_auth_id')  : null;
-        $this->container['ens_key'] = isset($data['ens_key']) ? $this->createData($data['ens_key'], 'ens_key')  : null;
+        $this->container['ensAuthId'] = isset($data['ensAuthId']) ? $this->createData($data['ensAuthId'], 'ensAuthId')  : null;
+        $this->container['ensKey'] = isset($data['ensKey']) ? $this->createData($data['ensKey'], 'ensKey')  : null;
     }
 
     /**
@@ -251,49 +251,49 @@ class ContactAeroExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets ens_auth_id
+     * Gets ensAuthId
      *
      * @return string
      */
     public function getEnsAuthId()
     {
-        return $this->container['ens_auth_id'];
+        return $this->container['ensAuthId'];
     }
 
     /**
-     * Sets ens_auth_id
+     * Sets ensAuthId
      *
-     * @param string $ens_auth_id Aero Authentication ID.
+     * @param string $ensAuthId Aero Authentication ID.
      *
      * @return $this
      */
-    public function setEnsAuthId($ens_auth_id)
+    public function setEnsAuthId($ensAuthId)
     {
-        $this->container['ens_auth_id'] = $ens_auth_id;
+        $this->container['ensAuthId'] = $ensAuthId;
 
         return $this;
     }
 
     /**
-     * Gets ens_key
+     * Gets ensKey
      *
      * @return string
      */
     public function getEnsKey()
     {
-        return $this->container['ens_key'];
+        return $this->container['ensKey'];
     }
 
     /**
-     * Sets ens_key
+     * Sets ensKey
      *
-     * @param string $ens_key Aero ENS key.
+     * @param string $ensKey Aero ENS key.
      *
      * @return $this
      */
-    public function setEnsKey($ens_key)
+    public function setEnsKey($ensKey)
     {
-        $this->container['ens_key'] = $ens_key;
+        $this->container['ensKey'] = $ensKey;
 
         return $this;
     }

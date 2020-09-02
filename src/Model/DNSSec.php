@@ -60,7 +60,7 @@ class DNSSec implements ModelInterface, ArrayAccess
         'algorithm' => 'int',
         'flags' => 'int',
         'protocol' => 'int',
-        'public_key' => 'string'
+        'publicKey' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class DNSSec implements ModelInterface, ArrayAccess
         'algorithm' => 'int32',
         'flags' => 'int32',
         'protocol' => 'int32',
-        'public_key' => null
+        'publicKey' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class DNSSec implements ModelInterface, ArrayAccess
         'algorithm' => 'algorithm',
         'flags' => 'flags',
         'protocol' => 'protocol',
-        'public_key' => 'publicKey'
+        'publicKey' => 'publicKey'
     ];
 
     /**
@@ -117,7 +117,7 @@ class DNSSec implements ModelInterface, ArrayAccess
         'algorithm' => 'setAlgorithm',
         'flags' => 'setFlags',
         'protocol' => 'setProtocol',
-        'public_key' => 'setPublicKey'
+        'publicKey' => 'setPublicKey'
     ];
 
     /**
@@ -129,7 +129,7 @@ class DNSSec implements ModelInterface, ArrayAccess
         'algorithm' => 'getAlgorithm',
         'flags' => 'getFlags',
         'protocol' => 'getProtocol',
-        'public_key' => 'getPublicKey'
+        'publicKey' => 'getPublicKey'
     ];
 
     /**
@@ -195,7 +195,7 @@ class DNSSec implements ModelInterface, ArrayAccess
         $this->container['algorithm'] = isset($data['algorithm']) ? $this->createData($data['algorithm'], 'algorithm')  : null;
         $this->container['flags'] = isset($data['flags']) ? $this->createData($data['flags'], 'flags')  : null;
         $this->container['protocol'] = isset($data['protocol']) ? $this->createData($data['protocol'], 'protocol')  : null;
-        $this->container['public_key'] = isset($data['public_key']) ? $this->createData($data['public_key'], 'public_key')  : null;
+        $this->container['publicKey'] = isset($data['publicKey']) ? $this->createData($data['publicKey'], 'publicKey')  : null;
     }
 
     /**
@@ -264,11 +264,11 @@ class DNSSec implements ModelInterface, ArrayAccess
         if ($this->container['protocol'] === null) {
             $invalidProperties[] = "'protocol' can't be null";
         }
-        if ($this->container['public_key'] === null) {
-            $invalidProperties[] = "'public_key' can't be null";
+        if ($this->container['publicKey'] === null) {
+            $invalidProperties[] = "'publicKey' can't be null";
         }
-        if (!preg_match("/^[\\sA-Za-z0-9+\/]+[=]*$/", $this->container['public_key'])) {
-            $invalidProperties[] = "invalid value for 'public_key', must be conform to the pattern /^[\\sA-Za-z0-9+\/]+[=]*$/.";
+        if (!preg_match("/^[\\sA-Za-z0-9+\/]+[=]*$/", $this->container['publicKey'])) {
+            $invalidProperties[] = "invalid value for 'publicKey', must be conform to the pattern /^[\\sA-Za-z0-9+\/]+[=]*$/.";
         }
 
         return $invalidProperties;
@@ -367,30 +367,30 @@ class DNSSec implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets public_key
+     * Gets publicKey
      *
      * @return string
      */
     public function getPublicKey()
     {
-        return $this->container['public_key'];
+        return $this->container['publicKey'];
     }
 
     /**
-     * Sets public_key
+     * Sets publicKey
      *
-     * @param string $public_key The public key.
+     * @param string $publicKey The public key.
      *
      * @return $this
      */
-    public function setPublicKey($public_key)
+    public function setPublicKey($publicKey)
     {
 
-        if ((!preg_match("/^[\\sA-Za-z0-9+\/]+[=]*$/", $public_key))) {
-            throw new \InvalidArgumentException("invalid value for $public_key when calling DNSSec., must conform to the pattern /^[\\sA-Za-z0-9+\/]+[=]*$/.");
+        if ((!preg_match("/^[\\sA-Za-z0-9+\/]+[=]*$/", $publicKey))) {
+            throw new \InvalidArgumentException("invalid value for $publicKey when calling DNSSec., must conform to the pattern /^[\\sA-Za-z0-9+\/]+[=]*$/.");
         }
 
-        $this->container['public_key'] = $public_key;
+        $this->container['publicKey'] = $publicKey;
 
         return $this;
     }

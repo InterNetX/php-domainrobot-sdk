@@ -58,11 +58,11 @@ class SimplePrice implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'amount' => 'double',
-        'net_amount' => 'double',
-        'vat_amount' => 'double',
+        'netAmount' => 'double',
+        'vatAmount' => 'double',
         'currency' => 'string',
         'price' => '\Domainrobot\Model\ExchangedPrice',
-        'business_case' => 'string',
+        'businessCase' => 'string',
         'period' => '\Domainrobot\Model\TimePeriod',
         'customs' => '\Domainrobot\Model\Custom[]',
         'view' => '\Domainrobot\Model\CurrencyRate'
@@ -75,11 +75,11 @@ class SimplePrice implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'amount' => 'double',
-        'net_amount' => 'double',
-        'vat_amount' => 'double',
+        'netAmount' => 'double',
+        'vatAmount' => 'double',
         'currency' => null,
         'price' => null,
-        'business_case' => null,
+        'businessCase' => null,
         'period' => null,
         'customs' => null,
         'view' => null
@@ -113,11 +113,11 @@ class SimplePrice implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'net_amount' => 'netAmount',
-        'vat_amount' => 'vatAmount',
+        'netAmount' => 'netAmount',
+        'vatAmount' => 'vatAmount',
         'currency' => 'currency',
         'price' => 'price',
-        'business_case' => 'businessCase',
+        'businessCase' => 'businessCase',
         'period' => 'period',
         'customs' => 'customs',
         'view' => 'view'
@@ -130,11 +130,11 @@ class SimplePrice implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'net_amount' => 'setNetAmount',
-        'vat_amount' => 'setVatAmount',
+        'netAmount' => 'setNetAmount',
+        'vatAmount' => 'setVatAmount',
         'currency' => 'setCurrency',
         'price' => 'setPrice',
-        'business_case' => 'setBusinessCase',
+        'businessCase' => 'setBusinessCase',
         'period' => 'setPeriod',
         'customs' => 'setCustoms',
         'view' => 'setView'
@@ -147,11 +147,11 @@ class SimplePrice implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'net_amount' => 'getNetAmount',
-        'vat_amount' => 'getVatAmount',
+        'netAmount' => 'getNetAmount',
+        'vatAmount' => 'getVatAmount',
         'currency' => 'getCurrency',
         'price' => 'getPrice',
-        'business_case' => 'getBusinessCase',
+        'businessCase' => 'getBusinessCase',
         'period' => 'getPeriod',
         'customs' => 'getCustoms',
         'view' => 'getView'
@@ -218,11 +218,11 @@ class SimplePrice implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $this->createData($data['amount'], 'amount')  : null;
-        $this->container['net_amount'] = isset($data['net_amount']) ? $this->createData($data['net_amount'], 'net_amount')  : null;
-        $this->container['vat_amount'] = isset($data['vat_amount']) ? $this->createData($data['vat_amount'], 'vat_amount')  : null;
+        $this->container['netAmount'] = isset($data['netAmount']) ? $this->createData($data['netAmount'], 'netAmount')  : null;
+        $this->container['vatAmount'] = isset($data['vatAmount']) ? $this->createData($data['vatAmount'], 'vatAmount')  : null;
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
         $this->container['price'] = isset($data['price']) ? $this->createData($data['price'], 'price')  : null;
-        $this->container['business_case'] = isset($data['business_case']) ? $this->createData($data['business_case'], 'business_case')  : null;
+        $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
         $this->container['period'] = isset($data['period']) ? $this->createData($data['period'], 'period')  : null;
         $this->container['customs'] = isset($data['customs']) ? $this->createData($data['customs'], 'customs')  : null;
         $this->container['view'] = isset($data['view']) ? $this->createData($data['view'], 'view')  : null;
@@ -317,49 +317,49 @@ class SimplePrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets net_amount
+     * Gets netAmount
      *
      * @return double
      */
     public function getNetAmount()
     {
-        return $this->container['net_amount'];
+        return $this->container['netAmount'];
     }
 
     /**
-     * Sets net_amount
+     * Sets netAmount
      *
-     * @param double $net_amount The net amount of the calculation
+     * @param double $netAmount The net amount of the calculation
      *
      * @return $this
      */
-    public function setNetAmount($net_amount)
+    public function setNetAmount($netAmount)
     {
-        $this->container['net_amount'] = $net_amount;
+        $this->container['netAmount'] = $netAmount;
 
         return $this;
     }
 
     /**
-     * Gets vat_amount
+     * Gets vatAmount
      *
      * @return double
      */
     public function getVatAmount()
     {
-        return $this->container['vat_amount'];
+        return $this->container['vatAmount'];
     }
 
     /**
-     * Sets vat_amount
+     * Sets vatAmount
      *
-     * @param double $vat_amount The calculated vat amount
+     * @param double $vatAmount The calculated vat amount
      *
      * @return $this
      */
-    public function setVatAmount($vat_amount)
+    public function setVatAmount($vatAmount)
     {
-        $this->container['vat_amount'] = $vat_amount;
+        $this->container['vatAmount'] = $vatAmount;
 
         return $this;
     }
@@ -413,25 +413,25 @@ class SimplePrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets business_case
+     * Gets businessCase
      *
      * @return string
      */
     public function getBusinessCase()
     {
-        return $this->container['business_case'];
+        return $this->container['businessCase'];
     }
 
     /**
-     * Sets business_case
+     * Sets businessCase
      *
-     * @param string $business_case The business case
+     * @param string $businessCase The business case
      *
      * @return $this
      */
-    public function setBusinessCase($business_case)
+    public function setBusinessCase($businessCase)
     {
-        $this->container['business_case'] = $business_case;
+        $this->container['businessCase'] = $businessCase;
 
         return $this;
     }

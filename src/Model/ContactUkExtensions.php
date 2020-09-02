@@ -57,7 +57,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entity_type' => '\Domainrobot\Model\UkTypeConstants'
+        'entityType' => '\Domainrobot\Model\UkTypeConstants'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'entity_type' => null
+        'entityType' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity_type' => 'entityType'
+        'entityType' => 'entityType'
     ];
 
     /**
@@ -105,7 +105,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'entity_type' => 'setEntityType'
+        'entityType' => 'setEntityType'
     ];
 
     /**
@@ -114,7 +114,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'entity_type' => 'getEntityType'
+        'entityType' => 'getEntityType'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity_type'] = isset($data['entity_type']) ? $this->createData($data['entity_type'], 'entity_type')  : null;
+        $this->container['entityType'] = isset($data['entityType']) ? $this->createData($data['entityType'], 'entityType')  : null;
     }
 
     /**
@@ -245,25 +245,25 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets entity_type
+     * Gets entityType
      *
      * @return \Domainrobot\Model\UkTypeConstants
      */
     public function getEntityType()
     {
-        return $this->container['entity_type'];
+        return $this->container['entityType'];
     }
 
     /**
-     * Sets entity_type
+     * Sets entityType
      *
-     * @param \Domainrobot\Model\UkTypeConstants $entity_type The entity type.
+     * @param \Domainrobot\Model\UkTypeConstants $entityType The entity type.
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setEntityType($entityType)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['entityType'] = $entityType;
 
         return $this;
     }

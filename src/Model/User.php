@@ -61,25 +61,25 @@ class User implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'context' => 'int',
         'password' => 'string',
-        'default_email' => 'string',
+        'defaultEmail' => 'string',
         'status' => 'int',
         'substatus' => 'int',
-        'auth_type' => '\Domainrobot\Model\AuthType',
+        'authType' => '\Domainrobot\Model\AuthType',
         'details' => '\Domainrobot\Model\UserDetails',
         'lock' => '\Domainrobot\Model\UserLock',
         'acls' => '\Domainrobot\Model\UserAcls',
         'profiles' => '\Domainrobot\Model\UserProfileViews',
-        'service_profiles' => '\Domainrobot\Model\ServiceProfiles',
+        'serviceProfiles' => '\Domainrobot\Model\ServiceProfiles',
         'ancestors' => '\Domainrobot\Model\BasicUser[]',
         'customer' => '\Domainrobot\Model\BasicCustomer',
-        'name_server_groups' => '\Domainrobot\Model\VirtualNameServerGroup[]',
+        'nameServerGroups' => '\Domainrobot\Model\VirtualNameServerGroup[]',
         'subscriptions' => '\Domainrobot\Model\Subscription[]',
         'applications' => '\Domainrobot\Model\TrustedApplication[]',
         'restrictions' => '\Domainrobot\Model\IpRestrictions',
         'user' => 'string',
         'language' => 'string',
         'parent' => '\Domainrobot\Model\User',
-        'direct_customer' => 'bool'
+        'directCustomer' => 'bool'
     ];
 
     /**
@@ -92,25 +92,25 @@ class User implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'context' => 'int32',
         'password' => null,
-        'default_email' => null,
+        'defaultEmail' => null,
         'status' => 'int32',
         'substatus' => 'int32',
-        'auth_type' => null,
+        'authType' => null,
         'details' => null,
         'lock' => null,
         'acls' => null,
         'profiles' => null,
-        'service_profiles' => null,
+        'serviceProfiles' => null,
         'ancestors' => null,
         'customer' => null,
-        'name_server_groups' => null,
+        'nameServerGroups' => null,
         'subscriptions' => null,
         'applications' => null,
         'restrictions' => null,
         'user' => null,
         'language' => null,
         'parent' => null,
-        'direct_customer' => null
+        'directCustomer' => null
     ];
 
     /**
@@ -144,25 +144,25 @@ class User implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'context' => 'context',
         'password' => 'password',
-        'default_email' => 'defaultEmail',
+        'defaultEmail' => 'defaultEmail',
         'status' => 'status',
         'substatus' => 'substatus',
-        'auth_type' => 'authType',
+        'authType' => 'authType',
         'details' => 'details',
         'lock' => 'lock',
         'acls' => 'acls',
         'profiles' => 'profiles',
-        'service_profiles' => 'serviceProfiles',
+        'serviceProfiles' => 'serviceProfiles',
         'ancestors' => 'ancestors',
         'customer' => 'customer',
-        'name_server_groups' => 'nameServerGroups',
+        'nameServerGroups' => 'nameServerGroups',
         'subscriptions' => 'subscriptions',
         'applications' => 'applications',
         'restrictions' => 'restrictions',
         'user' => 'user',
         'language' => 'language',
         'parent' => 'parent',
-        'direct_customer' => 'directCustomer'
+        'directCustomer' => 'directCustomer'
     ];
 
     /**
@@ -175,25 +175,25 @@ class User implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'context' => 'setContext',
         'password' => 'setPassword',
-        'default_email' => 'setDefaultEmail',
+        'defaultEmail' => 'setDefaultEmail',
         'status' => 'setStatus',
         'substatus' => 'setSubstatus',
-        'auth_type' => 'setAuthType',
+        'authType' => 'setAuthType',
         'details' => 'setDetails',
         'lock' => 'setLock',
         'acls' => 'setAcls',
         'profiles' => 'setProfiles',
-        'service_profiles' => 'setServiceProfiles',
+        'serviceProfiles' => 'setServiceProfiles',
         'ancestors' => 'setAncestors',
         'customer' => 'setCustomer',
-        'name_server_groups' => 'setNameServerGroups',
+        'nameServerGroups' => 'setNameServerGroups',
         'subscriptions' => 'setSubscriptions',
         'applications' => 'setApplications',
         'restrictions' => 'setRestrictions',
         'user' => 'setUser',
         'language' => 'setLanguage',
         'parent' => 'setParent',
-        'direct_customer' => 'setDirectCustomer'
+        'directCustomer' => 'setDirectCustomer'
     ];
 
     /**
@@ -206,25 +206,25 @@ class User implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'context' => 'getContext',
         'password' => 'getPassword',
-        'default_email' => 'getDefaultEmail',
+        'defaultEmail' => 'getDefaultEmail',
         'status' => 'getStatus',
         'substatus' => 'getSubstatus',
-        'auth_type' => 'getAuthType',
+        'authType' => 'getAuthType',
         'details' => 'getDetails',
         'lock' => 'getLock',
         'acls' => 'getAcls',
         'profiles' => 'getProfiles',
-        'service_profiles' => 'getServiceProfiles',
+        'serviceProfiles' => 'getServiceProfiles',
         'ancestors' => 'getAncestors',
         'customer' => 'getCustomer',
-        'name_server_groups' => 'getNameServerGroups',
+        'nameServerGroups' => 'getNameServerGroups',
         'subscriptions' => 'getSubscriptions',
         'applications' => 'getApplications',
         'restrictions' => 'getRestrictions',
         'user' => 'getUser',
         'language' => 'getLanguage',
         'parent' => 'getParent',
-        'direct_customer' => 'getDirectCustomer'
+        'directCustomer' => 'getDirectCustomer'
     ];
 
     /**
@@ -291,25 +291,25 @@ class User implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['context'] = isset($data['context']) ? $this->createData($data['context'], 'context')  : null;
         $this->container['password'] = isset($data['password']) ? $this->createData($data['password'], 'password')  : null;
-        $this->container['default_email'] = isset($data['default_email']) ? $this->createData($data['default_email'], 'default_email')  : null;
+        $this->container['defaultEmail'] = isset($data['defaultEmail']) ? $this->createData($data['defaultEmail'], 'defaultEmail')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['substatus'] = isset($data['substatus']) ? $this->createData($data['substatus'], 'substatus')  : null;
-        $this->container['auth_type'] = isset($data['auth_type']) ? $this->createData($data['auth_type'], 'auth_type')  : null;
+        $this->container['authType'] = isset($data['authType']) ? $this->createData($data['authType'], 'authType')  : null;
         $this->container['details'] = isset($data['details']) ? $this->createData($data['details'], 'details')  : null;
         $this->container['lock'] = isset($data['lock']) ? $this->createData($data['lock'], 'lock')  : null;
         $this->container['acls'] = isset($data['acls']) ? $this->createData($data['acls'], 'acls')  : null;
         $this->container['profiles'] = isset($data['profiles']) ? $this->createData($data['profiles'], 'profiles')  : null;
-        $this->container['service_profiles'] = isset($data['service_profiles']) ? $this->createData($data['service_profiles'], 'service_profiles')  : null;
+        $this->container['serviceProfiles'] = isset($data['serviceProfiles']) ? $this->createData($data['serviceProfiles'], 'serviceProfiles')  : null;
         $this->container['ancestors'] = isset($data['ancestors']) ? $this->createData($data['ancestors'], 'ancestors')  : null;
         $this->container['customer'] = isset($data['customer']) ? $this->createData($data['customer'], 'customer')  : null;
-        $this->container['name_server_groups'] = isset($data['name_server_groups']) ? $this->createData($data['name_server_groups'], 'name_server_groups')  : null;
+        $this->container['nameServerGroups'] = isset($data['nameServerGroups']) ? $this->createData($data['nameServerGroups'], 'nameServerGroups')  : null;
         $this->container['subscriptions'] = isset($data['subscriptions']) ? $this->createData($data['subscriptions'], 'subscriptions')  : null;
         $this->container['applications'] = isset($data['applications']) ? $this->createData($data['applications'], 'applications')  : null;
         $this->container['restrictions'] = isset($data['restrictions']) ? $this->createData($data['restrictions'], 'restrictions')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['parent'] = isset($data['parent']) ? $this->createData($data['parent'], 'parent')  : null;
-        $this->container['direct_customer'] = isset($data['direct_customer']) ? $this->createData($data['direct_customer'], 'direct_customer')  : null;
+        $this->container['directCustomer'] = isset($data['directCustomer']) ? $this->createData($data['directCustomer'], 'directCustomer')  : null;
     }
 
     /**
@@ -483,25 +483,25 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets default_email
+     * Gets defaultEmail
      *
      * @return string
      */
     public function getDefaultEmail()
     {
-        return $this->container['default_email'];
+        return $this->container['defaultEmail'];
     }
 
     /**
-     * Sets default_email
+     * Sets defaultEmail
      *
-     * @param string $default_email The default email.
+     * @param string $defaultEmail The default email.
      *
      * @return $this
      */
-    public function setDefaultEmail($default_email)
+    public function setDefaultEmail($defaultEmail)
     {
-        $this->container['default_email'] = $default_email;
+        $this->container['defaultEmail'] = $defaultEmail;
 
         return $this;
     }
@@ -555,25 +555,25 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets auth_type
+     * Gets authType
      *
      * @return \Domainrobot\Model\AuthType
      */
     public function getAuthType()
     {
-        return $this->container['auth_type'];
+        return $this->container['authType'];
     }
 
     /**
-     * Sets auth_type
+     * Sets authType
      *
-     * @param \Domainrobot\Model\AuthType $auth_type The users authorization method.
+     * @param \Domainrobot\Model\AuthType $authType The users authorization method.
      *
      * @return $this
      */
-    public function setAuthType($auth_type)
+    public function setAuthType($authType)
     {
-        $this->container['auth_type'] = $auth_type;
+        $this->container['authType'] = $authType;
 
         return $this;
     }
@@ -675,25 +675,25 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets service_profiles
+     * Gets serviceProfiles
      *
      * @return \Domainrobot\Model\ServiceProfiles
      */
     public function getServiceProfiles()
     {
-        return $this->container['service_profiles'];
+        return $this->container['serviceProfiles'];
     }
 
     /**
-     * Sets service_profiles
+     * Sets serviceProfiles
      *
-     * @param \Domainrobot\Model\ServiceProfiles $service_profiles Wrapper for the service user profiles.
+     * @param \Domainrobot\Model\ServiceProfiles $serviceProfiles Wrapper for the service user profiles.
      *
      * @return $this
      */
-    public function setServiceProfiles($service_profiles)
+    public function setServiceProfiles($serviceProfiles)
     {
-        $this->container['service_profiles'] = $service_profiles;
+        $this->container['serviceProfiles'] = $serviceProfiles;
 
         return $this;
     }
@@ -747,25 +747,25 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name_server_groups
+     * Gets nameServerGroups
      *
      * @return \Domainrobot\Model\VirtualNameServerGroup[]
      */
     public function getNameServerGroups()
     {
-        return $this->container['name_server_groups'];
+        return $this->container['nameServerGroups'];
     }
 
     /**
-     * Sets name_server_groups
+     * Sets nameServerGroups
      *
-     * @param \Domainrobot\Model\VirtualNameServerGroup[] $name_server_groups The available name server groups
+     * @param \Domainrobot\Model\VirtualNameServerGroup[] $nameServerGroups The available name server groups
      *
      * @return $this
      */
-    public function setNameServerGroups($name_server_groups)
+    public function setNameServerGroups($nameServerGroups)
     {
-        $this->container['name_server_groups'] = $name_server_groups;
+        $this->container['nameServerGroups'] = $nameServerGroups;
 
         return $this;
     }
@@ -920,25 +920,25 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets direct_customer
+     * Gets directCustomer
      *
      * @return bool
      */
     public function getDirectCustomer()
     {
-        return $this->container['direct_customer'];
+        return $this->container['directCustomer'];
     }
 
     /**
-     * Sets direct_customer
+     * Sets directCustomer
      *
-     * @param bool $direct_customer direct_customer
+     * @param bool $directCustomer directCustomer
      *
      * @return $this
      */
-    public function setDirectCustomer($direct_customer)
+    public function setDirectCustomer($directCustomer)
     {
-        $this->container['direct_customer'] = $direct_customer;
+        $this->container['directCustomer'] = $directCustomer;
 
         return $this;
     }

@@ -57,12 +57,12 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name_based' => '\Domainrobot\Model\EstimationParametersV1NameBased',
-        'keyword_based' => '\Domainrobot\Model\EstimationParametersV1KeywordBased',
-        'tld_based' => '\Domainrobot\Model\EstimationParametersV1TldBased',
+        'nameBased' => '\Domainrobot\Model\EstimationParametersV1NameBased',
+        'keywordBased' => '\Domainrobot\Model\EstimationParametersV1KeywordBased',
+        'tldBased' => '\Domainrobot\Model\EstimationParametersV1TldBased',
         'pagerank' => '\Domainrobot\Model\EstimationParametersV1Pagerank',
         'language' => '\Domainrobot\Model\EstimationParametersV1Language',
-        'wikipedia_pageview' => '\Domainrobot\Model\EstimationParametersV1WikipediaPageview'
+        'wikipediaPageview' => '\Domainrobot\Model\EstimationParametersV1WikipediaPageview'
     ];
 
     /**
@@ -71,12 +71,12 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name_based' => null,
-        'keyword_based' => null,
-        'tld_based' => null,
+        'nameBased' => null,
+        'keywordBased' => null,
+        'tldBased' => null,
         'pagerank' => null,
         'language' => null,
-        'wikipedia_pageview' => null
+        'wikipediaPageview' => null
     ];
 
     /**
@@ -106,12 +106,12 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name_based' => 'nameBased',
-        'keyword_based' => 'keywordBased',
-        'tld_based' => 'tldBased',
+        'nameBased' => 'nameBased',
+        'keywordBased' => 'keywordBased',
+        'tldBased' => 'tldBased',
         'pagerank' => 'pagerank',
         'language' => 'language',
-        'wikipedia_pageview' => 'wikipediaPageview'
+        'wikipediaPageview' => 'wikipediaPageview'
     ];
 
     /**
@@ -120,12 +120,12 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name_based' => 'setNameBased',
-        'keyword_based' => 'setKeywordBased',
-        'tld_based' => 'setTldBased',
+        'nameBased' => 'setNameBased',
+        'keywordBased' => 'setKeywordBased',
+        'tldBased' => 'setTldBased',
         'pagerank' => 'setPagerank',
         'language' => 'setLanguage',
-        'wikipedia_pageview' => 'setWikipediaPageview'
+        'wikipediaPageview' => 'setWikipediaPageview'
     ];
 
     /**
@@ -134,12 +134,12 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name_based' => 'getNameBased',
-        'keyword_based' => 'getKeywordBased',
-        'tld_based' => 'getTldBased',
+        'nameBased' => 'getNameBased',
+        'keywordBased' => 'getKeywordBased',
+        'tldBased' => 'getTldBased',
         'pagerank' => 'getPagerank',
         'language' => 'getLanguage',
-        'wikipedia_pageview' => 'getWikipediaPageview'
+        'wikipediaPageview' => 'getWikipediaPageview'
     ];
 
     /**
@@ -202,12 +202,12 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name_based'] = isset($data['name_based']) ? $this->createData($data['name_based'], 'name_based')  : null;
-        $this->container['keyword_based'] = isset($data['keyword_based']) ? $this->createData($data['keyword_based'], 'keyword_based')  : null;
-        $this->container['tld_based'] = isset($data['tld_based']) ? $this->createData($data['tld_based'], 'tld_based')  : null;
+        $this->container['nameBased'] = isset($data['nameBased']) ? $this->createData($data['nameBased'], 'nameBased')  : null;
+        $this->container['keywordBased'] = isset($data['keywordBased']) ? $this->createData($data['keywordBased'], 'keywordBased')  : null;
+        $this->container['tldBased'] = isset($data['tldBased']) ? $this->createData($data['tldBased'], 'tldBased')  : null;
         $this->container['pagerank'] = isset($data['pagerank']) ? $this->createData($data['pagerank'], 'pagerank')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
-        $this->container['wikipedia_pageview'] = isset($data['wikipedia_pageview']) ? $this->createData($data['wikipedia_pageview'], 'wikipedia_pageview')  : null;
+        $this->container['wikipediaPageview'] = isset($data['wikipediaPageview']) ? $this->createData($data['wikipediaPageview'], 'wikipediaPageview')  : null;
     }
 
     /**
@@ -275,73 +275,73 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name_based
+     * Gets nameBased
      *
      * @return \Domainrobot\Model\EstimationParametersV1NameBased
      */
     public function getNameBased()
     {
-        return $this->container['name_based'];
+        return $this->container['nameBased'];
     }
 
     /**
-     * Sets name_based
+     * Sets nameBased
      *
-     * @param \Domainrobot\Model\EstimationParametersV1NameBased $name_based name_based
+     * @param \Domainrobot\Model\EstimationParametersV1NameBased $nameBased nameBased
      *
      * @return $this
      */
-    public function setNameBased($name_based)
+    public function setNameBased($nameBased)
     {
-        $this->container['name_based'] = $name_based;
+        $this->container['nameBased'] = $nameBased;
 
         return $this;
     }
 
     /**
-     * Gets keyword_based
+     * Gets keywordBased
      *
      * @return \Domainrobot\Model\EstimationParametersV1KeywordBased
      */
     public function getKeywordBased()
     {
-        return $this->container['keyword_based'];
+        return $this->container['keywordBased'];
     }
 
     /**
-     * Sets keyword_based
+     * Sets keywordBased
      *
-     * @param \Domainrobot\Model\EstimationParametersV1KeywordBased $keyword_based keyword_based
+     * @param \Domainrobot\Model\EstimationParametersV1KeywordBased $keywordBased keywordBased
      *
      * @return $this
      */
-    public function setKeywordBased($keyword_based)
+    public function setKeywordBased($keywordBased)
     {
-        $this->container['keyword_based'] = $keyword_based;
+        $this->container['keywordBased'] = $keywordBased;
 
         return $this;
     }
 
     /**
-     * Gets tld_based
+     * Gets tldBased
      *
      * @return \Domainrobot\Model\EstimationParametersV1TldBased
      */
     public function getTldBased()
     {
-        return $this->container['tld_based'];
+        return $this->container['tldBased'];
     }
 
     /**
-     * Sets tld_based
+     * Sets tldBased
      *
-     * @param \Domainrobot\Model\EstimationParametersV1TldBased $tld_based tld_based
+     * @param \Domainrobot\Model\EstimationParametersV1TldBased $tldBased tldBased
      *
      * @return $this
      */
-    public function setTldBased($tld_based)
+    public function setTldBased($tldBased)
     {
-        $this->container['tld_based'] = $tld_based;
+        $this->container['tldBased'] = $tldBased;
 
         return $this;
     }
@@ -395,25 +395,25 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets wikipedia_pageview
+     * Gets wikipediaPageview
      *
      * @return \Domainrobot\Model\EstimationParametersV1WikipediaPageview
      */
     public function getWikipediaPageview()
     {
-        return $this->container['wikipedia_pageview'];
+        return $this->container['wikipediaPageview'];
     }
 
     /**
-     * Sets wikipedia_pageview
+     * Sets wikipediaPageview
      *
-     * @param \Domainrobot\Model\EstimationParametersV1WikipediaPageview $wikipedia_pageview wikipedia_pageview
+     * @param \Domainrobot\Model\EstimationParametersV1WikipediaPageview $wikipediaPageview wikipediaPageview
      *
      * @return $this
      */
-    public function setWikipediaPageview($wikipedia_pageview)
+    public function setWikipediaPageview($wikipediaPageview)
     {
-        $this->container['wikipedia_pageview'] = $wikipedia_pageview;
+        $this->container['wikipediaPageview'] = $wikipediaPageview;
 
         return $this;
     }

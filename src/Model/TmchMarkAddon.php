@@ -57,18 +57,18 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'court_name' => 'string',
+        'courtName' => 'string',
         'protection' => '\DateTime',
-        'court_protection_country' => 'string',
-        'court_reference' => 'string',
-        'treaty_title' => 'string',
-        'treaty_execution' => '\DateTime',
-        'trademark_registration' => '\DateTime',
-        'trademark_classification' => 'string',
-        'trademark_expire' => '\DateTime',
-        'trademark_number' => 'string',
-        'trademark_jurisdiction' => 'string',
-        'parent_reference' => 'string'
+        'courtProtectionCountry' => 'string',
+        'courtReference' => 'string',
+        'treatyTitle' => 'string',
+        'treatyExecution' => '\DateTime',
+        'trademarkRegistration' => '\DateTime',
+        'trademarkClassification' => 'string',
+        'trademarkExpire' => '\DateTime',
+        'trademarkNumber' => 'string',
+        'trademarkJurisdiction' => 'string',
+        'parentReference' => 'string'
     ];
 
     /**
@@ -77,18 +77,18 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'court_name' => null,
+        'courtName' => null,
         'protection' => 'date-time',
-        'court_protection_country' => null,
-        'court_reference' => null,
-        'treaty_title' => null,
-        'treaty_execution' => 'date-time',
-        'trademark_registration' => 'date-time',
-        'trademark_classification' => null,
-        'trademark_expire' => 'date-time',
-        'trademark_number' => null,
-        'trademark_jurisdiction' => null,
-        'parent_reference' => null
+        'courtProtectionCountry' => null,
+        'courtReference' => null,
+        'treatyTitle' => null,
+        'treatyExecution' => 'date-time',
+        'trademarkRegistration' => 'date-time',
+        'trademarkClassification' => null,
+        'trademarkExpire' => 'date-time',
+        'trademarkNumber' => null,
+        'trademarkJurisdiction' => null,
+        'parentReference' => null
     ];
 
     /**
@@ -118,18 +118,18 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'court_name' => 'courtName',
+        'courtName' => 'courtName',
         'protection' => 'protection',
-        'court_protection_country' => 'courtProtectionCountry',
-        'court_reference' => 'courtReference',
-        'treaty_title' => 'treatyTitle',
-        'treaty_execution' => 'treatyExecution',
-        'trademark_registration' => 'trademarkRegistration',
-        'trademark_classification' => 'trademarkClassification',
-        'trademark_expire' => 'trademarkExpire',
-        'trademark_number' => 'trademarkNumber',
-        'trademark_jurisdiction' => 'trademarkJurisdiction',
-        'parent_reference' => 'parentReference'
+        'courtProtectionCountry' => 'courtProtectionCountry',
+        'courtReference' => 'courtReference',
+        'treatyTitle' => 'treatyTitle',
+        'treatyExecution' => 'treatyExecution',
+        'trademarkRegistration' => 'trademarkRegistration',
+        'trademarkClassification' => 'trademarkClassification',
+        'trademarkExpire' => 'trademarkExpire',
+        'trademarkNumber' => 'trademarkNumber',
+        'trademarkJurisdiction' => 'trademarkJurisdiction',
+        'parentReference' => 'parentReference'
     ];
 
     /**
@@ -138,18 +138,18 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'court_name' => 'setCourtName',
+        'courtName' => 'setCourtName',
         'protection' => 'setProtection',
-        'court_protection_country' => 'setCourtProtectionCountry',
-        'court_reference' => 'setCourtReference',
-        'treaty_title' => 'setTreatyTitle',
-        'treaty_execution' => 'setTreatyExecution',
-        'trademark_registration' => 'setTrademarkRegistration',
-        'trademark_classification' => 'setTrademarkClassification',
-        'trademark_expire' => 'setTrademarkExpire',
-        'trademark_number' => 'setTrademarkNumber',
-        'trademark_jurisdiction' => 'setTrademarkJurisdiction',
-        'parent_reference' => 'setParentReference'
+        'courtProtectionCountry' => 'setCourtProtectionCountry',
+        'courtReference' => 'setCourtReference',
+        'treatyTitle' => 'setTreatyTitle',
+        'treatyExecution' => 'setTreatyExecution',
+        'trademarkRegistration' => 'setTrademarkRegistration',
+        'trademarkClassification' => 'setTrademarkClassification',
+        'trademarkExpire' => 'setTrademarkExpire',
+        'trademarkNumber' => 'setTrademarkNumber',
+        'trademarkJurisdiction' => 'setTrademarkJurisdiction',
+        'parentReference' => 'setParentReference'
     ];
 
     /**
@@ -158,18 +158,18 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'court_name' => 'getCourtName',
+        'courtName' => 'getCourtName',
         'protection' => 'getProtection',
-        'court_protection_country' => 'getCourtProtectionCountry',
-        'court_reference' => 'getCourtReference',
-        'treaty_title' => 'getTreatyTitle',
-        'treaty_execution' => 'getTreatyExecution',
-        'trademark_registration' => 'getTrademarkRegistration',
-        'trademark_classification' => 'getTrademarkClassification',
-        'trademark_expire' => 'getTrademarkExpire',
-        'trademark_number' => 'getTrademarkNumber',
-        'trademark_jurisdiction' => 'getTrademarkJurisdiction',
-        'parent_reference' => 'getParentReference'
+        'courtProtectionCountry' => 'getCourtProtectionCountry',
+        'courtReference' => 'getCourtReference',
+        'treatyTitle' => 'getTreatyTitle',
+        'treatyExecution' => 'getTreatyExecution',
+        'trademarkRegistration' => 'getTrademarkRegistration',
+        'trademarkClassification' => 'getTrademarkClassification',
+        'trademarkExpire' => 'getTrademarkExpire',
+        'trademarkNumber' => 'getTrademarkNumber',
+        'trademarkJurisdiction' => 'getTrademarkJurisdiction',
+        'parentReference' => 'getParentReference'
     ];
 
     /**
@@ -232,18 +232,18 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['court_name'] = isset($data['court_name']) ? $this->createData($data['court_name'], 'court_name')  : null;
+        $this->container['courtName'] = isset($data['courtName']) ? $this->createData($data['courtName'], 'courtName')  : null;
         $this->container['protection'] = isset($data['protection']) ? $this->createData($data['protection'], 'protection')  : null;
-        $this->container['court_protection_country'] = isset($data['court_protection_country']) ? $this->createData($data['court_protection_country'], 'court_protection_country')  : null;
-        $this->container['court_reference'] = isset($data['court_reference']) ? $this->createData($data['court_reference'], 'court_reference')  : null;
-        $this->container['treaty_title'] = isset($data['treaty_title']) ? $this->createData($data['treaty_title'], 'treaty_title')  : null;
-        $this->container['treaty_execution'] = isset($data['treaty_execution']) ? $this->createData($data['treaty_execution'], 'treaty_execution')  : null;
-        $this->container['trademark_registration'] = isset($data['trademark_registration']) ? $this->createData($data['trademark_registration'], 'trademark_registration')  : null;
-        $this->container['trademark_classification'] = isset($data['trademark_classification']) ? $this->createData($data['trademark_classification'], 'trademark_classification')  : null;
-        $this->container['trademark_expire'] = isset($data['trademark_expire']) ? $this->createData($data['trademark_expire'], 'trademark_expire')  : null;
-        $this->container['trademark_number'] = isset($data['trademark_number']) ? $this->createData($data['trademark_number'], 'trademark_number')  : null;
-        $this->container['trademark_jurisdiction'] = isset($data['trademark_jurisdiction']) ? $this->createData($data['trademark_jurisdiction'], 'trademark_jurisdiction')  : null;
-        $this->container['parent_reference'] = isset($data['parent_reference']) ? $this->createData($data['parent_reference'], 'parent_reference')  : null;
+        $this->container['courtProtectionCountry'] = isset($data['courtProtectionCountry']) ? $this->createData($data['courtProtectionCountry'], 'courtProtectionCountry')  : null;
+        $this->container['courtReference'] = isset($data['courtReference']) ? $this->createData($data['courtReference'], 'courtReference')  : null;
+        $this->container['treatyTitle'] = isset($data['treatyTitle']) ? $this->createData($data['treatyTitle'], 'treatyTitle')  : null;
+        $this->container['treatyExecution'] = isset($data['treatyExecution']) ? $this->createData($data['treatyExecution'], 'treatyExecution')  : null;
+        $this->container['trademarkRegistration'] = isset($data['trademarkRegistration']) ? $this->createData($data['trademarkRegistration'], 'trademarkRegistration')  : null;
+        $this->container['trademarkClassification'] = isset($data['trademarkClassification']) ? $this->createData($data['trademarkClassification'], 'trademarkClassification')  : null;
+        $this->container['trademarkExpire'] = isset($data['trademarkExpire']) ? $this->createData($data['trademarkExpire'], 'trademarkExpire')  : null;
+        $this->container['trademarkNumber'] = isset($data['trademarkNumber']) ? $this->createData($data['trademarkNumber'], 'trademarkNumber')  : null;
+        $this->container['trademarkJurisdiction'] = isset($data['trademarkJurisdiction']) ? $this->createData($data['trademarkJurisdiction'], 'trademarkJurisdiction')  : null;
+        $this->container['parentReference'] = isset($data['parentReference']) ? $this->createData($data['parentReference'], 'parentReference')  : null;
     }
 
     /**
@@ -311,25 +311,25 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets court_name
+     * Gets courtName
      *
      * @return string
      */
     public function getCourtName()
     {
-        return $this->container['court_name'];
+        return $this->container['courtName'];
     }
 
     /**
-     * Sets court_name
+     * Sets courtName
      *
-     * @param string $court_name court_name
+     * @param string $courtName courtName
      *
      * @return $this
      */
-    public function setCourtName($court_name)
+    public function setCourtName($courtName)
     {
-        $this->container['court_name'] = $court_name;
+        $this->container['courtName'] = $courtName;
 
         return $this;
     }
@@ -359,241 +359,241 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets court_protection_country
+     * Gets courtProtectionCountry
      *
      * @return string
      */
     public function getCourtProtectionCountry()
     {
-        return $this->container['court_protection_country'];
+        return $this->container['courtProtectionCountry'];
     }
 
     /**
-     * Sets court_protection_country
+     * Sets courtProtectionCountry
      *
-     * @param string $court_protection_country court_protection_country
+     * @param string $courtProtectionCountry courtProtectionCountry
      *
      * @return $this
      */
-    public function setCourtProtectionCountry($court_protection_country)
+    public function setCourtProtectionCountry($courtProtectionCountry)
     {
-        $this->container['court_protection_country'] = $court_protection_country;
+        $this->container['courtProtectionCountry'] = $courtProtectionCountry;
 
         return $this;
     }
 
     /**
-     * Gets court_reference
+     * Gets courtReference
      *
      * @return string
      */
     public function getCourtReference()
     {
-        return $this->container['court_reference'];
+        return $this->container['courtReference'];
     }
 
     /**
-     * Sets court_reference
+     * Sets courtReference
      *
-     * @param string $court_reference court_reference
+     * @param string $courtReference courtReference
      *
      * @return $this
      */
-    public function setCourtReference($court_reference)
+    public function setCourtReference($courtReference)
     {
-        $this->container['court_reference'] = $court_reference;
+        $this->container['courtReference'] = $courtReference;
 
         return $this;
     }
 
     /**
-     * Gets treaty_title
+     * Gets treatyTitle
      *
      * @return string
      */
     public function getTreatyTitle()
     {
-        return $this->container['treaty_title'];
+        return $this->container['treatyTitle'];
     }
 
     /**
-     * Sets treaty_title
+     * Sets treatyTitle
      *
-     * @param string $treaty_title treaty_title
+     * @param string $treatyTitle treatyTitle
      *
      * @return $this
      */
-    public function setTreatyTitle($treaty_title)
+    public function setTreatyTitle($treatyTitle)
     {
-        $this->container['treaty_title'] = $treaty_title;
+        $this->container['treatyTitle'] = $treatyTitle;
 
         return $this;
     }
 
     /**
-     * Gets treaty_execution
+     * Gets treatyExecution
      *
      * @return \DateTime
      */
     public function getTreatyExecution()
     {
-        return $this->container['treaty_execution'];
+        return $this->container['treatyExecution'];
     }
 
     /**
-     * Sets treaty_execution
+     * Sets treatyExecution
      *
-     * @param \DateTime $treaty_execution treaty_execution
+     * @param \DateTime $treatyExecution treatyExecution
      *
      * @return $this
      */
-    public function setTreatyExecution($treaty_execution)
+    public function setTreatyExecution($treatyExecution)
     {
-        $this->container['treaty_execution'] = $treaty_execution;
+        $this->container['treatyExecution'] = $treatyExecution;
 
         return $this;
     }
 
     /**
-     * Gets trademark_registration
+     * Gets trademarkRegistration
      *
      * @return \DateTime
      */
     public function getTrademarkRegistration()
     {
-        return $this->container['trademark_registration'];
+        return $this->container['trademarkRegistration'];
     }
 
     /**
-     * Sets trademark_registration
+     * Sets trademarkRegistration
      *
-     * @param \DateTime $trademark_registration trademark_registration
+     * @param \DateTime $trademarkRegistration trademarkRegistration
      *
      * @return $this
      */
-    public function setTrademarkRegistration($trademark_registration)
+    public function setTrademarkRegistration($trademarkRegistration)
     {
-        $this->container['trademark_registration'] = $trademark_registration;
+        $this->container['trademarkRegistration'] = $trademarkRegistration;
 
         return $this;
     }
 
     /**
-     * Gets trademark_classification
+     * Gets trademarkClassification
      *
      * @return string
      */
     public function getTrademarkClassification()
     {
-        return $this->container['trademark_classification'];
+        return $this->container['trademarkClassification'];
     }
 
     /**
-     * Sets trademark_classification
+     * Sets trademarkClassification
      *
-     * @param string $trademark_classification trademark_classification
+     * @param string $trademarkClassification trademarkClassification
      *
      * @return $this
      */
-    public function setTrademarkClassification($trademark_classification)
+    public function setTrademarkClassification($trademarkClassification)
     {
-        $this->container['trademark_classification'] = $trademark_classification;
+        $this->container['trademarkClassification'] = $trademarkClassification;
 
         return $this;
     }
 
     /**
-     * Gets trademark_expire
+     * Gets trademarkExpire
      *
      * @return \DateTime
      */
     public function getTrademarkExpire()
     {
-        return $this->container['trademark_expire'];
+        return $this->container['trademarkExpire'];
     }
 
     /**
-     * Sets trademark_expire
+     * Sets trademarkExpire
      *
-     * @param \DateTime $trademark_expire trademark_expire
+     * @param \DateTime $trademarkExpire trademarkExpire
      *
      * @return $this
      */
-    public function setTrademarkExpire($trademark_expire)
+    public function setTrademarkExpire($trademarkExpire)
     {
-        $this->container['trademark_expire'] = $trademark_expire;
+        $this->container['trademarkExpire'] = $trademarkExpire;
 
         return $this;
     }
 
     /**
-     * Gets trademark_number
+     * Gets trademarkNumber
      *
      * @return string
      */
     public function getTrademarkNumber()
     {
-        return $this->container['trademark_number'];
+        return $this->container['trademarkNumber'];
     }
 
     /**
-     * Sets trademark_number
+     * Sets trademarkNumber
      *
-     * @param string $trademark_number trademark_number
+     * @param string $trademarkNumber trademarkNumber
      *
      * @return $this
      */
-    public function setTrademarkNumber($trademark_number)
+    public function setTrademarkNumber($trademarkNumber)
     {
-        $this->container['trademark_number'] = $trademark_number;
+        $this->container['trademarkNumber'] = $trademarkNumber;
 
         return $this;
     }
 
     /**
-     * Gets trademark_jurisdiction
+     * Gets trademarkJurisdiction
      *
      * @return string
      */
     public function getTrademarkJurisdiction()
     {
-        return $this->container['trademark_jurisdiction'];
+        return $this->container['trademarkJurisdiction'];
     }
 
     /**
-     * Sets trademark_jurisdiction
+     * Sets trademarkJurisdiction
      *
-     * @param string $trademark_jurisdiction trademark_jurisdiction
+     * @param string $trademarkJurisdiction trademarkJurisdiction
      *
      * @return $this
      */
-    public function setTrademarkJurisdiction($trademark_jurisdiction)
+    public function setTrademarkJurisdiction($trademarkJurisdiction)
     {
-        $this->container['trademark_jurisdiction'] = $trademark_jurisdiction;
+        $this->container['trademarkJurisdiction'] = $trademarkJurisdiction;
 
         return $this;
     }
 
     /**
-     * Gets parent_reference
+     * Gets parentReference
      *
      * @return string
      */
     public function getParentReference()
     {
-        return $this->container['parent_reference'];
+        return $this->container['parentReference'];
     }
 
     /**
-     * Sets parent_reference
+     * Sets parentReference
      *
-     * @param string $parent_reference parent_reference
+     * @param string $parentReference parentReference
      *
      * @return $this
      */
-    public function setParentReference($parent_reference)
+    public function setParentReference($parentReference)
     {
-        $this->container['parent_reference'] = $parent_reference;
+        $this->container['parentReference'] = $parentReference;
 
         return $this;
     }

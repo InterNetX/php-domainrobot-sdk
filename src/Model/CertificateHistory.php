@@ -57,7 +57,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'serial_number' => 'string',
+        'serialNumber' => 'string',
         'revoked' => '\DateTime'
     ];
 
@@ -67,7 +67,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'serial_number' => null,
+        'serialNumber' => null,
         'revoked' => 'date-time'
     ];
 
@@ -98,7 +98,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'serial_number' => 'serialNumber',
+        'serialNumber' => 'serialNumber',
         'revoked' => 'revoked'
     ];
 
@@ -108,7 +108,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'serial_number' => 'setSerialNumber',
+        'serialNumber' => 'setSerialNumber',
         'revoked' => 'setRevoked'
     ];
 
@@ -118,7 +118,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'serial_number' => 'getSerialNumber',
+        'serialNumber' => 'getSerialNumber',
         'revoked' => 'getRevoked'
     ];
 
@@ -182,7 +182,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['serial_number'] = isset($data['serial_number']) ? $this->createData($data['serial_number'], 'serial_number')  : null;
+        $this->container['serialNumber'] = isset($data['serialNumber']) ? $this->createData($data['serialNumber'], 'serialNumber')  : null;
         $this->container['revoked'] = isset($data['revoked']) ? $this->createData($data['revoked'], 'revoked')  : null;
     }
 
@@ -251,25 +251,25 @@ class CertificateHistory implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets serial_number
+     * Gets serialNumber
      *
      * @return string
      */
     public function getSerialNumber()
     {
-        return $this->container['serial_number'];
+        return $this->container['serialNumber'];
     }
 
     /**
-     * Sets serial_number
+     * Sets serialNumber
      *
-     * @param string $serial_number The serialnumber of the certificate.
+     * @param string $serialNumber The serialnumber of the certificate.
      *
      * @return $this
      */
-    public function setSerialNumber($serial_number)
+    public function setSerialNumber($serialNumber)
     {
-        $this->container['serial_number'] = $serial_number;
+        $this->container['serialNumber'] = $serialNumber;
 
         return $this;
     }

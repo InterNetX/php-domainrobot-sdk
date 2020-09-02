@@ -62,7 +62,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'id' => 'int',
         'comment' => 'string',
         'type' => 'string',
-        'mime_type' => 'string',
+        'mimeType' => 'string',
         'data' => 'string',
         'size' => 'int',
         'name' => 'string',
@@ -84,7 +84,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'id' => 'int64',
         'comment' => null,
         'type' => null,
-        'mime_type' => null,
+        'mimeType' => null,
         'data' => null,
         'size' => 'int64',
         'name' => null,
@@ -127,7 +127,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'id' => 'id',
         'comment' => 'comment',
         'type' => 'type',
-        'mime_type' => 'mimeType',
+        'mimeType' => 'mimeType',
         'data' => 'data',
         'size' => 'size',
         'name' => 'name',
@@ -149,7 +149,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'comment' => 'setComment',
         'type' => 'setType',
-        'mime_type' => 'setMimeType',
+        'mimeType' => 'setMimeType',
         'data' => 'setData',
         'size' => 'setSize',
         'name' => 'setName',
@@ -171,7 +171,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'comment' => 'getComment',
         'type' => 'getType',
-        'mime_type' => 'getMimeType',
+        'mimeType' => 'getMimeType',
         'data' => 'getData',
         'size' => 'getSize',
         'name' => 'getName',
@@ -247,7 +247,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
-        $this->container['mime_type'] = isset($data['mime_type']) ? $this->createData($data['mime_type'], 'mime_type')  : null;
+        $this->container['mimeType'] = isset($data['mimeType']) ? $this->createData($data['mimeType'], 'mimeType')  : null;
         $this->container['data'] = isset($data['data']) ? $this->createData($data['data'], 'data')  : null;
         $this->container['size'] = isset($data['size']) ? $this->createData($data['size'], 'size')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
@@ -446,25 +446,25 @@ class BasicDocument implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets mime_type
+     * Gets mimeType
      *
      * @return string
      */
     public function getMimeType()
     {
-        return $this->container['mime_type'];
+        return $this->container['mimeType'];
     }
 
     /**
-     * Sets mime_type
+     * Sets mimeType
      *
-     * @param string $mime_type mime_type
+     * @param string $mimeType mimeType
      *
      * @return $this
      */
-    public function setMimeType($mime_type)
+    public function setMimeType($mimeType)
     {
-        $this->container['mime_type'] = $mime_type;
+        $this->container['mimeType'] = $mimeType;
 
         return $this;
     }

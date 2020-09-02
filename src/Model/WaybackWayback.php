@@ -58,7 +58,7 @@ class WaybackWayback implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'url' => 'string',
-        'archived_snapshots' => '\Domainrobot\Model\WaybackWaybackArchivedSnapshots'
+        'archivedSnapshots' => '\Domainrobot\Model\WaybackWaybackArchivedSnapshots'
     ];
 
     /**
@@ -68,7 +68,7 @@ class WaybackWayback implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'url' => null,
-        'archived_snapshots' => null
+        'archivedSnapshots' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class WaybackWayback implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'url' => 'url',
-        'archived_snapshots' => 'archived_snapshots'
+        'archivedSnapshots' => 'archived_snapshots'
     ];
 
     /**
@@ -109,7 +109,7 @@ class WaybackWayback implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'url' => 'setUrl',
-        'archived_snapshots' => 'setArchivedSnapshots'
+        'archivedSnapshots' => 'setArchivedSnapshots'
     ];
 
     /**
@@ -119,7 +119,7 @@ class WaybackWayback implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'url' => 'getUrl',
-        'archived_snapshots' => 'getArchivedSnapshots'
+        'archivedSnapshots' => 'getArchivedSnapshots'
     ];
 
     /**
@@ -183,7 +183,7 @@ class WaybackWayback implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['url'] = isset($data['url']) ? $this->createData($data['url'], 'url')  : null;
-        $this->container['archived_snapshots'] = isset($data['archived_snapshots']) ? $this->createData($data['archived_snapshots'], 'archived_snapshots')  : null;
+        $this->container['archivedSnapshots'] = isset($data['archivedSnapshots']) ? $this->createData($data['archivedSnapshots'], 'archivedSnapshots')  : null;
     }
 
     /**
@@ -275,25 +275,25 @@ class WaybackWayback implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets archived_snapshots
+     * Gets archivedSnapshots
      *
      * @return \Domainrobot\Model\WaybackWaybackArchivedSnapshots
      */
     public function getArchivedSnapshots()
     {
-        return $this->container['archived_snapshots'];
+        return $this->container['archivedSnapshots'];
     }
 
     /**
-     * Sets archived_snapshots
+     * Sets archivedSnapshots
      *
-     * @param \Domainrobot\Model\WaybackWaybackArchivedSnapshots $archived_snapshots archived_snapshots
+     * @param \Domainrobot\Model\WaybackWaybackArchivedSnapshots $archivedSnapshots archivedSnapshots
      *
      * @return $this
      */
-    public function setArchivedSnapshots($archived_snapshots)
+    public function setArchivedSnapshots($archivedSnapshots)
     {
-        $this->container['archived_snapshots'] = $archived_snapshots;
+        $this->container['archivedSnapshots'] = $archivedSnapshots;
 
         return $this;
     }

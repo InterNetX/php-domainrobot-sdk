@@ -63,8 +63,8 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'active' => 'bool',
         'name' => '\Domainrobot\Model\Name',
-        'main_address' => '\Domainrobot\Model\InetAddress',
-        'ip_addresses' => 'string[]'
+        'mainAddress' => '\Domainrobot\Model\InetAddress',
+        'ipAddresses' => 'string[]'
     ];
 
     /**
@@ -79,8 +79,8 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
         'updater' => null,
         'active' => null,
         'name' => null,
-        'main_address' => null,
-        'ip_addresses' => null
+        'mainAddress' => null,
+        'ipAddresses' => null
     ];
 
     /**
@@ -116,8 +116,8 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
         'updater' => 'updater',
         'active' => 'active',
         'name' => 'name',
-        'main_address' => 'mainAddress',
-        'ip_addresses' => 'ipAddresses'
+        'mainAddress' => 'mainAddress',
+        'ipAddresses' => 'ipAddresses'
     ];
 
     /**
@@ -132,8 +132,8 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
         'updater' => 'setUpdater',
         'active' => 'setActive',
         'name' => 'setName',
-        'main_address' => 'setMainAddress',
-        'ip_addresses' => 'setIpAddresses'
+        'mainAddress' => 'setMainAddress',
+        'ipAddresses' => 'setIpAddresses'
     ];
 
     /**
@@ -148,8 +148,8 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
         'updater' => 'getUpdater',
         'active' => 'getActive',
         'name' => 'getName',
-        'main_address' => 'getMainAddress',
-        'ip_addresses' => 'getIpAddresses'
+        'mainAddress' => 'getMainAddress',
+        'ipAddresses' => 'getIpAddresses'
     ];
 
     /**
@@ -218,8 +218,8 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['active'] = isset($data['active']) ? $this->createData($data['active'], 'active')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['main_address'] = isset($data['main_address']) ? $this->createData($data['main_address'], 'main_address')  : null;
-        $this->container['ip_addresses'] = isset($data['ip_addresses']) ? $this->createData($data['ip_addresses'], 'ip_addresses')  : null;
+        $this->container['mainAddress'] = isset($data['mainAddress']) ? $this->createData($data['mainAddress'], 'mainAddress')  : null;
+        $this->container['ipAddresses'] = isset($data['ipAddresses']) ? $this->createData($data['ipAddresses'], 'ipAddresses')  : null;
     }
 
     /**
@@ -431,49 +431,49 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets main_address
+     * Gets mainAddress
      *
      * @return \Domainrobot\Model\InetAddress
      */
     public function getMainAddress()
     {
-        return $this->container['main_address'];
+        return $this->container['mainAddress'];
     }
 
     /**
-     * Sets main_address
+     * Sets mainAddress
      *
-     * @param \Domainrobot\Model\InetAddress $main_address The mainAddress
+     * @param \Domainrobot\Model\InetAddress $mainAddress The mainAddress
      *
      * @return $this
      */
-    public function setMainAddress($main_address)
+    public function setMainAddress($mainAddress)
     {
-        $this->container['main_address'] = $main_address;
+        $this->container['mainAddress'] = $mainAddress;
 
         return $this;
     }
 
     /**
-     * Gets ip_addresses
+     * Gets ipAddresses
      *
      * @return string[]
      */
     public function getIpAddresses()
     {
-        return $this->container['ip_addresses'];
+        return $this->container['ipAddresses'];
     }
 
     /**
-     * Sets ip_addresses
+     * Sets ipAddresses
      *
-     * @param string[] $ip_addresses The ip addresses.
+     * @param string[] $ipAddresses The ip addresses.
      *
      * @return $this
      */
-    public function setIpAddresses($ip_addresses)
+    public function setIpAddresses($ipAddresses)
     {
-        $this->container['ip_addresses'] = $ip_addresses;
+        $this->container['ipAddresses'] = $ipAddresses;
 
         return $this;
     }

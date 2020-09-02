@@ -57,20 +57,20 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'irp_app_capacit' => 'string',
-        'irp_app_date' => '\DateTime',
-        'irp_cc_locality' => 'string',
-        'irp_name' => 'string',
-        'irp_number' => 'string',
-        'irp_pvrc' => 'string',
-        'irp_reg_date' => '\DateTime',
+        'irpAppCapacit' => 'string',
+        'irpAppDate' => '\DateTime',
+        'irpCcLocality' => 'string',
+        'irpName' => 'string',
+        'irpNumber' => 'string',
+        'irpPvrc' => 'string',
+        'irpRegDate' => '\DateTime',
         'mode' => 'string',
-        'confirm_order' => 'bool',
-        'external_reference' => 'string',
-        'not_after' => '\DateTime',
+        'confirmOrder' => 'bool',
+        'externalReference' => 'string',
+        'notAfter' => '\DateTime',
         'confirmed' => '\DateTime',
-        'confirm_ip' => 'string',
-        'price_class' => 'string'
+        'confirmIp' => 'string',
+        'priceClass' => 'string'
     ];
 
     /**
@@ -79,20 +79,20 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'irp_app_capacit' => null,
-        'irp_app_date' => 'date-time',
-        'irp_cc_locality' => null,
-        'irp_name' => null,
-        'irp_number' => null,
-        'irp_pvrc' => null,
-        'irp_reg_date' => 'date-time',
+        'irpAppCapacit' => null,
+        'irpAppDate' => 'date-time',
+        'irpCcLocality' => null,
+        'irpName' => null,
+        'irpNumber' => null,
+        'irpPvrc' => null,
+        'irpRegDate' => 'date-time',
         'mode' => null,
-        'confirm_order' => null,
-        'external_reference' => null,
-        'not_after' => 'date-time',
+        'confirmOrder' => null,
+        'externalReference' => null,
+        'notAfter' => 'date-time',
         'confirmed' => 'date-time',
-        'confirm_ip' => null,
-        'price_class' => null
+        'confirmIp' => null,
+        'priceClass' => null
     ];
 
     /**
@@ -122,20 +122,20 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'irp_app_capacit' => 'irpAppCapacit',
-        'irp_app_date' => 'irpAppDate',
-        'irp_cc_locality' => 'irpCcLocality',
-        'irp_name' => 'irpName',
-        'irp_number' => 'irpNumber',
-        'irp_pvrc' => 'irpPvrc',
-        'irp_reg_date' => 'irpRegDate',
+        'irpAppCapacit' => 'irpAppCapacit',
+        'irpAppDate' => 'irpAppDate',
+        'irpCcLocality' => 'irpCcLocality',
+        'irpName' => 'irpName',
+        'irpNumber' => 'irpNumber',
+        'irpPvrc' => 'irpPvrc',
+        'irpRegDate' => 'irpRegDate',
         'mode' => 'mode',
-        'confirm_order' => 'confirmOrder',
-        'external_reference' => 'externalReference',
-        'not_after' => 'notAfter',
+        'confirmOrder' => 'confirmOrder',
+        'externalReference' => 'externalReference',
+        'notAfter' => 'notAfter',
         'confirmed' => 'confirmed',
-        'confirm_ip' => 'confirmIp',
-        'price_class' => 'priceClass'
+        'confirmIp' => 'confirmIp',
+        'priceClass' => 'priceClass'
     ];
 
     /**
@@ -144,20 +144,20 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'irp_app_capacit' => 'setIrpAppCapacit',
-        'irp_app_date' => 'setIrpAppDate',
-        'irp_cc_locality' => 'setIrpCcLocality',
-        'irp_name' => 'setIrpName',
-        'irp_number' => 'setIrpNumber',
-        'irp_pvrc' => 'setIrpPvrc',
-        'irp_reg_date' => 'setIrpRegDate',
+        'irpAppCapacit' => 'setIrpAppCapacit',
+        'irpAppDate' => 'setIrpAppDate',
+        'irpCcLocality' => 'setIrpCcLocality',
+        'irpName' => 'setIrpName',
+        'irpNumber' => 'setIrpNumber',
+        'irpPvrc' => 'setIrpPvrc',
+        'irpRegDate' => 'setIrpRegDate',
         'mode' => 'setMode',
-        'confirm_order' => 'setConfirmOrder',
-        'external_reference' => 'setExternalReference',
-        'not_after' => 'setNotAfter',
+        'confirmOrder' => 'setConfirmOrder',
+        'externalReference' => 'setExternalReference',
+        'notAfter' => 'setNotAfter',
         'confirmed' => 'setConfirmed',
-        'confirm_ip' => 'setConfirmIp',
-        'price_class' => 'setPriceClass'
+        'confirmIp' => 'setConfirmIp',
+        'priceClass' => 'setPriceClass'
     ];
 
     /**
@@ -166,20 +166,20 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'irp_app_capacit' => 'getIrpAppCapacit',
-        'irp_app_date' => 'getIrpAppDate',
-        'irp_cc_locality' => 'getIrpCcLocality',
-        'irp_name' => 'getIrpName',
-        'irp_number' => 'getIrpNumber',
-        'irp_pvrc' => 'getIrpPvrc',
-        'irp_reg_date' => 'getIrpRegDate',
+        'irpAppCapacit' => 'getIrpAppCapacit',
+        'irpAppDate' => 'getIrpAppDate',
+        'irpCcLocality' => 'getIrpCcLocality',
+        'irpName' => 'getIrpName',
+        'irpNumber' => 'getIrpNumber',
+        'irpPvrc' => 'getIrpPvrc',
+        'irpRegDate' => 'getIrpRegDate',
         'mode' => 'getMode',
-        'confirm_order' => 'getConfirmOrder',
-        'external_reference' => 'getExternalReference',
-        'not_after' => 'getNotAfter',
+        'confirmOrder' => 'getConfirmOrder',
+        'externalReference' => 'getExternalReference',
+        'notAfter' => 'getNotAfter',
         'confirmed' => 'getConfirmed',
-        'confirm_ip' => 'getConfirmIp',
-        'price_class' => 'getPriceClass'
+        'confirmIp' => 'getConfirmIp',
+        'priceClass' => 'getPriceClass'
     ];
 
     /**
@@ -242,20 +242,20 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['irp_app_capacit'] = isset($data['irp_app_capacit']) ? $this->createData($data['irp_app_capacit'], 'irp_app_capacit')  : null;
-        $this->container['irp_app_date'] = isset($data['irp_app_date']) ? $this->createData($data['irp_app_date'], 'irp_app_date')  : null;
-        $this->container['irp_cc_locality'] = isset($data['irp_cc_locality']) ? $this->createData($data['irp_cc_locality'], 'irp_cc_locality')  : null;
-        $this->container['irp_name'] = isset($data['irp_name']) ? $this->createData($data['irp_name'], 'irp_name')  : null;
-        $this->container['irp_number'] = isset($data['irp_number']) ? $this->createData($data['irp_number'], 'irp_number')  : null;
-        $this->container['irp_pvrc'] = isset($data['irp_pvrc']) ? $this->createData($data['irp_pvrc'], 'irp_pvrc')  : null;
-        $this->container['irp_reg_date'] = isset($data['irp_reg_date']) ? $this->createData($data['irp_reg_date'], 'irp_reg_date')  : null;
+        $this->container['irpAppCapacit'] = isset($data['irpAppCapacit']) ? $this->createData($data['irpAppCapacit'], 'irpAppCapacit')  : null;
+        $this->container['irpAppDate'] = isset($data['irpAppDate']) ? $this->createData($data['irpAppDate'], 'irpAppDate')  : null;
+        $this->container['irpCcLocality'] = isset($data['irpCcLocality']) ? $this->createData($data['irpCcLocality'], 'irpCcLocality')  : null;
+        $this->container['irpName'] = isset($data['irpName']) ? $this->createData($data['irpName'], 'irpName')  : null;
+        $this->container['irpNumber'] = isset($data['irpNumber']) ? $this->createData($data['irpNumber'], 'irpNumber')  : null;
+        $this->container['irpPvrc'] = isset($data['irpPvrc']) ? $this->createData($data['irpPvrc'], 'irpPvrc')  : null;
+        $this->container['irpRegDate'] = isset($data['irpRegDate']) ? $this->createData($data['irpRegDate'], 'irpRegDate')  : null;
         $this->container['mode'] = isset($data['mode']) ? $this->createData($data['mode'], 'mode')  : null;
-        $this->container['confirm_order'] = isset($data['confirm_order']) ? $this->createData($data['confirm_order'], 'confirm_order')  : null;
-        $this->container['external_reference'] = isset($data['external_reference']) ? $this->createData($data['external_reference'], 'external_reference')  : null;
-        $this->container['not_after'] = isset($data['not_after']) ? $this->createData($data['not_after'], 'not_after')  : null;
+        $this->container['confirmOrder'] = isset($data['confirmOrder']) ? $this->createData($data['confirmOrder'], 'confirmOrder')  : null;
+        $this->container['externalReference'] = isset($data['externalReference']) ? $this->createData($data['externalReference'], 'externalReference')  : null;
+        $this->container['notAfter'] = isset($data['notAfter']) ? $this->createData($data['notAfter'], 'notAfter')  : null;
         $this->container['confirmed'] = isset($data['confirmed']) ? $this->createData($data['confirmed'], 'confirmed')  : null;
-        $this->container['confirm_ip'] = isset($data['confirm_ip']) ? $this->createData($data['confirm_ip'], 'confirm_ip')  : null;
-        $this->container['price_class'] = isset($data['price_class']) ? $this->createData($data['price_class'], 'price_class')  : null;
+        $this->container['confirmIp'] = isset($data['confirmIp']) ? $this->createData($data['confirmIp'], 'confirmIp')  : null;
+        $this->container['priceClass'] = isset($data['priceClass']) ? $this->createData($data['priceClass'], 'priceClass')  : null;
     }
 
     /**
@@ -323,169 +323,169 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets irp_app_capacit
+     * Gets irpAppCapacit
      *
      * @return string
      */
     public function getIrpAppCapacit()
     {
-        return $this->container['irp_app_capacit'];
+        return $this->container['irpAppCapacit'];
     }
 
     /**
-     * Sets irp_app_capacit
+     * Sets irpAppCapacit
      *
-     * @param string $irp_app_capacit The Irp App Capacity.
+     * @param string $irpAppCapacit The Irp App Capacity.
      *
      * @return $this
      */
-    public function setIrpAppCapacit($irp_app_capacit)
+    public function setIrpAppCapacit($irpAppCapacit)
     {
-        $this->container['irp_app_capacit'] = $irp_app_capacit;
+        $this->container['irpAppCapacit'] = $irpAppCapacit;
 
         return $this;
     }
 
     /**
-     * Gets irp_app_date
+     * Gets irpAppDate
      *
      * @return \DateTime
      */
     public function getIrpAppDate()
     {
-        return $this->container['irp_app_date'];
+        return $this->container['irpAppDate'];
     }
 
     /**
-     * Sets irp_app_date
+     * Sets irpAppDate
      *
-     * @param \DateTime $irp_app_date The Irp App Date.
+     * @param \DateTime $irpAppDate The Irp App Date.
      *
      * @return $this
      */
-    public function setIrpAppDate($irp_app_date)
+    public function setIrpAppDate($irpAppDate)
     {
-        $this->container['irp_app_date'] = $irp_app_date;
+        $this->container['irpAppDate'] = $irpAppDate;
 
         return $this;
     }
 
     /**
-     * Gets irp_cc_locality
+     * Gets irpCcLocality
      *
      * @return string
      */
     public function getIrpCcLocality()
     {
-        return $this->container['irp_cc_locality'];
+        return $this->container['irpCcLocality'];
     }
 
     /**
-     * Sets irp_cc_locality
+     * Sets irpCcLocality
      *
-     * @param string $irp_cc_locality The Irp Cc Locality.
+     * @param string $irpCcLocality The Irp Cc Locality.
      *
      * @return $this
      */
-    public function setIrpCcLocality($irp_cc_locality)
+    public function setIrpCcLocality($irpCcLocality)
     {
-        $this->container['irp_cc_locality'] = $irp_cc_locality;
+        $this->container['irpCcLocality'] = $irpCcLocality;
 
         return $this;
     }
 
     /**
-     * Gets irp_name
+     * Gets irpName
      *
      * @return string
      */
     public function getIrpName()
     {
-        return $this->container['irp_name'];
+        return $this->container['irpName'];
     }
 
     /**
-     * Sets irp_name
+     * Sets irpName
      *
-     * @param string $irp_name The Irp Name.
+     * @param string $irpName The Irp Name.
      *
      * @return $this
      */
-    public function setIrpName($irp_name)
+    public function setIrpName($irpName)
     {
-        $this->container['irp_name'] = $irp_name;
+        $this->container['irpName'] = $irpName;
 
         return $this;
     }
 
     /**
-     * Gets irp_number
+     * Gets irpNumber
      *
      * @return string
      */
     public function getIrpNumber()
     {
-        return $this->container['irp_number'];
+        return $this->container['irpNumber'];
     }
 
     /**
-     * Sets irp_number
+     * Sets irpNumber
      *
-     * @param string $irp_number The Irp Number.
+     * @param string $irpNumber The Irp Number.
      *
      * @return $this
      */
-    public function setIrpNumber($irp_number)
+    public function setIrpNumber($irpNumber)
     {
-        $this->container['irp_number'] = $irp_number;
+        $this->container['irpNumber'] = $irpNumber;
 
         return $this;
     }
 
     /**
-     * Gets irp_pvrc
+     * Gets irpPvrc
      *
      * @return string
      */
     public function getIrpPvrc()
     {
-        return $this->container['irp_pvrc'];
+        return $this->container['irpPvrc'];
     }
 
     /**
-     * Sets irp_pvrc
+     * Sets irpPvrc
      *
-     * @param string $irp_pvrc The Irp Pvrc.
+     * @param string $irpPvrc The Irp Pvrc.
      *
      * @return $this
      */
-    public function setIrpPvrc($irp_pvrc)
+    public function setIrpPvrc($irpPvrc)
     {
-        $this->container['irp_pvrc'] = $irp_pvrc;
+        $this->container['irpPvrc'] = $irpPvrc;
 
         return $this;
     }
 
     /**
-     * Gets irp_reg_date
+     * Gets irpRegDate
      *
      * @return \DateTime
      */
     public function getIrpRegDate()
     {
-        return $this->container['irp_reg_date'];
+        return $this->container['irpRegDate'];
     }
 
     /**
-     * Sets irp_reg_date
+     * Sets irpRegDate
      *
-     * @param \DateTime $irp_reg_date The Irp Reg Date.
+     * @param \DateTime $irpRegDate The Irp Reg Date.
      *
      * @return $this
      */
-    public function setIrpRegDate($irp_reg_date)
+    public function setIrpRegDate($irpRegDate)
     {
-        $this->container['irp_reg_date'] = $irp_reg_date;
+        $this->container['irpRegDate'] = $irpRegDate;
 
         return $this;
     }
@@ -515,73 +515,73 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets confirm_order
+     * Gets confirmOrder
      *
      * @return bool
      */
     public function getConfirmOrder()
     {
-        return $this->container['confirm_order'];
+        return $this->container['confirmOrder'];
     }
 
     /**
-     * Sets confirm_order
+     * Sets confirmOrder
      *
-     * @param bool $confirm_order Confirm order.
+     * @param bool $confirmOrder Confirm order.
      *
      * @return $this
      */
-    public function setConfirmOrder($confirm_order)
+    public function setConfirmOrder($confirmOrder)
     {
-        $this->container['confirm_order'] = $confirm_order;
+        $this->container['confirmOrder'] = $confirmOrder;
 
         return $this;
     }
 
     /**
-     * Gets external_reference
+     * Gets externalReference
      *
      * @return string
      */
     public function getExternalReference()
     {
-        return $this->container['external_reference'];
+        return $this->container['externalReference'];
     }
 
     /**
-     * Sets external_reference
+     * Sets externalReference
      *
-     * @param string $external_reference The external reference.
+     * @param string $externalReference The external reference.
      *
      * @return $this
      */
-    public function setExternalReference($external_reference)
+    public function setExternalReference($externalReference)
     {
-        $this->container['external_reference'] = $external_reference;
+        $this->container['externalReference'] = $externalReference;
 
         return $this;
     }
 
     /**
-     * Gets not_after
+     * Gets notAfter
      *
      * @return \DateTime
      */
     public function getNotAfter()
     {
-        return $this->container['not_after'];
+        return $this->container['notAfter'];
     }
 
     /**
-     * Sets not_after
+     * Sets notAfter
      *
-     * @param \DateTime $not_after The not after date.
+     * @param \DateTime $notAfter The not after date.
      *
      * @return $this
      */
-    public function setNotAfter($not_after)
+    public function setNotAfter($notAfter)
     {
-        $this->container['not_after'] = $not_after;
+        $this->container['notAfter'] = $notAfter;
 
         return $this;
     }
@@ -611,49 +611,49 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets confirm_ip
+     * Gets confirmIp
      *
      * @return string
      */
     public function getConfirmIp()
     {
-        return $this->container['confirm_ip'];
+        return $this->container['confirmIp'];
     }
 
     /**
-     * Sets confirm_ip
+     * Sets confirmIp
      *
-     * @param string $confirm_ip The confirm ip.
+     * @param string $confirmIp The confirm ip.
      *
      * @return $this
      */
-    public function setConfirmIp($confirm_ip)
+    public function setConfirmIp($confirmIp)
     {
-        $this->container['confirm_ip'] = $confirm_ip;
+        $this->container['confirmIp'] = $confirmIp;
 
         return $this;
     }
 
     /**
-     * Gets price_class
+     * Gets priceClass
      *
      * @return string
      */
     public function getPriceClass()
     {
-        return $this->container['price_class'];
+        return $this->container['priceClass'];
     }
 
     /**
-     * Sets price_class
+     * Sets priceClass
      *
-     * @param string $price_class The price class.
+     * @param string $priceClass The price class.
      *
      * @return $this
      */
-    public function setPriceClass($price_class)
+    public function setPriceClass($priceClass)
     {
-        $this->container['price_class'] = $price_class;
+        $this->container['priceClass'] = $priceClass;
 
         return $this;
     }

@@ -58,8 +58,8 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
-        'promo_tlds' => 'string[]',
-        'top_tlds' => 'string[]',
+        'promoTlds' => 'string[]',
+        'topTlds' => 'string[]',
         'max' => 'int'
     ];
 
@@ -70,8 +70,8 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'services' => null,
-        'promo_tlds' => null,
-        'top_tlds' => null,
+        'promoTlds' => null,
+        'topTlds' => null,
         'max' => 'int32'
     ];
 
@@ -103,8 +103,8 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'services' => 'services',
-        'promo_tlds' => 'promoTlds',
-        'top_tlds' => 'topTlds',
+        'promoTlds' => 'promoTlds',
+        'topTlds' => 'topTlds',
         'max' => 'max'
     ];
 
@@ -115,8 +115,8 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'services' => 'setServices',
-        'promo_tlds' => 'setPromoTlds',
-        'top_tlds' => 'setTopTlds',
+        'promoTlds' => 'setPromoTlds',
+        'topTlds' => 'setTopTlds',
         'max' => 'setMax'
     ];
 
@@ -127,8 +127,8 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'services' => 'getServices',
-        'promo_tlds' => 'getPromoTlds',
-        'top_tlds' => 'getTopTlds',
+        'promoTlds' => 'getPromoTlds',
+        'topTlds' => 'getTopTlds',
         'max' => 'getMax'
     ];
 
@@ -193,8 +193,8 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
-        $this->container['promo_tlds'] = isset($data['promo_tlds']) ? $this->createData($data['promo_tlds'], 'promo_tlds')  : null;
-        $this->container['top_tlds'] = isset($data['top_tlds']) ? $this->createData($data['top_tlds'], 'top_tlds')  : null;
+        $this->container['promoTlds'] = isset($data['promoTlds']) ? $this->createData($data['promoTlds'], 'promoTlds')  : null;
+        $this->container['topTlds'] = isset($data['topTlds']) ? $this->createData($data['topTlds'], 'topTlds')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
     }
 
@@ -287,49 +287,49 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets promo_tlds
+     * Gets promoTlds
      *
      * @return string[]
      */
     public function getPromoTlds()
     {
-        return $this->container['promo_tlds'];
+        return $this->container['promoTlds'];
     }
 
     /**
-     * Sets promo_tlds
+     * Sets promoTlds
      *
-     * @param string[] $promo_tlds Promo tlds
+     * @param string[] $promoTlds Promo tlds
      *
      * @return $this
      */
-    public function setPromoTlds($promo_tlds)
+    public function setPromoTlds($promoTlds)
     {
-        $this->container['promo_tlds'] = $promo_tlds;
+        $this->container['promoTlds'] = $promoTlds;
 
         return $this;
     }
 
     /**
-     * Gets top_tlds
+     * Gets topTlds
      *
      * @return string[]
      */
     public function getTopTlds()
     {
-        return $this->container['top_tlds'];
+        return $this->container['topTlds'];
     }
 
     /**
-     * Sets top_tlds
+     * Sets topTlds
      *
-     * @param string[] $top_tlds Top tlds
+     * @param string[] $topTlds Top tlds
      *
      * @return $this
      */
-    public function setTopTlds($top_tlds)
+    public function setTopTlds($topTlds)
     {
-        $this->container['top_tlds'] = $top_tlds;
+        $this->container['topTlds'] = $topTlds;
 
         return $this;
     }

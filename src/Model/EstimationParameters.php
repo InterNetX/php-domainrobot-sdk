@@ -57,34 +57,34 @@ class EstimationParameters implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'average_keyword_frequency' => 'string',
-        'average_keyword_price' => 'string',
-        'average_length_frequency' => 'string',
-        'average_length_price' => 'string',
-        'average_tld_frequency' => 'string',
-        'average_tld_price' => 'string',
+        'averageKeywordFrequency' => 'string',
+        'averageKeywordPrice' => 'string',
+        'averageLengthFrequency' => 'string',
+        'averageLengthPrice' => 'string',
+        'averageTldFrequency' => 'string',
+        'averageTldPrice' => 'string',
         'char' => 'string',
-        'com_domain' => 'string',
-        'completely_num' => 'string',
-        'found_keywords' => 'string',
-        'found_prefix' => 'string',
-        'found_suffix' => 'string',
+        'comDomain' => 'string',
+        'completelyNum' => 'string',
+        'foundKeywords' => 'string',
+        'foundPrefix' => 'string',
+        'foundSuffix' => 'string',
         'hyph' => 'string',
-        'idn_encoding' => 'string',
-        'keyword_count' => 'string',
-        'majestics_global_rank' => 'string',
-        'majestics_prev_global_rank' => 'string',
-        'majestics_prev_ref_i_ps' => 'string',
-        'majestics_prev_ref_sub_nets' => 'string',
-        'majestics_prev_tld_rank' => 'string',
-        'majestics_ref_i_ps' => 'string',
-        'majestics_ref_sub_nets' => 'string',
-        'majestics_tld_rank' => 'string',
-        'name_seg' => 'string',
+        'idnEncoding' => 'string',
+        'keywordCount' => 'string',
+        'majesticsGlobalRank' => 'string',
+        'majesticsPrevGlobalRank' => 'string',
+        'majesticsPrevRefIPs' => 'string',
+        'majesticsPrevRefSubNets' => 'string',
+        'majesticsPrevTldRank' => 'string',
+        'majesticsRefIPs' => 'string',
+        'majesticsRefSubNets' => 'string',
+        'majesticsTldRank' => 'string',
+        'nameSeg' => 'string',
         'num' => 'string',
-        'num_words' => 'string',
+        'numWords' => 'string',
         'tld' => 'string',
-        'tld_num_domains' => 'string'
+        'tldNumDomains' => 'string'
     ];
 
     /**
@@ -93,34 +93,34 @@ class EstimationParameters implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'average_keyword_frequency' => null,
-        'average_keyword_price' => null,
-        'average_length_frequency' => null,
-        'average_length_price' => null,
-        'average_tld_frequency' => null,
-        'average_tld_price' => null,
+        'averageKeywordFrequency' => null,
+        'averageKeywordPrice' => null,
+        'averageLengthFrequency' => null,
+        'averageLengthPrice' => null,
+        'averageTldFrequency' => null,
+        'averageTldPrice' => null,
         'char' => null,
-        'com_domain' => null,
-        'completely_num' => null,
-        'found_keywords' => null,
-        'found_prefix' => null,
-        'found_suffix' => null,
+        'comDomain' => null,
+        'completelyNum' => null,
+        'foundKeywords' => null,
+        'foundPrefix' => null,
+        'foundSuffix' => null,
         'hyph' => null,
-        'idn_encoding' => null,
-        'keyword_count' => null,
-        'majestics_global_rank' => null,
-        'majestics_prev_global_rank' => null,
-        'majestics_prev_ref_i_ps' => null,
-        'majestics_prev_ref_sub_nets' => null,
-        'majestics_prev_tld_rank' => null,
-        'majestics_ref_i_ps' => null,
-        'majestics_ref_sub_nets' => null,
-        'majestics_tld_rank' => null,
-        'name_seg' => null,
+        'idnEncoding' => null,
+        'keywordCount' => null,
+        'majesticsGlobalRank' => null,
+        'majesticsPrevGlobalRank' => null,
+        'majesticsPrevRefIPs' => null,
+        'majesticsPrevRefSubNets' => null,
+        'majesticsPrevTldRank' => null,
+        'majesticsRefIPs' => null,
+        'majesticsRefSubNets' => null,
+        'majesticsTldRank' => null,
+        'nameSeg' => null,
         'num' => null,
-        'num_words' => null,
+        'numWords' => null,
         'tld' => null,
-        'tld_num_domains' => null
+        'tldNumDomains' => null
     ];
 
     /**
@@ -150,34 +150,34 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'average_keyword_frequency' => 'averageKeywordFrequency',
-        'average_keyword_price' => 'averageKeywordPrice',
-        'average_length_frequency' => 'averageLengthFrequency',
-        'average_length_price' => 'averageLengthPrice',
-        'average_tld_frequency' => 'averageTldFrequency',
-        'average_tld_price' => 'averageTldPrice',
+        'averageKeywordFrequency' => 'averageKeywordFrequency',
+        'averageKeywordPrice' => 'averageKeywordPrice',
+        'averageLengthFrequency' => 'averageLengthFrequency',
+        'averageLengthPrice' => 'averageLengthPrice',
+        'averageTldFrequency' => 'averageTldFrequency',
+        'averageTldPrice' => 'averageTldPrice',
         'char' => 'char',
-        'com_domain' => 'comDomain',
-        'completely_num' => 'completelyNum',
-        'found_keywords' => 'foundKeywords',
-        'found_prefix' => 'foundPrefix',
-        'found_suffix' => 'foundSuffix',
+        'comDomain' => 'comDomain',
+        'completelyNum' => 'completelyNum',
+        'foundKeywords' => 'foundKeywords',
+        'foundPrefix' => 'foundPrefix',
+        'foundSuffix' => 'foundSuffix',
         'hyph' => 'hyph',
-        'idn_encoding' => 'idnEncoding',
-        'keyword_count' => 'keywordCount',
-        'majestics_global_rank' => 'majesticsGlobalRank',
-        'majestics_prev_global_rank' => 'majesticsPrevGlobalRank',
-        'majestics_prev_ref_i_ps' => 'majesticsPrevRefIPs',
-        'majestics_prev_ref_sub_nets' => 'majesticsPrevRefSubNets',
-        'majestics_prev_tld_rank' => 'majesticsPrevTldRank',
-        'majestics_ref_i_ps' => 'majesticsRefIPs',
-        'majestics_ref_sub_nets' => 'majesticsRefSubNets',
-        'majestics_tld_rank' => 'majesticsTldRank',
-        'name_seg' => 'nameSeg',
+        'idnEncoding' => 'idnEncoding',
+        'keywordCount' => 'keywordCount',
+        'majesticsGlobalRank' => 'majesticsGlobalRank',
+        'majesticsPrevGlobalRank' => 'majesticsPrevGlobalRank',
+        'majesticsPrevRefIPs' => 'majesticsPrevRefIPs',
+        'majesticsPrevRefSubNets' => 'majesticsPrevRefSubNets',
+        'majesticsPrevTldRank' => 'majesticsPrevTldRank',
+        'majesticsRefIPs' => 'majesticsRefIPs',
+        'majesticsRefSubNets' => 'majesticsRefSubNets',
+        'majesticsTldRank' => 'majesticsTldRank',
+        'nameSeg' => 'nameSeg',
         'num' => 'num',
-        'num_words' => 'numWords',
+        'numWords' => 'numWords',
         'tld' => 'tld',
-        'tld_num_domains' => 'tldNumDomains'
+        'tldNumDomains' => 'tldNumDomains'
     ];
 
     /**
@@ -186,34 +186,34 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'average_keyword_frequency' => 'setAverageKeywordFrequency',
-        'average_keyword_price' => 'setAverageKeywordPrice',
-        'average_length_frequency' => 'setAverageLengthFrequency',
-        'average_length_price' => 'setAverageLengthPrice',
-        'average_tld_frequency' => 'setAverageTldFrequency',
-        'average_tld_price' => 'setAverageTldPrice',
+        'averageKeywordFrequency' => 'setAverageKeywordFrequency',
+        'averageKeywordPrice' => 'setAverageKeywordPrice',
+        'averageLengthFrequency' => 'setAverageLengthFrequency',
+        'averageLengthPrice' => 'setAverageLengthPrice',
+        'averageTldFrequency' => 'setAverageTldFrequency',
+        'averageTldPrice' => 'setAverageTldPrice',
         'char' => 'setChar',
-        'com_domain' => 'setComDomain',
-        'completely_num' => 'setCompletelyNum',
-        'found_keywords' => 'setFoundKeywords',
-        'found_prefix' => 'setFoundPrefix',
-        'found_suffix' => 'setFoundSuffix',
+        'comDomain' => 'setComDomain',
+        'completelyNum' => 'setCompletelyNum',
+        'foundKeywords' => 'setFoundKeywords',
+        'foundPrefix' => 'setFoundPrefix',
+        'foundSuffix' => 'setFoundSuffix',
         'hyph' => 'setHyph',
-        'idn_encoding' => 'setIdnEncoding',
-        'keyword_count' => 'setKeywordCount',
-        'majestics_global_rank' => 'setMajesticsGlobalRank',
-        'majestics_prev_global_rank' => 'setMajesticsPrevGlobalRank',
-        'majestics_prev_ref_i_ps' => 'setMajesticsPrevRefIPs',
-        'majestics_prev_ref_sub_nets' => 'setMajesticsPrevRefSubNets',
-        'majestics_prev_tld_rank' => 'setMajesticsPrevTldRank',
-        'majestics_ref_i_ps' => 'setMajesticsRefIPs',
-        'majestics_ref_sub_nets' => 'setMajesticsRefSubNets',
-        'majestics_tld_rank' => 'setMajesticsTldRank',
-        'name_seg' => 'setNameSeg',
+        'idnEncoding' => 'setIdnEncoding',
+        'keywordCount' => 'setKeywordCount',
+        'majesticsGlobalRank' => 'setMajesticsGlobalRank',
+        'majesticsPrevGlobalRank' => 'setMajesticsPrevGlobalRank',
+        'majesticsPrevRefIPs' => 'setMajesticsPrevRefIPs',
+        'majesticsPrevRefSubNets' => 'setMajesticsPrevRefSubNets',
+        'majesticsPrevTldRank' => 'setMajesticsPrevTldRank',
+        'majesticsRefIPs' => 'setMajesticsRefIPs',
+        'majesticsRefSubNets' => 'setMajesticsRefSubNets',
+        'majesticsTldRank' => 'setMajesticsTldRank',
+        'nameSeg' => 'setNameSeg',
         'num' => 'setNum',
-        'num_words' => 'setNumWords',
+        'numWords' => 'setNumWords',
         'tld' => 'setTld',
-        'tld_num_domains' => 'setTldNumDomains'
+        'tldNumDomains' => 'setTldNumDomains'
     ];
 
     /**
@@ -222,34 +222,34 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'average_keyword_frequency' => 'getAverageKeywordFrequency',
-        'average_keyword_price' => 'getAverageKeywordPrice',
-        'average_length_frequency' => 'getAverageLengthFrequency',
-        'average_length_price' => 'getAverageLengthPrice',
-        'average_tld_frequency' => 'getAverageTldFrequency',
-        'average_tld_price' => 'getAverageTldPrice',
+        'averageKeywordFrequency' => 'getAverageKeywordFrequency',
+        'averageKeywordPrice' => 'getAverageKeywordPrice',
+        'averageLengthFrequency' => 'getAverageLengthFrequency',
+        'averageLengthPrice' => 'getAverageLengthPrice',
+        'averageTldFrequency' => 'getAverageTldFrequency',
+        'averageTldPrice' => 'getAverageTldPrice',
         'char' => 'getChar',
-        'com_domain' => 'getComDomain',
-        'completely_num' => 'getCompletelyNum',
-        'found_keywords' => 'getFoundKeywords',
-        'found_prefix' => 'getFoundPrefix',
-        'found_suffix' => 'getFoundSuffix',
+        'comDomain' => 'getComDomain',
+        'completelyNum' => 'getCompletelyNum',
+        'foundKeywords' => 'getFoundKeywords',
+        'foundPrefix' => 'getFoundPrefix',
+        'foundSuffix' => 'getFoundSuffix',
         'hyph' => 'getHyph',
-        'idn_encoding' => 'getIdnEncoding',
-        'keyword_count' => 'getKeywordCount',
-        'majestics_global_rank' => 'getMajesticsGlobalRank',
-        'majestics_prev_global_rank' => 'getMajesticsPrevGlobalRank',
-        'majestics_prev_ref_i_ps' => 'getMajesticsPrevRefIPs',
-        'majestics_prev_ref_sub_nets' => 'getMajesticsPrevRefSubNets',
-        'majestics_prev_tld_rank' => 'getMajesticsPrevTldRank',
-        'majestics_ref_i_ps' => 'getMajesticsRefIPs',
-        'majestics_ref_sub_nets' => 'getMajesticsRefSubNets',
-        'majestics_tld_rank' => 'getMajesticsTldRank',
-        'name_seg' => 'getNameSeg',
+        'idnEncoding' => 'getIdnEncoding',
+        'keywordCount' => 'getKeywordCount',
+        'majesticsGlobalRank' => 'getMajesticsGlobalRank',
+        'majesticsPrevGlobalRank' => 'getMajesticsPrevGlobalRank',
+        'majesticsPrevRefIPs' => 'getMajesticsPrevRefIPs',
+        'majesticsPrevRefSubNets' => 'getMajesticsPrevRefSubNets',
+        'majesticsPrevTldRank' => 'getMajesticsPrevTldRank',
+        'majesticsRefIPs' => 'getMajesticsRefIPs',
+        'majesticsRefSubNets' => 'getMajesticsRefSubNets',
+        'majesticsTldRank' => 'getMajesticsTldRank',
+        'nameSeg' => 'getNameSeg',
         'num' => 'getNum',
-        'num_words' => 'getNumWords',
+        'numWords' => 'getNumWords',
         'tld' => 'getTld',
-        'tld_num_domains' => 'getTldNumDomains'
+        'tldNumDomains' => 'getTldNumDomains'
     ];
 
     /**
@@ -312,34 +312,34 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['average_keyword_frequency'] = isset($data['average_keyword_frequency']) ? $this->createData($data['average_keyword_frequency'], 'average_keyword_frequency')  : null;
-        $this->container['average_keyword_price'] = isset($data['average_keyword_price']) ? $this->createData($data['average_keyword_price'], 'average_keyword_price')  : null;
-        $this->container['average_length_frequency'] = isset($data['average_length_frequency']) ? $this->createData($data['average_length_frequency'], 'average_length_frequency')  : null;
-        $this->container['average_length_price'] = isset($data['average_length_price']) ? $this->createData($data['average_length_price'], 'average_length_price')  : null;
-        $this->container['average_tld_frequency'] = isset($data['average_tld_frequency']) ? $this->createData($data['average_tld_frequency'], 'average_tld_frequency')  : null;
-        $this->container['average_tld_price'] = isset($data['average_tld_price']) ? $this->createData($data['average_tld_price'], 'average_tld_price')  : null;
+        $this->container['averageKeywordFrequency'] = isset($data['averageKeywordFrequency']) ? $this->createData($data['averageKeywordFrequency'], 'averageKeywordFrequency')  : null;
+        $this->container['averageKeywordPrice'] = isset($data['averageKeywordPrice']) ? $this->createData($data['averageKeywordPrice'], 'averageKeywordPrice')  : null;
+        $this->container['averageLengthFrequency'] = isset($data['averageLengthFrequency']) ? $this->createData($data['averageLengthFrequency'], 'averageLengthFrequency')  : null;
+        $this->container['averageLengthPrice'] = isset($data['averageLengthPrice']) ? $this->createData($data['averageLengthPrice'], 'averageLengthPrice')  : null;
+        $this->container['averageTldFrequency'] = isset($data['averageTldFrequency']) ? $this->createData($data['averageTldFrequency'], 'averageTldFrequency')  : null;
+        $this->container['averageTldPrice'] = isset($data['averageTldPrice']) ? $this->createData($data['averageTldPrice'], 'averageTldPrice')  : null;
         $this->container['char'] = isset($data['char']) ? $this->createData($data['char'], 'char')  : null;
-        $this->container['com_domain'] = isset($data['com_domain']) ? $this->createData($data['com_domain'], 'com_domain')  : null;
-        $this->container['completely_num'] = isset($data['completely_num']) ? $this->createData($data['completely_num'], 'completely_num')  : null;
-        $this->container['found_keywords'] = isset($data['found_keywords']) ? $this->createData($data['found_keywords'], 'found_keywords')  : null;
-        $this->container['found_prefix'] = isset($data['found_prefix']) ? $this->createData($data['found_prefix'], 'found_prefix')  : null;
-        $this->container['found_suffix'] = isset($data['found_suffix']) ? $this->createData($data['found_suffix'], 'found_suffix')  : null;
+        $this->container['comDomain'] = isset($data['comDomain']) ? $this->createData($data['comDomain'], 'comDomain')  : null;
+        $this->container['completelyNum'] = isset($data['completelyNum']) ? $this->createData($data['completelyNum'], 'completelyNum')  : null;
+        $this->container['foundKeywords'] = isset($data['foundKeywords']) ? $this->createData($data['foundKeywords'], 'foundKeywords')  : null;
+        $this->container['foundPrefix'] = isset($data['foundPrefix']) ? $this->createData($data['foundPrefix'], 'foundPrefix')  : null;
+        $this->container['foundSuffix'] = isset($data['foundSuffix']) ? $this->createData($data['foundSuffix'], 'foundSuffix')  : null;
         $this->container['hyph'] = isset($data['hyph']) ? $this->createData($data['hyph'], 'hyph')  : null;
-        $this->container['idn_encoding'] = isset($data['idn_encoding']) ? $this->createData($data['idn_encoding'], 'idn_encoding')  : null;
-        $this->container['keyword_count'] = isset($data['keyword_count']) ? $this->createData($data['keyword_count'], 'keyword_count')  : null;
-        $this->container['majestics_global_rank'] = isset($data['majestics_global_rank']) ? $this->createData($data['majestics_global_rank'], 'majestics_global_rank')  : null;
-        $this->container['majestics_prev_global_rank'] = isset($data['majestics_prev_global_rank']) ? $this->createData($data['majestics_prev_global_rank'], 'majestics_prev_global_rank')  : null;
-        $this->container['majestics_prev_ref_i_ps'] = isset($data['majestics_prev_ref_i_ps']) ? $this->createData($data['majestics_prev_ref_i_ps'], 'majestics_prev_ref_i_ps')  : null;
-        $this->container['majestics_prev_ref_sub_nets'] = isset($data['majestics_prev_ref_sub_nets']) ? $this->createData($data['majestics_prev_ref_sub_nets'], 'majestics_prev_ref_sub_nets')  : null;
-        $this->container['majestics_prev_tld_rank'] = isset($data['majestics_prev_tld_rank']) ? $this->createData($data['majestics_prev_tld_rank'], 'majestics_prev_tld_rank')  : null;
-        $this->container['majestics_ref_i_ps'] = isset($data['majestics_ref_i_ps']) ? $this->createData($data['majestics_ref_i_ps'], 'majestics_ref_i_ps')  : null;
-        $this->container['majestics_ref_sub_nets'] = isset($data['majestics_ref_sub_nets']) ? $this->createData($data['majestics_ref_sub_nets'], 'majestics_ref_sub_nets')  : null;
-        $this->container['majestics_tld_rank'] = isset($data['majestics_tld_rank']) ? $this->createData($data['majestics_tld_rank'], 'majestics_tld_rank')  : null;
-        $this->container['name_seg'] = isset($data['name_seg']) ? $this->createData($data['name_seg'], 'name_seg')  : null;
+        $this->container['idnEncoding'] = isset($data['idnEncoding']) ? $this->createData($data['idnEncoding'], 'idnEncoding')  : null;
+        $this->container['keywordCount'] = isset($data['keywordCount']) ? $this->createData($data['keywordCount'], 'keywordCount')  : null;
+        $this->container['majesticsGlobalRank'] = isset($data['majesticsGlobalRank']) ? $this->createData($data['majesticsGlobalRank'], 'majesticsGlobalRank')  : null;
+        $this->container['majesticsPrevGlobalRank'] = isset($data['majesticsPrevGlobalRank']) ? $this->createData($data['majesticsPrevGlobalRank'], 'majesticsPrevGlobalRank')  : null;
+        $this->container['majesticsPrevRefIPs'] = isset($data['majesticsPrevRefIPs']) ? $this->createData($data['majesticsPrevRefIPs'], 'majesticsPrevRefIPs')  : null;
+        $this->container['majesticsPrevRefSubNets'] = isset($data['majesticsPrevRefSubNets']) ? $this->createData($data['majesticsPrevRefSubNets'], 'majesticsPrevRefSubNets')  : null;
+        $this->container['majesticsPrevTldRank'] = isset($data['majesticsPrevTldRank']) ? $this->createData($data['majesticsPrevTldRank'], 'majesticsPrevTldRank')  : null;
+        $this->container['majesticsRefIPs'] = isset($data['majesticsRefIPs']) ? $this->createData($data['majesticsRefIPs'], 'majesticsRefIPs')  : null;
+        $this->container['majesticsRefSubNets'] = isset($data['majesticsRefSubNets']) ? $this->createData($data['majesticsRefSubNets'], 'majesticsRefSubNets')  : null;
+        $this->container['majesticsTldRank'] = isset($data['majesticsTldRank']) ? $this->createData($data['majesticsTldRank'], 'majesticsTldRank')  : null;
+        $this->container['nameSeg'] = isset($data['nameSeg']) ? $this->createData($data['nameSeg'], 'nameSeg')  : null;
         $this->container['num'] = isset($data['num']) ? $this->createData($data['num'], 'num')  : null;
-        $this->container['num_words'] = isset($data['num_words']) ? $this->createData($data['num_words'], 'num_words')  : null;
+        $this->container['numWords'] = isset($data['numWords']) ? $this->createData($data['numWords'], 'numWords')  : null;
         $this->container['tld'] = isset($data['tld']) ? $this->createData($data['tld'], 'tld')  : null;
-        $this->container['tld_num_domains'] = isset($data['tld_num_domains']) ? $this->createData($data['tld_num_domains'], 'tld_num_domains')  : null;
+        $this->container['tldNumDomains'] = isset($data['tldNumDomains']) ? $this->createData($data['tldNumDomains'], 'tldNumDomains')  : null;
     }
 
     /**
@@ -407,145 +407,145 @@ class EstimationParameters implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets average_keyword_frequency
+     * Gets averageKeywordFrequency
      *
      * @return string
      */
     public function getAverageKeywordFrequency()
     {
-        return $this->container['average_keyword_frequency'];
+        return $this->container['averageKeywordFrequency'];
     }
 
     /**
-     * Sets average_keyword_frequency
+     * Sets averageKeywordFrequency
      *
-     * @param string $average_keyword_frequency average_keyword_frequency
+     * @param string $averageKeywordFrequency averageKeywordFrequency
      *
      * @return $this
      */
-    public function setAverageKeywordFrequency($average_keyword_frequency)
+    public function setAverageKeywordFrequency($averageKeywordFrequency)
     {
-        $this->container['average_keyword_frequency'] = $average_keyword_frequency;
+        $this->container['averageKeywordFrequency'] = $averageKeywordFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_keyword_price
+     * Gets averageKeywordPrice
      *
      * @return string
      */
     public function getAverageKeywordPrice()
     {
-        return $this->container['average_keyword_price'];
+        return $this->container['averageKeywordPrice'];
     }
 
     /**
-     * Sets average_keyword_price
+     * Sets averageKeywordPrice
      *
-     * @param string $average_keyword_price average_keyword_price
+     * @param string $averageKeywordPrice averageKeywordPrice
      *
      * @return $this
      */
-    public function setAverageKeywordPrice($average_keyword_price)
+    public function setAverageKeywordPrice($averageKeywordPrice)
     {
-        $this->container['average_keyword_price'] = $average_keyword_price;
+        $this->container['averageKeywordPrice'] = $averageKeywordPrice;
 
         return $this;
     }
 
     /**
-     * Gets average_length_frequency
+     * Gets averageLengthFrequency
      *
      * @return string
      */
     public function getAverageLengthFrequency()
     {
-        return $this->container['average_length_frequency'];
+        return $this->container['averageLengthFrequency'];
     }
 
     /**
-     * Sets average_length_frequency
+     * Sets averageLengthFrequency
      *
-     * @param string $average_length_frequency average_length_frequency
+     * @param string $averageLengthFrequency averageLengthFrequency
      *
      * @return $this
      */
-    public function setAverageLengthFrequency($average_length_frequency)
+    public function setAverageLengthFrequency($averageLengthFrequency)
     {
-        $this->container['average_length_frequency'] = $average_length_frequency;
+        $this->container['averageLengthFrequency'] = $averageLengthFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_length_price
+     * Gets averageLengthPrice
      *
      * @return string
      */
     public function getAverageLengthPrice()
     {
-        return $this->container['average_length_price'];
+        return $this->container['averageLengthPrice'];
     }
 
     /**
-     * Sets average_length_price
+     * Sets averageLengthPrice
      *
-     * @param string $average_length_price average_length_price
+     * @param string $averageLengthPrice averageLengthPrice
      *
      * @return $this
      */
-    public function setAverageLengthPrice($average_length_price)
+    public function setAverageLengthPrice($averageLengthPrice)
     {
-        $this->container['average_length_price'] = $average_length_price;
+        $this->container['averageLengthPrice'] = $averageLengthPrice;
 
         return $this;
     }
 
     /**
-     * Gets average_tld_frequency
+     * Gets averageTldFrequency
      *
      * @return string
      */
     public function getAverageTldFrequency()
     {
-        return $this->container['average_tld_frequency'];
+        return $this->container['averageTldFrequency'];
     }
 
     /**
-     * Sets average_tld_frequency
+     * Sets averageTldFrequency
      *
-     * @param string $average_tld_frequency average_tld_frequency
+     * @param string $averageTldFrequency averageTldFrequency
      *
      * @return $this
      */
-    public function setAverageTldFrequency($average_tld_frequency)
+    public function setAverageTldFrequency($averageTldFrequency)
     {
-        $this->container['average_tld_frequency'] = $average_tld_frequency;
+        $this->container['averageTldFrequency'] = $averageTldFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_tld_price
+     * Gets averageTldPrice
      *
      * @return string
      */
     public function getAverageTldPrice()
     {
-        return $this->container['average_tld_price'];
+        return $this->container['averageTldPrice'];
     }
 
     /**
-     * Sets average_tld_price
+     * Sets averageTldPrice
      *
-     * @param string $average_tld_price average_tld_price
+     * @param string $averageTldPrice averageTldPrice
      *
      * @return $this
      */
-    public function setAverageTldPrice($average_tld_price)
+    public function setAverageTldPrice($averageTldPrice)
     {
-        $this->container['average_tld_price'] = $average_tld_price;
+        $this->container['averageTldPrice'] = $averageTldPrice;
 
         return $this;
     }
@@ -575,121 +575,121 @@ class EstimationParameters implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets com_domain
+     * Gets comDomain
      *
      * @return string
      */
     public function getComDomain()
     {
-        return $this->container['com_domain'];
+        return $this->container['comDomain'];
     }
 
     /**
-     * Sets com_domain
+     * Sets comDomain
      *
-     * @param string $com_domain com_domain
+     * @param string $comDomain comDomain
      *
      * @return $this
      */
-    public function setComDomain($com_domain)
+    public function setComDomain($comDomain)
     {
-        $this->container['com_domain'] = $com_domain;
+        $this->container['comDomain'] = $comDomain;
 
         return $this;
     }
 
     /**
-     * Gets completely_num
+     * Gets completelyNum
      *
      * @return string
      */
     public function getCompletelyNum()
     {
-        return $this->container['completely_num'];
+        return $this->container['completelyNum'];
     }
 
     /**
-     * Sets completely_num
+     * Sets completelyNum
      *
-     * @param string $completely_num completely_num
+     * @param string $completelyNum completelyNum
      *
      * @return $this
      */
-    public function setCompletelyNum($completely_num)
+    public function setCompletelyNum($completelyNum)
     {
-        $this->container['completely_num'] = $completely_num;
+        $this->container['completelyNum'] = $completelyNum;
 
         return $this;
     }
 
     /**
-     * Gets found_keywords
+     * Gets foundKeywords
      *
      * @return string
      */
     public function getFoundKeywords()
     {
-        return $this->container['found_keywords'];
+        return $this->container['foundKeywords'];
     }
 
     /**
-     * Sets found_keywords
+     * Sets foundKeywords
      *
-     * @param string $found_keywords found_keywords
+     * @param string $foundKeywords foundKeywords
      *
      * @return $this
      */
-    public function setFoundKeywords($found_keywords)
+    public function setFoundKeywords($foundKeywords)
     {
-        $this->container['found_keywords'] = $found_keywords;
+        $this->container['foundKeywords'] = $foundKeywords;
 
         return $this;
     }
 
     /**
-     * Gets found_prefix
+     * Gets foundPrefix
      *
      * @return string
      */
     public function getFoundPrefix()
     {
-        return $this->container['found_prefix'];
+        return $this->container['foundPrefix'];
     }
 
     /**
-     * Sets found_prefix
+     * Sets foundPrefix
      *
-     * @param string $found_prefix found_prefix
+     * @param string $foundPrefix foundPrefix
      *
      * @return $this
      */
-    public function setFoundPrefix($found_prefix)
+    public function setFoundPrefix($foundPrefix)
     {
-        $this->container['found_prefix'] = $found_prefix;
+        $this->container['foundPrefix'] = $foundPrefix;
 
         return $this;
     }
 
     /**
-     * Gets found_suffix
+     * Gets foundSuffix
      *
      * @return string
      */
     public function getFoundSuffix()
     {
-        return $this->container['found_suffix'];
+        return $this->container['foundSuffix'];
     }
 
     /**
-     * Sets found_suffix
+     * Sets foundSuffix
      *
-     * @param string $found_suffix found_suffix
+     * @param string $foundSuffix foundSuffix
      *
      * @return $this
      */
-    public function setFoundSuffix($found_suffix)
+    public function setFoundSuffix($foundSuffix)
     {
-        $this->container['found_suffix'] = $found_suffix;
+        $this->container['foundSuffix'] = $foundSuffix;
 
         return $this;
     }
@@ -719,265 +719,265 @@ class EstimationParameters implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets idn_encoding
+     * Gets idnEncoding
      *
      * @return string
      */
     public function getIdnEncoding()
     {
-        return $this->container['idn_encoding'];
+        return $this->container['idnEncoding'];
     }
 
     /**
-     * Sets idn_encoding
+     * Sets idnEncoding
      *
-     * @param string $idn_encoding idn_encoding
+     * @param string $idnEncoding idnEncoding
      *
      * @return $this
      */
-    public function setIdnEncoding($idn_encoding)
+    public function setIdnEncoding($idnEncoding)
     {
-        $this->container['idn_encoding'] = $idn_encoding;
+        $this->container['idnEncoding'] = $idnEncoding;
 
         return $this;
     }
 
     /**
-     * Gets keyword_count
+     * Gets keywordCount
      *
      * @return string
      */
     public function getKeywordCount()
     {
-        return $this->container['keyword_count'];
+        return $this->container['keywordCount'];
     }
 
     /**
-     * Sets keyword_count
+     * Sets keywordCount
      *
-     * @param string $keyword_count keyword_count
+     * @param string $keywordCount keywordCount
      *
      * @return $this
      */
-    public function setKeywordCount($keyword_count)
+    public function setKeywordCount($keywordCount)
     {
-        $this->container['keyword_count'] = $keyword_count;
+        $this->container['keywordCount'] = $keywordCount;
 
         return $this;
     }
 
     /**
-     * Gets majestics_global_rank
+     * Gets majesticsGlobalRank
      *
      * @return string
      */
     public function getMajesticsGlobalRank()
     {
-        return $this->container['majestics_global_rank'];
+        return $this->container['majesticsGlobalRank'];
     }
 
     /**
-     * Sets majestics_global_rank
+     * Sets majesticsGlobalRank
      *
-     * @param string $majestics_global_rank majestics_global_rank
+     * @param string $majesticsGlobalRank majesticsGlobalRank
      *
      * @return $this
      */
-    public function setMajesticsGlobalRank($majestics_global_rank)
+    public function setMajesticsGlobalRank($majesticsGlobalRank)
     {
-        $this->container['majestics_global_rank'] = $majestics_global_rank;
+        $this->container['majesticsGlobalRank'] = $majesticsGlobalRank;
 
         return $this;
     }
 
     /**
-     * Gets majestics_prev_global_rank
+     * Gets majesticsPrevGlobalRank
      *
      * @return string
      */
     public function getMajesticsPrevGlobalRank()
     {
-        return $this->container['majestics_prev_global_rank'];
+        return $this->container['majesticsPrevGlobalRank'];
     }
 
     /**
-     * Sets majestics_prev_global_rank
+     * Sets majesticsPrevGlobalRank
      *
-     * @param string $majestics_prev_global_rank majestics_prev_global_rank
+     * @param string $majesticsPrevGlobalRank majesticsPrevGlobalRank
      *
      * @return $this
      */
-    public function setMajesticsPrevGlobalRank($majestics_prev_global_rank)
+    public function setMajesticsPrevGlobalRank($majesticsPrevGlobalRank)
     {
-        $this->container['majestics_prev_global_rank'] = $majestics_prev_global_rank;
+        $this->container['majesticsPrevGlobalRank'] = $majesticsPrevGlobalRank;
 
         return $this;
     }
 
     /**
-     * Gets majestics_prev_ref_i_ps
+     * Gets majesticsPrevRefIPs
      *
      * @return string
      */
     public function getMajesticsPrevRefIPs()
     {
-        return $this->container['majestics_prev_ref_i_ps'];
+        return $this->container['majesticsPrevRefIPs'];
     }
 
     /**
-     * Sets majestics_prev_ref_i_ps
+     * Sets majesticsPrevRefIPs
      *
-     * @param string $majestics_prev_ref_i_ps majestics_prev_ref_i_ps
+     * @param string $majesticsPrevRefIPs majesticsPrevRefIPs
      *
      * @return $this
      */
-    public function setMajesticsPrevRefIPs($majestics_prev_ref_i_ps)
+    public function setMajesticsPrevRefIPs($majesticsPrevRefIPs)
     {
-        $this->container['majestics_prev_ref_i_ps'] = $majestics_prev_ref_i_ps;
+        $this->container['majesticsPrevRefIPs'] = $majesticsPrevRefIPs;
 
         return $this;
     }
 
     /**
-     * Gets majestics_prev_ref_sub_nets
+     * Gets majesticsPrevRefSubNets
      *
      * @return string
      */
     public function getMajesticsPrevRefSubNets()
     {
-        return $this->container['majestics_prev_ref_sub_nets'];
+        return $this->container['majesticsPrevRefSubNets'];
     }
 
     /**
-     * Sets majestics_prev_ref_sub_nets
+     * Sets majesticsPrevRefSubNets
      *
-     * @param string $majestics_prev_ref_sub_nets majestics_prev_ref_sub_nets
+     * @param string $majesticsPrevRefSubNets majesticsPrevRefSubNets
      *
      * @return $this
      */
-    public function setMajesticsPrevRefSubNets($majestics_prev_ref_sub_nets)
+    public function setMajesticsPrevRefSubNets($majesticsPrevRefSubNets)
     {
-        $this->container['majestics_prev_ref_sub_nets'] = $majestics_prev_ref_sub_nets;
+        $this->container['majesticsPrevRefSubNets'] = $majesticsPrevRefSubNets;
 
         return $this;
     }
 
     /**
-     * Gets majestics_prev_tld_rank
+     * Gets majesticsPrevTldRank
      *
      * @return string
      */
     public function getMajesticsPrevTldRank()
     {
-        return $this->container['majestics_prev_tld_rank'];
+        return $this->container['majesticsPrevTldRank'];
     }
 
     /**
-     * Sets majestics_prev_tld_rank
+     * Sets majesticsPrevTldRank
      *
-     * @param string $majestics_prev_tld_rank majestics_prev_tld_rank
+     * @param string $majesticsPrevTldRank majesticsPrevTldRank
      *
      * @return $this
      */
-    public function setMajesticsPrevTldRank($majestics_prev_tld_rank)
+    public function setMajesticsPrevTldRank($majesticsPrevTldRank)
     {
-        $this->container['majestics_prev_tld_rank'] = $majestics_prev_tld_rank;
+        $this->container['majesticsPrevTldRank'] = $majesticsPrevTldRank;
 
         return $this;
     }
 
     /**
-     * Gets majestics_ref_i_ps
+     * Gets majesticsRefIPs
      *
      * @return string
      */
     public function getMajesticsRefIPs()
     {
-        return $this->container['majestics_ref_i_ps'];
+        return $this->container['majesticsRefIPs'];
     }
 
     /**
-     * Sets majestics_ref_i_ps
+     * Sets majesticsRefIPs
      *
-     * @param string $majestics_ref_i_ps majestics_ref_i_ps
+     * @param string $majesticsRefIPs majesticsRefIPs
      *
      * @return $this
      */
-    public function setMajesticsRefIPs($majestics_ref_i_ps)
+    public function setMajesticsRefIPs($majesticsRefIPs)
     {
-        $this->container['majestics_ref_i_ps'] = $majestics_ref_i_ps;
+        $this->container['majesticsRefIPs'] = $majesticsRefIPs;
 
         return $this;
     }
 
     /**
-     * Gets majestics_ref_sub_nets
+     * Gets majesticsRefSubNets
      *
      * @return string
      */
     public function getMajesticsRefSubNets()
     {
-        return $this->container['majestics_ref_sub_nets'];
+        return $this->container['majesticsRefSubNets'];
     }
 
     /**
-     * Sets majestics_ref_sub_nets
+     * Sets majesticsRefSubNets
      *
-     * @param string $majestics_ref_sub_nets majestics_ref_sub_nets
+     * @param string $majesticsRefSubNets majesticsRefSubNets
      *
      * @return $this
      */
-    public function setMajesticsRefSubNets($majestics_ref_sub_nets)
+    public function setMajesticsRefSubNets($majesticsRefSubNets)
     {
-        $this->container['majestics_ref_sub_nets'] = $majestics_ref_sub_nets;
+        $this->container['majesticsRefSubNets'] = $majesticsRefSubNets;
 
         return $this;
     }
 
     /**
-     * Gets majestics_tld_rank
+     * Gets majesticsTldRank
      *
      * @return string
      */
     public function getMajesticsTldRank()
     {
-        return $this->container['majestics_tld_rank'];
+        return $this->container['majesticsTldRank'];
     }
 
     /**
-     * Sets majestics_tld_rank
+     * Sets majesticsTldRank
      *
-     * @param string $majestics_tld_rank majestics_tld_rank
+     * @param string $majesticsTldRank majesticsTldRank
      *
      * @return $this
      */
-    public function setMajesticsTldRank($majestics_tld_rank)
+    public function setMajesticsTldRank($majesticsTldRank)
     {
-        $this->container['majestics_tld_rank'] = $majestics_tld_rank;
+        $this->container['majesticsTldRank'] = $majesticsTldRank;
 
         return $this;
     }
 
     /**
-     * Gets name_seg
+     * Gets nameSeg
      *
      * @return string
      */
     public function getNameSeg()
     {
-        return $this->container['name_seg'];
+        return $this->container['nameSeg'];
     }
 
     /**
-     * Sets name_seg
+     * Sets nameSeg
      *
-     * @param string $name_seg name_seg
+     * @param string $nameSeg nameSeg
      *
      * @return $this
      */
-    public function setNameSeg($name_seg)
+    public function setNameSeg($nameSeg)
     {
-        $this->container['name_seg'] = $name_seg;
+        $this->container['nameSeg'] = $nameSeg;
 
         return $this;
     }
@@ -1007,25 +1007,25 @@ class EstimationParameters implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets num_words
+     * Gets numWords
      *
      * @return string
      */
     public function getNumWords()
     {
-        return $this->container['num_words'];
+        return $this->container['numWords'];
     }
 
     /**
-     * Sets num_words
+     * Sets numWords
      *
-     * @param string $num_words num_words
+     * @param string $numWords numWords
      *
      * @return $this
      */
-    public function setNumWords($num_words)
+    public function setNumWords($numWords)
     {
-        $this->container['num_words'] = $num_words;
+        $this->container['numWords'] = $numWords;
 
         return $this;
     }
@@ -1055,25 +1055,25 @@ class EstimationParameters implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets tld_num_domains
+     * Gets tldNumDomains
      *
      * @return string
      */
     public function getTldNumDomains()
     {
-        return $this->container['tld_num_domains'];
+        return $this->container['tldNumDomains'];
     }
 
     /**
-     * Sets tld_num_domains
+     * Sets tldNumDomains
      *
-     * @param string $tld_num_domains tld_num_domains
+     * @param string $tldNumDomains tldNumDomains
      *
      * @return $this
      */
-    public function setTldNumDomains($tld_num_domains)
+    public function setTldNumDomains($tldNumDomains)
     {
-        $this->container['tld_num_domains'] = $tld_num_domains;
+        $this->container['tldNumDomains'] = $tldNumDomains;
 
         return $this;
     }

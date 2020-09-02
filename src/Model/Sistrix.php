@@ -59,8 +59,8 @@ class Sistrix implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'sichtbarkeitsindex' => 'string',
         'pages' => 'int',
-        'kwcount_seo' => 'int',
-        'kwcount_sem' => 'int'
+        'kwcountSeo' => 'int',
+        'kwcountSem' => 'int'
     ];
 
     /**
@@ -71,8 +71,8 @@ class Sistrix implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'sichtbarkeitsindex' => null,
         'pages' => null,
-        'kwcount_seo' => null,
-        'kwcount_sem' => null
+        'kwcountSeo' => null,
+        'kwcountSem' => null
     ];
 
     /**
@@ -104,8 +104,8 @@ class Sistrix implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'sichtbarkeitsindex' => 'sichtbarkeitsindex',
         'pages' => 'pages',
-        'kwcount_seo' => 'kwcount_seo',
-        'kwcount_sem' => 'kwcount_sem'
+        'kwcountSeo' => 'kwcount_seo',
+        'kwcountSem' => 'kwcount_sem'
     ];
 
     /**
@@ -116,8 +116,8 @@ class Sistrix implements ModelInterface, ArrayAccess
     protected static $setters = [
         'sichtbarkeitsindex' => 'setSichtbarkeitsindex',
         'pages' => 'setPages',
-        'kwcount_seo' => 'setKwcountSeo',
-        'kwcount_sem' => 'setKwcountSem'
+        'kwcountSeo' => 'setKwcountSeo',
+        'kwcountSem' => 'setKwcountSem'
     ];
 
     /**
@@ -128,8 +128,8 @@ class Sistrix implements ModelInterface, ArrayAccess
     protected static $getters = [
         'sichtbarkeitsindex' => 'getSichtbarkeitsindex',
         'pages' => 'getPages',
-        'kwcount_seo' => 'getKwcountSeo',
-        'kwcount_sem' => 'getKwcountSem'
+        'kwcountSeo' => 'getKwcountSeo',
+        'kwcountSem' => 'getKwcountSem'
     ];
 
     /**
@@ -194,8 +194,8 @@ class Sistrix implements ModelInterface, ArrayAccess
     {
         $this->container['sichtbarkeitsindex'] = isset($data['sichtbarkeitsindex']) ? $this->createData($data['sichtbarkeitsindex'], 'sichtbarkeitsindex')  : null;
         $this->container['pages'] = isset($data['pages']) ? $this->createData($data['pages'], 'pages')  : null;
-        $this->container['kwcount_seo'] = isset($data['kwcount_seo']) ? $this->createData($data['kwcount_seo'], 'kwcount_seo')  : null;
-        $this->container['kwcount_sem'] = isset($data['kwcount_sem']) ? $this->createData($data['kwcount_sem'], 'kwcount_sem')  : null;
+        $this->container['kwcountSeo'] = isset($data['kwcountSeo']) ? $this->createData($data['kwcountSeo'], 'kwcountSeo')  : null;
+        $this->container['kwcountSem'] = isset($data['kwcountSem']) ? $this->createData($data['kwcountSem'], 'kwcountSem')  : null;
     }
 
     /**
@@ -311,49 +311,49 @@ class Sistrix implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets kwcount_seo
+     * Gets kwcountSeo
      *
      * @return int
      */
     public function getKwcountSeo()
     {
-        return $this->container['kwcount_seo'];
+        return $this->container['kwcountSeo'];
     }
 
     /**
-     * Sets kwcount_seo
+     * Sets kwcountSeo
      *
-     * @param int $kwcount_seo kwcount_seo
+     * @param int $kwcountSeo kwcountSeo
      *
      * @return $this
      */
-    public function setKwcountSeo($kwcount_seo)
+    public function setKwcountSeo($kwcountSeo)
     {
-        $this->container['kwcount_seo'] = $kwcount_seo;
+        $this->container['kwcountSeo'] = $kwcountSeo;
 
         return $this;
     }
 
     /**
-     * Gets kwcount_sem
+     * Gets kwcountSem
      *
      * @return int
      */
     public function getKwcountSem()
     {
-        return $this->container['kwcount_sem'];
+        return $this->container['kwcountSem'];
     }
 
     /**
-     * Sets kwcount_sem
+     * Sets kwcountSem
      *
-     * @param int $kwcount_sem kwcount_sem
+     * @param int $kwcountSem kwcountSem
      *
      * @return $this
      */
-    public function setKwcountSem($kwcount_sem)
+    public function setKwcountSem($kwcountSem)
     {
-        $this->container['kwcount_sem'] = $kwcount_sem;
+        $this->container['kwcountSem'] = $kwcountSem;
 
         return $this;
     }

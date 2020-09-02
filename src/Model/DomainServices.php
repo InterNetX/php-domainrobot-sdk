@@ -57,10 +57,10 @@ class DomainServices implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'backup_mx' => '\Domainrobot\Model\BackupMx[]',
-        'mail_proxy' => '\Domainrobot\Model\MailProxy[]',
+        'backupMx' => '\Domainrobot\Model\BackupMx[]',
+        'mailProxy' => '\Domainrobot\Model\MailProxy[]',
         'redirect' => '\Domainrobot\Model\Redirect[]',
-        'domain_monitoring' => '\Domainrobot\Model\DomainMonitoring[]'
+        'domainMonitoring' => '\Domainrobot\Model\DomainMonitoring[]'
     ];
 
     /**
@@ -69,10 +69,10 @@ class DomainServices implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'backup_mx' => null,
-        'mail_proxy' => null,
+        'backupMx' => null,
+        'mailProxy' => null,
         'redirect' => null,
-        'domain_monitoring' => null
+        'domainMonitoring' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class DomainServices implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'backup_mx' => 'backupMx',
-        'mail_proxy' => 'mailProxy',
+        'backupMx' => 'backupMx',
+        'mailProxy' => 'mailProxy',
         'redirect' => 'redirect',
-        'domain_monitoring' => 'domainMonitoring'
+        'domainMonitoring' => 'domainMonitoring'
     ];
 
     /**
@@ -114,10 +114,10 @@ class DomainServices implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'backup_mx' => 'setBackupMx',
-        'mail_proxy' => 'setMailProxy',
+        'backupMx' => 'setBackupMx',
+        'mailProxy' => 'setMailProxy',
         'redirect' => 'setRedirect',
-        'domain_monitoring' => 'setDomainMonitoring'
+        'domainMonitoring' => 'setDomainMonitoring'
     ];
 
     /**
@@ -126,10 +126,10 @@ class DomainServices implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'backup_mx' => 'getBackupMx',
-        'mail_proxy' => 'getMailProxy',
+        'backupMx' => 'getBackupMx',
+        'mailProxy' => 'getMailProxy',
         'redirect' => 'getRedirect',
-        'domain_monitoring' => 'getDomainMonitoring'
+        'domainMonitoring' => 'getDomainMonitoring'
     ];
 
     /**
@@ -192,10 +192,10 @@ class DomainServices implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['backup_mx'] = isset($data['backup_mx']) ? $this->createData($data['backup_mx'], 'backup_mx')  : null;
-        $this->container['mail_proxy'] = isset($data['mail_proxy']) ? $this->createData($data['mail_proxy'], 'mail_proxy')  : null;
+        $this->container['backupMx'] = isset($data['backupMx']) ? $this->createData($data['backupMx'], 'backupMx')  : null;
+        $this->container['mailProxy'] = isset($data['mailProxy']) ? $this->createData($data['mailProxy'], 'mailProxy')  : null;
         $this->container['redirect'] = isset($data['redirect']) ? $this->createData($data['redirect'], 'redirect')  : null;
-        $this->container['domain_monitoring'] = isset($data['domain_monitoring']) ? $this->createData($data['domain_monitoring'], 'domain_monitoring')  : null;
+        $this->container['domainMonitoring'] = isset($data['domainMonitoring']) ? $this->createData($data['domainMonitoring'], 'domainMonitoring')  : null;
     }
 
     /**
@@ -263,49 +263,49 @@ class DomainServices implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets backup_mx
+     * Gets backupMx
      *
      * @return \Domainrobot\Model\BackupMx[]
      */
     public function getBackupMx()
     {
-        return $this->container['backup_mx'];
+        return $this->container['backupMx'];
     }
 
     /**
-     * Sets backup_mx
+     * Sets backupMx
      *
-     * @param \Domainrobot\Model\BackupMx[] $backup_mx Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\BackupMx[] $backupMx Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
-    public function setBackupMx($backup_mx)
+    public function setBackupMx($backupMx)
     {
-        $this->container['backup_mx'] = $backup_mx;
+        $this->container['backupMx'] = $backupMx;
 
         return $this;
     }
 
     /**
-     * Gets mail_proxy
+     * Gets mailProxy
      *
      * @return \Domainrobot\Model\MailProxy[]
      */
     public function getMailProxy()
     {
-        return $this->container['mail_proxy'];
+        return $this->container['mailProxy'];
     }
 
     /**
-     * Sets mail_proxy
+     * Sets mailProxy
      *
-     * @param \Domainrobot\Model\MailProxy[] $mail_proxy Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\MailProxy[] $mailProxy Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
-    public function setMailProxy($mail_proxy)
+    public function setMailProxy($mailProxy)
     {
-        $this->container['mail_proxy'] = $mail_proxy;
+        $this->container['mailProxy'] = $mailProxy;
 
         return $this;
     }
@@ -335,25 +335,25 @@ class DomainServices implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets domain_monitoring
+     * Gets domainMonitoring
      *
      * @return \Domainrobot\Model\DomainMonitoring[]
      */
     public function getDomainMonitoring()
     {
-        return $this->container['domain_monitoring'];
+        return $this->container['domainMonitoring'];
     }
 
     /**
-     * Sets domain_monitoring
+     * Sets domainMonitoring
      *
-     * @param \Domainrobot\Model\DomainMonitoring[] $domain_monitoring Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\DomainMonitoring[] $domainMonitoring Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
-    public function setDomainMonitoring($domain_monitoring)
+    public function setDomainMonitoring($domainMonitoring)
     {
-        $this->container['domain_monitoring'] = $domain_monitoring;
+        $this->container['domainMonitoring'] = $domainMonitoring;
 
         return $this;
     }

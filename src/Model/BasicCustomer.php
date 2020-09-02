@@ -62,27 +62,27 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'group' => 'int',
         'name' => 'string',
         'organization' => 'string',
-        'vat_number' => 'string',
+        'vatNumber' => 'string',
         'gender' => '\Domainrobot\Model\GenderConstants',
         'title' => 'string',
-        'address_lines' => 'string[]',
+        'addressLines' => 'string[]',
         'city' => 'string',
         'state' => 'string',
         'country' => 'string',
         'phone' => 'string',
         'fax' => '\Domainrobot\Model\Phone',
         'emails' => 'string[]',
-        'billing_emails' => 'string[]',
+        'billingEmails' => 'string[]',
         'payment' => '\Domainrobot\Model\PaymentConstants',
-        'payment_mode' => 'string',
-        'payment_currency' => '\Domainrobot\Model\Currency',
-        'invoice_language' => 'string',
+        'paymentMode' => 'string',
+        'paymentCurrency' => '\Domainrobot\Model\Currency',
+        'invoiceLanguage' => 'string',
         'taxable' => 'bool',
         'card' => '\Domainrobot\Model\Card',
         'contracts' => '\Domainrobot\Model\CustomerContract[]',
-        'billing_users' => '\Domainrobot\Model\BasicUser[]',
+        'billingUsers' => '\Domainrobot\Model\BasicUser[]',
         'account' => '\Domainrobot\Model\Account',
-        'clear_account' => '\Domainrobot\Model\ClearAccountPeriod',
+        'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
@@ -100,27 +100,27 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'group' => 'int64',
         'name' => null,
         'organization' => null,
-        'vat_number' => null,
+        'vatNumber' => null,
         'gender' => null,
         'title' => null,
-        'address_lines' => null,
+        'addressLines' => null,
         'city' => null,
         'state' => null,
         'country' => null,
         'phone' => null,
         'fax' => null,
         'emails' => null,
-        'billing_emails' => null,
+        'billingEmails' => null,
         'payment' => null,
-        'payment_mode' => null,
-        'payment_currency' => null,
-        'invoice_language' => null,
+        'paymentMode' => null,
+        'paymentCurrency' => null,
+        'invoiceLanguage' => null,
         'taxable' => null,
         'card' => null,
         'contracts' => null,
-        'billing_users' => null,
+        'billingUsers' => null,
         'account' => null,
-        'clear_account' => null,
+        'clearAccount' => null,
         'fname' => null,
         'lname' => null,
         'pcode' => null,
@@ -159,27 +159,27 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'group' => 'group',
         'name' => 'name',
         'organization' => 'organization',
-        'vat_number' => 'vatNumber',
+        'vatNumber' => 'vatNumber',
         'gender' => 'gender',
         'title' => 'title',
-        'address_lines' => 'addressLines',
+        'addressLines' => 'addressLines',
         'city' => 'city',
         'state' => 'state',
         'country' => 'country',
         'phone' => 'phone',
         'fax' => 'fax',
         'emails' => 'emails',
-        'billing_emails' => 'billingEmails',
+        'billingEmails' => 'billingEmails',
         'payment' => 'payment',
-        'payment_mode' => 'paymentMode',
-        'payment_currency' => 'paymentCurrency',
-        'invoice_language' => 'invoiceLanguage',
+        'paymentMode' => 'paymentMode',
+        'paymentCurrency' => 'paymentCurrency',
+        'invoiceLanguage' => 'invoiceLanguage',
         'taxable' => 'taxable',
         'card' => 'card',
         'contracts' => 'contracts',
-        'billing_users' => 'billingUsers',
+        'billingUsers' => 'billingUsers',
         'account' => 'account',
-        'clear_account' => 'clearAccount',
+        'clearAccount' => 'clearAccount',
         'fname' => 'fname',
         'lname' => 'lname',
         'pcode' => 'pcode',
@@ -197,27 +197,27 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'group' => 'setGroup',
         'name' => 'setName',
         'organization' => 'setOrganization',
-        'vat_number' => 'setVatNumber',
+        'vatNumber' => 'setVatNumber',
         'gender' => 'setGender',
         'title' => 'setTitle',
-        'address_lines' => 'setAddressLines',
+        'addressLines' => 'setAddressLines',
         'city' => 'setCity',
         'state' => 'setState',
         'country' => 'setCountry',
         'phone' => 'setPhone',
         'fax' => 'setFax',
         'emails' => 'setEmails',
-        'billing_emails' => 'setBillingEmails',
+        'billingEmails' => 'setBillingEmails',
         'payment' => 'setPayment',
-        'payment_mode' => 'setPaymentMode',
-        'payment_currency' => 'setPaymentCurrency',
-        'invoice_language' => 'setInvoiceLanguage',
+        'paymentMode' => 'setPaymentMode',
+        'paymentCurrency' => 'setPaymentCurrency',
+        'invoiceLanguage' => 'setInvoiceLanguage',
         'taxable' => 'setTaxable',
         'card' => 'setCard',
         'contracts' => 'setContracts',
-        'billing_users' => 'setBillingUsers',
+        'billingUsers' => 'setBillingUsers',
         'account' => 'setAccount',
-        'clear_account' => 'setClearAccount',
+        'clearAccount' => 'setClearAccount',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'pcode' => 'setPcode',
@@ -235,27 +235,27 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'group' => 'getGroup',
         'name' => 'getName',
         'organization' => 'getOrganization',
-        'vat_number' => 'getVatNumber',
+        'vatNumber' => 'getVatNumber',
         'gender' => 'getGender',
         'title' => 'getTitle',
-        'address_lines' => 'getAddressLines',
+        'addressLines' => 'getAddressLines',
         'city' => 'getCity',
         'state' => 'getState',
         'country' => 'getCountry',
         'phone' => 'getPhone',
         'fax' => 'getFax',
         'emails' => 'getEmails',
-        'billing_emails' => 'getBillingEmails',
+        'billingEmails' => 'getBillingEmails',
         'payment' => 'getPayment',
-        'payment_mode' => 'getPaymentMode',
-        'payment_currency' => 'getPaymentCurrency',
-        'invoice_language' => 'getInvoiceLanguage',
+        'paymentMode' => 'getPaymentMode',
+        'paymentCurrency' => 'getPaymentCurrency',
+        'invoiceLanguage' => 'getInvoiceLanguage',
         'taxable' => 'getTaxable',
         'card' => 'getCard',
         'contracts' => 'getContracts',
-        'billing_users' => 'getBillingUsers',
+        'billingUsers' => 'getBillingUsers',
         'account' => 'getAccount',
-        'clear_account' => 'getClearAccount',
+        'clearAccount' => 'getClearAccount',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'pcode' => 'getPcode',
@@ -327,27 +327,27 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['group'] = isset($data['group']) ? $this->createData($data['group'], 'group')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
-        $this->container['vat_number'] = isset($data['vat_number']) ? $this->createData($data['vat_number'], 'vat_number')  : null;
+        $this->container['vatNumber'] = isset($data['vatNumber']) ? $this->createData($data['vatNumber'], 'vatNumber')  : null;
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
-        $this->container['address_lines'] = isset($data['address_lines']) ? $this->createData($data['address_lines'], 'address_lines')  : null;
+        $this->container['addressLines'] = isset($data['addressLines']) ? $this->createData($data['addressLines'], 'addressLines')  : null;
         $this->container['city'] = isset($data['city']) ? $this->createData($data['city'], 'city')  : null;
         $this->container['state'] = isset($data['state']) ? $this->createData($data['state'], 'state')  : null;
         $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
         $this->container['phone'] = isset($data['phone']) ? $this->createData($data['phone'], 'phone')  : null;
         $this->container['fax'] = isset($data['fax']) ? $this->createData($data['fax'], 'fax')  : null;
         $this->container['emails'] = isset($data['emails']) ? $this->createData($data['emails'], 'emails')  : null;
-        $this->container['billing_emails'] = isset($data['billing_emails']) ? $this->createData($data['billing_emails'], 'billing_emails')  : null;
+        $this->container['billingEmails'] = isset($data['billingEmails']) ? $this->createData($data['billingEmails'], 'billingEmails')  : null;
         $this->container['payment'] = isset($data['payment']) ? $this->createData($data['payment'], 'payment')  : null;
-        $this->container['payment_mode'] = isset($data['payment_mode']) ? $this->createData($data['payment_mode'], 'payment_mode')  : null;
-        $this->container['payment_currency'] = isset($data['payment_currency']) ? $this->createData($data['payment_currency'], 'payment_currency')  : null;
-        $this->container['invoice_language'] = isset($data['invoice_language']) ? $this->createData($data['invoice_language'], 'invoice_language')  : null;
+        $this->container['paymentMode'] = isset($data['paymentMode']) ? $this->createData($data['paymentMode'], 'paymentMode')  : null;
+        $this->container['paymentCurrency'] = isset($data['paymentCurrency']) ? $this->createData($data['paymentCurrency'], 'paymentCurrency')  : null;
+        $this->container['invoiceLanguage'] = isset($data['invoiceLanguage']) ? $this->createData($data['invoiceLanguage'], 'invoiceLanguage')  : null;
         $this->container['taxable'] = isset($data['taxable']) ? $this->createData($data['taxable'], 'taxable')  : null;
         $this->container['card'] = isset($data['card']) ? $this->createData($data['card'], 'card')  : null;
         $this->container['contracts'] = isset($data['contracts']) ? $this->createData($data['contracts'], 'contracts')  : null;
-        $this->container['billing_users'] = isset($data['billing_users']) ? $this->createData($data['billing_users'], 'billing_users')  : null;
+        $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
         $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
-        $this->container['clear_account'] = isset($data['clear_account']) ? $this->createData($data['clear_account'], 'clear_account')  : null;
+        $this->container['clearAccount'] = isset($data['clearAccount']) ? $this->createData($data['clearAccount'], 'clearAccount')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
@@ -436,8 +436,8 @@ class BasicCustomer implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'organization', the character length must be bigger than or equal to 0.";
         }
 
-        if ($this->container['address_lines'] === null) {
-            $invalidProperties[] = "'address_lines' can't be null";
+        if ($this->container['addressLines'] === null) {
+            $invalidProperties[] = "'addressLines' can't be null";
         }
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
@@ -624,25 +624,25 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets vat_number
+     * Gets vatNumber
      *
      * @return string
      */
     public function getVatNumber()
     {
-        return $this->container['vat_number'];
+        return $this->container['vatNumber'];
     }
 
     /**
-     * Sets vat_number
+     * Sets vatNumber
      *
-     * @param string $vat_number The value added tax number.
+     * @param string $vatNumber The value added tax number.
      *
      * @return $this
      */
-    public function setVatNumber($vat_number)
+    public function setVatNumber($vatNumber)
     {
-        $this->container['vat_number'] = $vat_number;
+        $this->container['vatNumber'] = $vatNumber;
 
         return $this;
     }
@@ -696,25 +696,25 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets address_lines
+     * Gets addressLines
      *
      * @return string[]
      */
     public function getAddressLines()
     {
-        return $this->container['address_lines'];
+        return $this->container['addressLines'];
     }
 
     /**
-     * Sets address_lines
+     * Sets addressLines
      *
-     * @param string[] $address_lines The address of the customer
+     * @param string[] $addressLines The address of the customer
      *
      * @return $this
      */
-    public function setAddressLines($address_lines)
+    public function setAddressLines($addressLines)
     {
-        $this->container['address_lines'] = $address_lines;
+        $this->container['addressLines'] = $addressLines;
 
         return $this;
     }
@@ -864,25 +864,25 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets billing_emails
+     * Gets billingEmails
      *
      * @return string[]
      */
     public function getBillingEmails()
     {
-        return $this->container['billing_emails'];
+        return $this->container['billingEmails'];
     }
 
     /**
-     * Sets billing_emails
+     * Sets billingEmails
      *
-     * @param string[] $billing_emails The billing recipients.
+     * @param string[] $billingEmails The billing recipients.
      *
      * @return $this
      */
-    public function setBillingEmails($billing_emails)
+    public function setBillingEmails($billingEmails)
     {
-        $this->container['billing_emails'] = $billing_emails;
+        $this->container['billingEmails'] = $billingEmails;
 
         return $this;
     }
@@ -912,73 +912,73 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets payment_mode
+     * Gets paymentMode
      *
      * @return string
      */
     public function getPaymentMode()
     {
-        return $this->container['payment_mode'];
+        return $this->container['paymentMode'];
     }
 
     /**
-     * Sets payment_mode
+     * Sets paymentMode
      *
-     * @param string $payment_mode The payment mode of the customer.
+     * @param string $paymentMode The payment mode of the customer.
      *
      * @return $this
      */
-    public function setPaymentMode($payment_mode)
+    public function setPaymentMode($paymentMode)
     {
-        $this->container['payment_mode'] = $payment_mode;
+        $this->container['paymentMode'] = $paymentMode;
 
         return $this;
     }
 
     /**
-     * Gets payment_currency
+     * Gets paymentCurrency
      *
      * @return \Domainrobot\Model\Currency
      */
     public function getPaymentCurrency()
     {
-        return $this->container['payment_currency'];
+        return $this->container['paymentCurrency'];
     }
 
     /**
-     * Sets payment_currency
+     * Sets paymentCurrency
      *
-     * @param \Domainrobot\Model\Currency $payment_currency The payment currency of the customer.
+     * @param \Domainrobot\Model\Currency $paymentCurrency The payment currency of the customer.
      *
      * @return $this
      */
-    public function setPaymentCurrency($payment_currency)
+    public function setPaymentCurrency($paymentCurrency)
     {
-        $this->container['payment_currency'] = $payment_currency;
+        $this->container['paymentCurrency'] = $paymentCurrency;
 
         return $this;
     }
 
     /**
-     * Gets invoice_language
+     * Gets invoiceLanguage
      *
      * @return string
      */
     public function getInvoiceLanguage()
     {
-        return $this->container['invoice_language'];
+        return $this->container['invoiceLanguage'];
     }
 
     /**
-     * Sets invoice_language
+     * Sets invoiceLanguage
      *
-     * @param string $invoice_language The language to use for the invoice.
+     * @param string $invoiceLanguage The language to use for the invoice.
      *
      * @return $this
      */
-    public function setInvoiceLanguage($invoice_language)
+    public function setInvoiceLanguage($invoiceLanguage)
     {
-        $this->container['invoice_language'] = $invoice_language;
+        $this->container['invoiceLanguage'] = $invoiceLanguage;
 
         return $this;
     }
@@ -1056,25 +1056,25 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets billing_users
+     * Gets billingUsers
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
     public function getBillingUsers()
     {
-        return $this->container['billing_users'];
+        return $this->container['billingUsers'];
     }
 
     /**
-     * Sets billing_users
+     * Sets billingUsers
      *
-     * @param \Domainrobot\Model\BasicUser[] $billing_users The billing users.
+     * @param \Domainrobot\Model\BasicUser[] $billingUsers The billing users.
      *
      * @return $this
      */
-    public function setBillingUsers($billing_users)
+    public function setBillingUsers($billingUsers)
     {
-        $this->container['billing_users'] = $billing_users;
+        $this->container['billingUsers'] = $billingUsers;
 
         return $this;
     }
@@ -1104,25 +1104,25 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets clear_account
+     * Gets clearAccount
      *
      * @return \Domainrobot\Model\ClearAccountPeriod
      */
     public function getClearAccount()
     {
-        return $this->container['clear_account'];
+        return $this->container['clearAccount'];
     }
 
     /**
-     * Sets clear_account
+     * Sets clearAccount
      *
-     * @param \Domainrobot\Model\ClearAccountPeriod $clear_account The period after the post payment account will be cleared to zero
+     * @param \Domainrobot\Model\ClearAccountPeriod $clearAccount The period after the post payment account will be cleared to zero
      *
      * @return $this
      */
-    public function setClearAccount($clear_account)
+    public function setClearAccount($clearAccount)
     {
-        $this->container['clear_account'] = $clear_account;
+        $this->container['clearAccount'] = $clearAccount;
 
         return $this;
     }

@@ -62,12 +62,12 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'domain' => 'string',
-        'registry_when' => '\DateTime',
-        'gaining_registrar' => 'string',
+        'registryWhen' => '\DateTime',
+        'gainingRegistrar' => 'string',
         'disconnect' => 'bool',
         'notice' => 'string',
-        'log_id' => 'int',
-        'registry_status' => '\Domainrobot\Model\RegistryStatusConstants',
+        'logId' => 'int',
+        'registryStatus' => '\Domainrobot\Model\RegistryStatusConstants',
         'type' => '\Domainrobot\Model\CancelationTypeConstants',
         'execution' => '\Domainrobot\Model\ExecutionTypeConstants'
     ];
@@ -83,12 +83,12 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'domain' => null,
-        'registry_when' => 'date-time',
-        'gaining_registrar' => null,
+        'registryWhen' => 'date-time',
+        'gainingRegistrar' => null,
         'disconnect' => null,
         'notice' => null,
-        'log_id' => 'int64',
-        'registry_status' => null,
+        'logId' => 'int64',
+        'registryStatus' => null,
         'type' => null,
         'execution' => null
     ];
@@ -125,12 +125,12 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'domain' => 'domain',
-        'registry_when' => 'registryWhen',
-        'gaining_registrar' => 'gainingRegistrar',
+        'registryWhen' => 'registryWhen',
+        'gainingRegistrar' => 'gainingRegistrar',
         'disconnect' => 'disconnect',
         'notice' => 'notice',
-        'log_id' => 'logId',
-        'registry_status' => 'registryStatus',
+        'logId' => 'logId',
+        'registryStatus' => 'registryStatus',
         'type' => 'type',
         'execution' => 'execution'
     ];
@@ -146,12 +146,12 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'domain' => 'setDomain',
-        'registry_when' => 'setRegistryWhen',
-        'gaining_registrar' => 'setGainingRegistrar',
+        'registryWhen' => 'setRegistryWhen',
+        'gainingRegistrar' => 'setGainingRegistrar',
         'disconnect' => 'setDisconnect',
         'notice' => 'setNotice',
-        'log_id' => 'setLogId',
-        'registry_status' => 'setRegistryStatus',
+        'logId' => 'setLogId',
+        'registryStatus' => 'setRegistryStatus',
         'type' => 'setType',
         'execution' => 'setExecution'
     ];
@@ -167,12 +167,12 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'domain' => 'getDomain',
-        'registry_when' => 'getRegistryWhen',
-        'gaining_registrar' => 'getGainingRegistrar',
+        'registryWhen' => 'getRegistryWhen',
+        'gainingRegistrar' => 'getGainingRegistrar',
         'disconnect' => 'getDisconnect',
         'notice' => 'getNotice',
-        'log_id' => 'getLogId',
-        'registry_status' => 'getRegistryStatus',
+        'logId' => 'getLogId',
+        'registryStatus' => 'getRegistryStatus',
         'type' => 'getType',
         'execution' => 'getExecution'
     ];
@@ -242,12 +242,12 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
-        $this->container['registry_when'] = isset($data['registry_when']) ? $this->createData($data['registry_when'], 'registry_when')  : null;
-        $this->container['gaining_registrar'] = isset($data['gaining_registrar']) ? $this->createData($data['gaining_registrar'], 'gaining_registrar')  : null;
+        $this->container['registryWhen'] = isset($data['registryWhen']) ? $this->createData($data['registryWhen'], 'registryWhen')  : null;
+        $this->container['gainingRegistrar'] = isset($data['gainingRegistrar']) ? $this->createData($data['gainingRegistrar'], 'gainingRegistrar')  : null;
         $this->container['disconnect'] = isset($data['disconnect']) ? $this->createData($data['disconnect'], 'disconnect')  : null;
         $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
-        $this->container['log_id'] = isset($data['log_id']) ? $this->createData($data['log_id'], 'log_id')  : null;
-        $this->container['registry_status'] = isset($data['registry_status']) ? $this->createData($data['registry_status'], 'registry_status')  : null;
+        $this->container['logId'] = isset($data['logId']) ? $this->createData($data['logId'], 'logId')  : null;
+        $this->container['registryStatus'] = isset($data['registryStatus']) ? $this->createData($data['registryStatus'], 'registryStatus')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['execution'] = isset($data['execution']) ? $this->createData($data['execution'], 'execution')  : null;
     }
@@ -304,8 +304,8 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         if ($this->container['domain'] === null) {
             $invalidProperties[] = "'domain' can't be null";
         }
-        if ($this->container['registry_when'] === null) {
-            $invalidProperties[] = "'registry_when' can't be null";
+        if ($this->container['registryWhen'] === null) {
+            $invalidProperties[] = "'registryWhen' can't be null";
         }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
@@ -449,49 +449,49 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets registry_when
+     * Gets registryWhen
      *
      * @return \DateTime
      */
     public function getRegistryWhen()
     {
-        return $this->container['registry_when'];
+        return $this->container['registryWhen'];
     }
 
     /**
-     * Sets registry_when
+     * Sets registryWhen
      *
-     * @param \DateTime $registry_when The date of the execution. Only necessary when ExecutionType equals DATE.
+     * @param \DateTime $registryWhen The date of the execution. Only necessary when ExecutionType equals DATE.
      *
      * @return $this
      */
-    public function setRegistryWhen($registry_when)
+    public function setRegistryWhen($registryWhen)
     {
-        $this->container['registry_when'] = $registry_when;
+        $this->container['registryWhen'] = $registryWhen;
 
         return $this;
     }
 
     /**
-     * Gets gaining_registrar
+     * Gets gainingRegistrar
      *
      * @return string
      */
     public function getGainingRegistrar()
     {
-        return $this->container['gaining_registrar'];
+        return $this->container['gainingRegistrar'];
     }
 
     /**
-     * Sets gaining_registrar
+     * Sets gainingRegistrar
      *
-     * @param string $gaining_registrar gaining_registrar
+     * @param string $gainingRegistrar gainingRegistrar
      *
      * @return $this
      */
-    public function setGainingRegistrar($gaining_registrar)
+    public function setGainingRegistrar($gainingRegistrar)
     {
-        $this->container['gaining_registrar'] = $gaining_registrar;
+        $this->container['gainingRegistrar'] = $gainingRegistrar;
 
         return $this;
     }
@@ -545,49 +545,49 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets log_id
+     * Gets logId
      *
      * @return int
      */
     public function getLogId()
     {
-        return $this->container['log_id'];
+        return $this->container['logId'];
     }
 
     /**
-     * Sets log_id
+     * Sets logId
      *
-     * @param int $log_id log_id
+     * @param int $logId logId
      *
      * @return $this
      */
-    public function setLogId($log_id)
+    public function setLogId($logId)
     {
-        $this->container['log_id'] = $log_id;
+        $this->container['logId'] = $logId;
 
         return $this;
     }
 
     /**
-     * Gets registry_status
+     * Gets registryStatus
      *
      * @return \Domainrobot\Model\RegistryStatusConstants
      */
     public function getRegistryStatus()
     {
-        return $this->container['registry_status'];
+        return $this->container['registryStatus'];
     }
 
     /**
-     * Sets registry_status
+     * Sets registryStatus
      *
-     * @param \Domainrobot\Model\RegistryStatusConstants $registry_status registry_status
+     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus registryStatus
      *
      * @return $this
      */
-    public function setRegistryStatus($registry_status)
+    public function setRegistryStatus($registryStatus)
     {
-        $this->container['registry_status'] = $registry_status;
+        $this->container['registryStatus'] = $registryStatus;
 
         return $this;
     }

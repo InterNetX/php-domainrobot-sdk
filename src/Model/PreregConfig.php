@@ -61,19 +61,19 @@ class PreregConfig implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'name' => 'string',
         'phase' => 'string',
-        'confirmation_start' => '\DateTime',
-        'confirmation_end' => '\DateTime',
-        'period_start' => '\DateTime',
-        'period_end' => '\DateTime',
-        'nic_member_label' => 'string',
-        'niccom_start' => '\DateTime',
-        'niccom_end' => '\DateTime',
-        'autoupdate_dns' => 'bool',
+        'confirmationStart' => '\DateTime',
+        'confirmationEnd' => '\DateTime',
+        'periodStart' => '\DateTime',
+        'periodEnd' => '\DateTime',
+        'nicMemberLabel' => 'string',
+        'niccomStart' => '\DateTime',
+        'niccomEnd' => '\DateTime',
+        'autoupdateDns' => 'bool',
         'category' => 'string',
-        'ui_fields' => 'string',
-        'registration_type' => '\Domainrobot\Model\RegistrationTypeConstants',
-        'message_type' => '\Domainrobot\Model\MessageTypeConstants',
-        'min_period' => '\Domainrobot\Model\TimePeriod'
+        'uiFields' => 'string',
+        'registrationType' => '\Domainrobot\Model\RegistrationTypeConstants',
+        'messageType' => '\Domainrobot\Model\MessageTypeConstants',
+        'minPeriod' => '\Domainrobot\Model\TimePeriod'
     ];
 
     /**
@@ -86,19 +86,19 @@ class PreregConfig implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'name' => null,
         'phase' => null,
-        'confirmation_start' => 'date-time',
-        'confirmation_end' => 'date-time',
-        'period_start' => 'date-time',
-        'period_end' => 'date-time',
-        'nic_member_label' => null,
-        'niccom_start' => 'date-time',
-        'niccom_end' => 'date-time',
-        'autoupdate_dns' => null,
+        'confirmationStart' => 'date-time',
+        'confirmationEnd' => 'date-time',
+        'periodStart' => 'date-time',
+        'periodEnd' => 'date-time',
+        'nicMemberLabel' => null,
+        'niccomStart' => 'date-time',
+        'niccomEnd' => 'date-time',
+        'autoupdateDns' => null,
         'category' => null,
-        'ui_fields' => null,
-        'registration_type' => null,
-        'message_type' => null,
-        'min_period' => null
+        'uiFields' => null,
+        'registrationType' => null,
+        'messageType' => null,
+        'minPeriod' => null
     ];
 
     /**
@@ -132,19 +132,19 @@ class PreregConfig implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'name' => 'name',
         'phase' => 'phase',
-        'confirmation_start' => 'confirmationStart',
-        'confirmation_end' => 'confirmationEnd',
-        'period_start' => 'periodStart',
-        'period_end' => 'periodEnd',
-        'nic_member_label' => 'nicMemberLabel',
-        'niccom_start' => 'niccomStart',
-        'niccom_end' => 'niccomEnd',
-        'autoupdate_dns' => 'autoupdateDns',
+        'confirmationStart' => 'confirmationStart',
+        'confirmationEnd' => 'confirmationEnd',
+        'periodStart' => 'periodStart',
+        'periodEnd' => 'periodEnd',
+        'nicMemberLabel' => 'nicMemberLabel',
+        'niccomStart' => 'niccomStart',
+        'niccomEnd' => 'niccomEnd',
+        'autoupdateDns' => 'autoupdateDns',
         'category' => 'category',
-        'ui_fields' => 'uiFields',
-        'registration_type' => 'registrationType',
-        'message_type' => 'messageType',
-        'min_period' => 'minPeriod'
+        'uiFields' => 'uiFields',
+        'registrationType' => 'registrationType',
+        'messageType' => 'messageType',
+        'minPeriod' => 'minPeriod'
     ];
 
     /**
@@ -157,19 +157,19 @@ class PreregConfig implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'name' => 'setName',
         'phase' => 'setPhase',
-        'confirmation_start' => 'setConfirmationStart',
-        'confirmation_end' => 'setConfirmationEnd',
-        'period_start' => 'setPeriodStart',
-        'period_end' => 'setPeriodEnd',
-        'nic_member_label' => 'setNicMemberLabel',
-        'niccom_start' => 'setNiccomStart',
-        'niccom_end' => 'setNiccomEnd',
-        'autoupdate_dns' => 'setAutoupdateDns',
+        'confirmationStart' => 'setConfirmationStart',
+        'confirmationEnd' => 'setConfirmationEnd',
+        'periodStart' => 'setPeriodStart',
+        'periodEnd' => 'setPeriodEnd',
+        'nicMemberLabel' => 'setNicMemberLabel',
+        'niccomStart' => 'setNiccomStart',
+        'niccomEnd' => 'setNiccomEnd',
+        'autoupdateDns' => 'setAutoupdateDns',
         'category' => 'setCategory',
-        'ui_fields' => 'setUiFields',
-        'registration_type' => 'setRegistrationType',
-        'message_type' => 'setMessageType',
-        'min_period' => 'setMinPeriod'
+        'uiFields' => 'setUiFields',
+        'registrationType' => 'setRegistrationType',
+        'messageType' => 'setMessageType',
+        'minPeriod' => 'setMinPeriod'
     ];
 
     /**
@@ -182,19 +182,19 @@ class PreregConfig implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'name' => 'getName',
         'phase' => 'getPhase',
-        'confirmation_start' => 'getConfirmationStart',
-        'confirmation_end' => 'getConfirmationEnd',
-        'period_start' => 'getPeriodStart',
-        'period_end' => 'getPeriodEnd',
-        'nic_member_label' => 'getNicMemberLabel',
-        'niccom_start' => 'getNiccomStart',
-        'niccom_end' => 'getNiccomEnd',
-        'autoupdate_dns' => 'getAutoupdateDns',
+        'confirmationStart' => 'getConfirmationStart',
+        'confirmationEnd' => 'getConfirmationEnd',
+        'periodStart' => 'getPeriodStart',
+        'periodEnd' => 'getPeriodEnd',
+        'nicMemberLabel' => 'getNicMemberLabel',
+        'niccomStart' => 'getNiccomStart',
+        'niccomEnd' => 'getNiccomEnd',
+        'autoupdateDns' => 'getAutoupdateDns',
         'category' => 'getCategory',
-        'ui_fields' => 'getUiFields',
-        'registration_type' => 'getRegistrationType',
-        'message_type' => 'getMessageType',
-        'min_period' => 'getMinPeriod'
+        'uiFields' => 'getUiFields',
+        'registrationType' => 'getRegistrationType',
+        'messageType' => 'getMessageType',
+        'minPeriod' => 'getMinPeriod'
     ];
 
     /**
@@ -261,19 +261,19 @@ class PreregConfig implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['phase'] = isset($data['phase']) ? $this->createData($data['phase'], 'phase')  : null;
-        $this->container['confirmation_start'] = isset($data['confirmation_start']) ? $this->createData($data['confirmation_start'], 'confirmation_start')  : null;
-        $this->container['confirmation_end'] = isset($data['confirmation_end']) ? $this->createData($data['confirmation_end'], 'confirmation_end')  : null;
-        $this->container['period_start'] = isset($data['period_start']) ? $this->createData($data['period_start'], 'period_start')  : null;
-        $this->container['period_end'] = isset($data['period_end']) ? $this->createData($data['period_end'], 'period_end')  : null;
-        $this->container['nic_member_label'] = isset($data['nic_member_label']) ? $this->createData($data['nic_member_label'], 'nic_member_label')  : null;
-        $this->container['niccom_start'] = isset($data['niccom_start']) ? $this->createData($data['niccom_start'], 'niccom_start')  : null;
-        $this->container['niccom_end'] = isset($data['niccom_end']) ? $this->createData($data['niccom_end'], 'niccom_end')  : null;
-        $this->container['autoupdate_dns'] = isset($data['autoupdate_dns']) ? $this->createData($data['autoupdate_dns'], 'autoupdate_dns')  : null;
+        $this->container['confirmationStart'] = isset($data['confirmationStart']) ? $this->createData($data['confirmationStart'], 'confirmationStart')  : null;
+        $this->container['confirmationEnd'] = isset($data['confirmationEnd']) ? $this->createData($data['confirmationEnd'], 'confirmationEnd')  : null;
+        $this->container['periodStart'] = isset($data['periodStart']) ? $this->createData($data['periodStart'], 'periodStart')  : null;
+        $this->container['periodEnd'] = isset($data['periodEnd']) ? $this->createData($data['periodEnd'], 'periodEnd')  : null;
+        $this->container['nicMemberLabel'] = isset($data['nicMemberLabel']) ? $this->createData($data['nicMemberLabel'], 'nicMemberLabel')  : null;
+        $this->container['niccomStart'] = isset($data['niccomStart']) ? $this->createData($data['niccomStart'], 'niccomStart')  : null;
+        $this->container['niccomEnd'] = isset($data['niccomEnd']) ? $this->createData($data['niccomEnd'], 'niccomEnd')  : null;
+        $this->container['autoupdateDns'] = isset($data['autoupdateDns']) ? $this->createData($data['autoupdateDns'], 'autoupdateDns')  : null;
         $this->container['category'] = isset($data['category']) ? $this->createData($data['category'], 'category')  : null;
-        $this->container['ui_fields'] = isset($data['ui_fields']) ? $this->createData($data['ui_fields'], 'ui_fields')  : null;
-        $this->container['registration_type'] = isset($data['registration_type']) ? $this->createData($data['registration_type'], 'registration_type')  : null;
-        $this->container['message_type'] = isset($data['message_type']) ? $this->createData($data['message_type'], 'message_type')  : null;
-        $this->container['min_period'] = isset($data['min_period']) ? $this->createData($data['min_period'], 'min_period')  : null;
+        $this->container['uiFields'] = isset($data['uiFields']) ? $this->createData($data['uiFields'], 'uiFields')  : null;
+        $this->container['registrationType'] = isset($data['registrationType']) ? $this->createData($data['registrationType'], 'registrationType')  : null;
+        $this->container['messageType'] = isset($data['messageType']) ? $this->createData($data['messageType'], 'messageType')  : null;
+        $this->container['minPeriod'] = isset($data['minPeriod']) ? $this->createData($data['minPeriod'], 'minPeriod')  : null;
     }
 
     /**
@@ -440,193 +440,193 @@ class PreregConfig implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets confirmation_start
+     * Gets confirmationStart
      *
      * @return \DateTime
      */
     public function getConfirmationStart()
     {
-        return $this->container['confirmation_start'];
+        return $this->container['confirmationStart'];
     }
 
     /**
-     * Sets confirmation_start
+     * Sets confirmationStart
      *
-     * @param \DateTime $confirmation_start confirmation_start
+     * @param \DateTime $confirmationStart confirmationStart
      *
      * @return $this
      */
-    public function setConfirmationStart($confirmation_start)
+    public function setConfirmationStart($confirmationStart)
     {
-        $this->container['confirmation_start'] = $confirmation_start;
+        $this->container['confirmationStart'] = $confirmationStart;
 
         return $this;
     }
 
     /**
-     * Gets confirmation_end
+     * Gets confirmationEnd
      *
      * @return \DateTime
      */
     public function getConfirmationEnd()
     {
-        return $this->container['confirmation_end'];
+        return $this->container['confirmationEnd'];
     }
 
     /**
-     * Sets confirmation_end
+     * Sets confirmationEnd
      *
-     * @param \DateTime $confirmation_end confirmation_end
+     * @param \DateTime $confirmationEnd confirmationEnd
      *
      * @return $this
      */
-    public function setConfirmationEnd($confirmation_end)
+    public function setConfirmationEnd($confirmationEnd)
     {
-        $this->container['confirmation_end'] = $confirmation_end;
+        $this->container['confirmationEnd'] = $confirmationEnd;
 
         return $this;
     }
 
     /**
-     * Gets period_start
+     * Gets periodStart
      *
      * @return \DateTime
      */
     public function getPeriodStart()
     {
-        return $this->container['period_start'];
+        return $this->container['periodStart'];
     }
 
     /**
-     * Sets period_start
+     * Sets periodStart
      *
-     * @param \DateTime $period_start period_start
+     * @param \DateTime $periodStart periodStart
      *
      * @return $this
      */
-    public function setPeriodStart($period_start)
+    public function setPeriodStart($periodStart)
     {
-        $this->container['period_start'] = $period_start;
+        $this->container['periodStart'] = $periodStart;
 
         return $this;
     }
 
     /**
-     * Gets period_end
+     * Gets periodEnd
      *
      * @return \DateTime
      */
     public function getPeriodEnd()
     {
-        return $this->container['period_end'];
+        return $this->container['periodEnd'];
     }
 
     /**
-     * Sets period_end
+     * Sets periodEnd
      *
-     * @param \DateTime $period_end period_end
+     * @param \DateTime $periodEnd periodEnd
      *
      * @return $this
      */
-    public function setPeriodEnd($period_end)
+    public function setPeriodEnd($periodEnd)
     {
-        $this->container['period_end'] = $period_end;
+        $this->container['periodEnd'] = $periodEnd;
 
         return $this;
     }
 
     /**
-     * Gets nic_member_label
+     * Gets nicMemberLabel
      *
      * @return string
      */
     public function getNicMemberLabel()
     {
-        return $this->container['nic_member_label'];
+        return $this->container['nicMemberLabel'];
     }
 
     /**
-     * Sets nic_member_label
+     * Sets nicMemberLabel
      *
-     * @param string $nic_member_label nic_member_label
+     * @param string $nicMemberLabel nicMemberLabel
      *
      * @return $this
      */
-    public function setNicMemberLabel($nic_member_label)
+    public function setNicMemberLabel($nicMemberLabel)
     {
-        $this->container['nic_member_label'] = $nic_member_label;
+        $this->container['nicMemberLabel'] = $nicMemberLabel;
 
         return $this;
     }
 
     /**
-     * Gets niccom_start
+     * Gets niccomStart
      *
      * @return \DateTime
      */
     public function getNiccomStart()
     {
-        return $this->container['niccom_start'];
+        return $this->container['niccomStart'];
     }
 
     /**
-     * Sets niccom_start
+     * Sets niccomStart
      *
-     * @param \DateTime $niccom_start niccom_start
+     * @param \DateTime $niccomStart niccomStart
      *
      * @return $this
      */
-    public function setNiccomStart($niccom_start)
+    public function setNiccomStart($niccomStart)
     {
-        $this->container['niccom_start'] = $niccom_start;
+        $this->container['niccomStart'] = $niccomStart;
 
         return $this;
     }
 
     /**
-     * Gets niccom_end
+     * Gets niccomEnd
      *
      * @return \DateTime
      */
     public function getNiccomEnd()
     {
-        return $this->container['niccom_end'];
+        return $this->container['niccomEnd'];
     }
 
     /**
-     * Sets niccom_end
+     * Sets niccomEnd
      *
-     * @param \DateTime $niccom_end niccom_end
+     * @param \DateTime $niccomEnd niccomEnd
      *
      * @return $this
      */
-    public function setNiccomEnd($niccom_end)
+    public function setNiccomEnd($niccomEnd)
     {
-        $this->container['niccom_end'] = $niccom_end;
+        $this->container['niccomEnd'] = $niccomEnd;
 
         return $this;
     }
 
     /**
-     * Gets autoupdate_dns
+     * Gets autoupdateDns
      *
      * @return bool
      */
     public function getAutoupdateDns()
     {
-        return $this->container['autoupdate_dns'];
+        return $this->container['autoupdateDns'];
     }
 
     /**
-     * Sets autoupdate_dns
+     * Sets autoupdateDns
      *
-     * @param bool $autoupdate_dns autoupdate_dns
+     * @param bool $autoupdateDns autoupdateDns
      *
      * @return $this
      */
-    public function setAutoupdateDns($autoupdate_dns)
+    public function setAutoupdateDns($autoupdateDns)
     {
-        $this->container['autoupdate_dns'] = $autoupdate_dns;
+        $this->container['autoupdateDns'] = $autoupdateDns;
 
         return $this;
     }
@@ -656,97 +656,97 @@ class PreregConfig implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets ui_fields
+     * Gets uiFields
      *
      * @return string
      */
     public function getUiFields()
     {
-        return $this->container['ui_fields'];
+        return $this->container['uiFields'];
     }
 
     /**
-     * Sets ui_fields
+     * Sets uiFields
      *
-     * @param string $ui_fields ui_fields
+     * @param string $uiFields uiFields
      *
      * @return $this
      */
-    public function setUiFields($ui_fields)
+    public function setUiFields($uiFields)
     {
-        $this->container['ui_fields'] = $ui_fields;
+        $this->container['uiFields'] = $uiFields;
 
         return $this;
     }
 
     /**
-     * Gets registration_type
+     * Gets registrationType
      *
      * @return \Domainrobot\Model\RegistrationTypeConstants
      */
     public function getRegistrationType()
     {
-        return $this->container['registration_type'];
+        return $this->container['registrationType'];
     }
 
     /**
-     * Sets registration_type
+     * Sets registrationType
      *
-     * @param \Domainrobot\Model\RegistrationTypeConstants $registration_type registration_type
+     * @param \Domainrobot\Model\RegistrationTypeConstants $registrationType registrationType
      *
      * @return $this
      */
-    public function setRegistrationType($registration_type)
+    public function setRegistrationType($registrationType)
     {
-        $this->container['registration_type'] = $registration_type;
+        $this->container['registrationType'] = $registrationType;
 
         return $this;
     }
 
     /**
-     * Gets message_type
+     * Gets messageType
      *
      * @return \Domainrobot\Model\MessageTypeConstants
      */
     public function getMessageType()
     {
-        return $this->container['message_type'];
+        return $this->container['messageType'];
     }
 
     /**
-     * Sets message_type
+     * Sets messageType
      *
-     * @param \Domainrobot\Model\MessageTypeConstants $message_type message_type
+     * @param \Domainrobot\Model\MessageTypeConstants $messageType messageType
      *
      * @return $this
      */
-    public function setMessageType($message_type)
+    public function setMessageType($messageType)
     {
-        $this->container['message_type'] = $message_type;
+        $this->container['messageType'] = $messageType;
 
         return $this;
     }
 
     /**
-     * Gets min_period
+     * Gets minPeriod
      *
      * @return \Domainrobot\Model\TimePeriod
      */
     public function getMinPeriod()
     {
-        return $this->container['min_period'];
+        return $this->container['minPeriod'];
     }
 
     /**
-     * Sets min_period
+     * Sets minPeriod
      *
-     * @param \Domainrobot\Model\TimePeriod $min_period min_period
+     * @param \Domainrobot\Model\TimePeriod $minPeriod minPeriod
      *
      * @return $this
      */
-    public function setMinPeriod($min_period)
+    public function setMinPeriod($minPeriod)
     {
-        $this->container['min_period'] = $min_period;
+        $this->container['minPeriod'] = $minPeriod;
 
         return $this;
     }

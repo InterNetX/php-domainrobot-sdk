@@ -57,8 +57,8 @@ class ContactRuExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'taxpayer_identification_number' => 'string',
-        'territory_linked_taxpayer_number' => 'string'
+        'taxpayerIdentificationNumber' => 'string',
+        'territoryLinkedTaxpayerNumber' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ContactRuExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'taxpayer_identification_number' => null,
-        'territory_linked_taxpayer_number' => null
+        'taxpayerIdentificationNumber' => null,
+        'territoryLinkedTaxpayerNumber' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class ContactRuExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'taxpayer_identification_number' => 'taxpayerIdentificationNumber',
-        'territory_linked_taxpayer_number' => 'territoryLinkedTaxpayerNumber'
+        'taxpayerIdentificationNumber' => 'taxpayerIdentificationNumber',
+        'territoryLinkedTaxpayerNumber' => 'territoryLinkedTaxpayerNumber'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ContactRuExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'taxpayer_identification_number' => 'setTaxpayerIdentificationNumber',
-        'territory_linked_taxpayer_number' => 'setTerritoryLinkedTaxpayerNumber'
+        'taxpayerIdentificationNumber' => 'setTaxpayerIdentificationNumber',
+        'territoryLinkedTaxpayerNumber' => 'setTerritoryLinkedTaxpayerNumber'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ContactRuExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'taxpayer_identification_number' => 'getTaxpayerIdentificationNumber',
-        'territory_linked_taxpayer_number' => 'getTerritoryLinkedTaxpayerNumber'
+        'taxpayerIdentificationNumber' => 'getTaxpayerIdentificationNumber',
+        'territoryLinkedTaxpayerNumber' => 'getTerritoryLinkedTaxpayerNumber'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ContactRuExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['taxpayer_identification_number'] = isset($data['taxpayer_identification_number']) ? $this->createData($data['taxpayer_identification_number'], 'taxpayer_identification_number')  : null;
-        $this->container['territory_linked_taxpayer_number'] = isset($data['territory_linked_taxpayer_number']) ? $this->createData($data['territory_linked_taxpayer_number'], 'territory_linked_taxpayer_number')  : null;
+        $this->container['taxpayerIdentificationNumber'] = isset($data['taxpayerIdentificationNumber']) ? $this->createData($data['taxpayerIdentificationNumber'], 'taxpayerIdentificationNumber')  : null;
+        $this->container['territoryLinkedTaxpayerNumber'] = isset($data['territoryLinkedTaxpayerNumber']) ? $this->createData($data['territoryLinkedTaxpayerNumber'], 'territoryLinkedTaxpayerNumber')  : null;
     }
 
     /**
@@ -251,49 +251,49 @@ class ContactRuExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets taxpayer_identification_number
+     * Gets taxpayerIdentificationNumber
      *
      * @return string
      */
     public function getTaxpayerIdentificationNumber()
     {
-        return $this->container['taxpayer_identification_number'];
+        return $this->container['taxpayerIdentificationNumber'];
     }
 
     /**
-     * Sets taxpayer_identification_number
+     * Sets taxpayerIdentificationNumber
      *
-     * @param string $taxpayer_identification_number Taxpayer Identification Number (code). Mandatory for organisations which belong to the Russian Federation.
+     * @param string $taxpayerIdentificationNumber Taxpayer Identification Number (code). Mandatory for organisations which belong to the Russian Federation.
      *
      * @return $this
      */
-    public function setTaxpayerIdentificationNumber($taxpayer_identification_number)
+    public function setTaxpayerIdentificationNumber($taxpayerIdentificationNumber)
     {
-        $this->container['taxpayer_identification_number'] = $taxpayer_identification_number;
+        $this->container['taxpayerIdentificationNumber'] = $taxpayerIdentificationNumber;
 
         return $this;
     }
 
     /**
-     * Gets territory_linked_taxpayer_number
+     * Gets territoryLinkedTaxpayerNumber
      *
      * @return string
      */
     public function getTerritoryLinkedTaxpayerNumber()
     {
-        return $this->container['territory_linked_taxpayer_number'];
+        return $this->container['territoryLinkedTaxpayerNumber'];
     }
 
     /**
-     * Sets territory_linked_taxpayer_number
+     * Sets territoryLinkedTaxpayerNumber
      *
-     * @param string $territory_linked_taxpayer_number Territory-linked Taxpayer Number (kpp). Mandatory for organisations which belong to the Russian Federation.
+     * @param string $territoryLinkedTaxpayerNumber Territory-linked Taxpayer Number (kpp). Mandatory for organisations which belong to the Russian Federation.
      *
      * @return $this
      */
-    public function setTerritoryLinkedTaxpayerNumber($territory_linked_taxpayer_number)
+    public function setTerritoryLinkedTaxpayerNumber($territoryLinkedTaxpayerNumber)
     {
-        $this->container['territory_linked_taxpayer_number'] = $territory_linked_taxpayer_number;
+        $this->container['territoryLinkedTaxpayerNumber'] = $territoryLinkedTaxpayerNumber;
 
         return $this;
     }

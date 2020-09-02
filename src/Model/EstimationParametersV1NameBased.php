@@ -61,22 +61,22 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
         'pattern' => 'string',
         'segements' => 'string[]',
         'keywords' => 'string[]',
-        'num_words' => 'string',
-        'is_idn' => 'bool',
-        'num_digits' => 'float',
-        'num_hyph' => 'float',
-        'num_char' => 'float',
-        'completely_num' => 'float',
-        'average_keyword_frequency' => 'float',
-        'average_keyword_price' => 'float',
-        'average_length_frequency' => 'float',
-        'average_length_price' => 'float',
+        'numWords' => 'string',
+        'isIDN' => 'bool',
+        'numDigits' => 'float',
+        'numHyph' => 'float',
+        'numChar' => 'float',
+        'completelyNum' => 'float',
+        'averageKeywordFrequency' => 'float',
+        'averageKeywordPrice' => 'float',
+        'averageLengthFrequency' => 'float',
+        'averageLengthPrice' => 'float',
         'prefix' => 'string',
-        'average_prefix_frequency' => 'float',
-        'average_prefix_price' => 'float',
+        'averagePrefixFrequency' => 'float',
+        'averagePrefixPrice' => 'float',
         'suffix' => 'string',
-        'average_suffix_frequency' => 'float',
-        'average_suffix_price' => 'float'
+        'averageSuffixFrequency' => 'float',
+        'averageSuffixPrice' => 'float'
     ];
 
     /**
@@ -89,22 +89,22 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
         'pattern' => null,
         'segements' => null,
         'keywords' => null,
-        'num_words' => null,
-        'is_idn' => null,
-        'num_digits' => null,
-        'num_hyph' => null,
-        'num_char' => null,
-        'completely_num' => null,
-        'average_keyword_frequency' => null,
-        'average_keyword_price' => null,
-        'average_length_frequency' => null,
-        'average_length_price' => null,
+        'numWords' => null,
+        'isIDN' => null,
+        'numDigits' => null,
+        'numHyph' => null,
+        'numChar' => null,
+        'completelyNum' => null,
+        'averageKeywordFrequency' => null,
+        'averageKeywordPrice' => null,
+        'averageLengthFrequency' => null,
+        'averageLengthPrice' => null,
         'prefix' => null,
-        'average_prefix_frequency' => null,
-        'average_prefix_price' => null,
+        'averagePrefixFrequency' => null,
+        'averagePrefixPrice' => null,
         'suffix' => null,
-        'average_suffix_frequency' => null,
-        'average_suffix_price' => null
+        'averageSuffixFrequency' => null,
+        'averageSuffixPrice' => null
     ];
 
     /**
@@ -138,22 +138,22 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
         'pattern' => 'pattern',
         'segements' => 'segements',
         'keywords' => 'keywords',
-        'num_words' => 'numWords',
-        'is_idn' => 'isIDN',
-        'num_digits' => 'numDigits',
-        'num_hyph' => 'numHyph',
-        'num_char' => 'numChar',
-        'completely_num' => 'completelyNum',
-        'average_keyword_frequency' => 'averageKeywordFrequency',
-        'average_keyword_price' => 'averageKeywordPrice',
-        'average_length_frequency' => 'averageLengthFrequency',
-        'average_length_price' => 'averageLengthPrice',
+        'numWords' => 'numWords',
+        'isIDN' => 'isIDN',
+        'numDigits' => 'numDigits',
+        'numHyph' => 'numHyph',
+        'numChar' => 'numChar',
+        'completelyNum' => 'completelyNum',
+        'averageKeywordFrequency' => 'averageKeywordFrequency',
+        'averageKeywordPrice' => 'averageKeywordPrice',
+        'averageLengthFrequency' => 'averageLengthFrequency',
+        'averageLengthPrice' => 'averageLengthPrice',
         'prefix' => 'prefix',
-        'average_prefix_frequency' => 'averagePrefixFrequency',
-        'average_prefix_price' => 'averagePrefixPrice',
+        'averagePrefixFrequency' => 'averagePrefixFrequency',
+        'averagePrefixPrice' => 'averagePrefixPrice',
         'suffix' => 'suffix',
-        'average_suffix_frequency' => 'averageSuffixFrequency',
-        'average_suffix_price' => 'averageSuffixPrice'
+        'averageSuffixFrequency' => 'averageSuffixFrequency',
+        'averageSuffixPrice' => 'averageSuffixPrice'
     ];
 
     /**
@@ -166,22 +166,22 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
         'pattern' => 'setPattern',
         'segements' => 'setSegements',
         'keywords' => 'setKeywords',
-        'num_words' => 'setNumWords',
-        'is_idn' => 'setIsIdn',
-        'num_digits' => 'setNumDigits',
-        'num_hyph' => 'setNumHyph',
-        'num_char' => 'setNumChar',
-        'completely_num' => 'setCompletelyNum',
-        'average_keyword_frequency' => 'setAverageKeywordFrequency',
-        'average_keyword_price' => 'setAverageKeywordPrice',
-        'average_length_frequency' => 'setAverageLengthFrequency',
-        'average_length_price' => 'setAverageLengthPrice',
+        'numWords' => 'setNumWords',
+        'isIDN' => 'setIsIDN',
+        'numDigits' => 'setNumDigits',
+        'numHyph' => 'setNumHyph',
+        'numChar' => 'setNumChar',
+        'completelyNum' => 'setCompletelyNum',
+        'averageKeywordFrequency' => 'setAverageKeywordFrequency',
+        'averageKeywordPrice' => 'setAverageKeywordPrice',
+        'averageLengthFrequency' => 'setAverageLengthFrequency',
+        'averageLengthPrice' => 'setAverageLengthPrice',
         'prefix' => 'setPrefix',
-        'average_prefix_frequency' => 'setAveragePrefixFrequency',
-        'average_prefix_price' => 'setAveragePrefixPrice',
+        'averagePrefixFrequency' => 'setAveragePrefixFrequency',
+        'averagePrefixPrice' => 'setAveragePrefixPrice',
         'suffix' => 'setSuffix',
-        'average_suffix_frequency' => 'setAverageSuffixFrequency',
-        'average_suffix_price' => 'setAverageSuffixPrice'
+        'averageSuffixFrequency' => 'setAverageSuffixFrequency',
+        'averageSuffixPrice' => 'setAverageSuffixPrice'
     ];
 
     /**
@@ -194,22 +194,22 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
         'pattern' => 'getPattern',
         'segements' => 'getSegements',
         'keywords' => 'getKeywords',
-        'num_words' => 'getNumWords',
-        'is_idn' => 'getIsIdn',
-        'num_digits' => 'getNumDigits',
-        'num_hyph' => 'getNumHyph',
-        'num_char' => 'getNumChar',
-        'completely_num' => 'getCompletelyNum',
-        'average_keyword_frequency' => 'getAverageKeywordFrequency',
-        'average_keyword_price' => 'getAverageKeywordPrice',
-        'average_length_frequency' => 'getAverageLengthFrequency',
-        'average_length_price' => 'getAverageLengthPrice',
+        'numWords' => 'getNumWords',
+        'isIDN' => 'getIsIDN',
+        'numDigits' => 'getNumDigits',
+        'numHyph' => 'getNumHyph',
+        'numChar' => 'getNumChar',
+        'completelyNum' => 'getCompletelyNum',
+        'averageKeywordFrequency' => 'getAverageKeywordFrequency',
+        'averageKeywordPrice' => 'getAverageKeywordPrice',
+        'averageLengthFrequency' => 'getAverageLengthFrequency',
+        'averageLengthPrice' => 'getAverageLengthPrice',
         'prefix' => 'getPrefix',
-        'average_prefix_frequency' => 'getAveragePrefixFrequency',
-        'average_prefix_price' => 'getAveragePrefixPrice',
+        'averagePrefixFrequency' => 'getAveragePrefixFrequency',
+        'averagePrefixPrice' => 'getAveragePrefixPrice',
         'suffix' => 'getSuffix',
-        'average_suffix_frequency' => 'getAverageSuffixFrequency',
-        'average_suffix_price' => 'getAverageSuffixPrice'
+        'averageSuffixFrequency' => 'getAverageSuffixFrequency',
+        'averageSuffixPrice' => 'getAverageSuffixPrice'
     ];
 
     /**
@@ -276,22 +276,22 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
         $this->container['pattern'] = isset($data['pattern']) ? $this->createData($data['pattern'], 'pattern')  : null;
         $this->container['segements'] = isset($data['segements']) ? $this->createData($data['segements'], 'segements')  : null;
         $this->container['keywords'] = isset($data['keywords']) ? $this->createData($data['keywords'], 'keywords')  : null;
-        $this->container['num_words'] = isset($data['num_words']) ? $this->createData($data['num_words'], 'num_words')  : null;
-        $this->container['is_idn'] = isset($data['is_idn']) ? $this->createData($data['is_idn'], 'is_idn')  : null;
-        $this->container['num_digits'] = isset($data['num_digits']) ? $this->createData($data['num_digits'], 'num_digits')  : null;
-        $this->container['num_hyph'] = isset($data['num_hyph']) ? $this->createData($data['num_hyph'], 'num_hyph')  : null;
-        $this->container['num_char'] = isset($data['num_char']) ? $this->createData($data['num_char'], 'num_char')  : null;
-        $this->container['completely_num'] = isset($data['completely_num']) ? $this->createData($data['completely_num'], 'completely_num')  : null;
-        $this->container['average_keyword_frequency'] = isset($data['average_keyword_frequency']) ? $this->createData($data['average_keyword_frequency'], 'average_keyword_frequency')  : null;
-        $this->container['average_keyword_price'] = isset($data['average_keyword_price']) ? $this->createData($data['average_keyword_price'], 'average_keyword_price')  : null;
-        $this->container['average_length_frequency'] = isset($data['average_length_frequency']) ? $this->createData($data['average_length_frequency'], 'average_length_frequency')  : null;
-        $this->container['average_length_price'] = isset($data['average_length_price']) ? $this->createData($data['average_length_price'], 'average_length_price')  : null;
+        $this->container['numWords'] = isset($data['numWords']) ? $this->createData($data['numWords'], 'numWords')  : null;
+        $this->container['isIDN'] = isset($data['isIDN']) ? $this->createData($data['isIDN'], 'isIDN')  : null;
+        $this->container['numDigits'] = isset($data['numDigits']) ? $this->createData($data['numDigits'], 'numDigits')  : null;
+        $this->container['numHyph'] = isset($data['numHyph']) ? $this->createData($data['numHyph'], 'numHyph')  : null;
+        $this->container['numChar'] = isset($data['numChar']) ? $this->createData($data['numChar'], 'numChar')  : null;
+        $this->container['completelyNum'] = isset($data['completelyNum']) ? $this->createData($data['completelyNum'], 'completelyNum')  : null;
+        $this->container['averageKeywordFrequency'] = isset($data['averageKeywordFrequency']) ? $this->createData($data['averageKeywordFrequency'], 'averageKeywordFrequency')  : null;
+        $this->container['averageKeywordPrice'] = isset($data['averageKeywordPrice']) ? $this->createData($data['averageKeywordPrice'], 'averageKeywordPrice')  : null;
+        $this->container['averageLengthFrequency'] = isset($data['averageLengthFrequency']) ? $this->createData($data['averageLengthFrequency'], 'averageLengthFrequency')  : null;
+        $this->container['averageLengthPrice'] = isset($data['averageLengthPrice']) ? $this->createData($data['averageLengthPrice'], 'averageLengthPrice')  : null;
         $this->container['prefix'] = isset($data['prefix']) ? $this->createData($data['prefix'], 'prefix')  : null;
-        $this->container['average_prefix_frequency'] = isset($data['average_prefix_frequency']) ? $this->createData($data['average_prefix_frequency'], 'average_prefix_frequency')  : null;
-        $this->container['average_prefix_price'] = isset($data['average_prefix_price']) ? $this->createData($data['average_prefix_price'], 'average_prefix_price')  : null;
+        $this->container['averagePrefixFrequency'] = isset($data['averagePrefixFrequency']) ? $this->createData($data['averagePrefixFrequency'], 'averagePrefixFrequency')  : null;
+        $this->container['averagePrefixPrice'] = isset($data['averagePrefixPrice']) ? $this->createData($data['averagePrefixPrice'], 'averagePrefixPrice')  : null;
         $this->container['suffix'] = isset($data['suffix']) ? $this->createData($data['suffix'], 'suffix')  : null;
-        $this->container['average_suffix_frequency'] = isset($data['average_suffix_frequency']) ? $this->createData($data['average_suffix_frequency'], 'average_suffix_frequency')  : null;
-        $this->container['average_suffix_price'] = isset($data['average_suffix_price']) ? $this->createData($data['average_suffix_price'], 'average_suffix_price')  : null;
+        $this->container['averageSuffixFrequency'] = isset($data['averageSuffixFrequency']) ? $this->createData($data['averageSuffixFrequency'], 'averageSuffixFrequency')  : null;
+        $this->container['averageSuffixPrice'] = isset($data['averageSuffixPrice']) ? $this->createData($data['averageSuffixPrice'], 'averageSuffixPrice')  : null;
     }
 
     /**
@@ -455,241 +455,241 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets num_words
+     * Gets numWords
      *
      * @return string
      */
     public function getNumWords()
     {
-        return $this->container['num_words'];
+        return $this->container['numWords'];
     }
 
     /**
-     * Sets num_words
+     * Sets numWords
      *
-     * @param string $num_words num_words
+     * @param string $numWords numWords
      *
      * @return $this
      */
-    public function setNumWords($num_words)
+    public function setNumWords($numWords)
     {
-        $this->container['num_words'] = $num_words;
+        $this->container['numWords'] = $numWords;
 
         return $this;
     }
 
     /**
-     * Gets is_idn
+     * Gets isIDN
      *
      * @return bool
      */
-    public function getIsIdn()
+    public function getIsIDN()
     {
-        return $this->container['is_idn'];
+        return $this->container['isIDN'];
     }
 
     /**
-     * Sets is_idn
+     * Sets isIDN
      *
-     * @param bool $is_idn is_idn
+     * @param bool $isIDN isIDN
      *
      * @return $this
      */
-    public function setIsIdn($is_idn)
+    public function setIsIDN($isIDN)
     {
-        $this->container['is_idn'] = $is_idn;
+        $this->container['isIDN'] = $isIDN;
 
         return $this;
     }
 
     /**
-     * Gets num_digits
+     * Gets numDigits
      *
      * @return float
      */
     public function getNumDigits()
     {
-        return $this->container['num_digits'];
+        return $this->container['numDigits'];
     }
 
     /**
-     * Sets num_digits
+     * Sets numDigits
      *
-     * @param float $num_digits num_digits
+     * @param float $numDigits numDigits
      *
      * @return $this
      */
-    public function setNumDigits($num_digits)
+    public function setNumDigits($numDigits)
     {
-        $this->container['num_digits'] = $num_digits;
+        $this->container['numDigits'] = $numDigits;
 
         return $this;
     }
 
     /**
-     * Gets num_hyph
+     * Gets numHyph
      *
      * @return float
      */
     public function getNumHyph()
     {
-        return $this->container['num_hyph'];
+        return $this->container['numHyph'];
     }
 
     /**
-     * Sets num_hyph
+     * Sets numHyph
      *
-     * @param float $num_hyph num_hyph
+     * @param float $numHyph numHyph
      *
      * @return $this
      */
-    public function setNumHyph($num_hyph)
+    public function setNumHyph($numHyph)
     {
-        $this->container['num_hyph'] = $num_hyph;
+        $this->container['numHyph'] = $numHyph;
 
         return $this;
     }
 
     /**
-     * Gets num_char
+     * Gets numChar
      *
      * @return float
      */
     public function getNumChar()
     {
-        return $this->container['num_char'];
+        return $this->container['numChar'];
     }
 
     /**
-     * Sets num_char
+     * Sets numChar
      *
-     * @param float $num_char num_char
+     * @param float $numChar numChar
      *
      * @return $this
      */
-    public function setNumChar($num_char)
+    public function setNumChar($numChar)
     {
-        $this->container['num_char'] = $num_char;
+        $this->container['numChar'] = $numChar;
 
         return $this;
     }
 
     /**
-     * Gets completely_num
+     * Gets completelyNum
      *
      * @return float
      */
     public function getCompletelyNum()
     {
-        return $this->container['completely_num'];
+        return $this->container['completelyNum'];
     }
 
     /**
-     * Sets completely_num
+     * Sets completelyNum
      *
-     * @param float $completely_num completely_num
+     * @param float $completelyNum completelyNum
      *
      * @return $this
      */
-    public function setCompletelyNum($completely_num)
+    public function setCompletelyNum($completelyNum)
     {
-        $this->container['completely_num'] = $completely_num;
+        $this->container['completelyNum'] = $completelyNum;
 
         return $this;
     }
 
     /**
-     * Gets average_keyword_frequency
+     * Gets averageKeywordFrequency
      *
      * @return float
      */
     public function getAverageKeywordFrequency()
     {
-        return $this->container['average_keyword_frequency'];
+        return $this->container['averageKeywordFrequency'];
     }
 
     /**
-     * Sets average_keyword_frequency
+     * Sets averageKeywordFrequency
      *
-     * @param float $average_keyword_frequency average_keyword_frequency
+     * @param float $averageKeywordFrequency averageKeywordFrequency
      *
      * @return $this
      */
-    public function setAverageKeywordFrequency($average_keyword_frequency)
+    public function setAverageKeywordFrequency($averageKeywordFrequency)
     {
-        $this->container['average_keyword_frequency'] = $average_keyword_frequency;
+        $this->container['averageKeywordFrequency'] = $averageKeywordFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_keyword_price
+     * Gets averageKeywordPrice
      *
      * @return float
      */
     public function getAverageKeywordPrice()
     {
-        return $this->container['average_keyword_price'];
+        return $this->container['averageKeywordPrice'];
     }
 
     /**
-     * Sets average_keyword_price
+     * Sets averageKeywordPrice
      *
-     * @param float $average_keyword_price average_keyword_price
+     * @param float $averageKeywordPrice averageKeywordPrice
      *
      * @return $this
      */
-    public function setAverageKeywordPrice($average_keyword_price)
+    public function setAverageKeywordPrice($averageKeywordPrice)
     {
-        $this->container['average_keyword_price'] = $average_keyword_price;
+        $this->container['averageKeywordPrice'] = $averageKeywordPrice;
 
         return $this;
     }
 
     /**
-     * Gets average_length_frequency
+     * Gets averageLengthFrequency
      *
      * @return float
      */
     public function getAverageLengthFrequency()
     {
-        return $this->container['average_length_frequency'];
+        return $this->container['averageLengthFrequency'];
     }
 
     /**
-     * Sets average_length_frequency
+     * Sets averageLengthFrequency
      *
-     * @param float $average_length_frequency average_length_frequency
+     * @param float $averageLengthFrequency averageLengthFrequency
      *
      * @return $this
      */
-    public function setAverageLengthFrequency($average_length_frequency)
+    public function setAverageLengthFrequency($averageLengthFrequency)
     {
-        $this->container['average_length_frequency'] = $average_length_frequency;
+        $this->container['averageLengthFrequency'] = $averageLengthFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_length_price
+     * Gets averageLengthPrice
      *
      * @return float
      */
     public function getAverageLengthPrice()
     {
-        return $this->container['average_length_price'];
+        return $this->container['averageLengthPrice'];
     }
 
     /**
-     * Sets average_length_price
+     * Sets averageLengthPrice
      *
-     * @param float $average_length_price average_length_price
+     * @param float $averageLengthPrice averageLengthPrice
      *
      * @return $this
      */
-    public function setAverageLengthPrice($average_length_price)
+    public function setAverageLengthPrice($averageLengthPrice)
     {
-        $this->container['average_length_price'] = $average_length_price;
+        $this->container['averageLengthPrice'] = $averageLengthPrice;
 
         return $this;
     }
@@ -719,49 +719,49 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets average_prefix_frequency
+     * Gets averagePrefixFrequency
      *
      * @return float
      */
     public function getAveragePrefixFrequency()
     {
-        return $this->container['average_prefix_frequency'];
+        return $this->container['averagePrefixFrequency'];
     }
 
     /**
-     * Sets average_prefix_frequency
+     * Sets averagePrefixFrequency
      *
-     * @param float $average_prefix_frequency average_prefix_frequency
+     * @param float $averagePrefixFrequency averagePrefixFrequency
      *
      * @return $this
      */
-    public function setAveragePrefixFrequency($average_prefix_frequency)
+    public function setAveragePrefixFrequency($averagePrefixFrequency)
     {
-        $this->container['average_prefix_frequency'] = $average_prefix_frequency;
+        $this->container['averagePrefixFrequency'] = $averagePrefixFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_prefix_price
+     * Gets averagePrefixPrice
      *
      * @return float
      */
     public function getAveragePrefixPrice()
     {
-        return $this->container['average_prefix_price'];
+        return $this->container['averagePrefixPrice'];
     }
 
     /**
-     * Sets average_prefix_price
+     * Sets averagePrefixPrice
      *
-     * @param float $average_prefix_price average_prefix_price
+     * @param float $averagePrefixPrice averagePrefixPrice
      *
      * @return $this
      */
-    public function setAveragePrefixPrice($average_prefix_price)
+    public function setAveragePrefixPrice($averagePrefixPrice)
     {
-        $this->container['average_prefix_price'] = $average_prefix_price;
+        $this->container['averagePrefixPrice'] = $averagePrefixPrice;
 
         return $this;
     }
@@ -791,49 +791,49 @@ class EstimationParametersV1NameBased implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets average_suffix_frequency
+     * Gets averageSuffixFrequency
      *
      * @return float
      */
     public function getAverageSuffixFrequency()
     {
-        return $this->container['average_suffix_frequency'];
+        return $this->container['averageSuffixFrequency'];
     }
 
     /**
-     * Sets average_suffix_frequency
+     * Sets averageSuffixFrequency
      *
-     * @param float $average_suffix_frequency average_suffix_frequency
+     * @param float $averageSuffixFrequency averageSuffixFrequency
      *
      * @return $this
      */
-    public function setAverageSuffixFrequency($average_suffix_frequency)
+    public function setAverageSuffixFrequency($averageSuffixFrequency)
     {
-        $this->container['average_suffix_frequency'] = $average_suffix_frequency;
+        $this->container['averageSuffixFrequency'] = $averageSuffixFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_suffix_price
+     * Gets averageSuffixPrice
      *
      * @return float
      */
     public function getAverageSuffixPrice()
     {
-        return $this->container['average_suffix_price'];
+        return $this->container['averageSuffixPrice'];
     }
 
     /**
-     * Sets average_suffix_price
+     * Sets averageSuffixPrice
      *
-     * @param float $average_suffix_price average_suffix_price
+     * @param float $averageSuffixPrice averageSuffixPrice
      *
      * @return $this
      */
-    public function setAverageSuffixPrice($average_suffix_price)
+    public function setAverageSuffixPrice($averageSuffixPrice)
     {
-        $this->container['average_suffix_price'] = $average_suffix_price;
+        $this->container['averageSuffixPrice'] = $averageSuffixPrice;
 
         return $this;
     }

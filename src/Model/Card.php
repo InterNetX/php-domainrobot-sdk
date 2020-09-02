@@ -61,8 +61,8 @@ class Card implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'type' => '\Domainrobot\Model\CreditCardVendor',
         'status' => '\Domainrobot\Model\CardStatus',
-        'valid_from' => '\DateTime',
-        'valid_to' => '\DateTime'
+        'validFrom' => '\DateTime',
+        'validTo' => '\DateTime'
     ];
 
     /**
@@ -75,8 +75,8 @@ class Card implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'type' => null,
         'status' => null,
-        'valid_from' => 'date-time',
-        'valid_to' => 'date-time'
+        'validFrom' => 'date-time',
+        'validTo' => 'date-time'
     ];
 
     /**
@@ -110,8 +110,8 @@ class Card implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'type' => 'type',
         'status' => 'status',
-        'valid_from' => 'validFrom',
-        'valid_to' => 'validTo'
+        'validFrom' => 'validFrom',
+        'validTo' => 'validTo'
     ];
 
     /**
@@ -124,8 +124,8 @@ class Card implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'type' => 'setType',
         'status' => 'setStatus',
-        'valid_from' => 'setValidFrom',
-        'valid_to' => 'setValidTo'
+        'validFrom' => 'setValidFrom',
+        'validTo' => 'setValidTo'
     ];
 
     /**
@@ -138,8 +138,8 @@ class Card implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'type' => 'getType',
         'status' => 'getStatus',
-        'valid_from' => 'getValidFrom',
-        'valid_to' => 'getValidTo'
+        'validFrom' => 'getValidFrom',
+        'validTo' => 'getValidTo'
     ];
 
     /**
@@ -206,8 +206,8 @@ class Card implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['valid_from'] = isset($data['valid_from']) ? $this->createData($data['valid_from'], 'valid_from')  : null;
-        $this->container['valid_to'] = isset($data['valid_to']) ? $this->createData($data['valid_to'], 'valid_to')  : null;
+        $this->container['validFrom'] = isset($data['validFrom']) ? $this->createData($data['validFrom'], 'validFrom')  : null;
+        $this->container['validTo'] = isset($data['validTo']) ? $this->createData($data['validTo'], 'validTo')  : null;
     }
 
     /**
@@ -371,49 +371,49 @@ class Card implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets valid_from
+     * Gets validFrom
      *
      * @return \DateTime
      */
     public function getValidFrom()
     {
-        return $this->container['valid_from'];
+        return $this->container['validFrom'];
     }
 
     /**
-     * Sets valid_from
+     * Sets validFrom
      *
-     * @param \DateTime $valid_from The valid from date
+     * @param \DateTime $validFrom The valid from date
      *
      * @return $this
      */
-    public function setValidFrom($valid_from)
+    public function setValidFrom($validFrom)
     {
-        $this->container['valid_from'] = $valid_from;
+        $this->container['validFrom'] = $validFrom;
 
         return $this;
     }
 
     /**
-     * Gets valid_to
+     * Gets validTo
      *
      * @return \DateTime
      */
     public function getValidTo()
     {
-        return $this->container['valid_to'];
+        return $this->container['validTo'];
     }
 
     /**
-     * Sets valid_to
+     * Sets validTo
      *
-     * @param \DateTime $valid_to The valid to date
+     * @param \DateTime $validTo The valid to date
      *
      * @return $this
      */
-    public function setValidTo($valid_to)
+    public function setValidTo($validTo)
     {
-        $this->container['valid_to'] = $valid_to;
+        $this->container['validTo'] = $validTo;
 
         return $this;
     }

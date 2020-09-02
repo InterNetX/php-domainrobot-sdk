@@ -67,20 +67,20 @@ class DomainPrereg implements ModelInterface, ArrayAccess
         'zonec' => '\Domainrobot\Model\Contact',
         'name' => 'string',
         'authinfo' => 'string',
-        'name_servers' => '\Domainrobot\Model\NameServer[]',
-        'name_server_entries' => 'string[]',
+        'nameServers' => '\Domainrobot\Model\NameServer[]',
+        'nameServerEntries' => 'string[]',
         'status' => '\Domainrobot\Model\DomainPreregStatusConstants',
         'phase' => 'string',
         'extension' => '\Domainrobot\Model\DomainPreregAddon',
-        'order_reference' => 'string',
-        'tmch_mark' => '\Domainrobot\Model\TmchMark',
-        'prereg_config' => '\Domainrobot\Model\PreregConfig',
+        'orderReference' => 'string',
+        'tmchMark' => '\Domainrobot\Model\TmchMark',
+        'preregConfig' => '\Domainrobot\Model\PreregConfig',
         'idn' => 'string',
         'confirmed' => '\DateTime',
         'trustee' => 'bool',
-        'domain_created' => '\DateTime',
-        'domain_expire' => '\DateTime',
-        'registry_status' => '\Domainrobot\Model\RegistryStatusConstants',
+        'domainCreated' => '\DateTime',
+        'domainExpire' => '\DateTime',
+        'registryStatus' => '\Domainrobot\Model\RegistryStatusConstants',
         'recommended' => 'bool'
     ];
 
@@ -100,20 +100,20 @@ class DomainPrereg implements ModelInterface, ArrayAccess
         'zonec' => null,
         'name' => null,
         'authinfo' => null,
-        'name_servers' => null,
-        'name_server_entries' => null,
+        'nameServers' => null,
+        'nameServerEntries' => null,
         'status' => null,
         'phase' => null,
         'extension' => null,
-        'order_reference' => null,
-        'tmch_mark' => null,
-        'prereg_config' => null,
+        'orderReference' => null,
+        'tmchMark' => null,
+        'preregConfig' => null,
         'idn' => null,
         'confirmed' => 'date-time',
         'trustee' => null,
-        'domain_created' => 'date-time',
-        'domain_expire' => 'date-time',
-        'registry_status' => null,
+        'domainCreated' => 'date-time',
+        'domainExpire' => 'date-time',
+        'registryStatus' => null,
         'recommended' => null
     ];
 
@@ -154,20 +154,20 @@ class DomainPrereg implements ModelInterface, ArrayAccess
         'zonec' => 'zonec',
         'name' => 'name',
         'authinfo' => 'authinfo',
-        'name_servers' => 'nameServers',
-        'name_server_entries' => 'nameServerEntries',
+        'nameServers' => 'nameServers',
+        'nameServerEntries' => 'nameServerEntries',
         'status' => 'status',
         'phase' => 'phase',
         'extension' => 'extension',
-        'order_reference' => 'orderReference',
-        'tmch_mark' => 'tmchMark',
-        'prereg_config' => 'preregConfig',
+        'orderReference' => 'orderReference',
+        'tmchMark' => 'tmchMark',
+        'preregConfig' => 'preregConfig',
         'idn' => 'idn',
         'confirmed' => 'confirmed',
         'trustee' => 'trustee',
-        'domain_created' => 'domainCreated',
-        'domain_expire' => 'domainExpire',
-        'registry_status' => 'registryStatus',
+        'domainCreated' => 'domainCreated',
+        'domainExpire' => 'domainExpire',
+        'registryStatus' => 'registryStatus',
         'recommended' => 'recommended'
     ];
 
@@ -187,20 +187,20 @@ class DomainPrereg implements ModelInterface, ArrayAccess
         'zonec' => 'setZonec',
         'name' => 'setName',
         'authinfo' => 'setAuthinfo',
-        'name_servers' => 'setNameServers',
-        'name_server_entries' => 'setNameServerEntries',
+        'nameServers' => 'setNameServers',
+        'nameServerEntries' => 'setNameServerEntries',
         'status' => 'setStatus',
         'phase' => 'setPhase',
         'extension' => 'setExtension',
-        'order_reference' => 'setOrderReference',
-        'tmch_mark' => 'setTmchMark',
-        'prereg_config' => 'setPreregConfig',
+        'orderReference' => 'setOrderReference',
+        'tmchMark' => 'setTmchMark',
+        'preregConfig' => 'setPreregConfig',
         'idn' => 'setIdn',
         'confirmed' => 'setConfirmed',
         'trustee' => 'setTrustee',
-        'domain_created' => 'setDomainCreated',
-        'domain_expire' => 'setDomainExpire',
-        'registry_status' => 'setRegistryStatus',
+        'domainCreated' => 'setDomainCreated',
+        'domainExpire' => 'setDomainExpire',
+        'registryStatus' => 'setRegistryStatus',
         'recommended' => 'setRecommended'
     ];
 
@@ -220,20 +220,20 @@ class DomainPrereg implements ModelInterface, ArrayAccess
         'zonec' => 'getZonec',
         'name' => 'getName',
         'authinfo' => 'getAuthinfo',
-        'name_servers' => 'getNameServers',
-        'name_server_entries' => 'getNameServerEntries',
+        'nameServers' => 'getNameServers',
+        'nameServerEntries' => 'getNameServerEntries',
         'status' => 'getStatus',
         'phase' => 'getPhase',
         'extension' => 'getExtension',
-        'order_reference' => 'getOrderReference',
-        'tmch_mark' => 'getTmchMark',
-        'prereg_config' => 'getPreregConfig',
+        'orderReference' => 'getOrderReference',
+        'tmchMark' => 'getTmchMark',
+        'preregConfig' => 'getPreregConfig',
         'idn' => 'getIdn',
         'confirmed' => 'getConfirmed',
         'trustee' => 'getTrustee',
-        'domain_created' => 'getDomainCreated',
-        'domain_expire' => 'getDomainExpire',
-        'registry_status' => 'getRegistryStatus',
+        'domainCreated' => 'getDomainCreated',
+        'domainExpire' => 'getDomainExpire',
+        'registryStatus' => 'getRegistryStatus',
         'recommended' => 'getRecommended'
     ];
 
@@ -307,20 +307,20 @@ class DomainPrereg implements ModelInterface, ArrayAccess
         $this->container['zonec'] = isset($data['zonec']) ? $this->createData($data['zonec'], 'zonec')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['authinfo'] = isset($data['authinfo']) ? $this->createData($data['authinfo'], 'authinfo')  : null;
-        $this->container['name_servers'] = isset($data['name_servers']) ? $this->createData($data['name_servers'], 'name_servers')  : null;
-        $this->container['name_server_entries'] = isset($data['name_server_entries']) ? $this->createData($data['name_server_entries'], 'name_server_entries')  : null;
+        $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
+        $this->container['nameServerEntries'] = isset($data['nameServerEntries']) ? $this->createData($data['nameServerEntries'], 'nameServerEntries')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['phase'] = isset($data['phase']) ? $this->createData($data['phase'], 'phase')  : null;
         $this->container['extension'] = isset($data['extension']) ? $this->createData($data['extension'], 'extension')  : null;
-        $this->container['order_reference'] = isset($data['order_reference']) ? $this->createData($data['order_reference'], 'order_reference')  : null;
-        $this->container['tmch_mark'] = isset($data['tmch_mark']) ? $this->createData($data['tmch_mark'], 'tmch_mark')  : null;
-        $this->container['prereg_config'] = isset($data['prereg_config']) ? $this->createData($data['prereg_config'], 'prereg_config')  : null;
+        $this->container['orderReference'] = isset($data['orderReference']) ? $this->createData($data['orderReference'], 'orderReference')  : null;
+        $this->container['tmchMark'] = isset($data['tmchMark']) ? $this->createData($data['tmchMark'], 'tmchMark')  : null;
+        $this->container['preregConfig'] = isset($data['preregConfig']) ? $this->createData($data['preregConfig'], 'preregConfig')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['confirmed'] = isset($data['confirmed']) ? $this->createData($data['confirmed'], 'confirmed')  : null;
         $this->container['trustee'] = isset($data['trustee']) ? $this->createData($data['trustee'], 'trustee')  : null;
-        $this->container['domain_created'] = isset($data['domain_created']) ? $this->createData($data['domain_created'], 'domain_created')  : null;
-        $this->container['domain_expire'] = isset($data['domain_expire']) ? $this->createData($data['domain_expire'], 'domain_expire')  : null;
-        $this->container['registry_status'] = isset($data['registry_status']) ? $this->createData($data['registry_status'], 'registry_status')  : null;
+        $this->container['domainCreated'] = isset($data['domainCreated']) ? $this->createData($data['domainCreated'], 'domainCreated')  : null;
+        $this->container['domainExpire'] = isset($data['domainExpire']) ? $this->createData($data['domainExpire'], 'domainExpire')  : null;
+        $this->container['registryStatus'] = isset($data['registryStatus']) ? $this->createData($data['registryStatus'], 'registryStatus')  : null;
         $this->container['recommended'] = isset($data['recommended']) ? $this->createData($data['recommended'], 'recommended')  : null;
     }
 
@@ -629,49 +629,49 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name_servers
+     * Gets nameServers
      *
      * @return \Domainrobot\Model\NameServer[]
      */
     public function getNameServers()
     {
-        return $this->container['name_servers'];
+        return $this->container['nameServers'];
     }
 
     /**
-     * Sets name_servers
+     * Sets nameServers
      *
-     * @param \Domainrobot\Model\NameServer[] $name_servers The nameservers.
+     * @param \Domainrobot\Model\NameServer[] $nameServers The nameservers.
      *
      * @return $this
      */
-    public function setNameServers($name_servers)
+    public function setNameServers($nameServers)
     {
-        $this->container['name_servers'] = $name_servers;
+        $this->container['nameServers'] = $nameServers;
 
         return $this;
     }
 
     /**
-     * Gets name_server_entries
+     * Gets nameServerEntries
      *
      * @return string[]
      */
     public function getNameServerEntries()
     {
-        return $this->container['name_server_entries'];
+        return $this->container['nameServerEntries'];
     }
 
     /**
-     * Sets name_server_entries
+     * Sets nameServerEntries
      *
-     * @param string[] $name_server_entries The nameserver entries.
+     * @param string[] $nameServerEntries The nameserver entries.
      *
      * @return $this
      */
-    public function setNameServerEntries($name_server_entries)
+    public function setNameServerEntries($nameServerEntries)
     {
-        $this->container['name_server_entries'] = $name_server_entries;
+        $this->container['nameServerEntries'] = $nameServerEntries;
 
         return $this;
     }
@@ -749,73 +749,73 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets order_reference
+     * Gets orderReference
      *
      * @return string
      */
     public function getOrderReference()
     {
-        return $this->container['order_reference'];
+        return $this->container['orderReference'];
     }
 
     /**
-     * Sets order_reference
+     * Sets orderReference
      *
-     * @param string $order_reference The unique order reference.
+     * @param string $orderReference The unique order reference.
      *
      * @return $this
      */
-    public function setOrderReference($order_reference)
+    public function setOrderReference($orderReference)
     {
-        $this->container['order_reference'] = $order_reference;
+        $this->container['orderReference'] = $orderReference;
 
         return $this;
     }
 
     /**
-     * Gets tmch_mark
+     * Gets tmchMark
      *
      * @return \Domainrobot\Model\TmchMark
      */
     public function getTmchMark()
     {
-        return $this->container['tmch_mark'];
+        return $this->container['tmchMark'];
     }
 
     /**
-     * Sets tmch_mark
+     * Sets tmchMark
      *
-     * @param \Domainrobot\Model\TmchMark $tmch_mark The tmchmark.
+     * @param \Domainrobot\Model\TmchMark $tmchMark The tmchmark.
      *
      * @return $this
      */
-    public function setTmchMark($tmch_mark)
+    public function setTmchMark($tmchMark)
     {
-        $this->container['tmch_mark'] = $tmch_mark;
+        $this->container['tmchMark'] = $tmchMark;
 
         return $this;
     }
 
     /**
-     * Gets prereg_config
+     * Gets preregConfig
      *
      * @return \Domainrobot\Model\PreregConfig
      */
     public function getPreregConfig()
     {
-        return $this->container['prereg_config'];
+        return $this->container['preregConfig'];
     }
 
     /**
-     * Sets prereg_config
+     * Sets preregConfig
      *
-     * @param \Domainrobot\Model\PreregConfig $prereg_config The preregistration configuration.
+     * @param \Domainrobot\Model\PreregConfig $preregConfig The preregistration configuration.
      *
      * @return $this
      */
-    public function setPreregConfig($prereg_config)
+    public function setPreregConfig($preregConfig)
     {
-        $this->container['prereg_config'] = $prereg_config;
+        $this->container['preregConfig'] = $preregConfig;
 
         return $this;
     }
@@ -893,73 +893,73 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets domain_created
+     * Gets domainCreated
      *
      * @return \DateTime
      */
     public function getDomainCreated()
     {
-        return $this->container['domain_created'];
+        return $this->container['domainCreated'];
     }
 
     /**
-     * Sets domain_created
+     * Sets domainCreated
      *
-     * @param \DateTime $domain_created The domain created date.
+     * @param \DateTime $domainCreated The domain created date.
      *
      * @return $this
      */
-    public function setDomainCreated($domain_created)
+    public function setDomainCreated($domainCreated)
     {
-        $this->container['domain_created'] = $domain_created;
+        $this->container['domainCreated'] = $domainCreated;
 
         return $this;
     }
 
     /**
-     * Gets domain_expire
+     * Gets domainExpire
      *
      * @return \DateTime
      */
     public function getDomainExpire()
     {
-        return $this->container['domain_expire'];
+        return $this->container['domainExpire'];
     }
 
     /**
-     * Sets domain_expire
+     * Sets domainExpire
      *
-     * @param \DateTime $domain_expire The domain expire date.
+     * @param \DateTime $domainExpire The domain expire date.
      *
      * @return $this
      */
-    public function setDomainExpire($domain_expire)
+    public function setDomainExpire($domainExpire)
     {
-        $this->container['domain_expire'] = $domain_expire;
+        $this->container['domainExpire'] = $domainExpire;
 
         return $this;
     }
 
     /**
-     * Gets registry_status
+     * Gets registryStatus
      *
      * @return \Domainrobot\Model\RegistryStatusConstants
      */
     public function getRegistryStatus()
     {
-        return $this->container['registry_status'];
+        return $this->container['registryStatus'];
     }
 
     /**
-     * Sets registry_status
+     * Sets registryStatus
      *
-     * @param \Domainrobot\Model\RegistryStatusConstants $registry_status The registry status.
+     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus The registry status.
      *
      * @return $this
      */
-    public function setRegistryStatus($registry_status)
+    public function setRegistryStatus($registryStatus)
     {
-        $this->container['registry_status'] = $registry_status;
+        $this->container['registryStatus'] = $registryStatus;
 
         return $this;
     }

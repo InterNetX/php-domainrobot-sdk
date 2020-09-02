@@ -57,7 +57,7 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ftld_token' => 'string'
+        'ftldToken' => 'string'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'ftld_token' => null
+        'ftldToken' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'ftld_token' => 'ftldToken'
+        'ftldToken' => 'ftldToken'
     ];
 
     /**
@@ -105,7 +105,7 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'ftld_token' => 'setFtldToken'
+        'ftldToken' => 'setFtldToken'
     ];
 
     /**
@@ -114,7 +114,7 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'ftld_token' => 'getFtldToken'
+        'ftldToken' => 'getFtldToken'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['ftld_token'] = isset($data['ftld_token']) ? $this->createData($data['ftld_token'], 'ftld_token')  : null;
+        $this->container['ftldToken'] = isset($data['ftldToken']) ? $this->createData($data['ftldToken'], 'ftldToken')  : null;
     }
 
     /**
@@ -245,25 +245,25 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets ftld_token
+     * Gets ftldToken
      *
      * @return string
      */
     public function getFtldToken()
     {
-        return $this->container['ftld_token'];
+        return $this->container['ftldToken'];
     }
 
     /**
-     * Sets ftld_token
+     * Sets ftldToken
      *
-     * @param string $ftld_token The FTLD token.
+     * @param string $ftldToken The FTLD token.
      *
      * @return $this
      */
-    public function setFtldToken($ftld_token)
+    public function setFtldToken($ftldToken)
     {
-        $this->container['ftld_token'] = $ftld_token;
+        $this->container['ftldToken'] = $ftldToken;
 
         return $this;
     }

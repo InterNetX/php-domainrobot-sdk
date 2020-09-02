@@ -60,7 +60,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'name' => 'string',
-        'article_label' => 'string',
+        'articleLabel' => 'string',
         'dnssec' => 'bool',
         'statistic' => 'bool'
     ];
@@ -74,7 +74,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'updated' => 'date-time',
         'name' => null,
-        'article_label' => null,
+        'articleLabel' => null,
         'dnssec' => null,
         'statistic' => null
     ];
@@ -109,7 +109,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'created' => 'created',
         'updated' => 'updated',
         'name' => 'name',
-        'article_label' => 'articleLabel',
+        'articleLabel' => 'articleLabel',
         'dnssec' => 'dnssec',
         'statistic' => 'statistic'
     ];
@@ -123,7 +123,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'name' => 'setName',
-        'article_label' => 'setArticleLabel',
+        'articleLabel' => 'setArticleLabel',
         'dnssec' => 'setDnssec',
         'statistic' => 'setStatistic'
     ];
@@ -137,7 +137,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'name' => 'getName',
-        'article_label' => 'getArticleLabel',
+        'articleLabel' => 'getArticleLabel',
         'dnssec' => 'getDnssec',
         'statistic' => 'getStatistic'
     ];
@@ -205,7 +205,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['article_label'] = isset($data['article_label']) ? $this->createData($data['article_label'], 'article_label')  : null;
+        $this->container['articleLabel'] = isset($data['articleLabel']) ? $this->createData($data['articleLabel'], 'articleLabel')  : null;
         $this->container['dnssec'] = isset($data['dnssec']) ? $this->createData($data['dnssec'], 'dnssec')  : null;
         $this->container['statistic'] = isset($data['statistic']) ? $this->createData($data['statistic'], 'statistic')  : null;
     }
@@ -347,25 +347,25 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets article_label
+     * Gets articleLabel
      *
      * @return string
      */
     public function getArticleLabel()
     {
-        return $this->container['article_label'];
+        return $this->container['articleLabel'];
     }
 
     /**
-     * Sets article_label
+     * Sets articleLabel
      *
-     * @param string $article_label The article label of the name server group, will be used for each created zone using these group
+     * @param string $articleLabel The article label of the name server group, will be used for each created zone using these group
      *
      * @return $this
      */
-    public function setArticleLabel($article_label)
+    public function setArticleLabel($articleLabel)
     {
-        $this->container['article_label'] = $article_label;
+        $this->container['articleLabel'] = $articleLabel;
 
         return $this;
     }

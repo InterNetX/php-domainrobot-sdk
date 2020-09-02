@@ -58,7 +58,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'domain' => 'string',
-        'domain_idn' => 'string',
+        'domainIdn' => 'string',
         'currency' => 'string',
         'exchangerate' => 'float',
         'estimation' => 'double',
@@ -73,7 +73,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'domain' => null,
-        'domain_idn' => null,
+        'domainIdn' => null,
         'currency' => null,
         'exchangerate' => 'float',
         'estimation' => 'double',
@@ -109,7 +109,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'domain' => 'domain',
-        'domain_idn' => 'domain_idn',
+        'domainIdn' => 'domain_idn',
         'currency' => 'currency',
         'exchangerate' => 'exchangerate',
         'estimation' => 'estimation',
@@ -124,7 +124,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'domain' => 'setDomain',
-        'domain_idn' => 'setDomainIdn',
+        'domainIdn' => 'setDomainIdn',
         'currency' => 'setCurrency',
         'exchangerate' => 'setExchangerate',
         'estimation' => 'setEstimation',
@@ -139,7 +139,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'domain' => 'getDomain',
-        'domain_idn' => 'getDomainIdn',
+        'domainIdn' => 'getDomainIdn',
         'currency' => 'getCurrency',
         'exchangerate' => 'getExchangerate',
         'estimation' => 'getEstimation',
@@ -208,7 +208,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
-        $this->container['domain_idn'] = isset($data['domain_idn']) ? $this->createData($data['domain_idn'], 'domain_idn')  : null;
+        $this->container['domainIdn'] = isset($data['domainIdn']) ? $this->createData($data['domainIdn'], 'domainIdn')  : null;
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
         $this->container['exchangerate'] = isset($data['exchangerate']) ? $this->createData($data['exchangerate'], 'exchangerate')  : null;
         $this->container['estimation'] = isset($data['estimation']) ? $this->createData($data['estimation'], 'estimation')  : null;
@@ -305,25 +305,25 @@ class EstimationV1 implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets domain_idn
+     * Gets domainIdn
      *
      * @return string
      */
     public function getDomainIdn()
     {
-        return $this->container['domain_idn'];
+        return $this->container['domainIdn'];
     }
 
     /**
-     * Sets domain_idn
+     * Sets domainIdn
      *
-     * @param string $domain_idn domain_idn
+     * @param string $domainIdn domainIdn
      *
      * @return $this
      */
-    public function setDomainIdn($domain_idn)
+    public function setDomainIdn($domainIdn)
     {
-        $this->container['domain_idn'] = $domain_idn;
+        $this->container['domainIdn'] = $domainIdn;
 
         return $this;
     }

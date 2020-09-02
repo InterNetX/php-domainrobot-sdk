@@ -60,9 +60,9 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
         'first' => 'string',
         'last' => 'string',
         'organization' => 'string',
-        'adress_line1' => 'string',
-        'adress_line2' => 'string',
-        'adress_line3' => 'string'
+        'adressLine1' => 'string',
+        'adressLine2' => 'string',
+        'adressLine3' => 'string'
     ];
 
     /**
@@ -74,9 +74,9 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
         'first' => null,
         'last' => null,
         'organization' => null,
-        'adress_line1' => null,
-        'adress_line2' => null,
-        'adress_line3' => null
+        'adressLine1' => null,
+        'adressLine2' => null,
+        'adressLine3' => null
     ];
 
     /**
@@ -109,9 +109,9 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
         'first' => 'first',
         'last' => 'last',
         'organization' => 'organization',
-        'adress_line1' => 'adressLine1',
-        'adress_line2' => 'adressLine2',
-        'adress_line3' => 'adressLine3'
+        'adressLine1' => 'adressLine1',
+        'adressLine2' => 'adressLine2',
+        'adressLine3' => 'adressLine3'
     ];
 
     /**
@@ -123,9 +123,9 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
         'first' => 'setFirst',
         'last' => 'setLast',
         'organization' => 'setOrganization',
-        'adress_line1' => 'setAdressLine1',
-        'adress_line2' => 'setAdressLine2',
-        'adress_line3' => 'setAdressLine3'
+        'adressLine1' => 'setAdressLine1',
+        'adressLine2' => 'setAdressLine2',
+        'adressLine3' => 'setAdressLine3'
     ];
 
     /**
@@ -137,9 +137,9 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
         'first' => 'getFirst',
         'last' => 'getLast',
         'organization' => 'getOrganization',
-        'adress_line1' => 'getAdressLine1',
-        'adress_line2' => 'getAdressLine2',
-        'adress_line3' => 'getAdressLine3'
+        'adressLine1' => 'getAdressLine1',
+        'adressLine2' => 'getAdressLine2',
+        'adressLine3' => 'getAdressLine3'
     ];
 
     /**
@@ -205,9 +205,9 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
         $this->container['first'] = isset($data['first']) ? $this->createData($data['first'], 'first')  : null;
         $this->container['last'] = isset($data['last']) ? $this->createData($data['last'], 'last')  : null;
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
-        $this->container['adress_line1'] = isset($data['adress_line1']) ? $this->createData($data['adress_line1'], 'adress_line1')  : null;
-        $this->container['adress_line2'] = isset($data['adress_line2']) ? $this->createData($data['adress_line2'], 'adress_line2')  : null;
-        $this->container['adress_line3'] = isset($data['adress_line3']) ? $this->createData($data['adress_line3'], 'adress_line3')  : null;
+        $this->container['adressLine1'] = isset($data['adressLine1']) ? $this->createData($data['adressLine1'], 'adressLine1')  : null;
+        $this->container['adressLine2'] = isset($data['adressLine2']) ? $this->createData($data['adressLine2'], 'adressLine2')  : null;
+        $this->container['adressLine3'] = isset($data['adressLine3']) ? $this->createData($data['adressLine3'], 'adressLine3')  : null;
     }
 
     /**
@@ -347,73 +347,73 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets adress_line1
+     * Gets adressLine1
      *
      * @return string
      */
     public function getAdressLine1()
     {
-        return $this->container['adress_line1'];
+        return $this->container['adressLine1'];
     }
 
     /**
-     * Sets adress_line1
+     * Sets adressLine1
      *
-     * @param string $adress_line1 The first line of the address.
+     * @param string $adressLine1 The first line of the address.
      *
      * @return $this
      */
-    public function setAdressLine1($adress_line1)
+    public function setAdressLine1($adressLine1)
     {
-        $this->container['adress_line1'] = $adress_line1;
+        $this->container['adressLine1'] = $adressLine1;
 
         return $this;
     }
 
     /**
-     * Gets adress_line2
+     * Gets adressLine2
      *
      * @return string
      */
     public function getAdressLine2()
     {
-        return $this->container['adress_line2'];
+        return $this->container['adressLine2'];
     }
 
     /**
-     * Sets adress_line2
+     * Sets adressLine2
      *
-     * @param string $adress_line2 The second line of the address.
+     * @param string $adressLine2 The second line of the address.
      *
      * @return $this
      */
-    public function setAdressLine2($adress_line2)
+    public function setAdressLine2($adressLine2)
     {
-        $this->container['adress_line2'] = $adress_line2;
+        $this->container['adressLine2'] = $adressLine2;
 
         return $this;
     }
 
     /**
-     * Gets adress_line3
+     * Gets adressLine3
      *
      * @return string
      */
     public function getAdressLine3()
     {
-        return $this->container['adress_line3'];
+        return $this->container['adressLine3'];
     }
 
     /**
-     * Sets adress_line3
+     * Sets adressLine3
      *
-     * @param string $adress_line3 The third line of the address.
+     * @param string $adressLine3 The third line of the address.
      *
      * @return $this
      */
-    public function setAdressLine3($adress_line3)
+    public function setAdressLine3($adressLine3)
     {
-        $this->container['adress_line3'] = $adress_line3;
+        $this->container['adressLine3'] = $adressLine3;
 
         return $this;
     }

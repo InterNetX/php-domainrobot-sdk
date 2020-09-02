@@ -57,9 +57,9 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'joi_country_name' => 'string',
-        'company_number' => 'string',
-        'business_category' => '\Domainrobot\Model\BusinessCategory'
+        'joiCountryName' => 'string',
+        'companyNumber' => 'string',
+        'businessCategory' => '\Domainrobot\Model\BusinessCategory'
     ];
 
     /**
@@ -68,9 +68,9 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'joi_country_name' => null,
-        'company_number' => null,
-        'business_category' => null
+        'joiCountryName' => null,
+        'companyNumber' => null,
+        'businessCategory' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'joi_country_name' => 'joiCountryName',
-        'company_number' => 'companyNumber',
-        'business_category' => 'businessCategory'
+        'joiCountryName' => 'joiCountryName',
+        'companyNumber' => 'companyNumber',
+        'businessCategory' => 'businessCategory'
     ];
 
     /**
@@ -111,9 +111,9 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'joi_country_name' => 'setJoiCountryName',
-        'company_number' => 'setCompanyNumber',
-        'business_category' => 'setBusinessCategory'
+        'joiCountryName' => 'setJoiCountryName',
+        'companyNumber' => 'setCompanyNumber',
+        'businessCategory' => 'setBusinessCategory'
     ];
 
     /**
@@ -122,9 +122,9 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'joi_country_name' => 'getJoiCountryName',
-        'company_number' => 'getCompanyNumber',
-        'business_category' => 'getBusinessCategory'
+        'joiCountryName' => 'getJoiCountryName',
+        'companyNumber' => 'getCompanyNumber',
+        'businessCategory' => 'getBusinessCategory'
     ];
 
     /**
@@ -187,9 +187,9 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['joi_country_name'] = isset($data['joi_country_name']) ? $this->createData($data['joi_country_name'], 'joi_country_name')  : null;
-        $this->container['company_number'] = isset($data['company_number']) ? $this->createData($data['company_number'], 'company_number')  : null;
-        $this->container['business_category'] = isset($data['business_category']) ? $this->createData($data['business_category'], 'business_category')  : null;
+        $this->container['joiCountryName'] = isset($data['joiCountryName']) ? $this->createData($data['joiCountryName'], 'joiCountryName')  : null;
+        $this->container['companyNumber'] = isset($data['companyNumber']) ? $this->createData($data['companyNumber'], 'companyNumber')  : null;
+        $this->container['businessCategory'] = isset($data['businessCategory']) ? $this->createData($data['businessCategory'], 'businessCategory')  : null;
     }
 
     /**
@@ -257,73 +257,73 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets joi_country_name
+     * Gets joiCountryName
      *
      * @return string
      */
     public function getJoiCountryName()
     {
-        return $this->container['joi_country_name'];
+        return $this->container['joiCountryName'];
     }
 
     /**
-     * Sets joi_country_name
+     * Sets joiCountryName
      *
-     * @param string $joi_country_name Country of judicial formation
+     * @param string $joiCountryName Country of judicial formation
      *
      * @return $this
      */
-    public function setJoiCountryName($joi_country_name)
+    public function setJoiCountryName($joiCountryName)
     {
-        $this->container['joi_country_name'] = $joi_country_name;
+        $this->container['joiCountryName'] = $joiCountryName;
 
         return $this;
     }
 
     /**
-     * Gets company_number
+     * Gets companyNumber
      *
      * @return string
      */
     public function getCompanyNumber()
     {
-        return $this->container['company_number'];
+        return $this->container['companyNumber'];
     }
 
     /**
-     * Sets company_number
+     * Sets companyNumber
      *
-     * @param string $company_number The company number
+     * @param string $companyNumber The company number
      *
      * @return $this
      */
-    public function setCompanyNumber($company_number)
+    public function setCompanyNumber($companyNumber)
     {
-        $this->container['company_number'] = $company_number;
+        $this->container['companyNumber'] = $companyNumber;
 
         return $this;
     }
 
     /**
-     * Gets business_category
+     * Gets businessCategory
      *
      * @return \Domainrobot\Model\BusinessCategory
      */
     public function getBusinessCategory()
     {
-        return $this->container['business_category'];
+        return $this->container['businessCategory'];
     }
 
     /**
-     * Sets business_category
+     * Sets businessCategory
      *
-     * @param \Domainrobot\Model\BusinessCategory $business_category Additional validation data required for certain Comodo products.
+     * @param \Domainrobot\Model\BusinessCategory $businessCategory Additional validation data required for certain Comodo products.
      *
      * @return $this
      */
-    public function setBusinessCategory($business_category)
+    public function setBusinessCategory($businessCategory)
     {
-        $this->container['business_category'] = $business_category;
+        $this->container['businessCategory'] = $businessCategory;
 
         return $this;
     }

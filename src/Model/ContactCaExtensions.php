@@ -58,10 +58,10 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'cpr' => '\Domainrobot\Model\CiraCprConstants',
-        'agreement_version' => 'double',
-        'originating_ip' => 'string',
-        'official_representative' => 'string',
-        'trustee_percentage' => 'double'
+        'agreementVersion' => 'double',
+        'originatingIp' => 'string',
+        'officialRepresentative' => 'string',
+        'trusteePercentage' => 'double'
     ];
 
     /**
@@ -71,10 +71,10 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'cpr' => null,
-        'agreement_version' => 'double',
-        'originating_ip' => null,
-        'official_representative' => null,
-        'trustee_percentage' => 'double'
+        'agreementVersion' => 'double',
+        'originatingIp' => null,
+        'officialRepresentative' => null,
+        'trusteePercentage' => 'double'
     ];
 
     /**
@@ -105,10 +105,10 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'cpr' => 'cpr',
-        'agreement_version' => 'agreementVersion',
-        'originating_ip' => 'originatingIp',
-        'official_representative' => 'officialRepresentative',
-        'trustee_percentage' => 'trusteePercentage'
+        'agreementVersion' => 'agreementVersion',
+        'originatingIp' => 'originatingIp',
+        'officialRepresentative' => 'officialRepresentative',
+        'trusteePercentage' => 'trusteePercentage'
     ];
 
     /**
@@ -118,10 +118,10 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'cpr' => 'setCpr',
-        'agreement_version' => 'setAgreementVersion',
-        'originating_ip' => 'setOriginatingIp',
-        'official_representative' => 'setOfficialRepresentative',
-        'trustee_percentage' => 'setTrusteePercentage'
+        'agreementVersion' => 'setAgreementVersion',
+        'originatingIp' => 'setOriginatingIp',
+        'officialRepresentative' => 'setOfficialRepresentative',
+        'trusteePercentage' => 'setTrusteePercentage'
     ];
 
     /**
@@ -131,10 +131,10 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'cpr' => 'getCpr',
-        'agreement_version' => 'getAgreementVersion',
-        'originating_ip' => 'getOriginatingIp',
-        'official_representative' => 'getOfficialRepresentative',
-        'trustee_percentage' => 'getTrusteePercentage'
+        'agreementVersion' => 'getAgreementVersion',
+        'originatingIp' => 'getOriginatingIp',
+        'officialRepresentative' => 'getOfficialRepresentative',
+        'trusteePercentage' => 'getTrusteePercentage'
     ];
 
     /**
@@ -198,10 +198,10 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['cpr'] = isset($data['cpr']) ? $this->createData($data['cpr'], 'cpr')  : null;
-        $this->container['agreement_version'] = isset($data['agreement_version']) ? $this->createData($data['agreement_version'], 'agreement_version')  : null;
-        $this->container['originating_ip'] = isset($data['originating_ip']) ? $this->createData($data['originating_ip'], 'originating_ip')  : null;
-        $this->container['official_representative'] = isset($data['official_representative']) ? $this->createData($data['official_representative'], 'official_representative')  : null;
-        $this->container['trustee_percentage'] = isset($data['trustee_percentage']) ? $this->createData($data['trustee_percentage'], 'trustee_percentage')  : null;
+        $this->container['agreementVersion'] = isset($data['agreementVersion']) ? $this->createData($data['agreementVersion'], 'agreementVersion')  : null;
+        $this->container['originatingIp'] = isset($data['originatingIp']) ? $this->createData($data['originatingIp'], 'originatingIp')  : null;
+        $this->container['officialRepresentative'] = isset($data['officialRepresentative']) ? $this->createData($data['officialRepresentative'], 'officialRepresentative')  : null;
+        $this->container['trusteePercentage'] = isset($data['trusteePercentage']) ? $this->createData($data['trusteePercentage'], 'trusteePercentage')  : null;
     }
 
     /**
@@ -293,97 +293,97 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets agreement_version
+     * Gets agreementVersion
      *
      * @return double
      */
     public function getAgreementVersion()
     {
-        return $this->container['agreement_version'];
+        return $this->container['agreementVersion'];
     }
 
     /**
-     * Sets agreement_version
+     * Sets agreementVersion
      *
-     * @param double $agreement_version The agreement version.
+     * @param double $agreementVersion The agreement version.
      *
      * @return $this
      */
-    public function setAgreementVersion($agreement_version)
+    public function setAgreementVersion($agreementVersion)
     {
-        $this->container['agreement_version'] = $agreement_version;
+        $this->container['agreementVersion'] = $agreementVersion;
 
         return $this;
     }
 
     /**
-     * Gets originating_ip
+     * Gets originatingIp
      *
      * @return string
      */
     public function getOriginatingIp()
     {
-        return $this->container['originating_ip'];
+        return $this->container['originatingIp'];
     }
 
     /**
-     * Sets originating_ip
+     * Sets originatingIp
      *
-     * @param string $originating_ip The originating ip.
+     * @param string $originatingIp The originating ip.
      *
      * @return $this
      */
-    public function setOriginatingIp($originating_ip)
+    public function setOriginatingIp($originatingIp)
     {
-        $this->container['originating_ip'] = $originating_ip;
+        $this->container['originatingIp'] = $originatingIp;
 
         return $this;
     }
 
     /**
-     * Gets official_representative
+     * Gets officialRepresentative
      *
      * @return string
      */
     public function getOfficialRepresentative()
     {
-        return $this->container['official_representative'];
+        return $this->container['officialRepresentative'];
     }
 
     /**
-     * Sets official_representative
+     * Sets officialRepresentative
      *
-     * @param string $official_representative The official representative.
+     * @param string $officialRepresentative The official representative.
      *
      * @return $this
      */
-    public function setOfficialRepresentative($official_representative)
+    public function setOfficialRepresentative($officialRepresentative)
     {
-        $this->container['official_representative'] = $official_representative;
+        $this->container['officialRepresentative'] = $officialRepresentative;
 
         return $this;
     }
 
     /**
-     * Gets trustee_percentage
+     * Gets trusteePercentage
      *
      * @return double
      */
     public function getTrusteePercentage()
     {
-        return $this->container['trustee_percentage'];
+        return $this->container['trusteePercentage'];
     }
 
     /**
-     * Sets trustee_percentage
+     * Sets trusteePercentage
      *
-     * @param double $trustee_percentage The trustee percentage.
+     * @param double $trusteePercentage The trustee percentage.
      *
      * @return $this
      */
-    public function setTrusteePercentage($trustee_percentage)
+    public function setTrusteePercentage($trusteePercentage)
     {
-        $this->container['trustee_percentage'] = $trustee_percentage;
+        $this->container['trusteePercentage'] = $trusteePercentage;
 
         return $this;
     }

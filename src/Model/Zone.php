@@ -63,23 +63,23 @@ class Zone implements ModelInterface, ArrayAccess
         'idn' => 'string',
         'soa' => '\Domainrobot\Model\Soa',
         'dnssec' => 'bool',
-        'name_server_group' => 'string',
-        'allow_transfer' => 'bool',
+        'nameServerGroup' => 'string',
+        'allowTransfer' => 'bool',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
-        'log_id' => 'int',
+        'logId' => 'int',
         'comment' => 'string',
         'domainsafe' => 'bool',
         'source' => 'string',
-        'source_virtual_hostname' => 'string',
-        'name_servers' => '\Domainrobot\Model\NameServer[]',
+        'sourceVirtualHostname' => 'string',
+        'nameServers' => '\Domainrobot\Model\NameServer[]',
         'main' => '\Domainrobot\Model\MainIp',
-        'www_include' => 'bool',
-        'virtual_name_server' => 'string',
-        'free_text' => 'string[]',
+        'wwwInclude' => 'bool',
+        'virtualNameServer' => 'string',
+        'freeText' => 'string[]',
         'action' => '\Domainrobot\Model\NameserverActionConstants',
         'grants' => 'string[]',
-        'resource_records' => '\Domainrobot\Model\ResourceRecord[]',
+        'resourceRecords' => '\Domainrobot\Model\ResourceRecord[]',
         'roid' => 'int'
     ];
 
@@ -95,23 +95,23 @@ class Zone implements ModelInterface, ArrayAccess
         'idn' => null,
         'soa' => null,
         'dnssec' => null,
-        'name_server_group' => null,
-        'allow_transfer' => null,
+        'nameServerGroup' => null,
+        'allowTransfer' => null,
         'owner' => null,
         'updater' => null,
-        'log_id' => 'int64',
+        'logId' => 'int64',
         'comment' => null,
         'domainsafe' => null,
         'source' => null,
-        'source_virtual_hostname' => null,
-        'name_servers' => null,
+        'sourceVirtualHostname' => null,
+        'nameServers' => null,
         'main' => null,
-        'www_include' => null,
-        'virtual_name_server' => null,
-        'free_text' => null,
+        'wwwInclude' => null,
+        'virtualNameServer' => null,
+        'freeText' => null,
         'action' => null,
         'grants' => null,
-        'resource_records' => null,
+        'resourceRecords' => null,
         'roid' => 'int32'
     ];
 
@@ -148,23 +148,23 @@ class Zone implements ModelInterface, ArrayAccess
         'idn' => 'idn',
         'soa' => 'soa',
         'dnssec' => 'dnssec',
-        'name_server_group' => 'nameServerGroup',
-        'allow_transfer' => 'allowTransfer',
+        'nameServerGroup' => 'nameServerGroup',
+        'allowTransfer' => 'allowTransfer',
         'owner' => 'owner',
         'updater' => 'updater',
-        'log_id' => 'logId',
+        'logId' => 'logId',
         'comment' => 'comment',
         'domainsafe' => 'domainsafe',
         'source' => 'source',
-        'source_virtual_hostname' => 'sourceVirtualHostname',
-        'name_servers' => 'nameServers',
+        'sourceVirtualHostname' => 'sourceVirtualHostname',
+        'nameServers' => 'nameServers',
         'main' => 'main',
-        'www_include' => 'wwwInclude',
-        'virtual_name_server' => 'virtualNameServer',
-        'free_text' => 'freeText',
+        'wwwInclude' => 'wwwInclude',
+        'virtualNameServer' => 'virtualNameServer',
+        'freeText' => 'freeText',
         'action' => 'action',
         'grants' => 'grants',
-        'resource_records' => 'resourceRecords',
+        'resourceRecords' => 'resourceRecords',
         'roid' => 'roid'
     ];
 
@@ -180,23 +180,23 @@ class Zone implements ModelInterface, ArrayAccess
         'idn' => 'setIdn',
         'soa' => 'setSoa',
         'dnssec' => 'setDnssec',
-        'name_server_group' => 'setNameServerGroup',
-        'allow_transfer' => 'setAllowTransfer',
+        'nameServerGroup' => 'setNameServerGroup',
+        'allowTransfer' => 'setAllowTransfer',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
-        'log_id' => 'setLogId',
+        'logId' => 'setLogId',
         'comment' => 'setComment',
         'domainsafe' => 'setDomainsafe',
         'source' => 'setSource',
-        'source_virtual_hostname' => 'setSourceVirtualHostname',
-        'name_servers' => 'setNameServers',
+        'sourceVirtualHostname' => 'setSourceVirtualHostname',
+        'nameServers' => 'setNameServers',
         'main' => 'setMain',
-        'www_include' => 'setWwwInclude',
-        'virtual_name_server' => 'setVirtualNameServer',
-        'free_text' => 'setFreeText',
+        'wwwInclude' => 'setWwwInclude',
+        'virtualNameServer' => 'setVirtualNameServer',
+        'freeText' => 'setFreeText',
         'action' => 'setAction',
         'grants' => 'setGrants',
-        'resource_records' => 'setResourceRecords',
+        'resourceRecords' => 'setResourceRecords',
         'roid' => 'setRoid'
     ];
 
@@ -212,23 +212,23 @@ class Zone implements ModelInterface, ArrayAccess
         'idn' => 'getIdn',
         'soa' => 'getSoa',
         'dnssec' => 'getDnssec',
-        'name_server_group' => 'getNameServerGroup',
-        'allow_transfer' => 'getAllowTransfer',
+        'nameServerGroup' => 'getNameServerGroup',
+        'allowTransfer' => 'getAllowTransfer',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
-        'log_id' => 'getLogId',
+        'logId' => 'getLogId',
         'comment' => 'getComment',
         'domainsafe' => 'getDomainsafe',
         'source' => 'getSource',
-        'source_virtual_hostname' => 'getSourceVirtualHostname',
-        'name_servers' => 'getNameServers',
+        'sourceVirtualHostname' => 'getSourceVirtualHostname',
+        'nameServers' => 'getNameServers',
         'main' => 'getMain',
-        'www_include' => 'getWwwInclude',
-        'virtual_name_server' => 'getVirtualNameServer',
-        'free_text' => 'getFreeText',
+        'wwwInclude' => 'getWwwInclude',
+        'virtualNameServer' => 'getVirtualNameServer',
+        'freeText' => 'getFreeText',
         'action' => 'getAction',
         'grants' => 'getGrants',
-        'resource_records' => 'getResourceRecords',
+        'resourceRecords' => 'getResourceRecords',
         'roid' => 'getRoid'
     ];
 
@@ -298,23 +298,23 @@ class Zone implements ModelInterface, ArrayAccess
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['soa'] = isset($data['soa']) ? $this->createData($data['soa'], 'soa')  : null;
         $this->container['dnssec'] = isset($data['dnssec']) ? $this->createData($data['dnssec'], 'dnssec')  : null;
-        $this->container['name_server_group'] = isset($data['name_server_group']) ? $this->createData($data['name_server_group'], 'name_server_group')  : null;
-        $this->container['allow_transfer'] = isset($data['allow_transfer']) ? $this->createData($data['allow_transfer'], 'allow_transfer')  : null;
+        $this->container['nameServerGroup'] = isset($data['nameServerGroup']) ? $this->createData($data['nameServerGroup'], 'nameServerGroup')  : null;
+        $this->container['allowTransfer'] = isset($data['allowTransfer']) ? $this->createData($data['allowTransfer'], 'allowTransfer')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['log_id'] = isset($data['log_id']) ? $this->createData($data['log_id'], 'log_id')  : null;
+        $this->container['logId'] = isset($data['logId']) ? $this->createData($data['logId'], 'logId')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
-        $this->container['source_virtual_hostname'] = isset($data['source_virtual_hostname']) ? $this->createData($data['source_virtual_hostname'], 'source_virtual_hostname')  : null;
-        $this->container['name_servers'] = isset($data['name_servers']) ? $this->createData($data['name_servers'], 'name_servers')  : null;
+        $this->container['sourceVirtualHostname'] = isset($data['sourceVirtualHostname']) ? $this->createData($data['sourceVirtualHostname'], 'sourceVirtualHostname')  : null;
+        $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
         $this->container['main'] = isset($data['main']) ? $this->createData($data['main'], 'main')  : null;
-        $this->container['www_include'] = isset($data['www_include']) ? $this->createData($data['www_include'], 'www_include')  : null;
-        $this->container['virtual_name_server'] = isset($data['virtual_name_server']) ? $this->createData($data['virtual_name_server'], 'virtual_name_server')  : null;
-        $this->container['free_text'] = isset($data['free_text']) ? $this->createData($data['free_text'], 'free_text')  : null;
+        $this->container['wwwInclude'] = isset($data['wwwInclude']) ? $this->createData($data['wwwInclude'], 'wwwInclude')  : null;
+        $this->container['virtualNameServer'] = isset($data['virtualNameServer']) ? $this->createData($data['virtualNameServer'], 'virtualNameServer')  : null;
+        $this->container['freeText'] = isset($data['freeText']) ? $this->createData($data['freeText'], 'freeText')  : null;
         $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
         $this->container['grants'] = isset($data['grants']) ? $this->createData($data['grants'], 'grants')  : null;
-        $this->container['resource_records'] = isset($data['resource_records']) ? $this->createData($data['resource_records'], 'resource_records')  : null;
+        $this->container['resourceRecords'] = isset($data['resourceRecords']) ? $this->createData($data['resourceRecords'], 'resourceRecords')  : null;
         $this->container['roid'] = isset($data['roid']) ? $this->createData($data['roid'], 'roid')  : null;
     }
 
@@ -530,49 +530,49 @@ class Zone implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name_server_group
+     * Gets nameServerGroup
      *
      * @return string
      */
     public function getNameServerGroup()
     {
-        return $this->container['name_server_group'];
+        return $this->container['nameServerGroup'];
     }
 
     /**
-     * Sets name_server_group
+     * Sets nameServerGroup
      *
-     * @param string $name_server_group The name of the name server group, if the zone is managed by
+     * @param string $nameServerGroup The name of the name server group, if the zone is managed by
      *
      * @return $this
      */
-    public function setNameServerGroup($name_server_group)
+    public function setNameServerGroup($nameServerGroup)
     {
-        $this->container['name_server_group'] = $name_server_group;
+        $this->container['nameServerGroup'] = $nameServerGroup;
 
         return $this;
     }
 
     /**
-     * Gets allow_transfer
+     * Gets allowTransfer
      *
      * @return bool
      */
     public function getAllowTransfer()
     {
-        return $this->container['allow_transfer'];
+        return $this->container['allowTransfer'];
     }
 
     /**
-     * Sets allow_transfer
+     * Sets allowTransfer
      *
-     * @param bool $allow_transfer Allow AXFR
+     * @param bool $allowTransfer Allow AXFR
      *
      * @return $this
      */
-    public function setAllowTransfer($allow_transfer)
+    public function setAllowTransfer($allowTransfer)
     {
-        $this->container['allow_transfer'] = $allow_transfer;
+        $this->container['allowTransfer'] = $allowTransfer;
 
         return $this;
     }
@@ -626,25 +626,25 @@ class Zone implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets log_id
+     * Gets logId
      *
      * @return int
      */
     public function getLogId()
     {
-        return $this->container['log_id'];
+        return $this->container['logId'];
     }
 
     /**
-     * Sets log_id
+     * Sets logId
      *
-     * @param int $log_id The id of the related log-entry.
+     * @param int $logId The id of the related log-entry.
      *
      * @return $this
      */
-    public function setLogId($log_id)
+    public function setLogId($logId)
     {
-        $this->container['log_id'] = $log_id;
+        $this->container['logId'] = $logId;
 
         return $this;
     }
@@ -722,49 +722,49 @@ class Zone implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets source_virtual_hostname
+     * Gets sourceVirtualHostname
      *
      * @return string
      */
     public function getSourceVirtualHostname()
     {
-        return $this->container['source_virtual_hostname'];
+        return $this->container['sourceVirtualHostname'];
     }
 
     /**
-     * Sets source_virtual_hostname
+     * Sets sourceVirtualHostname
      *
-     * @param string $source_virtual_hostname System name server to look up the zone to copy
+     * @param string $sourceVirtualHostname System name server to look up the zone to copy
      *
      * @return $this
      */
-    public function setSourceVirtualHostname($source_virtual_hostname)
+    public function setSourceVirtualHostname($sourceVirtualHostname)
     {
-        $this->container['source_virtual_hostname'] = $source_virtual_hostname;
+        $this->container['sourceVirtualHostname'] = $sourceVirtualHostname;
 
         return $this;
     }
 
     /**
-     * Gets name_servers
+     * Gets nameServers
      *
      * @return \Domainrobot\Model\NameServer[]
      */
     public function getNameServers()
     {
-        return $this->container['name_servers'];
+        return $this->container['nameServers'];
     }
 
     /**
-     * Sets name_servers
+     * Sets nameServers
      *
-     * @param \Domainrobot\Model\NameServer[] $name_servers List of name servers
+     * @param \Domainrobot\Model\NameServer[] $nameServers List of name servers
      *
      * @return $this
      */
-    public function setNameServers($name_servers)
+    public function setNameServers($nameServers)
     {
-        $this->container['name_servers'] = $name_servers;
+        $this->container['nameServers'] = $nameServers;
 
         return $this;
     }
@@ -794,73 +794,73 @@ class Zone implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets www_include
+     * Gets wwwInclude
      *
      * @return bool
      */
     public function getWwwInclude()
     {
-        return $this->container['www_include'];
+        return $this->container['wwwInclude'];
     }
 
     /**
-     * Sets www_include
+     * Sets wwwInclude
      *
-     * @param bool $www_include Automatic generation of resource records \"www\"
+     * @param bool $wwwInclude Automatic generation of resource records \"www\"
      *
      * @return $this
      */
-    public function setWwwInclude($www_include)
+    public function setWwwInclude($wwwInclude)
     {
-        $this->container['www_include'] = $www_include;
+        $this->container['wwwInclude'] = $wwwInclude;
 
         return $this;
     }
 
     /**
-     * Gets virtual_name_server
+     * Gets virtualNameServer
      *
      * @return string
      */
     public function getVirtualNameServer()
     {
-        return $this->container['virtual_name_server'];
+        return $this->container['virtualNameServer'];
     }
 
     /**
-     * Sets virtual_name_server
+     * Sets virtualNameServer
      *
-     * @param string $virtual_name_server The first nameserver managed by the system
+     * @param string $virtualNameServer The first nameserver managed by the system
      *
      * @return $this
      */
-    public function setVirtualNameServer($virtual_name_server)
+    public function setVirtualNameServer($virtualNameServer)
     {
-        $this->container['virtual_name_server'] = $virtual_name_server;
+        $this->container['virtualNameServer'] = $virtualNameServer;
 
         return $this;
     }
 
     /**
-     * Gets free_text
+     * Gets freeText
      *
      * @return string[]
      */
     public function getFreeText()
     {
-        return $this->container['free_text'];
+        return $this->container['freeText'];
     }
 
     /**
-     * Sets free_text
+     * Sets freeText
      *
-     * @param string[] $free_text The free text records.
+     * @param string[] $freeText The free text records.
      *
      * @return $this
      */
-    public function setFreeText($free_text)
+    public function setFreeText($freeText)
     {
-        $this->container['free_text'] = $free_text;
+        $this->container['freeText'] = $freeText;
 
         return $this;
     }
@@ -914,25 +914,25 @@ class Zone implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets resource_records
+     * Gets resourceRecords
      *
      * @return \Domainrobot\Model\ResourceRecord[]
      */
     public function getResourceRecords()
     {
-        return $this->container['resource_records'];
+        return $this->container['resourceRecords'];
     }
 
     /**
-     * Sets resource_records
+     * Sets resourceRecords
      *
-     * @param \Domainrobot\Model\ResourceRecord[] $resource_records The resource records.
+     * @param \Domainrobot\Model\ResourceRecord[] $resourceRecords The resource records.
      *
      * @return $this
      */
-    public function setResourceRecords($resource_records)
+    public function setResourceRecords($resourceRecords)
     {
-        $this->container['resource_records'] = $resource_records;
+        $this->container['resourceRecords'] = $resourceRecords;
 
         return $this;
     }

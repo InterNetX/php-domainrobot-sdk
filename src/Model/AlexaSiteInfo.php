@@ -57,14 +57,14 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'sites_linking_in' => 'int',
+        'sitesLinkingIn' => 'int',
         'rank' => 'int',
-        'loading_time' => 'string',
-        'adult_content' => 'string',
-        'site_language' => 'string',
-        'site_data' => '\Domainrobot\Model\AlexaSiteInfoSiteData',
-        'highest_ranked_incountry' => '\Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry',
-        'page_views_per_day' => '\Domainrobot\Model\AlexaSiteInfoPageViewsPerDay'
+        'loadingTime' => 'string',
+        'adultContent' => 'string',
+        'siteLanguage' => 'string',
+        'siteData' => '\Domainrobot\Model\AlexaSiteInfoSiteData',
+        'highestRankedIncountry' => '\Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry',
+        'pageViewsPerDay' => '\Domainrobot\Model\AlexaSiteInfoPageViewsPerDay'
     ];
 
     /**
@@ -73,14 +73,14 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'sites_linking_in' => null,
+        'sitesLinkingIn' => null,
         'rank' => null,
-        'loading_time' => null,
-        'adult_content' => null,
-        'site_language' => null,
-        'site_data' => null,
-        'highest_ranked_incountry' => null,
-        'page_views_per_day' => null
+        'loadingTime' => null,
+        'adultContent' => null,
+        'siteLanguage' => null,
+        'siteData' => null,
+        'highestRankedIncountry' => null,
+        'pageViewsPerDay' => null
     ];
 
     /**
@@ -110,14 +110,14 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'sites_linking_in' => 'sitesLinkingIn',
+        'sitesLinkingIn' => 'sitesLinkingIn',
         'rank' => 'rank',
-        'loading_time' => 'loadingTime',
-        'adult_content' => 'adultContent',
-        'site_language' => 'siteLanguage',
-        'site_data' => 'siteData',
-        'highest_ranked_incountry' => 'highestRankedIncountry',
-        'page_views_per_day' => 'pageViewsPerDay'
+        'loadingTime' => 'loadingTime',
+        'adultContent' => 'adultContent',
+        'siteLanguage' => 'siteLanguage',
+        'siteData' => 'siteData',
+        'highestRankedIncountry' => 'highestRankedIncountry',
+        'pageViewsPerDay' => 'pageViewsPerDay'
     ];
 
     /**
@@ -126,14 +126,14 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'sites_linking_in' => 'setSitesLinkingIn',
+        'sitesLinkingIn' => 'setSitesLinkingIn',
         'rank' => 'setRank',
-        'loading_time' => 'setLoadingTime',
-        'adult_content' => 'setAdultContent',
-        'site_language' => 'setSiteLanguage',
-        'site_data' => 'setSiteData',
-        'highest_ranked_incountry' => 'setHighestRankedIncountry',
-        'page_views_per_day' => 'setPageViewsPerDay'
+        'loadingTime' => 'setLoadingTime',
+        'adultContent' => 'setAdultContent',
+        'siteLanguage' => 'setSiteLanguage',
+        'siteData' => 'setSiteData',
+        'highestRankedIncountry' => 'setHighestRankedIncountry',
+        'pageViewsPerDay' => 'setPageViewsPerDay'
     ];
 
     /**
@@ -142,14 +142,14 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'sites_linking_in' => 'getSitesLinkingIn',
+        'sitesLinkingIn' => 'getSitesLinkingIn',
         'rank' => 'getRank',
-        'loading_time' => 'getLoadingTime',
-        'adult_content' => 'getAdultContent',
-        'site_language' => 'getSiteLanguage',
-        'site_data' => 'getSiteData',
-        'highest_ranked_incountry' => 'getHighestRankedIncountry',
-        'page_views_per_day' => 'getPageViewsPerDay'
+        'loadingTime' => 'getLoadingTime',
+        'adultContent' => 'getAdultContent',
+        'siteLanguage' => 'getSiteLanguage',
+        'siteData' => 'getSiteData',
+        'highestRankedIncountry' => 'getHighestRankedIncountry',
+        'pageViewsPerDay' => 'getPageViewsPerDay'
     ];
 
     /**
@@ -212,14 +212,14 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['sites_linking_in'] = isset($data['sites_linking_in']) ? $this->createData($data['sites_linking_in'], 'sites_linking_in')  : null;
+        $this->container['sitesLinkingIn'] = isset($data['sitesLinkingIn']) ? $this->createData($data['sitesLinkingIn'], 'sitesLinkingIn')  : null;
         $this->container['rank'] = isset($data['rank']) ? $this->createData($data['rank'], 'rank')  : null;
-        $this->container['loading_time'] = isset($data['loading_time']) ? $this->createData($data['loading_time'], 'loading_time')  : null;
-        $this->container['adult_content'] = isset($data['adult_content']) ? $this->createData($data['adult_content'], 'adult_content')  : null;
-        $this->container['site_language'] = isset($data['site_language']) ? $this->createData($data['site_language'], 'site_language')  : null;
-        $this->container['site_data'] = isset($data['site_data']) ? $this->createData($data['site_data'], 'site_data')  : null;
-        $this->container['highest_ranked_incountry'] = isset($data['highest_ranked_incountry']) ? $this->createData($data['highest_ranked_incountry'], 'highest_ranked_incountry')  : null;
-        $this->container['page_views_per_day'] = isset($data['page_views_per_day']) ? $this->createData($data['page_views_per_day'], 'page_views_per_day')  : null;
+        $this->container['loadingTime'] = isset($data['loadingTime']) ? $this->createData($data['loadingTime'], 'loadingTime')  : null;
+        $this->container['adultContent'] = isset($data['adultContent']) ? $this->createData($data['adultContent'], 'adultContent')  : null;
+        $this->container['siteLanguage'] = isset($data['siteLanguage']) ? $this->createData($data['siteLanguage'], 'siteLanguage')  : null;
+        $this->container['siteData'] = isset($data['siteData']) ? $this->createData($data['siteData'], 'siteData')  : null;
+        $this->container['highestRankedIncountry'] = isset($data['highestRankedIncountry']) ? $this->createData($data['highestRankedIncountry'], 'highestRankedIncountry')  : null;
+        $this->container['pageViewsPerDay'] = isset($data['pageViewsPerDay']) ? $this->createData($data['pageViewsPerDay'], 'pageViewsPerDay')  : null;
     }
 
     /**
@@ -287,25 +287,25 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets sites_linking_in
+     * Gets sitesLinkingIn
      *
      * @return int
      */
     public function getSitesLinkingIn()
     {
-        return $this->container['sites_linking_in'];
+        return $this->container['sitesLinkingIn'];
     }
 
     /**
-     * Sets sites_linking_in
+     * Sets sitesLinkingIn
      *
-     * @param int $sites_linking_in sites_linking_in
+     * @param int $sitesLinkingIn sitesLinkingIn
      *
      * @return $this
      */
-    public function setSitesLinkingIn($sites_linking_in)
+    public function setSitesLinkingIn($sitesLinkingIn)
     {
-        $this->container['sites_linking_in'] = $sites_linking_in;
+        $this->container['sitesLinkingIn'] = $sitesLinkingIn;
 
         return $this;
     }
@@ -335,145 +335,145 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets loading_time
+     * Gets loadingTime
      *
      * @return string
      */
     public function getLoadingTime()
     {
-        return $this->container['loading_time'];
+        return $this->container['loadingTime'];
     }
 
     /**
-     * Sets loading_time
+     * Sets loadingTime
      *
-     * @param string $loading_time loading_time
+     * @param string $loadingTime loadingTime
      *
      * @return $this
      */
-    public function setLoadingTime($loading_time)
+    public function setLoadingTime($loadingTime)
     {
-        $this->container['loading_time'] = $loading_time;
+        $this->container['loadingTime'] = $loadingTime;
 
         return $this;
     }
 
     /**
-     * Gets adult_content
+     * Gets adultContent
      *
      * @return string
      */
     public function getAdultContent()
     {
-        return $this->container['adult_content'];
+        return $this->container['adultContent'];
     }
 
     /**
-     * Sets adult_content
+     * Sets adultContent
      *
-     * @param string $adult_content adult_content
+     * @param string $adultContent adultContent
      *
      * @return $this
      */
-    public function setAdultContent($adult_content)
+    public function setAdultContent($adultContent)
     {
-        $this->container['adult_content'] = $adult_content;
+        $this->container['adultContent'] = $adultContent;
 
         return $this;
     }
 
     /**
-     * Gets site_language
+     * Gets siteLanguage
      *
      * @return string
      */
     public function getSiteLanguage()
     {
-        return $this->container['site_language'];
+        return $this->container['siteLanguage'];
     }
 
     /**
-     * Sets site_language
+     * Sets siteLanguage
      *
-     * @param string $site_language site_language
+     * @param string $siteLanguage siteLanguage
      *
      * @return $this
      */
-    public function setSiteLanguage($site_language)
+    public function setSiteLanguage($siteLanguage)
     {
-        $this->container['site_language'] = $site_language;
+        $this->container['siteLanguage'] = $siteLanguage;
 
         return $this;
     }
 
     /**
-     * Gets site_data
+     * Gets siteData
      *
      * @return \Domainrobot\Model\AlexaSiteInfoSiteData
      */
     public function getSiteData()
     {
-        return $this->container['site_data'];
+        return $this->container['siteData'];
     }
 
     /**
-     * Sets site_data
+     * Sets siteData
      *
-     * @param \Domainrobot\Model\AlexaSiteInfoSiteData $site_data site_data
+     * @param \Domainrobot\Model\AlexaSiteInfoSiteData $siteData siteData
      *
      * @return $this
      */
-    public function setSiteData($site_data)
+    public function setSiteData($siteData)
     {
-        $this->container['site_data'] = $site_data;
+        $this->container['siteData'] = $siteData;
 
         return $this;
     }
 
     /**
-     * Gets highest_ranked_incountry
+     * Gets highestRankedIncountry
      *
      * @return \Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry
      */
     public function getHighestRankedIncountry()
     {
-        return $this->container['highest_ranked_incountry'];
+        return $this->container['highestRankedIncountry'];
     }
 
     /**
-     * Sets highest_ranked_incountry
+     * Sets highestRankedIncountry
      *
-     * @param \Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry $highest_ranked_incountry highest_ranked_incountry
+     * @param \Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry $highestRankedIncountry highestRankedIncountry
      *
      * @return $this
      */
-    public function setHighestRankedIncountry($highest_ranked_incountry)
+    public function setHighestRankedIncountry($highestRankedIncountry)
     {
-        $this->container['highest_ranked_incountry'] = $highest_ranked_incountry;
+        $this->container['highestRankedIncountry'] = $highestRankedIncountry;
 
         return $this;
     }
 
     /**
-     * Gets page_views_per_day
+     * Gets pageViewsPerDay
      *
      * @return \Domainrobot\Model\AlexaSiteInfoPageViewsPerDay
      */
     public function getPageViewsPerDay()
     {
-        return $this->container['page_views_per_day'];
+        return $this->container['pageViewsPerDay'];
     }
 
     /**
-     * Sets page_views_per_day
+     * Sets pageViewsPerDay
      *
-     * @param \Domainrobot\Model\AlexaSiteInfoPageViewsPerDay $page_views_per_day page_views_per_day
+     * @param \Domainrobot\Model\AlexaSiteInfoPageViewsPerDay $pageViewsPerDay pageViewsPerDay
      *
      * @return $this
      */
-    public function setPageViewsPerDay($page_views_per_day)
+    public function setPageViewsPerDay($pageViewsPerDay)
     {
-        $this->container['page_views_per_day'] = $page_views_per_day;
+        $this->container['pageViewsPerDay'] = $pageViewsPerDay;
 
         return $this;
     }

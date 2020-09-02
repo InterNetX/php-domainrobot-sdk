@@ -60,13 +60,13 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'reference' => 'string',
-        'confirm_signature' => '\DateTime',
-        'confirm_ip' => '\Domainrobot\Model\InetAddress',
-        'confirm_useragent' => 'string',
-        'confirm_checked' => 'bool',
+        'confirmSignature' => '\DateTime',
+        'confirmIp' => '\Domainrobot\Model\InetAddress',
+        'confirmUseragent' => 'string',
+        'confirmChecked' => 'bool',
         'expire' => '\DateTime',
         'histories' => '\Domainrobot\Model\SEPAMandate[]',
-        'account_holder' => 'string',
+        'accountHolder' => 'string',
         'iban' => 'string',
         'bic' => 'string'
     ];
@@ -80,13 +80,13 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'updated' => 'date-time',
         'reference' => null,
-        'confirm_signature' => 'date-time',
-        'confirm_ip' => null,
-        'confirm_useragent' => null,
-        'confirm_checked' => null,
+        'confirmSignature' => 'date-time',
+        'confirmIp' => null,
+        'confirmUseragent' => null,
+        'confirmChecked' => null,
         'expire' => 'date-time',
         'histories' => null,
-        'account_holder' => null,
+        'accountHolder' => null,
         'iban' => null,
         'bic' => null
     ];
@@ -121,13 +121,13 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'created' => 'created',
         'updated' => 'updated',
         'reference' => 'reference',
-        'confirm_signature' => 'confirmSignature',
-        'confirm_ip' => 'confirmIp',
-        'confirm_useragent' => 'confirmUseragent',
-        'confirm_checked' => 'confirmChecked',
+        'confirmSignature' => 'confirmSignature',
+        'confirmIp' => 'confirmIp',
+        'confirmUseragent' => 'confirmUseragent',
+        'confirmChecked' => 'confirmChecked',
         'expire' => 'expire',
         'histories' => 'histories',
-        'account_holder' => 'accountHolder',
+        'accountHolder' => 'accountHolder',
         'iban' => 'iban',
         'bic' => 'bic'
     ];
@@ -141,13 +141,13 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'reference' => 'setReference',
-        'confirm_signature' => 'setConfirmSignature',
-        'confirm_ip' => 'setConfirmIp',
-        'confirm_useragent' => 'setConfirmUseragent',
-        'confirm_checked' => 'setConfirmChecked',
+        'confirmSignature' => 'setConfirmSignature',
+        'confirmIp' => 'setConfirmIp',
+        'confirmUseragent' => 'setConfirmUseragent',
+        'confirmChecked' => 'setConfirmChecked',
         'expire' => 'setExpire',
         'histories' => 'setHistories',
-        'account_holder' => 'setAccountHolder',
+        'accountHolder' => 'setAccountHolder',
         'iban' => 'setIban',
         'bic' => 'setBic'
     ];
@@ -161,13 +161,13 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'reference' => 'getReference',
-        'confirm_signature' => 'getConfirmSignature',
-        'confirm_ip' => 'getConfirmIp',
-        'confirm_useragent' => 'getConfirmUseragent',
-        'confirm_checked' => 'getConfirmChecked',
+        'confirmSignature' => 'getConfirmSignature',
+        'confirmIp' => 'getConfirmIp',
+        'confirmUseragent' => 'getConfirmUseragent',
+        'confirmChecked' => 'getConfirmChecked',
         'expire' => 'getExpire',
         'histories' => 'getHistories',
-        'account_holder' => 'getAccountHolder',
+        'accountHolder' => 'getAccountHolder',
         'iban' => 'getIban',
         'bic' => 'getBic'
     ];
@@ -235,13 +235,13 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
-        $this->container['confirm_signature'] = isset($data['confirm_signature']) ? $this->createData($data['confirm_signature'], 'confirm_signature')  : null;
-        $this->container['confirm_ip'] = isset($data['confirm_ip']) ? $this->createData($data['confirm_ip'], 'confirm_ip')  : null;
-        $this->container['confirm_useragent'] = isset($data['confirm_useragent']) ? $this->createData($data['confirm_useragent'], 'confirm_useragent')  : null;
-        $this->container['confirm_checked'] = isset($data['confirm_checked']) ? $this->createData($data['confirm_checked'], 'confirm_checked')  : null;
+        $this->container['confirmSignature'] = isset($data['confirmSignature']) ? $this->createData($data['confirmSignature'], 'confirmSignature')  : null;
+        $this->container['confirmIp'] = isset($data['confirmIp']) ? $this->createData($data['confirmIp'], 'confirmIp')  : null;
+        $this->container['confirmUseragent'] = isset($data['confirmUseragent']) ? $this->createData($data['confirmUseragent'], 'confirmUseragent')  : null;
+        $this->container['confirmChecked'] = isset($data['confirmChecked']) ? $this->createData($data['confirmChecked'], 'confirmChecked')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
         $this->container['histories'] = isset($data['histories']) ? $this->createData($data['histories'], 'histories')  : null;
-        $this->container['account_holder'] = isset($data['account_holder']) ? $this->createData($data['account_holder'], 'account_holder')  : null;
+        $this->container['accountHolder'] = isset($data['accountHolder']) ? $this->createData($data['accountHolder'], 'accountHolder')  : null;
         $this->container['iban'] = isset($data['iban']) ? $this->createData($data['iban'], 'iban')  : null;
         $this->container['bic'] = isset($data['bic']) ? $this->createData($data['bic'], 'bic')  : null;
     }
@@ -295,14 +295,14 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['confirm_signature'] === null) {
-            $invalidProperties[] = "'confirm_signature' can't be null";
+        if ($this->container['confirmSignature'] === null) {
+            $invalidProperties[] = "'confirmSignature' can't be null";
         }
-        if ($this->container['confirm_ip'] === null) {
-            $invalidProperties[] = "'confirm_ip' can't be null";
+        if ($this->container['confirmIp'] === null) {
+            $invalidProperties[] = "'confirmIp' can't be null";
         }
-        if ($this->container['confirm_checked'] === null) {
-            $invalidProperties[] = "'confirm_checked' can't be null";
+        if ($this->container['confirmChecked'] === null) {
+            $invalidProperties[] = "'confirmChecked' can't be null";
         }
         return $invalidProperties;
     }
@@ -392,97 +392,97 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets confirm_signature
+     * Gets confirmSignature
      *
      * @return \DateTime
      */
     public function getConfirmSignature()
     {
-        return $this->container['confirm_signature'];
+        return $this->container['confirmSignature'];
     }
 
     /**
-     * Sets confirm_signature
+     * Sets confirmSignature
      *
-     * @param \DateTime $confirm_signature The date of the confirm signature
+     * @param \DateTime $confirmSignature The date of the confirm signature
      *
      * @return $this
      */
-    public function setConfirmSignature($confirm_signature)
+    public function setConfirmSignature($confirmSignature)
     {
-        $this->container['confirm_signature'] = $confirm_signature;
+        $this->container['confirmSignature'] = $confirmSignature;
 
         return $this;
     }
 
     /**
-     * Gets confirm_ip
+     * Gets confirmIp
      *
      * @return \Domainrobot\Model\InetAddress
      */
     public function getConfirmIp()
     {
-        return $this->container['confirm_ip'];
+        return $this->container['confirmIp'];
     }
 
     /**
-     * Sets confirm_ip
+     * Sets confirmIp
      *
-     * @param \Domainrobot\Model\InetAddress $confirm_ip The address of the confirm signature
+     * @param \Domainrobot\Model\InetAddress $confirmIp The address of the confirm signature
      *
      * @return $this
      */
-    public function setConfirmIp($confirm_ip)
+    public function setConfirmIp($confirmIp)
     {
-        $this->container['confirm_ip'] = $confirm_ip;
+        $this->container['confirmIp'] = $confirmIp;
 
         return $this;
     }
 
     /**
-     * Gets confirm_useragent
+     * Gets confirmUseragent
      *
      * @return string
      */
     public function getConfirmUseragent()
     {
-        return $this->container['confirm_useragent'];
+        return $this->container['confirmUseragent'];
     }
 
     /**
-     * Sets confirm_useragent
+     * Sets confirmUseragent
      *
-     * @param string $confirm_useragent The user agent of the confirm signature
+     * @param string $confirmUseragent The user agent of the confirm signature
      *
      * @return $this
      */
-    public function setConfirmUseragent($confirm_useragent)
+    public function setConfirmUseragent($confirmUseragent)
     {
-        $this->container['confirm_useragent'] = $confirm_useragent;
+        $this->container['confirmUseragent'] = $confirmUseragent;
 
         return $this;
     }
 
     /**
-     * Gets confirm_checked
+     * Gets confirmChecked
      *
      * @return bool
      */
     public function getConfirmChecked()
     {
-        return $this->container['confirm_checked'];
+        return $this->container['confirmChecked'];
     }
 
     /**
-     * Sets confirm_checked
+     * Sets confirmChecked
      *
-     * @param bool $confirm_checked Flag for indicating if the confirm data has been checked
+     * @param bool $confirmChecked Flag for indicating if the confirm data has been checked
      *
      * @return $this
      */
-    public function setConfirmChecked($confirm_checked)
+    public function setConfirmChecked($confirmChecked)
     {
-        $this->container['confirm_checked'] = $confirm_checked;
+        $this->container['confirmChecked'] = $confirmChecked;
 
         return $this;
     }
@@ -536,25 +536,25 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets account_holder
+     * Gets accountHolder
      *
      * @return string
      */
     public function getAccountHolder()
     {
-        return $this->container['account_holder'];
+        return $this->container['accountHolder'];
     }
 
     /**
-     * Sets account_holder
+     * Sets accountHolder
      *
-     * @param string $account_holder The holder of the bank account
+     * @param string $accountHolder The holder of the bank account
      *
      * @return $this
      */
-    public function setAccountHolder($account_holder)
+    public function setAccountHolder($accountHolder)
     {
-        $this->container['account_holder'] = $account_holder;
+        $this->container['accountHolder'] = $accountHolder;
 
         return $this;
     }

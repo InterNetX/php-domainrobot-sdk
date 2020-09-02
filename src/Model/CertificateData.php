@@ -61,22 +61,22 @@ class CertificateData implements ModelInterface, ArrayAccess
         'name' => 'string',
         'san' => 'string[]',
         'histories' => '\Domainrobot\Model\CertificateHistory[]',
-        'key_size' => 'int',
-        'country_code' => 'string',
-        'challenge_password' => 'string',
+        'keySize' => 'int',
+        'countryCode' => 'string',
+        'challengePassword' => 'string',
         'state' => 'string',
         'city' => 'string',
         'organization' => 'string',
-        'organization_unit' => 'string',
+        'organizationUnit' => 'string',
         'email' => 'string',
         'product' => 'string',
         'authentication' => '\Domainrobot\Model\CertAuthentication[]',
         'algorithm' => '\Domainrobot\Model\CsrHashAlgorithmConstants',
-        'signature_hash_algorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
+        'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
         'certificate' => '\Domainrobot\Model\Certificate',
         'idn' => 'string',
-        'check_caa' => 'bool',
-        'business_case' => 'string'
+        'checkCaa' => 'bool',
+        'businessCase' => 'string'
     ];
 
     /**
@@ -89,22 +89,22 @@ class CertificateData implements ModelInterface, ArrayAccess
         'name' => null,
         'san' => null,
         'histories' => null,
-        'key_size' => 'int32',
-        'country_code' => null,
-        'challenge_password' => null,
+        'keySize' => 'int32',
+        'countryCode' => null,
+        'challengePassword' => null,
         'state' => null,
         'city' => null,
         'organization' => null,
-        'organization_unit' => null,
+        'organizationUnit' => null,
         'email' => null,
         'product' => null,
         'authentication' => null,
         'algorithm' => null,
-        'signature_hash_algorithm' => null,
+        'signatureHashAlgorithm' => null,
         'certificate' => null,
         'idn' => null,
-        'check_caa' => null,
-        'business_case' => null
+        'checkCaa' => null,
+        'businessCase' => null
     ];
 
     /**
@@ -138,22 +138,22 @@ class CertificateData implements ModelInterface, ArrayAccess
         'name' => 'name',
         'san' => 'san',
         'histories' => 'histories',
-        'key_size' => 'keySize',
-        'country_code' => 'countryCode',
-        'challenge_password' => 'challengePassword',
+        'keySize' => 'keySize',
+        'countryCode' => 'countryCode',
+        'challengePassword' => 'challengePassword',
         'state' => 'state',
         'city' => 'city',
         'organization' => 'organization',
-        'organization_unit' => 'organizationUnit',
+        'organizationUnit' => 'organizationUnit',
         'email' => 'email',
         'product' => 'product',
         'authentication' => 'authentication',
         'algorithm' => 'algorithm',
-        'signature_hash_algorithm' => 'signatureHashAlgorithm',
+        'signatureHashAlgorithm' => 'signatureHashAlgorithm',
         'certificate' => 'certificate',
         'idn' => 'idn',
-        'check_caa' => 'checkCaa',
-        'business_case' => 'businessCase'
+        'checkCaa' => 'checkCaa',
+        'businessCase' => 'businessCase'
     ];
 
     /**
@@ -166,22 +166,22 @@ class CertificateData implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'san' => 'setSan',
         'histories' => 'setHistories',
-        'key_size' => 'setKeySize',
-        'country_code' => 'setCountryCode',
-        'challenge_password' => 'setChallengePassword',
+        'keySize' => 'setKeySize',
+        'countryCode' => 'setCountryCode',
+        'challengePassword' => 'setChallengePassword',
         'state' => 'setState',
         'city' => 'setCity',
         'organization' => 'setOrganization',
-        'organization_unit' => 'setOrganizationUnit',
+        'organizationUnit' => 'setOrganizationUnit',
         'email' => 'setEmail',
         'product' => 'setProduct',
         'authentication' => 'setAuthentication',
         'algorithm' => 'setAlgorithm',
-        'signature_hash_algorithm' => 'setSignatureHashAlgorithm',
+        'signatureHashAlgorithm' => 'setSignatureHashAlgorithm',
         'certificate' => 'setCertificate',
         'idn' => 'setIdn',
-        'check_caa' => 'setCheckCaa',
-        'business_case' => 'setBusinessCase'
+        'checkCaa' => 'setCheckCaa',
+        'businessCase' => 'setBusinessCase'
     ];
 
     /**
@@ -194,22 +194,22 @@ class CertificateData implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'san' => 'getSan',
         'histories' => 'getHistories',
-        'key_size' => 'getKeySize',
-        'country_code' => 'getCountryCode',
-        'challenge_password' => 'getChallengePassword',
+        'keySize' => 'getKeySize',
+        'countryCode' => 'getCountryCode',
+        'challengePassword' => 'getChallengePassword',
         'state' => 'getState',
         'city' => 'getCity',
         'organization' => 'getOrganization',
-        'organization_unit' => 'getOrganizationUnit',
+        'organizationUnit' => 'getOrganizationUnit',
         'email' => 'getEmail',
         'product' => 'getProduct',
         'authentication' => 'getAuthentication',
         'algorithm' => 'getAlgorithm',
-        'signature_hash_algorithm' => 'getSignatureHashAlgorithm',
+        'signatureHashAlgorithm' => 'getSignatureHashAlgorithm',
         'certificate' => 'getCertificate',
         'idn' => 'getIdn',
-        'check_caa' => 'getCheckCaa',
-        'business_case' => 'getBusinessCase'
+        'checkCaa' => 'getCheckCaa',
+        'businessCase' => 'getBusinessCase'
     ];
 
     /**
@@ -276,22 +276,22 @@ class CertificateData implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['san'] = isset($data['san']) ? $this->createData($data['san'], 'san')  : null;
         $this->container['histories'] = isset($data['histories']) ? $this->createData($data['histories'], 'histories')  : null;
-        $this->container['key_size'] = isset($data['key_size']) ? $this->createData($data['key_size'], 'key_size')  : null;
-        $this->container['country_code'] = isset($data['country_code']) ? $this->createData($data['country_code'], 'country_code')  : null;
-        $this->container['challenge_password'] = isset($data['challenge_password']) ? $this->createData($data['challenge_password'], 'challenge_password')  : null;
+        $this->container['keySize'] = isset($data['keySize']) ? $this->createData($data['keySize'], 'keySize')  : null;
+        $this->container['countryCode'] = isset($data['countryCode']) ? $this->createData($data['countryCode'], 'countryCode')  : null;
+        $this->container['challengePassword'] = isset($data['challengePassword']) ? $this->createData($data['challengePassword'], 'challengePassword')  : null;
         $this->container['state'] = isset($data['state']) ? $this->createData($data['state'], 'state')  : null;
         $this->container['city'] = isset($data['city']) ? $this->createData($data['city'], 'city')  : null;
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
-        $this->container['organization_unit'] = isset($data['organization_unit']) ? $this->createData($data['organization_unit'], 'organization_unit')  : null;
+        $this->container['organizationUnit'] = isset($data['organizationUnit']) ? $this->createData($data['organizationUnit'], 'organizationUnit')  : null;
         $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
         $this->container['product'] = isset($data['product']) ? $this->createData($data['product'], 'product')  : null;
         $this->container['authentication'] = isset($data['authentication']) ? $this->createData($data['authentication'], 'authentication')  : null;
         $this->container['algorithm'] = isset($data['algorithm']) ? $this->createData($data['algorithm'], 'algorithm')  : null;
-        $this->container['signature_hash_algorithm'] = isset($data['signature_hash_algorithm']) ? $this->createData($data['signature_hash_algorithm'], 'signature_hash_algorithm')  : null;
+        $this->container['signatureHashAlgorithm'] = isset($data['signatureHashAlgorithm']) ? $this->createData($data['signatureHashAlgorithm'], 'signatureHashAlgorithm')  : null;
         $this->container['certificate'] = isset($data['certificate']) ? $this->createData($data['certificate'], 'certificate')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
-        $this->container['check_caa'] = isset($data['check_caa']) ? $this->createData($data['check_caa'], 'check_caa')  : null;
-        $this->container['business_case'] = isset($data['business_case']) ? $this->createData($data['business_case'], 'business_case')  : null;
+        $this->container['checkCaa'] = isset($data['checkCaa']) ? $this->createData($data['checkCaa'], 'checkCaa')  : null;
+        $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
     }
 
     /**
@@ -455,73 +455,73 @@ class CertificateData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets key_size
+     * Gets keySize
      *
      * @return int
      */
     public function getKeySize()
     {
-        return $this->container['key_size'];
+        return $this->container['keySize'];
     }
 
     /**
-     * Sets key_size
+     * Sets keySize
      *
-     * @param int $key_size The size of the csr key.
+     * @param int $keySize The size of the csr key.
      *
      * @return $this
      */
-    public function setKeySize($key_size)
+    public function setKeySize($keySize)
     {
-        $this->container['key_size'] = $key_size;
+        $this->container['keySize'] = $keySize;
 
         return $this;
     }
 
     /**
-     * Gets country_code
+     * Gets countryCode
      *
      * @return string
      */
     public function getCountryCode()
     {
-        return $this->container['country_code'];
+        return $this->container['countryCode'];
     }
 
     /**
-     * Sets country_code
+     * Sets countryCode
      *
-     * @param string $country_code The country code defined in the csr.
+     * @param string $countryCode The country code defined in the csr.
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
+    public function setCountryCode($countryCode)
     {
-        $this->container['country_code'] = $country_code;
+        $this->container['countryCode'] = $countryCode;
 
         return $this;
     }
 
     /**
-     * Gets challenge_password
+     * Gets challengePassword
      *
      * @return string
      */
     public function getChallengePassword()
     {
-        return $this->container['challenge_password'];
+        return $this->container['challengePassword'];
     }
 
     /**
-     * Sets challenge_password
+     * Sets challengePassword
      *
-     * @param string $challenge_password The password defined in the csr.
+     * @param string $challengePassword The password defined in the csr.
      *
      * @return $this
      */
-    public function setChallengePassword($challenge_password)
+    public function setChallengePassword($challengePassword)
     {
-        $this->container['challenge_password'] = $challenge_password;
+        $this->container['challengePassword'] = $challengePassword;
 
         return $this;
     }
@@ -599,25 +599,25 @@ class CertificateData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets organization_unit
+     * Gets organizationUnit
      *
      * @return string
      */
     public function getOrganizationUnit()
     {
-        return $this->container['organization_unit'];
+        return $this->container['organizationUnit'];
     }
 
     /**
-     * Sets organization_unit
+     * Sets organizationUnit
      *
-     * @param string $organization_unit The organization unit defined in the csr.
+     * @param string $organizationUnit The organization unit defined in the csr.
      *
      * @return $this
      */
-    public function setOrganizationUnit($organization_unit)
+    public function setOrganizationUnit($organizationUnit)
     {
-        $this->container['organization_unit'] = $organization_unit;
+        $this->container['organizationUnit'] = $organizationUnit;
 
         return $this;
     }
@@ -719,25 +719,25 @@ class CertificateData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets signature_hash_algorithm
+     * Gets signatureHashAlgorithm
      *
      * @return \Domainrobot\Model\SignatureHashAlgorithmConstants
      */
     public function getSignatureHashAlgorithm()
     {
-        return $this->container['signature_hash_algorithm'];
+        return $this->container['signatureHashAlgorithm'];
     }
 
     /**
-     * Sets signature_hash_algorithm
+     * Sets signatureHashAlgorithm
      *
-     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signature_hash_algorithm The signature hash algorithm.
+     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The signature hash algorithm.
      *
      * @return $this
      */
-    public function setSignatureHashAlgorithm($signature_hash_algorithm)
+    public function setSignatureHashAlgorithm($signatureHashAlgorithm)
     {
-        $this->container['signature_hash_algorithm'] = $signature_hash_algorithm;
+        $this->container['signatureHashAlgorithm'] = $signatureHashAlgorithm;
 
         return $this;
     }
@@ -791,49 +791,49 @@ class CertificateData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets check_caa
+     * Gets checkCaa
      *
      * @return bool
      */
     public function getCheckCaa()
     {
-        return $this->container['check_caa'];
+        return $this->container['checkCaa'];
     }
 
     /**
-     * Sets check_caa
+     * Sets checkCaa
      *
-     * @param bool $check_caa Activates the caa record check.
+     * @param bool $checkCaa Activates the caa record check.
      *
      * @return $this
      */
-    public function setCheckCaa($check_caa)
+    public function setCheckCaa($checkCaa)
     {
-        $this->container['check_caa'] = $check_caa;
+        $this->container['checkCaa'] = $checkCaa;
 
         return $this;
     }
 
     /**
-     * Gets business_case
+     * Gets businessCase
      *
      * @return string
      */
     public function getBusinessCase()
     {
-        return $this->container['business_case'];
+        return $this->container['businessCase'];
     }
 
     /**
-     * Sets business_case
+     * Sets businessCase
      *
-     * @param string $business_case Describes the business case (CREATE, RENEW, REISSUE, DELETE) for which preparation is to be performed.
+     * @param string $businessCase Describes the business case (CREATE, RENEW, REISSUE, DELETE) for which preparation is to be performed.
      *
      * @return $this
      */
-    public function setBusinessCase($business_case)
+    public function setBusinessCase($businessCase)
     {
-        $this->container['business_case'] = $business_case;
+        $this->container['businessCase'] = $businessCase;
 
         return $this;
     }

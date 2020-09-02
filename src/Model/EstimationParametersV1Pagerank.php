@@ -57,14 +57,14 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'global_rank' => 'float',
-        'tld_rank' => 'float',
-        'ref_sub_nets' => 'float',
-        'ref_i_ps' => 'float',
-        'prev_global_rank' => 'float',
-        'prev_tld_rank' => 'float',
-        'p_prev_ref_sub_nets' => 'float',
-        'prev_ref_i_ps' => 'string'
+        'globalRank' => 'float',
+        'tldRank' => 'float',
+        'refSubNets' => 'float',
+        'refIPs' => 'float',
+        'prevGlobalRank' => 'float',
+        'prevTldRank' => 'float',
+        'pPrevRefSubNets' => 'float',
+        'prevRefIPs' => 'string'
     ];
 
     /**
@@ -73,14 +73,14 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'global_rank' => null,
-        'tld_rank' => null,
-        'ref_sub_nets' => null,
-        'ref_i_ps' => null,
-        'prev_global_rank' => null,
-        'prev_tld_rank' => null,
-        'p_prev_ref_sub_nets' => null,
-        'prev_ref_i_ps' => null
+        'globalRank' => null,
+        'tldRank' => null,
+        'refSubNets' => null,
+        'refIPs' => null,
+        'prevGlobalRank' => null,
+        'prevTldRank' => null,
+        'pPrevRefSubNets' => null,
+        'prevRefIPs' => null
     ];
 
     /**
@@ -110,14 +110,14 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'global_rank' => 'globalRank',
-        'tld_rank' => 'tldRank',
-        'ref_sub_nets' => 'refSubNets',
-        'ref_i_ps' => 'refIPs',
-        'prev_global_rank' => 'prevGlobalRank',
-        'prev_tld_rank' => 'prevTldRank',
-        'p_prev_ref_sub_nets' => 'pPrevRefSubNets',
-        'prev_ref_i_ps' => 'prevRefIPs'
+        'globalRank' => 'globalRank',
+        'tldRank' => 'tldRank',
+        'refSubNets' => 'refSubNets',
+        'refIPs' => 'refIPs',
+        'prevGlobalRank' => 'prevGlobalRank',
+        'prevTldRank' => 'prevTldRank',
+        'pPrevRefSubNets' => 'pPrevRefSubNets',
+        'prevRefIPs' => 'prevRefIPs'
     ];
 
     /**
@@ -126,14 +126,14 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'global_rank' => 'setGlobalRank',
-        'tld_rank' => 'setTldRank',
-        'ref_sub_nets' => 'setRefSubNets',
-        'ref_i_ps' => 'setRefIPs',
-        'prev_global_rank' => 'setPrevGlobalRank',
-        'prev_tld_rank' => 'setPrevTldRank',
-        'p_prev_ref_sub_nets' => 'setPPrevRefSubNets',
-        'prev_ref_i_ps' => 'setPrevRefIPs'
+        'globalRank' => 'setGlobalRank',
+        'tldRank' => 'setTldRank',
+        'refSubNets' => 'setRefSubNets',
+        'refIPs' => 'setRefIPs',
+        'prevGlobalRank' => 'setPrevGlobalRank',
+        'prevTldRank' => 'setPrevTldRank',
+        'pPrevRefSubNets' => 'setPPrevRefSubNets',
+        'prevRefIPs' => 'setPrevRefIPs'
     ];
 
     /**
@@ -142,14 +142,14 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'global_rank' => 'getGlobalRank',
-        'tld_rank' => 'getTldRank',
-        'ref_sub_nets' => 'getRefSubNets',
-        'ref_i_ps' => 'getRefIPs',
-        'prev_global_rank' => 'getPrevGlobalRank',
-        'prev_tld_rank' => 'getPrevTldRank',
-        'p_prev_ref_sub_nets' => 'getPPrevRefSubNets',
-        'prev_ref_i_ps' => 'getPrevRefIPs'
+        'globalRank' => 'getGlobalRank',
+        'tldRank' => 'getTldRank',
+        'refSubNets' => 'getRefSubNets',
+        'refIPs' => 'getRefIPs',
+        'prevGlobalRank' => 'getPrevGlobalRank',
+        'prevTldRank' => 'getPrevTldRank',
+        'pPrevRefSubNets' => 'getPPrevRefSubNets',
+        'prevRefIPs' => 'getPrevRefIPs'
     ];
 
     /**
@@ -212,14 +212,14 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['global_rank'] = isset($data['global_rank']) ? $this->createData($data['global_rank'], 'global_rank')  : null;
-        $this->container['tld_rank'] = isset($data['tld_rank']) ? $this->createData($data['tld_rank'], 'tld_rank')  : null;
-        $this->container['ref_sub_nets'] = isset($data['ref_sub_nets']) ? $this->createData($data['ref_sub_nets'], 'ref_sub_nets')  : null;
-        $this->container['ref_i_ps'] = isset($data['ref_i_ps']) ? $this->createData($data['ref_i_ps'], 'ref_i_ps')  : null;
-        $this->container['prev_global_rank'] = isset($data['prev_global_rank']) ? $this->createData($data['prev_global_rank'], 'prev_global_rank')  : null;
-        $this->container['prev_tld_rank'] = isset($data['prev_tld_rank']) ? $this->createData($data['prev_tld_rank'], 'prev_tld_rank')  : null;
-        $this->container['p_prev_ref_sub_nets'] = isset($data['p_prev_ref_sub_nets']) ? $this->createData($data['p_prev_ref_sub_nets'], 'p_prev_ref_sub_nets')  : null;
-        $this->container['prev_ref_i_ps'] = isset($data['prev_ref_i_ps']) ? $this->createData($data['prev_ref_i_ps'], 'prev_ref_i_ps')  : null;
+        $this->container['globalRank'] = isset($data['globalRank']) ? $this->createData($data['globalRank'], 'globalRank')  : null;
+        $this->container['tldRank'] = isset($data['tldRank']) ? $this->createData($data['tldRank'], 'tldRank')  : null;
+        $this->container['refSubNets'] = isset($data['refSubNets']) ? $this->createData($data['refSubNets'], 'refSubNets')  : null;
+        $this->container['refIPs'] = isset($data['refIPs']) ? $this->createData($data['refIPs'], 'refIPs')  : null;
+        $this->container['prevGlobalRank'] = isset($data['prevGlobalRank']) ? $this->createData($data['prevGlobalRank'], 'prevGlobalRank')  : null;
+        $this->container['prevTldRank'] = isset($data['prevTldRank']) ? $this->createData($data['prevTldRank'], 'prevTldRank')  : null;
+        $this->container['pPrevRefSubNets'] = isset($data['pPrevRefSubNets']) ? $this->createData($data['pPrevRefSubNets'], 'pPrevRefSubNets')  : null;
+        $this->container['prevRefIPs'] = isset($data['prevRefIPs']) ? $this->createData($data['prevRefIPs'], 'prevRefIPs')  : null;
     }
 
     /**
@@ -287,193 +287,193 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets global_rank
+     * Gets globalRank
      *
      * @return float
      */
     public function getGlobalRank()
     {
-        return $this->container['global_rank'];
+        return $this->container['globalRank'];
     }
 
     /**
-     * Sets global_rank
+     * Sets globalRank
      *
-     * @param float $global_rank global_rank
+     * @param float $globalRank globalRank
      *
      * @return $this
      */
-    public function setGlobalRank($global_rank)
+    public function setGlobalRank($globalRank)
     {
-        $this->container['global_rank'] = $global_rank;
+        $this->container['globalRank'] = $globalRank;
 
         return $this;
     }
 
     /**
-     * Gets tld_rank
+     * Gets tldRank
      *
      * @return float
      */
     public function getTldRank()
     {
-        return $this->container['tld_rank'];
+        return $this->container['tldRank'];
     }
 
     /**
-     * Sets tld_rank
+     * Sets tldRank
      *
-     * @param float $tld_rank tld_rank
+     * @param float $tldRank tldRank
      *
      * @return $this
      */
-    public function setTldRank($tld_rank)
+    public function setTldRank($tldRank)
     {
-        $this->container['tld_rank'] = $tld_rank;
+        $this->container['tldRank'] = $tldRank;
 
         return $this;
     }
 
     /**
-     * Gets ref_sub_nets
+     * Gets refSubNets
      *
      * @return float
      */
     public function getRefSubNets()
     {
-        return $this->container['ref_sub_nets'];
+        return $this->container['refSubNets'];
     }
 
     /**
-     * Sets ref_sub_nets
+     * Sets refSubNets
      *
-     * @param float $ref_sub_nets ref_sub_nets
+     * @param float $refSubNets refSubNets
      *
      * @return $this
      */
-    public function setRefSubNets($ref_sub_nets)
+    public function setRefSubNets($refSubNets)
     {
-        $this->container['ref_sub_nets'] = $ref_sub_nets;
+        $this->container['refSubNets'] = $refSubNets;
 
         return $this;
     }
 
     /**
-     * Gets ref_i_ps
+     * Gets refIPs
      *
      * @return float
      */
     public function getRefIPs()
     {
-        return $this->container['ref_i_ps'];
+        return $this->container['refIPs'];
     }
 
     /**
-     * Sets ref_i_ps
+     * Sets refIPs
      *
-     * @param float $ref_i_ps ref_i_ps
+     * @param float $refIPs refIPs
      *
      * @return $this
      */
-    public function setRefIPs($ref_i_ps)
+    public function setRefIPs($refIPs)
     {
-        $this->container['ref_i_ps'] = $ref_i_ps;
+        $this->container['refIPs'] = $refIPs;
 
         return $this;
     }
 
     /**
-     * Gets prev_global_rank
+     * Gets prevGlobalRank
      *
      * @return float
      */
     public function getPrevGlobalRank()
     {
-        return $this->container['prev_global_rank'];
+        return $this->container['prevGlobalRank'];
     }
 
     /**
-     * Sets prev_global_rank
+     * Sets prevGlobalRank
      *
-     * @param float $prev_global_rank prev_global_rank
+     * @param float $prevGlobalRank prevGlobalRank
      *
      * @return $this
      */
-    public function setPrevGlobalRank($prev_global_rank)
+    public function setPrevGlobalRank($prevGlobalRank)
     {
-        $this->container['prev_global_rank'] = $prev_global_rank;
+        $this->container['prevGlobalRank'] = $prevGlobalRank;
 
         return $this;
     }
 
     /**
-     * Gets prev_tld_rank
+     * Gets prevTldRank
      *
      * @return float
      */
     public function getPrevTldRank()
     {
-        return $this->container['prev_tld_rank'];
+        return $this->container['prevTldRank'];
     }
 
     /**
-     * Sets prev_tld_rank
+     * Sets prevTldRank
      *
-     * @param float $prev_tld_rank prev_tld_rank
+     * @param float $prevTldRank prevTldRank
      *
      * @return $this
      */
-    public function setPrevTldRank($prev_tld_rank)
+    public function setPrevTldRank($prevTldRank)
     {
-        $this->container['prev_tld_rank'] = $prev_tld_rank;
+        $this->container['prevTldRank'] = $prevTldRank;
 
         return $this;
     }
 
     /**
-     * Gets p_prev_ref_sub_nets
+     * Gets pPrevRefSubNets
      *
      * @return float
      */
     public function getPPrevRefSubNets()
     {
-        return $this->container['p_prev_ref_sub_nets'];
+        return $this->container['pPrevRefSubNets'];
     }
 
     /**
-     * Sets p_prev_ref_sub_nets
+     * Sets pPrevRefSubNets
      *
-     * @param float $p_prev_ref_sub_nets p_prev_ref_sub_nets
+     * @param float $pPrevRefSubNets pPrevRefSubNets
      *
      * @return $this
      */
-    public function setPPrevRefSubNets($p_prev_ref_sub_nets)
+    public function setPPrevRefSubNets($pPrevRefSubNets)
     {
-        $this->container['p_prev_ref_sub_nets'] = $p_prev_ref_sub_nets;
+        $this->container['pPrevRefSubNets'] = $pPrevRefSubNets;
 
         return $this;
     }
 
     /**
-     * Gets prev_ref_i_ps
+     * Gets prevRefIPs
      *
      * @return string
      */
     public function getPrevRefIPs()
     {
-        return $this->container['prev_ref_i_ps'];
+        return $this->container['prevRefIPs'];
     }
 
     /**
-     * Sets prev_ref_i_ps
+     * Sets prevRefIPs
      *
-     * @param string $prev_ref_i_ps prev_ref_i_ps
+     * @param string $prevRefIPs prevRefIPs
      *
      * @return $this
      */
-    public function setPrevRefIPs($prev_ref_i_ps)
+    public function setPrevRefIPs($prevRefIPs)
     {
-        $this->container['prev_ref_i_ps'] = $prev_ref_i_ps;
+        $this->container['prevRefIPs'] = $prevRefIPs;
 
         return $this;
     }

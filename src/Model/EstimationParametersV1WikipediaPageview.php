@@ -58,7 +58,7 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
       */
     protected static $swaggerTypes = [
         'article' => 'string',
-        'average_pageviews_per_day' => 'string'
+        'averagePageviewsPerDay' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
       */
     protected static $swaggerFormats = [
         'article' => null,
-        'average_pageviews_per_day' => null
+        'averagePageviewsPerDay' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
      */
     protected static $attributeMap = [
         'article' => 'article',
-        'average_pageviews_per_day' => 'averagePageviewsPerDay'
+        'averagePageviewsPerDay' => 'averagePageviewsPerDay'
     ];
 
     /**
@@ -109,7 +109,7 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
      */
     protected static $setters = [
         'article' => 'setArticle',
-        'average_pageviews_per_day' => 'setAveragePageviewsPerDay'
+        'averagePageviewsPerDay' => 'setAveragePageviewsPerDay'
     ];
 
     /**
@@ -119,7 +119,7 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
      */
     protected static $getters = [
         'article' => 'getArticle',
-        'average_pageviews_per_day' => 'getAveragePageviewsPerDay'
+        'averagePageviewsPerDay' => 'getAveragePageviewsPerDay'
     ];
 
     /**
@@ -183,7 +183,7 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
     public function __construct(array $data = null)
     {
         $this->container['article'] = isset($data['article']) ? $this->createData($data['article'], 'article')  : null;
-        $this->container['average_pageviews_per_day'] = isset($data['average_pageviews_per_day']) ? $this->createData($data['average_pageviews_per_day'], 'average_pageviews_per_day')  : null;
+        $this->container['averagePageviewsPerDay'] = isset($data['averagePageviewsPerDay']) ? $this->createData($data['averagePageviewsPerDay'], 'averagePageviewsPerDay')  : null;
     }
 
     /**
@@ -275,25 +275,25 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets average_pageviews_per_day
+     * Gets averagePageviewsPerDay
      *
      * @return string
      */
     public function getAveragePageviewsPerDay()
     {
-        return $this->container['average_pageviews_per_day'];
+        return $this->container['averagePageviewsPerDay'];
     }
 
     /**
-     * Sets average_pageviews_per_day
+     * Sets averagePageviewsPerDay
      *
-     * @param string $average_pageviews_per_day average_pageviews_per_day
+     * @param string $averagePageviewsPerDay averagePageviewsPerDay
      *
      * @return $this
      */
-    public function setAveragePageviewsPerDay($average_pageviews_per_day)
+    public function setAveragePageviewsPerDay($averagePageviewsPerDay)
     {
-        $this->container['average_pageviews_per_day'] = $average_pageviews_per_day;
+        $this->container['averagePageviewsPerDay'] = $averagePageviewsPerDay;
 
         return $this;
     }

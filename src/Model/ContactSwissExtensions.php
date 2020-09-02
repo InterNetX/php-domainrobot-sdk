@@ -57,8 +57,8 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'enterprise_id' => 'string',
-        'inteded_use' => 'string'
+        'enterpriseId' => 'string',
+        'intededUse' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'enterprise_id' => null,
-        'inteded_use' => null
+        'enterpriseId' => null,
+        'intededUse' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'enterprise_id' => 'enterpriseId',
-        'inteded_use' => 'intededUse'
+        'enterpriseId' => 'enterpriseId',
+        'intededUse' => 'intededUse'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'enterprise_id' => 'setEnterpriseId',
-        'inteded_use' => 'setIntededUse'
+        'enterpriseId' => 'setEnterpriseId',
+        'intededUse' => 'setIntededUse'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'enterprise_id' => 'getEnterpriseId',
-        'inteded_use' => 'getIntededUse'
+        'enterpriseId' => 'getEnterpriseId',
+        'intededUse' => 'getIntededUse'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['enterprise_id'] = isset($data['enterprise_id']) ? $this->createData($data['enterprise_id'], 'enterprise_id')  : null;
-        $this->container['inteded_use'] = isset($data['inteded_use']) ? $this->createData($data['inteded_use'], 'inteded_use')  : null;
+        $this->container['enterpriseId'] = isset($data['enterpriseId']) ? $this->createData($data['enterpriseId'], 'enterpriseId')  : null;
+        $this->container['intededUse'] = isset($data['intededUse']) ? $this->createData($data['intededUse'], 'intededUse')  : null;
     }
 
     /**
@@ -251,49 +251,49 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets enterprise_id
+     * Gets enterpriseId
      *
      * @return string
      */
     public function getEnterpriseId()
     {
-        return $this->container['enterprise_id'];
+        return $this->container['enterpriseId'];
     }
 
     /**
-     * Sets enterprise_id
+     * Sets enterpriseId
      *
-     * @param string $enterprise_id The enterprise ID, in the specific context of .swiss based on current rules, is the Swiss UID/IDE/IDI.
+     * @param string $enterpriseId The enterprise ID, in the specific context of .swiss based on current rules, is the Swiss UID/IDE/IDI.
      *
      * @return $this
      */
-    public function setEnterpriseId($enterprise_id)
+    public function setEnterpriseId($enterpriseId)
     {
-        $this->container['enterprise_id'] = $enterprise_id;
+        $this->container['enterpriseId'] = $enterpriseId;
 
         return $this;
     }
 
     /**
-     * Gets inteded_use
+     * Gets intededUse
      *
      * @return string
      */
     public function getIntededUse()
     {
-        return $this->container['inteded_use'];
+        return $this->container['intededUse'];
     }
 
     /**
-     * Sets inteded_use
+     * Sets intededUse
      *
-     * @param string $inteded_use The statement of intended use for the domain name.
+     * @param string $intededUse The statement of intended use for the domain name.
      *
      * @return $this
      */
-    public function setIntededUse($inteded_use)
+    public function setIntededUse($intededUse)
     {
-        $this->container['inteded_use'] = $inteded_use;
+        $this->container['intededUse'] = $intededUse;
 
         return $this;
     }

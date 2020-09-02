@@ -57,11 +57,11 @@ class NiccomLog implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'job_id' => 'int',
-        'vertex_id' => 'int',
+        'jobId' => 'int',
+        'vertexId' => 'int',
         'name' => 'string',
         'task' => 'string',
-        'nic_transaction_id' => 'string',
+        'nicTransactionId' => 'string',
         'source' => '\Domainrobot\Model\NiccomSourceConstants',
         'text' => 'string',
         'created' => '\DateTime'
@@ -73,11 +73,11 @@ class NiccomLog implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'job_id' => 'int64',
-        'vertex_id' => 'int32',
+        'jobId' => 'int64',
+        'vertexId' => 'int32',
         'name' => null,
         'task' => null,
-        'nic_transaction_id' => null,
+        'nicTransactionId' => null,
         'source' => null,
         'text' => null,
         'created' => 'date-time'
@@ -110,11 +110,11 @@ class NiccomLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'job_id' => 'jobId',
-        'vertex_id' => 'vertexId',
+        'jobId' => 'jobId',
+        'vertexId' => 'vertexId',
         'name' => 'name',
         'task' => 'task',
-        'nic_transaction_id' => 'nicTransactionId',
+        'nicTransactionId' => 'nicTransactionId',
         'source' => 'source',
         'text' => 'text',
         'created' => 'created'
@@ -126,11 +126,11 @@ class NiccomLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'job_id' => 'setJobId',
-        'vertex_id' => 'setVertexId',
+        'jobId' => 'setJobId',
+        'vertexId' => 'setVertexId',
         'name' => 'setName',
         'task' => 'setTask',
-        'nic_transaction_id' => 'setNicTransactionId',
+        'nicTransactionId' => 'setNicTransactionId',
         'source' => 'setSource',
         'text' => 'setText',
         'created' => 'setCreated'
@@ -142,11 +142,11 @@ class NiccomLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'job_id' => 'getJobId',
-        'vertex_id' => 'getVertexId',
+        'jobId' => 'getJobId',
+        'vertexId' => 'getVertexId',
         'name' => 'getName',
         'task' => 'getTask',
-        'nic_transaction_id' => 'getNicTransactionId',
+        'nicTransactionId' => 'getNicTransactionId',
         'source' => 'getSource',
         'text' => 'getText',
         'created' => 'getCreated'
@@ -212,11 +212,11 @@ class NiccomLog implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['job_id'] = isset($data['job_id']) ? $this->createData($data['job_id'], 'job_id')  : null;
-        $this->container['vertex_id'] = isset($data['vertex_id']) ? $this->createData($data['vertex_id'], 'vertex_id')  : null;
+        $this->container['jobId'] = isset($data['jobId']) ? $this->createData($data['jobId'], 'jobId')  : null;
+        $this->container['vertexId'] = isset($data['vertexId']) ? $this->createData($data['vertexId'], 'vertexId')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['task'] = isset($data['task']) ? $this->createData($data['task'], 'task')  : null;
-        $this->container['nic_transaction_id'] = isset($data['nic_transaction_id']) ? $this->createData($data['nic_transaction_id'], 'nic_transaction_id')  : null;
+        $this->container['nicTransactionId'] = isset($data['nicTransactionId']) ? $this->createData($data['nicTransactionId'], 'nicTransactionId')  : null;
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
         $this->container['text'] = isset($data['text']) ? $this->createData($data['text'], 'text')  : null;
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
@@ -287,49 +287,49 @@ class NiccomLog implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets job_id
+     * Gets jobId
      *
      * @return int
      */
     public function getJobId()
     {
-        return $this->container['job_id'];
+        return $this->container['jobId'];
     }
 
     /**
-     * Sets job_id
+     * Sets jobId
      *
-     * @param int $job_id The jobId of the niccom log.
+     * @param int $jobId The jobId of the niccom log.
      *
      * @return $this
      */
-    public function setJobId($job_id)
+    public function setJobId($jobId)
     {
-        $this->container['job_id'] = $job_id;
+        $this->container['jobId'] = $jobId;
 
         return $this;
     }
 
     /**
-     * Gets vertex_id
+     * Gets vertexId
      *
      * @return int
      */
     public function getVertexId()
     {
-        return $this->container['vertex_id'];
+        return $this->container['vertexId'];
     }
 
     /**
-     * Sets vertex_id
+     * Sets vertexId
      *
-     * @param int $vertex_id The vertexId of the niccom log.
+     * @param int $vertexId The vertexId of the niccom log.
      *
      * @return $this
      */
-    public function setVertexId($vertex_id)
+    public function setVertexId($vertexId)
     {
-        $this->container['vertex_id'] = $vertex_id;
+        $this->container['vertexId'] = $vertexId;
 
         return $this;
     }
@@ -383,25 +383,25 @@ class NiccomLog implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets nic_transaction_id
+     * Gets nicTransactionId
      *
      * @return string
      */
     public function getNicTransactionId()
     {
-        return $this->container['nic_transaction_id'];
+        return $this->container['nicTransactionId'];
     }
 
     /**
-     * Sets nic_transaction_id
+     * Sets nicTransactionId
      *
-     * @param string $nic_transaction_id The nicTransactionId of the niccom log.
+     * @param string $nicTransactionId The nicTransactionId of the niccom log.
      *
      * @return $this
      */
-    public function setNicTransactionId($nic_transaction_id)
+    public function setNicTransactionId($nicTransactionId)
     {
-        $this->container['nic_transaction_id'] = $nic_transaction_id;
+        $this->container['nicTransactionId'] = $nicTransactionId;
 
         return $this;
     }

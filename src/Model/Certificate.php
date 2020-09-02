@@ -63,35 +63,35 @@ class Certificate implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'extension' => '\Domainrobot\Model\ExtendedValidationExtension',
         'id' => 'int',
-        'partner_order_id' => 'string',
-        'order_id' => 'string',
-        'admin_contact' => '\Domainrobot\Model\SslContact',
-        'technical_contact' => '\Domainrobot\Model\SslContact',
+        'partnerOrderId' => 'string',
+        'orderId' => 'string',
+        'adminContact' => '\Domainrobot\Model\SslContact',
+        'technicalContact' => '\Domainrobot\Model\SslContact',
         'name' => 'string',
         'lifetime' => '\Domainrobot\Model\TimePeriod',
         'software' => '\Domainrobot\Model\ServerSoftwareTypeConstants',
         'comment' => 'string',
         'csr' => 'string',
         'server' => 'string',
-        'serial_number' => 'string',
+        'serialNumber' => 'string',
         'product' => 'string',
-        'code_signing_type' => '\Domainrobot\Model\CodeSigningType',
-        'certificate_type' => '\Domainrobot\Model\CertificateType',
-        'signature_hash_algorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
+        'codeSigningType' => '\Domainrobot\Model\CodeSigningType',
+        'certificateType' => '\Domainrobot\Model\CertificateType',
+        'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
         'expire' => '\DateTime',
-        'subject_alternative_names' => '\Domainrobot\Model\SubjectAlternativeName[]',
+        'subjectAlternativeNames' => '\Domainrobot\Model\SubjectAlternativeName[]',
         'histories' => '\Domainrobot\Model\CertificateHistory[]',
-        'certification_authority' => '\Domainrobot\Model\CaCertificate[]',
+        'certificationAuthority' => '\Domainrobot\Model\CaCertificate[]',
         'password' => 'string',
         'firstname' => 'string',
         'lastname' => 'string',
-        'technical_contact_email' => 'string',
-        'organization_unit_name' => 'string',
+        'technicalContactEmail' => 'string',
+        'organizationUnitName' => 'string',
         'authentication' => '\Domainrobot\Model\CertAuthentication',
-        'certificate_transparency' => 'bool',
-        'certificate_transparency_privacy' => '\Domainrobot\Model\CertificateTransparencyPrivacyConstants',
+        'certificateTransparency' => 'bool',
+        'certificateTransparencyPrivacy' => '\Domainrobot\Model\CertificateTransparencyPrivacyConstants',
         'domain' => 'string',
-        'has_csr' => 'bool',
+        'hasCsr' => 'bool',
         'idn' => 'string'
     ];
 
@@ -107,35 +107,35 @@ class Certificate implements ModelInterface, ArrayAccess
         'updater' => null,
         'extension' => null,
         'id' => 'int32',
-        'partner_order_id' => null,
-        'order_id' => null,
-        'admin_contact' => null,
-        'technical_contact' => null,
+        'partnerOrderId' => null,
+        'orderId' => null,
+        'adminContact' => null,
+        'technicalContact' => null,
         'name' => null,
         'lifetime' => null,
         'software' => null,
         'comment' => null,
         'csr' => null,
         'server' => null,
-        'serial_number' => null,
+        'serialNumber' => null,
         'product' => null,
-        'code_signing_type' => null,
-        'certificate_type' => null,
-        'signature_hash_algorithm' => null,
+        'codeSigningType' => null,
+        'certificateType' => null,
+        'signatureHashAlgorithm' => null,
         'expire' => 'date-time',
-        'subject_alternative_names' => null,
+        'subjectAlternativeNames' => null,
         'histories' => null,
-        'certification_authority' => null,
+        'certificationAuthority' => null,
         'password' => null,
         'firstname' => null,
         'lastname' => null,
-        'technical_contact_email' => null,
-        'organization_unit_name' => null,
+        'technicalContactEmail' => null,
+        'organizationUnitName' => null,
         'authentication' => null,
-        'certificate_transparency' => null,
-        'certificate_transparency_privacy' => null,
+        'certificateTransparency' => null,
+        'certificateTransparencyPrivacy' => null,
         'domain' => null,
-        'has_csr' => null,
+        'hasCsr' => null,
         'idn' => null
     ];
 
@@ -172,35 +172,35 @@ class Certificate implements ModelInterface, ArrayAccess
         'updater' => 'updater',
         'extension' => 'extension',
         'id' => 'id',
-        'partner_order_id' => 'partnerOrderId',
-        'order_id' => 'orderId',
-        'admin_contact' => 'adminContact',
-        'technical_contact' => 'technicalContact',
+        'partnerOrderId' => 'partnerOrderId',
+        'orderId' => 'orderId',
+        'adminContact' => 'adminContact',
+        'technicalContact' => 'technicalContact',
         'name' => 'name',
         'lifetime' => 'lifetime',
         'software' => 'software',
         'comment' => 'comment',
         'csr' => 'csr',
         'server' => 'server',
-        'serial_number' => 'serialNumber',
+        'serialNumber' => 'serialNumber',
         'product' => 'product',
-        'code_signing_type' => 'codeSigningType',
-        'certificate_type' => 'certificateType',
-        'signature_hash_algorithm' => 'signatureHashAlgorithm',
+        'codeSigningType' => 'codeSigningType',
+        'certificateType' => 'certificateType',
+        'signatureHashAlgorithm' => 'signatureHashAlgorithm',
         'expire' => 'expire',
-        'subject_alternative_names' => 'subjectAlternativeNames',
+        'subjectAlternativeNames' => 'subjectAlternativeNames',
         'histories' => 'histories',
-        'certification_authority' => 'certificationAuthority',
+        'certificationAuthority' => 'certificationAuthority',
         'password' => 'password',
         'firstname' => 'firstname',
         'lastname' => 'lastname',
-        'technical_contact_email' => 'technicalContactEmail',
-        'organization_unit_name' => 'organizationUnitName',
+        'technicalContactEmail' => 'technicalContactEmail',
+        'organizationUnitName' => 'organizationUnitName',
         'authentication' => 'authentication',
-        'certificate_transparency' => 'certificateTransparency',
-        'certificate_transparency_privacy' => 'certificateTransparencyPrivacy',
+        'certificateTransparency' => 'certificateTransparency',
+        'certificateTransparencyPrivacy' => 'certificateTransparencyPrivacy',
         'domain' => 'domain',
-        'has_csr' => 'hasCsr',
+        'hasCsr' => 'hasCsr',
         'idn' => 'idn'
     ];
 
@@ -216,35 +216,35 @@ class Certificate implements ModelInterface, ArrayAccess
         'updater' => 'setUpdater',
         'extension' => 'setExtension',
         'id' => 'setId',
-        'partner_order_id' => 'setPartnerOrderId',
-        'order_id' => 'setOrderId',
-        'admin_contact' => 'setAdminContact',
-        'technical_contact' => 'setTechnicalContact',
+        'partnerOrderId' => 'setPartnerOrderId',
+        'orderId' => 'setOrderId',
+        'adminContact' => 'setAdminContact',
+        'technicalContact' => 'setTechnicalContact',
         'name' => 'setName',
         'lifetime' => 'setLifetime',
         'software' => 'setSoftware',
         'comment' => 'setComment',
         'csr' => 'setCsr',
         'server' => 'setServer',
-        'serial_number' => 'setSerialNumber',
+        'serialNumber' => 'setSerialNumber',
         'product' => 'setProduct',
-        'code_signing_type' => 'setCodeSigningType',
-        'certificate_type' => 'setCertificateType',
-        'signature_hash_algorithm' => 'setSignatureHashAlgorithm',
+        'codeSigningType' => 'setCodeSigningType',
+        'certificateType' => 'setCertificateType',
+        'signatureHashAlgorithm' => 'setSignatureHashAlgorithm',
         'expire' => 'setExpire',
-        'subject_alternative_names' => 'setSubjectAlternativeNames',
+        'subjectAlternativeNames' => 'setSubjectAlternativeNames',
         'histories' => 'setHistories',
-        'certification_authority' => 'setCertificationAuthority',
+        'certificationAuthority' => 'setCertificationAuthority',
         'password' => 'setPassword',
         'firstname' => 'setFirstname',
         'lastname' => 'setLastname',
-        'technical_contact_email' => 'setTechnicalContactEmail',
-        'organization_unit_name' => 'setOrganizationUnitName',
+        'technicalContactEmail' => 'setTechnicalContactEmail',
+        'organizationUnitName' => 'setOrganizationUnitName',
         'authentication' => 'setAuthentication',
-        'certificate_transparency' => 'setCertificateTransparency',
-        'certificate_transparency_privacy' => 'setCertificateTransparencyPrivacy',
+        'certificateTransparency' => 'setCertificateTransparency',
+        'certificateTransparencyPrivacy' => 'setCertificateTransparencyPrivacy',
         'domain' => 'setDomain',
-        'has_csr' => 'setHasCsr',
+        'hasCsr' => 'setHasCsr',
         'idn' => 'setIdn'
     ];
 
@@ -260,35 +260,35 @@ class Certificate implements ModelInterface, ArrayAccess
         'updater' => 'getUpdater',
         'extension' => 'getExtension',
         'id' => 'getId',
-        'partner_order_id' => 'getPartnerOrderId',
-        'order_id' => 'getOrderId',
-        'admin_contact' => 'getAdminContact',
-        'technical_contact' => 'getTechnicalContact',
+        'partnerOrderId' => 'getPartnerOrderId',
+        'orderId' => 'getOrderId',
+        'adminContact' => 'getAdminContact',
+        'technicalContact' => 'getTechnicalContact',
         'name' => 'getName',
         'lifetime' => 'getLifetime',
         'software' => 'getSoftware',
         'comment' => 'getComment',
         'csr' => 'getCsr',
         'server' => 'getServer',
-        'serial_number' => 'getSerialNumber',
+        'serialNumber' => 'getSerialNumber',
         'product' => 'getProduct',
-        'code_signing_type' => 'getCodeSigningType',
-        'certificate_type' => 'getCertificateType',
-        'signature_hash_algorithm' => 'getSignatureHashAlgorithm',
+        'codeSigningType' => 'getCodeSigningType',
+        'certificateType' => 'getCertificateType',
+        'signatureHashAlgorithm' => 'getSignatureHashAlgorithm',
         'expire' => 'getExpire',
-        'subject_alternative_names' => 'getSubjectAlternativeNames',
+        'subjectAlternativeNames' => 'getSubjectAlternativeNames',
         'histories' => 'getHistories',
-        'certification_authority' => 'getCertificationAuthority',
+        'certificationAuthority' => 'getCertificationAuthority',
         'password' => 'getPassword',
         'firstname' => 'getFirstname',
         'lastname' => 'getLastname',
-        'technical_contact_email' => 'getTechnicalContactEmail',
-        'organization_unit_name' => 'getOrganizationUnitName',
+        'technicalContactEmail' => 'getTechnicalContactEmail',
+        'organizationUnitName' => 'getOrganizationUnitName',
         'authentication' => 'getAuthentication',
-        'certificate_transparency' => 'getCertificateTransparency',
-        'certificate_transparency_privacy' => 'getCertificateTransparencyPrivacy',
+        'certificateTransparency' => 'getCertificateTransparency',
+        'certificateTransparencyPrivacy' => 'getCertificateTransparencyPrivacy',
         'domain' => 'getDomain',
-        'has_csr' => 'getHasCsr',
+        'hasCsr' => 'getHasCsr',
         'idn' => 'getIdn'
     ];
 
@@ -358,35 +358,35 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['extension'] = isset($data['extension']) ? $this->createData($data['extension'], 'extension')  : null;
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
-        $this->container['partner_order_id'] = isset($data['partner_order_id']) ? $this->createData($data['partner_order_id'], 'partner_order_id')  : null;
-        $this->container['order_id'] = isset($data['order_id']) ? $this->createData($data['order_id'], 'order_id')  : null;
-        $this->container['admin_contact'] = isset($data['admin_contact']) ? $this->createData($data['admin_contact'], 'admin_contact')  : null;
-        $this->container['technical_contact'] = isset($data['technical_contact']) ? $this->createData($data['technical_contact'], 'technical_contact')  : null;
+        $this->container['partnerOrderId'] = isset($data['partnerOrderId']) ? $this->createData($data['partnerOrderId'], 'partnerOrderId')  : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $this->createData($data['orderId'], 'orderId')  : null;
+        $this->container['adminContact'] = isset($data['adminContact']) ? $this->createData($data['adminContact'], 'adminContact')  : null;
+        $this->container['technicalContact'] = isset($data['technicalContact']) ? $this->createData($data['technicalContact'], 'technicalContact')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['lifetime'] = isset($data['lifetime']) ? $this->createData($data['lifetime'], 'lifetime')  : null;
         $this->container['software'] = isset($data['software']) ? $this->createData($data['software'], 'software')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['csr'] = isset($data['csr']) ? $this->createData($data['csr'], 'csr')  : null;
         $this->container['server'] = isset($data['server']) ? $this->createData($data['server'], 'server')  : null;
-        $this->container['serial_number'] = isset($data['serial_number']) ? $this->createData($data['serial_number'], 'serial_number')  : null;
+        $this->container['serialNumber'] = isset($data['serialNumber']) ? $this->createData($data['serialNumber'], 'serialNumber')  : null;
         $this->container['product'] = isset($data['product']) ? $this->createData($data['product'], 'product')  : null;
-        $this->container['code_signing_type'] = isset($data['code_signing_type']) ? $this->createData($data['code_signing_type'], 'code_signing_type')  : null;
-        $this->container['certificate_type'] = isset($data['certificate_type']) ? $this->createData($data['certificate_type'], 'certificate_type')  : null;
-        $this->container['signature_hash_algorithm'] = isset($data['signature_hash_algorithm']) ? $this->createData($data['signature_hash_algorithm'], 'signature_hash_algorithm')  : null;
+        $this->container['codeSigningType'] = isset($data['codeSigningType']) ? $this->createData($data['codeSigningType'], 'codeSigningType')  : null;
+        $this->container['certificateType'] = isset($data['certificateType']) ? $this->createData($data['certificateType'], 'certificateType')  : null;
+        $this->container['signatureHashAlgorithm'] = isset($data['signatureHashAlgorithm']) ? $this->createData($data['signatureHashAlgorithm'], 'signatureHashAlgorithm')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
-        $this->container['subject_alternative_names'] = isset($data['subject_alternative_names']) ? $this->createData($data['subject_alternative_names'], 'subject_alternative_names')  : null;
+        $this->container['subjectAlternativeNames'] = isset($data['subjectAlternativeNames']) ? $this->createData($data['subjectAlternativeNames'], 'subjectAlternativeNames')  : null;
         $this->container['histories'] = isset($data['histories']) ? $this->createData($data['histories'], 'histories')  : null;
-        $this->container['certification_authority'] = isset($data['certification_authority']) ? $this->createData($data['certification_authority'], 'certification_authority')  : null;
+        $this->container['certificationAuthority'] = isset($data['certificationAuthority']) ? $this->createData($data['certificationAuthority'], 'certificationAuthority')  : null;
         $this->container['password'] = isset($data['password']) ? $this->createData($data['password'], 'password')  : null;
         $this->container['firstname'] = isset($data['firstname']) ? $this->createData($data['firstname'], 'firstname')  : null;
         $this->container['lastname'] = isset($data['lastname']) ? $this->createData($data['lastname'], 'lastname')  : null;
-        $this->container['technical_contact_email'] = isset($data['technical_contact_email']) ? $this->createData($data['technical_contact_email'], 'technical_contact_email')  : null;
-        $this->container['organization_unit_name'] = isset($data['organization_unit_name']) ? $this->createData($data['organization_unit_name'], 'organization_unit_name')  : null;
+        $this->container['technicalContactEmail'] = isset($data['technicalContactEmail']) ? $this->createData($data['technicalContactEmail'], 'technicalContactEmail')  : null;
+        $this->container['organizationUnitName'] = isset($data['organizationUnitName']) ? $this->createData($data['organizationUnitName'], 'organizationUnitName')  : null;
         $this->container['authentication'] = isset($data['authentication']) ? $this->createData($data['authentication'], 'authentication')  : null;
-        $this->container['certificate_transparency'] = isset($data['certificate_transparency']) ? $this->createData($data['certificate_transparency'], 'certificate_transparency')  : null;
-        $this->container['certificate_transparency_privacy'] = isset($data['certificate_transparency_privacy']) ? $this->createData($data['certificate_transparency_privacy'], 'certificate_transparency_privacy')  : null;
+        $this->container['certificateTransparency'] = isset($data['certificateTransparency']) ? $this->createData($data['certificateTransparency'], 'certificateTransparency')  : null;
+        $this->container['certificateTransparencyPrivacy'] = isset($data['certificateTransparencyPrivacy']) ? $this->createData($data['certificateTransparencyPrivacy'], 'certificateTransparencyPrivacy')  : null;
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
-        $this->container['has_csr'] = isset($data['has_csr']) ? $this->createData($data['has_csr'], 'has_csr')  : null;
+        $this->container['hasCsr'] = isset($data['hasCsr']) ? $this->createData($data['hasCsr'], 'hasCsr')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
     }
 
@@ -612,97 +612,97 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets partner_order_id
+     * Gets partnerOrderId
      *
      * @return string
      */
     public function getPartnerOrderId()
     {
-        return $this->container['partner_order_id'];
+        return $this->container['partnerOrderId'];
     }
 
     /**
-     * Sets partner_order_id
+     * Sets partnerOrderId
      *
-     * @param string $partner_order_id The order number of the related request
+     * @param string $partnerOrderId The order number of the related request
      *
      * @return $this
      */
-    public function setPartnerOrderId($partner_order_id)
+    public function setPartnerOrderId($partnerOrderId)
     {
-        $this->container['partner_order_id'] = $partner_order_id;
+        $this->container['partnerOrderId'] = $partnerOrderId;
 
         return $this;
     }
 
     /**
-     * Gets order_id
+     * Gets orderId
      *
      * @return string
      */
     public function getOrderId()
     {
-        return $this->container['order_id'];
+        return $this->container['orderId'];
     }
 
     /**
-     * Sets order_id
+     * Sets orderId
      *
-     * @param string $order_id The unique certificate order number
+     * @param string $orderId The unique certificate order number
      *
      * @return $this
      */
-    public function setOrderId($order_id)
+    public function setOrderId($orderId)
     {
-        $this->container['order_id'] = $order_id;
+        $this->container['orderId'] = $orderId;
 
         return $this;
     }
 
     /**
-     * Gets admin_contact
+     * Gets adminContact
      *
      * @return \Domainrobot\Model\SslContact
      */
     public function getAdminContact()
     {
-        return $this->container['admin_contact'];
+        return $this->container['adminContact'];
     }
 
     /**
-     * Sets admin_contact
+     * Sets adminContact
      *
-     * @param \Domainrobot\Model\SslContact $admin_contact The administrative contact
+     * @param \Domainrobot\Model\SslContact $adminContact The administrative contact
      *
      * @return $this
      */
-    public function setAdminContact($admin_contact)
+    public function setAdminContact($adminContact)
     {
-        $this->container['admin_contact'] = $admin_contact;
+        $this->container['adminContact'] = $adminContact;
 
         return $this;
     }
 
     /**
-     * Gets technical_contact
+     * Gets technicalContact
      *
      * @return \Domainrobot\Model\SslContact
      */
     public function getTechnicalContact()
     {
-        return $this->container['technical_contact'];
+        return $this->container['technicalContact'];
     }
 
     /**
-     * Sets technical_contact
+     * Sets technicalContact
      *
-     * @param \Domainrobot\Model\SslContact $technical_contact The technical contact
+     * @param \Domainrobot\Model\SslContact $technicalContact The technical contact
      *
      * @return $this
      */
-    public function setTechnicalContact($technical_contact)
+    public function setTechnicalContact($technicalContact)
     {
-        $this->container['technical_contact'] = $technical_contact;
+        $this->container['technicalContact'] = $technicalContact;
 
         return $this;
     }
@@ -852,25 +852,25 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets serial_number
+     * Gets serialNumber
      *
      * @return string
      */
     public function getSerialNumber()
     {
-        return $this->container['serial_number'];
+        return $this->container['serialNumber'];
     }
 
     /**
-     * Sets serial_number
+     * Sets serialNumber
      *
-     * @param string $serial_number Serial number of the certificate
+     * @param string $serialNumber Serial number of the certificate
      *
      * @return $this
      */
-    public function setSerialNumber($serial_number)
+    public function setSerialNumber($serialNumber)
     {
-        $this->container['serial_number'] = $serial_number;
+        $this->container['serialNumber'] = $serialNumber;
 
         return $this;
     }
@@ -900,73 +900,73 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets code_signing_type
+     * Gets codeSigningType
      *
      * @return \Domainrobot\Model\CodeSigningType
      */
     public function getCodeSigningType()
     {
-        return $this->container['code_signing_type'];
+        return $this->container['codeSigningType'];
     }
 
     /**
-     * Sets code_signing_type
+     * Sets codeSigningType
      *
-     * @param \Domainrobot\Model\CodeSigningType $code_signing_type The type of code signing
+     * @param \Domainrobot\Model\CodeSigningType $codeSigningType The type of code signing
      *
      * @return $this
      */
-    public function setCodeSigningType($code_signing_type)
+    public function setCodeSigningType($codeSigningType)
     {
-        $this->container['code_signing_type'] = $code_signing_type;
+        $this->container['codeSigningType'] = $codeSigningType;
 
         return $this;
     }
 
     /**
-     * Gets certificate_type
+     * Gets certificateType
      *
      * @return \Domainrobot\Model\CertificateType
      */
     public function getCertificateType()
     {
-        return $this->container['certificate_type'];
+        return $this->container['certificateType'];
     }
 
     /**
-     * Sets certificate_type
+     * Sets certificateType
      *
-     * @param \Domainrobot\Model\CertificateType $certificate_type The type of the certificate
+     * @param \Domainrobot\Model\CertificateType $certificateType The type of the certificate
      *
      * @return $this
      */
-    public function setCertificateType($certificate_type)
+    public function setCertificateType($certificateType)
     {
-        $this->container['certificate_type'] = $certificate_type;
+        $this->container['certificateType'] = $certificateType;
 
         return $this;
     }
 
     /**
-     * Gets signature_hash_algorithm
+     * Gets signatureHashAlgorithm
      *
      * @return \Domainrobot\Model\SignatureHashAlgorithmConstants
      */
     public function getSignatureHashAlgorithm()
     {
-        return $this->container['signature_hash_algorithm'];
+        return $this->container['signatureHashAlgorithm'];
     }
 
     /**
-     * Sets signature_hash_algorithm
+     * Sets signatureHashAlgorithm
      *
-     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signature_hash_algorithm The signature hash algorithm which was used
+     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The signature hash algorithm which was used
      *
      * @return $this
      */
-    public function setSignatureHashAlgorithm($signature_hash_algorithm)
+    public function setSignatureHashAlgorithm($signatureHashAlgorithm)
     {
-        $this->container['signature_hash_algorithm'] = $signature_hash_algorithm;
+        $this->container['signatureHashAlgorithm'] = $signatureHashAlgorithm;
 
         return $this;
     }
@@ -996,25 +996,25 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets subject_alternative_names
+     * Gets subjectAlternativeNames
      *
      * @return \Domainrobot\Model\SubjectAlternativeName[]
      */
     public function getSubjectAlternativeNames()
     {
-        return $this->container['subject_alternative_names'];
+        return $this->container['subjectAlternativeNames'];
     }
 
     /**
-     * Sets subject_alternative_names
+     * Sets subjectAlternativeNames
      *
-     * @param \Domainrobot\Model\SubjectAlternativeName[] $subject_alternative_names Subject Alternative Names (SANs)
+     * @param \Domainrobot\Model\SubjectAlternativeName[] $subjectAlternativeNames Subject Alternative Names (SANs)
      *
      * @return $this
      */
-    public function setSubjectAlternativeNames($subject_alternative_names)
+    public function setSubjectAlternativeNames($subjectAlternativeNames)
     {
-        $this->container['subject_alternative_names'] = $subject_alternative_names;
+        $this->container['subjectAlternativeNames'] = $subjectAlternativeNames;
 
         return $this;
     }
@@ -1044,25 +1044,25 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets certification_authority
+     * Gets certificationAuthority
      *
      * @return \Domainrobot\Model\CaCertificate[]
      */
     public function getCertificationAuthority()
     {
-        return $this->container['certification_authority'];
+        return $this->container['certificationAuthority'];
     }
 
     /**
-     * Sets certification_authority
+     * Sets certificationAuthority
      *
-     * @param \Domainrobot\Model\CaCertificate[] $certification_authority The certificate authority chain
+     * @param \Domainrobot\Model\CaCertificate[] $certificationAuthority The certificate authority chain
      *
      * @return $this
      */
-    public function setCertificationAuthority($certification_authority)
+    public function setCertificationAuthority($certificationAuthority)
     {
-        $this->container['certification_authority'] = $certification_authority;
+        $this->container['certificationAuthority'] = $certificationAuthority;
 
         return $this;
     }
@@ -1145,49 +1145,49 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets technical_contact_email
+     * Gets technicalContactEmail
      *
      * @return string
      */
     public function getTechnicalContactEmail()
     {
-        return $this->container['technical_contact_email'];
+        return $this->container['technicalContactEmail'];
     }
 
     /**
-     * Sets technical_contact_email
+     * Sets technicalContactEmail
      *
-     * @param string $technical_contact_email The technical contact email address. Only used in realtime orders!
+     * @param string $technicalContactEmail The technical contact email address. Only used in realtime orders!
      *
      * @return $this
      */
-    public function setTechnicalContactEmail($technical_contact_email)
+    public function setTechnicalContactEmail($technicalContactEmail)
     {
-        $this->container['technical_contact_email'] = $technical_contact_email;
+        $this->container['technicalContactEmail'] = $technicalContactEmail;
 
         return $this;
     }
 
     /**
-     * Gets organization_unit_name
+     * Gets organizationUnitName
      *
      * @return string
      */
     public function getOrganizationUnitName()
     {
-        return $this->container['organization_unit_name'];
+        return $this->container['organizationUnitName'];
     }
 
     /**
-     * Sets organization_unit_name
+     * Sets organizationUnitName
      *
-     * @param string $organization_unit_name The organization unit. Only for S/MIME!
+     * @param string $organizationUnitName The organization unit. Only for S/MIME!
      *
      * @return $this
      */
-    public function setOrganizationUnitName($organization_unit_name)
+    public function setOrganizationUnitName($organizationUnitName)
     {
-        $this->container['organization_unit_name'] = $organization_unit_name;
+        $this->container['organizationUnitName'] = $organizationUnitName;
 
         return $this;
     }
@@ -1217,49 +1217,49 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets certificate_transparency
+     * Gets certificateTransparency
      *
      * @return bool
      */
     public function getCertificateTransparency()
     {
-        return $this->container['certificate_transparency'];
+        return $this->container['certificateTransparency'];
     }
 
     /**
-     * Sets certificate_transparency
+     * Sets certificateTransparency
      *
-     * @param bool $certificate_transparency Activates the certificate transparency for a certificate. Default is \"True\".
+     * @param bool $certificateTransparency Activates the certificate transparency for a certificate. Default is \"True\".
      *
      * @return $this
      */
-    public function setCertificateTransparency($certificate_transparency)
+    public function setCertificateTransparency($certificateTransparency)
     {
-        $this->container['certificate_transparency'] = $certificate_transparency;
+        $this->container['certificateTransparency'] = $certificateTransparency;
 
         return $this;
     }
 
     /**
-     * Gets certificate_transparency_privacy
+     * Gets certificateTransparencyPrivacy
      *
      * @return \Domainrobot\Model\CertificateTransparencyPrivacyConstants
      */
     public function getCertificateTransparencyPrivacy()
     {
-        return $this->container['certificate_transparency_privacy'];
+        return $this->container['certificateTransparencyPrivacy'];
     }
 
     /**
-     * Sets certificate_transparency_privacy
+     * Sets certificateTransparencyPrivacy
      *
-     * @param \Domainrobot\Model\CertificateTransparencyPrivacyConstants $certificate_transparency_privacy The privacy settings for certificate transparency. Default is \"Redacted\".
+     * @param \Domainrobot\Model\CertificateTransparencyPrivacyConstants $certificateTransparencyPrivacy The privacy settings for certificate transparency. Default is \"Redacted\".
      *
      * @return $this
      */
-    public function setCertificateTransparencyPrivacy($certificate_transparency_privacy)
+    public function setCertificateTransparencyPrivacy($certificateTransparencyPrivacy)
     {
-        $this->container['certificate_transparency_privacy'] = $certificate_transparency_privacy;
+        $this->container['certificateTransparencyPrivacy'] = $certificateTransparencyPrivacy;
 
         return $this;
     }
@@ -1289,25 +1289,25 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets has_csr
+     * Gets hasCsr
      *
      * @return bool
      */
     public function getHasCsr()
     {
-        return $this->container['has_csr'];
+        return $this->container['hasCsr'];
     }
 
     /**
-     * Sets has_csr
+     * Sets hasCsr
      *
-     * @param bool $has_csr States if a self created CSR is to be used for S/MIME. Default is false. Only for S/MIME!
+     * @param bool $hasCsr States if a self created CSR is to be used for S/MIME. Default is false. Only for S/MIME!
      *
      * @return $this
      */
-    public function setHasCsr($has_csr)
+    public function setHasCsr($hasCsr)
     {
-        $this->container['has_csr'] = $has_csr;
+        $this->container['hasCsr'] = $hasCsr;
 
         return $this;
     }

@@ -57,7 +57,7 @@ class ServiceProfiles implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'service_profiles' => '\Domainrobot\Model\ServiceUsersProfile[]'
+        'serviceProfiles' => '\Domainrobot\Model\ServiceUsersProfile[]'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ServiceProfiles implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'service_profiles' => null
+        'serviceProfiles' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class ServiceProfiles implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'service_profiles' => 'serviceProfiles'
+        'serviceProfiles' => 'serviceProfiles'
     ];
 
     /**
@@ -105,7 +105,7 @@ class ServiceProfiles implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'service_profiles' => 'setServiceProfiles'
+        'serviceProfiles' => 'setServiceProfiles'
     ];
 
     /**
@@ -114,7 +114,7 @@ class ServiceProfiles implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'service_profiles' => 'getServiceProfiles'
+        'serviceProfiles' => 'getServiceProfiles'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ServiceProfiles implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['service_profiles'] = isset($data['service_profiles']) ? $this->createData($data['service_profiles'], 'service_profiles')  : null;
+        $this->container['serviceProfiles'] = isset($data['serviceProfiles']) ? $this->createData($data['serviceProfiles'], 'serviceProfiles')  : null;
     }
 
     /**
@@ -245,25 +245,25 @@ class ServiceProfiles implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets service_profiles
+     * Gets serviceProfiles
      *
      * @return \Domainrobot\Model\ServiceUsersProfile[]
      */
     public function getServiceProfiles()
     {
-        return $this->container['service_profiles'];
+        return $this->container['serviceProfiles'];
     }
 
     /**
-     * Sets service_profiles
+     * Sets serviceProfiles
      *
-     * @param \Domainrobot\Model\ServiceUsersProfile[] $service_profiles The service profiles of the user.
+     * @param \Domainrobot\Model\ServiceUsersProfile[] $serviceProfiles The service profiles of the user.
      *
      * @return $this
      */
-    public function setServiceProfiles($service_profiles)
+    public function setServiceProfiles($serviceProfiles)
     {
-        $this->container['service_profiles'] = $service_profiles;
+        $this->container['serviceProfiles'] = $serviceProfiles;
 
         return $this;
     }

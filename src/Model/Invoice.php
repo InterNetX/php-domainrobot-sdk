@@ -65,13 +65,13 @@ class Invoice implements ModelInterface, ArrayAccess
         'number' => 'string',
         'customer' => '\Domainrobot\Model\Customer',
         'payment' => '\Domainrobot\Model\PaymentConstants',
-        'payment_mode' => 'string',
-        'payment_transaction' => 'string',
-        'sub_type' => 'string',
-        'sepa_mandate_reference' => 'string',
-        'sepa_mandate_collection' => '\DateTime',
+        'paymentMode' => 'string',
+        'paymentTransaction' => 'string',
+        'subType' => 'string',
+        'sepaMandateReference' => 'string',
+        'sepaMandateCollection' => '\DateTime',
         'amount' => 'double',
-        'vat_amount' => 'double',
+        'vatAmount' => 'double',
         'status' => '\Domainrobot\Model\InvoiceStatusConstants',
         'type' => '\Domainrobot\Model\AccountingDocumentTypeConstants',
         'failed' => 'bool',
@@ -95,13 +95,13 @@ class Invoice implements ModelInterface, ArrayAccess
         'number' => null,
         'customer' => null,
         'payment' => null,
-        'payment_mode' => null,
-        'payment_transaction' => null,
-        'sub_type' => null,
-        'sepa_mandate_reference' => null,
-        'sepa_mandate_collection' => 'date-time',
+        'paymentMode' => null,
+        'paymentTransaction' => null,
+        'subType' => null,
+        'sepaMandateReference' => null,
+        'sepaMandateCollection' => 'date-time',
         'amount' => 'double',
-        'vat_amount' => 'double',
+        'vatAmount' => 'double',
         'status' => null,
         'type' => null,
         'failed' => null,
@@ -146,13 +146,13 @@ class Invoice implements ModelInterface, ArrayAccess
         'number' => 'number',
         'customer' => 'customer',
         'payment' => 'payment',
-        'payment_mode' => 'paymentMode',
-        'payment_transaction' => 'paymentTransaction',
-        'sub_type' => 'subType',
-        'sepa_mandate_reference' => 'sepaMandateReference',
-        'sepa_mandate_collection' => 'sepaMandateCollection',
+        'paymentMode' => 'paymentMode',
+        'paymentTransaction' => 'paymentTransaction',
+        'subType' => 'subType',
+        'sepaMandateReference' => 'sepaMandateReference',
+        'sepaMandateCollection' => 'sepaMandateCollection',
         'amount' => 'amount',
-        'vat_amount' => 'vatAmount',
+        'vatAmount' => 'vatAmount',
         'status' => 'status',
         'type' => 'type',
         'failed' => 'failed',
@@ -176,13 +176,13 @@ class Invoice implements ModelInterface, ArrayAccess
         'number' => 'setNumber',
         'customer' => 'setCustomer',
         'payment' => 'setPayment',
-        'payment_mode' => 'setPaymentMode',
-        'payment_transaction' => 'setPaymentTransaction',
-        'sub_type' => 'setSubType',
-        'sepa_mandate_reference' => 'setSepaMandateReference',
-        'sepa_mandate_collection' => 'setSepaMandateCollection',
+        'paymentMode' => 'setPaymentMode',
+        'paymentTransaction' => 'setPaymentTransaction',
+        'subType' => 'setSubType',
+        'sepaMandateReference' => 'setSepaMandateReference',
+        'sepaMandateCollection' => 'setSepaMandateCollection',
         'amount' => 'setAmount',
-        'vat_amount' => 'setVatAmount',
+        'vatAmount' => 'setVatAmount',
         'status' => 'setStatus',
         'type' => 'setType',
         'failed' => 'setFailed',
@@ -206,13 +206,13 @@ class Invoice implements ModelInterface, ArrayAccess
         'number' => 'getNumber',
         'customer' => 'getCustomer',
         'payment' => 'getPayment',
-        'payment_mode' => 'getPaymentMode',
-        'payment_transaction' => 'getPaymentTransaction',
-        'sub_type' => 'getSubType',
-        'sepa_mandate_reference' => 'getSepaMandateReference',
-        'sepa_mandate_collection' => 'getSepaMandateCollection',
+        'paymentMode' => 'getPaymentMode',
+        'paymentTransaction' => 'getPaymentTransaction',
+        'subType' => 'getSubType',
+        'sepaMandateReference' => 'getSepaMandateReference',
+        'sepaMandateCollection' => 'getSepaMandateCollection',
         'amount' => 'getAmount',
-        'vat_amount' => 'getVatAmount',
+        'vatAmount' => 'getVatAmount',
         'status' => 'getStatus',
         'type' => 'getType',
         'failed' => 'getFailed',
@@ -290,13 +290,13 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['number'] = isset($data['number']) ? $this->createData($data['number'], 'number')  : null;
         $this->container['customer'] = isset($data['customer']) ? $this->createData($data['customer'], 'customer')  : null;
         $this->container['payment'] = isset($data['payment']) ? $this->createData($data['payment'], 'payment')  : null;
-        $this->container['payment_mode'] = isset($data['payment_mode']) ? $this->createData($data['payment_mode'], 'payment_mode')  : null;
-        $this->container['payment_transaction'] = isset($data['payment_transaction']) ? $this->createData($data['payment_transaction'], 'payment_transaction')  : null;
-        $this->container['sub_type'] = isset($data['sub_type']) ? $this->createData($data['sub_type'], 'sub_type')  : null;
-        $this->container['sepa_mandate_reference'] = isset($data['sepa_mandate_reference']) ? $this->createData($data['sepa_mandate_reference'], 'sepa_mandate_reference')  : null;
-        $this->container['sepa_mandate_collection'] = isset($data['sepa_mandate_collection']) ? $this->createData($data['sepa_mandate_collection'], 'sepa_mandate_collection')  : null;
+        $this->container['paymentMode'] = isset($data['paymentMode']) ? $this->createData($data['paymentMode'], 'paymentMode')  : null;
+        $this->container['paymentTransaction'] = isset($data['paymentTransaction']) ? $this->createData($data['paymentTransaction'], 'paymentTransaction')  : null;
+        $this->container['subType'] = isset($data['subType']) ? $this->createData($data['subType'], 'subType')  : null;
+        $this->container['sepaMandateReference'] = isset($data['sepaMandateReference']) ? $this->createData($data['sepaMandateReference'], 'sepaMandateReference')  : null;
+        $this->container['sepaMandateCollection'] = isset($data['sepaMandateCollection']) ? $this->createData($data['sepaMandateCollection'], 'sepaMandateCollection')  : null;
         $this->container['amount'] = isset($data['amount']) ? $this->createData($data['amount'], 'amount')  : null;
-        $this->container['vat_amount'] = isset($data['vat_amount']) ? $this->createData($data['vat_amount'], 'vat_amount')  : null;
+        $this->container['vatAmount'] = isset($data['vatAmount']) ? $this->createData($data['vatAmount'], 'vatAmount')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['failed'] = isset($data['failed']) ? $this->createData($data['failed'], 'failed')  : null;
@@ -563,121 +563,121 @@ class Invoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets payment_mode
+     * Gets paymentMode
      *
      * @return string
      */
     public function getPaymentMode()
     {
-        return $this->container['payment_mode'];
+        return $this->container['paymentMode'];
     }
 
     /**
-     * Sets payment_mode
+     * Sets paymentMode
      *
-     * @param string $payment_mode Lorem Ipsum
+     * @param string $paymentMode Lorem Ipsum
      *
      * @return $this
      */
-    public function setPaymentMode($payment_mode)
+    public function setPaymentMode($paymentMode)
     {
-        $this->container['payment_mode'] = $payment_mode;
+        $this->container['paymentMode'] = $paymentMode;
 
         return $this;
     }
 
     /**
-     * Gets payment_transaction
+     * Gets paymentTransaction
      *
      * @return string
      */
     public function getPaymentTransaction()
     {
-        return $this->container['payment_transaction'];
+        return $this->container['paymentTransaction'];
     }
 
     /**
-     * Sets payment_transaction
+     * Sets paymentTransaction
      *
-     * @param string $payment_transaction Lorem Ipsum
+     * @param string $paymentTransaction Lorem Ipsum
      *
      * @return $this
      */
-    public function setPaymentTransaction($payment_transaction)
+    public function setPaymentTransaction($paymentTransaction)
     {
-        $this->container['payment_transaction'] = $payment_transaction;
+        $this->container['paymentTransaction'] = $paymentTransaction;
 
         return $this;
     }
 
     /**
-     * Gets sub_type
+     * Gets subType
      *
      * @return string
      */
     public function getSubType()
     {
-        return $this->container['sub_type'];
+        return $this->container['subType'];
     }
 
     /**
-     * Sets sub_type
+     * Sets subType
      *
-     * @param string $sub_type The sub type of the invoice, e.g. domain invoice or server invoice
+     * @param string $subType The sub type of the invoice, e.g. domain invoice or server invoice
      *
      * @return $this
      */
-    public function setSubType($sub_type)
+    public function setSubType($subType)
     {
-        $this->container['sub_type'] = $sub_type;
+        $this->container['subType'] = $subType;
 
         return $this;
     }
 
     /**
-     * Gets sepa_mandate_reference
+     * Gets sepaMandateReference
      *
      * @return string
      */
     public function getSepaMandateReference()
     {
-        return $this->container['sepa_mandate_reference'];
+        return $this->container['sepaMandateReference'];
     }
 
     /**
-     * Sets sepa_mandate_reference
+     * Sets sepaMandateReference
      *
-     * @param string $sepa_mandate_reference Lorem Ipsum
+     * @param string $sepaMandateReference Lorem Ipsum
      *
      * @return $this
      */
-    public function setSepaMandateReference($sepa_mandate_reference)
+    public function setSepaMandateReference($sepaMandateReference)
     {
-        $this->container['sepa_mandate_reference'] = $sepa_mandate_reference;
+        $this->container['sepaMandateReference'] = $sepaMandateReference;
 
         return $this;
     }
 
     /**
-     * Gets sepa_mandate_collection
+     * Gets sepaMandateCollection
      *
      * @return \DateTime
      */
     public function getSepaMandateCollection()
     {
-        return $this->container['sepa_mandate_collection'];
+        return $this->container['sepaMandateCollection'];
     }
 
     /**
-     * Sets sepa_mandate_collection
+     * Sets sepaMandateCollection
      *
-     * @param \DateTime $sepa_mandate_collection Lorem Ipsum
+     * @param \DateTime $sepaMandateCollection Lorem Ipsum
      *
      * @return $this
      */
-    public function setSepaMandateCollection($sepa_mandate_collection)
+    public function setSepaMandateCollection($sepaMandateCollection)
     {
-        $this->container['sepa_mandate_collection'] = $sepa_mandate_collection;
+        $this->container['sepaMandateCollection'] = $sepaMandateCollection;
 
         return $this;
     }
@@ -707,25 +707,25 @@ class Invoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets vat_amount
+     * Gets vatAmount
      *
      * @return double
      */
     public function getVatAmount()
     {
-        return $this->container['vat_amount'];
+        return $this->container['vatAmount'];
     }
 
     /**
-     * Sets vat_amount
+     * Sets vatAmount
      *
-     * @param double $vat_amount Lorem Ipsum
+     * @param double $vatAmount Lorem Ipsum
      *
      * @return $this
      */
-    public function setVatAmount($vat_amount)
+    public function setVatAmount($vatAmount)
     {
-        $this->container['vat_amount'] = $vat_amount;
+        $this->container['vatAmount'] = $vatAmount;
 
         return $this;
     }

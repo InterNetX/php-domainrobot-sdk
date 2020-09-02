@@ -57,12 +57,12 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'document_type' => '\Domainrobot\Model\HkDocumentTypeConstants',
+        'documentType' => '\Domainrobot\Model\HkDocumentTypeConstants',
         'others' => 'string',
-        'document_number' => 'string',
-        'document_origin' => 'string',
+        'documentNumber' => 'string',
+        'documentOrigin' => 'string',
         'above18' => 'bool',
-        'industry_type' => '\Domainrobot\Model\HkIndustryTypeConstants'
+        'industryType' => '\Domainrobot\Model\HkIndustryTypeConstants'
     ];
 
     /**
@@ -71,12 +71,12 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'document_type' => null,
+        'documentType' => null,
         'others' => null,
-        'document_number' => null,
-        'document_origin' => null,
+        'documentNumber' => null,
+        'documentOrigin' => null,
         'above18' => null,
-        'industry_type' => null
+        'industryType' => null
     ];
 
     /**
@@ -106,12 +106,12 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_type' => 'documentType',
+        'documentType' => 'documentType',
         'others' => 'others',
-        'document_number' => 'documentNumber',
-        'document_origin' => 'documentOrigin',
+        'documentNumber' => 'documentNumber',
+        'documentOrigin' => 'documentOrigin',
         'above18' => 'above18',
-        'industry_type' => 'industryType'
+        'industryType' => 'industryType'
     ];
 
     /**
@@ -120,12 +120,12 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'document_type' => 'setDocumentType',
+        'documentType' => 'setDocumentType',
         'others' => 'setOthers',
-        'document_number' => 'setDocumentNumber',
-        'document_origin' => 'setDocumentOrigin',
+        'documentNumber' => 'setDocumentNumber',
+        'documentOrigin' => 'setDocumentOrigin',
         'above18' => 'setAbove18',
-        'industry_type' => 'setIndustryType'
+        'industryType' => 'setIndustryType'
     ];
 
     /**
@@ -134,12 +134,12 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'document_type' => 'getDocumentType',
+        'documentType' => 'getDocumentType',
         'others' => 'getOthers',
-        'document_number' => 'getDocumentNumber',
-        'document_origin' => 'getDocumentOrigin',
+        'documentNumber' => 'getDocumentNumber',
+        'documentOrigin' => 'getDocumentOrigin',
         'above18' => 'getAbove18',
-        'industry_type' => 'getIndustryType'
+        'industryType' => 'getIndustryType'
     ];
 
     /**
@@ -202,12 +202,12 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['document_type'] = isset($data['document_type']) ? $this->createData($data['document_type'], 'document_type')  : null;
+        $this->container['documentType'] = isset($data['documentType']) ? $this->createData($data['documentType'], 'documentType')  : null;
         $this->container['others'] = isset($data['others']) ? $this->createData($data['others'], 'others')  : null;
-        $this->container['document_number'] = isset($data['document_number']) ? $this->createData($data['document_number'], 'document_number')  : null;
-        $this->container['document_origin'] = isset($data['document_origin']) ? $this->createData($data['document_origin'], 'document_origin')  : null;
+        $this->container['documentNumber'] = isset($data['documentNumber']) ? $this->createData($data['documentNumber'], 'documentNumber')  : null;
+        $this->container['documentOrigin'] = isset($data['documentOrigin']) ? $this->createData($data['documentOrigin'], 'documentOrigin')  : null;
         $this->container['above18'] = isset($data['above18']) ? $this->createData($data['above18'], 'above18')  : null;
-        $this->container['industry_type'] = isset($data['industry_type']) ? $this->createData($data['industry_type'], 'industry_type')  : null;
+        $this->container['industryType'] = isset($data['industryType']) ? $this->createData($data['industryType'], 'industryType')  : null;
     }
 
     /**
@@ -275,25 +275,25 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets document_type
+     * Gets documentType
      *
      * @return \Domainrobot\Model\HkDocumentTypeConstants
      */
     public function getDocumentType()
     {
-        return $this->container['document_type'];
+        return $this->container['documentType'];
     }
 
     /**
-     * Sets document_type
+     * Sets documentType
      *
-     * @param \Domainrobot\Model\HkDocumentTypeConstants $document_type The document types.
+     * @param \Domainrobot\Model\HkDocumentTypeConstants $documentType The document types.
      *
      * @return $this
      */
-    public function setDocumentType($document_type)
+    public function setDocumentType($documentType)
     {
-        $this->container['document_type'] = $document_type;
+        $this->container['documentType'] = $documentType;
 
         return $this;
     }
@@ -323,49 +323,49 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets document_number
+     * Gets documentNumber
      *
      * @return string
      */
     public function getDocumentNumber()
     {
-        return $this->container['document_number'];
+        return $this->container['documentNumber'];
     }
 
     /**
-     * Sets document_number
+     * Sets documentNumber
      *
-     * @param string $document_number Document number.
+     * @param string $documentNumber Document number.
      *
      * @return $this
      */
-    public function setDocumentNumber($document_number)
+    public function setDocumentNumber($documentNumber)
     {
-        $this->container['document_number'] = $document_number;
+        $this->container['documentNumber'] = $documentNumber;
 
         return $this;
     }
 
     /**
-     * Gets document_origin
+     * Gets documentOrigin
      *
      * @return string
      */
     public function getDocumentOrigin()
     {
-        return $this->container['document_origin'];
+        return $this->container['documentOrigin'];
     }
 
     /**
-     * Sets document_origin
+     * Sets documentOrigin
      *
-     * @param string $document_origin Country of licensure.
+     * @param string $documentOrigin Country of licensure.
      *
      * @return $this
      */
-    public function setDocumentOrigin($document_origin)
+    public function setDocumentOrigin($documentOrigin)
     {
-        $this->container['document_origin'] = $document_origin;
+        $this->container['documentOrigin'] = $documentOrigin;
 
         return $this;
     }
@@ -395,25 +395,25 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets industry_type
+     * Gets industryType
      *
      * @return \Domainrobot\Model\HkIndustryTypeConstants
      */
     public function getIndustryType()
     {
-        return $this->container['industry_type'];
+        return $this->container['industryType'];
     }
 
     /**
-     * Sets industry_type
+     * Sets industryType
      *
-     * @param \Domainrobot\Model\HkIndustryTypeConstants $industry_type The industry types.
+     * @param \Domainrobot\Model\HkIndustryTypeConstants $industryType The industry types.
      *
      * @return $this
      */
-    public function setIndustryType($industry_type)
+    public function setIndustryType($industryType)
     {
-        $this->container['industry_type'] = $industry_type;
+        $this->container['industryType'] = $industryType;
 
         return $this;
     }

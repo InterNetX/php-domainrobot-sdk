@@ -58,10 +58,10 @@ class AddressClaim implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'formatted' => 'string',
-        'street_address' => 'string',
+        'streetAddress' => 'string',
         'locality' => 'string',
         'region' => 'string',
-        'postal_code' => 'string',
+        'postalCode' => 'string',
         'country' => 'string'
     ];
 
@@ -72,10 +72,10 @@ class AddressClaim implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'formatted' => null,
-        'street_address' => null,
+        'streetAddress' => null,
         'locality' => null,
         'region' => null,
-        'postal_code' => null,
+        'postalCode' => null,
         'country' => null
     ];
 
@@ -107,10 +107,10 @@ class AddressClaim implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'formatted' => 'formatted',
-        'street_address' => 'street_address',
+        'streetAddress' => 'street_address',
         'locality' => 'locality',
         'region' => 'region',
-        'postal_code' => 'postal_code',
+        'postalCode' => 'postal_code',
         'country' => 'country'
     ];
 
@@ -121,10 +121,10 @@ class AddressClaim implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'formatted' => 'setFormatted',
-        'street_address' => 'setStreetAddress',
+        'streetAddress' => 'setStreetAddress',
         'locality' => 'setLocality',
         'region' => 'setRegion',
-        'postal_code' => 'setPostalCode',
+        'postalCode' => 'setPostalCode',
         'country' => 'setCountry'
     ];
 
@@ -135,10 +135,10 @@ class AddressClaim implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'formatted' => 'getFormatted',
-        'street_address' => 'getStreetAddress',
+        'streetAddress' => 'getStreetAddress',
         'locality' => 'getLocality',
         'region' => 'getRegion',
-        'postal_code' => 'getPostalCode',
+        'postalCode' => 'getPostalCode',
         'country' => 'getCountry'
     ];
 
@@ -203,10 +203,10 @@ class AddressClaim implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['formatted'] = isset($data['formatted']) ? $this->createData($data['formatted'], 'formatted')  : null;
-        $this->container['street_address'] = isset($data['street_address']) ? $this->createData($data['street_address'], 'street_address')  : null;
+        $this->container['streetAddress'] = isset($data['streetAddress']) ? $this->createData($data['streetAddress'], 'streetAddress')  : null;
         $this->container['locality'] = isset($data['locality']) ? $this->createData($data['locality'], 'locality')  : null;
         $this->container['region'] = isset($data['region']) ? $this->createData($data['region'], 'region')  : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $this->createData($data['postal_code'], 'postal_code')  : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $this->createData($data['postalCode'], 'postalCode')  : null;
         $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
     }
 
@@ -299,25 +299,25 @@ class AddressClaim implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets street_address
+     * Gets streetAddress
      *
      * @return string
      */
     public function getStreetAddress()
     {
-        return $this->container['street_address'];
+        return $this->container['streetAddress'];
     }
 
     /**
-     * Sets street_address
+     * Sets streetAddress
      *
-     * @param string $street_address Full street address component, which MAY include house number, street name, Post Office Box, and multi-line extended street address information. This field MAY contain multiple lines, separated by newlines. Newlines can be represented either as a carriage return/line feed pair (\"\\r\\n\") or as a single line feed character (\"\\n\")
+     * @param string $streetAddress Full street address component, which MAY include house number, street name, Post Office Box, and multi-line extended street address information. This field MAY contain multiple lines, separated by newlines. Newlines can be represented either as a carriage return/line feed pair (\"\\r\\n\") or as a single line feed character (\"\\n\")
      *
      * @return $this
      */
-    public function setStreetAddress($street_address)
+    public function setStreetAddress($streetAddress)
     {
-        $this->container['street_address'] = $street_address;
+        $this->container['streetAddress'] = $streetAddress;
 
         return $this;
     }
@@ -371,25 +371,25 @@ class AddressClaim implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets postal_code
+     * Gets postalCode
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postal_code'];
+        return $this->container['postalCode'];
     }
 
     /**
-     * Sets postal_code
+     * Sets postalCode
      *
-     * @param string $postal_code Zip code or postal code component
+     * @param string $postalCode Zip code or postal code component
      *
      * @return $this
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postalCode)
     {
-        $this->container['postal_code'] = $postal_code;
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

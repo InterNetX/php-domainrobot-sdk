@@ -57,7 +57,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'person_type' => '\Domainrobot\Model\RoPersonTypeConstants'
+        'personType' => '\Domainrobot\Model\RoPersonTypeConstants'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'person_type' => null
+        'personType' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_type' => 'personType'
+        'personType' => 'personType'
     ];
 
     /**
@@ -105,7 +105,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_type' => 'setPersonType'
+        'personType' => 'setPersonType'
     ];
 
     /**
@@ -114,7 +114,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_type' => 'getPersonType'
+        'personType' => 'getPersonType'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_type'] = isset($data['person_type']) ? $this->createData($data['person_type'], 'person_type')  : null;
+        $this->container['personType'] = isset($data['personType']) ? $this->createData($data['personType'], 'personType')  : null;
     }
 
     /**
@@ -245,25 +245,25 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_type
+     * Gets personType
      *
      * @return \Domainrobot\Model\RoPersonTypeConstants
      */
     public function getPersonType()
     {
-        return $this->container['person_type'];
+        return $this->container['personType'];
     }
 
     /**
-     * Sets person_type
+     * Sets personType
      *
-     * @param \Domainrobot\Model\RoPersonTypeConstants $person_type The entity person type.
+     * @param \Domainrobot\Model\RoPersonTypeConstants $personType The entity person type.
      *
      * @return $this
      */
-    public function setPersonType($person_type)
+    public function setPersonType($personType)
     {
-        $this->container['person_type'] = $person_type;
+        $this->container['personType'] = $personType;
 
         return $this;
     }

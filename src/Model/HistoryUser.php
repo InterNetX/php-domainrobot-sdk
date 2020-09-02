@@ -59,14 +59,14 @@ class HistoryUser implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'domain' => 'string',
-        'execution_time' => 'string',
+        'executionTime' => 'string',
         'price' => 'string',
         'data' => 'string',
         'ip' => 'string',
         'user' => 'string',
-        'request_type' => 'string',
-        'created_at' => 'string',
-        'updated_at' => 'string'
+        'requestType' => 'string',
+        'createdAt' => 'string',
+        'updatedAt' => 'string'
     ];
 
     /**
@@ -77,14 +77,14 @@ class HistoryUser implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
         'domain' => null,
-        'execution_time' => null,
+        'executionTime' => null,
         'price' => null,
         'data' => null,
         'ip' => null,
         'user' => null,
-        'request_type' => null,
-        'created_at' => null,
-        'updated_at' => null
+        'requestType' => null,
+        'createdAt' => null,
+        'updatedAt' => null
     ];
 
     /**
@@ -116,14 +116,14 @@ class HistoryUser implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'domain' => 'domain',
-        'execution_time' => 'execution_time',
+        'executionTime' => 'execution_time',
         'price' => 'price',
         'data' => 'data',
         'ip' => 'ip',
         'user' => 'user',
-        'request_type' => 'request_type',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at'
+        'requestType' => 'request_type',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at'
     ];
 
     /**
@@ -134,14 +134,14 @@ class HistoryUser implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'domain' => 'setDomain',
-        'execution_time' => 'setExecutionTime',
+        'executionTime' => 'setExecutionTime',
         'price' => 'setPrice',
         'data' => 'setData',
         'ip' => 'setIp',
         'user' => 'setUser',
-        'request_type' => 'setRequestType',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt'
+        'requestType' => 'setRequestType',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt'
     ];
 
     /**
@@ -152,14 +152,14 @@ class HistoryUser implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'domain' => 'getDomain',
-        'execution_time' => 'getExecutionTime',
+        'executionTime' => 'getExecutionTime',
         'price' => 'getPrice',
         'data' => 'getData',
         'ip' => 'getIp',
         'user' => 'getUser',
-        'request_type' => 'getRequestType',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt'
+        'requestType' => 'getRequestType',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt'
     ];
 
     /**
@@ -224,14 +224,14 @@ class HistoryUser implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
-        $this->container['execution_time'] = isset($data['execution_time']) ? $this->createData($data['execution_time'], 'execution_time')  : null;
+        $this->container['executionTime'] = isset($data['executionTime']) ? $this->createData($data['executionTime'], 'executionTime')  : null;
         $this->container['price'] = isset($data['price']) ? $this->createData($data['price'], 'price')  : null;
         $this->container['data'] = isset($data['data']) ? $this->createData($data['data'], 'data')  : null;
         $this->container['ip'] = isset($data['ip']) ? $this->createData($data['ip'], 'ip')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
-        $this->container['request_type'] = isset($data['request_type']) ? $this->createData($data['request_type'], 'request_type')  : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $this->createData($data['created_at'], 'created_at')  : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $this->createData($data['updated_at'], 'updated_at')  : null;
+        $this->container['requestType'] = isset($data['requestType']) ? $this->createData($data['requestType'], 'requestType')  : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $this->createData($data['createdAt'], 'createdAt')  : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $this->createData($data['updatedAt'], 'updatedAt')  : null;
     }
 
     /**
@@ -347,25 +347,25 @@ class HistoryUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets execution_time
+     * Gets executionTime
      *
      * @return string
      */
     public function getExecutionTime()
     {
-        return $this->container['execution_time'];
+        return $this->container['executionTime'];
     }
 
     /**
-     * Sets execution_time
+     * Sets executionTime
      *
-     * @param string $execution_time execution_time
+     * @param string $executionTime executionTime
      *
      * @return $this
      */
-    public function setExecutionTime($execution_time)
+    public function setExecutionTime($executionTime)
     {
-        $this->container['execution_time'] = $execution_time;
+        $this->container['executionTime'] = $executionTime;
 
         return $this;
     }
@@ -467,73 +467,73 @@ class HistoryUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets request_type
+     * Gets requestType
      *
      * @return string
      */
     public function getRequestType()
     {
-        return $this->container['request_type'];
+        return $this->container['requestType'];
     }
 
     /**
-     * Sets request_type
+     * Sets requestType
      *
-     * @param string $request_type request_type
+     * @param string $requestType requestType
      *
      * @return $this
      */
-    public function setRequestType($request_type)
+    public function setRequestType($requestType)
     {
-        $this->container['request_type'] = $request_type;
+        $this->container['requestType'] = $requestType;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return string
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param string $created_at created_at
+     * @param string $createdAt createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return string
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param string $updated_at updated_at
+     * @param string $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

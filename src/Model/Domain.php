@@ -63,10 +63,10 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'name' => 'string',
         'idn' => 'string',
-        'nic_member_label' => 'string',
-        'registry_status' => '\Domainrobot\Model\RegistryStatusConstants',
-        'name_servers' => '\Domainrobot\Model\NameServer[]',
-        'name_server_entries' => 'string[]',
+        'nicMemberLabel' => 'string',
+        'registryStatus' => '\Domainrobot\Model\RegistryStatusConstants',
+        'nameServers' => '\Domainrobot\Model\NameServer[]',
+        'nameServerEntries' => 'string[]',
         'period' => '\Domainrobot\Model\TimePeriod',
         'trustee' => 'bool',
         'privacy' => 'bool',
@@ -74,28 +74,28 @@ class Domain implements ModelInterface, ArrayAccess
         'domainsafe' => 'bool',
         'parking' => '\Domainrobot\Model\ParkingProviderConstants',
         'extensions' => '\Domainrobot\Model\DomainExtensions',
-        'log_id' => 'int',
-        'ns_check' => '\Domainrobot\Model\DNSCheck',
-        'confirm_order' => 'bool',
-        'confirm_owner_consent' => 'bool',
-        'ignore_whois' => 'bool',
+        'logId' => 'int',
+        'nsCheck' => '\Domainrobot\Model\DNSCheck',
+        'confirmOrder' => 'bool',
+        'confirmOwnerConsent' => 'bool',
+        'ignoreWhois' => 'bool',
         'comment' => 'string',
-        'include_www' => 'bool',
-        'include_wildcard' => 'bool',
-        'registrar_status' => '\Domainrobot\Model\RegistryStatusConstants',
-        'registrar_status_reason' => 'string',
-        'remove_cancelation' => 'bool',
-        'autodns_sec_job' => '\Domainrobot\Model\DNSSecJob',
-        'price_class' => 'string',
-        'price_class_renew' => 'string',
-        'abuse_email' => 'string',
-        'general_request_email' => 'string',
-        'privacy_plus_mail' => 'string',
-        'privacy_plus' => 'bool',
-        'name_server_group' => 'string',
-        'rdds_opt_in' => '\Domainrobot\Model\RddsOptInConstants',
-        'services_add' => '\Domainrobot\Model\DomainServices',
-        'services_rem' => '\Domainrobot\Model\DomainServices',
+        'includeWWW' => 'bool',
+        'includeWildcard' => 'bool',
+        'registrarStatus' => '\Domainrobot\Model\RegistryStatusConstants',
+        'registrarStatusReason' => 'string',
+        'removeCancelation' => 'bool',
+        'autodnsSecJob' => '\Domainrobot\Model\DNSSecJob',
+        'priceClass' => 'string',
+        'priceClassRenew' => 'string',
+        'abuseEmail' => 'string',
+        'generalRequestEmail' => 'string',
+        'privacyPlusMail' => 'string',
+        'privacyPlus' => 'bool',
+        'nameServerGroup' => 'string',
+        'rddsOptIn' => '\Domainrobot\Model\RddsOptInConstants',
+        'servicesAdd' => '\Domainrobot\Model\DomainServices',
+        'servicesRem' => '\Domainrobot\Model\DomainServices',
         'ownerc' => '\Domainrobot\Model\Contact',
         'adminc' => '\Domainrobot\Model\Contact',
         'techc' => '\Domainrobot\Model\Contact',
@@ -103,12 +103,12 @@ class Domain implements ModelInterface, ArrayAccess
         'expire' => '\DateTime',
         'payable' => '\DateTime',
         'action' => '\Domainrobot\Model\DomainActionConstants',
-        'auto_dnssec' => 'bool',
+        'autoDnssec' => 'bool',
         'dnssec' => 'bool',
-        'valid_certificate' => 'bool',
-        'cancelation_status' => '\Domainrobot\Model\CancelationStatusConstants',
-        'auto_renew_status' => '\Domainrobot\Model\AutoRenewStatusConstants',
-        'dnssec_data' => '\Domainrobot\Model\DNSSec[]',
+        'validCertificate' => 'bool',
+        'cancelationStatus' => '\Domainrobot\Model\CancelationStatusConstants',
+        'autoRenewStatus' => '\Domainrobot\Model\AutoRenewStatusConstants',
+        'dnssecData' => '\Domainrobot\Model\DNSSec[]',
         'zone' => '\Domainrobot\Model\Zone'
     ];
 
@@ -124,10 +124,10 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => null,
         'name' => null,
         'idn' => null,
-        'nic_member_label' => null,
-        'registry_status' => null,
-        'name_servers' => null,
-        'name_server_entries' => null,
+        'nicMemberLabel' => null,
+        'registryStatus' => null,
+        'nameServers' => null,
+        'nameServerEntries' => null,
         'period' => null,
         'trustee' => null,
         'privacy' => null,
@@ -135,28 +135,28 @@ class Domain implements ModelInterface, ArrayAccess
         'domainsafe' => null,
         'parking' => null,
         'extensions' => null,
-        'log_id' => 'int64',
-        'ns_check' => null,
-        'confirm_order' => null,
-        'confirm_owner_consent' => null,
-        'ignore_whois' => null,
+        'logId' => 'int64',
+        'nsCheck' => null,
+        'confirmOrder' => null,
+        'confirmOwnerConsent' => null,
+        'ignoreWhois' => null,
         'comment' => null,
-        'include_www' => null,
-        'include_wildcard' => null,
-        'registrar_status' => null,
-        'registrar_status_reason' => null,
-        'remove_cancelation' => null,
-        'autodns_sec_job' => null,
-        'price_class' => null,
-        'price_class_renew' => null,
-        'abuse_email' => null,
-        'general_request_email' => null,
-        'privacy_plus_mail' => null,
-        'privacy_plus' => null,
-        'name_server_group' => null,
-        'rdds_opt_in' => null,
-        'services_add' => null,
-        'services_rem' => null,
+        'includeWWW' => null,
+        'includeWildcard' => null,
+        'registrarStatus' => null,
+        'registrarStatusReason' => null,
+        'removeCancelation' => null,
+        'autodnsSecJob' => null,
+        'priceClass' => null,
+        'priceClassRenew' => null,
+        'abuseEmail' => null,
+        'generalRequestEmail' => null,
+        'privacyPlusMail' => null,
+        'privacyPlus' => null,
+        'nameServerGroup' => null,
+        'rddsOptIn' => null,
+        'servicesAdd' => null,
+        'servicesRem' => null,
         'ownerc' => null,
         'adminc' => null,
         'techc' => null,
@@ -164,12 +164,12 @@ class Domain implements ModelInterface, ArrayAccess
         'expire' => 'date-time',
         'payable' => 'date-time',
         'action' => null,
-        'auto_dnssec' => null,
+        'autoDnssec' => null,
         'dnssec' => null,
-        'valid_certificate' => null,
-        'cancelation_status' => null,
-        'auto_renew_status' => null,
-        'dnssec_data' => null,
+        'validCertificate' => null,
+        'cancelationStatus' => null,
+        'autoRenewStatus' => null,
+        'dnssecData' => null,
         'zone' => null
     ];
 
@@ -206,10 +206,10 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => 'updater',
         'name' => 'name',
         'idn' => 'idn',
-        'nic_member_label' => 'nicMemberLabel',
-        'registry_status' => 'registryStatus',
-        'name_servers' => 'nameServers',
-        'name_server_entries' => 'nameServerEntries',
+        'nicMemberLabel' => 'nicMemberLabel',
+        'registryStatus' => 'registryStatus',
+        'nameServers' => 'nameServers',
+        'nameServerEntries' => 'nameServerEntries',
         'period' => 'period',
         'trustee' => 'trustee',
         'privacy' => 'privacy',
@@ -217,28 +217,28 @@ class Domain implements ModelInterface, ArrayAccess
         'domainsafe' => 'domainsafe',
         'parking' => 'parking',
         'extensions' => 'extensions',
-        'log_id' => 'logId',
-        'ns_check' => 'nsCheck',
-        'confirm_order' => 'confirmOrder',
-        'confirm_owner_consent' => 'confirmOwnerConsent',
-        'ignore_whois' => 'ignoreWhois',
+        'logId' => 'logId',
+        'nsCheck' => 'nsCheck',
+        'confirmOrder' => 'confirmOrder',
+        'confirmOwnerConsent' => 'confirmOwnerConsent',
+        'ignoreWhois' => 'ignoreWhois',
         'comment' => 'comment',
-        'include_www' => 'includeWWW',
-        'include_wildcard' => 'includeWildcard',
-        'registrar_status' => 'registrarStatus',
-        'registrar_status_reason' => 'registrarStatusReason',
-        'remove_cancelation' => 'removeCancelation',
-        'autodns_sec_job' => 'autodnsSecJob',
-        'price_class' => 'priceClass',
-        'price_class_renew' => 'priceClassRenew',
-        'abuse_email' => 'abuseEmail',
-        'general_request_email' => 'generalRequestEmail',
-        'privacy_plus_mail' => 'privacyPlusMail',
-        'privacy_plus' => 'privacyPlus',
-        'name_server_group' => 'nameServerGroup',
-        'rdds_opt_in' => 'rddsOptIn',
-        'services_add' => 'servicesAdd',
-        'services_rem' => 'servicesRem',
+        'includeWWW' => 'includeWWW',
+        'includeWildcard' => 'includeWildcard',
+        'registrarStatus' => 'registrarStatus',
+        'registrarStatusReason' => 'registrarStatusReason',
+        'removeCancelation' => 'removeCancelation',
+        'autodnsSecJob' => 'autodnsSecJob',
+        'priceClass' => 'priceClass',
+        'priceClassRenew' => 'priceClassRenew',
+        'abuseEmail' => 'abuseEmail',
+        'generalRequestEmail' => 'generalRequestEmail',
+        'privacyPlusMail' => 'privacyPlusMail',
+        'privacyPlus' => 'privacyPlus',
+        'nameServerGroup' => 'nameServerGroup',
+        'rddsOptIn' => 'rddsOptIn',
+        'servicesAdd' => 'servicesAdd',
+        'servicesRem' => 'servicesRem',
         'ownerc' => 'ownerc',
         'adminc' => 'adminc',
         'techc' => 'techc',
@@ -246,12 +246,12 @@ class Domain implements ModelInterface, ArrayAccess
         'expire' => 'expire',
         'payable' => 'payable',
         'action' => 'action',
-        'auto_dnssec' => 'autoDnssec',
+        'autoDnssec' => 'autoDnssec',
         'dnssec' => 'dnssec',
-        'valid_certificate' => 'validCertificate',
-        'cancelation_status' => 'cancelationStatus',
-        'auto_renew_status' => 'autoRenewStatus',
-        'dnssec_data' => 'dnssecData',
+        'validCertificate' => 'validCertificate',
+        'cancelationStatus' => 'cancelationStatus',
+        'autoRenewStatus' => 'autoRenewStatus',
+        'dnssecData' => 'dnssecData',
         'zone' => 'zone'
     ];
 
@@ -267,10 +267,10 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => 'setUpdater',
         'name' => 'setName',
         'idn' => 'setIdn',
-        'nic_member_label' => 'setNicMemberLabel',
-        'registry_status' => 'setRegistryStatus',
-        'name_servers' => 'setNameServers',
-        'name_server_entries' => 'setNameServerEntries',
+        'nicMemberLabel' => 'setNicMemberLabel',
+        'registryStatus' => 'setRegistryStatus',
+        'nameServers' => 'setNameServers',
+        'nameServerEntries' => 'setNameServerEntries',
         'period' => 'setPeriod',
         'trustee' => 'setTrustee',
         'privacy' => 'setPrivacy',
@@ -278,28 +278,28 @@ class Domain implements ModelInterface, ArrayAccess
         'domainsafe' => 'setDomainsafe',
         'parking' => 'setParking',
         'extensions' => 'setExtensions',
-        'log_id' => 'setLogId',
-        'ns_check' => 'setNsCheck',
-        'confirm_order' => 'setConfirmOrder',
-        'confirm_owner_consent' => 'setConfirmOwnerConsent',
-        'ignore_whois' => 'setIgnoreWhois',
+        'logId' => 'setLogId',
+        'nsCheck' => 'setNsCheck',
+        'confirmOrder' => 'setConfirmOrder',
+        'confirmOwnerConsent' => 'setConfirmOwnerConsent',
+        'ignoreWhois' => 'setIgnoreWhois',
         'comment' => 'setComment',
-        'include_www' => 'setIncludeWww',
-        'include_wildcard' => 'setIncludeWildcard',
-        'registrar_status' => 'setRegistrarStatus',
-        'registrar_status_reason' => 'setRegistrarStatusReason',
-        'remove_cancelation' => 'setRemoveCancelation',
-        'autodns_sec_job' => 'setAutodnsSecJob',
-        'price_class' => 'setPriceClass',
-        'price_class_renew' => 'setPriceClassRenew',
-        'abuse_email' => 'setAbuseEmail',
-        'general_request_email' => 'setGeneralRequestEmail',
-        'privacy_plus_mail' => 'setPrivacyPlusMail',
-        'privacy_plus' => 'setPrivacyPlus',
-        'name_server_group' => 'setNameServerGroup',
-        'rdds_opt_in' => 'setRddsOptIn',
-        'services_add' => 'setServicesAdd',
-        'services_rem' => 'setServicesRem',
+        'includeWWW' => 'setIncludeWWW',
+        'includeWildcard' => 'setIncludeWildcard',
+        'registrarStatus' => 'setRegistrarStatus',
+        'registrarStatusReason' => 'setRegistrarStatusReason',
+        'removeCancelation' => 'setRemoveCancelation',
+        'autodnsSecJob' => 'setAutodnsSecJob',
+        'priceClass' => 'setPriceClass',
+        'priceClassRenew' => 'setPriceClassRenew',
+        'abuseEmail' => 'setAbuseEmail',
+        'generalRequestEmail' => 'setGeneralRequestEmail',
+        'privacyPlusMail' => 'setPrivacyPlusMail',
+        'privacyPlus' => 'setPrivacyPlus',
+        'nameServerGroup' => 'setNameServerGroup',
+        'rddsOptIn' => 'setRddsOptIn',
+        'servicesAdd' => 'setServicesAdd',
+        'servicesRem' => 'setServicesRem',
         'ownerc' => 'setOwnerc',
         'adminc' => 'setAdminc',
         'techc' => 'setTechc',
@@ -307,12 +307,12 @@ class Domain implements ModelInterface, ArrayAccess
         'expire' => 'setExpire',
         'payable' => 'setPayable',
         'action' => 'setAction',
-        'auto_dnssec' => 'setAutoDnssec',
+        'autoDnssec' => 'setAutoDnssec',
         'dnssec' => 'setDnssec',
-        'valid_certificate' => 'setValidCertificate',
-        'cancelation_status' => 'setCancelationStatus',
-        'auto_renew_status' => 'setAutoRenewStatus',
-        'dnssec_data' => 'setDnssecData',
+        'validCertificate' => 'setValidCertificate',
+        'cancelationStatus' => 'setCancelationStatus',
+        'autoRenewStatus' => 'setAutoRenewStatus',
+        'dnssecData' => 'setDnssecData',
         'zone' => 'setZone'
     ];
 
@@ -328,10 +328,10 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => 'getUpdater',
         'name' => 'getName',
         'idn' => 'getIdn',
-        'nic_member_label' => 'getNicMemberLabel',
-        'registry_status' => 'getRegistryStatus',
-        'name_servers' => 'getNameServers',
-        'name_server_entries' => 'getNameServerEntries',
+        'nicMemberLabel' => 'getNicMemberLabel',
+        'registryStatus' => 'getRegistryStatus',
+        'nameServers' => 'getNameServers',
+        'nameServerEntries' => 'getNameServerEntries',
         'period' => 'getPeriod',
         'trustee' => 'getTrustee',
         'privacy' => 'getPrivacy',
@@ -339,28 +339,28 @@ class Domain implements ModelInterface, ArrayAccess
         'domainsafe' => 'getDomainsafe',
         'parking' => 'getParking',
         'extensions' => 'getExtensions',
-        'log_id' => 'getLogId',
-        'ns_check' => 'getNsCheck',
-        'confirm_order' => 'getConfirmOrder',
-        'confirm_owner_consent' => 'getConfirmOwnerConsent',
-        'ignore_whois' => 'getIgnoreWhois',
+        'logId' => 'getLogId',
+        'nsCheck' => 'getNsCheck',
+        'confirmOrder' => 'getConfirmOrder',
+        'confirmOwnerConsent' => 'getConfirmOwnerConsent',
+        'ignoreWhois' => 'getIgnoreWhois',
         'comment' => 'getComment',
-        'include_www' => 'getIncludeWww',
-        'include_wildcard' => 'getIncludeWildcard',
-        'registrar_status' => 'getRegistrarStatus',
-        'registrar_status_reason' => 'getRegistrarStatusReason',
-        'remove_cancelation' => 'getRemoveCancelation',
-        'autodns_sec_job' => 'getAutodnsSecJob',
-        'price_class' => 'getPriceClass',
-        'price_class_renew' => 'getPriceClassRenew',
-        'abuse_email' => 'getAbuseEmail',
-        'general_request_email' => 'getGeneralRequestEmail',
-        'privacy_plus_mail' => 'getPrivacyPlusMail',
-        'privacy_plus' => 'getPrivacyPlus',
-        'name_server_group' => 'getNameServerGroup',
-        'rdds_opt_in' => 'getRddsOptIn',
-        'services_add' => 'getServicesAdd',
-        'services_rem' => 'getServicesRem',
+        'includeWWW' => 'getIncludeWWW',
+        'includeWildcard' => 'getIncludeWildcard',
+        'registrarStatus' => 'getRegistrarStatus',
+        'registrarStatusReason' => 'getRegistrarStatusReason',
+        'removeCancelation' => 'getRemoveCancelation',
+        'autodnsSecJob' => 'getAutodnsSecJob',
+        'priceClass' => 'getPriceClass',
+        'priceClassRenew' => 'getPriceClassRenew',
+        'abuseEmail' => 'getAbuseEmail',
+        'generalRequestEmail' => 'getGeneralRequestEmail',
+        'privacyPlusMail' => 'getPrivacyPlusMail',
+        'privacyPlus' => 'getPrivacyPlus',
+        'nameServerGroup' => 'getNameServerGroup',
+        'rddsOptIn' => 'getRddsOptIn',
+        'servicesAdd' => 'getServicesAdd',
+        'servicesRem' => 'getServicesRem',
         'ownerc' => 'getOwnerc',
         'adminc' => 'getAdminc',
         'techc' => 'getTechc',
@@ -368,12 +368,12 @@ class Domain implements ModelInterface, ArrayAccess
         'expire' => 'getExpire',
         'payable' => 'getPayable',
         'action' => 'getAction',
-        'auto_dnssec' => 'getAutoDnssec',
+        'autoDnssec' => 'getAutoDnssec',
         'dnssec' => 'getDnssec',
-        'valid_certificate' => 'getValidCertificate',
-        'cancelation_status' => 'getCancelationStatus',
-        'auto_renew_status' => 'getAutoRenewStatus',
-        'dnssec_data' => 'getDnssecData',
+        'validCertificate' => 'getValidCertificate',
+        'cancelationStatus' => 'getCancelationStatus',
+        'autoRenewStatus' => 'getAutoRenewStatus',
+        'dnssecData' => 'getDnssecData',
         'zone' => 'getZone'
     ];
 
@@ -443,10 +443,10 @@ class Domain implements ModelInterface, ArrayAccess
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
-        $this->container['nic_member_label'] = isset($data['nic_member_label']) ? $this->createData($data['nic_member_label'], 'nic_member_label')  : null;
-        $this->container['registry_status'] = isset($data['registry_status']) ? $this->createData($data['registry_status'], 'registry_status')  : null;
-        $this->container['name_servers'] = isset($data['name_servers']) ? $this->createData($data['name_servers'], 'name_servers')  : null;
-        $this->container['name_server_entries'] = isset($data['name_server_entries']) ? $this->createData($data['name_server_entries'], 'name_server_entries')  : null;
+        $this->container['nicMemberLabel'] = isset($data['nicMemberLabel']) ? $this->createData($data['nicMemberLabel'], 'nicMemberLabel')  : null;
+        $this->container['registryStatus'] = isset($data['registryStatus']) ? $this->createData($data['registryStatus'], 'registryStatus')  : null;
+        $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
+        $this->container['nameServerEntries'] = isset($data['nameServerEntries']) ? $this->createData($data['nameServerEntries'], 'nameServerEntries')  : null;
         $this->container['period'] = isset($data['period']) ? $this->createData($data['period'], 'period')  : null;
         $this->container['trustee'] = isset($data['trustee']) ? $this->createData($data['trustee'], 'trustee')  : null;
         $this->container['privacy'] = isset($data['privacy']) ? $this->createData($data['privacy'], 'privacy')  : null;
@@ -454,28 +454,28 @@ class Domain implements ModelInterface, ArrayAccess
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
         $this->container['parking'] = isset($data['parking']) ? $this->createData($data['parking'], 'parking')  : null;
         $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
-        $this->container['log_id'] = isset($data['log_id']) ? $this->createData($data['log_id'], 'log_id')  : null;
-        $this->container['ns_check'] = isset($data['ns_check']) ? $this->createData($data['ns_check'], 'ns_check')  : null;
-        $this->container['confirm_order'] = isset($data['confirm_order']) ? $this->createData($data['confirm_order'], 'confirm_order')  : null;
-        $this->container['confirm_owner_consent'] = isset($data['confirm_owner_consent']) ? $this->createData($data['confirm_owner_consent'], 'confirm_owner_consent')  : null;
-        $this->container['ignore_whois'] = isset($data['ignore_whois']) ? $this->createData($data['ignore_whois'], 'ignore_whois')  : null;
+        $this->container['logId'] = isset($data['logId']) ? $this->createData($data['logId'], 'logId')  : null;
+        $this->container['nsCheck'] = isset($data['nsCheck']) ? $this->createData($data['nsCheck'], 'nsCheck')  : null;
+        $this->container['confirmOrder'] = isset($data['confirmOrder']) ? $this->createData($data['confirmOrder'], 'confirmOrder')  : null;
+        $this->container['confirmOwnerConsent'] = isset($data['confirmOwnerConsent']) ? $this->createData($data['confirmOwnerConsent'], 'confirmOwnerConsent')  : null;
+        $this->container['ignoreWhois'] = isset($data['ignoreWhois']) ? $this->createData($data['ignoreWhois'], 'ignoreWhois')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
-        $this->container['include_www'] = isset($data['include_www']) ? $this->createData($data['include_www'], 'include_www')  : null;
-        $this->container['include_wildcard'] = isset($data['include_wildcard']) ? $this->createData($data['include_wildcard'], 'include_wildcard')  : null;
-        $this->container['registrar_status'] = isset($data['registrar_status']) ? $this->createData($data['registrar_status'], 'registrar_status')  : null;
-        $this->container['registrar_status_reason'] = isset($data['registrar_status_reason']) ? $this->createData($data['registrar_status_reason'], 'registrar_status_reason')  : null;
-        $this->container['remove_cancelation'] = isset($data['remove_cancelation']) ? $this->createData($data['remove_cancelation'], 'remove_cancelation')  : null;
-        $this->container['autodns_sec_job'] = isset($data['autodns_sec_job']) ? $this->createData($data['autodns_sec_job'], 'autodns_sec_job')  : null;
-        $this->container['price_class'] = isset($data['price_class']) ? $this->createData($data['price_class'], 'price_class')  : null;
-        $this->container['price_class_renew'] = isset($data['price_class_renew']) ? $this->createData($data['price_class_renew'], 'price_class_renew')  : null;
-        $this->container['abuse_email'] = isset($data['abuse_email']) ? $this->createData($data['abuse_email'], 'abuse_email')  : null;
-        $this->container['general_request_email'] = isset($data['general_request_email']) ? $this->createData($data['general_request_email'], 'general_request_email')  : null;
-        $this->container['privacy_plus_mail'] = isset($data['privacy_plus_mail']) ? $this->createData($data['privacy_plus_mail'], 'privacy_plus_mail')  : null;
-        $this->container['privacy_plus'] = isset($data['privacy_plus']) ? $this->createData($data['privacy_plus'], 'privacy_plus')  : null;
-        $this->container['name_server_group'] = isset($data['name_server_group']) ? $this->createData($data['name_server_group'], 'name_server_group')  : null;
-        $this->container['rdds_opt_in'] = isset($data['rdds_opt_in']) ? $this->createData($data['rdds_opt_in'], 'rdds_opt_in')  : null;
-        $this->container['services_add'] = isset($data['services_add']) ? $this->createData($data['services_add'], 'services_add')  : null;
-        $this->container['services_rem'] = isset($data['services_rem']) ? $this->createData($data['services_rem'], 'services_rem')  : null;
+        $this->container['includeWWW'] = isset($data['includeWWW']) ? $this->createData($data['includeWWW'], 'includeWWW')  : null;
+        $this->container['includeWildcard'] = isset($data['includeWildcard']) ? $this->createData($data['includeWildcard'], 'includeWildcard')  : null;
+        $this->container['registrarStatus'] = isset($data['registrarStatus']) ? $this->createData($data['registrarStatus'], 'registrarStatus')  : null;
+        $this->container['registrarStatusReason'] = isset($data['registrarStatusReason']) ? $this->createData($data['registrarStatusReason'], 'registrarStatusReason')  : null;
+        $this->container['removeCancelation'] = isset($data['removeCancelation']) ? $this->createData($data['removeCancelation'], 'removeCancelation')  : null;
+        $this->container['autodnsSecJob'] = isset($data['autodnsSecJob']) ? $this->createData($data['autodnsSecJob'], 'autodnsSecJob')  : null;
+        $this->container['priceClass'] = isset($data['priceClass']) ? $this->createData($data['priceClass'], 'priceClass')  : null;
+        $this->container['priceClassRenew'] = isset($data['priceClassRenew']) ? $this->createData($data['priceClassRenew'], 'priceClassRenew')  : null;
+        $this->container['abuseEmail'] = isset($data['abuseEmail']) ? $this->createData($data['abuseEmail'], 'abuseEmail')  : null;
+        $this->container['generalRequestEmail'] = isset($data['generalRequestEmail']) ? $this->createData($data['generalRequestEmail'], 'generalRequestEmail')  : null;
+        $this->container['privacyPlusMail'] = isset($data['privacyPlusMail']) ? $this->createData($data['privacyPlusMail'], 'privacyPlusMail')  : null;
+        $this->container['privacyPlus'] = isset($data['privacyPlus']) ? $this->createData($data['privacyPlus'], 'privacyPlus')  : null;
+        $this->container['nameServerGroup'] = isset($data['nameServerGroup']) ? $this->createData($data['nameServerGroup'], 'nameServerGroup')  : null;
+        $this->container['rddsOptIn'] = isset($data['rddsOptIn']) ? $this->createData($data['rddsOptIn'], 'rddsOptIn')  : null;
+        $this->container['servicesAdd'] = isset($data['servicesAdd']) ? $this->createData($data['servicesAdd'], 'servicesAdd')  : null;
+        $this->container['servicesRem'] = isset($data['servicesRem']) ? $this->createData($data['servicesRem'], 'servicesRem')  : null;
         $this->container['ownerc'] = isset($data['ownerc']) ? $this->createData($data['ownerc'], 'ownerc')  : null;
         $this->container['adminc'] = isset($data['adminc']) ? $this->createData($data['adminc'], 'adminc')  : null;
         $this->container['techc'] = isset($data['techc']) ? $this->createData($data['techc'], 'techc')  : null;
@@ -483,12 +483,12 @@ class Domain implements ModelInterface, ArrayAccess
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
         $this->container['payable'] = isset($data['payable']) ? $this->createData($data['payable'], 'payable')  : null;
         $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
-        $this->container['auto_dnssec'] = isset($data['auto_dnssec']) ? $this->createData($data['auto_dnssec'], 'auto_dnssec')  : null;
+        $this->container['autoDnssec'] = isset($data['autoDnssec']) ? $this->createData($data['autoDnssec'], 'autoDnssec')  : null;
         $this->container['dnssec'] = isset($data['dnssec']) ? $this->createData($data['dnssec'], 'dnssec')  : null;
-        $this->container['valid_certificate'] = isset($data['valid_certificate']) ? $this->createData($data['valid_certificate'], 'valid_certificate')  : null;
-        $this->container['cancelation_status'] = isset($data['cancelation_status']) ? $this->createData($data['cancelation_status'], 'cancelation_status')  : null;
-        $this->container['auto_renew_status'] = isset($data['auto_renew_status']) ? $this->createData($data['auto_renew_status'], 'auto_renew_status')  : null;
-        $this->container['dnssec_data'] = isset($data['dnssec_data']) ? $this->createData($data['dnssec_data'], 'dnssec_data')  : null;
+        $this->container['validCertificate'] = isset($data['validCertificate']) ? $this->createData($data['validCertificate'], 'validCertificate')  : null;
+        $this->container['cancelationStatus'] = isset($data['cancelationStatus']) ? $this->createData($data['cancelationStatus'], 'cancelationStatus')  : null;
+        $this->container['autoRenewStatus'] = isset($data['autoRenewStatus']) ? $this->createData($data['autoRenewStatus'], 'autoRenewStatus')  : null;
+        $this->container['dnssecData'] = isset($data['dnssecData']) ? $this->createData($data['dnssecData'], 'dnssecData')  : null;
         $this->container['zone'] = isset($data['zone']) ? $this->createData($data['zone'], 'zone')  : null;
     }
 
@@ -544,8 +544,8 @@ class Domain implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['remove_cancelation'] === null) {
-            $invalidProperties[] = "'remove_cancelation' can't be null";
+        if ($this->container['removeCancelation'] === null) {
+            $invalidProperties[] = "'removeCancelation' can't be null";
         }
         if ($this->container['payable'] === null) {
             $invalidProperties[] = "'payable' can't be null";
@@ -710,97 +710,97 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets nic_member_label
+     * Gets nicMemberLabel
      *
      * @return string
      */
     public function getNicMemberLabel()
     {
-        return $this->container['nic_member_label'];
+        return $this->container['nicMemberLabel'];
     }
 
     /**
-     * Sets nic_member_label
+     * Sets nicMemberLabel
      *
-     * @param string $nic_member_label The nic member label.
+     * @param string $nicMemberLabel The nic member label.
      *
      * @return $this
      */
-    public function setNicMemberLabel($nic_member_label)
+    public function setNicMemberLabel($nicMemberLabel)
     {
-        $this->container['nic_member_label'] = $nic_member_label;
+        $this->container['nicMemberLabel'] = $nicMemberLabel;
 
         return $this;
     }
 
     /**
-     * Gets registry_status
+     * Gets registryStatus
      *
      * @return \Domainrobot\Model\RegistryStatusConstants
      */
     public function getRegistryStatus()
     {
-        return $this->container['registry_status'];
+        return $this->container['registryStatus'];
     }
 
     /**
-     * Sets registry_status
+     * Sets registryStatus
      *
-     * @param \Domainrobot\Model\RegistryStatusConstants $registry_status The registry status.
+     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus The registry status.
      *
      * @return $this
      */
-    public function setRegistryStatus($registry_status)
+    public function setRegistryStatus($registryStatus)
     {
-        $this->container['registry_status'] = $registry_status;
+        $this->container['registryStatus'] = $registryStatus;
 
         return $this;
     }
 
     /**
-     * Gets name_servers
+     * Gets nameServers
      *
      * @return \Domainrobot\Model\NameServer[]
      */
     public function getNameServers()
     {
-        return $this->container['name_servers'];
+        return $this->container['nameServers'];
     }
 
     /**
-     * Sets name_servers
+     * Sets nameServers
      *
-     * @param \Domainrobot\Model\NameServer[] $name_servers The nameservers.
+     * @param \Domainrobot\Model\NameServer[] $nameServers The nameservers.
      *
      * @return $this
      */
-    public function setNameServers($name_servers)
+    public function setNameServers($nameServers)
     {
-        $this->container['name_servers'] = $name_servers;
+        $this->container['nameServers'] = $nameServers;
 
         return $this;
     }
 
     /**
-     * Gets name_server_entries
+     * Gets nameServerEntries
      *
      * @return string[]
      */
     public function getNameServerEntries()
     {
-        return $this->container['name_server_entries'];
+        return $this->container['nameServerEntries'];
     }
 
     /**
-     * Sets name_server_entries
+     * Sets nameServerEntries
      *
-     * @param string[] $name_server_entries NSentry is only be provided for .DE. If NSentry is used, nameServers is not allowed.
+     * @param string[] $nameServerEntries NSentry is only be provided for .DE. If NSentry is used, nameServers is not allowed.
      *
      * @return $this
      */
-    public function setNameServerEntries($name_server_entries)
+    public function setNameServerEntries($nameServerEntries)
     {
-        $this->container['name_server_entries'] = $name_server_entries;
+        $this->container['nameServerEntries'] = $nameServerEntries;
 
         return $this;
     }
@@ -974,121 +974,121 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets log_id
+     * Gets logId
      *
      * @return int
      */
     public function getLogId()
     {
-        return $this->container['log_id'];
+        return $this->container['logId'];
     }
 
     /**
-     * Sets log_id
+     * Sets logId
      *
-     * @param int $log_id The logId
+     * @param int $logId The logId
      *
      * @return $this
      */
-    public function setLogId($log_id)
+    public function setLogId($logId)
     {
-        $this->container['log_id'] = $log_id;
+        $this->container['logId'] = $logId;
 
         return $this;
     }
 
     /**
-     * Gets ns_check
+     * Gets nsCheck
      *
      * @return \Domainrobot\Model\DNSCheck
      */
     public function getNsCheck()
     {
-        return $this->container['ns_check'];
+        return $this->container['nsCheck'];
     }
 
     /**
-     * Sets ns_check
+     * Sets nsCheck
      *
-     * @param \Domainrobot\Model\DNSCheck $ns_check An additional nameserver check will be carried out.
+     * @param \Domainrobot\Model\DNSCheck $nsCheck An additional nameserver check will be carried out.
      *
      * @return $this
      */
-    public function setNsCheck($ns_check)
+    public function setNsCheck($nsCheck)
     {
-        $this->container['ns_check'] = $ns_check;
+        $this->container['nsCheck'] = $nsCheck;
 
         return $this;
     }
 
     /**
-     * Gets confirm_order
+     * Gets confirmOrder
      *
      * @return bool
      */
     public function getConfirmOrder()
     {
-        return $this->container['confirm_order'];
+        return $this->container['confirmOrder'];
     }
 
     /**
-     * Sets confirm_order
+     * Sets confirmOrder
      *
-     * @param bool $confirm_order Some TLDs require a confirmation of the “Terms and Conditions of Registration.
+     * @param bool $confirmOrder Some TLDs require a confirmation of the “Terms and Conditions of Registration.
      *
      * @return $this
      */
-    public function setConfirmOrder($confirm_order)
+    public function setConfirmOrder($confirmOrder)
     {
-        $this->container['confirm_order'] = $confirm_order;
+        $this->container['confirmOrder'] = $confirmOrder;
 
         return $this;
     }
 
     /**
-     * Gets confirm_owner_consent
+     * Gets confirmOwnerConsent
      *
      * @return bool
      */
     public function getConfirmOwnerConsent()
     {
-        return $this->container['confirm_owner_consent'];
+        return $this->container['confirmOwnerConsent'];
     }
 
     /**
-     * Sets confirm_owner_consent
+     * Sets confirmOwnerConsent
      *
-     * @param bool $confirm_owner_consent Confirms the consent of the domainowner for the changes. Required for gTLDs and new gTLDs when changing the name, the email address or the organization of the domain owner.
+     * @param bool $confirmOwnerConsent Confirms the consent of the domainowner for the changes. Required for gTLDs and new gTLDs when changing the name, the email address or the organization of the domain owner.
      *
      * @return $this
      */
-    public function setConfirmOwnerConsent($confirm_owner_consent)
+    public function setConfirmOwnerConsent($confirmOwnerConsent)
     {
-        $this->container['confirm_owner_consent'] = $confirm_owner_consent;
+        $this->container['confirmOwnerConsent'] = $confirmOwnerConsent;
 
         return $this;
     }
 
     /**
-     * Gets ignore_whois
+     * Gets ignoreWhois
      *
      * @return bool
      */
     public function getIgnoreWhois()
     {
-        return $this->container['ignore_whois'];
+        return $this->container['ignoreWhois'];
     }
 
     /**
-     * Sets ignore_whois
+     * Sets ignoreWhois
      *
-     * @param bool $ignore_whois Ignore whois.
+     * @param bool $ignoreWhois Ignore whois.
      *
      * @return $this
      */
-    public function setIgnoreWhois($ignore_whois)
+    public function setIgnoreWhois($ignoreWhois)
     {
-        $this->container['ignore_whois'] = $ignore_whois;
+        $this->container['ignoreWhois'] = $ignoreWhois;
 
         return $this;
     }
@@ -1118,385 +1118,385 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets include_www
+     * Gets includeWWW
      *
      * @return bool
      */
-    public function getIncludeWww()
+    public function getIncludeWWW()
     {
-        return $this->container['include_www'];
+        return $this->container['includeWWW'];
     }
 
     /**
-     * Sets include_www
+     * Sets includeWWW
      *
-     * @param bool $include_www Enable utomatic creation of the www subdomain.
+     * @param bool $includeWWW Enable utomatic creation of the www subdomain.
      *
      * @return $this
      */
-    public function setIncludeWww($include_www)
+    public function setIncludeWWW($includeWWW)
     {
-        $this->container['include_www'] = $include_www;
+        $this->container['includeWWW'] = $includeWWW;
 
         return $this;
     }
 
     /**
-     * Gets include_wildcard
+     * Gets includeWildcard
      *
      * @return bool
      */
     public function getIncludeWildcard()
     {
-        return $this->container['include_wildcard'];
+        return $this->container['includeWildcard'];
     }
 
     /**
-     * Sets include_wildcard
+     * Sets includeWildcard
      *
-     * @param bool $include_wildcard Enable include wildcard.
+     * @param bool $includeWildcard Enable include wildcard.
      *
      * @return $this
      */
-    public function setIncludeWildcard($include_wildcard)
+    public function setIncludeWildcard($includeWildcard)
     {
-        $this->container['include_wildcard'] = $include_wildcard;
+        $this->container['includeWildcard'] = $includeWildcard;
 
         return $this;
     }
 
     /**
-     * Gets registrar_status
+     * Gets registrarStatus
      *
      * @return \Domainrobot\Model\RegistryStatusConstants
      */
     public function getRegistrarStatus()
     {
-        return $this->container['registrar_status'];
+        return $this->container['registrarStatus'];
     }
 
     /**
-     * Sets registrar_status
+     * Sets registrarStatus
      *
-     * @param \Domainrobot\Model\RegistryStatusConstants $registrar_status The registrar status.
+     * @param \Domainrobot\Model\RegistryStatusConstants $registrarStatus The registrar status.
      *
      * @return $this
      */
-    public function setRegistrarStatus($registrar_status)
+    public function setRegistrarStatus($registrarStatus)
     {
-        $this->container['registrar_status'] = $registrar_status;
+        $this->container['registrarStatus'] = $registrarStatus;
 
         return $this;
     }
 
     /**
-     * Gets registrar_status_reason
+     * Gets registrarStatusReason
      *
      * @return string
      */
     public function getRegistrarStatusReason()
     {
-        return $this->container['registrar_status_reason'];
+        return $this->container['registrarStatusReason'];
     }
 
     /**
-     * Sets registrar_status_reason
+     * Sets registrarStatusReason
      *
-     * @param string $registrar_status_reason The registrar status reason.
+     * @param string $registrarStatusReason The registrar status reason.
      *
      * @return $this
      */
-    public function setRegistrarStatusReason($registrar_status_reason)
+    public function setRegistrarStatusReason($registrarStatusReason)
     {
-        $this->container['registrar_status_reason'] = $registrar_status_reason;
+        $this->container['registrarStatusReason'] = $registrarStatusReason;
 
         return $this;
     }
 
     /**
-     * Gets remove_cancelation
+     * Gets removeCancelation
      *
      * @return bool
      */
     public function getRemoveCancelation()
     {
-        return $this->container['remove_cancelation'];
+        return $this->container['removeCancelation'];
     }
 
     /**
-     * Sets remove_cancelation
+     * Sets removeCancelation
      *
-     * @param bool $remove_cancelation Remove cancelation.
+     * @param bool $removeCancelation Remove cancelation.
      *
      * @return $this
      */
-    public function setRemoveCancelation($remove_cancelation)
+    public function setRemoveCancelation($removeCancelation)
     {
-        $this->container['remove_cancelation'] = $remove_cancelation;
+        $this->container['removeCancelation'] = $removeCancelation;
 
         return $this;
     }
 
     /**
-     * Gets autodns_sec_job
+     * Gets autodnsSecJob
      *
      * @return \Domainrobot\Model\DNSSecJob
      */
     public function getAutodnsSecJob()
     {
-        return $this->container['autodns_sec_job'];
+        return $this->container['autodnsSecJob'];
     }
 
     /**
-     * Sets autodns_sec_job
+     * Sets autodnsSecJob
      *
-     * @param \Domainrobot\Model\DNSSecJob $autodns_sec_job AutodnsSecJob
+     * @param \Domainrobot\Model\DNSSecJob $autodnsSecJob AutodnsSecJob
      *
      * @return $this
      */
-    public function setAutodnsSecJob($autodns_sec_job)
+    public function setAutodnsSecJob($autodnsSecJob)
     {
-        $this->container['autodns_sec_job'] = $autodns_sec_job;
+        $this->container['autodnsSecJob'] = $autodnsSecJob;
 
         return $this;
     }
 
     /**
-     * Gets price_class
+     * Gets priceClass
      *
      * @return string
      */
     public function getPriceClass()
     {
-        return $this->container['price_class'];
+        return $this->container['priceClass'];
     }
 
     /**
-     * Sets price_class
+     * Sets priceClass
      *
-     * @param string $price_class The priceclass for the registration of the domain.
+     * @param string $priceClass The priceclass for the registration of the domain.
      *
      * @return $this
      */
-    public function setPriceClass($price_class)
+    public function setPriceClass($priceClass)
     {
-        $this->container['price_class'] = $price_class;
+        $this->container['priceClass'] = $priceClass;
 
         return $this;
     }
 
     /**
-     * Gets price_class_renew
+     * Gets priceClassRenew
      *
      * @return string
      */
     public function getPriceClassRenew()
     {
-        return $this->container['price_class_renew'];
+        return $this->container['priceClassRenew'];
     }
 
     /**
-     * Sets price_class_renew
+     * Sets priceClassRenew
      *
-     * @param string $price_class_renew The priceclass for the renew of the domain.
+     * @param string $priceClassRenew The priceclass for the renew of the domain.
      *
      * @return $this
      */
-    public function setPriceClassRenew($price_class_renew)
+    public function setPriceClassRenew($priceClassRenew)
     {
-        $this->container['price_class_renew'] = $price_class_renew;
+        $this->container['priceClassRenew'] = $priceClassRenew;
 
         return $this;
     }
 
     /**
-     * Gets abuse_email
+     * Gets abuseEmail
      *
      * @return string
      */
     public function getAbuseEmail()
     {
-        return $this->container['abuse_email'];
+        return $this->container['abuseEmail'];
     }
 
     /**
-     * Sets abuse_email
+     * Sets abuseEmail
      *
-     * @param string $abuse_email The abuse email.
+     * @param string $abuseEmail The abuse email.
      *
      * @return $this
      */
-    public function setAbuseEmail($abuse_email)
+    public function setAbuseEmail($abuseEmail)
     {
-        $this->container['abuse_email'] = $abuse_email;
+        $this->container['abuseEmail'] = $abuseEmail;
 
         return $this;
     }
 
     /**
-     * Gets general_request_email
+     * Gets generalRequestEmail
      *
      * @return string
      */
     public function getGeneralRequestEmail()
     {
-        return $this->container['general_request_email'];
+        return $this->container['generalRequestEmail'];
     }
 
     /**
-     * Sets general_request_email
+     * Sets generalRequestEmail
      *
-     * @param string $general_request_email The general request mail.
+     * @param string $generalRequestEmail The general request mail.
      *
      * @return $this
      */
-    public function setGeneralRequestEmail($general_request_email)
+    public function setGeneralRequestEmail($generalRequestEmail)
     {
-        $this->container['general_request_email'] = $general_request_email;
+        $this->container['generalRequestEmail'] = $generalRequestEmail;
 
         return $this;
     }
 
     /**
-     * Gets privacy_plus_mail
+     * Gets privacyPlusMail
      *
      * @return string
      */
     public function getPrivacyPlusMail()
     {
-        return $this->container['privacy_plus_mail'];
+        return $this->container['privacyPlusMail'];
     }
 
     /**
-     * Sets privacy_plus_mail
+     * Sets privacyPlusMail
      *
-     * @param string $privacy_plus_mail The privacy plus mail.
+     * @param string $privacyPlusMail The privacy plus mail.
      *
      * @return $this
      */
-    public function setPrivacyPlusMail($privacy_plus_mail)
+    public function setPrivacyPlusMail($privacyPlusMail)
     {
-        $this->container['privacy_plus_mail'] = $privacy_plus_mail;
+        $this->container['privacyPlusMail'] = $privacyPlusMail;
 
         return $this;
     }
 
     /**
-     * Gets privacy_plus
+     * Gets privacyPlus
      *
      * @return bool
      */
     public function getPrivacyPlus()
     {
-        return $this->container['privacy_plus'];
+        return $this->container['privacyPlus'];
     }
 
     /**
-     * Sets privacy_plus
+     * Sets privacyPlus
      *
-     * @param bool $privacy_plus Enable privacy plus.
+     * @param bool $privacyPlus Enable privacy plus.
      *
      * @return $this
      */
-    public function setPrivacyPlus($privacy_plus)
+    public function setPrivacyPlus($privacyPlus)
     {
-        $this->container['privacy_plus'] = $privacy_plus;
+        $this->container['privacyPlus'] = $privacyPlus;
 
         return $this;
     }
 
     /**
-     * Gets name_server_group
+     * Gets nameServerGroup
      *
      * @return string
      */
     public function getNameServerGroup()
     {
-        return $this->container['name_server_group'];
+        return $this->container['nameServerGroup'];
     }
 
     /**
-     * Sets name_server_group
+     * Sets nameServerGroup
      *
-     * @param string $name_server_group The nameserver group.
+     * @param string $nameServerGroup The nameserver group.
      *
      * @return $this
      */
-    public function setNameServerGroup($name_server_group)
+    public function setNameServerGroup($nameServerGroup)
     {
-        $this->container['name_server_group'] = $name_server_group;
+        $this->container['nameServerGroup'] = $nameServerGroup;
 
         return $this;
     }
 
     /**
-     * Gets rdds_opt_in
+     * Gets rddsOptIn
      *
      * @return \Domainrobot\Model\RddsOptInConstants
      */
     public function getRddsOptIn()
     {
-        return $this->container['rdds_opt_in'];
+        return $this->container['rddsOptIn'];
     }
 
     /**
-     * Sets rdds_opt_in
+     * Sets rddsOptIn
      *
-     * @param \Domainrobot\Model\RddsOptInConstants $rdds_opt_in Enables the whois output to show redacted contacts.
+     * @param \Domainrobot\Model\RddsOptInConstants $rddsOptIn Enables the whois output to show redacted contacts.
      *
      * @return $this
      */
-    public function setRddsOptIn($rdds_opt_in)
+    public function setRddsOptIn($rddsOptIn)
     {
-        $this->container['rdds_opt_in'] = $rdds_opt_in;
+        $this->container['rddsOptIn'] = $rddsOptIn;
 
         return $this;
     }
 
     /**
-     * Gets services_add
+     * Gets servicesAdd
      *
      * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesAdd()
     {
-        return $this->container['services_add'];
+        return $this->container['servicesAdd'];
     }
 
     /**
-     * Sets services_add
+     * Sets servicesAdd
      *
-     * @param \Domainrobot\Model\DomainServices $services_add Adds pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\DomainServices $servicesAdd Adds pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
-    public function setServicesAdd($services_add)
+    public function setServicesAdd($servicesAdd)
     {
-        $this->container['services_add'] = $services_add;
+        $this->container['servicesAdd'] = $servicesAdd;
 
         return $this;
     }
 
     /**
-     * Gets services_rem
+     * Gets servicesRem
      *
      * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesRem()
     {
-        return $this->container['services_rem'];
+        return $this->container['servicesRem'];
     }
 
     /**
-     * Sets services_rem
+     * Sets servicesRem
      *
-     * @param \Domainrobot\Model\DomainServices $services_rem Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\DomainServices $servicesRem Removes pending services like BackupMX and MailProxy.
      *
      * @return $this
      */
-    public function setServicesRem($services_rem)
+    public function setServicesRem($servicesRem)
     {
-        $this->container['services_rem'] = $services_rem;
+        $this->container['servicesRem'] = $servicesRem;
 
         return $this;
     }
@@ -1670,25 +1670,25 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets auto_dnssec
+     * Gets autoDnssec
      *
      * @return bool
      */
     public function getAutoDnssec()
     {
-        return $this->container['auto_dnssec'];
+        return $this->container['autoDnssec'];
     }
 
     /**
-     * Sets auto_dnssec
+     * Sets autoDnssec
      *
-     * @param bool $auto_dnssec Enables or disables automatic DNSSEC for certain name servers (e.g. NodeSecure).
+     * @param bool $autoDnssec Enables or disables automatic DNSSEC for certain name servers (e.g. NodeSecure).
      *
      * @return $this
      */
-    public function setAutoDnssec($auto_dnssec)
+    public function setAutoDnssec($autoDnssec)
     {
-        $this->container['auto_dnssec'] = $auto_dnssec;
+        $this->container['autoDnssec'] = $autoDnssec;
 
         return $this;
     }
@@ -1718,97 +1718,97 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets valid_certificate
+     * Gets validCertificate
      *
      * @return bool
      */
     public function getValidCertificate()
     {
-        return $this->container['valid_certificate'];
+        return $this->container['validCertificate'];
     }
 
     /**
-     * Sets valid_certificate
+     * Sets validCertificate
      *
-     * @param bool $valid_certificate Domain has an matching certificate.
+     * @param bool $validCertificate Domain has an matching certificate.
      *
      * @return $this
      */
-    public function setValidCertificate($valid_certificate)
+    public function setValidCertificate($validCertificate)
     {
-        $this->container['valid_certificate'] = $valid_certificate;
+        $this->container['validCertificate'] = $validCertificate;
 
         return $this;
     }
 
     /**
-     * Gets cancelation_status
+     * Gets cancelationStatus
      *
      * @return \Domainrobot\Model\CancelationStatusConstants
      */
     public function getCancelationStatus()
     {
-        return $this->container['cancelation_status'];
+        return $this->container['cancelationStatus'];
     }
 
     /**
-     * Sets cancelation_status
+     * Sets cancelationStatus
      *
-     * @param \Domainrobot\Model\CancelationStatusConstants $cancelation_status The cancelation status.
+     * @param \Domainrobot\Model\CancelationStatusConstants $cancelationStatus The cancelation status.
      *
      * @return $this
      */
-    public function setCancelationStatus($cancelation_status)
+    public function setCancelationStatus($cancelationStatus)
     {
-        $this->container['cancelation_status'] = $cancelation_status;
+        $this->container['cancelationStatus'] = $cancelationStatus;
 
         return $this;
     }
 
     /**
-     * Gets auto_renew_status
+     * Gets autoRenewStatus
      *
      * @return \Domainrobot\Model\AutoRenewStatusConstants
      */
     public function getAutoRenewStatus()
     {
-        return $this->container['auto_renew_status'];
+        return $this->container['autoRenewStatus'];
     }
 
     /**
-     * Sets auto_renew_status
+     * Sets autoRenewStatus
      *
-     * @param \Domainrobot\Model\AutoRenewStatusConstants $auto_renew_status The autorenew status.
+     * @param \Domainrobot\Model\AutoRenewStatusConstants $autoRenewStatus The autorenew status.
      *
      * @return $this
      */
-    public function setAutoRenewStatus($auto_renew_status)
+    public function setAutoRenewStatus($autoRenewStatus)
     {
-        $this->container['auto_renew_status'] = $auto_renew_status;
+        $this->container['autoRenewStatus'] = $autoRenewStatus;
 
         return $this;
     }
 
     /**
-     * Gets dnssec_data
+     * Gets dnssecData
      *
      * @return \Domainrobot\Model\DNSSec[]
      */
     public function getDnssecData()
     {
-        return $this->container['dnssec_data'];
+        return $this->container['dnssecData'];
     }
 
     /**
-     * Sets dnssec_data
+     * Sets dnssecData
      *
-     * @param \Domainrobot\Model\DNSSec[] $dnssec_data Submits the key material to the registry. If the list is empty, the key material is deleted at the registry. If the key is omitted during an update, the data is retained.
+     * @param \Domainrobot\Model\DNSSec[] $dnssecData Submits the key material to the registry. If the list is empty, the key material is deleted at the registry. If the key is omitted during an update, the data is retained.
      *
      * @return $this
      */
-    public function setDnssecData($dnssec_data)
+    public function setDnssecData($dnssecData)
     {
-        $this->container['dnssec_data'] = $dnssec_data;
+        $this->container['dnssecData'] = $dnssecData;
 
         return $this;
     }

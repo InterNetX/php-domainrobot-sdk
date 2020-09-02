@@ -57,8 +57,8 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'membership_id' => 'string',
-        'non_resolver_domain' => 'bool'
+        'membershipID' => 'string',
+        'nonResolverDomain' => 'bool'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'membership_id' => null,
-        'non_resolver_domain' => null
+        'membershipID' => null,
+        'nonResolverDomain' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'membership_id' => 'membershipID',
-        'non_resolver_domain' => 'nonResolverDomain'
+        'membershipID' => 'membershipID',
+        'nonResolverDomain' => 'nonResolverDomain'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'membership_id' => 'setMembershipId',
-        'non_resolver_domain' => 'setNonResolverDomain'
+        'membershipID' => 'setMembershipID',
+        'nonResolverDomain' => 'setNonResolverDomain'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'membership_id' => 'getMembershipId',
-        'non_resolver_domain' => 'getNonResolverDomain'
+        'membershipID' => 'getMembershipID',
+        'nonResolverDomain' => 'getNonResolverDomain'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['membership_id'] = isset($data['membership_id']) ? $this->createData($data['membership_id'], 'membership_id')  : null;
-        $this->container['non_resolver_domain'] = isset($data['non_resolver_domain']) ? $this->createData($data['non_resolver_domain'], 'non_resolver_domain')  : null;
+        $this->container['membershipID'] = isset($data['membershipID']) ? $this->createData($data['membershipID'], 'membershipID')  : null;
+        $this->container['nonResolverDomain'] = isset($data['nonResolverDomain']) ? $this->createData($data['nonResolverDomain'], 'nonResolverDomain')  : null;
     }
 
     /**
@@ -251,49 +251,49 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets membership_id
+     * Gets membershipID
      *
      * @return string
      */
-    public function getMembershipId()
+    public function getMembershipID()
     {
-        return $this->container['membership_id'];
+        return $this->container['membershipID'];
     }
 
     /**
-     * Sets membership_id
+     * Sets membershipID
      *
-     * @param string $membership_id Membership ID (token) for the .XXX community.
+     * @param string $membershipID Membership ID (token) for the .XXX community.
      *
      * @return $this
      */
-    public function setMembershipId($membership_id)
+    public function setMembershipID($membershipID)
     {
-        $this->container['membership_id'] = $membership_id;
+        $this->container['membershipID'] = $membershipID;
 
         return $this;
     }
 
     /**
-     * Gets non_resolver_domain
+     * Gets nonResolverDomain
      *
      * @return bool
      */
     public function getNonResolverDomain()
     {
-        return $this->container['non_resolver_domain'];
+        return $this->container['nonResolverDomain'];
     }
 
     /**
-     * Sets non_resolver_domain
+     * Sets nonResolverDomain
      *
-     * @param bool $non_resolver_domain XXX community membership available or not.
+     * @param bool $nonResolverDomain XXX community membership available or not.
      *
      * @return $this
      */
-    public function setNonResolverDomain($non_resolver_domain)
+    public function setNonResolverDomain($nonResolverDomain)
     {
-        $this->container['non_resolver_domain'] = $non_resolver_domain;
+        $this->container['nonResolverDomain'] = $nonResolverDomain;
 
         return $this;
     }

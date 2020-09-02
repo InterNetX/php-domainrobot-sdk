@@ -59,15 +59,15 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'tld' => 'string',
         'subtld' => 'string',
-        'average_tld_frequency' => 'float',
-        'average_tld_price' => 'float',
-        'averag_subt_tld_frequency' => 'float',
-        'average_subtld_price' => 'float',
-        'tld_num_domains' => 'float',
-        'tld_globale_rank' => 'float',
-        'subtld_num_domains' => 'float',
-        'subtld_globale_rank' => 'float',
-        'language_tld_match' => 'float'
+        'averageTldFrequency' => 'float',
+        'averageTldPrice' => 'float',
+        'averagSubtTldFrequency' => 'float',
+        'averageSubtldPrice' => 'float',
+        'tldNumDomains' => 'float',
+        'tldGlobaleRank' => 'float',
+        'subtldNumDomains' => 'float',
+        'subtldGlobaleRank' => 'float',
+        'languageTldMatch' => 'float'
     ];
 
     /**
@@ -78,15 +78,15 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'tld' => null,
         'subtld' => null,
-        'average_tld_frequency' => null,
-        'average_tld_price' => null,
-        'averag_subt_tld_frequency' => null,
-        'average_subtld_price' => null,
-        'tld_num_domains' => null,
-        'tld_globale_rank' => null,
-        'subtld_num_domains' => null,
-        'subtld_globale_rank' => null,
-        'language_tld_match' => null
+        'averageTldFrequency' => null,
+        'averageTldPrice' => null,
+        'averagSubtTldFrequency' => null,
+        'averageSubtldPrice' => null,
+        'tldNumDomains' => null,
+        'tldGlobaleRank' => null,
+        'subtldNumDomains' => null,
+        'subtldGlobaleRank' => null,
+        'languageTldMatch' => null
     ];
 
     /**
@@ -118,15 +118,15 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'tld' => 'tld',
         'subtld' => 'subtld',
-        'average_tld_frequency' => 'averageTldFrequency',
-        'average_tld_price' => 'averageTldPrice',
-        'averag_subt_tld_frequency' => 'averagSubtTldFrequency',
-        'average_subtld_price' => 'averageSubtldPrice',
-        'tld_num_domains' => 'tldNumDomains',
-        'tld_globale_rank' => 'tldGlobaleRank',
-        'subtld_num_domains' => 'subtldNumDomains',
-        'subtld_globale_rank' => 'subtldGlobaleRank',
-        'language_tld_match' => 'languageTldMatch'
+        'averageTldFrequency' => 'averageTldFrequency',
+        'averageTldPrice' => 'averageTldPrice',
+        'averagSubtTldFrequency' => 'averagSubtTldFrequency',
+        'averageSubtldPrice' => 'averageSubtldPrice',
+        'tldNumDomains' => 'tldNumDomains',
+        'tldGlobaleRank' => 'tldGlobaleRank',
+        'subtldNumDomains' => 'subtldNumDomains',
+        'subtldGlobaleRank' => 'subtldGlobaleRank',
+        'languageTldMatch' => 'languageTldMatch'
     ];
 
     /**
@@ -137,15 +137,15 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     protected static $setters = [
         'tld' => 'setTld',
         'subtld' => 'setSubtld',
-        'average_tld_frequency' => 'setAverageTldFrequency',
-        'average_tld_price' => 'setAverageTldPrice',
-        'averag_subt_tld_frequency' => 'setAveragSubtTldFrequency',
-        'average_subtld_price' => 'setAverageSubtldPrice',
-        'tld_num_domains' => 'setTldNumDomains',
-        'tld_globale_rank' => 'setTldGlobaleRank',
-        'subtld_num_domains' => 'setSubtldNumDomains',
-        'subtld_globale_rank' => 'setSubtldGlobaleRank',
-        'language_tld_match' => 'setLanguageTldMatch'
+        'averageTldFrequency' => 'setAverageTldFrequency',
+        'averageTldPrice' => 'setAverageTldPrice',
+        'averagSubtTldFrequency' => 'setAveragSubtTldFrequency',
+        'averageSubtldPrice' => 'setAverageSubtldPrice',
+        'tldNumDomains' => 'setTldNumDomains',
+        'tldGlobaleRank' => 'setTldGlobaleRank',
+        'subtldNumDomains' => 'setSubtldNumDomains',
+        'subtldGlobaleRank' => 'setSubtldGlobaleRank',
+        'languageTldMatch' => 'setLanguageTldMatch'
     ];
 
     /**
@@ -156,15 +156,15 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     protected static $getters = [
         'tld' => 'getTld',
         'subtld' => 'getSubtld',
-        'average_tld_frequency' => 'getAverageTldFrequency',
-        'average_tld_price' => 'getAverageTldPrice',
-        'averag_subt_tld_frequency' => 'getAveragSubtTldFrequency',
-        'average_subtld_price' => 'getAverageSubtldPrice',
-        'tld_num_domains' => 'getTldNumDomains',
-        'tld_globale_rank' => 'getTldGlobaleRank',
-        'subtld_num_domains' => 'getSubtldNumDomains',
-        'subtld_globale_rank' => 'getSubtldGlobaleRank',
-        'language_tld_match' => 'getLanguageTldMatch'
+        'averageTldFrequency' => 'getAverageTldFrequency',
+        'averageTldPrice' => 'getAverageTldPrice',
+        'averagSubtTldFrequency' => 'getAveragSubtTldFrequency',
+        'averageSubtldPrice' => 'getAverageSubtldPrice',
+        'tldNumDomains' => 'getTldNumDomains',
+        'tldGlobaleRank' => 'getTldGlobaleRank',
+        'subtldNumDomains' => 'getSubtldNumDomains',
+        'subtldGlobaleRank' => 'getSubtldGlobaleRank',
+        'languageTldMatch' => 'getLanguageTldMatch'
     ];
 
     /**
@@ -229,15 +229,15 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     {
         $this->container['tld'] = isset($data['tld']) ? $this->createData($data['tld'], 'tld')  : null;
         $this->container['subtld'] = isset($data['subtld']) ? $this->createData($data['subtld'], 'subtld')  : null;
-        $this->container['average_tld_frequency'] = isset($data['average_tld_frequency']) ? $this->createData($data['average_tld_frequency'], 'average_tld_frequency')  : null;
-        $this->container['average_tld_price'] = isset($data['average_tld_price']) ? $this->createData($data['average_tld_price'], 'average_tld_price')  : null;
-        $this->container['averag_subt_tld_frequency'] = isset($data['averag_subt_tld_frequency']) ? $this->createData($data['averag_subt_tld_frequency'], 'averag_subt_tld_frequency')  : null;
-        $this->container['average_subtld_price'] = isset($data['average_subtld_price']) ? $this->createData($data['average_subtld_price'], 'average_subtld_price')  : null;
-        $this->container['tld_num_domains'] = isset($data['tld_num_domains']) ? $this->createData($data['tld_num_domains'], 'tld_num_domains')  : null;
-        $this->container['tld_globale_rank'] = isset($data['tld_globale_rank']) ? $this->createData($data['tld_globale_rank'], 'tld_globale_rank')  : null;
-        $this->container['subtld_num_domains'] = isset($data['subtld_num_domains']) ? $this->createData($data['subtld_num_domains'], 'subtld_num_domains')  : null;
-        $this->container['subtld_globale_rank'] = isset($data['subtld_globale_rank']) ? $this->createData($data['subtld_globale_rank'], 'subtld_globale_rank')  : null;
-        $this->container['language_tld_match'] = isset($data['language_tld_match']) ? $this->createData($data['language_tld_match'], 'language_tld_match')  : null;
+        $this->container['averageTldFrequency'] = isset($data['averageTldFrequency']) ? $this->createData($data['averageTldFrequency'], 'averageTldFrequency')  : null;
+        $this->container['averageTldPrice'] = isset($data['averageTldPrice']) ? $this->createData($data['averageTldPrice'], 'averageTldPrice')  : null;
+        $this->container['averagSubtTldFrequency'] = isset($data['averagSubtTldFrequency']) ? $this->createData($data['averagSubtTldFrequency'], 'averagSubtTldFrequency')  : null;
+        $this->container['averageSubtldPrice'] = isset($data['averageSubtldPrice']) ? $this->createData($data['averageSubtldPrice'], 'averageSubtldPrice')  : null;
+        $this->container['tldNumDomains'] = isset($data['tldNumDomains']) ? $this->createData($data['tldNumDomains'], 'tldNumDomains')  : null;
+        $this->container['tldGlobaleRank'] = isset($data['tldGlobaleRank']) ? $this->createData($data['tldGlobaleRank'], 'tldGlobaleRank')  : null;
+        $this->container['subtldNumDomains'] = isset($data['subtldNumDomains']) ? $this->createData($data['subtldNumDomains'], 'subtldNumDomains')  : null;
+        $this->container['subtldGlobaleRank'] = isset($data['subtldGlobaleRank']) ? $this->createData($data['subtldGlobaleRank'], 'subtldGlobaleRank')  : null;
+        $this->container['languageTldMatch'] = isset($data['languageTldMatch']) ? $this->createData($data['languageTldMatch'], 'languageTldMatch')  : null;
     }
 
     /**
@@ -353,217 +353,217 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets average_tld_frequency
+     * Gets averageTldFrequency
      *
      * @return float
      */
     public function getAverageTldFrequency()
     {
-        return $this->container['average_tld_frequency'];
+        return $this->container['averageTldFrequency'];
     }
 
     /**
-     * Sets average_tld_frequency
+     * Sets averageTldFrequency
      *
-     * @param float $average_tld_frequency average_tld_frequency
+     * @param float $averageTldFrequency averageTldFrequency
      *
      * @return $this
      */
-    public function setAverageTldFrequency($average_tld_frequency)
+    public function setAverageTldFrequency($averageTldFrequency)
     {
-        $this->container['average_tld_frequency'] = $average_tld_frequency;
+        $this->container['averageTldFrequency'] = $averageTldFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_tld_price
+     * Gets averageTldPrice
      *
      * @return float
      */
     public function getAverageTldPrice()
     {
-        return $this->container['average_tld_price'];
+        return $this->container['averageTldPrice'];
     }
 
     /**
-     * Sets average_tld_price
+     * Sets averageTldPrice
      *
-     * @param float $average_tld_price average_tld_price
+     * @param float $averageTldPrice averageTldPrice
      *
      * @return $this
      */
-    public function setAverageTldPrice($average_tld_price)
+    public function setAverageTldPrice($averageTldPrice)
     {
-        $this->container['average_tld_price'] = $average_tld_price;
+        $this->container['averageTldPrice'] = $averageTldPrice;
 
         return $this;
     }
 
     /**
-     * Gets averag_subt_tld_frequency
+     * Gets averagSubtTldFrequency
      *
      * @return float
      */
     public function getAveragSubtTldFrequency()
     {
-        return $this->container['averag_subt_tld_frequency'];
+        return $this->container['averagSubtTldFrequency'];
     }
 
     /**
-     * Sets averag_subt_tld_frequency
+     * Sets averagSubtTldFrequency
      *
-     * @param float $averag_subt_tld_frequency averag_subt_tld_frequency
+     * @param float $averagSubtTldFrequency averagSubtTldFrequency
      *
      * @return $this
      */
-    public function setAveragSubtTldFrequency($averag_subt_tld_frequency)
+    public function setAveragSubtTldFrequency($averagSubtTldFrequency)
     {
-        $this->container['averag_subt_tld_frequency'] = $averag_subt_tld_frequency;
+        $this->container['averagSubtTldFrequency'] = $averagSubtTldFrequency;
 
         return $this;
     }
 
     /**
-     * Gets average_subtld_price
+     * Gets averageSubtldPrice
      *
      * @return float
      */
     public function getAverageSubtldPrice()
     {
-        return $this->container['average_subtld_price'];
+        return $this->container['averageSubtldPrice'];
     }
 
     /**
-     * Sets average_subtld_price
+     * Sets averageSubtldPrice
      *
-     * @param float $average_subtld_price average_subtld_price
+     * @param float $averageSubtldPrice averageSubtldPrice
      *
      * @return $this
      */
-    public function setAverageSubtldPrice($average_subtld_price)
+    public function setAverageSubtldPrice($averageSubtldPrice)
     {
-        $this->container['average_subtld_price'] = $average_subtld_price;
+        $this->container['averageSubtldPrice'] = $averageSubtldPrice;
 
         return $this;
     }
 
     /**
-     * Gets tld_num_domains
+     * Gets tldNumDomains
      *
      * @return float
      */
     public function getTldNumDomains()
     {
-        return $this->container['tld_num_domains'];
+        return $this->container['tldNumDomains'];
     }
 
     /**
-     * Sets tld_num_domains
+     * Sets tldNumDomains
      *
-     * @param float $tld_num_domains tld_num_domains
+     * @param float $tldNumDomains tldNumDomains
      *
      * @return $this
      */
-    public function setTldNumDomains($tld_num_domains)
+    public function setTldNumDomains($tldNumDomains)
     {
-        $this->container['tld_num_domains'] = $tld_num_domains;
+        $this->container['tldNumDomains'] = $tldNumDomains;
 
         return $this;
     }
 
     /**
-     * Gets tld_globale_rank
+     * Gets tldGlobaleRank
      *
      * @return float
      */
     public function getTldGlobaleRank()
     {
-        return $this->container['tld_globale_rank'];
+        return $this->container['tldGlobaleRank'];
     }
 
     /**
-     * Sets tld_globale_rank
+     * Sets tldGlobaleRank
      *
-     * @param float $tld_globale_rank tld_globale_rank
+     * @param float $tldGlobaleRank tldGlobaleRank
      *
      * @return $this
      */
-    public function setTldGlobaleRank($tld_globale_rank)
+    public function setTldGlobaleRank($tldGlobaleRank)
     {
-        $this->container['tld_globale_rank'] = $tld_globale_rank;
+        $this->container['tldGlobaleRank'] = $tldGlobaleRank;
 
         return $this;
     }
 
     /**
-     * Gets subtld_num_domains
+     * Gets subtldNumDomains
      *
      * @return float
      */
     public function getSubtldNumDomains()
     {
-        return $this->container['subtld_num_domains'];
+        return $this->container['subtldNumDomains'];
     }
 
     /**
-     * Sets subtld_num_domains
+     * Sets subtldNumDomains
      *
-     * @param float $subtld_num_domains subtld_num_domains
+     * @param float $subtldNumDomains subtldNumDomains
      *
      * @return $this
      */
-    public function setSubtldNumDomains($subtld_num_domains)
+    public function setSubtldNumDomains($subtldNumDomains)
     {
-        $this->container['subtld_num_domains'] = $subtld_num_domains;
+        $this->container['subtldNumDomains'] = $subtldNumDomains;
 
         return $this;
     }
 
     /**
-     * Gets subtld_globale_rank
+     * Gets subtldGlobaleRank
      *
      * @return float
      */
     public function getSubtldGlobaleRank()
     {
-        return $this->container['subtld_globale_rank'];
+        return $this->container['subtldGlobaleRank'];
     }
 
     /**
-     * Sets subtld_globale_rank
+     * Sets subtldGlobaleRank
      *
-     * @param float $subtld_globale_rank subtld_globale_rank
+     * @param float $subtldGlobaleRank subtldGlobaleRank
      *
      * @return $this
      */
-    public function setSubtldGlobaleRank($subtld_globale_rank)
+    public function setSubtldGlobaleRank($subtldGlobaleRank)
     {
-        $this->container['subtld_globale_rank'] = $subtld_globale_rank;
+        $this->container['subtldGlobaleRank'] = $subtldGlobaleRank;
 
         return $this;
     }
 
     /**
-     * Gets language_tld_match
+     * Gets languageTldMatch
      *
      * @return float
      */
     public function getLanguageTldMatch()
     {
-        return $this->container['language_tld_match'];
+        return $this->container['languageTldMatch'];
     }
 
     /**
-     * Sets language_tld_match
+     * Sets languageTldMatch
      *
-     * @param float $language_tld_match language_tld_match
+     * @param float $languageTldMatch languageTldMatch
      *
      * @return $this
      */
-    public function setLanguageTldMatch($language_tld_match)
+    public function setLanguageTldMatch($languageTldMatch)
     {
-        $this->container['language_tld_match'] = $language_tld_match;
+        $this->container['languageTldMatch'] = $languageTldMatch;
 
         return $this;
     }

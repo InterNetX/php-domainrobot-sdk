@@ -63,7 +63,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'role' => '\Domainrobot\Model\RecipientRole',
         'status' => '\Domainrobot\Model\DeliveryStatus',
         'attempt' => '\DateTime',
-        'attempt_count' => 'int',
+        'attemptCount' => 'int',
         'expire' => '\DateTime',
         'logs' => '\Domainrobot\Model\RecipientLog[]'
     ];
@@ -80,7 +80,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'role' => null,
         'status' => null,
         'attempt' => 'date-time',
-        'attempt_count' => 'int32',
+        'attemptCount' => 'int32',
         'expire' => 'date-time',
         'logs' => null
     ];
@@ -118,7 +118,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'role' => 'role',
         'status' => 'status',
         'attempt' => 'attempt',
-        'attempt_count' => 'attemptCount',
+        'attemptCount' => 'attemptCount',
         'expire' => 'expire',
         'logs' => 'logs'
     ];
@@ -135,7 +135,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'role' => 'setRole',
         'status' => 'setStatus',
         'attempt' => 'setAttempt',
-        'attempt_count' => 'setAttemptCount',
+        'attemptCount' => 'setAttemptCount',
         'expire' => 'setExpire',
         'logs' => 'setLogs'
     ];
@@ -152,7 +152,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'role' => 'getRole',
         'status' => 'getStatus',
         'attempt' => 'getAttempt',
-        'attempt_count' => 'getAttemptCount',
+        'attemptCount' => 'getAttemptCount',
         'expire' => 'getExpire',
         'logs' => 'getLogs'
     ];
@@ -223,7 +223,7 @@ class Recipient implements ModelInterface, ArrayAccess
         $this->container['role'] = isset($data['role']) ? $this->createData($data['role'], 'role')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['attempt'] = isset($data['attempt']) ? $this->createData($data['attempt'], 'attempt')  : null;
-        $this->container['attempt_count'] = isset($data['attempt_count']) ? $this->createData($data['attempt_count'], 'attempt_count')  : null;
+        $this->container['attemptCount'] = isset($data['attemptCount']) ? $this->createData($data['attemptCount'], 'attemptCount')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
         $this->container['logs'] = isset($data['logs']) ? $this->createData($data['logs'], 'logs')  : null;
     }
@@ -437,25 +437,25 @@ class Recipient implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets attempt_count
+     * Gets attemptCount
      *
      * @return int
      */
     public function getAttemptCount()
     {
-        return $this->container['attempt_count'];
+        return $this->container['attemptCount'];
     }
 
     /**
-     * Sets attempt_count
+     * Sets attemptCount
      *
-     * @param int $attempt_count The number of attempts
+     * @param int $attemptCount The number of attempts
      *
      * @return $this
      */
-    public function setAttemptCount($attempt_count)
+    public function setAttemptCount($attemptCount)
     {
-        $this->container['attempt_count'] = $attempt_count;
+        $this->container['attemptCount'] = $attemptCount;
 
         return $this;
     }

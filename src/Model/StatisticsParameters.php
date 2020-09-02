@@ -57,10 +57,10 @@ class StatisticsParameters implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'total_queries' => 'float',
-        'web_queries' => 'float',
-        'api_queries' => 'float',
-        'query_percentage' => 'float'
+        'totalQueries' => 'float',
+        'webQueries' => 'float',
+        'apiQueries' => 'float',
+        'queryPercentage' => 'float'
     ];
 
     /**
@@ -69,10 +69,10 @@ class StatisticsParameters implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'total_queries' => 'integer',
-        'web_queries' => 'integer',
-        'api_queries' => 'integer',
-        'query_percentage' => 'integer'
+        'totalQueries' => 'integer',
+        'webQueries' => 'integer',
+        'apiQueries' => 'integer',
+        'queryPercentage' => 'integer'
     ];
 
     /**
@@ -102,10 +102,10 @@ class StatisticsParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_queries' => 'totalQueries',
-        'web_queries' => 'webQueries',
-        'api_queries' => 'apiQueries',
-        'query_percentage' => 'queryPercentage'
+        'totalQueries' => 'totalQueries',
+        'webQueries' => 'webQueries',
+        'apiQueries' => 'apiQueries',
+        'queryPercentage' => 'queryPercentage'
     ];
 
     /**
@@ -114,10 +114,10 @@ class StatisticsParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total_queries' => 'setTotalQueries',
-        'web_queries' => 'setWebQueries',
-        'api_queries' => 'setApiQueries',
-        'query_percentage' => 'setQueryPercentage'
+        'totalQueries' => 'setTotalQueries',
+        'webQueries' => 'setWebQueries',
+        'apiQueries' => 'setApiQueries',
+        'queryPercentage' => 'setQueryPercentage'
     ];
 
     /**
@@ -126,10 +126,10 @@ class StatisticsParameters implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total_queries' => 'getTotalQueries',
-        'web_queries' => 'getWebQueries',
-        'api_queries' => 'getApiQueries',
-        'query_percentage' => 'getQueryPercentage'
+        'totalQueries' => 'getTotalQueries',
+        'webQueries' => 'getWebQueries',
+        'apiQueries' => 'getApiQueries',
+        'queryPercentage' => 'getQueryPercentage'
     ];
 
     /**
@@ -192,10 +192,10 @@ class StatisticsParameters implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['total_queries'] = isset($data['total_queries']) ? $this->createData($data['total_queries'], 'total_queries')  : null;
-        $this->container['web_queries'] = isset($data['web_queries']) ? $this->createData($data['web_queries'], 'web_queries')  : null;
-        $this->container['api_queries'] = isset($data['api_queries']) ? $this->createData($data['api_queries'], 'api_queries')  : null;
-        $this->container['query_percentage'] = isset($data['query_percentage']) ? $this->createData($data['query_percentage'], 'query_percentage')  : null;
+        $this->container['totalQueries'] = isset($data['totalQueries']) ? $this->createData($data['totalQueries'], 'totalQueries')  : null;
+        $this->container['webQueries'] = isset($data['webQueries']) ? $this->createData($data['webQueries'], 'webQueries')  : null;
+        $this->container['apiQueries'] = isset($data['apiQueries']) ? $this->createData($data['apiQueries'], 'apiQueries')  : null;
+        $this->container['queryPercentage'] = isset($data['queryPercentage']) ? $this->createData($data['queryPercentage'], 'queryPercentage')  : null;
     }
 
     /**
@@ -263,97 +263,97 @@ class StatisticsParameters implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets total_queries
+     * Gets totalQueries
      *
      * @return float
      */
     public function getTotalQueries()
     {
-        return $this->container['total_queries'];
+        return $this->container['totalQueries'];
     }
 
     /**
-     * Sets total_queries
+     * Sets totalQueries
      *
-     * @param float $total_queries total_queries
+     * @param float $totalQueries totalQueries
      *
      * @return $this
      */
-    public function setTotalQueries($total_queries)
+    public function setTotalQueries($totalQueries)
     {
-        $this->container['total_queries'] = $total_queries;
+        $this->container['totalQueries'] = $totalQueries;
 
         return $this;
     }
 
     /**
-     * Gets web_queries
+     * Gets webQueries
      *
      * @return float
      */
     public function getWebQueries()
     {
-        return $this->container['web_queries'];
+        return $this->container['webQueries'];
     }
 
     /**
-     * Sets web_queries
+     * Sets webQueries
      *
-     * @param float $web_queries web_queries
+     * @param float $webQueries webQueries
      *
      * @return $this
      */
-    public function setWebQueries($web_queries)
+    public function setWebQueries($webQueries)
     {
-        $this->container['web_queries'] = $web_queries;
+        $this->container['webQueries'] = $webQueries;
 
         return $this;
     }
 
     /**
-     * Gets api_queries
+     * Gets apiQueries
      *
      * @return float
      */
     public function getApiQueries()
     {
-        return $this->container['api_queries'];
+        return $this->container['apiQueries'];
     }
 
     /**
-     * Sets api_queries
+     * Sets apiQueries
      *
-     * @param float $api_queries api_queries
+     * @param float $apiQueries apiQueries
      *
      * @return $this
      */
-    public function setApiQueries($api_queries)
+    public function setApiQueries($apiQueries)
     {
-        $this->container['api_queries'] = $api_queries;
+        $this->container['apiQueries'] = $apiQueries;
 
         return $this;
     }
 
     /**
-     * Gets query_percentage
+     * Gets queryPercentage
      *
      * @return float
      */
     public function getQueryPercentage()
     {
-        return $this->container['query_percentage'];
+        return $this->container['queryPercentage'];
     }
 
     /**
-     * Sets query_percentage
+     * Sets queryPercentage
      *
-     * @param float $query_percentage query_percentage
+     * @param float $queryPercentage queryPercentage
      *
      * @return $this
      */
-    public function setQueryPercentage($query_percentage)
+    public function setQueryPercentage($queryPercentage)
     {
-        $this->container['query_percentage'] = $query_percentage;
+        $this->container['queryPercentage'] = $queryPercentage;
 
         return $this;
     }

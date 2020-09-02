@@ -57,9 +57,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'total_queries' => 'object',
-        'web_queries' => 'object',
-        'api_queries' => 'object'
+        'totalQueries' => 'object',
+        'webQueries' => 'object',
+        'apiQueries' => 'object'
     ];
 
     /**
@@ -68,9 +68,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'total_queries' => null,
-        'web_queries' => null,
-        'api_queries' => null
+        'totalQueries' => null,
+        'webQueries' => null,
+        'apiQueries' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_queries' => 'totalQueries',
-        'web_queries' => 'webQueries',
-        'api_queries' => 'apiQueries'
+        'totalQueries' => 'totalQueries',
+        'webQueries' => 'webQueries',
+        'apiQueries' => 'apiQueries'
     ];
 
     /**
@@ -111,9 +111,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'total_queries' => 'setTotalQueries',
-        'web_queries' => 'setWebQueries',
-        'api_queries' => 'setApiQueries'
+        'totalQueries' => 'setTotalQueries',
+        'webQueries' => 'setWebQueries',
+        'apiQueries' => 'setApiQueries'
     ];
 
     /**
@@ -122,9 +122,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'total_queries' => 'getTotalQueries',
-        'web_queries' => 'getWebQueries',
-        'api_queries' => 'getApiQueries'
+        'totalQueries' => 'getTotalQueries',
+        'webQueries' => 'getWebQueries',
+        'apiQueries' => 'getApiQueries'
     ];
 
     /**
@@ -187,9 +187,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
-        $this->container['total_queries'] = isset($data['total_queries']) ? $this->createData($data['total_queries'], 'total_queries')  : null;
-        $this->container['web_queries'] = isset($data['web_queries']) ? $this->createData($data['web_queries'], 'web_queries')  : null;
-        $this->container['api_queries'] = isset($data['api_queries']) ? $this->createData($data['api_queries'], 'api_queries')  : null;
+        $this->container['totalQueries'] = isset($data['totalQueries']) ? $this->createData($data['totalQueries'], 'totalQueries')  : null;
+        $this->container['webQueries'] = isset($data['webQueries']) ? $this->createData($data['webQueries'], 'webQueries')  : null;
+        $this->container['apiQueries'] = isset($data['apiQueries']) ? $this->createData($data['apiQueries'], 'apiQueries')  : null;
     }
 
     /**
@@ -257,73 +257,73 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
 
 
     /**
-     * Gets total_queries
+     * Gets totalQueries
      *
      * @return object
      */
     public function getTotalQueries()
     {
-        return $this->container['total_queries'];
+        return $this->container['totalQueries'];
     }
 
     /**
-     * Sets total_queries
+     * Sets totalQueries
      *
-     * @param object $total_queries total_queries
+     * @param object $totalQueries totalQueries
      *
      * @return $this
      */
-    public function setTotalQueries($total_queries)
+    public function setTotalQueries($totalQueries)
     {
-        $this->container['total_queries'] = $total_queries;
+        $this->container['totalQueries'] = $totalQueries;
 
         return $this;
     }
 
     /**
-     * Gets web_queries
+     * Gets webQueries
      *
      * @return object
      */
     public function getWebQueries()
     {
-        return $this->container['web_queries'];
+        return $this->container['webQueries'];
     }
 
     /**
-     * Sets web_queries
+     * Sets webQueries
      *
-     * @param object $web_queries web_queries
+     * @param object $webQueries webQueries
      *
      * @return $this
      */
-    public function setWebQueries($web_queries)
+    public function setWebQueries($webQueries)
     {
-        $this->container['web_queries'] = $web_queries;
+        $this->container['webQueries'] = $webQueries;
 
         return $this;
     }
 
     /**
-     * Gets api_queries
+     * Gets apiQueries
      *
      * @return object
      */
     public function getApiQueries()
     {
-        return $this->container['api_queries'];
+        return $this->container['apiQueries'];
     }
 
     /**
-     * Sets api_queries
+     * Sets apiQueries
      *
-     * @param object $api_queries api_queries
+     * @param object $apiQueries apiQueries
      *
      * @return $this
      */
-    public function setApiQueries($api_queries)
+    public function setApiQueries($apiQueries)
     {
-        $this->container['api_queries'] = $api_queries;
+        $this->container['apiQueries'] = $apiQueries;
 
         return $this;
     }

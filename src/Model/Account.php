@@ -58,12 +58,12 @@ class Account implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'customer' => '\Domainrobot\Model\GenericCustomer',
-        'current_account_balance' => 'double',
-        'running_total' => 'double',
-        'credit_limit' => 'double',
+        'currentAccountBalance' => 'double',
+        'runningTotal' => 'double',
+        'creditLimit' => 'double',
         'currency' => 'string',
-        'min_running_total_notification' => 'double',
-        'min_running_total_notification_email' => 'string',
+        'minRunningTotalNotification' => 'double',
+        'minRunningTotalNotificationEmail' => 'string',
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'view' => '\Domainrobot\Model\CurrencyRate'
@@ -76,12 +76,12 @@ class Account implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'customer' => null,
-        'current_account_balance' => 'double',
-        'running_total' => 'double',
-        'credit_limit' => 'double',
+        'currentAccountBalance' => 'double',
+        'runningTotal' => 'double',
+        'creditLimit' => 'double',
         'currency' => null,
-        'min_running_total_notification' => 'double',
-        'min_running_total_notification_email' => null,
+        'minRunningTotalNotification' => 'double',
+        'minRunningTotalNotificationEmail' => null,
         'created' => 'date-time',
         'updated' => 'date-time',
         'view' => null
@@ -115,12 +115,12 @@ class Account implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'customer' => 'customer',
-        'current_account_balance' => 'currentAccountBalance',
-        'running_total' => 'runningTotal',
-        'credit_limit' => 'creditLimit',
+        'currentAccountBalance' => 'currentAccountBalance',
+        'runningTotal' => 'runningTotal',
+        'creditLimit' => 'creditLimit',
         'currency' => 'currency',
-        'min_running_total_notification' => 'minRunningTotalNotification',
-        'min_running_total_notification_email' => 'minRunningTotalNotificationEmail',
+        'minRunningTotalNotification' => 'minRunningTotalNotification',
+        'minRunningTotalNotificationEmail' => 'minRunningTotalNotificationEmail',
         'created' => 'created',
         'updated' => 'updated',
         'view' => 'view'
@@ -133,12 +133,12 @@ class Account implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'customer' => 'setCustomer',
-        'current_account_balance' => 'setCurrentAccountBalance',
-        'running_total' => 'setRunningTotal',
-        'credit_limit' => 'setCreditLimit',
+        'currentAccountBalance' => 'setCurrentAccountBalance',
+        'runningTotal' => 'setRunningTotal',
+        'creditLimit' => 'setCreditLimit',
         'currency' => 'setCurrency',
-        'min_running_total_notification' => 'setMinRunningTotalNotification',
-        'min_running_total_notification_email' => 'setMinRunningTotalNotificationEmail',
+        'minRunningTotalNotification' => 'setMinRunningTotalNotification',
+        'minRunningTotalNotificationEmail' => 'setMinRunningTotalNotificationEmail',
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'view' => 'setView'
@@ -151,12 +151,12 @@ class Account implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'customer' => 'getCustomer',
-        'current_account_balance' => 'getCurrentAccountBalance',
-        'running_total' => 'getRunningTotal',
-        'credit_limit' => 'getCreditLimit',
+        'currentAccountBalance' => 'getCurrentAccountBalance',
+        'runningTotal' => 'getRunningTotal',
+        'creditLimit' => 'getCreditLimit',
         'currency' => 'getCurrency',
-        'min_running_total_notification' => 'getMinRunningTotalNotification',
-        'min_running_total_notification_email' => 'getMinRunningTotalNotificationEmail',
+        'minRunningTotalNotification' => 'getMinRunningTotalNotification',
+        'minRunningTotalNotificationEmail' => 'getMinRunningTotalNotificationEmail',
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'view' => 'getView'
@@ -223,12 +223,12 @@ class Account implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['customer'] = isset($data['customer']) ? $this->createData($data['customer'], 'customer')  : null;
-        $this->container['current_account_balance'] = isset($data['current_account_balance']) ? $this->createData($data['current_account_balance'], 'current_account_balance')  : null;
-        $this->container['running_total'] = isset($data['running_total']) ? $this->createData($data['running_total'], 'running_total')  : null;
-        $this->container['credit_limit'] = isset($data['credit_limit']) ? $this->createData($data['credit_limit'], 'credit_limit')  : null;
+        $this->container['currentAccountBalance'] = isset($data['currentAccountBalance']) ? $this->createData($data['currentAccountBalance'], 'currentAccountBalance')  : null;
+        $this->container['runningTotal'] = isset($data['runningTotal']) ? $this->createData($data['runningTotal'], 'runningTotal')  : null;
+        $this->container['creditLimit'] = isset($data['creditLimit']) ? $this->createData($data['creditLimit'], 'creditLimit')  : null;
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
-        $this->container['min_running_total_notification'] = isset($data['min_running_total_notification']) ? $this->createData($data['min_running_total_notification'], 'min_running_total_notification')  : null;
-        $this->container['min_running_total_notification_email'] = isset($data['min_running_total_notification_email']) ? $this->createData($data['min_running_total_notification_email'], 'min_running_total_notification_email')  : null;
+        $this->container['minRunningTotalNotification'] = isset($data['minRunningTotalNotification']) ? $this->createData($data['minRunningTotalNotification'], 'minRunningTotalNotification')  : null;
+        $this->container['minRunningTotalNotificationEmail'] = isset($data['minRunningTotalNotificationEmail']) ? $this->createData($data['minRunningTotalNotificationEmail'], 'minRunningTotalNotificationEmail')  : null;
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['view'] = isset($data['view']) ? $this->createData($data['view'], 'view')  : null;
@@ -326,73 +326,73 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets current_account_balance
+     * Gets currentAccountBalance
      *
      * @return double
      */
     public function getCurrentAccountBalance()
     {
-        return $this->container['current_account_balance'];
+        return $this->container['currentAccountBalance'];
     }
 
     /**
-     * Sets current_account_balance
+     * Sets currentAccountBalance
      *
-     * @param double $current_account_balance The real account balance
+     * @param double $currentAccountBalance The real account balance
      *
      * @return $this
      */
-    public function setCurrentAccountBalance($current_account_balance)
+    public function setCurrentAccountBalance($currentAccountBalance)
     {
-        $this->container['current_account_balance'] = $current_account_balance;
+        $this->container['currentAccountBalance'] = $currentAccountBalance;
 
         return $this;
     }
 
     /**
-     * Gets running_total
+     * Gets runningTotal
      *
      * @return double
      */
     public function getRunningTotal()
     {
-        return $this->container['running_total'];
+        return $this->container['runningTotal'];
     }
 
     /**
-     * Sets running_total
+     * Sets runningTotal
      *
-     * @param double $running_total The current total, the amount of all finished and unfinished transactions
+     * @param double $runningTotal The current total, the amount of all finished and unfinished transactions
      *
      * @return $this
      */
-    public function setRunningTotal($running_total)
+    public function setRunningTotal($runningTotal)
     {
-        $this->container['running_total'] = $running_total;
+        $this->container['runningTotal'] = $runningTotal;
 
         return $this;
     }
 
     /**
-     * Gets credit_limit
+     * Gets creditLimit
      *
      * @return double
      */
     public function getCreditLimit()
     {
-        return $this->container['credit_limit'];
+        return $this->container['creditLimit'];
     }
 
     /**
-     * Sets credit_limit
+     * Sets creditLimit
      *
-     * @param double $credit_limit The credit limit of the account.
+     * @param double $creditLimit The credit limit of the account.
      *
      * @return $this
      */
-    public function setCreditLimit($credit_limit)
+    public function setCreditLimit($creditLimit)
     {
-        $this->container['credit_limit'] = $credit_limit;
+        $this->container['creditLimit'] = $creditLimit;
 
         return $this;
     }
@@ -422,49 +422,49 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets min_running_total_notification
+     * Gets minRunningTotalNotification
      *
      * @return double
      */
     public function getMinRunningTotalNotification()
     {
-        return $this->container['min_running_total_notification'];
+        return $this->container['minRunningTotalNotification'];
     }
 
     /**
-     * Sets min_running_total_notification
+     * Sets minRunningTotalNotification
      *
-     * @param double $min_running_total_notification The minimum running total amount if a notification should be send
+     * @param double $minRunningTotalNotification The minimum running total amount if a notification should be send
      *
      * @return $this
      */
-    public function setMinRunningTotalNotification($min_running_total_notification)
+    public function setMinRunningTotalNotification($minRunningTotalNotification)
     {
-        $this->container['min_running_total_notification'] = $min_running_total_notification;
+        $this->container['minRunningTotalNotification'] = $minRunningTotalNotification;
 
         return $this;
     }
 
     /**
-     * Gets min_running_total_notification_email
+     * Gets minRunningTotalNotificationEmail
      *
      * @return string
      */
     public function getMinRunningTotalNotificationEmail()
     {
-        return $this->container['min_running_total_notification_email'];
+        return $this->container['minRunningTotalNotificationEmail'];
     }
 
     /**
-     * Sets min_running_total_notification_email
+     * Sets minRunningTotalNotificationEmail
      *
-     * @param string $min_running_total_notification_email The recipient of the notification limit email
+     * @param string $minRunningTotalNotificationEmail The recipient of the notification limit email
      *
      * @return $this
      */
-    public function setMinRunningTotalNotificationEmail($min_running_total_notification_email)
+    public function setMinRunningTotalNotificationEmail($minRunningTotalNotificationEmail)
     {
-        $this->container['min_running_total_notification_email'] = $min_running_total_notification_email;
+        $this->container['minRunningTotalNotificationEmail'] = $minRunningTotalNotificationEmail;
 
         return $this;
     }

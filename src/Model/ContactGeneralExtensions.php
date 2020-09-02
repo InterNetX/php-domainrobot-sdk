@@ -61,11 +61,11 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'trademark' => '\Domainrobot\Model\ContactTrademarkExtensions',
         'identification' => '\Domainrobot\Model\ContactIdentificationExtensions',
         'language' => 'string',
-        'company_number' => 'string',
+        'companyNumber' => 'string',
         'gender' => '\Domainrobot\Model\GenderConstants',
-        'vat_number' => 'string',
+        'vatNumber' => 'string',
         'citizenship' => 'string',
-        'mobile_phone' => 'string'
+        'mobilePhone' => 'string'
     ];
 
     /**
@@ -78,11 +78,11 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'trademark' => null,
         'identification' => null,
         'language' => null,
-        'company_number' => null,
+        'companyNumber' => null,
         'gender' => null,
-        'vat_number' => null,
+        'vatNumber' => null,
         'citizenship' => null,
-        'mobile_phone' => null
+        'mobilePhone' => null
     ];
 
     /**
@@ -116,11 +116,11 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'trademark' => 'trademark',
         'identification' => 'identification',
         'language' => 'language',
-        'company_number' => 'companyNumber',
+        'companyNumber' => 'companyNumber',
         'gender' => 'gender',
-        'vat_number' => 'vatNumber',
+        'vatNumber' => 'vatNumber',
         'citizenship' => 'citizenship',
-        'mobile_phone' => 'mobilePhone'
+        'mobilePhone' => 'mobilePhone'
     ];
 
     /**
@@ -133,11 +133,11 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'trademark' => 'setTrademark',
         'identification' => 'setIdentification',
         'language' => 'setLanguage',
-        'company_number' => 'setCompanyNumber',
+        'companyNumber' => 'setCompanyNumber',
         'gender' => 'setGender',
-        'vat_number' => 'setVatNumber',
+        'vatNumber' => 'setVatNumber',
         'citizenship' => 'setCitizenship',
-        'mobile_phone' => 'setMobilePhone'
+        'mobilePhone' => 'setMobilePhone'
     ];
 
     /**
@@ -150,11 +150,11 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'trademark' => 'getTrademark',
         'identification' => 'getIdentification',
         'language' => 'getLanguage',
-        'company_number' => 'getCompanyNumber',
+        'companyNumber' => 'getCompanyNumber',
         'gender' => 'getGender',
-        'vat_number' => 'getVatNumber',
+        'vatNumber' => 'getVatNumber',
         'citizenship' => 'getCitizenship',
-        'mobile_phone' => 'getMobilePhone'
+        'mobilePhone' => 'getMobilePhone'
     ];
 
     /**
@@ -221,11 +221,11 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         $this->container['trademark'] = isset($data['trademark']) ? $this->createData($data['trademark'], 'trademark')  : null;
         $this->container['identification'] = isset($data['identification']) ? $this->createData($data['identification'], 'identification')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
-        $this->container['company_number'] = isset($data['company_number']) ? $this->createData($data['company_number'], 'company_number')  : null;
+        $this->container['companyNumber'] = isset($data['companyNumber']) ? $this->createData($data['companyNumber'], 'companyNumber')  : null;
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
-        $this->container['vat_number'] = isset($data['vat_number']) ? $this->createData($data['vat_number'], 'vat_number')  : null;
+        $this->container['vatNumber'] = isset($data['vatNumber']) ? $this->createData($data['vatNumber'], 'vatNumber')  : null;
         $this->container['citizenship'] = isset($data['citizenship']) ? $this->createData($data['citizenship'], 'citizenship')  : null;
-        $this->container['mobile_phone'] = isset($data['mobile_phone']) ? $this->createData($data['mobile_phone'], 'mobile_phone')  : null;
+        $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $this->createData($data['mobilePhone'], 'mobilePhone')  : null;
     }
 
     /**
@@ -389,25 +389,25 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets company_number
+     * Gets companyNumber
      *
      * @return string
      */
     public function getCompanyNumber()
     {
-        return $this->container['company_number'];
+        return $this->container['companyNumber'];
     }
 
     /**
-     * Sets company_number
+     * Sets companyNumber
      *
-     * @param string $company_number The company number.
+     * @param string $companyNumber The company number.
      *
      * @return $this
      */
-    public function setCompanyNumber($company_number)
+    public function setCompanyNumber($companyNumber)
     {
-        $this->container['company_number'] = $company_number;
+        $this->container['companyNumber'] = $companyNumber;
 
         return $this;
     }
@@ -437,25 +437,25 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets vat_number
+     * Gets vatNumber
      *
      * @return string
      */
     public function getVatNumber()
     {
-        return $this->container['vat_number'];
+        return $this->container['vatNumber'];
     }
 
     /**
-     * Sets vat_number
+     * Sets vatNumber
      *
-     * @param string $vat_number The vatnumber.
+     * @param string $vatNumber The vatnumber.
      *
      * @return $this
      */
-    public function setVatNumber($vat_number)
+    public function setVatNumber($vatNumber)
     {
-        $this->container['vat_number'] = $vat_number;
+        $this->container['vatNumber'] = $vatNumber;
 
         return $this;
     }
@@ -485,25 +485,25 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets mobile_phone
+     * Gets mobilePhone
      *
      * @return string
      */
     public function getMobilePhone()
     {
-        return $this->container['mobile_phone'];
+        return $this->container['mobilePhone'];
     }
 
     /**
-     * Sets mobile_phone
+     * Sets mobilePhone
      *
-     * @param string $mobile_phone The mobile phonenumber.
+     * @param string $mobilePhone The mobile phonenumber.
      *
      * @return $this
      */
-    public function setMobilePhone($mobile_phone)
+    public function setMobilePhone($mobilePhone)
     {
-        $this->container['mobile_phone'] = $mobile_phone;
+        $this->container['mobilePhone'] = $mobilePhone;
 
         return $this;
     }

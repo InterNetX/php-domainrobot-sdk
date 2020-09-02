@@ -60,10 +60,10 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
         'language' => 'string',
         'max' => 'int',
-        'max_sld_length' => 'int',
-        'use_dash' => 'bool',
-        'use_number' => 'bool',
-        'use_idn' => 'bool',
+        'maxSldLength' => 'int',
+        'useDash' => 'bool',
+        'useNumber' => 'bool',
+        'useIdn' => 'bool',
         'tlds' => 'string[]'
     ];
 
@@ -76,10 +76,10 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
         'services' => null,
         'language' => null,
         'max' => 'int32',
-        'max_sld_length' => 'int32',
-        'use_dash' => null,
-        'use_number' => null,
-        'use_idn' => null,
+        'maxSldLength' => 'int32',
+        'useDash' => null,
+        'useNumber' => null,
+        'useIdn' => null,
         'tlds' => null
     ];
 
@@ -113,10 +113,10 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
         'services' => 'services',
         'language' => 'language',
         'max' => 'max',
-        'max_sld_length' => 'maxSldLength',
-        'use_dash' => 'useDash',
-        'use_number' => 'useNumber',
-        'use_idn' => 'useIdn',
+        'maxSldLength' => 'maxSldLength',
+        'useDash' => 'useDash',
+        'useNumber' => 'useNumber',
+        'useIdn' => 'useIdn',
         'tlds' => 'tlds'
     ];
 
@@ -129,10 +129,10 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
         'services' => 'setServices',
         'language' => 'setLanguage',
         'max' => 'setMax',
-        'max_sld_length' => 'setMaxSldLength',
-        'use_dash' => 'setUseDash',
-        'use_number' => 'setUseNumber',
-        'use_idn' => 'setUseIdn',
+        'maxSldLength' => 'setMaxSldLength',
+        'useDash' => 'setUseDash',
+        'useNumber' => 'setUseNumber',
+        'useIdn' => 'setUseIdn',
         'tlds' => 'setTlds'
     ];
 
@@ -145,10 +145,10 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
         'services' => 'getServices',
         'language' => 'getLanguage',
         'max' => 'getMax',
-        'max_sld_length' => 'getMaxSldLength',
-        'use_dash' => 'getUseDash',
-        'use_number' => 'getUseNumber',
-        'use_idn' => 'getUseIdn',
+        'maxSldLength' => 'getMaxSldLength',
+        'useDash' => 'getUseDash',
+        'useNumber' => 'getUseNumber',
+        'useIdn' => 'getUseIdn',
         'tlds' => 'getTlds'
     ];
 
@@ -215,10 +215,10 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
-        $this->container['max_sld_length'] = isset($data['max_sld_length']) ? $this->createData($data['max_sld_length'], 'max_sld_length')  : null;
-        $this->container['use_dash'] = isset($data['use_dash']) ? $this->createData($data['use_dash'], 'use_dash')  : null;
-        $this->container['use_number'] = isset($data['use_number']) ? $this->createData($data['use_number'], 'use_number')  : null;
-        $this->container['use_idn'] = isset($data['use_idn']) ? $this->createData($data['use_idn'], 'use_idn')  : null;
+        $this->container['maxSldLength'] = isset($data['maxSldLength']) ? $this->createData($data['maxSldLength'], 'maxSldLength')  : null;
+        $this->container['useDash'] = isset($data['useDash']) ? $this->createData($data['useDash'], 'useDash')  : null;
+        $this->container['useNumber'] = isset($data['useNumber']) ? $this->createData($data['useNumber'], 'useNumber')  : null;
+        $this->container['useIdn'] = isset($data['useIdn']) ? $this->createData($data['useIdn'], 'useIdn')  : null;
         $this->container['tlds'] = isset($data['tlds']) ? $this->createData($data['tlds'], 'tlds')  : null;
     }
 
@@ -359,97 +359,97 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets max_sld_length
+     * Gets maxSldLength
      *
      * @return int
      */
     public function getMaxSldLength()
     {
-        return $this->container['max_sld_length'];
+        return $this->container['maxSldLength'];
     }
 
     /**
-     * Sets max_sld_length
+     * Sets maxSldLength
      *
-     * @param int $max_sld_length Maximum sld length for suggested domains
+     * @param int $maxSldLength Maximum sld length for suggested domains
      *
      * @return $this
      */
-    public function setMaxSldLength($max_sld_length)
+    public function setMaxSldLength($maxSldLength)
     {
-        $this->container['max_sld_length'] = $max_sld_length;
+        $this->container['maxSldLength'] = $maxSldLength;
 
         return $this;
     }
 
     /**
-     * Gets use_dash
+     * Gets useDash
      *
      * @return bool
      */
     public function getUseDash()
     {
-        return $this->container['use_dash'];
+        return $this->container['useDash'];
     }
 
     /**
-     * Sets use_dash
+     * Sets useDash
      *
-     * @param bool $use_dash Suggested domains with dash
+     * @param bool $useDash Suggested domains with dash
      *
      * @return $this
      */
-    public function setUseDash($use_dash)
+    public function setUseDash($useDash)
     {
-        $this->container['use_dash'] = $use_dash;
+        $this->container['useDash'] = $useDash;
 
         return $this;
     }
 
     /**
-     * Gets use_number
+     * Gets useNumber
      *
      * @return bool
      */
     public function getUseNumber()
     {
-        return $this->container['use_number'];
+        return $this->container['useNumber'];
     }
 
     /**
-     * Sets use_number
+     * Sets useNumber
      *
-     * @param bool $use_number Suggested domains with numbers
+     * @param bool $useNumber Suggested domains with numbers
      *
      * @return $this
      */
-    public function setUseNumber($use_number)
+    public function setUseNumber($useNumber)
     {
-        $this->container['use_number'] = $use_number;
+        $this->container['useNumber'] = $useNumber;
 
         return $this;
     }
 
     /**
-     * Gets use_idn
+     * Gets useIdn
      *
      * @return bool
      */
     public function getUseIdn()
     {
-        return $this->container['use_idn'];
+        return $this->container['useIdn'];
     }
 
     /**
-     * Sets use_idn
+     * Sets useIdn
      *
-     * @param bool $use_idn Suggested domains with idn
+     * @param bool $useIdn Suggested domains with idn
      *
      * @return $this
      */
-    public function setUseIdn($use_idn)
+    public function setUseIdn($useIdn)
     {
-        $this->container['use_idn'] = $use_idn;
+        $this->container['useIdn'] = $useIdn;
 
         return $this;
     }

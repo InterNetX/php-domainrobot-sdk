@@ -57,10 +57,10 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'queries_last24_hours' => '\Domainrobot\Model\StatisticsParameters',
-        'queries_this_month' => '\Domainrobot\Model\StatisticsParameters',
-        'queries_this_year' => '\Domainrobot\Model\StatisticsParameters',
-        'last12_months_development' => '\Domainrobot\Model\UserEstimationStatisticsLast12MonthsDevelopment'
+        'queriesLast24Hours' => '\Domainrobot\Model\StatisticsParameters',
+        'queriesThisMonth' => '\Domainrobot\Model\StatisticsParameters',
+        'queriesThisYear' => '\Domainrobot\Model\StatisticsParameters',
+        'last12MonthsDevelopment' => '\Domainrobot\Model\UserEstimationStatisticsLast12MonthsDevelopment'
     ];
 
     /**
@@ -69,10 +69,10 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'queries_last24_hours' => null,
-        'queries_this_month' => null,
-        'queries_this_year' => null,
-        'last12_months_development' => null
+        'queriesLast24Hours' => null,
+        'queriesThisMonth' => null,
+        'queriesThisYear' => null,
+        'last12MonthsDevelopment' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'queries_last24_hours' => 'queriesLast24Hours',
-        'queries_this_month' => 'queriesThisMonth',
-        'queries_this_year' => 'queriesThisYear',
-        'last12_months_development' => 'last12MonthsDevelopment'
+        'queriesLast24Hours' => 'queriesLast24Hours',
+        'queriesThisMonth' => 'queriesThisMonth',
+        'queriesThisYear' => 'queriesThisYear',
+        'last12MonthsDevelopment' => 'last12MonthsDevelopment'
     ];
 
     /**
@@ -114,10 +114,10 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'queries_last24_hours' => 'setQueriesLast24Hours',
-        'queries_this_month' => 'setQueriesThisMonth',
-        'queries_this_year' => 'setQueriesThisYear',
-        'last12_months_development' => 'setLast12MonthsDevelopment'
+        'queriesLast24Hours' => 'setQueriesLast24Hours',
+        'queriesThisMonth' => 'setQueriesThisMonth',
+        'queriesThisYear' => 'setQueriesThisYear',
+        'last12MonthsDevelopment' => 'setLast12MonthsDevelopment'
     ];
 
     /**
@@ -126,10 +126,10 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'queries_last24_hours' => 'getQueriesLast24Hours',
-        'queries_this_month' => 'getQueriesThisMonth',
-        'queries_this_year' => 'getQueriesThisYear',
-        'last12_months_development' => 'getLast12MonthsDevelopment'
+        'queriesLast24Hours' => 'getQueriesLast24Hours',
+        'queriesThisMonth' => 'getQueriesThisMonth',
+        'queriesThisYear' => 'getQueriesThisYear',
+        'last12MonthsDevelopment' => 'getLast12MonthsDevelopment'
     ];
 
     /**
@@ -192,10 +192,10 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['queries_last24_hours'] = isset($data['queries_last24_hours']) ? $this->createData($data['queries_last24_hours'], 'queries_last24_hours')  : null;
-        $this->container['queries_this_month'] = isset($data['queries_this_month']) ? $this->createData($data['queries_this_month'], 'queries_this_month')  : null;
-        $this->container['queries_this_year'] = isset($data['queries_this_year']) ? $this->createData($data['queries_this_year'], 'queries_this_year')  : null;
-        $this->container['last12_months_development'] = isset($data['last12_months_development']) ? $this->createData($data['last12_months_development'], 'last12_months_development')  : null;
+        $this->container['queriesLast24Hours'] = isset($data['queriesLast24Hours']) ? $this->createData($data['queriesLast24Hours'], 'queriesLast24Hours')  : null;
+        $this->container['queriesThisMonth'] = isset($data['queriesThisMonth']) ? $this->createData($data['queriesThisMonth'], 'queriesThisMonth')  : null;
+        $this->container['queriesThisYear'] = isset($data['queriesThisYear']) ? $this->createData($data['queriesThisYear'], 'queriesThisYear')  : null;
+        $this->container['last12MonthsDevelopment'] = isset($data['last12MonthsDevelopment']) ? $this->createData($data['last12MonthsDevelopment'], 'last12MonthsDevelopment')  : null;
     }
 
     /**
@@ -263,97 +263,97 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets queries_last24_hours
+     * Gets queriesLast24Hours
      *
      * @return \Domainrobot\Model\StatisticsParameters
      */
     public function getQueriesLast24Hours()
     {
-        return $this->container['queries_last24_hours'];
+        return $this->container['queriesLast24Hours'];
     }
 
     /**
-     * Sets queries_last24_hours
+     * Sets queriesLast24Hours
      *
-     * @param \Domainrobot\Model\StatisticsParameters $queries_last24_hours queries_last24_hours
+     * @param \Domainrobot\Model\StatisticsParameters $queriesLast24Hours queriesLast24Hours
      *
      * @return $this
      */
-    public function setQueriesLast24Hours($queries_last24_hours)
+    public function setQueriesLast24Hours($queriesLast24Hours)
     {
-        $this->container['queries_last24_hours'] = $queries_last24_hours;
+        $this->container['queriesLast24Hours'] = $queriesLast24Hours;
 
         return $this;
     }
 
     /**
-     * Gets queries_this_month
+     * Gets queriesThisMonth
      *
      * @return \Domainrobot\Model\StatisticsParameters
      */
     public function getQueriesThisMonth()
     {
-        return $this->container['queries_this_month'];
+        return $this->container['queriesThisMonth'];
     }
 
     /**
-     * Sets queries_this_month
+     * Sets queriesThisMonth
      *
-     * @param \Domainrobot\Model\StatisticsParameters $queries_this_month queries_this_month
+     * @param \Domainrobot\Model\StatisticsParameters $queriesThisMonth queriesThisMonth
      *
      * @return $this
      */
-    public function setQueriesThisMonth($queries_this_month)
+    public function setQueriesThisMonth($queriesThisMonth)
     {
-        $this->container['queries_this_month'] = $queries_this_month;
+        $this->container['queriesThisMonth'] = $queriesThisMonth;
 
         return $this;
     }
 
     /**
-     * Gets queries_this_year
+     * Gets queriesThisYear
      *
      * @return \Domainrobot\Model\StatisticsParameters
      */
     public function getQueriesThisYear()
     {
-        return $this->container['queries_this_year'];
+        return $this->container['queriesThisYear'];
     }
 
     /**
-     * Sets queries_this_year
+     * Sets queriesThisYear
      *
-     * @param \Domainrobot\Model\StatisticsParameters $queries_this_year queries_this_year
+     * @param \Domainrobot\Model\StatisticsParameters $queriesThisYear queriesThisYear
      *
      * @return $this
      */
-    public function setQueriesThisYear($queries_this_year)
+    public function setQueriesThisYear($queriesThisYear)
     {
-        $this->container['queries_this_year'] = $queries_this_year;
+        $this->container['queriesThisYear'] = $queriesThisYear;
 
         return $this;
     }
 
     /**
-     * Gets last12_months_development
+     * Gets last12MonthsDevelopment
      *
      * @return \Domainrobot\Model\UserEstimationStatisticsLast12MonthsDevelopment
      */
     public function getLast12MonthsDevelopment()
     {
-        return $this->container['last12_months_development'];
+        return $this->container['last12MonthsDevelopment'];
     }
 
     /**
-     * Sets last12_months_development
+     * Sets last12MonthsDevelopment
      *
-     * @param \Domainrobot\Model\UserEstimationStatisticsLast12MonthsDevelopment $last12_months_development last12_months_development
+     * @param \Domainrobot\Model\UserEstimationStatisticsLast12MonthsDevelopment $last12MonthsDevelopment last12MonthsDevelopment
      *
      * @return $this
      */
-    public function setLast12MonthsDevelopment($last12_months_development)
+    public function setLast12MonthsDevelopment($last12MonthsDevelopment)
     {
-        $this->container['last12_months_development'] = $last12_months_development;
+        $this->container['last12MonthsDevelopment'] = $last12MonthsDevelopment;
 
         return $this;
     }

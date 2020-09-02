@@ -57,7 +57,7 @@ class ContactBarcelonaExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'inteded_use' => 'string'
+        'intededUse' => 'string'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ContactBarcelonaExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'inteded_use' => null
+        'intededUse' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class ContactBarcelonaExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'inteded_use' => 'intededUse'
+        'intededUse' => 'intededUse'
     ];
 
     /**
@@ -105,7 +105,7 @@ class ContactBarcelonaExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'inteded_use' => 'setIntededUse'
+        'intededUse' => 'setIntededUse'
     ];
 
     /**
@@ -114,7 +114,7 @@ class ContactBarcelonaExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'inteded_use' => 'getIntededUse'
+        'intededUse' => 'getIntededUse'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ContactBarcelonaExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['inteded_use'] = isset($data['inteded_use']) ? $this->createData($data['inteded_use'], 'inteded_use')  : null;
+        $this->container['intededUse'] = isset($data['intededUse']) ? $this->createData($data['intededUse'], 'intededUse')  : null;
     }
 
     /**
@@ -245,25 +245,25 @@ class ContactBarcelonaExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets inteded_use
+     * Gets intededUse
      *
      * @return string
      */
     public function getIntededUse()
     {
-        return $this->container['inteded_use'];
+        return $this->container['intededUse'];
     }
 
     /**
-     * Sets inteded_use
+     * Sets intededUse
      *
-     * @param string $inteded_use The statement of intended use for the domain name.
+     * @param string $intededUse The statement of intended use for the domain name.
      *
      * @return $this
      */
-    public function setIntededUse($inteded_use)
+    public function setIntededUse($intededUse)
     {
-        $this->container['inteded_use'] = $inteded_use;
+        $this->container['intededUse'] = $intededUse;
 
         return $this;
     }

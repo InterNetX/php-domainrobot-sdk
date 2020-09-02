@@ -61,7 +61,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'string',
         'source' => '\Domainrobot\Model\DomainStudioDomainSource',
         'services' => '\Domainrobot\Model\DomainStudioService',
-        'debug_time' => 'bool'
+        'debugTime' => 'bool'
     ];
 
     /**
@@ -74,7 +74,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => null,
         'source' => null,
         'services' => null,
-        'debug_time' => null
+        'debugTime' => null
     ];
 
     /**
@@ -108,7 +108,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'idn',
         'source' => 'source',
         'services' => 'services',
-        'debug_time' => 'debugTime'
+        'debugTime' => 'debugTime'
     ];
 
     /**
@@ -121,7 +121,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'setIdn',
         'source' => 'setSource',
         'services' => 'setServices',
-        'debug_time' => 'setDebugTime'
+        'debugTime' => 'setDebugTime'
     ];
 
     /**
@@ -134,7 +134,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'getIdn',
         'source' => 'getSource',
         'services' => 'getServices',
-        'debug_time' => 'getDebugTime'
+        'debugTime' => 'getDebugTime'
     ];
 
     /**
@@ -201,7 +201,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
-        $this->container['debug_time'] = isset($data['debug_time']) ? $this->createData($data['debug_time'], 'debug_time')  : null;
+        $this->container['debugTime'] = isset($data['debugTime']) ? $this->createData($data['debugTime'], 'debugTime')  : null;
     }
 
     /**
@@ -365,25 +365,25 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets debug_time
+     * Gets debugTime
      *
      * @return bool
      */
     public function getDebugTime()
     {
-        return $this->container['debug_time'];
+        return $this->container['debugTime'];
     }
 
     /**
-     * Sets debug_time
+     * Sets debugTime
      *
-     * @param bool $debug_time Defines if the user already owns this domain.
+     * @param bool $debugTime Defines if the user already owns this domain.
      *
      * @return $this
      */
-    public function setDebugTime($debug_time)
+    public function setDebugTime($debugTime)
     {
-        $this->container['debug_time'] = $debug_time;
+        $this->container['debugTime'] = $debugTime;
 
         return $this;
     }

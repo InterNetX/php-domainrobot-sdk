@@ -57,13 +57,13 @@ class UserAcl implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'function_code' => 'string',
+        'functionCode' => 'string',
         'children' => '\Domainrobot\Model\BasicUser[]',
-        'children_locked' => 'bool',
-        'user_locked' => 'bool',
+        'childrenLocked' => 'bool',
+        'userLocked' => 'bool',
         'effective' => 'bool',
-        'children_rem' => '\Domainrobot\Model\BasicUser[]',
-        'children_add' => '\Domainrobot\Model\BasicUser[]',
+        'childrenRem' => '\Domainrobot\Model\BasicUser[]',
+        'childrenAdd' => '\Domainrobot\Model\BasicUser[]',
         'restriction' => '\Domainrobot\Model\ACLRestriction'
     ];
 
@@ -73,13 +73,13 @@ class UserAcl implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'function_code' => null,
+        'functionCode' => null,
         'children' => null,
-        'children_locked' => null,
-        'user_locked' => null,
+        'childrenLocked' => null,
+        'userLocked' => null,
         'effective' => null,
-        'children_rem' => null,
-        'children_add' => null,
+        'childrenRem' => null,
+        'childrenAdd' => null,
         'restriction' => null
     ];
 
@@ -110,13 +110,13 @@ class UserAcl implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'function_code' => 'functionCode',
+        'functionCode' => 'functionCode',
         'children' => 'children',
-        'children_locked' => 'childrenLocked',
-        'user_locked' => 'userLocked',
+        'childrenLocked' => 'childrenLocked',
+        'userLocked' => 'userLocked',
         'effective' => 'effective',
-        'children_rem' => 'childrenRem',
-        'children_add' => 'childrenAdd',
+        'childrenRem' => 'childrenRem',
+        'childrenAdd' => 'childrenAdd',
         'restriction' => 'restriction'
     ];
 
@@ -126,13 +126,13 @@ class UserAcl implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'function_code' => 'setFunctionCode',
+        'functionCode' => 'setFunctionCode',
         'children' => 'setChildren',
-        'children_locked' => 'setChildrenLocked',
-        'user_locked' => 'setUserLocked',
+        'childrenLocked' => 'setChildrenLocked',
+        'userLocked' => 'setUserLocked',
         'effective' => 'setEffective',
-        'children_rem' => 'setChildrenRem',
-        'children_add' => 'setChildrenAdd',
+        'childrenRem' => 'setChildrenRem',
+        'childrenAdd' => 'setChildrenAdd',
         'restriction' => 'setRestriction'
     ];
 
@@ -142,13 +142,13 @@ class UserAcl implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'function_code' => 'getFunctionCode',
+        'functionCode' => 'getFunctionCode',
         'children' => 'getChildren',
-        'children_locked' => 'getChildrenLocked',
-        'user_locked' => 'getUserLocked',
+        'childrenLocked' => 'getChildrenLocked',
+        'userLocked' => 'getUserLocked',
         'effective' => 'getEffective',
-        'children_rem' => 'getChildrenRem',
-        'children_add' => 'getChildrenAdd',
+        'childrenRem' => 'getChildrenRem',
+        'childrenAdd' => 'getChildrenAdd',
         'restriction' => 'getRestriction'
     ];
 
@@ -212,13 +212,13 @@ class UserAcl implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['function_code'] = isset($data['function_code']) ? $this->createData($data['function_code'], 'function_code')  : null;
+        $this->container['functionCode'] = isset($data['functionCode']) ? $this->createData($data['functionCode'], 'functionCode')  : null;
         $this->container['children'] = isset($data['children']) ? $this->createData($data['children'], 'children')  : null;
-        $this->container['children_locked'] = isset($data['children_locked']) ? $this->createData($data['children_locked'], 'children_locked')  : null;
-        $this->container['user_locked'] = isset($data['user_locked']) ? $this->createData($data['user_locked'], 'user_locked')  : null;
+        $this->container['childrenLocked'] = isset($data['childrenLocked']) ? $this->createData($data['childrenLocked'], 'childrenLocked')  : null;
+        $this->container['userLocked'] = isset($data['userLocked']) ? $this->createData($data['userLocked'], 'userLocked')  : null;
         $this->container['effective'] = isset($data['effective']) ? $this->createData($data['effective'], 'effective')  : null;
-        $this->container['children_rem'] = isset($data['children_rem']) ? $this->createData($data['children_rem'], 'children_rem')  : null;
-        $this->container['children_add'] = isset($data['children_add']) ? $this->createData($data['children_add'], 'children_add')  : null;
+        $this->container['childrenRem'] = isset($data['childrenRem']) ? $this->createData($data['childrenRem'], 'childrenRem')  : null;
+        $this->container['childrenAdd'] = isset($data['childrenAdd']) ? $this->createData($data['childrenAdd'], 'childrenAdd')  : null;
         $this->container['restriction'] = isset($data['restriction']) ? $this->createData($data['restriction'], 'restriction')  : null;
     }
 
@@ -287,25 +287,25 @@ class UserAcl implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets function_code
+     * Gets functionCode
      *
      * @return string
      */
     public function getFunctionCode()
     {
-        return $this->container['function_code'];
+        return $this->container['functionCode'];
     }
 
     /**
-     * Sets function_code
+     * Sets functionCode
      *
-     * @param string $function_code The function code to restrict
+     * @param string $functionCode The function code to restrict
      *
      * @return $this
      */
-    public function setFunctionCode($function_code)
+    public function setFunctionCode($functionCode)
     {
-        $this->container['function_code'] = $function_code;
+        $this->container['functionCode'] = $functionCode;
 
         return $this;
     }
@@ -335,49 +335,49 @@ class UserAcl implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets children_locked
+     * Gets childrenLocked
      *
      * @return bool
      */
     public function getChildrenLocked()
     {
-        return $this->container['children_locked'];
+        return $this->container['childrenLocked'];
     }
 
     /**
-     * Sets children_locked
+     * Sets childrenLocked
      *
-     * @param bool $children_locked The children lock
+     * @param bool $childrenLocked The children lock
      *
      * @return $this
      */
-    public function setChildrenLocked($children_locked)
+    public function setChildrenLocked($childrenLocked)
     {
-        $this->container['children_locked'] = $children_locked;
+        $this->container['childrenLocked'] = $childrenLocked;
 
         return $this;
     }
 
     /**
-     * Gets user_locked
+     * Gets userLocked
      *
      * @return bool
      */
     public function getUserLocked()
     {
-        return $this->container['user_locked'];
+        return $this->container['userLocked'];
     }
 
     /**
-     * Sets user_locked
+     * Sets userLocked
      *
-     * @param bool $user_locked The user lock
+     * @param bool $userLocked The user lock
      *
      * @return $this
      */
-    public function setUserLocked($user_locked)
+    public function setUserLocked($userLocked)
     {
-        $this->container['user_locked'] = $user_locked;
+        $this->container['userLocked'] = $userLocked;
 
         return $this;
     }
@@ -407,49 +407,49 @@ class UserAcl implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets children_rem
+     * Gets childrenRem
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
     public function getChildrenRem()
     {
-        return $this->container['children_rem'];
+        return $this->container['childrenRem'];
     }
 
     /**
-     * Sets children_rem
+     * Sets childrenRem
      *
-     * @param \Domainrobot\Model\BasicUser[] $children_rem Children to remove from the exception list
+     * @param \Domainrobot\Model\BasicUser[] $childrenRem Children to remove from the exception list
      *
      * @return $this
      */
-    public function setChildrenRem($children_rem)
+    public function setChildrenRem($childrenRem)
     {
-        $this->container['children_rem'] = $children_rem;
+        $this->container['childrenRem'] = $childrenRem;
 
         return $this;
     }
 
     /**
-     * Gets children_add
+     * Gets childrenAdd
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
     public function getChildrenAdd()
     {
-        return $this->container['children_add'];
+        return $this->container['childrenAdd'];
     }
 
     /**
-     * Sets children_add
+     * Sets childrenAdd
      *
-     * @param \Domainrobot\Model\BasicUser[] $children_add Children to add to the exception list
+     * @param \Domainrobot\Model\BasicUser[] $childrenAdd Children to add to the exception list
      *
      * @return $this
      */
-    public function setChildrenAdd($children_add)
+    public function setChildrenAdd($childrenAdd)
     {
-        $this->container['children_add'] = $children_add;
+        $this->container['childrenAdd'] = $childrenAdd;
 
         return $this;
     }

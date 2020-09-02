@@ -64,7 +64,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => '\Domainrobot\Model\DomainStudioSourceSimilar',
         'recommended' => '\Domainrobot\Model\DomainStudioSourceRecommended',
         'custom' => '\Domainrobot\Model\DomainStudioSourceCustom',
-        'online_presence' => '\Domainrobot\Model\DomainStudioSourceOnlinePresence'
+        'onlinePresence' => '\Domainrobot\Model\DomainStudioSourceOnlinePresence'
     ];
 
     /**
@@ -80,7 +80,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => null,
         'recommended' => null,
         'custom' => null,
-        'online_presence' => null
+        'onlinePresence' => null
     ];
 
     /**
@@ -117,7 +117,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => 'similar',
         'recommended' => 'recommended',
         'custom' => 'custom',
-        'online_presence' => 'onlinePresence'
+        'onlinePresence' => 'onlinePresence'
     ];
 
     /**
@@ -133,7 +133,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => 'setSimilar',
         'recommended' => 'setRecommended',
         'custom' => 'setCustom',
-        'online_presence' => 'setOnlinePresence'
+        'onlinePresence' => 'setOnlinePresence'
     ];
 
     /**
@@ -149,7 +149,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => 'getSimilar',
         'recommended' => 'getRecommended',
         'custom' => 'getCustom',
-        'online_presence' => 'getOnlinePresence'
+        'onlinePresence' => 'getOnlinePresence'
     ];
 
     /**
@@ -219,7 +219,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         $this->container['similar'] = isset($data['similar']) ? $this->createData($data['similar'], 'similar')  : null;
         $this->container['recommended'] = isset($data['recommended']) ? $this->createData($data['recommended'], 'recommended')  : null;
         $this->container['custom'] = isset($data['custom']) ? $this->createData($data['custom'], 'custom')  : null;
-        $this->container['online_presence'] = isset($data['online_presence']) ? $this->createData($data['online_presence'], 'online_presence')  : null;
+        $this->container['onlinePresence'] = isset($data['onlinePresence']) ? $this->createData($data['onlinePresence'], 'onlinePresence')  : null;
     }
 
     /**
@@ -455,25 +455,25 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets online_presence
+     * Gets onlinePresence
      *
      * @return \Domainrobot\Model\DomainStudioSourceOnlinePresence
      */
     public function getOnlinePresence()
     {
-        return $this->container['online_presence'];
+        return $this->container['onlinePresence'];
     }
 
     /**
-     * Sets online_presence
+     * Sets onlinePresence
      *
-     * @param \Domainrobot\Model\DomainStudioSourceOnlinePresence $online_presence The configuration for the online presence source
+     * @param \Domainrobot\Model\DomainStudioSourceOnlinePresence $onlinePresence The configuration for the online presence source
      *
      * @return $this
      */
-    public function setOnlinePresence($online_presence)
+    public function setOnlinePresence($onlinePresence)
     {
-        $this->container['online_presence'] = $online_presence;
+        $this->container['onlinePresence'] = $onlinePresence;
 
         return $this;
     }

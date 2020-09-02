@@ -58,8 +58,8 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'domains' => '\Domainrobot\Model\Domain[]',
-        'services_add' => '\Domainrobot\Model\DomainServices',
-        'services_rem' => '\Domainrobot\Model\DomainServices'
+        'servicesAdd' => '\Domainrobot\Model\DomainServices',
+        'servicesRem' => '\Domainrobot\Model\DomainServices'
     ];
 
     /**
@@ -69,8 +69,8 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'domains' => null,
-        'services_add' => null,
-        'services_rem' => null
+        'servicesAdd' => null,
+        'servicesRem' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'domains' => 'domains',
-        'services_add' => 'servicesAdd',
-        'services_rem' => 'servicesRem'
+        'servicesAdd' => 'servicesAdd',
+        'servicesRem' => 'servicesRem'
     ];
 
     /**
@@ -112,8 +112,8 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'domains' => 'setDomains',
-        'services_add' => 'setServicesAdd',
-        'services_rem' => 'setServicesRem'
+        'servicesAdd' => 'setServicesAdd',
+        'servicesRem' => 'setServicesRem'
     ];
 
     /**
@@ -123,8 +123,8 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'domains' => 'getDomains',
-        'services_add' => 'getServicesAdd',
-        'services_rem' => 'getServicesRem'
+        'servicesAdd' => 'getServicesAdd',
+        'servicesRem' => 'getServicesRem'
     ];
 
     /**
@@ -188,8 +188,8 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
-        $this->container['services_add'] = isset($data['services_add']) ? $this->createData($data['services_add'], 'services_add')  : null;
-        $this->container['services_rem'] = isset($data['services_rem']) ? $this->createData($data['services_rem'], 'services_rem')  : null;
+        $this->container['servicesAdd'] = isset($data['servicesAdd']) ? $this->createData($data['servicesAdd'], 'servicesAdd')  : null;
+        $this->container['servicesRem'] = isset($data['servicesRem']) ? $this->createData($data['servicesRem'], 'servicesRem')  : null;
     }
 
     /**
@@ -281,49 +281,49 @@ class DomainServicesUpdate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets services_add
+     * Gets servicesAdd
      *
      * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesAdd()
     {
-        return $this->container['services_add'];
+        return $this->container['servicesAdd'];
     }
 
     /**
-     * Sets services_add
+     * Sets servicesAdd
      *
-     * @param \Domainrobot\Model\DomainServices $services_add The services to add.
+     * @param \Domainrobot\Model\DomainServices $servicesAdd The services to add.
      *
      * @return $this
      */
-    public function setServicesAdd($services_add)
+    public function setServicesAdd($servicesAdd)
     {
-        $this->container['services_add'] = $services_add;
+        $this->container['servicesAdd'] = $servicesAdd;
 
         return $this;
     }
 
     /**
-     * Gets services_rem
+     * Gets servicesRem
      *
      * @return \Domainrobot\Model\DomainServices
      */
     public function getServicesRem()
     {
-        return $this->container['services_rem'];
+        return $this->container['servicesRem'];
     }
 
     /**
-     * Sets services_rem
+     * Sets servicesRem
      *
-     * @param \Domainrobot\Model\DomainServices $services_rem The services to remove.
+     * @param \Domainrobot\Model\DomainServices $servicesRem The services to remove.
      *
      * @return $this
      */
-    public function setServicesRem($services_rem)
+    public function setServicesRem($servicesRem)
     {
-        $this->container['services_rem'] = $services_rem;
+        $this->container['servicesRem'] = $servicesRem;
 
         return $this;
     }

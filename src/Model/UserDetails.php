@@ -58,9 +58,9 @@ class UserDetails implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'organization' => 'string',
-        'password_reset_mobile' => 'string',
-        'password_reset_verify_email' => 'string',
-        'password_reset_email' => 'string',
+        'passwordResetMobile' => 'string',
+        'passwordResetVerifyEmail' => 'string',
+        'passwordResetEmail' => 'string',
         'fname' => 'string',
         'lname' => 'string'
     ];
@@ -72,9 +72,9 @@ class UserDetails implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'organization' => null,
-        'password_reset_mobile' => null,
-        'password_reset_verify_email' => null,
-        'password_reset_email' => null,
+        'passwordResetMobile' => null,
+        'passwordResetVerifyEmail' => null,
+        'passwordResetEmail' => null,
         'fname' => null,
         'lname' => null
     ];
@@ -107,9 +107,9 @@ class UserDetails implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'organization' => 'organization',
-        'password_reset_mobile' => 'passwordResetMobile',
-        'password_reset_verify_email' => 'passwordResetVerifyEmail',
-        'password_reset_email' => 'passwordResetEmail',
+        'passwordResetMobile' => 'passwordResetMobile',
+        'passwordResetVerifyEmail' => 'passwordResetVerifyEmail',
+        'passwordResetEmail' => 'passwordResetEmail',
         'fname' => 'fname',
         'lname' => 'lname'
     ];
@@ -121,9 +121,9 @@ class UserDetails implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'organization' => 'setOrganization',
-        'password_reset_mobile' => 'setPasswordResetMobile',
-        'password_reset_verify_email' => 'setPasswordResetVerifyEmail',
-        'password_reset_email' => 'setPasswordResetEmail',
+        'passwordResetMobile' => 'setPasswordResetMobile',
+        'passwordResetVerifyEmail' => 'setPasswordResetVerifyEmail',
+        'passwordResetEmail' => 'setPasswordResetEmail',
         'fname' => 'setFname',
         'lname' => 'setLname'
     ];
@@ -135,9 +135,9 @@ class UserDetails implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'organization' => 'getOrganization',
-        'password_reset_mobile' => 'getPasswordResetMobile',
-        'password_reset_verify_email' => 'getPasswordResetVerifyEmail',
-        'password_reset_email' => 'getPasswordResetEmail',
+        'passwordResetMobile' => 'getPasswordResetMobile',
+        'passwordResetVerifyEmail' => 'getPasswordResetVerifyEmail',
+        'passwordResetEmail' => 'getPasswordResetEmail',
         'fname' => 'getFname',
         'lname' => 'getLname'
     ];
@@ -203,9 +203,9 @@ class UserDetails implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
-        $this->container['password_reset_mobile'] = isset($data['password_reset_mobile']) ? $this->createData($data['password_reset_mobile'], 'password_reset_mobile')  : null;
-        $this->container['password_reset_verify_email'] = isset($data['password_reset_verify_email']) ? $this->createData($data['password_reset_verify_email'], 'password_reset_verify_email')  : null;
-        $this->container['password_reset_email'] = isset($data['password_reset_email']) ? $this->createData($data['password_reset_email'], 'password_reset_email')  : null;
+        $this->container['passwordResetMobile'] = isset($data['passwordResetMobile']) ? $this->createData($data['passwordResetMobile'], 'passwordResetMobile')  : null;
+        $this->container['passwordResetVerifyEmail'] = isset($data['passwordResetVerifyEmail']) ? $this->createData($data['passwordResetVerifyEmail'], 'passwordResetVerifyEmail')  : null;
+        $this->container['passwordResetEmail'] = isset($data['passwordResetEmail']) ? $this->createData($data['passwordResetEmail'], 'passwordResetEmail')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
     }
@@ -299,73 +299,73 @@ class UserDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets password_reset_mobile
+     * Gets passwordResetMobile
      *
      * @return string
      */
     public function getPasswordResetMobile()
     {
-        return $this->container['password_reset_mobile'];
+        return $this->container['passwordResetMobile'];
     }
 
     /**
-     * Sets password_reset_mobile
+     * Sets passwordResetMobile
      *
-     * @param string $password_reset_mobile The mobile phone number.
+     * @param string $passwordResetMobile The mobile phone number.
      *
      * @return $this
      */
-    public function setPasswordResetMobile($password_reset_mobile)
+    public function setPasswordResetMobile($passwordResetMobile)
     {
-        $this->container['password_reset_mobile'] = $password_reset_mobile;
+        $this->container['passwordResetMobile'] = $passwordResetMobile;
 
         return $this;
     }
 
     /**
-     * Gets password_reset_verify_email
+     * Gets passwordResetVerifyEmail
      *
      * @return string
      */
     public function getPasswordResetVerifyEmail()
     {
-        return $this->container['password_reset_verify_email'];
+        return $this->container['passwordResetVerifyEmail'];
     }
 
     /**
-     * Sets password_reset_verify_email
+     * Sets passwordResetVerifyEmail
      *
-     * @param string $password_reset_verify_email The email address for the verification of the password reset process.
+     * @param string $passwordResetVerifyEmail The email address for the verification of the password reset process.
      *
      * @return $this
      */
-    public function setPasswordResetVerifyEmail($password_reset_verify_email)
+    public function setPasswordResetVerifyEmail($passwordResetVerifyEmail)
     {
-        $this->container['password_reset_verify_email'] = $password_reset_verify_email;
+        $this->container['passwordResetVerifyEmail'] = $passwordResetVerifyEmail;
 
         return $this;
     }
 
     /**
-     * Gets password_reset_email
+     * Gets passwordResetEmail
      *
      * @return string
      */
     public function getPasswordResetEmail()
     {
-        return $this->container['password_reset_email'];
+        return $this->container['passwordResetEmail'];
     }
 
     /**
-     * Sets password_reset_email
+     * Sets passwordResetEmail
      *
-     * @param string $password_reset_email The email address for the password reset tan.
+     * @param string $passwordResetEmail The email address for the password reset tan.
      *
      * @return $this
      */
-    public function setPasswordResetEmail($password_reset_email)
+    public function setPasswordResetEmail($passwordResetEmail)
     {
-        $this->container['password_reset_email'] = $password_reset_email;
+        $this->container['passwordResetEmail'] = $passwordResetEmail;
 
         return $this;
     }

@@ -60,7 +60,7 @@ class Application implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'name' => 'string',
-        'function_codes' => 'string[]'
+        'functionCodes' => 'string[]'
     ];
 
     /**
@@ -72,7 +72,7 @@ class Application implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'updated' => 'date-time',
         'name' => null,
-        'function_codes' => null
+        'functionCodes' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class Application implements ModelInterface, ArrayAccess
         'created' => 'created',
         'updated' => 'updated',
         'name' => 'name',
-        'function_codes' => 'functionCodes'
+        'functionCodes' => 'functionCodes'
     ];
 
     /**
@@ -117,7 +117,7 @@ class Application implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'name' => 'setName',
-        'function_codes' => 'setFunctionCodes'
+        'functionCodes' => 'setFunctionCodes'
     ];
 
     /**
@@ -129,7 +129,7 @@ class Application implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'name' => 'getName',
-        'function_codes' => 'getFunctionCodes'
+        'functionCodes' => 'getFunctionCodes'
     ];
 
     /**
@@ -195,7 +195,7 @@ class Application implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['function_codes'] = isset($data['function_codes']) ? $this->createData($data['function_codes'], 'function_codes')  : null;
+        $this->container['functionCodes'] = isset($data['functionCodes']) ? $this->createData($data['functionCodes'], 'functionCodes')  : null;
     }
 
     /**
@@ -338,25 +338,25 @@ class Application implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets function_codes
+     * Gets functionCodes
      *
      * @return string[]
      */
     public function getFunctionCodes()
     {
-        return $this->container['function_codes'];
+        return $this->container['functionCodes'];
     }
 
     /**
-     * Sets function_codes
+     * Sets functionCodes
      *
-     * @param string[] $function_codes The function codes for the application.
+     * @param string[] $functionCodes The function codes for the application.
      *
      * @return $this
      */
-    public function setFunctionCodes($function_codes)
+    public function setFunctionCodes($functionCodes)
     {
-        $this->container['function_codes'] = $function_codes;
+        $this->container['functionCodes'] = $functionCodes;
 
         return $this;
     }

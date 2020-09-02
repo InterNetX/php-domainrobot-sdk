@@ -59,8 +59,8 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'number' => 'string',
         'authority' => 'string',
-        'date_of_issue' => '\DateTime',
-        'valid_till' => '\DateTime'
+        'dateOfIssue' => '\DateTime',
+        'validTill' => '\DateTime'
     ];
 
     /**
@@ -71,8 +71,8 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'number' => null,
         'authority' => null,
-        'date_of_issue' => 'date-time',
-        'valid_till' => 'date-time'
+        'dateOfIssue' => 'date-time',
+        'validTill' => 'date-time'
     ];
 
     /**
@@ -104,8 +104,8 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'number' => 'number',
         'authority' => 'authority',
-        'date_of_issue' => 'dateOfIssue',
-        'valid_till' => 'validTill'
+        'dateOfIssue' => 'dateOfIssue',
+        'validTill' => 'validTill'
     ];
 
     /**
@@ -116,8 +116,8 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     protected static $setters = [
         'number' => 'setNumber',
         'authority' => 'setAuthority',
-        'date_of_issue' => 'setDateOfIssue',
-        'valid_till' => 'setValidTill'
+        'dateOfIssue' => 'setDateOfIssue',
+        'validTill' => 'setValidTill'
     ];
 
     /**
@@ -128,8 +128,8 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     protected static $getters = [
         'number' => 'getNumber',
         'authority' => 'getAuthority',
-        'date_of_issue' => 'getDateOfIssue',
-        'valid_till' => 'getValidTill'
+        'dateOfIssue' => 'getDateOfIssue',
+        'validTill' => 'getValidTill'
     ];
 
     /**
@@ -194,8 +194,8 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     {
         $this->container['number'] = isset($data['number']) ? $this->createData($data['number'], 'number')  : null;
         $this->container['authority'] = isset($data['authority']) ? $this->createData($data['authority'], 'authority')  : null;
-        $this->container['date_of_issue'] = isset($data['date_of_issue']) ? $this->createData($data['date_of_issue'], 'date_of_issue')  : null;
-        $this->container['valid_till'] = isset($data['valid_till']) ? $this->createData($data['valid_till'], 'valid_till')  : null;
+        $this->container['dateOfIssue'] = isset($data['dateOfIssue']) ? $this->createData($data['dateOfIssue'], 'dateOfIssue')  : null;
+        $this->container['validTill'] = isset($data['validTill']) ? $this->createData($data['validTill'], 'validTill')  : null;
     }
 
     /**
@@ -311,49 +311,49 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets date_of_issue
+     * Gets dateOfIssue
      *
      * @return \DateTime
      */
     public function getDateOfIssue()
     {
-        return $this->container['date_of_issue'];
+        return $this->container['dateOfIssue'];
     }
 
     /**
-     * Sets date_of_issue
+     * Sets dateOfIssue
      *
-     * @param \DateTime $date_of_issue The date of issue.
+     * @param \DateTime $dateOfIssue The date of issue.
      *
      * @return $this
      */
-    public function setDateOfIssue($date_of_issue)
+    public function setDateOfIssue($dateOfIssue)
     {
-        $this->container['date_of_issue'] = $date_of_issue;
+        $this->container['dateOfIssue'] = $dateOfIssue;
 
         return $this;
     }
 
     /**
-     * Gets valid_till
+     * Gets validTill
      *
      * @return \DateTime
      */
     public function getValidTill()
     {
-        return $this->container['valid_till'];
+        return $this->container['validTill'];
     }
 
     /**
-     * Sets valid_till
+     * Sets validTill
      *
-     * @param \DateTime $valid_till The valid till date.
+     * @param \DateTime $validTill The valid till date.
      *
      * @return $this
      */
-    public function setValidTill($valid_till)
+    public function setValidTill($validTill)
     {
-        $this->container['valid_till'] = $valid_till;
+        $this->container['validTill'] = $validTill;
 
         return $this;
     }

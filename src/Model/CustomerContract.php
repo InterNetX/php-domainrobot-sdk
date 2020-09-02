@@ -61,7 +61,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'contract' => '\Domainrobot\Model\GenericLabelEntity',
         'notice' => 'string',
-        'ticket_number' => 'string'
+        'ticketNumber' => 'string'
     ];
 
     /**
@@ -74,7 +74,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'contract' => null,
         'notice' => null,
-        'ticket_number' => null
+        'ticketNumber' => null
     ];
 
     /**
@@ -108,7 +108,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'contract' => 'contract',
         'notice' => 'notice',
-        'ticket_number' => 'ticketNumber'
+        'ticketNumber' => 'ticketNumber'
     ];
 
     /**
@@ -121,7 +121,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'contract' => 'setContract',
         'notice' => 'setNotice',
-        'ticket_number' => 'setTicketNumber'
+        'ticketNumber' => 'setTicketNumber'
     ];
 
     /**
@@ -134,7 +134,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'contract' => 'getContract',
         'notice' => 'getNotice',
-        'ticket_number' => 'getTicketNumber'
+        'ticketNumber' => 'getTicketNumber'
     ];
 
     /**
@@ -201,7 +201,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['contract'] = isset($data['contract']) ? $this->createData($data['contract'], 'contract')  : null;
         $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
-        $this->container['ticket_number'] = isset($data['ticket_number']) ? $this->createData($data['ticket_number'], 'ticket_number')  : null;
+        $this->container['ticketNumber'] = isset($data['ticketNumber']) ? $this->createData($data['ticketNumber'], 'ticketNumber')  : null;
     }
 
     /**
@@ -368,25 +368,25 @@ class CustomerContract implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets ticket_number
+     * Gets ticketNumber
      *
      * @return string
      */
     public function getTicketNumber()
     {
-        return $this->container['ticket_number'];
+        return $this->container['ticketNumber'];
     }
 
     /**
-     * Sets ticket_number
+     * Sets ticketNumber
      *
-     * @param string $ticket_number The ticketing number if available.
+     * @param string $ticketNumber The ticketing number if available.
      *
      * @return $this
      */
-    public function setTicketNumber($ticket_number)
+    public function setTicketNumber($ticketNumber)
     {
-        $this->container['ticket_number'] = $ticket_number;
+        $this->container['ticketNumber'] = $ticketNumber;
 
         return $this;
     }

@@ -74,7 +74,7 @@ class Contact implements ModelInterface, ArrayAccess
         'sip' => 'string',
         'remarks' => 'string[]',
         'domainsafe' => 'bool',
-        'confirm_owner_consent' => 'bool',
+        'confirmOwnerConsent' => 'bool',
         'comment' => 'string',
         'verification' => '\Domainrobot\Model\GenericStatusConstants',
         'fname' => 'string',
@@ -83,7 +83,7 @@ class Contact implements ModelInterface, ArrayAccess
         'pcode' => 'string',
         'phone' => 'string',
         'fax' => 'string',
-        'nic_ref' => '\Domainrobot\Model\ContactReference[]',
+        'nicRef' => '\Domainrobot\Model\ContactReference[]',
         'extensions' => '\Domainrobot\Model\ContactExtensions'
     ];
 
@@ -110,7 +110,7 @@ class Contact implements ModelInterface, ArrayAccess
         'sip' => null,
         'remarks' => null,
         'domainsafe' => null,
-        'confirm_owner_consent' => null,
+        'confirmOwnerConsent' => null,
         'comment' => null,
         'verification' => null,
         'fname' => null,
@@ -119,7 +119,7 @@ class Contact implements ModelInterface, ArrayAccess
         'pcode' => null,
         'phone' => null,
         'fax' => null,
-        'nic_ref' => null,
+        'nicRef' => null,
         'extensions' => null
     ];
 
@@ -167,7 +167,7 @@ class Contact implements ModelInterface, ArrayAccess
         'sip' => 'sip',
         'remarks' => 'remarks',
         'domainsafe' => 'domainsafe',
-        'confirm_owner_consent' => 'confirmOwnerConsent',
+        'confirmOwnerConsent' => 'confirmOwnerConsent',
         'comment' => 'comment',
         'verification' => 'verification',
         'fname' => 'fname',
@@ -176,7 +176,7 @@ class Contact implements ModelInterface, ArrayAccess
         'pcode' => 'pcode',
         'phone' => 'phone',
         'fax' => 'fax',
-        'nic_ref' => 'nicRef',
+        'nicRef' => 'nicRef',
         'extensions' => 'extensions'
     ];
 
@@ -203,7 +203,7 @@ class Contact implements ModelInterface, ArrayAccess
         'sip' => 'setSip',
         'remarks' => 'setRemarks',
         'domainsafe' => 'setDomainsafe',
-        'confirm_owner_consent' => 'setConfirmOwnerConsent',
+        'confirmOwnerConsent' => 'setConfirmOwnerConsent',
         'comment' => 'setComment',
         'verification' => 'setVerification',
         'fname' => 'setFname',
@@ -212,7 +212,7 @@ class Contact implements ModelInterface, ArrayAccess
         'pcode' => 'setPcode',
         'phone' => 'setPhone',
         'fax' => 'setFax',
-        'nic_ref' => 'setNicRef',
+        'nicRef' => 'setNicRef',
         'extensions' => 'setExtensions'
     ];
 
@@ -239,7 +239,7 @@ class Contact implements ModelInterface, ArrayAccess
         'sip' => 'getSip',
         'remarks' => 'getRemarks',
         'domainsafe' => 'getDomainsafe',
-        'confirm_owner_consent' => 'getConfirmOwnerConsent',
+        'confirmOwnerConsent' => 'getConfirmOwnerConsent',
         'comment' => 'getComment',
         'verification' => 'getVerification',
         'fname' => 'getFname',
@@ -248,7 +248,7 @@ class Contact implements ModelInterface, ArrayAccess
         'pcode' => 'getPcode',
         'phone' => 'getPhone',
         'fax' => 'getFax',
-        'nic_ref' => 'getNicRef',
+        'nicRef' => 'getNicRef',
         'extensions' => 'getExtensions'
     ];
 
@@ -329,7 +329,7 @@ class Contact implements ModelInterface, ArrayAccess
         $this->container['sip'] = isset($data['sip']) ? $this->createData($data['sip'], 'sip')  : null;
         $this->container['remarks'] = isset($data['remarks']) ? $this->createData($data['remarks'], 'remarks')  : null;
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
-        $this->container['confirm_owner_consent'] = isset($data['confirm_owner_consent']) ? $this->createData($data['confirm_owner_consent'], 'confirm_owner_consent')  : null;
+        $this->container['confirmOwnerConsent'] = isset($data['confirmOwnerConsent']) ? $this->createData($data['confirmOwnerConsent'], 'confirmOwnerConsent')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['verification'] = isset($data['verification']) ? $this->createData($data['verification'], 'verification')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
@@ -338,7 +338,7 @@ class Contact implements ModelInterface, ArrayAccess
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
         $this->container['phone'] = isset($data['phone']) ? $this->createData($data['phone'], 'phone')  : null;
         $this->container['fax'] = isset($data['fax']) ? $this->createData($data['fax'], 'fax')  : null;
-        $this->container['nic_ref'] = isset($data['nic_ref']) ? $this->createData($data['nic_ref'], 'nic_ref')  : null;
+        $this->container['nicRef'] = isset($data['nicRef']) ? $this->createData($data['nicRef'], 'nicRef')  : null;
         $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
     }
 
@@ -833,25 +833,25 @@ class Contact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets confirm_owner_consent
+     * Gets confirmOwnerConsent
      *
      * @return bool
      */
     public function getConfirmOwnerConsent()
     {
-        return $this->container['confirm_owner_consent'];
+        return $this->container['confirmOwnerConsent'];
     }
 
     /**
-     * Sets confirm_owner_consent
+     * Sets confirmOwnerConsent
      *
-     * @param bool $confirm_owner_consent ???
+     * @param bool $confirmOwnerConsent ???
      *
      * @return $this
      */
-    public function setConfirmOwnerConsent($confirm_owner_consent)
+    public function setConfirmOwnerConsent($confirmOwnerConsent)
     {
-        $this->container['confirm_owner_consent'] = $confirm_owner_consent;
+        $this->container['confirmOwnerConsent'] = $confirmOwnerConsent;
 
         return $this;
     }
@@ -1049,25 +1049,25 @@ class Contact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets nic_ref
+     * Gets nicRef
      *
      * @return \Domainrobot\Model\ContactReference[]
      */
     public function getNicRef()
     {
-        return $this->container['nic_ref'];
+        return $this->container['nicRef'];
     }
 
     /**
-     * Sets nic_ref
+     * Sets nicRef
      *
-     * @param \Domainrobot\Model\ContactReference[] $nic_ref The nic references of the contact
+     * @param \Domainrobot\Model\ContactReference[] $nicRef The nic references of the contact
      *
      * @return $this
      */
-    public function setNicRef($nic_ref)
+    public function setNicRef($nicRef)
     {
-        $this->container['nic_ref'] = $nic_ref;
+        $this->container['nicRef'] = $nicRef;
 
         return $this;
     }

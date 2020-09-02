@@ -59,8 +59,8 @@ class CaCertificate implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'ca_type' => 'string',
-        'ca_certificate' => 'string'
+        'caType' => 'string',
+        'caCertificate' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class CaCertificate implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
-        'ca_type' => null,
-        'ca_certificate' => null
+        'caType' => null,
+        'caCertificate' => null
     ];
 
     /**
@@ -104,8 +104,8 @@ class CaCertificate implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'ca_type' => 'caType',
-        'ca_certificate' => 'caCertificate'
+        'caType' => 'caType',
+        'caCertificate' => 'caCertificate'
     ];
 
     /**
@@ -116,8 +116,8 @@ class CaCertificate implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'ca_type' => 'setCaType',
-        'ca_certificate' => 'setCaCertificate'
+        'caType' => 'setCaType',
+        'caCertificate' => 'setCaCertificate'
     ];
 
     /**
@@ -128,8 +128,8 @@ class CaCertificate implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'ca_type' => 'getCaType',
-        'ca_certificate' => 'getCaCertificate'
+        'caType' => 'getCaType',
+        'caCertificate' => 'getCaCertificate'
     ];
 
     /**
@@ -194,8 +194,8 @@ class CaCertificate implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['ca_type'] = isset($data['ca_type']) ? $this->createData($data['ca_type'], 'ca_type')  : null;
-        $this->container['ca_certificate'] = isset($data['ca_certificate']) ? $this->createData($data['ca_certificate'], 'ca_certificate')  : null;
+        $this->container['caType'] = isset($data['caType']) ? $this->createData($data['caType'], 'caType')  : null;
+        $this->container['caCertificate'] = isset($data['caCertificate']) ? $this->createData($data['caCertificate'], 'caCertificate')  : null;
     }
 
     /**
@@ -311,49 +311,49 @@ class CaCertificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets ca_type
+     * Gets caType
      *
      * @return string
      */
     public function getCaType()
     {
-        return $this->container['ca_type'];
+        return $this->container['caType'];
     }
 
     /**
-     * Sets ca_type
+     * Sets caType
      *
-     * @param string $ca_type The type of the intermediate certificate.
+     * @param string $caType The type of the intermediate certificate.
      *
      * @return $this
      */
-    public function setCaType($ca_type)
+    public function setCaType($caType)
     {
-        $this->container['ca_type'] = $ca_type;
+        $this->container['caType'] = $caType;
 
         return $this;
     }
 
     /**
-     * Gets ca_certificate
+     * Gets caCertificate
      *
      * @return string
      */
     public function getCaCertificate()
     {
-        return $this->container['ca_certificate'];
+        return $this->container['caCertificate'];
     }
 
     /**
-     * Sets ca_certificate
+     * Sets caCertificate
      *
-     * @param string $ca_certificate The plain intermediate certificate.
+     * @param string $caCertificate The plain intermediate certificate.
      *
      * @return $this
      */
-    public function setCaCertificate($ca_certificate)
+    public function setCaCertificate($caCertificate)
     {
-        $this->container['ca_certificate'] = $ca_certificate;
+        $this->container['caCertificate'] = $caCertificate;
 
         return $this;
     }

@@ -61,9 +61,9 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
-        'external_reference' => 'string',
+        'externalReference' => 'string',
         'certificate' => '\Domainrobot\Model\VhostCertificate',
-        'layout_addon' => '\Domainrobot\Model\Configuration',
+        'layoutAddon' => '\Domainrobot\Model\Configuration',
         'name' => 'string',
         'status' => '\Domainrobot\Model\Id4MeAgentStatus',
         'records' => 'string[]'
@@ -79,9 +79,9 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'owner' => null,
         'updater' => null,
-        'external_reference' => null,
+        'externalReference' => null,
         'certificate' => null,
-        'layout_addon' => null,
+        'layoutAddon' => null,
         'name' => null,
         'status' => null,
         'records' => null
@@ -118,9 +118,9 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'owner' => 'owner',
         'updater' => 'updater',
-        'external_reference' => 'externalReference',
+        'externalReference' => 'externalReference',
         'certificate' => 'certificate',
-        'layout_addon' => 'layoutAddon',
+        'layoutAddon' => 'layoutAddon',
         'name' => 'name',
         'status' => 'status',
         'records' => 'records'
@@ -136,9 +136,9 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
-        'external_reference' => 'setExternalReference',
+        'externalReference' => 'setExternalReference',
         'certificate' => 'setCertificate',
-        'layout_addon' => 'setLayoutAddon',
+        'layoutAddon' => 'setLayoutAddon',
         'name' => 'setName',
         'status' => 'setStatus',
         'records' => 'setRecords'
@@ -154,9 +154,9 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
-        'external_reference' => 'getExternalReference',
+        'externalReference' => 'getExternalReference',
         'certificate' => 'getCertificate',
-        'layout_addon' => 'getLayoutAddon',
+        'layoutAddon' => 'getLayoutAddon',
         'name' => 'getName',
         'status' => 'getStatus',
         'records' => 'getRecords'
@@ -226,9 +226,9 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['external_reference'] = isset($data['external_reference']) ? $this->createData($data['external_reference'], 'external_reference')  : null;
+        $this->container['externalReference'] = isset($data['externalReference']) ? $this->createData($data['externalReference'], 'externalReference')  : null;
         $this->container['certificate'] = isset($data['certificate']) ? $this->createData($data['certificate'], 'certificate')  : null;
-        $this->container['layout_addon'] = isset($data['layout_addon']) ? $this->createData($data['layout_addon'], 'layout_addon')  : null;
+        $this->container['layoutAddon'] = isset($data['layoutAddon']) ? $this->createData($data['layoutAddon'], 'layoutAddon')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['records'] = isset($data['records']) ? $this->createData($data['records'], 'records')  : null;
@@ -398,25 +398,25 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets external_reference
+     * Gets externalReference
      *
      * @return string
      */
     public function getExternalReference()
     {
-        return $this->container['external_reference'];
+        return $this->container['externalReference'];
     }
 
     /**
-     * Sets external_reference
+     * Sets externalReference
      *
-     * @param string $external_reference External reference
+     * @param string $externalReference External reference
      *
      * @return $this
      */
-    public function setExternalReference($external_reference)
+    public function setExternalReference($externalReference)
     {
-        $this->container['external_reference'] = $external_reference;
+        $this->container['externalReference'] = $externalReference;
 
         return $this;
     }
@@ -446,25 +446,25 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets layout_addon
+     * Gets layoutAddon
      *
      * @return \Domainrobot\Model\Configuration
      */
     public function getLayoutAddon()
     {
-        return $this->container['layout_addon'];
+        return $this->container['layoutAddon'];
     }
 
     /**
-     * Sets layout_addon
+     * Sets layoutAddon
      *
-     * @param \Domainrobot\Model\Configuration $layout_addon Layout properties
+     * @param \Domainrobot\Model\Configuration $layoutAddon Layout properties
      *
      * @return $this
      */
-    public function setLayoutAddon($layout_addon)
+    public function setLayoutAddon($layoutAddon)
     {
-        $this->container['layout_addon'] = $layout_addon;
+        $this->container['layoutAddon'] = $layoutAddon;
 
         return $this;
     }

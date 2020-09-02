@@ -63,12 +63,12 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'name' => 'string',
         'idn' => 'string',
-        'notification_mobiles' => '\Domainrobot\Model\Phone[]',
+        'notificationMobiles' => '\Domainrobot\Model\Phone[]',
         'ocval' => 'bool',
         'cancelation' => 'bool',
         'removed' => 'bool',
-        'monitoring_setups' => '\Domainrobot\Model\DomainMonitoringSetup[]',
-        'notification_emails' => 'string[]'
+        'monitoringSetups' => '\Domainrobot\Model\DomainMonitoringSetup[]',
+        'notificationEmails' => 'string[]'
     ];
 
     /**
@@ -83,12 +83,12 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
         'updater' => null,
         'name' => null,
         'idn' => null,
-        'notification_mobiles' => null,
+        'notificationMobiles' => null,
         'ocval' => null,
         'cancelation' => null,
         'removed' => null,
-        'monitoring_setups' => null,
-        'notification_emails' => null
+        'monitoringSetups' => null,
+        'notificationEmails' => null
     ];
 
     /**
@@ -124,12 +124,12 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
         'updater' => 'updater',
         'name' => 'name',
         'idn' => 'idn',
-        'notification_mobiles' => 'notificationMobiles',
+        'notificationMobiles' => 'notificationMobiles',
         'ocval' => 'ocval',
         'cancelation' => 'cancelation',
         'removed' => 'removed',
-        'monitoring_setups' => 'monitoringSetups',
-        'notification_emails' => 'notificationEmails'
+        'monitoringSetups' => 'monitoringSetups',
+        'notificationEmails' => 'notificationEmails'
     ];
 
     /**
@@ -144,12 +144,12 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
         'updater' => 'setUpdater',
         'name' => 'setName',
         'idn' => 'setIdn',
-        'notification_mobiles' => 'setNotificationMobiles',
+        'notificationMobiles' => 'setNotificationMobiles',
         'ocval' => 'setOcval',
         'cancelation' => 'setCancelation',
         'removed' => 'setRemoved',
-        'monitoring_setups' => 'setMonitoringSetups',
-        'notification_emails' => 'setNotificationEmails'
+        'monitoringSetups' => 'setMonitoringSetups',
+        'notificationEmails' => 'setNotificationEmails'
     ];
 
     /**
@@ -164,12 +164,12 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
         'updater' => 'getUpdater',
         'name' => 'getName',
         'idn' => 'getIdn',
-        'notification_mobiles' => 'getNotificationMobiles',
+        'notificationMobiles' => 'getNotificationMobiles',
         'ocval' => 'getOcval',
         'cancelation' => 'getCancelation',
         'removed' => 'getRemoved',
-        'monitoring_setups' => 'getMonitoringSetups',
-        'notification_emails' => 'getNotificationEmails'
+        'monitoringSetups' => 'getMonitoringSetups',
+        'notificationEmails' => 'getNotificationEmails'
     ];
 
     /**
@@ -238,12 +238,12 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
-        $this->container['notification_mobiles'] = isset($data['notification_mobiles']) ? $this->createData($data['notification_mobiles'], 'notification_mobiles')  : null;
+        $this->container['notificationMobiles'] = isset($data['notificationMobiles']) ? $this->createData($data['notificationMobiles'], 'notificationMobiles')  : null;
         $this->container['ocval'] = isset($data['ocval']) ? $this->createData($data['ocval'], 'ocval')  : null;
         $this->container['cancelation'] = isset($data['cancelation']) ? $this->createData($data['cancelation'], 'cancelation')  : null;
         $this->container['removed'] = isset($data['removed']) ? $this->createData($data['removed'], 'removed')  : null;
-        $this->container['monitoring_setups'] = isset($data['monitoring_setups']) ? $this->createData($data['monitoring_setups'], 'monitoring_setups')  : null;
-        $this->container['notification_emails'] = isset($data['notification_emails']) ? $this->createData($data['notification_emails'], 'notification_emails')  : null;
+        $this->container['monitoringSetups'] = isset($data['monitoringSetups']) ? $this->createData($data['monitoringSetups'], 'monitoringSetups')  : null;
+        $this->container['notificationEmails'] = isset($data['notificationEmails']) ? $this->createData($data['notificationEmails'], 'notificationEmails')  : null;
     }
 
     /**
@@ -458,25 +458,25 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets notification_mobiles
+     * Gets notificationMobiles
      *
      * @return \Domainrobot\Model\Phone[]
      */
     public function getNotificationMobiles()
     {
-        return $this->container['notification_mobiles'];
+        return $this->container['notificationMobiles'];
     }
 
     /**
-     * Sets notification_mobiles
+     * Sets notificationMobiles
      *
-     * @param \Domainrobot\Model\Phone[] $notification_mobiles The notification mobile phone numbers.
+     * @param \Domainrobot\Model\Phone[] $notificationMobiles The notification mobile phone numbers.
      *
      * @return $this
      */
-    public function setNotificationMobiles($notification_mobiles)
+    public function setNotificationMobiles($notificationMobiles)
     {
-        $this->container['notification_mobiles'] = $notification_mobiles;
+        $this->container['notificationMobiles'] = $notificationMobiles;
 
         return $this;
     }
@@ -554,49 +554,49 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets monitoring_setups
+     * Gets monitoringSetups
      *
      * @return \Domainrobot\Model\DomainMonitoringSetup[]
      */
     public function getMonitoringSetups()
     {
-        return $this->container['monitoring_setups'];
+        return $this->container['monitoringSetups'];
     }
 
     /**
-     * Sets monitoring_setups
+     * Sets monitoringSetups
      *
-     * @param \Domainrobot\Model\DomainMonitoringSetup[] $monitoring_setups The monitoringSetups
+     * @param \Domainrobot\Model\DomainMonitoringSetup[] $monitoringSetups The monitoringSetups
      *
      * @return $this
      */
-    public function setMonitoringSetups($monitoring_setups)
+    public function setMonitoringSetups($monitoringSetups)
     {
-        $this->container['monitoring_setups'] = $monitoring_setups;
+        $this->container['monitoringSetups'] = $monitoringSetups;
 
         return $this;
     }
 
     /**
-     * Gets notification_emails
+     * Gets notificationEmails
      *
      * @return string[]
      */
     public function getNotificationEmails()
     {
-        return $this->container['notification_emails'];
+        return $this->container['notificationEmails'];
     }
 
     /**
-     * Sets notification_emails
+     * Sets notificationEmails
      *
-     * @param string[] $notification_emails The notification email-addresses.
+     * @param string[] $notificationEmails The notification email-addresses.
      *
      * @return $this
      */
-    public function setNotificationEmails($notification_emails)
+    public function setNotificationEmails($notificationEmails)
     {
-        $this->container['notification_emails'] = $notification_emails;
+        $this->container['notificationEmails'] = $notificationEmails;
 
         return $this;
     }

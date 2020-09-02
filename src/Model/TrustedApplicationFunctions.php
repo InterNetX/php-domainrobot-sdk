@@ -57,7 +57,7 @@ class TrustedApplicationFunctions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'function_codes' => 'string[]'
+        'functionCodes' => 'string[]'
     ];
 
     /**
@@ -66,7 +66,7 @@ class TrustedApplicationFunctions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'function_codes' => null
+        'functionCodes' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class TrustedApplicationFunctions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'function_codes' => 'functionCodes'
+        'functionCodes' => 'functionCodes'
     ];
 
     /**
@@ -105,7 +105,7 @@ class TrustedApplicationFunctions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'function_codes' => 'setFunctionCodes'
+        'functionCodes' => 'setFunctionCodes'
     ];
 
     /**
@@ -114,7 +114,7 @@ class TrustedApplicationFunctions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'function_codes' => 'getFunctionCodes'
+        'functionCodes' => 'getFunctionCodes'
     ];
 
     /**
@@ -177,7 +177,7 @@ class TrustedApplicationFunctions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['function_codes'] = isset($data['function_codes']) ? $this->createData($data['function_codes'], 'function_codes')  : null;
+        $this->container['functionCodes'] = isset($data['functionCodes']) ? $this->createData($data['functionCodes'], 'functionCodes')  : null;
     }
 
     /**
@@ -245,25 +245,25 @@ class TrustedApplicationFunctions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets function_codes
+     * Gets functionCodes
      *
      * @return string[]
      */
     public function getFunctionCodes()
     {
-        return $this->container['function_codes'];
+        return $this->container['functionCodes'];
     }
 
     /**
-     * Sets function_codes
+     * Sets functionCodes
      *
-     * @param string[] $function_codes The allowed functions for the trusted application.
+     * @param string[] $functionCodes The allowed functions for the trusted application.
      *
      * @return $this
      */
-    public function setFunctionCodes($function_codes)
+    public function setFunctionCodes($functionCodes)
     {
-        $this->container['function_codes'] = $function_codes;
+        $this->container['functionCodes'] = $functionCodes;
 
         return $this;
     }

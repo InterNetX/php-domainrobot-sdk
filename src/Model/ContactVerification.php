@@ -62,12 +62,12 @@ class ContactVerification implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'reference' => 'string',
-        'message_send' => '\DateTime',
+        'messageSend' => '\DateTime',
         'confirmed' => '\DateTime',
-        'confirm_ip' => '\Domainrobot\Model\InetAddress',
+        'confirmIp' => '\Domainrobot\Model\InetAddress',
         'failed' => '\DateTime',
         'domains' => '\Domainrobot\Model\ContactVerificationDomain[]',
-        'verification_mails' => '\Domainrobot\Model\ContactVerificationMessage[]',
+        'verificationMails' => '\Domainrobot\Model\ContactVerificationMessage[]',
         'comment' => 'string',
         'action' => 'string',
         'contact' => '\Domainrobot\Model\Contact'
@@ -84,12 +84,12 @@ class ContactVerification implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'reference' => null,
-        'message_send' => 'date-time',
+        'messageSend' => 'date-time',
         'confirmed' => 'date-time',
-        'confirm_ip' => null,
+        'confirmIp' => null,
         'failed' => 'date-time',
         'domains' => null,
-        'verification_mails' => null,
+        'verificationMails' => null,
         'comment' => null,
         'action' => null,
         'contact' => null
@@ -127,12 +127,12 @@ class ContactVerification implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'reference' => 'reference',
-        'message_send' => 'messageSend',
+        'messageSend' => 'messageSend',
         'confirmed' => 'confirmed',
-        'confirm_ip' => 'confirmIp',
+        'confirmIp' => 'confirmIp',
         'failed' => 'failed',
         'domains' => 'domains',
-        'verification_mails' => 'verificationMails',
+        'verificationMails' => 'verificationMails',
         'comment' => 'comment',
         'action' => 'action',
         'contact' => 'contact'
@@ -149,12 +149,12 @@ class ContactVerification implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'reference' => 'setReference',
-        'message_send' => 'setMessageSend',
+        'messageSend' => 'setMessageSend',
         'confirmed' => 'setConfirmed',
-        'confirm_ip' => 'setConfirmIp',
+        'confirmIp' => 'setConfirmIp',
         'failed' => 'setFailed',
         'domains' => 'setDomains',
-        'verification_mails' => 'setVerificationMails',
+        'verificationMails' => 'setVerificationMails',
         'comment' => 'setComment',
         'action' => 'setAction',
         'contact' => 'setContact'
@@ -171,12 +171,12 @@ class ContactVerification implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'reference' => 'getReference',
-        'message_send' => 'getMessageSend',
+        'messageSend' => 'getMessageSend',
         'confirmed' => 'getConfirmed',
-        'confirm_ip' => 'getConfirmIp',
+        'confirmIp' => 'getConfirmIp',
         'failed' => 'getFailed',
         'domains' => 'getDomains',
-        'verification_mails' => 'getVerificationMails',
+        'verificationMails' => 'getVerificationMails',
         'comment' => 'getComment',
         'action' => 'getAction',
         'contact' => 'getContact'
@@ -247,12 +247,12 @@ class ContactVerification implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
-        $this->container['message_send'] = isset($data['message_send']) ? $this->createData($data['message_send'], 'message_send')  : null;
+        $this->container['messageSend'] = isset($data['messageSend']) ? $this->createData($data['messageSend'], 'messageSend')  : null;
         $this->container['confirmed'] = isset($data['confirmed']) ? $this->createData($data['confirmed'], 'confirmed')  : null;
-        $this->container['confirm_ip'] = isset($data['confirm_ip']) ? $this->createData($data['confirm_ip'], 'confirm_ip')  : null;
+        $this->container['confirmIp'] = isset($data['confirmIp']) ? $this->createData($data['confirmIp'], 'confirmIp')  : null;
         $this->container['failed'] = isset($data['failed']) ? $this->createData($data['failed'], 'failed')  : null;
         $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
-        $this->container['verification_mails'] = isset($data['verification_mails']) ? $this->createData($data['verification_mails'], 'verification_mails')  : null;
+        $this->container['verificationMails'] = isset($data['verificationMails']) ? $this->createData($data['verificationMails'], 'verificationMails')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
         $this->container['contact'] = isset($data['contact']) ? $this->createData($data['contact'], 'contact')  : null;
@@ -307,8 +307,8 @@ class ContactVerification implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['confirm_ip'] === null) {
-            $invalidProperties[] = "'confirm_ip' can't be null";
+        if ($this->container['confirmIp'] === null) {
+            $invalidProperties[] = "'confirmIp' can't be null";
         }
         if ($this->container['contact'] === null) {
             $invalidProperties[] = "'contact' can't be null";
@@ -449,25 +449,25 @@ class ContactVerification implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets message_send
+     * Gets messageSend
      *
      * @return \DateTime
      */
     public function getMessageSend()
     {
-        return $this->container['message_send'];
+        return $this->container['messageSend'];
     }
 
     /**
-     * Sets message_send
+     * Sets messageSend
      *
-     * @param \DateTime $message_send the messageSend date of the Verification
+     * @param \DateTime $messageSend the messageSend date of the Verification
      *
      * @return $this
      */
-    public function setMessageSend($message_send)
+    public function setMessageSend($messageSend)
     {
-        $this->container['message_send'] = $message_send;
+        $this->container['messageSend'] = $messageSend;
 
         return $this;
     }
@@ -497,25 +497,25 @@ class ContactVerification implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets confirm_ip
+     * Gets confirmIp
      *
      * @return \Domainrobot\Model\InetAddress
      */
     public function getConfirmIp()
     {
-        return $this->container['confirm_ip'];
+        return $this->container['confirmIp'];
     }
 
     /**
-     * Sets confirm_ip
+     * Sets confirmIp
      *
-     * @param \Domainrobot\Model\InetAddress $confirm_ip the confirmIp of the Verification
+     * @param \Domainrobot\Model\InetAddress $confirmIp the confirmIp of the Verification
      *
      * @return $this
      */
-    public function setConfirmIp($confirm_ip)
+    public function setConfirmIp($confirmIp)
     {
-        $this->container['confirm_ip'] = $confirm_ip;
+        $this->container['confirmIp'] = $confirmIp;
 
         return $this;
     }
@@ -569,25 +569,25 @@ class ContactVerification implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets verification_mails
+     * Gets verificationMails
      *
      * @return \Domainrobot\Model\ContactVerificationMessage[]
      */
     public function getVerificationMails()
     {
-        return $this->container['verification_mails'];
+        return $this->container['verificationMails'];
     }
 
     /**
-     * Sets verification_mails
+     * Sets verificationMails
      *
-     * @param \Domainrobot\Model\ContactVerificationMessage[] $verification_mails the messages of the Verification
+     * @param \Domainrobot\Model\ContactVerificationMessage[] $verificationMails the messages of the Verification
      *
      * @return $this
      */
-    public function setVerificationMails($verification_mails)
+    public function setVerificationMails($verificationMails)
     {
-        $this->container['verification_mails'] = $verification_mails;
+        $this->container['verificationMails'] = $verificationMails;
 
         return $this;
     }

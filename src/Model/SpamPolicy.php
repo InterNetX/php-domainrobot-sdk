@@ -57,11 +57,11 @@ class SpamPolicy implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'modify_subject' => 'bool',
-        'tag_header' => 'double',
+        'modifySubject' => 'bool',
+        'tagHeader' => 'double',
         'spam' => 'double',
         'kill' => 'double',
-        'quarantine_digest_interval' => 'int'
+        'quarantineDigestInterval' => 'int'
     ];
 
     /**
@@ -70,11 +70,11 @@ class SpamPolicy implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'modify_subject' => null,
-        'tag_header' => 'double',
+        'modifySubject' => null,
+        'tagHeader' => 'double',
         'spam' => 'double',
         'kill' => 'double',
-        'quarantine_digest_interval' => 'int32'
+        'quarantineDigestInterval' => 'int32'
     ];
 
     /**
@@ -104,11 +104,11 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'modify_subject' => 'modifySubject',
-        'tag_header' => 'tagHeader',
+        'modifySubject' => 'modifySubject',
+        'tagHeader' => 'tagHeader',
         'spam' => 'spam',
         'kill' => 'kill',
-        'quarantine_digest_interval' => 'quarantineDigestInterval'
+        'quarantineDigestInterval' => 'quarantineDigestInterval'
     ];
 
     /**
@@ -117,11 +117,11 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'modify_subject' => 'setModifySubject',
-        'tag_header' => 'setTagHeader',
+        'modifySubject' => 'setModifySubject',
+        'tagHeader' => 'setTagHeader',
         'spam' => 'setSpam',
         'kill' => 'setKill',
-        'quarantine_digest_interval' => 'setQuarantineDigestInterval'
+        'quarantineDigestInterval' => 'setQuarantineDigestInterval'
     ];
 
     /**
@@ -130,11 +130,11 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'modify_subject' => 'getModifySubject',
-        'tag_header' => 'getTagHeader',
+        'modifySubject' => 'getModifySubject',
+        'tagHeader' => 'getTagHeader',
         'spam' => 'getSpam',
         'kill' => 'getKill',
-        'quarantine_digest_interval' => 'getQuarantineDigestInterval'
+        'quarantineDigestInterval' => 'getQuarantineDigestInterval'
     ];
 
     /**
@@ -197,11 +197,11 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['modify_subject'] = isset($data['modify_subject']) ? $this->createData($data['modify_subject'], 'modify_subject')  : null;
-        $this->container['tag_header'] = isset($data['tag_header']) ? $this->createData($data['tag_header'], 'tag_header')  : null;
+        $this->container['modifySubject'] = isset($data['modifySubject']) ? $this->createData($data['modifySubject'], 'modifySubject')  : null;
+        $this->container['tagHeader'] = isset($data['tagHeader']) ? $this->createData($data['tagHeader'], 'tagHeader')  : null;
         $this->container['spam'] = isset($data['spam']) ? $this->createData($data['spam'], 'spam')  : null;
         $this->container['kill'] = isset($data['kill']) ? $this->createData($data['kill'], 'kill')  : null;
-        $this->container['quarantine_digest_interval'] = isset($data['quarantine_digest_interval']) ? $this->createData($data['quarantine_digest_interval'], 'quarantine_digest_interval')  : null;
+        $this->container['quarantineDigestInterval'] = isset($data['quarantineDigestInterval']) ? $this->createData($data['quarantineDigestInterval'], 'quarantineDigestInterval')  : null;
     }
 
     /**
@@ -253,12 +253,12 @@ class SpamPolicy implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['tag_header']) && ($this->container['tag_header'] > 999.9)) {
-            $invalidProperties[] = "invalid value for 'tag_header', must be smaller than or equal to 999.9.";
+        if (!is_null($this->container['tagHeader']) && ($this->container['tagHeader'] > 999.9)) {
+            $invalidProperties[] = "invalid value for 'tagHeader', must be smaller than or equal to 999.9.";
         }
 
-        if (!is_null($this->container['tag_header']) && ($this->container['tag_header'] < -999.9)) {
-            $invalidProperties[] = "invalid value for 'tag_header', must be bigger than or equal to -999.9.";
+        if (!is_null($this->container['tagHeader']) && ($this->container['tagHeader'] < -999.9)) {
+            $invalidProperties[] = "invalid value for 'tagHeader', must be bigger than or equal to -999.9.";
         }
 
         if (!is_null($this->container['spam']) && ($this->container['spam'] > 999.9)) {
@@ -277,8 +277,8 @@ class SpamPolicy implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'kill', must be bigger than or equal to -999.9.";
         }
 
-        if (!is_null($this->container['quarantine_digest_interval']) && ($this->container['quarantine_digest_interval'] < 1440)) {
-            $invalidProperties[] = "invalid value for 'quarantine_digest_interval', must be bigger than or equal to 1440.";
+        if (!is_null($this->container['quarantineDigestInterval']) && ($this->container['quarantineDigestInterval'] < 1440)) {
+            $invalidProperties[] = "invalid value for 'quarantineDigestInterval', must be bigger than or equal to 1440.";
         }
 
         return $invalidProperties;
@@ -297,57 +297,57 @@ class SpamPolicy implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets modify_subject
+     * Gets modifySubject
      *
      * @return bool
      */
     public function getModifySubject()
     {
-        return $this->container['modify_subject'];
+        return $this->container['modifySubject'];
     }
 
     /**
-     * Sets modify_subject
+     * Sets modifySubject
      *
-     * @param bool $modify_subject modify_subject
+     * @param bool $modifySubject modifySubject
      *
      * @return $this
      */
-    public function setModifySubject($modify_subject)
+    public function setModifySubject($modifySubject)
     {
-        $this->container['modify_subject'] = $modify_subject;
+        $this->container['modifySubject'] = $modifySubject;
 
         return $this;
     }
 
     /**
-     * Gets tag_header
+     * Gets tagHeader
      *
      * @return double
      */
     public function getTagHeader()
     {
-        return $this->container['tag_header'];
+        return $this->container['tagHeader'];
     }
 
     /**
-     * Sets tag_header
+     * Sets tagHeader
      *
-     * @param double $tag_header tag_header
+     * @param double $tagHeader tagHeader
      *
      * @return $this
      */
-    public function setTagHeader($tag_header)
+    public function setTagHeader($tagHeader)
     {
 
-        if (!is_null($tag_header) && ($tag_header > 999.9)) {
-            throw new \InvalidArgumentException('invalid value for $tag_header when calling SpamPolicy., must be smaller than or equal to 999.9.');
+        if (!is_null($tagHeader) && ($tagHeader > 999.9)) {
+            throw new \InvalidArgumentException('invalid value for $tagHeader when calling SpamPolicy., must be smaller than or equal to 999.9.');
         }
-        if (!is_null($tag_header) && ($tag_header < -999.9)) {
-            throw new \InvalidArgumentException('invalid value for $tag_header when calling SpamPolicy., must be bigger than or equal to -999.9.');
+        if (!is_null($tagHeader) && ($tagHeader < -999.9)) {
+            throw new \InvalidArgumentException('invalid value for $tagHeader when calling SpamPolicy., must be bigger than or equal to -999.9.');
         }
 
-        $this->container['tag_header'] = $tag_header;
+        $this->container['tagHeader'] = $tagHeader;
 
         return $this;
     }
@@ -417,30 +417,30 @@ class SpamPolicy implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets quarantine_digest_interval
+     * Gets quarantineDigestInterval
      *
      * @return int
      */
     public function getQuarantineDigestInterval()
     {
-        return $this->container['quarantine_digest_interval'];
+        return $this->container['quarantineDigestInterval'];
     }
 
     /**
-     * Sets quarantine_digest_interval
+     * Sets quarantineDigestInterval
      *
-     * @param int $quarantine_digest_interval quarantine_digest_interval
+     * @param int $quarantineDigestInterval quarantineDigestInterval
      *
      * @return $this
      */
-    public function setQuarantineDigestInterval($quarantine_digest_interval)
+    public function setQuarantineDigestInterval($quarantineDigestInterval)
     {
 
-        if (!is_null($quarantine_digest_interval) && ($quarantine_digest_interval < 1440)) {
-            throw new \InvalidArgumentException('invalid value for $quarantine_digest_interval when calling SpamPolicy., must be bigger than or equal to 1440.');
+        if (!is_null($quarantineDigestInterval) && ($quarantineDigestInterval < 1440)) {
+            throw new \InvalidArgumentException('invalid value for $quarantineDigestInterval when calling SpamPolicy., must be bigger than or equal to 1440.');
         }
 
-        $this->container['quarantine_digest_interval'] = $quarantine_digest_interval;
+        $this->container['quarantineDigestInterval'] = $quarantineDigestInterval;
 
         return $this;
     }

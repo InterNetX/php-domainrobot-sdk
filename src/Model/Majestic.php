@@ -57,78 +57,78 @@ class Majestic implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'item_nu' => 'string',
+        'itemNu' => 'string',
         'item' => 'string',
-        'result_code' => 'string',
+        'resultCode' => 'string',
         'status' => 'string',
-        'ext_back_links' => 'string',
-        'ref_domains' => 'string',
-        'analysis_res_units_cost' => 'string',
-        'ac_rank' => 'string',
-        'item_type' => 'string',
-        'indexed_ur_ls' => 'string',
-        'get_top_back_links_analysis_res_units_cost' => 'string',
-        'download_backlinks_analysis_res_units_cost' => 'string',
-        'download_ref_domain_backlinks_analysis_res_units_cost' => 'string',
-        'ref_i_ps' => 'string',
-        'ref_sub_nets' => 'string',
-        'ref_domains_edu' => 'string',
-        'ext_back_links_edu' => 'string',
-        'ref_domains_gov' => 'string',
-        'ext_back_links_gov' => 'string',
-        'ref_domains_edu_exact' => 'string',
-        'ext_back_links_edu_exact' => 'string',
-        'ref_domains_gov_exact' => 'string',
-        'ext_back_links_gov_exact' => 'string',
-        'crawled_flag' => 'string',
-        'last_crawl_date' => 'string',
-        'last_crawl_result' => 'string',
-        'redirect_flag' => 'string',
-        'final_redirect_result' => 'string',
-        'out_domains_external' => 'string',
-        'out_links_external' => 'string',
-        'out_links_internal' => 'string',
-        'out_links_pages' => 'string',
-        'last_seen' => 'string',
+        'extBackLinks' => 'string',
+        'refDomains' => 'string',
+        'analysisResUnitsCost' => 'string',
+        'aCRank' => 'string',
+        'itemType' => 'string',
+        'indexedURLs' => 'string',
+        'getTopBackLinksAnalysisResUnitsCost' => 'string',
+        'downloadBacklinksAnalysisResUnitsCost' => 'string',
+        'downloadRefDomainBacklinksAnalysisResUnitsCost' => 'string',
+        'refIPs' => 'string',
+        'refSubNets' => 'string',
+        'refDomainsEDU' => 'string',
+        'extBackLinksEDU' => 'string',
+        'refDomainsGOV' => 'string',
+        'extBackLinksGOV' => 'string',
+        'refDomainsEDUExact' => 'string',
+        'extBackLinksEDUExact' => 'string',
+        'refDomainsGOVExact' => 'string',
+        'extBackLinksGOVExact' => 'string',
+        'crawledFlag' => 'string',
+        'lastCrawlDate' => 'string',
+        'lastCrawlResult' => 'string',
+        'redirectFlag' => 'string',
+        'finalRedirectResult' => 'string',
+        'outDomainsExternal' => 'string',
+        'outLinksExternal' => 'string',
+        'outLinksInternal' => 'string',
+        'outLinksPages' => 'string',
+        'lastSeen' => 'string',
         'title' => 'string',
-        'redirect_to' => 'string',
+        'redirectTo' => 'string',
         'language' => 'string',
-        'language_desc' => 'string',
-        'language_confidence' => 'string',
-        'language_page_ratios' => 'string',
-        'language_total_pages' => 'string',
-        'ref_language' => 'string',
-        'ref_language_desc' => 'string',
-        'ref_language_confidence' => 'string',
-        'ref_language_page_ratios' => 'string',
-        'ref_language_total_pages' => 'string',
-        'crawled_ur_ls' => 'string',
-        'root_domain_ip_address' => 'string',
-        'total_non_unique_links' => 'string',
-        'non_unique_link_type_homepages' => 'string',
-        'non_unique_link_type_indirect' => 'string',
-        'non_unique_link_type_deleted' => 'string',
-        'non_unique_link_type_no_follow' => 'string',
-        'non_unique_link_type_protocol_https' => 'string',
-        'non_unique_link_type_frame' => 'string',
-        'non_unique_link_type_image_link' => 'string',
-        'non_unique_link_type_redirect' => 'string',
-        'non_unique_link_type_text_link' => 'string',
-        'ref_domain_type_live' => 'string',
-        'ref_domain_type_follow' => 'string',
-        'ref_domain_type_homepage_link' => 'string',
-        'ref_domain_type_direct' => 'string',
-        'ref_domain_type_protocol_https' => 'string',
-        'canonical_url' => 'string',
-        'citation_flow' => 'string',
-        'trust_flow' => 'string',
-        'trust_metric' => 'string',
-        'topical_trust_flow_topic_0' => 'string',
-        'topical_trust_flow_value_0' => 'string',
-        'topical_trust_flow_topic_1' => 'string',
-        'topical_trust_flow_value_1' => 'string',
-        'topical_trust_flow_topic_2' => 'string',
-        'topical_trust_flow_value_2' => 'string'
+        'languageDesc' => 'string',
+        'languageConfidence' => 'string',
+        'languagePageRatios' => 'string',
+        'languageTotalPages' => 'string',
+        'refLanguage' => 'string',
+        'refLanguageDesc' => 'string',
+        'refLanguageConfidence' => 'string',
+        'refLanguagePageRatios' => 'string',
+        'refLanguageTotalPages' => 'string',
+        'crawledURLs' => 'string',
+        'rootDomainIPAddress' => 'string',
+        'totalNonUniqueLinks' => 'string',
+        'nonUniqueLinkTypeHomepages' => 'string',
+        'nonUniqueLinkTypeIndirect' => 'string',
+        'nonUniqueLinkTypeDeleted' => 'string',
+        'nonUniqueLinkTypeNoFollow' => 'string',
+        'nonUniqueLinkTypeProtocolHTTPS' => 'string',
+        'nonUniqueLinkTypeFrame' => 'string',
+        'nonUniqueLinkTypeImageLink' => 'string',
+        'nonUniqueLinkTypeRedirect' => 'string',
+        'nonUniqueLinkTypeTextLink' => 'string',
+        'refDomainTypeLive' => 'string',
+        'refDomainTypeFollow' => 'string',
+        'refDomainTypeHomepageLink' => 'string',
+        'refDomainTypeDirect' => 'string',
+        'refDomainTypeProtocolHTTPS' => 'string',
+        'canonicalURL' => 'string',
+        'citationFlow' => 'string',
+        'trustFlow' => 'string',
+        'trustMetric' => 'string',
+        'topicalTrustFlowTopic0' => 'string',
+        'topicalTrustFlowValue0' => 'string',
+        'topicalTrustFlowTopic1' => 'string',
+        'topicalTrustFlowValue1' => 'string',
+        'topicalTrustFlowTopic2' => 'string',
+        'topicalTrustFlowValue2' => 'string'
     ];
 
     /**
@@ -137,78 +137,78 @@ class Majestic implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'item_nu' => null,
+        'itemNu' => null,
         'item' => null,
-        'result_code' => null,
+        'resultCode' => null,
         'status' => null,
-        'ext_back_links' => null,
-        'ref_domains' => null,
-        'analysis_res_units_cost' => null,
-        'ac_rank' => null,
-        'item_type' => null,
-        'indexed_ur_ls' => null,
-        'get_top_back_links_analysis_res_units_cost' => null,
-        'download_backlinks_analysis_res_units_cost' => null,
-        'download_ref_domain_backlinks_analysis_res_units_cost' => null,
-        'ref_i_ps' => null,
-        'ref_sub_nets' => null,
-        'ref_domains_edu' => null,
-        'ext_back_links_edu' => null,
-        'ref_domains_gov' => null,
-        'ext_back_links_gov' => null,
-        'ref_domains_edu_exact' => null,
-        'ext_back_links_edu_exact' => null,
-        'ref_domains_gov_exact' => null,
-        'ext_back_links_gov_exact' => null,
-        'crawled_flag' => null,
-        'last_crawl_date' => null,
-        'last_crawl_result' => null,
-        'redirect_flag' => null,
-        'final_redirect_result' => null,
-        'out_domains_external' => null,
-        'out_links_external' => null,
-        'out_links_internal' => null,
-        'out_links_pages' => null,
-        'last_seen' => null,
+        'extBackLinks' => null,
+        'refDomains' => null,
+        'analysisResUnitsCost' => null,
+        'aCRank' => null,
+        'itemType' => null,
+        'indexedURLs' => null,
+        'getTopBackLinksAnalysisResUnitsCost' => null,
+        'downloadBacklinksAnalysisResUnitsCost' => null,
+        'downloadRefDomainBacklinksAnalysisResUnitsCost' => null,
+        'refIPs' => null,
+        'refSubNets' => null,
+        'refDomainsEDU' => null,
+        'extBackLinksEDU' => null,
+        'refDomainsGOV' => null,
+        'extBackLinksGOV' => null,
+        'refDomainsEDUExact' => null,
+        'extBackLinksEDUExact' => null,
+        'refDomainsGOVExact' => null,
+        'extBackLinksGOVExact' => null,
+        'crawledFlag' => null,
+        'lastCrawlDate' => null,
+        'lastCrawlResult' => null,
+        'redirectFlag' => null,
+        'finalRedirectResult' => null,
+        'outDomainsExternal' => null,
+        'outLinksExternal' => null,
+        'outLinksInternal' => null,
+        'outLinksPages' => null,
+        'lastSeen' => null,
         'title' => null,
-        'redirect_to' => null,
+        'redirectTo' => null,
         'language' => null,
-        'language_desc' => null,
-        'language_confidence' => null,
-        'language_page_ratios' => null,
-        'language_total_pages' => null,
-        'ref_language' => null,
-        'ref_language_desc' => null,
-        'ref_language_confidence' => null,
-        'ref_language_page_ratios' => null,
-        'ref_language_total_pages' => null,
-        'crawled_ur_ls' => null,
-        'root_domain_ip_address' => null,
-        'total_non_unique_links' => null,
-        'non_unique_link_type_homepages' => null,
-        'non_unique_link_type_indirect' => null,
-        'non_unique_link_type_deleted' => null,
-        'non_unique_link_type_no_follow' => null,
-        'non_unique_link_type_protocol_https' => null,
-        'non_unique_link_type_frame' => null,
-        'non_unique_link_type_image_link' => null,
-        'non_unique_link_type_redirect' => null,
-        'non_unique_link_type_text_link' => null,
-        'ref_domain_type_live' => null,
-        'ref_domain_type_follow' => null,
-        'ref_domain_type_homepage_link' => null,
-        'ref_domain_type_direct' => null,
-        'ref_domain_type_protocol_https' => null,
-        'canonical_url' => null,
-        'citation_flow' => null,
-        'trust_flow' => null,
-        'trust_metric' => null,
-        'topical_trust_flow_topic_0' => null,
-        'topical_trust_flow_value_0' => null,
-        'topical_trust_flow_topic_1' => null,
-        'topical_trust_flow_value_1' => null,
-        'topical_trust_flow_topic_2' => null,
-        'topical_trust_flow_value_2' => null
+        'languageDesc' => null,
+        'languageConfidence' => null,
+        'languagePageRatios' => null,
+        'languageTotalPages' => null,
+        'refLanguage' => null,
+        'refLanguageDesc' => null,
+        'refLanguageConfidence' => null,
+        'refLanguagePageRatios' => null,
+        'refLanguageTotalPages' => null,
+        'crawledURLs' => null,
+        'rootDomainIPAddress' => null,
+        'totalNonUniqueLinks' => null,
+        'nonUniqueLinkTypeHomepages' => null,
+        'nonUniqueLinkTypeIndirect' => null,
+        'nonUniqueLinkTypeDeleted' => null,
+        'nonUniqueLinkTypeNoFollow' => null,
+        'nonUniqueLinkTypeProtocolHTTPS' => null,
+        'nonUniqueLinkTypeFrame' => null,
+        'nonUniqueLinkTypeImageLink' => null,
+        'nonUniqueLinkTypeRedirect' => null,
+        'nonUniqueLinkTypeTextLink' => null,
+        'refDomainTypeLive' => null,
+        'refDomainTypeFollow' => null,
+        'refDomainTypeHomepageLink' => null,
+        'refDomainTypeDirect' => null,
+        'refDomainTypeProtocolHTTPS' => null,
+        'canonicalURL' => null,
+        'citationFlow' => null,
+        'trustFlow' => null,
+        'trustMetric' => null,
+        'topicalTrustFlowTopic0' => null,
+        'topicalTrustFlowValue0' => null,
+        'topicalTrustFlowTopic1' => null,
+        'topicalTrustFlowValue1' => null,
+        'topicalTrustFlowTopic2' => null,
+        'topicalTrustFlowValue2' => null
     ];
 
     /**
@@ -238,78 +238,78 @@ class Majestic implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item_nu' => 'ItemNu',
+        'itemNu' => 'ItemNu',
         'item' => 'Item',
-        'result_code' => 'ResultCode',
+        'resultCode' => 'ResultCode',
         'status' => 'Status',
-        'ext_back_links' => 'ExtBackLinks',
-        'ref_domains' => 'RefDomains',
-        'analysis_res_units_cost' => 'AnalysisResUnitsCost',
-        'ac_rank' => 'ACRank',
-        'item_type' => 'ItemType',
-        'indexed_ur_ls' => 'IndexedURLs',
-        'get_top_back_links_analysis_res_units_cost' => 'GetTopBackLinksAnalysisResUnitsCost',
-        'download_backlinks_analysis_res_units_cost' => 'DownloadBacklinksAnalysisResUnitsCost',
-        'download_ref_domain_backlinks_analysis_res_units_cost' => 'DownloadRefDomainBacklinksAnalysisResUnitsCost',
-        'ref_i_ps' => 'RefIPs',
-        'ref_sub_nets' => 'RefSubNets',
-        'ref_domains_edu' => 'RefDomainsEDU',
-        'ext_back_links_edu' => 'ExtBackLinksEDU',
-        'ref_domains_gov' => 'RefDomainsGOV',
-        'ext_back_links_gov' => 'ExtBackLinksGOV',
-        'ref_domains_edu_exact' => 'RefDomainsEDU_Exact',
-        'ext_back_links_edu_exact' => 'ExtBackLinksEDU_Exact',
-        'ref_domains_gov_exact' => 'RefDomainsGOV_Exact',
-        'ext_back_links_gov_exact' => 'ExtBackLinksGOV_Exact',
-        'crawled_flag' => 'CrawledFlag',
-        'last_crawl_date' => 'LastCrawlDate',
-        'last_crawl_result' => 'LastCrawlResult',
-        'redirect_flag' => 'RedirectFlag',
-        'final_redirect_result' => 'FinalRedirectResult',
-        'out_domains_external' => 'OutDomainsExternal',
-        'out_links_external' => 'OutLinksExternal',
-        'out_links_internal' => 'OutLinksInternal',
-        'out_links_pages' => 'OutLinksPages',
-        'last_seen' => 'LastSeen',
+        'extBackLinks' => 'ExtBackLinks',
+        'refDomains' => 'RefDomains',
+        'analysisResUnitsCost' => 'AnalysisResUnitsCost',
+        'aCRank' => 'ACRank',
+        'itemType' => 'ItemType',
+        'indexedURLs' => 'IndexedURLs',
+        'getTopBackLinksAnalysisResUnitsCost' => 'GetTopBackLinksAnalysisResUnitsCost',
+        'downloadBacklinksAnalysisResUnitsCost' => 'DownloadBacklinksAnalysisResUnitsCost',
+        'downloadRefDomainBacklinksAnalysisResUnitsCost' => 'DownloadRefDomainBacklinksAnalysisResUnitsCost',
+        'refIPs' => 'RefIPs',
+        'refSubNets' => 'RefSubNets',
+        'refDomainsEDU' => 'RefDomainsEDU',
+        'extBackLinksEDU' => 'ExtBackLinksEDU',
+        'refDomainsGOV' => 'RefDomainsGOV',
+        'extBackLinksGOV' => 'ExtBackLinksGOV',
+        'refDomainsEDUExact' => 'RefDomainsEDU_Exact',
+        'extBackLinksEDUExact' => 'ExtBackLinksEDU_Exact',
+        'refDomainsGOVExact' => 'RefDomainsGOV_Exact',
+        'extBackLinksGOVExact' => 'ExtBackLinksGOV_Exact',
+        'crawledFlag' => 'CrawledFlag',
+        'lastCrawlDate' => 'LastCrawlDate',
+        'lastCrawlResult' => 'LastCrawlResult',
+        'redirectFlag' => 'RedirectFlag',
+        'finalRedirectResult' => 'FinalRedirectResult',
+        'outDomainsExternal' => 'OutDomainsExternal',
+        'outLinksExternal' => 'OutLinksExternal',
+        'outLinksInternal' => 'OutLinksInternal',
+        'outLinksPages' => 'OutLinksPages',
+        'lastSeen' => 'LastSeen',
         'title' => 'Title',
-        'redirect_to' => 'RedirectTo',
+        'redirectTo' => 'RedirectTo',
         'language' => 'Language',
-        'language_desc' => 'LanguageDesc',
-        'language_confidence' => 'LanguageConfidence',
-        'language_page_ratios' => 'LanguagePageRatios',
-        'language_total_pages' => 'LanguageTotalPages',
-        'ref_language' => 'RefLanguage',
-        'ref_language_desc' => 'RefLanguageDesc',
-        'ref_language_confidence' => 'RefLanguageConfidence',
-        'ref_language_page_ratios' => 'RefLanguagePageRatios',
-        'ref_language_total_pages' => 'RefLanguageTotalPages',
-        'crawled_ur_ls' => 'CrawledURLs',
-        'root_domain_ip_address' => 'RootDomainIPAddress',
-        'total_non_unique_links' => 'TotalNonUniqueLinks',
-        'non_unique_link_type_homepages' => 'NonUniqueLinkTypeHomepages',
-        'non_unique_link_type_indirect' => 'NonUniqueLinkTypeIndirect',
-        'non_unique_link_type_deleted' => 'NonUniqueLinkTypeDeleted',
-        'non_unique_link_type_no_follow' => 'NonUniqueLinkTypeNoFollow',
-        'non_unique_link_type_protocol_https' => 'NonUniqueLinkTypeProtocolHTTPS',
-        'non_unique_link_type_frame' => 'NonUniqueLinkTypeFrame',
-        'non_unique_link_type_image_link' => 'NonUniqueLinkTypeImageLink',
-        'non_unique_link_type_redirect' => 'NonUniqueLinkTypeRedirect',
-        'non_unique_link_type_text_link' => 'NonUniqueLinkTypeTextLink',
-        'ref_domain_type_live' => 'RefDomainTypeLive',
-        'ref_domain_type_follow' => 'RefDomainTypeFollow',
-        'ref_domain_type_homepage_link' => 'RefDomainTypeHomepageLink',
-        'ref_domain_type_direct' => 'RefDomainTypeDirect',
-        'ref_domain_type_protocol_https' => 'RefDomainTypeProtocolHTTPS',
-        'canonical_url' => 'CanonicalURL',
-        'citation_flow' => 'CitationFlow',
-        'trust_flow' => 'TrustFlow',
-        'trust_metric' => 'TrustMetric',
-        'topical_trust_flow_topic_0' => 'TopicalTrustFlow_Topic_0',
-        'topical_trust_flow_value_0' => 'TopicalTrustFlow_Value_0',
-        'topical_trust_flow_topic_1' => 'TopicalTrustFlow_Topic_1',
-        'topical_trust_flow_value_1' => 'TopicalTrustFlow_Value_1',
-        'topical_trust_flow_topic_2' => 'TopicalTrustFlow_Topic_2',
-        'topical_trust_flow_value_2' => 'TopicalTrustFlow_Value_2'
+        'languageDesc' => 'LanguageDesc',
+        'languageConfidence' => 'LanguageConfidence',
+        'languagePageRatios' => 'LanguagePageRatios',
+        'languageTotalPages' => 'LanguageTotalPages',
+        'refLanguage' => 'RefLanguage',
+        'refLanguageDesc' => 'RefLanguageDesc',
+        'refLanguageConfidence' => 'RefLanguageConfidence',
+        'refLanguagePageRatios' => 'RefLanguagePageRatios',
+        'refLanguageTotalPages' => 'RefLanguageTotalPages',
+        'crawledURLs' => 'CrawledURLs',
+        'rootDomainIPAddress' => 'RootDomainIPAddress',
+        'totalNonUniqueLinks' => 'TotalNonUniqueLinks',
+        'nonUniqueLinkTypeHomepages' => 'NonUniqueLinkTypeHomepages',
+        'nonUniqueLinkTypeIndirect' => 'NonUniqueLinkTypeIndirect',
+        'nonUniqueLinkTypeDeleted' => 'NonUniqueLinkTypeDeleted',
+        'nonUniqueLinkTypeNoFollow' => 'NonUniqueLinkTypeNoFollow',
+        'nonUniqueLinkTypeProtocolHTTPS' => 'NonUniqueLinkTypeProtocolHTTPS',
+        'nonUniqueLinkTypeFrame' => 'NonUniqueLinkTypeFrame',
+        'nonUniqueLinkTypeImageLink' => 'NonUniqueLinkTypeImageLink',
+        'nonUniqueLinkTypeRedirect' => 'NonUniqueLinkTypeRedirect',
+        'nonUniqueLinkTypeTextLink' => 'NonUniqueLinkTypeTextLink',
+        'refDomainTypeLive' => 'RefDomainTypeLive',
+        'refDomainTypeFollow' => 'RefDomainTypeFollow',
+        'refDomainTypeHomepageLink' => 'RefDomainTypeHomepageLink',
+        'refDomainTypeDirect' => 'RefDomainTypeDirect',
+        'refDomainTypeProtocolHTTPS' => 'RefDomainTypeProtocolHTTPS',
+        'canonicalURL' => 'CanonicalURL',
+        'citationFlow' => 'CitationFlow',
+        'trustFlow' => 'TrustFlow',
+        'trustMetric' => 'TrustMetric',
+        'topicalTrustFlowTopic0' => 'TopicalTrustFlow_Topic_0',
+        'topicalTrustFlowValue0' => 'TopicalTrustFlow_Value_0',
+        'topicalTrustFlowTopic1' => 'TopicalTrustFlow_Topic_1',
+        'topicalTrustFlowValue1' => 'TopicalTrustFlow_Value_1',
+        'topicalTrustFlowTopic2' => 'TopicalTrustFlow_Topic_2',
+        'topicalTrustFlowValue2' => 'TopicalTrustFlow_Value_2'
     ];
 
     /**
@@ -318,78 +318,78 @@ class Majestic implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'item_nu' => 'setItemNu',
+        'itemNu' => 'setItemNu',
         'item' => 'setItem',
-        'result_code' => 'setResultCode',
+        'resultCode' => 'setResultCode',
         'status' => 'setStatus',
-        'ext_back_links' => 'setExtBackLinks',
-        'ref_domains' => 'setRefDomains',
-        'analysis_res_units_cost' => 'setAnalysisResUnitsCost',
-        'ac_rank' => 'setAcRank',
-        'item_type' => 'setItemType',
-        'indexed_ur_ls' => 'setIndexedUrLs',
-        'get_top_back_links_analysis_res_units_cost' => 'setGetTopBackLinksAnalysisResUnitsCost',
-        'download_backlinks_analysis_res_units_cost' => 'setDownloadBacklinksAnalysisResUnitsCost',
-        'download_ref_domain_backlinks_analysis_res_units_cost' => 'setDownloadRefDomainBacklinksAnalysisResUnitsCost',
-        'ref_i_ps' => 'setRefIPs',
-        'ref_sub_nets' => 'setRefSubNets',
-        'ref_domains_edu' => 'setRefDomainsEdu',
-        'ext_back_links_edu' => 'setExtBackLinksEdu',
-        'ref_domains_gov' => 'setRefDomainsGov',
-        'ext_back_links_gov' => 'setExtBackLinksGov',
-        'ref_domains_edu_exact' => 'setRefDomainsEduExact',
-        'ext_back_links_edu_exact' => 'setExtBackLinksEduExact',
-        'ref_domains_gov_exact' => 'setRefDomainsGovExact',
-        'ext_back_links_gov_exact' => 'setExtBackLinksGovExact',
-        'crawled_flag' => 'setCrawledFlag',
-        'last_crawl_date' => 'setLastCrawlDate',
-        'last_crawl_result' => 'setLastCrawlResult',
-        'redirect_flag' => 'setRedirectFlag',
-        'final_redirect_result' => 'setFinalRedirectResult',
-        'out_domains_external' => 'setOutDomainsExternal',
-        'out_links_external' => 'setOutLinksExternal',
-        'out_links_internal' => 'setOutLinksInternal',
-        'out_links_pages' => 'setOutLinksPages',
-        'last_seen' => 'setLastSeen',
+        'extBackLinks' => 'setExtBackLinks',
+        'refDomains' => 'setRefDomains',
+        'analysisResUnitsCost' => 'setAnalysisResUnitsCost',
+        'aCRank' => 'setACRank',
+        'itemType' => 'setItemType',
+        'indexedURLs' => 'setIndexedURLs',
+        'getTopBackLinksAnalysisResUnitsCost' => 'setGetTopBackLinksAnalysisResUnitsCost',
+        'downloadBacklinksAnalysisResUnitsCost' => 'setDownloadBacklinksAnalysisResUnitsCost',
+        'downloadRefDomainBacklinksAnalysisResUnitsCost' => 'setDownloadRefDomainBacklinksAnalysisResUnitsCost',
+        'refIPs' => 'setRefIPs',
+        'refSubNets' => 'setRefSubNets',
+        'refDomainsEDU' => 'setRefDomainsEDU',
+        'extBackLinksEDU' => 'setExtBackLinksEDU',
+        'refDomainsGOV' => 'setRefDomainsGOV',
+        'extBackLinksGOV' => 'setExtBackLinksGOV',
+        'refDomainsEDUExact' => 'setRefDomainsEDUExact',
+        'extBackLinksEDUExact' => 'setExtBackLinksEDUExact',
+        'refDomainsGOVExact' => 'setRefDomainsGOVExact',
+        'extBackLinksGOVExact' => 'setExtBackLinksGOVExact',
+        'crawledFlag' => 'setCrawledFlag',
+        'lastCrawlDate' => 'setLastCrawlDate',
+        'lastCrawlResult' => 'setLastCrawlResult',
+        'redirectFlag' => 'setRedirectFlag',
+        'finalRedirectResult' => 'setFinalRedirectResult',
+        'outDomainsExternal' => 'setOutDomainsExternal',
+        'outLinksExternal' => 'setOutLinksExternal',
+        'outLinksInternal' => 'setOutLinksInternal',
+        'outLinksPages' => 'setOutLinksPages',
+        'lastSeen' => 'setLastSeen',
         'title' => 'setTitle',
-        'redirect_to' => 'setRedirectTo',
+        'redirectTo' => 'setRedirectTo',
         'language' => 'setLanguage',
-        'language_desc' => 'setLanguageDesc',
-        'language_confidence' => 'setLanguageConfidence',
-        'language_page_ratios' => 'setLanguagePageRatios',
-        'language_total_pages' => 'setLanguageTotalPages',
-        'ref_language' => 'setRefLanguage',
-        'ref_language_desc' => 'setRefLanguageDesc',
-        'ref_language_confidence' => 'setRefLanguageConfidence',
-        'ref_language_page_ratios' => 'setRefLanguagePageRatios',
-        'ref_language_total_pages' => 'setRefLanguageTotalPages',
-        'crawled_ur_ls' => 'setCrawledUrLs',
-        'root_domain_ip_address' => 'setRootDomainIpAddress',
-        'total_non_unique_links' => 'setTotalNonUniqueLinks',
-        'non_unique_link_type_homepages' => 'setNonUniqueLinkTypeHomepages',
-        'non_unique_link_type_indirect' => 'setNonUniqueLinkTypeIndirect',
-        'non_unique_link_type_deleted' => 'setNonUniqueLinkTypeDeleted',
-        'non_unique_link_type_no_follow' => 'setNonUniqueLinkTypeNoFollow',
-        'non_unique_link_type_protocol_https' => 'setNonUniqueLinkTypeProtocolHttps',
-        'non_unique_link_type_frame' => 'setNonUniqueLinkTypeFrame',
-        'non_unique_link_type_image_link' => 'setNonUniqueLinkTypeImageLink',
-        'non_unique_link_type_redirect' => 'setNonUniqueLinkTypeRedirect',
-        'non_unique_link_type_text_link' => 'setNonUniqueLinkTypeTextLink',
-        'ref_domain_type_live' => 'setRefDomainTypeLive',
-        'ref_domain_type_follow' => 'setRefDomainTypeFollow',
-        'ref_domain_type_homepage_link' => 'setRefDomainTypeHomepageLink',
-        'ref_domain_type_direct' => 'setRefDomainTypeDirect',
-        'ref_domain_type_protocol_https' => 'setRefDomainTypeProtocolHttps',
-        'canonical_url' => 'setCanonicalUrl',
-        'citation_flow' => 'setCitationFlow',
-        'trust_flow' => 'setTrustFlow',
-        'trust_metric' => 'setTrustMetric',
-        'topical_trust_flow_topic_0' => 'setTopicalTrustFlowTopic0',
-        'topical_trust_flow_value_0' => 'setTopicalTrustFlowValue0',
-        'topical_trust_flow_topic_1' => 'setTopicalTrustFlowTopic1',
-        'topical_trust_flow_value_1' => 'setTopicalTrustFlowValue1',
-        'topical_trust_flow_topic_2' => 'setTopicalTrustFlowTopic2',
-        'topical_trust_flow_value_2' => 'setTopicalTrustFlowValue2'
+        'languageDesc' => 'setLanguageDesc',
+        'languageConfidence' => 'setLanguageConfidence',
+        'languagePageRatios' => 'setLanguagePageRatios',
+        'languageTotalPages' => 'setLanguageTotalPages',
+        'refLanguage' => 'setRefLanguage',
+        'refLanguageDesc' => 'setRefLanguageDesc',
+        'refLanguageConfidence' => 'setRefLanguageConfidence',
+        'refLanguagePageRatios' => 'setRefLanguagePageRatios',
+        'refLanguageTotalPages' => 'setRefLanguageTotalPages',
+        'crawledURLs' => 'setCrawledURLs',
+        'rootDomainIPAddress' => 'setRootDomainIPAddress',
+        'totalNonUniqueLinks' => 'setTotalNonUniqueLinks',
+        'nonUniqueLinkTypeHomepages' => 'setNonUniqueLinkTypeHomepages',
+        'nonUniqueLinkTypeIndirect' => 'setNonUniqueLinkTypeIndirect',
+        'nonUniqueLinkTypeDeleted' => 'setNonUniqueLinkTypeDeleted',
+        'nonUniqueLinkTypeNoFollow' => 'setNonUniqueLinkTypeNoFollow',
+        'nonUniqueLinkTypeProtocolHTTPS' => 'setNonUniqueLinkTypeProtocolHTTPS',
+        'nonUniqueLinkTypeFrame' => 'setNonUniqueLinkTypeFrame',
+        'nonUniqueLinkTypeImageLink' => 'setNonUniqueLinkTypeImageLink',
+        'nonUniqueLinkTypeRedirect' => 'setNonUniqueLinkTypeRedirect',
+        'nonUniqueLinkTypeTextLink' => 'setNonUniqueLinkTypeTextLink',
+        'refDomainTypeLive' => 'setRefDomainTypeLive',
+        'refDomainTypeFollow' => 'setRefDomainTypeFollow',
+        'refDomainTypeHomepageLink' => 'setRefDomainTypeHomepageLink',
+        'refDomainTypeDirect' => 'setRefDomainTypeDirect',
+        'refDomainTypeProtocolHTTPS' => 'setRefDomainTypeProtocolHTTPS',
+        'canonicalURL' => 'setCanonicalURL',
+        'citationFlow' => 'setCitationFlow',
+        'trustFlow' => 'setTrustFlow',
+        'trustMetric' => 'setTrustMetric',
+        'topicalTrustFlowTopic0' => 'setTopicalTrustFlowTopic0',
+        'topicalTrustFlowValue0' => 'setTopicalTrustFlowValue0',
+        'topicalTrustFlowTopic1' => 'setTopicalTrustFlowTopic1',
+        'topicalTrustFlowValue1' => 'setTopicalTrustFlowValue1',
+        'topicalTrustFlowTopic2' => 'setTopicalTrustFlowTopic2',
+        'topicalTrustFlowValue2' => 'setTopicalTrustFlowValue2'
     ];
 
     /**
@@ -398,78 +398,78 @@ class Majestic implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'item_nu' => 'getItemNu',
+        'itemNu' => 'getItemNu',
         'item' => 'getItem',
-        'result_code' => 'getResultCode',
+        'resultCode' => 'getResultCode',
         'status' => 'getStatus',
-        'ext_back_links' => 'getExtBackLinks',
-        'ref_domains' => 'getRefDomains',
-        'analysis_res_units_cost' => 'getAnalysisResUnitsCost',
-        'ac_rank' => 'getAcRank',
-        'item_type' => 'getItemType',
-        'indexed_ur_ls' => 'getIndexedUrLs',
-        'get_top_back_links_analysis_res_units_cost' => 'getGetTopBackLinksAnalysisResUnitsCost',
-        'download_backlinks_analysis_res_units_cost' => 'getDownloadBacklinksAnalysisResUnitsCost',
-        'download_ref_domain_backlinks_analysis_res_units_cost' => 'getDownloadRefDomainBacklinksAnalysisResUnitsCost',
-        'ref_i_ps' => 'getRefIPs',
-        'ref_sub_nets' => 'getRefSubNets',
-        'ref_domains_edu' => 'getRefDomainsEdu',
-        'ext_back_links_edu' => 'getExtBackLinksEdu',
-        'ref_domains_gov' => 'getRefDomainsGov',
-        'ext_back_links_gov' => 'getExtBackLinksGov',
-        'ref_domains_edu_exact' => 'getRefDomainsEduExact',
-        'ext_back_links_edu_exact' => 'getExtBackLinksEduExact',
-        'ref_domains_gov_exact' => 'getRefDomainsGovExact',
-        'ext_back_links_gov_exact' => 'getExtBackLinksGovExact',
-        'crawled_flag' => 'getCrawledFlag',
-        'last_crawl_date' => 'getLastCrawlDate',
-        'last_crawl_result' => 'getLastCrawlResult',
-        'redirect_flag' => 'getRedirectFlag',
-        'final_redirect_result' => 'getFinalRedirectResult',
-        'out_domains_external' => 'getOutDomainsExternal',
-        'out_links_external' => 'getOutLinksExternal',
-        'out_links_internal' => 'getOutLinksInternal',
-        'out_links_pages' => 'getOutLinksPages',
-        'last_seen' => 'getLastSeen',
+        'extBackLinks' => 'getExtBackLinks',
+        'refDomains' => 'getRefDomains',
+        'analysisResUnitsCost' => 'getAnalysisResUnitsCost',
+        'aCRank' => 'getACRank',
+        'itemType' => 'getItemType',
+        'indexedURLs' => 'getIndexedURLs',
+        'getTopBackLinksAnalysisResUnitsCost' => 'getGetTopBackLinksAnalysisResUnitsCost',
+        'downloadBacklinksAnalysisResUnitsCost' => 'getDownloadBacklinksAnalysisResUnitsCost',
+        'downloadRefDomainBacklinksAnalysisResUnitsCost' => 'getDownloadRefDomainBacklinksAnalysisResUnitsCost',
+        'refIPs' => 'getRefIPs',
+        'refSubNets' => 'getRefSubNets',
+        'refDomainsEDU' => 'getRefDomainsEDU',
+        'extBackLinksEDU' => 'getExtBackLinksEDU',
+        'refDomainsGOV' => 'getRefDomainsGOV',
+        'extBackLinksGOV' => 'getExtBackLinksGOV',
+        'refDomainsEDUExact' => 'getRefDomainsEDUExact',
+        'extBackLinksEDUExact' => 'getExtBackLinksEDUExact',
+        'refDomainsGOVExact' => 'getRefDomainsGOVExact',
+        'extBackLinksGOVExact' => 'getExtBackLinksGOVExact',
+        'crawledFlag' => 'getCrawledFlag',
+        'lastCrawlDate' => 'getLastCrawlDate',
+        'lastCrawlResult' => 'getLastCrawlResult',
+        'redirectFlag' => 'getRedirectFlag',
+        'finalRedirectResult' => 'getFinalRedirectResult',
+        'outDomainsExternal' => 'getOutDomainsExternal',
+        'outLinksExternal' => 'getOutLinksExternal',
+        'outLinksInternal' => 'getOutLinksInternal',
+        'outLinksPages' => 'getOutLinksPages',
+        'lastSeen' => 'getLastSeen',
         'title' => 'getTitle',
-        'redirect_to' => 'getRedirectTo',
+        'redirectTo' => 'getRedirectTo',
         'language' => 'getLanguage',
-        'language_desc' => 'getLanguageDesc',
-        'language_confidence' => 'getLanguageConfidence',
-        'language_page_ratios' => 'getLanguagePageRatios',
-        'language_total_pages' => 'getLanguageTotalPages',
-        'ref_language' => 'getRefLanguage',
-        'ref_language_desc' => 'getRefLanguageDesc',
-        'ref_language_confidence' => 'getRefLanguageConfidence',
-        'ref_language_page_ratios' => 'getRefLanguagePageRatios',
-        'ref_language_total_pages' => 'getRefLanguageTotalPages',
-        'crawled_ur_ls' => 'getCrawledUrLs',
-        'root_domain_ip_address' => 'getRootDomainIpAddress',
-        'total_non_unique_links' => 'getTotalNonUniqueLinks',
-        'non_unique_link_type_homepages' => 'getNonUniqueLinkTypeHomepages',
-        'non_unique_link_type_indirect' => 'getNonUniqueLinkTypeIndirect',
-        'non_unique_link_type_deleted' => 'getNonUniqueLinkTypeDeleted',
-        'non_unique_link_type_no_follow' => 'getNonUniqueLinkTypeNoFollow',
-        'non_unique_link_type_protocol_https' => 'getNonUniqueLinkTypeProtocolHttps',
-        'non_unique_link_type_frame' => 'getNonUniqueLinkTypeFrame',
-        'non_unique_link_type_image_link' => 'getNonUniqueLinkTypeImageLink',
-        'non_unique_link_type_redirect' => 'getNonUniqueLinkTypeRedirect',
-        'non_unique_link_type_text_link' => 'getNonUniqueLinkTypeTextLink',
-        'ref_domain_type_live' => 'getRefDomainTypeLive',
-        'ref_domain_type_follow' => 'getRefDomainTypeFollow',
-        'ref_domain_type_homepage_link' => 'getRefDomainTypeHomepageLink',
-        'ref_domain_type_direct' => 'getRefDomainTypeDirect',
-        'ref_domain_type_protocol_https' => 'getRefDomainTypeProtocolHttps',
-        'canonical_url' => 'getCanonicalUrl',
-        'citation_flow' => 'getCitationFlow',
-        'trust_flow' => 'getTrustFlow',
-        'trust_metric' => 'getTrustMetric',
-        'topical_trust_flow_topic_0' => 'getTopicalTrustFlowTopic0',
-        'topical_trust_flow_value_0' => 'getTopicalTrustFlowValue0',
-        'topical_trust_flow_topic_1' => 'getTopicalTrustFlowTopic1',
-        'topical_trust_flow_value_1' => 'getTopicalTrustFlowValue1',
-        'topical_trust_flow_topic_2' => 'getTopicalTrustFlowTopic2',
-        'topical_trust_flow_value_2' => 'getTopicalTrustFlowValue2'
+        'languageDesc' => 'getLanguageDesc',
+        'languageConfidence' => 'getLanguageConfidence',
+        'languagePageRatios' => 'getLanguagePageRatios',
+        'languageTotalPages' => 'getLanguageTotalPages',
+        'refLanguage' => 'getRefLanguage',
+        'refLanguageDesc' => 'getRefLanguageDesc',
+        'refLanguageConfidence' => 'getRefLanguageConfidence',
+        'refLanguagePageRatios' => 'getRefLanguagePageRatios',
+        'refLanguageTotalPages' => 'getRefLanguageTotalPages',
+        'crawledURLs' => 'getCrawledURLs',
+        'rootDomainIPAddress' => 'getRootDomainIPAddress',
+        'totalNonUniqueLinks' => 'getTotalNonUniqueLinks',
+        'nonUniqueLinkTypeHomepages' => 'getNonUniqueLinkTypeHomepages',
+        'nonUniqueLinkTypeIndirect' => 'getNonUniqueLinkTypeIndirect',
+        'nonUniqueLinkTypeDeleted' => 'getNonUniqueLinkTypeDeleted',
+        'nonUniqueLinkTypeNoFollow' => 'getNonUniqueLinkTypeNoFollow',
+        'nonUniqueLinkTypeProtocolHTTPS' => 'getNonUniqueLinkTypeProtocolHTTPS',
+        'nonUniqueLinkTypeFrame' => 'getNonUniqueLinkTypeFrame',
+        'nonUniqueLinkTypeImageLink' => 'getNonUniqueLinkTypeImageLink',
+        'nonUniqueLinkTypeRedirect' => 'getNonUniqueLinkTypeRedirect',
+        'nonUniqueLinkTypeTextLink' => 'getNonUniqueLinkTypeTextLink',
+        'refDomainTypeLive' => 'getRefDomainTypeLive',
+        'refDomainTypeFollow' => 'getRefDomainTypeFollow',
+        'refDomainTypeHomepageLink' => 'getRefDomainTypeHomepageLink',
+        'refDomainTypeDirect' => 'getRefDomainTypeDirect',
+        'refDomainTypeProtocolHTTPS' => 'getRefDomainTypeProtocolHTTPS',
+        'canonicalURL' => 'getCanonicalURL',
+        'citationFlow' => 'getCitationFlow',
+        'trustFlow' => 'getTrustFlow',
+        'trustMetric' => 'getTrustMetric',
+        'topicalTrustFlowTopic0' => 'getTopicalTrustFlowTopic0',
+        'topicalTrustFlowValue0' => 'getTopicalTrustFlowValue0',
+        'topicalTrustFlowTopic1' => 'getTopicalTrustFlowTopic1',
+        'topicalTrustFlowValue1' => 'getTopicalTrustFlowValue1',
+        'topicalTrustFlowTopic2' => 'getTopicalTrustFlowTopic2',
+        'topicalTrustFlowValue2' => 'getTopicalTrustFlowValue2'
     ];
 
     /**
@@ -532,78 +532,78 @@ class Majestic implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['item_nu'] = isset($data['item_nu']) ? $this->createData($data['item_nu'], 'item_nu')  : null;
+        $this->container['itemNu'] = isset($data['itemNu']) ? $this->createData($data['itemNu'], 'itemNu')  : null;
         $this->container['item'] = isset($data['item']) ? $this->createData($data['item'], 'item')  : null;
-        $this->container['result_code'] = isset($data['result_code']) ? $this->createData($data['result_code'], 'result_code')  : null;
+        $this->container['resultCode'] = isset($data['resultCode']) ? $this->createData($data['resultCode'], 'resultCode')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['ext_back_links'] = isset($data['ext_back_links']) ? $this->createData($data['ext_back_links'], 'ext_back_links')  : null;
-        $this->container['ref_domains'] = isset($data['ref_domains']) ? $this->createData($data['ref_domains'], 'ref_domains')  : null;
-        $this->container['analysis_res_units_cost'] = isset($data['analysis_res_units_cost']) ? $this->createData($data['analysis_res_units_cost'], 'analysis_res_units_cost')  : null;
-        $this->container['ac_rank'] = isset($data['ac_rank']) ? $this->createData($data['ac_rank'], 'ac_rank')  : null;
-        $this->container['item_type'] = isset($data['item_type']) ? $this->createData($data['item_type'], 'item_type')  : null;
-        $this->container['indexed_ur_ls'] = isset($data['indexed_ur_ls']) ? $this->createData($data['indexed_ur_ls'], 'indexed_ur_ls')  : null;
-        $this->container['get_top_back_links_analysis_res_units_cost'] = isset($data['get_top_back_links_analysis_res_units_cost']) ? $this->createData($data['get_top_back_links_analysis_res_units_cost'], 'get_top_back_links_analysis_res_units_cost')  : null;
-        $this->container['download_backlinks_analysis_res_units_cost'] = isset($data['download_backlinks_analysis_res_units_cost']) ? $this->createData($data['download_backlinks_analysis_res_units_cost'], 'download_backlinks_analysis_res_units_cost')  : null;
-        $this->container['download_ref_domain_backlinks_analysis_res_units_cost'] = isset($data['download_ref_domain_backlinks_analysis_res_units_cost']) ? $this->createData($data['download_ref_domain_backlinks_analysis_res_units_cost'], 'download_ref_domain_backlinks_analysis_res_units_cost')  : null;
-        $this->container['ref_i_ps'] = isset($data['ref_i_ps']) ? $this->createData($data['ref_i_ps'], 'ref_i_ps')  : null;
-        $this->container['ref_sub_nets'] = isset($data['ref_sub_nets']) ? $this->createData($data['ref_sub_nets'], 'ref_sub_nets')  : null;
-        $this->container['ref_domains_edu'] = isset($data['ref_domains_edu']) ? $this->createData($data['ref_domains_edu'], 'ref_domains_edu')  : null;
-        $this->container['ext_back_links_edu'] = isset($data['ext_back_links_edu']) ? $this->createData($data['ext_back_links_edu'], 'ext_back_links_edu')  : null;
-        $this->container['ref_domains_gov'] = isset($data['ref_domains_gov']) ? $this->createData($data['ref_domains_gov'], 'ref_domains_gov')  : null;
-        $this->container['ext_back_links_gov'] = isset($data['ext_back_links_gov']) ? $this->createData($data['ext_back_links_gov'], 'ext_back_links_gov')  : null;
-        $this->container['ref_domains_edu_exact'] = isset($data['ref_domains_edu_exact']) ? $this->createData($data['ref_domains_edu_exact'], 'ref_domains_edu_exact')  : null;
-        $this->container['ext_back_links_edu_exact'] = isset($data['ext_back_links_edu_exact']) ? $this->createData($data['ext_back_links_edu_exact'], 'ext_back_links_edu_exact')  : null;
-        $this->container['ref_domains_gov_exact'] = isset($data['ref_domains_gov_exact']) ? $this->createData($data['ref_domains_gov_exact'], 'ref_domains_gov_exact')  : null;
-        $this->container['ext_back_links_gov_exact'] = isset($data['ext_back_links_gov_exact']) ? $this->createData($data['ext_back_links_gov_exact'], 'ext_back_links_gov_exact')  : null;
-        $this->container['crawled_flag'] = isset($data['crawled_flag']) ? $this->createData($data['crawled_flag'], 'crawled_flag')  : null;
-        $this->container['last_crawl_date'] = isset($data['last_crawl_date']) ? $this->createData($data['last_crawl_date'], 'last_crawl_date')  : null;
-        $this->container['last_crawl_result'] = isset($data['last_crawl_result']) ? $this->createData($data['last_crawl_result'], 'last_crawl_result')  : null;
-        $this->container['redirect_flag'] = isset($data['redirect_flag']) ? $this->createData($data['redirect_flag'], 'redirect_flag')  : null;
-        $this->container['final_redirect_result'] = isset($data['final_redirect_result']) ? $this->createData($data['final_redirect_result'], 'final_redirect_result')  : null;
-        $this->container['out_domains_external'] = isset($data['out_domains_external']) ? $this->createData($data['out_domains_external'], 'out_domains_external')  : null;
-        $this->container['out_links_external'] = isset($data['out_links_external']) ? $this->createData($data['out_links_external'], 'out_links_external')  : null;
-        $this->container['out_links_internal'] = isset($data['out_links_internal']) ? $this->createData($data['out_links_internal'], 'out_links_internal')  : null;
-        $this->container['out_links_pages'] = isset($data['out_links_pages']) ? $this->createData($data['out_links_pages'], 'out_links_pages')  : null;
-        $this->container['last_seen'] = isset($data['last_seen']) ? $this->createData($data['last_seen'], 'last_seen')  : null;
+        $this->container['extBackLinks'] = isset($data['extBackLinks']) ? $this->createData($data['extBackLinks'], 'extBackLinks')  : null;
+        $this->container['refDomains'] = isset($data['refDomains']) ? $this->createData($data['refDomains'], 'refDomains')  : null;
+        $this->container['analysisResUnitsCost'] = isset($data['analysisResUnitsCost']) ? $this->createData($data['analysisResUnitsCost'], 'analysisResUnitsCost')  : null;
+        $this->container['aCRank'] = isset($data['aCRank']) ? $this->createData($data['aCRank'], 'aCRank')  : null;
+        $this->container['itemType'] = isset($data['itemType']) ? $this->createData($data['itemType'], 'itemType')  : null;
+        $this->container['indexedURLs'] = isset($data['indexedURLs']) ? $this->createData($data['indexedURLs'], 'indexedURLs')  : null;
+        $this->container['getTopBackLinksAnalysisResUnitsCost'] = isset($data['getTopBackLinksAnalysisResUnitsCost']) ? $this->createData($data['getTopBackLinksAnalysisResUnitsCost'], 'getTopBackLinksAnalysisResUnitsCost')  : null;
+        $this->container['downloadBacklinksAnalysisResUnitsCost'] = isset($data['downloadBacklinksAnalysisResUnitsCost']) ? $this->createData($data['downloadBacklinksAnalysisResUnitsCost'], 'downloadBacklinksAnalysisResUnitsCost')  : null;
+        $this->container['downloadRefDomainBacklinksAnalysisResUnitsCost'] = isset($data['downloadRefDomainBacklinksAnalysisResUnitsCost']) ? $this->createData($data['downloadRefDomainBacklinksAnalysisResUnitsCost'], 'downloadRefDomainBacklinksAnalysisResUnitsCost')  : null;
+        $this->container['refIPs'] = isset($data['refIPs']) ? $this->createData($data['refIPs'], 'refIPs')  : null;
+        $this->container['refSubNets'] = isset($data['refSubNets']) ? $this->createData($data['refSubNets'], 'refSubNets')  : null;
+        $this->container['refDomainsEDU'] = isset($data['refDomainsEDU']) ? $this->createData($data['refDomainsEDU'], 'refDomainsEDU')  : null;
+        $this->container['extBackLinksEDU'] = isset($data['extBackLinksEDU']) ? $this->createData($data['extBackLinksEDU'], 'extBackLinksEDU')  : null;
+        $this->container['refDomainsGOV'] = isset($data['refDomainsGOV']) ? $this->createData($data['refDomainsGOV'], 'refDomainsGOV')  : null;
+        $this->container['extBackLinksGOV'] = isset($data['extBackLinksGOV']) ? $this->createData($data['extBackLinksGOV'], 'extBackLinksGOV')  : null;
+        $this->container['refDomainsEDUExact'] = isset($data['refDomainsEDUExact']) ? $this->createData($data['refDomainsEDUExact'], 'refDomainsEDUExact')  : null;
+        $this->container['extBackLinksEDUExact'] = isset($data['extBackLinksEDUExact']) ? $this->createData($data['extBackLinksEDUExact'], 'extBackLinksEDUExact')  : null;
+        $this->container['refDomainsGOVExact'] = isset($data['refDomainsGOVExact']) ? $this->createData($data['refDomainsGOVExact'], 'refDomainsGOVExact')  : null;
+        $this->container['extBackLinksGOVExact'] = isset($data['extBackLinksGOVExact']) ? $this->createData($data['extBackLinksGOVExact'], 'extBackLinksGOVExact')  : null;
+        $this->container['crawledFlag'] = isset($data['crawledFlag']) ? $this->createData($data['crawledFlag'], 'crawledFlag')  : null;
+        $this->container['lastCrawlDate'] = isset($data['lastCrawlDate']) ? $this->createData($data['lastCrawlDate'], 'lastCrawlDate')  : null;
+        $this->container['lastCrawlResult'] = isset($data['lastCrawlResult']) ? $this->createData($data['lastCrawlResult'], 'lastCrawlResult')  : null;
+        $this->container['redirectFlag'] = isset($data['redirectFlag']) ? $this->createData($data['redirectFlag'], 'redirectFlag')  : null;
+        $this->container['finalRedirectResult'] = isset($data['finalRedirectResult']) ? $this->createData($data['finalRedirectResult'], 'finalRedirectResult')  : null;
+        $this->container['outDomainsExternal'] = isset($data['outDomainsExternal']) ? $this->createData($data['outDomainsExternal'], 'outDomainsExternal')  : null;
+        $this->container['outLinksExternal'] = isset($data['outLinksExternal']) ? $this->createData($data['outLinksExternal'], 'outLinksExternal')  : null;
+        $this->container['outLinksInternal'] = isset($data['outLinksInternal']) ? $this->createData($data['outLinksInternal'], 'outLinksInternal')  : null;
+        $this->container['outLinksPages'] = isset($data['outLinksPages']) ? $this->createData($data['outLinksPages'], 'outLinksPages')  : null;
+        $this->container['lastSeen'] = isset($data['lastSeen']) ? $this->createData($data['lastSeen'], 'lastSeen')  : null;
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
-        $this->container['redirect_to'] = isset($data['redirect_to']) ? $this->createData($data['redirect_to'], 'redirect_to')  : null;
+        $this->container['redirectTo'] = isset($data['redirectTo']) ? $this->createData($data['redirectTo'], 'redirectTo')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
-        $this->container['language_desc'] = isset($data['language_desc']) ? $this->createData($data['language_desc'], 'language_desc')  : null;
-        $this->container['language_confidence'] = isset($data['language_confidence']) ? $this->createData($data['language_confidence'], 'language_confidence')  : null;
-        $this->container['language_page_ratios'] = isset($data['language_page_ratios']) ? $this->createData($data['language_page_ratios'], 'language_page_ratios')  : null;
-        $this->container['language_total_pages'] = isset($data['language_total_pages']) ? $this->createData($data['language_total_pages'], 'language_total_pages')  : null;
-        $this->container['ref_language'] = isset($data['ref_language']) ? $this->createData($data['ref_language'], 'ref_language')  : null;
-        $this->container['ref_language_desc'] = isset($data['ref_language_desc']) ? $this->createData($data['ref_language_desc'], 'ref_language_desc')  : null;
-        $this->container['ref_language_confidence'] = isset($data['ref_language_confidence']) ? $this->createData($data['ref_language_confidence'], 'ref_language_confidence')  : null;
-        $this->container['ref_language_page_ratios'] = isset($data['ref_language_page_ratios']) ? $this->createData($data['ref_language_page_ratios'], 'ref_language_page_ratios')  : null;
-        $this->container['ref_language_total_pages'] = isset($data['ref_language_total_pages']) ? $this->createData($data['ref_language_total_pages'], 'ref_language_total_pages')  : null;
-        $this->container['crawled_ur_ls'] = isset($data['crawled_ur_ls']) ? $this->createData($data['crawled_ur_ls'], 'crawled_ur_ls')  : null;
-        $this->container['root_domain_ip_address'] = isset($data['root_domain_ip_address']) ? $this->createData($data['root_domain_ip_address'], 'root_domain_ip_address')  : null;
-        $this->container['total_non_unique_links'] = isset($data['total_non_unique_links']) ? $this->createData($data['total_non_unique_links'], 'total_non_unique_links')  : null;
-        $this->container['non_unique_link_type_homepages'] = isset($data['non_unique_link_type_homepages']) ? $this->createData($data['non_unique_link_type_homepages'], 'non_unique_link_type_homepages')  : null;
-        $this->container['non_unique_link_type_indirect'] = isset($data['non_unique_link_type_indirect']) ? $this->createData($data['non_unique_link_type_indirect'], 'non_unique_link_type_indirect')  : null;
-        $this->container['non_unique_link_type_deleted'] = isset($data['non_unique_link_type_deleted']) ? $this->createData($data['non_unique_link_type_deleted'], 'non_unique_link_type_deleted')  : null;
-        $this->container['non_unique_link_type_no_follow'] = isset($data['non_unique_link_type_no_follow']) ? $this->createData($data['non_unique_link_type_no_follow'], 'non_unique_link_type_no_follow')  : null;
-        $this->container['non_unique_link_type_protocol_https'] = isset($data['non_unique_link_type_protocol_https']) ? $this->createData($data['non_unique_link_type_protocol_https'], 'non_unique_link_type_protocol_https')  : null;
-        $this->container['non_unique_link_type_frame'] = isset($data['non_unique_link_type_frame']) ? $this->createData($data['non_unique_link_type_frame'], 'non_unique_link_type_frame')  : null;
-        $this->container['non_unique_link_type_image_link'] = isset($data['non_unique_link_type_image_link']) ? $this->createData($data['non_unique_link_type_image_link'], 'non_unique_link_type_image_link')  : null;
-        $this->container['non_unique_link_type_redirect'] = isset($data['non_unique_link_type_redirect']) ? $this->createData($data['non_unique_link_type_redirect'], 'non_unique_link_type_redirect')  : null;
-        $this->container['non_unique_link_type_text_link'] = isset($data['non_unique_link_type_text_link']) ? $this->createData($data['non_unique_link_type_text_link'], 'non_unique_link_type_text_link')  : null;
-        $this->container['ref_domain_type_live'] = isset($data['ref_domain_type_live']) ? $this->createData($data['ref_domain_type_live'], 'ref_domain_type_live')  : null;
-        $this->container['ref_domain_type_follow'] = isset($data['ref_domain_type_follow']) ? $this->createData($data['ref_domain_type_follow'], 'ref_domain_type_follow')  : null;
-        $this->container['ref_domain_type_homepage_link'] = isset($data['ref_domain_type_homepage_link']) ? $this->createData($data['ref_domain_type_homepage_link'], 'ref_domain_type_homepage_link')  : null;
-        $this->container['ref_domain_type_direct'] = isset($data['ref_domain_type_direct']) ? $this->createData($data['ref_domain_type_direct'], 'ref_domain_type_direct')  : null;
-        $this->container['ref_domain_type_protocol_https'] = isset($data['ref_domain_type_protocol_https']) ? $this->createData($data['ref_domain_type_protocol_https'], 'ref_domain_type_protocol_https')  : null;
-        $this->container['canonical_url'] = isset($data['canonical_url']) ? $this->createData($data['canonical_url'], 'canonical_url')  : null;
-        $this->container['citation_flow'] = isset($data['citation_flow']) ? $this->createData($data['citation_flow'], 'citation_flow')  : null;
-        $this->container['trust_flow'] = isset($data['trust_flow']) ? $this->createData($data['trust_flow'], 'trust_flow')  : null;
-        $this->container['trust_metric'] = isset($data['trust_metric']) ? $this->createData($data['trust_metric'], 'trust_metric')  : null;
-        $this->container['topical_trust_flow_topic_0'] = isset($data['topical_trust_flow_topic_0']) ? $this->createData($data['topical_trust_flow_topic_0'], 'topical_trust_flow_topic_0')  : null;
-        $this->container['topical_trust_flow_value_0'] = isset($data['topical_trust_flow_value_0']) ? $this->createData($data['topical_trust_flow_value_0'], 'topical_trust_flow_value_0')  : null;
-        $this->container['topical_trust_flow_topic_1'] = isset($data['topical_trust_flow_topic_1']) ? $this->createData($data['topical_trust_flow_topic_1'], 'topical_trust_flow_topic_1')  : null;
-        $this->container['topical_trust_flow_value_1'] = isset($data['topical_trust_flow_value_1']) ? $this->createData($data['topical_trust_flow_value_1'], 'topical_trust_flow_value_1')  : null;
-        $this->container['topical_trust_flow_topic_2'] = isset($data['topical_trust_flow_topic_2']) ? $this->createData($data['topical_trust_flow_topic_2'], 'topical_trust_flow_topic_2')  : null;
-        $this->container['topical_trust_flow_value_2'] = isset($data['topical_trust_flow_value_2']) ? $this->createData($data['topical_trust_flow_value_2'], 'topical_trust_flow_value_2')  : null;
+        $this->container['languageDesc'] = isset($data['languageDesc']) ? $this->createData($data['languageDesc'], 'languageDesc')  : null;
+        $this->container['languageConfidence'] = isset($data['languageConfidence']) ? $this->createData($data['languageConfidence'], 'languageConfidence')  : null;
+        $this->container['languagePageRatios'] = isset($data['languagePageRatios']) ? $this->createData($data['languagePageRatios'], 'languagePageRatios')  : null;
+        $this->container['languageTotalPages'] = isset($data['languageTotalPages']) ? $this->createData($data['languageTotalPages'], 'languageTotalPages')  : null;
+        $this->container['refLanguage'] = isset($data['refLanguage']) ? $this->createData($data['refLanguage'], 'refLanguage')  : null;
+        $this->container['refLanguageDesc'] = isset($data['refLanguageDesc']) ? $this->createData($data['refLanguageDesc'], 'refLanguageDesc')  : null;
+        $this->container['refLanguageConfidence'] = isset($data['refLanguageConfidence']) ? $this->createData($data['refLanguageConfidence'], 'refLanguageConfidence')  : null;
+        $this->container['refLanguagePageRatios'] = isset($data['refLanguagePageRatios']) ? $this->createData($data['refLanguagePageRatios'], 'refLanguagePageRatios')  : null;
+        $this->container['refLanguageTotalPages'] = isset($data['refLanguageTotalPages']) ? $this->createData($data['refLanguageTotalPages'], 'refLanguageTotalPages')  : null;
+        $this->container['crawledURLs'] = isset($data['crawledURLs']) ? $this->createData($data['crawledURLs'], 'crawledURLs')  : null;
+        $this->container['rootDomainIPAddress'] = isset($data['rootDomainIPAddress']) ? $this->createData($data['rootDomainIPAddress'], 'rootDomainIPAddress')  : null;
+        $this->container['totalNonUniqueLinks'] = isset($data['totalNonUniqueLinks']) ? $this->createData($data['totalNonUniqueLinks'], 'totalNonUniqueLinks')  : null;
+        $this->container['nonUniqueLinkTypeHomepages'] = isset($data['nonUniqueLinkTypeHomepages']) ? $this->createData($data['nonUniqueLinkTypeHomepages'], 'nonUniqueLinkTypeHomepages')  : null;
+        $this->container['nonUniqueLinkTypeIndirect'] = isset($data['nonUniqueLinkTypeIndirect']) ? $this->createData($data['nonUniqueLinkTypeIndirect'], 'nonUniqueLinkTypeIndirect')  : null;
+        $this->container['nonUniqueLinkTypeDeleted'] = isset($data['nonUniqueLinkTypeDeleted']) ? $this->createData($data['nonUniqueLinkTypeDeleted'], 'nonUniqueLinkTypeDeleted')  : null;
+        $this->container['nonUniqueLinkTypeNoFollow'] = isset($data['nonUniqueLinkTypeNoFollow']) ? $this->createData($data['nonUniqueLinkTypeNoFollow'], 'nonUniqueLinkTypeNoFollow')  : null;
+        $this->container['nonUniqueLinkTypeProtocolHTTPS'] = isset($data['nonUniqueLinkTypeProtocolHTTPS']) ? $this->createData($data['nonUniqueLinkTypeProtocolHTTPS'], 'nonUniqueLinkTypeProtocolHTTPS')  : null;
+        $this->container['nonUniqueLinkTypeFrame'] = isset($data['nonUniqueLinkTypeFrame']) ? $this->createData($data['nonUniqueLinkTypeFrame'], 'nonUniqueLinkTypeFrame')  : null;
+        $this->container['nonUniqueLinkTypeImageLink'] = isset($data['nonUniqueLinkTypeImageLink']) ? $this->createData($data['nonUniqueLinkTypeImageLink'], 'nonUniqueLinkTypeImageLink')  : null;
+        $this->container['nonUniqueLinkTypeRedirect'] = isset($data['nonUniqueLinkTypeRedirect']) ? $this->createData($data['nonUniqueLinkTypeRedirect'], 'nonUniqueLinkTypeRedirect')  : null;
+        $this->container['nonUniqueLinkTypeTextLink'] = isset($data['nonUniqueLinkTypeTextLink']) ? $this->createData($data['nonUniqueLinkTypeTextLink'], 'nonUniqueLinkTypeTextLink')  : null;
+        $this->container['refDomainTypeLive'] = isset($data['refDomainTypeLive']) ? $this->createData($data['refDomainTypeLive'], 'refDomainTypeLive')  : null;
+        $this->container['refDomainTypeFollow'] = isset($data['refDomainTypeFollow']) ? $this->createData($data['refDomainTypeFollow'], 'refDomainTypeFollow')  : null;
+        $this->container['refDomainTypeHomepageLink'] = isset($data['refDomainTypeHomepageLink']) ? $this->createData($data['refDomainTypeHomepageLink'], 'refDomainTypeHomepageLink')  : null;
+        $this->container['refDomainTypeDirect'] = isset($data['refDomainTypeDirect']) ? $this->createData($data['refDomainTypeDirect'], 'refDomainTypeDirect')  : null;
+        $this->container['refDomainTypeProtocolHTTPS'] = isset($data['refDomainTypeProtocolHTTPS']) ? $this->createData($data['refDomainTypeProtocolHTTPS'], 'refDomainTypeProtocolHTTPS')  : null;
+        $this->container['canonicalURL'] = isset($data['canonicalURL']) ? $this->createData($data['canonicalURL'], 'canonicalURL')  : null;
+        $this->container['citationFlow'] = isset($data['citationFlow']) ? $this->createData($data['citationFlow'], 'citationFlow')  : null;
+        $this->container['trustFlow'] = isset($data['trustFlow']) ? $this->createData($data['trustFlow'], 'trustFlow')  : null;
+        $this->container['trustMetric'] = isset($data['trustMetric']) ? $this->createData($data['trustMetric'], 'trustMetric')  : null;
+        $this->container['topicalTrustFlowTopic0'] = isset($data['topicalTrustFlowTopic0']) ? $this->createData($data['topicalTrustFlowTopic0'], 'topicalTrustFlowTopic0')  : null;
+        $this->container['topicalTrustFlowValue0'] = isset($data['topicalTrustFlowValue0']) ? $this->createData($data['topicalTrustFlowValue0'], 'topicalTrustFlowValue0')  : null;
+        $this->container['topicalTrustFlowTopic1'] = isset($data['topicalTrustFlowTopic1']) ? $this->createData($data['topicalTrustFlowTopic1'], 'topicalTrustFlowTopic1')  : null;
+        $this->container['topicalTrustFlowValue1'] = isset($data['topicalTrustFlowValue1']) ? $this->createData($data['topicalTrustFlowValue1'], 'topicalTrustFlowValue1')  : null;
+        $this->container['topicalTrustFlowTopic2'] = isset($data['topicalTrustFlowTopic2']) ? $this->createData($data['topicalTrustFlowTopic2'], 'topicalTrustFlowTopic2')  : null;
+        $this->container['topicalTrustFlowValue2'] = isset($data['topicalTrustFlowValue2']) ? $this->createData($data['topicalTrustFlowValue2'], 'topicalTrustFlowValue2')  : null;
     }
 
     /**
@@ -671,25 +671,25 @@ class Majestic implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets item_nu
+     * Gets itemNu
      *
      * @return string
      */
     public function getItemNu()
     {
-        return $this->container['item_nu'];
+        return $this->container['itemNu'];
     }
 
     /**
-     * Sets item_nu
+     * Sets itemNu
      *
-     * @param string $item_nu item_nu
+     * @param string $itemNu itemNu
      *
      * @return $this
      */
-    public function setItemNu($item_nu)
+    public function setItemNu($itemNu)
     {
-        $this->container['item_nu'] = $item_nu;
+        $this->container['itemNu'] = $itemNu;
 
         return $this;
     }
@@ -719,25 +719,25 @@ class Majestic implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets result_code
+     * Gets resultCode
      *
      * @return string
      */
     public function getResultCode()
     {
-        return $this->container['result_code'];
+        return $this->container['resultCode'];
     }
 
     /**
-     * Sets result_code
+     * Sets resultCode
      *
-     * @param string $result_code result_code
+     * @param string $resultCode resultCode
      *
      * @return $this
      */
-    public function setResultCode($result_code)
+    public function setResultCode($resultCode)
     {
-        $this->container['result_code'] = $result_code;
+        $this->container['resultCode'] = $resultCode;
 
         return $this;
     }
@@ -767,697 +767,697 @@ class Majestic implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets ext_back_links
+     * Gets extBackLinks
      *
      * @return string
      */
     public function getExtBackLinks()
     {
-        return $this->container['ext_back_links'];
+        return $this->container['extBackLinks'];
     }
 
     /**
-     * Sets ext_back_links
+     * Sets extBackLinks
      *
-     * @param string $ext_back_links ext_back_links
+     * @param string $extBackLinks extBackLinks
      *
      * @return $this
      */
-    public function setExtBackLinks($ext_back_links)
+    public function setExtBackLinks($extBackLinks)
     {
-        $this->container['ext_back_links'] = $ext_back_links;
+        $this->container['extBackLinks'] = $extBackLinks;
 
         return $this;
     }
 
     /**
-     * Gets ref_domains
+     * Gets refDomains
      *
      * @return string
      */
     public function getRefDomains()
     {
-        return $this->container['ref_domains'];
+        return $this->container['refDomains'];
     }
 
     /**
-     * Sets ref_domains
+     * Sets refDomains
      *
-     * @param string $ref_domains ref_domains
+     * @param string $refDomains refDomains
      *
      * @return $this
      */
-    public function setRefDomains($ref_domains)
+    public function setRefDomains($refDomains)
     {
-        $this->container['ref_domains'] = $ref_domains;
+        $this->container['refDomains'] = $refDomains;
 
         return $this;
     }
 
     /**
-     * Gets analysis_res_units_cost
+     * Gets analysisResUnitsCost
      *
      * @return string
      */
     public function getAnalysisResUnitsCost()
     {
-        return $this->container['analysis_res_units_cost'];
+        return $this->container['analysisResUnitsCost'];
     }
 
     /**
-     * Sets analysis_res_units_cost
+     * Sets analysisResUnitsCost
      *
-     * @param string $analysis_res_units_cost analysis_res_units_cost
+     * @param string $analysisResUnitsCost analysisResUnitsCost
      *
      * @return $this
      */
-    public function setAnalysisResUnitsCost($analysis_res_units_cost)
+    public function setAnalysisResUnitsCost($analysisResUnitsCost)
     {
-        $this->container['analysis_res_units_cost'] = $analysis_res_units_cost;
+        $this->container['analysisResUnitsCost'] = $analysisResUnitsCost;
 
         return $this;
     }
 
     /**
-     * Gets ac_rank
+     * Gets aCRank
      *
      * @return string
      */
-    public function getAcRank()
+    public function getACRank()
     {
-        return $this->container['ac_rank'];
+        return $this->container['aCRank'];
     }
 
     /**
-     * Sets ac_rank
+     * Sets aCRank
      *
-     * @param string $ac_rank ac_rank
+     * @param string $aCRank aCRank
      *
      * @return $this
      */
-    public function setAcRank($ac_rank)
+    public function setACRank($aCRank)
     {
-        $this->container['ac_rank'] = $ac_rank;
+        $this->container['aCRank'] = $aCRank;
 
         return $this;
     }
 
     /**
-     * Gets item_type
+     * Gets itemType
      *
      * @return string
      */
     public function getItemType()
     {
-        return $this->container['item_type'];
+        return $this->container['itemType'];
     }
 
     /**
-     * Sets item_type
+     * Sets itemType
      *
-     * @param string $item_type item_type
+     * @param string $itemType itemType
      *
      * @return $this
      */
-    public function setItemType($item_type)
+    public function setItemType($itemType)
     {
-        $this->container['item_type'] = $item_type;
+        $this->container['itemType'] = $itemType;
 
         return $this;
     }
 
     /**
-     * Gets indexed_ur_ls
+     * Gets indexedURLs
      *
      * @return string
      */
-    public function getIndexedUrLs()
+    public function getIndexedURLs()
     {
-        return $this->container['indexed_ur_ls'];
+        return $this->container['indexedURLs'];
     }
 
     /**
-     * Sets indexed_ur_ls
+     * Sets indexedURLs
      *
-     * @param string $indexed_ur_ls indexed_ur_ls
+     * @param string $indexedURLs indexedURLs
      *
      * @return $this
      */
-    public function setIndexedUrLs($indexed_ur_ls)
+    public function setIndexedURLs($indexedURLs)
     {
-        $this->container['indexed_ur_ls'] = $indexed_ur_ls;
+        $this->container['indexedURLs'] = $indexedURLs;
 
         return $this;
     }
 
     /**
-     * Gets get_top_back_links_analysis_res_units_cost
+     * Gets getTopBackLinksAnalysisResUnitsCost
      *
      * @return string
      */
     public function getGetTopBackLinksAnalysisResUnitsCost()
     {
-        return $this->container['get_top_back_links_analysis_res_units_cost'];
+        return $this->container['getTopBackLinksAnalysisResUnitsCost'];
     }
 
     /**
-     * Sets get_top_back_links_analysis_res_units_cost
+     * Sets getTopBackLinksAnalysisResUnitsCost
      *
-     * @param string $get_top_back_links_analysis_res_units_cost get_top_back_links_analysis_res_units_cost
+     * @param string $getTopBackLinksAnalysisResUnitsCost getTopBackLinksAnalysisResUnitsCost
      *
      * @return $this
      */
-    public function setGetTopBackLinksAnalysisResUnitsCost($get_top_back_links_analysis_res_units_cost)
+    public function setGetTopBackLinksAnalysisResUnitsCost($getTopBackLinksAnalysisResUnitsCost)
     {
-        $this->container['get_top_back_links_analysis_res_units_cost'] = $get_top_back_links_analysis_res_units_cost;
+        $this->container['getTopBackLinksAnalysisResUnitsCost'] = $getTopBackLinksAnalysisResUnitsCost;
 
         return $this;
     }
 
     /**
-     * Gets download_backlinks_analysis_res_units_cost
+     * Gets downloadBacklinksAnalysisResUnitsCost
      *
      * @return string
      */
     public function getDownloadBacklinksAnalysisResUnitsCost()
     {
-        return $this->container['download_backlinks_analysis_res_units_cost'];
+        return $this->container['downloadBacklinksAnalysisResUnitsCost'];
     }
 
     /**
-     * Sets download_backlinks_analysis_res_units_cost
+     * Sets downloadBacklinksAnalysisResUnitsCost
      *
-     * @param string $download_backlinks_analysis_res_units_cost download_backlinks_analysis_res_units_cost
+     * @param string $downloadBacklinksAnalysisResUnitsCost downloadBacklinksAnalysisResUnitsCost
      *
      * @return $this
      */
-    public function setDownloadBacklinksAnalysisResUnitsCost($download_backlinks_analysis_res_units_cost)
+    public function setDownloadBacklinksAnalysisResUnitsCost($downloadBacklinksAnalysisResUnitsCost)
     {
-        $this->container['download_backlinks_analysis_res_units_cost'] = $download_backlinks_analysis_res_units_cost;
+        $this->container['downloadBacklinksAnalysisResUnitsCost'] = $downloadBacklinksAnalysisResUnitsCost;
 
         return $this;
     }
 
     /**
-     * Gets download_ref_domain_backlinks_analysis_res_units_cost
+     * Gets downloadRefDomainBacklinksAnalysisResUnitsCost
      *
      * @return string
      */
     public function getDownloadRefDomainBacklinksAnalysisResUnitsCost()
     {
-        return $this->container['download_ref_domain_backlinks_analysis_res_units_cost'];
+        return $this->container['downloadRefDomainBacklinksAnalysisResUnitsCost'];
     }
 
     /**
-     * Sets download_ref_domain_backlinks_analysis_res_units_cost
+     * Sets downloadRefDomainBacklinksAnalysisResUnitsCost
      *
-     * @param string $download_ref_domain_backlinks_analysis_res_units_cost download_ref_domain_backlinks_analysis_res_units_cost
+     * @param string $downloadRefDomainBacklinksAnalysisResUnitsCost downloadRefDomainBacklinksAnalysisResUnitsCost
      *
      * @return $this
      */
-    public function setDownloadRefDomainBacklinksAnalysisResUnitsCost($download_ref_domain_backlinks_analysis_res_units_cost)
+    public function setDownloadRefDomainBacklinksAnalysisResUnitsCost($downloadRefDomainBacklinksAnalysisResUnitsCost)
     {
-        $this->container['download_ref_domain_backlinks_analysis_res_units_cost'] = $download_ref_domain_backlinks_analysis_res_units_cost;
+        $this->container['downloadRefDomainBacklinksAnalysisResUnitsCost'] = $downloadRefDomainBacklinksAnalysisResUnitsCost;
 
         return $this;
     }
 
     /**
-     * Gets ref_i_ps
+     * Gets refIPs
      *
      * @return string
      */
     public function getRefIPs()
     {
-        return $this->container['ref_i_ps'];
+        return $this->container['refIPs'];
     }
 
     /**
-     * Sets ref_i_ps
+     * Sets refIPs
      *
-     * @param string $ref_i_ps ref_i_ps
+     * @param string $refIPs refIPs
      *
      * @return $this
      */
-    public function setRefIPs($ref_i_ps)
+    public function setRefIPs($refIPs)
     {
-        $this->container['ref_i_ps'] = $ref_i_ps;
+        $this->container['refIPs'] = $refIPs;
 
         return $this;
     }
 
     /**
-     * Gets ref_sub_nets
+     * Gets refSubNets
      *
      * @return string
      */
     public function getRefSubNets()
     {
-        return $this->container['ref_sub_nets'];
+        return $this->container['refSubNets'];
     }
 
     /**
-     * Sets ref_sub_nets
+     * Sets refSubNets
      *
-     * @param string $ref_sub_nets ref_sub_nets
+     * @param string $refSubNets refSubNets
      *
      * @return $this
      */
-    public function setRefSubNets($ref_sub_nets)
+    public function setRefSubNets($refSubNets)
     {
-        $this->container['ref_sub_nets'] = $ref_sub_nets;
+        $this->container['refSubNets'] = $refSubNets;
 
         return $this;
     }
 
     /**
-     * Gets ref_domains_edu
+     * Gets refDomainsEDU
      *
      * @return string
      */
-    public function getRefDomainsEdu()
+    public function getRefDomainsEDU()
     {
-        return $this->container['ref_domains_edu'];
+        return $this->container['refDomainsEDU'];
     }
 
     /**
-     * Sets ref_domains_edu
+     * Sets refDomainsEDU
      *
-     * @param string $ref_domains_edu ref_domains_edu
+     * @param string $refDomainsEDU refDomainsEDU
      *
      * @return $this
      */
-    public function setRefDomainsEdu($ref_domains_edu)
+    public function setRefDomainsEDU($refDomainsEDU)
     {
-        $this->container['ref_domains_edu'] = $ref_domains_edu;
+        $this->container['refDomainsEDU'] = $refDomainsEDU;
 
         return $this;
     }
 
     /**
-     * Gets ext_back_links_edu
+     * Gets extBackLinksEDU
      *
      * @return string
      */
-    public function getExtBackLinksEdu()
+    public function getExtBackLinksEDU()
     {
-        return $this->container['ext_back_links_edu'];
+        return $this->container['extBackLinksEDU'];
     }
 
     /**
-     * Sets ext_back_links_edu
+     * Sets extBackLinksEDU
      *
-     * @param string $ext_back_links_edu ext_back_links_edu
+     * @param string $extBackLinksEDU extBackLinksEDU
      *
      * @return $this
      */
-    public function setExtBackLinksEdu($ext_back_links_edu)
+    public function setExtBackLinksEDU($extBackLinksEDU)
     {
-        $this->container['ext_back_links_edu'] = $ext_back_links_edu;
+        $this->container['extBackLinksEDU'] = $extBackLinksEDU;
 
         return $this;
     }
 
     /**
-     * Gets ref_domains_gov
+     * Gets refDomainsGOV
      *
      * @return string
      */
-    public function getRefDomainsGov()
+    public function getRefDomainsGOV()
     {
-        return $this->container['ref_domains_gov'];
+        return $this->container['refDomainsGOV'];
     }
 
     /**
-     * Sets ref_domains_gov
+     * Sets refDomainsGOV
      *
-     * @param string $ref_domains_gov ref_domains_gov
+     * @param string $refDomainsGOV refDomainsGOV
      *
      * @return $this
      */
-    public function setRefDomainsGov($ref_domains_gov)
+    public function setRefDomainsGOV($refDomainsGOV)
     {
-        $this->container['ref_domains_gov'] = $ref_domains_gov;
+        $this->container['refDomainsGOV'] = $refDomainsGOV;
 
         return $this;
     }
 
     /**
-     * Gets ext_back_links_gov
+     * Gets extBackLinksGOV
      *
      * @return string
      */
-    public function getExtBackLinksGov()
+    public function getExtBackLinksGOV()
     {
-        return $this->container['ext_back_links_gov'];
+        return $this->container['extBackLinksGOV'];
     }
 
     /**
-     * Sets ext_back_links_gov
+     * Sets extBackLinksGOV
      *
-     * @param string $ext_back_links_gov ext_back_links_gov
+     * @param string $extBackLinksGOV extBackLinksGOV
      *
      * @return $this
      */
-    public function setExtBackLinksGov($ext_back_links_gov)
+    public function setExtBackLinksGOV($extBackLinksGOV)
     {
-        $this->container['ext_back_links_gov'] = $ext_back_links_gov;
+        $this->container['extBackLinksGOV'] = $extBackLinksGOV;
 
         return $this;
     }
 
     /**
-     * Gets ref_domains_edu_exact
+     * Gets refDomainsEDUExact
      *
      * @return string
      */
-    public function getRefDomainsEduExact()
+    public function getRefDomainsEDUExact()
     {
-        return $this->container['ref_domains_edu_exact'];
+        return $this->container['refDomainsEDUExact'];
     }
 
     /**
-     * Sets ref_domains_edu_exact
+     * Sets refDomainsEDUExact
      *
-     * @param string $ref_domains_edu_exact ref_domains_edu_exact
+     * @param string $refDomainsEDUExact refDomainsEDUExact
      *
      * @return $this
      */
-    public function setRefDomainsEduExact($ref_domains_edu_exact)
+    public function setRefDomainsEDUExact($refDomainsEDUExact)
     {
-        $this->container['ref_domains_edu_exact'] = $ref_domains_edu_exact;
+        $this->container['refDomainsEDUExact'] = $refDomainsEDUExact;
 
         return $this;
     }
 
     /**
-     * Gets ext_back_links_edu_exact
+     * Gets extBackLinksEDUExact
      *
      * @return string
      */
-    public function getExtBackLinksEduExact()
+    public function getExtBackLinksEDUExact()
     {
-        return $this->container['ext_back_links_edu_exact'];
+        return $this->container['extBackLinksEDUExact'];
     }
 
     /**
-     * Sets ext_back_links_edu_exact
+     * Sets extBackLinksEDUExact
      *
-     * @param string $ext_back_links_edu_exact ext_back_links_edu_exact
+     * @param string $extBackLinksEDUExact extBackLinksEDUExact
      *
      * @return $this
      */
-    public function setExtBackLinksEduExact($ext_back_links_edu_exact)
+    public function setExtBackLinksEDUExact($extBackLinksEDUExact)
     {
-        $this->container['ext_back_links_edu_exact'] = $ext_back_links_edu_exact;
+        $this->container['extBackLinksEDUExact'] = $extBackLinksEDUExact;
 
         return $this;
     }
 
     /**
-     * Gets ref_domains_gov_exact
+     * Gets refDomainsGOVExact
      *
      * @return string
      */
-    public function getRefDomainsGovExact()
+    public function getRefDomainsGOVExact()
     {
-        return $this->container['ref_domains_gov_exact'];
+        return $this->container['refDomainsGOVExact'];
     }
 
     /**
-     * Sets ref_domains_gov_exact
+     * Sets refDomainsGOVExact
      *
-     * @param string $ref_domains_gov_exact ref_domains_gov_exact
+     * @param string $refDomainsGOVExact refDomainsGOVExact
      *
      * @return $this
      */
-    public function setRefDomainsGovExact($ref_domains_gov_exact)
+    public function setRefDomainsGOVExact($refDomainsGOVExact)
     {
-        $this->container['ref_domains_gov_exact'] = $ref_domains_gov_exact;
+        $this->container['refDomainsGOVExact'] = $refDomainsGOVExact;
 
         return $this;
     }
 
     /**
-     * Gets ext_back_links_gov_exact
+     * Gets extBackLinksGOVExact
      *
      * @return string
      */
-    public function getExtBackLinksGovExact()
+    public function getExtBackLinksGOVExact()
     {
-        return $this->container['ext_back_links_gov_exact'];
+        return $this->container['extBackLinksGOVExact'];
     }
 
     /**
-     * Sets ext_back_links_gov_exact
+     * Sets extBackLinksGOVExact
      *
-     * @param string $ext_back_links_gov_exact ext_back_links_gov_exact
+     * @param string $extBackLinksGOVExact extBackLinksGOVExact
      *
      * @return $this
      */
-    public function setExtBackLinksGovExact($ext_back_links_gov_exact)
+    public function setExtBackLinksGOVExact($extBackLinksGOVExact)
     {
-        $this->container['ext_back_links_gov_exact'] = $ext_back_links_gov_exact;
+        $this->container['extBackLinksGOVExact'] = $extBackLinksGOVExact;
 
         return $this;
     }
 
     /**
-     * Gets crawled_flag
+     * Gets crawledFlag
      *
      * @return string
      */
     public function getCrawledFlag()
     {
-        return $this->container['crawled_flag'];
+        return $this->container['crawledFlag'];
     }
 
     /**
-     * Sets crawled_flag
+     * Sets crawledFlag
      *
-     * @param string $crawled_flag crawled_flag
+     * @param string $crawledFlag crawledFlag
      *
      * @return $this
      */
-    public function setCrawledFlag($crawled_flag)
+    public function setCrawledFlag($crawledFlag)
     {
-        $this->container['crawled_flag'] = $crawled_flag;
+        $this->container['crawledFlag'] = $crawledFlag;
 
         return $this;
     }
 
     /**
-     * Gets last_crawl_date
+     * Gets lastCrawlDate
      *
      * @return string
      */
     public function getLastCrawlDate()
     {
-        return $this->container['last_crawl_date'];
+        return $this->container['lastCrawlDate'];
     }
 
     /**
-     * Sets last_crawl_date
+     * Sets lastCrawlDate
      *
-     * @param string $last_crawl_date last_crawl_date
+     * @param string $lastCrawlDate lastCrawlDate
      *
      * @return $this
      */
-    public function setLastCrawlDate($last_crawl_date)
+    public function setLastCrawlDate($lastCrawlDate)
     {
-        $this->container['last_crawl_date'] = $last_crawl_date;
+        $this->container['lastCrawlDate'] = $lastCrawlDate;
 
         return $this;
     }
 
     /**
-     * Gets last_crawl_result
+     * Gets lastCrawlResult
      *
      * @return string
      */
     public function getLastCrawlResult()
     {
-        return $this->container['last_crawl_result'];
+        return $this->container['lastCrawlResult'];
     }
 
     /**
-     * Sets last_crawl_result
+     * Sets lastCrawlResult
      *
-     * @param string $last_crawl_result last_crawl_result
+     * @param string $lastCrawlResult lastCrawlResult
      *
      * @return $this
      */
-    public function setLastCrawlResult($last_crawl_result)
+    public function setLastCrawlResult($lastCrawlResult)
     {
-        $this->container['last_crawl_result'] = $last_crawl_result;
+        $this->container['lastCrawlResult'] = $lastCrawlResult;
 
         return $this;
     }
 
     /**
-     * Gets redirect_flag
+     * Gets redirectFlag
      *
      * @return string
      */
     public function getRedirectFlag()
     {
-        return $this->container['redirect_flag'];
+        return $this->container['redirectFlag'];
     }
 
     /**
-     * Sets redirect_flag
+     * Sets redirectFlag
      *
-     * @param string $redirect_flag redirect_flag
+     * @param string $redirectFlag redirectFlag
      *
      * @return $this
      */
-    public function setRedirectFlag($redirect_flag)
+    public function setRedirectFlag($redirectFlag)
     {
-        $this->container['redirect_flag'] = $redirect_flag;
+        $this->container['redirectFlag'] = $redirectFlag;
 
         return $this;
     }
 
     /**
-     * Gets final_redirect_result
+     * Gets finalRedirectResult
      *
      * @return string
      */
     public function getFinalRedirectResult()
     {
-        return $this->container['final_redirect_result'];
+        return $this->container['finalRedirectResult'];
     }
 
     /**
-     * Sets final_redirect_result
+     * Sets finalRedirectResult
      *
-     * @param string $final_redirect_result final_redirect_result
+     * @param string $finalRedirectResult finalRedirectResult
      *
      * @return $this
      */
-    public function setFinalRedirectResult($final_redirect_result)
+    public function setFinalRedirectResult($finalRedirectResult)
     {
-        $this->container['final_redirect_result'] = $final_redirect_result;
+        $this->container['finalRedirectResult'] = $finalRedirectResult;
 
         return $this;
     }
 
     /**
-     * Gets out_domains_external
+     * Gets outDomainsExternal
      *
      * @return string
      */
     public function getOutDomainsExternal()
     {
-        return $this->container['out_domains_external'];
+        return $this->container['outDomainsExternal'];
     }
 
     /**
-     * Sets out_domains_external
+     * Sets outDomainsExternal
      *
-     * @param string $out_domains_external out_domains_external
+     * @param string $outDomainsExternal outDomainsExternal
      *
      * @return $this
      */
-    public function setOutDomainsExternal($out_domains_external)
+    public function setOutDomainsExternal($outDomainsExternal)
     {
-        $this->container['out_domains_external'] = $out_domains_external;
+        $this->container['outDomainsExternal'] = $outDomainsExternal;
 
         return $this;
     }
 
     /**
-     * Gets out_links_external
+     * Gets outLinksExternal
      *
      * @return string
      */
     public function getOutLinksExternal()
     {
-        return $this->container['out_links_external'];
+        return $this->container['outLinksExternal'];
     }
 
     /**
-     * Sets out_links_external
+     * Sets outLinksExternal
      *
-     * @param string $out_links_external out_links_external
+     * @param string $outLinksExternal outLinksExternal
      *
      * @return $this
      */
-    public function setOutLinksExternal($out_links_external)
+    public function setOutLinksExternal($outLinksExternal)
     {
-        $this->container['out_links_external'] = $out_links_external;
+        $this->container['outLinksExternal'] = $outLinksExternal;
 
         return $this;
     }
 
     /**
-     * Gets out_links_internal
+     * Gets outLinksInternal
      *
      * @return string
      */
     public function getOutLinksInternal()
     {
-        return $this->container['out_links_internal'];
+        return $this->container['outLinksInternal'];
     }
 
     /**
-     * Sets out_links_internal
+     * Sets outLinksInternal
      *
-     * @param string $out_links_internal out_links_internal
+     * @param string $outLinksInternal outLinksInternal
      *
      * @return $this
      */
-    public function setOutLinksInternal($out_links_internal)
+    public function setOutLinksInternal($outLinksInternal)
     {
-        $this->container['out_links_internal'] = $out_links_internal;
+        $this->container['outLinksInternal'] = $outLinksInternal;
 
         return $this;
     }
 
     /**
-     * Gets out_links_pages
+     * Gets outLinksPages
      *
      * @return string
      */
     public function getOutLinksPages()
     {
-        return $this->container['out_links_pages'];
+        return $this->container['outLinksPages'];
     }
 
     /**
-     * Sets out_links_pages
+     * Sets outLinksPages
      *
-     * @param string $out_links_pages out_links_pages
+     * @param string $outLinksPages outLinksPages
      *
      * @return $this
      */
-    public function setOutLinksPages($out_links_pages)
+    public function setOutLinksPages($outLinksPages)
     {
-        $this->container['out_links_pages'] = $out_links_pages;
+        $this->container['outLinksPages'] = $outLinksPages;
 
         return $this;
     }
 
     /**
-     * Gets last_seen
+     * Gets lastSeen
      *
      * @return string
      */
     public function getLastSeen()
     {
-        return $this->container['last_seen'];
+        return $this->container['lastSeen'];
     }
 
     /**
-     * Sets last_seen
+     * Sets lastSeen
      *
-     * @param string $last_seen last_seen
+     * @param string $lastSeen lastSeen
      *
      * @return $this
      */
-    public function setLastSeen($last_seen)
+    public function setLastSeen($lastSeen)
     {
-        $this->container['last_seen'] = $last_seen;
+        $this->container['lastSeen'] = $lastSeen;
 
         return $this;
     }
@@ -1487,25 +1487,25 @@ class Majestic implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets redirect_to
+     * Gets redirectTo
      *
      * @return string
      */
     public function getRedirectTo()
     {
-        return $this->container['redirect_to'];
+        return $this->container['redirectTo'];
     }
 
     /**
-     * Sets redirect_to
+     * Sets redirectTo
      *
-     * @param string $redirect_to redirect_to
+     * @param string $redirectTo redirectTo
      *
      * @return $this
      */
-    public function setRedirectTo($redirect_to)
+    public function setRedirectTo($redirectTo)
     {
-        $this->container['redirect_to'] = $redirect_to;
+        $this->container['redirectTo'] = $redirectTo;
 
         return $this;
     }
@@ -1535,865 +1535,865 @@ class Majestic implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets language_desc
+     * Gets languageDesc
      *
      * @return string
      */
     public function getLanguageDesc()
     {
-        return $this->container['language_desc'];
+        return $this->container['languageDesc'];
     }
 
     /**
-     * Sets language_desc
+     * Sets languageDesc
      *
-     * @param string $language_desc language_desc
+     * @param string $languageDesc languageDesc
      *
      * @return $this
      */
-    public function setLanguageDesc($language_desc)
+    public function setLanguageDesc($languageDesc)
     {
-        $this->container['language_desc'] = $language_desc;
+        $this->container['languageDesc'] = $languageDesc;
 
         return $this;
     }
 
     /**
-     * Gets language_confidence
+     * Gets languageConfidence
      *
      * @return string
      */
     public function getLanguageConfidence()
     {
-        return $this->container['language_confidence'];
+        return $this->container['languageConfidence'];
     }
 
     /**
-     * Sets language_confidence
+     * Sets languageConfidence
      *
-     * @param string $language_confidence language_confidence
+     * @param string $languageConfidence languageConfidence
      *
      * @return $this
      */
-    public function setLanguageConfidence($language_confidence)
+    public function setLanguageConfidence($languageConfidence)
     {
-        $this->container['language_confidence'] = $language_confidence;
+        $this->container['languageConfidence'] = $languageConfidence;
 
         return $this;
     }
 
     /**
-     * Gets language_page_ratios
+     * Gets languagePageRatios
      *
      * @return string
      */
     public function getLanguagePageRatios()
     {
-        return $this->container['language_page_ratios'];
+        return $this->container['languagePageRatios'];
     }
 
     /**
-     * Sets language_page_ratios
+     * Sets languagePageRatios
      *
-     * @param string $language_page_ratios language_page_ratios
+     * @param string $languagePageRatios languagePageRatios
      *
      * @return $this
      */
-    public function setLanguagePageRatios($language_page_ratios)
+    public function setLanguagePageRatios($languagePageRatios)
     {
-        $this->container['language_page_ratios'] = $language_page_ratios;
+        $this->container['languagePageRatios'] = $languagePageRatios;
 
         return $this;
     }
 
     /**
-     * Gets language_total_pages
+     * Gets languageTotalPages
      *
      * @return string
      */
     public function getLanguageTotalPages()
     {
-        return $this->container['language_total_pages'];
+        return $this->container['languageTotalPages'];
     }
 
     /**
-     * Sets language_total_pages
+     * Sets languageTotalPages
      *
-     * @param string $language_total_pages language_total_pages
+     * @param string $languageTotalPages languageTotalPages
      *
      * @return $this
      */
-    public function setLanguageTotalPages($language_total_pages)
+    public function setLanguageTotalPages($languageTotalPages)
     {
-        $this->container['language_total_pages'] = $language_total_pages;
+        $this->container['languageTotalPages'] = $languageTotalPages;
 
         return $this;
     }
 
     /**
-     * Gets ref_language
+     * Gets refLanguage
      *
      * @return string
      */
     public function getRefLanguage()
     {
-        return $this->container['ref_language'];
+        return $this->container['refLanguage'];
     }
 
     /**
-     * Sets ref_language
+     * Sets refLanguage
      *
-     * @param string $ref_language ref_language
+     * @param string $refLanguage refLanguage
      *
      * @return $this
      */
-    public function setRefLanguage($ref_language)
+    public function setRefLanguage($refLanguage)
     {
-        $this->container['ref_language'] = $ref_language;
+        $this->container['refLanguage'] = $refLanguage;
 
         return $this;
     }
 
     /**
-     * Gets ref_language_desc
+     * Gets refLanguageDesc
      *
      * @return string
      */
     public function getRefLanguageDesc()
     {
-        return $this->container['ref_language_desc'];
+        return $this->container['refLanguageDesc'];
     }
 
     /**
-     * Sets ref_language_desc
+     * Sets refLanguageDesc
      *
-     * @param string $ref_language_desc ref_language_desc
+     * @param string $refLanguageDesc refLanguageDesc
      *
      * @return $this
      */
-    public function setRefLanguageDesc($ref_language_desc)
+    public function setRefLanguageDesc($refLanguageDesc)
     {
-        $this->container['ref_language_desc'] = $ref_language_desc;
+        $this->container['refLanguageDesc'] = $refLanguageDesc;
 
         return $this;
     }
 
     /**
-     * Gets ref_language_confidence
+     * Gets refLanguageConfidence
      *
      * @return string
      */
     public function getRefLanguageConfidence()
     {
-        return $this->container['ref_language_confidence'];
+        return $this->container['refLanguageConfidence'];
     }
 
     /**
-     * Sets ref_language_confidence
+     * Sets refLanguageConfidence
      *
-     * @param string $ref_language_confidence ref_language_confidence
+     * @param string $refLanguageConfidence refLanguageConfidence
      *
      * @return $this
      */
-    public function setRefLanguageConfidence($ref_language_confidence)
+    public function setRefLanguageConfidence($refLanguageConfidence)
     {
-        $this->container['ref_language_confidence'] = $ref_language_confidence;
+        $this->container['refLanguageConfidence'] = $refLanguageConfidence;
 
         return $this;
     }
 
     /**
-     * Gets ref_language_page_ratios
+     * Gets refLanguagePageRatios
      *
      * @return string
      */
     public function getRefLanguagePageRatios()
     {
-        return $this->container['ref_language_page_ratios'];
+        return $this->container['refLanguagePageRatios'];
     }
 
     /**
-     * Sets ref_language_page_ratios
+     * Sets refLanguagePageRatios
      *
-     * @param string $ref_language_page_ratios ref_language_page_ratios
+     * @param string $refLanguagePageRatios refLanguagePageRatios
      *
      * @return $this
      */
-    public function setRefLanguagePageRatios($ref_language_page_ratios)
+    public function setRefLanguagePageRatios($refLanguagePageRatios)
     {
-        $this->container['ref_language_page_ratios'] = $ref_language_page_ratios;
+        $this->container['refLanguagePageRatios'] = $refLanguagePageRatios;
 
         return $this;
     }
 
     /**
-     * Gets ref_language_total_pages
+     * Gets refLanguageTotalPages
      *
      * @return string
      */
     public function getRefLanguageTotalPages()
     {
-        return $this->container['ref_language_total_pages'];
+        return $this->container['refLanguageTotalPages'];
     }
 
     /**
-     * Sets ref_language_total_pages
+     * Sets refLanguageTotalPages
      *
-     * @param string $ref_language_total_pages ref_language_total_pages
+     * @param string $refLanguageTotalPages refLanguageTotalPages
      *
      * @return $this
      */
-    public function setRefLanguageTotalPages($ref_language_total_pages)
+    public function setRefLanguageTotalPages($refLanguageTotalPages)
     {
-        $this->container['ref_language_total_pages'] = $ref_language_total_pages;
+        $this->container['refLanguageTotalPages'] = $refLanguageTotalPages;
 
         return $this;
     }
 
     /**
-     * Gets crawled_ur_ls
+     * Gets crawledURLs
      *
      * @return string
      */
-    public function getCrawledUrLs()
+    public function getCrawledURLs()
     {
-        return $this->container['crawled_ur_ls'];
+        return $this->container['crawledURLs'];
     }
 
     /**
-     * Sets crawled_ur_ls
+     * Sets crawledURLs
      *
-     * @param string $crawled_ur_ls crawled_ur_ls
+     * @param string $crawledURLs crawledURLs
      *
      * @return $this
      */
-    public function setCrawledUrLs($crawled_ur_ls)
+    public function setCrawledURLs($crawledURLs)
     {
-        $this->container['crawled_ur_ls'] = $crawled_ur_ls;
+        $this->container['crawledURLs'] = $crawledURLs;
 
         return $this;
     }
 
     /**
-     * Gets root_domain_ip_address
+     * Gets rootDomainIPAddress
      *
      * @return string
      */
-    public function getRootDomainIpAddress()
+    public function getRootDomainIPAddress()
     {
-        return $this->container['root_domain_ip_address'];
+        return $this->container['rootDomainIPAddress'];
     }
 
     /**
-     * Sets root_domain_ip_address
+     * Sets rootDomainIPAddress
      *
-     * @param string $root_domain_ip_address root_domain_ip_address
+     * @param string $rootDomainIPAddress rootDomainIPAddress
      *
      * @return $this
      */
-    public function setRootDomainIpAddress($root_domain_ip_address)
+    public function setRootDomainIPAddress($rootDomainIPAddress)
     {
-        $this->container['root_domain_ip_address'] = $root_domain_ip_address;
+        $this->container['rootDomainIPAddress'] = $rootDomainIPAddress;
 
         return $this;
     }
 
     /**
-     * Gets total_non_unique_links
+     * Gets totalNonUniqueLinks
      *
      * @return string
      */
     public function getTotalNonUniqueLinks()
     {
-        return $this->container['total_non_unique_links'];
+        return $this->container['totalNonUniqueLinks'];
     }
 
     /**
-     * Sets total_non_unique_links
+     * Sets totalNonUniqueLinks
      *
-     * @param string $total_non_unique_links total_non_unique_links
+     * @param string $totalNonUniqueLinks totalNonUniqueLinks
      *
      * @return $this
      */
-    public function setTotalNonUniqueLinks($total_non_unique_links)
+    public function setTotalNonUniqueLinks($totalNonUniqueLinks)
     {
-        $this->container['total_non_unique_links'] = $total_non_unique_links;
+        $this->container['totalNonUniqueLinks'] = $totalNonUniqueLinks;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_homepages
+     * Gets nonUniqueLinkTypeHomepages
      *
      * @return string
      */
     public function getNonUniqueLinkTypeHomepages()
     {
-        return $this->container['non_unique_link_type_homepages'];
+        return $this->container['nonUniqueLinkTypeHomepages'];
     }
 
     /**
-     * Sets non_unique_link_type_homepages
+     * Sets nonUniqueLinkTypeHomepages
      *
-     * @param string $non_unique_link_type_homepages non_unique_link_type_homepages
+     * @param string $nonUniqueLinkTypeHomepages nonUniqueLinkTypeHomepages
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeHomepages($non_unique_link_type_homepages)
+    public function setNonUniqueLinkTypeHomepages($nonUniqueLinkTypeHomepages)
     {
-        $this->container['non_unique_link_type_homepages'] = $non_unique_link_type_homepages;
+        $this->container['nonUniqueLinkTypeHomepages'] = $nonUniqueLinkTypeHomepages;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_indirect
+     * Gets nonUniqueLinkTypeIndirect
      *
      * @return string
      */
     public function getNonUniqueLinkTypeIndirect()
     {
-        return $this->container['non_unique_link_type_indirect'];
+        return $this->container['nonUniqueLinkTypeIndirect'];
     }
 
     /**
-     * Sets non_unique_link_type_indirect
+     * Sets nonUniqueLinkTypeIndirect
      *
-     * @param string $non_unique_link_type_indirect non_unique_link_type_indirect
+     * @param string $nonUniqueLinkTypeIndirect nonUniqueLinkTypeIndirect
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeIndirect($non_unique_link_type_indirect)
+    public function setNonUniqueLinkTypeIndirect($nonUniqueLinkTypeIndirect)
     {
-        $this->container['non_unique_link_type_indirect'] = $non_unique_link_type_indirect;
+        $this->container['nonUniqueLinkTypeIndirect'] = $nonUniqueLinkTypeIndirect;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_deleted
+     * Gets nonUniqueLinkTypeDeleted
      *
      * @return string
      */
     public function getNonUniqueLinkTypeDeleted()
     {
-        return $this->container['non_unique_link_type_deleted'];
+        return $this->container['nonUniqueLinkTypeDeleted'];
     }
 
     /**
-     * Sets non_unique_link_type_deleted
+     * Sets nonUniqueLinkTypeDeleted
      *
-     * @param string $non_unique_link_type_deleted non_unique_link_type_deleted
+     * @param string $nonUniqueLinkTypeDeleted nonUniqueLinkTypeDeleted
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeDeleted($non_unique_link_type_deleted)
+    public function setNonUniqueLinkTypeDeleted($nonUniqueLinkTypeDeleted)
     {
-        $this->container['non_unique_link_type_deleted'] = $non_unique_link_type_deleted;
+        $this->container['nonUniqueLinkTypeDeleted'] = $nonUniqueLinkTypeDeleted;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_no_follow
+     * Gets nonUniqueLinkTypeNoFollow
      *
      * @return string
      */
     public function getNonUniqueLinkTypeNoFollow()
     {
-        return $this->container['non_unique_link_type_no_follow'];
+        return $this->container['nonUniqueLinkTypeNoFollow'];
     }
 
     /**
-     * Sets non_unique_link_type_no_follow
+     * Sets nonUniqueLinkTypeNoFollow
      *
-     * @param string $non_unique_link_type_no_follow non_unique_link_type_no_follow
+     * @param string $nonUniqueLinkTypeNoFollow nonUniqueLinkTypeNoFollow
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeNoFollow($non_unique_link_type_no_follow)
+    public function setNonUniqueLinkTypeNoFollow($nonUniqueLinkTypeNoFollow)
     {
-        $this->container['non_unique_link_type_no_follow'] = $non_unique_link_type_no_follow;
+        $this->container['nonUniqueLinkTypeNoFollow'] = $nonUniqueLinkTypeNoFollow;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_protocol_https
+     * Gets nonUniqueLinkTypeProtocolHTTPS
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeProtocolHttps()
+    public function getNonUniqueLinkTypeProtocolHTTPS()
     {
-        return $this->container['non_unique_link_type_protocol_https'];
+        return $this->container['nonUniqueLinkTypeProtocolHTTPS'];
     }
 
     /**
-     * Sets non_unique_link_type_protocol_https
+     * Sets nonUniqueLinkTypeProtocolHTTPS
      *
-     * @param string $non_unique_link_type_protocol_https non_unique_link_type_protocol_https
+     * @param string $nonUniqueLinkTypeProtocolHTTPS nonUniqueLinkTypeProtocolHTTPS
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeProtocolHttps($non_unique_link_type_protocol_https)
+    public function setNonUniqueLinkTypeProtocolHTTPS($nonUniqueLinkTypeProtocolHTTPS)
     {
-        $this->container['non_unique_link_type_protocol_https'] = $non_unique_link_type_protocol_https;
+        $this->container['nonUniqueLinkTypeProtocolHTTPS'] = $nonUniqueLinkTypeProtocolHTTPS;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_frame
+     * Gets nonUniqueLinkTypeFrame
      *
      * @return string
      */
     public function getNonUniqueLinkTypeFrame()
     {
-        return $this->container['non_unique_link_type_frame'];
+        return $this->container['nonUniqueLinkTypeFrame'];
     }
 
     /**
-     * Sets non_unique_link_type_frame
+     * Sets nonUniqueLinkTypeFrame
      *
-     * @param string $non_unique_link_type_frame non_unique_link_type_frame
+     * @param string $nonUniqueLinkTypeFrame nonUniqueLinkTypeFrame
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeFrame($non_unique_link_type_frame)
+    public function setNonUniqueLinkTypeFrame($nonUniqueLinkTypeFrame)
     {
-        $this->container['non_unique_link_type_frame'] = $non_unique_link_type_frame;
+        $this->container['nonUniqueLinkTypeFrame'] = $nonUniqueLinkTypeFrame;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_image_link
+     * Gets nonUniqueLinkTypeImageLink
      *
      * @return string
      */
     public function getNonUniqueLinkTypeImageLink()
     {
-        return $this->container['non_unique_link_type_image_link'];
+        return $this->container['nonUniqueLinkTypeImageLink'];
     }
 
     /**
-     * Sets non_unique_link_type_image_link
+     * Sets nonUniqueLinkTypeImageLink
      *
-     * @param string $non_unique_link_type_image_link non_unique_link_type_image_link
+     * @param string $nonUniqueLinkTypeImageLink nonUniqueLinkTypeImageLink
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeImageLink($non_unique_link_type_image_link)
+    public function setNonUniqueLinkTypeImageLink($nonUniqueLinkTypeImageLink)
     {
-        $this->container['non_unique_link_type_image_link'] = $non_unique_link_type_image_link;
+        $this->container['nonUniqueLinkTypeImageLink'] = $nonUniqueLinkTypeImageLink;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_redirect
+     * Gets nonUniqueLinkTypeRedirect
      *
      * @return string
      */
     public function getNonUniqueLinkTypeRedirect()
     {
-        return $this->container['non_unique_link_type_redirect'];
+        return $this->container['nonUniqueLinkTypeRedirect'];
     }
 
     /**
-     * Sets non_unique_link_type_redirect
+     * Sets nonUniqueLinkTypeRedirect
      *
-     * @param string $non_unique_link_type_redirect non_unique_link_type_redirect
+     * @param string $nonUniqueLinkTypeRedirect nonUniqueLinkTypeRedirect
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeRedirect($non_unique_link_type_redirect)
+    public function setNonUniqueLinkTypeRedirect($nonUniqueLinkTypeRedirect)
     {
-        $this->container['non_unique_link_type_redirect'] = $non_unique_link_type_redirect;
+        $this->container['nonUniqueLinkTypeRedirect'] = $nonUniqueLinkTypeRedirect;
 
         return $this;
     }
 
     /**
-     * Gets non_unique_link_type_text_link
+     * Gets nonUniqueLinkTypeTextLink
      *
      * @return string
      */
     public function getNonUniqueLinkTypeTextLink()
     {
-        return $this->container['non_unique_link_type_text_link'];
+        return $this->container['nonUniqueLinkTypeTextLink'];
     }
 
     /**
-     * Sets non_unique_link_type_text_link
+     * Sets nonUniqueLinkTypeTextLink
      *
-     * @param string $non_unique_link_type_text_link non_unique_link_type_text_link
+     * @param string $nonUniqueLinkTypeTextLink nonUniqueLinkTypeTextLink
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeTextLink($non_unique_link_type_text_link)
+    public function setNonUniqueLinkTypeTextLink($nonUniqueLinkTypeTextLink)
     {
-        $this->container['non_unique_link_type_text_link'] = $non_unique_link_type_text_link;
+        $this->container['nonUniqueLinkTypeTextLink'] = $nonUniqueLinkTypeTextLink;
 
         return $this;
     }
 
     /**
-     * Gets ref_domain_type_live
+     * Gets refDomainTypeLive
      *
      * @return string
      */
     public function getRefDomainTypeLive()
     {
-        return $this->container['ref_domain_type_live'];
+        return $this->container['refDomainTypeLive'];
     }
 
     /**
-     * Sets ref_domain_type_live
+     * Sets refDomainTypeLive
      *
-     * @param string $ref_domain_type_live ref_domain_type_live
+     * @param string $refDomainTypeLive refDomainTypeLive
      *
      * @return $this
      */
-    public function setRefDomainTypeLive($ref_domain_type_live)
+    public function setRefDomainTypeLive($refDomainTypeLive)
     {
-        $this->container['ref_domain_type_live'] = $ref_domain_type_live;
+        $this->container['refDomainTypeLive'] = $refDomainTypeLive;
 
         return $this;
     }
 
     /**
-     * Gets ref_domain_type_follow
+     * Gets refDomainTypeFollow
      *
      * @return string
      */
     public function getRefDomainTypeFollow()
     {
-        return $this->container['ref_domain_type_follow'];
+        return $this->container['refDomainTypeFollow'];
     }
 
     /**
-     * Sets ref_domain_type_follow
+     * Sets refDomainTypeFollow
      *
-     * @param string $ref_domain_type_follow ref_domain_type_follow
+     * @param string $refDomainTypeFollow refDomainTypeFollow
      *
      * @return $this
      */
-    public function setRefDomainTypeFollow($ref_domain_type_follow)
+    public function setRefDomainTypeFollow($refDomainTypeFollow)
     {
-        $this->container['ref_domain_type_follow'] = $ref_domain_type_follow;
+        $this->container['refDomainTypeFollow'] = $refDomainTypeFollow;
 
         return $this;
     }
 
     /**
-     * Gets ref_domain_type_homepage_link
+     * Gets refDomainTypeHomepageLink
      *
      * @return string
      */
     public function getRefDomainTypeHomepageLink()
     {
-        return $this->container['ref_domain_type_homepage_link'];
+        return $this->container['refDomainTypeHomepageLink'];
     }
 
     /**
-     * Sets ref_domain_type_homepage_link
+     * Sets refDomainTypeHomepageLink
      *
-     * @param string $ref_domain_type_homepage_link ref_domain_type_homepage_link
+     * @param string $refDomainTypeHomepageLink refDomainTypeHomepageLink
      *
      * @return $this
      */
-    public function setRefDomainTypeHomepageLink($ref_domain_type_homepage_link)
+    public function setRefDomainTypeHomepageLink($refDomainTypeHomepageLink)
     {
-        $this->container['ref_domain_type_homepage_link'] = $ref_domain_type_homepage_link;
+        $this->container['refDomainTypeHomepageLink'] = $refDomainTypeHomepageLink;
 
         return $this;
     }
 
     /**
-     * Gets ref_domain_type_direct
+     * Gets refDomainTypeDirect
      *
      * @return string
      */
     public function getRefDomainTypeDirect()
     {
-        return $this->container['ref_domain_type_direct'];
+        return $this->container['refDomainTypeDirect'];
     }
 
     /**
-     * Sets ref_domain_type_direct
+     * Sets refDomainTypeDirect
      *
-     * @param string $ref_domain_type_direct ref_domain_type_direct
+     * @param string $refDomainTypeDirect refDomainTypeDirect
      *
      * @return $this
      */
-    public function setRefDomainTypeDirect($ref_domain_type_direct)
+    public function setRefDomainTypeDirect($refDomainTypeDirect)
     {
-        $this->container['ref_domain_type_direct'] = $ref_domain_type_direct;
+        $this->container['refDomainTypeDirect'] = $refDomainTypeDirect;
 
         return $this;
     }
 
     /**
-     * Gets ref_domain_type_protocol_https
+     * Gets refDomainTypeProtocolHTTPS
      *
      * @return string
      */
-    public function getRefDomainTypeProtocolHttps()
+    public function getRefDomainTypeProtocolHTTPS()
     {
-        return $this->container['ref_domain_type_protocol_https'];
+        return $this->container['refDomainTypeProtocolHTTPS'];
     }
 
     /**
-     * Sets ref_domain_type_protocol_https
+     * Sets refDomainTypeProtocolHTTPS
      *
-     * @param string $ref_domain_type_protocol_https ref_domain_type_protocol_https
+     * @param string $refDomainTypeProtocolHTTPS refDomainTypeProtocolHTTPS
      *
      * @return $this
      */
-    public function setRefDomainTypeProtocolHttps($ref_domain_type_protocol_https)
+    public function setRefDomainTypeProtocolHTTPS($refDomainTypeProtocolHTTPS)
     {
-        $this->container['ref_domain_type_protocol_https'] = $ref_domain_type_protocol_https;
+        $this->container['refDomainTypeProtocolHTTPS'] = $refDomainTypeProtocolHTTPS;
 
         return $this;
     }
 
     /**
-     * Gets canonical_url
+     * Gets canonicalURL
      *
      * @return string
      */
-    public function getCanonicalUrl()
+    public function getCanonicalURL()
     {
-        return $this->container['canonical_url'];
+        return $this->container['canonicalURL'];
     }
 
     /**
-     * Sets canonical_url
+     * Sets canonicalURL
      *
-     * @param string $canonical_url canonical_url
+     * @param string $canonicalURL canonicalURL
      *
      * @return $this
      */
-    public function setCanonicalUrl($canonical_url)
+    public function setCanonicalURL($canonicalURL)
     {
-        $this->container['canonical_url'] = $canonical_url;
+        $this->container['canonicalURL'] = $canonicalURL;
 
         return $this;
     }
 
     /**
-     * Gets citation_flow
+     * Gets citationFlow
      *
      * @return string
      */
     public function getCitationFlow()
     {
-        return $this->container['citation_flow'];
+        return $this->container['citationFlow'];
     }
 
     /**
-     * Sets citation_flow
+     * Sets citationFlow
      *
-     * @param string $citation_flow citation_flow
+     * @param string $citationFlow citationFlow
      *
      * @return $this
      */
-    public function setCitationFlow($citation_flow)
+    public function setCitationFlow($citationFlow)
     {
-        $this->container['citation_flow'] = $citation_flow;
+        $this->container['citationFlow'] = $citationFlow;
 
         return $this;
     }
 
     /**
-     * Gets trust_flow
+     * Gets trustFlow
      *
      * @return string
      */
     public function getTrustFlow()
     {
-        return $this->container['trust_flow'];
+        return $this->container['trustFlow'];
     }
 
     /**
-     * Sets trust_flow
+     * Sets trustFlow
      *
-     * @param string $trust_flow trust_flow
+     * @param string $trustFlow trustFlow
      *
      * @return $this
      */
-    public function setTrustFlow($trust_flow)
+    public function setTrustFlow($trustFlow)
     {
-        $this->container['trust_flow'] = $trust_flow;
+        $this->container['trustFlow'] = $trustFlow;
 
         return $this;
     }
 
     /**
-     * Gets trust_metric
+     * Gets trustMetric
      *
      * @return string
      */
     public function getTrustMetric()
     {
-        return $this->container['trust_metric'];
+        return $this->container['trustMetric'];
     }
 
     /**
-     * Sets trust_metric
+     * Sets trustMetric
      *
-     * @param string $trust_metric trust_metric
+     * @param string $trustMetric trustMetric
      *
      * @return $this
      */
-    public function setTrustMetric($trust_metric)
+    public function setTrustMetric($trustMetric)
     {
-        $this->container['trust_metric'] = $trust_metric;
+        $this->container['trustMetric'] = $trustMetric;
 
         return $this;
     }
 
     /**
-     * Gets topical_trust_flow_topic_0
+     * Gets topicalTrustFlowTopic0
      *
      * @return string
      */
     public function getTopicalTrustFlowTopic0()
     {
-        return $this->container['topical_trust_flow_topic_0'];
+        return $this->container['topicalTrustFlowTopic0'];
     }
 
     /**
-     * Sets topical_trust_flow_topic_0
+     * Sets topicalTrustFlowTopic0
      *
-     * @param string $topical_trust_flow_topic_0 topical_trust_flow_topic_0
+     * @param string $topicalTrustFlowTopic0 topicalTrustFlowTopic0
      *
      * @return $this
      */
-    public function setTopicalTrustFlowTopic0($topical_trust_flow_topic_0)
+    public function setTopicalTrustFlowTopic0($topicalTrustFlowTopic0)
     {
-        $this->container['topical_trust_flow_topic_0'] = $topical_trust_flow_topic_0;
+        $this->container['topicalTrustFlowTopic0'] = $topicalTrustFlowTopic0;
 
         return $this;
     }
 
     /**
-     * Gets topical_trust_flow_value_0
+     * Gets topicalTrustFlowValue0
      *
      * @return string
      */
     public function getTopicalTrustFlowValue0()
     {
-        return $this->container['topical_trust_flow_value_0'];
+        return $this->container['topicalTrustFlowValue0'];
     }
 
     /**
-     * Sets topical_trust_flow_value_0
+     * Sets topicalTrustFlowValue0
      *
-     * @param string $topical_trust_flow_value_0 topical_trust_flow_value_0
+     * @param string $topicalTrustFlowValue0 topicalTrustFlowValue0
      *
      * @return $this
      */
-    public function setTopicalTrustFlowValue0($topical_trust_flow_value_0)
+    public function setTopicalTrustFlowValue0($topicalTrustFlowValue0)
     {
-        $this->container['topical_trust_flow_value_0'] = $topical_trust_flow_value_0;
+        $this->container['topicalTrustFlowValue0'] = $topicalTrustFlowValue0;
 
         return $this;
     }
 
     /**
-     * Gets topical_trust_flow_topic_1
+     * Gets topicalTrustFlowTopic1
      *
      * @return string
      */
     public function getTopicalTrustFlowTopic1()
     {
-        return $this->container['topical_trust_flow_topic_1'];
+        return $this->container['topicalTrustFlowTopic1'];
     }
 
     /**
-     * Sets topical_trust_flow_topic_1
+     * Sets topicalTrustFlowTopic1
      *
-     * @param string $topical_trust_flow_topic_1 topical_trust_flow_topic_1
+     * @param string $topicalTrustFlowTopic1 topicalTrustFlowTopic1
      *
      * @return $this
      */
-    public function setTopicalTrustFlowTopic1($topical_trust_flow_topic_1)
+    public function setTopicalTrustFlowTopic1($topicalTrustFlowTopic1)
     {
-        $this->container['topical_trust_flow_topic_1'] = $topical_trust_flow_topic_1;
+        $this->container['topicalTrustFlowTopic1'] = $topicalTrustFlowTopic1;
 
         return $this;
     }
 
     /**
-     * Gets topical_trust_flow_value_1
+     * Gets topicalTrustFlowValue1
      *
      * @return string
      */
     public function getTopicalTrustFlowValue1()
     {
-        return $this->container['topical_trust_flow_value_1'];
+        return $this->container['topicalTrustFlowValue1'];
     }
 
     /**
-     * Sets topical_trust_flow_value_1
+     * Sets topicalTrustFlowValue1
      *
-     * @param string $topical_trust_flow_value_1 topical_trust_flow_value_1
+     * @param string $topicalTrustFlowValue1 topicalTrustFlowValue1
      *
      * @return $this
      */
-    public function setTopicalTrustFlowValue1($topical_trust_flow_value_1)
+    public function setTopicalTrustFlowValue1($topicalTrustFlowValue1)
     {
-        $this->container['topical_trust_flow_value_1'] = $topical_trust_flow_value_1;
+        $this->container['topicalTrustFlowValue1'] = $topicalTrustFlowValue1;
 
         return $this;
     }
 
     /**
-     * Gets topical_trust_flow_topic_2
+     * Gets topicalTrustFlowTopic2
      *
      * @return string
      */
     public function getTopicalTrustFlowTopic2()
     {
-        return $this->container['topical_trust_flow_topic_2'];
+        return $this->container['topicalTrustFlowTopic2'];
     }
 
     /**
-     * Sets topical_trust_flow_topic_2
+     * Sets topicalTrustFlowTopic2
      *
-     * @param string $topical_trust_flow_topic_2 topical_trust_flow_topic_2
+     * @param string $topicalTrustFlowTopic2 topicalTrustFlowTopic2
      *
      * @return $this
      */
-    public function setTopicalTrustFlowTopic2($topical_trust_flow_topic_2)
+    public function setTopicalTrustFlowTopic2($topicalTrustFlowTopic2)
     {
-        $this->container['topical_trust_flow_topic_2'] = $topical_trust_flow_topic_2;
+        $this->container['topicalTrustFlowTopic2'] = $topicalTrustFlowTopic2;
 
         return $this;
     }
 
     /**
-     * Gets topical_trust_flow_value_2
+     * Gets topicalTrustFlowValue2
      *
      * @return string
      */
     public function getTopicalTrustFlowValue2()
     {
-        return $this->container['topical_trust_flow_value_2'];
+        return $this->container['topicalTrustFlowValue2'];
     }
 
     /**
-     * Sets topical_trust_flow_value_2
+     * Sets topicalTrustFlowValue2
      *
-     * @param string $topical_trust_flow_value_2 topical_trust_flow_value_2
+     * @param string $topicalTrustFlowValue2 topicalTrustFlowValue2
      *
      * @return $this
      */
-    public function setTopicalTrustFlowValue2($topical_trust_flow_value_2)
+    public function setTopicalTrustFlowValue2($topicalTrustFlowValue2)
     {
-        $this->container['topical_trust_flow_value_2'] = $topical_trust_flow_value_2;
+        $this->container['topicalTrustFlowValue2'] = $topicalTrustFlowValue2;
 
         return $this;
     }

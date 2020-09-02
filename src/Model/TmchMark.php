@@ -75,12 +75,12 @@ class TmchMark implements ModelInterface, ArrayAccess
         'status' => '\Domainrobot\Model\TmchMarkStatusConstants',
         'payable' => '\DateTime',
         'sent' => 'bool',
-        'smd_inclusion' => 'bool',
-        'claims_notify' => 'bool',
-        'order_complete' => 'bool',
-        'claims_notify_extended' => 'bool',
+        'smdInclusion' => 'bool',
+        'claimsNotify' => 'bool',
+        'orderComplete' => 'bool',
+        'claimsNotifyExtended' => 'bool',
         'extension' => '\Domainrobot\Model\TmchMarkAddon',
-        'smd_file' => 'string'
+        'smdFile' => 'string'
     ];
 
     /**
@@ -107,12 +107,12 @@ class TmchMark implements ModelInterface, ArrayAccess
         'status' => null,
         'payable' => 'date-time',
         'sent' => null,
-        'smd_inclusion' => null,
-        'claims_notify' => null,
-        'order_complete' => null,
-        'claims_notify_extended' => null,
+        'smdInclusion' => null,
+        'claimsNotify' => null,
+        'orderComplete' => null,
+        'claimsNotifyExtended' => null,
         'extension' => null,
-        'smd_file' => null
+        'smdFile' => null
     ];
 
     /**
@@ -160,12 +160,12 @@ class TmchMark implements ModelInterface, ArrayAccess
         'status' => 'status',
         'payable' => 'payable',
         'sent' => 'sent',
-        'smd_inclusion' => 'smdInclusion',
-        'claims_notify' => 'claimsNotify',
-        'order_complete' => 'orderComplete',
-        'claims_notify_extended' => 'claimsNotifyExtended',
+        'smdInclusion' => 'smdInclusion',
+        'claimsNotify' => 'claimsNotify',
+        'orderComplete' => 'orderComplete',
+        'claimsNotifyExtended' => 'claimsNotifyExtended',
         'extension' => 'extension',
-        'smd_file' => 'smdFile'
+        'smdFile' => 'smdFile'
     ];
 
     /**
@@ -192,12 +192,12 @@ class TmchMark implements ModelInterface, ArrayAccess
         'status' => 'setStatus',
         'payable' => 'setPayable',
         'sent' => 'setSent',
-        'smd_inclusion' => 'setSmdInclusion',
-        'claims_notify' => 'setClaimsNotify',
-        'order_complete' => 'setOrderComplete',
-        'claims_notify_extended' => 'setClaimsNotifyExtended',
+        'smdInclusion' => 'setSmdInclusion',
+        'claimsNotify' => 'setClaimsNotify',
+        'orderComplete' => 'setOrderComplete',
+        'claimsNotifyExtended' => 'setClaimsNotifyExtended',
         'extension' => 'setExtension',
-        'smd_file' => 'setSmdFile'
+        'smdFile' => 'setSmdFile'
     ];
 
     /**
@@ -224,12 +224,12 @@ class TmchMark implements ModelInterface, ArrayAccess
         'status' => 'getStatus',
         'payable' => 'getPayable',
         'sent' => 'getSent',
-        'smd_inclusion' => 'getSmdInclusion',
-        'claims_notify' => 'getClaimsNotify',
-        'order_complete' => 'getOrderComplete',
-        'claims_notify_extended' => 'getClaimsNotifyExtended',
+        'smdInclusion' => 'getSmdInclusion',
+        'claimsNotify' => 'getClaimsNotify',
+        'orderComplete' => 'getOrderComplete',
+        'claimsNotifyExtended' => 'getClaimsNotifyExtended',
         'extension' => 'getExtension',
-        'smd_file' => 'getSmdFile'
+        'smdFile' => 'getSmdFile'
     ];
 
     /**
@@ -310,12 +310,12 @@ class TmchMark implements ModelInterface, ArrayAccess
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['payable'] = isset($data['payable']) ? $this->createData($data['payable'], 'payable')  : null;
         $this->container['sent'] = isset($data['sent']) ? $this->createData($data['sent'], 'sent')  : null;
-        $this->container['smd_inclusion'] = isset($data['smd_inclusion']) ? $this->createData($data['smd_inclusion'], 'smd_inclusion')  : null;
-        $this->container['claims_notify'] = isset($data['claims_notify']) ? $this->createData($data['claims_notify'], 'claims_notify')  : null;
-        $this->container['order_complete'] = isset($data['order_complete']) ? $this->createData($data['order_complete'], 'order_complete')  : null;
-        $this->container['claims_notify_extended'] = isset($data['claims_notify_extended']) ? $this->createData($data['claims_notify_extended'], 'claims_notify_extended')  : null;
+        $this->container['smdInclusion'] = isset($data['smdInclusion']) ? $this->createData($data['smdInclusion'], 'smdInclusion')  : null;
+        $this->container['claimsNotify'] = isset($data['claimsNotify']) ? $this->createData($data['claimsNotify'], 'claimsNotify')  : null;
+        $this->container['orderComplete'] = isset($data['orderComplete']) ? $this->createData($data['orderComplete'], 'orderComplete')  : null;
+        $this->container['claimsNotifyExtended'] = isset($data['claimsNotifyExtended']) ? $this->createData($data['claimsNotifyExtended'], 'claimsNotifyExtended')  : null;
         $this->container['extension'] = isset($data['extension']) ? $this->createData($data['extension'], 'extension')  : null;
-        $this->container['smd_file'] = isset($data['smd_file']) ? $this->createData($data['smd_file'], 'smd_file')  : null;
+        $this->container['smdFile'] = isset($data['smdFile']) ? $this->createData($data['smdFile'], 'smdFile')  : null;
     }
 
     /**
@@ -385,11 +385,11 @@ class TmchMark implements ModelInterface, ArrayAccess
         if ($this->container['payable'] === null) {
             $invalidProperties[] = "'payable' can't be null";
         }
-        if ($this->container['smd_inclusion'] === null) {
-            $invalidProperties[] = "'smd_inclusion' can't be null";
+        if ($this->container['smdInclusion'] === null) {
+            $invalidProperties[] = "'smdInclusion' can't be null";
         }
-        if ($this->container['claims_notify'] === null) {
-            $invalidProperties[] = "'claims_notify' can't be null";
+        if ($this->container['claimsNotify'] === null) {
+            $invalidProperties[] = "'claimsNotify' can't be null";
         }
         return $invalidProperties;
     }
@@ -839,97 +839,97 @@ class TmchMark implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets smd_inclusion
+     * Gets smdInclusion
      *
      * @return bool
      */
     public function getSmdInclusion()
     {
-        return $this->container['smd_inclusion'];
+        return $this->container['smdInclusion'];
     }
 
     /**
-     * Sets smd_inclusion
+     * Sets smdInclusion
      *
-     * @param bool $smd_inclusion smd_inclusion
+     * @param bool $smdInclusion smdInclusion
      *
      * @return $this
      */
-    public function setSmdInclusion($smd_inclusion)
+    public function setSmdInclusion($smdInclusion)
     {
-        $this->container['smd_inclusion'] = $smd_inclusion;
+        $this->container['smdInclusion'] = $smdInclusion;
 
         return $this;
     }
 
     /**
-     * Gets claims_notify
+     * Gets claimsNotify
      *
      * @return bool
      */
     public function getClaimsNotify()
     {
-        return $this->container['claims_notify'];
+        return $this->container['claimsNotify'];
     }
 
     /**
-     * Sets claims_notify
+     * Sets claimsNotify
      *
-     * @param bool $claims_notify claims_notify
+     * @param bool $claimsNotify claimsNotify
      *
      * @return $this
      */
-    public function setClaimsNotify($claims_notify)
+    public function setClaimsNotify($claimsNotify)
     {
-        $this->container['claims_notify'] = $claims_notify;
+        $this->container['claimsNotify'] = $claimsNotify;
 
         return $this;
     }
 
     /**
-     * Gets order_complete
+     * Gets orderComplete
      *
      * @return bool
      */
     public function getOrderComplete()
     {
-        return $this->container['order_complete'];
+        return $this->container['orderComplete'];
     }
 
     /**
-     * Sets order_complete
+     * Sets orderComplete
      *
-     * @param bool $order_complete order_complete
+     * @param bool $orderComplete orderComplete
      *
      * @return $this
      */
-    public function setOrderComplete($order_complete)
+    public function setOrderComplete($orderComplete)
     {
-        $this->container['order_complete'] = $order_complete;
+        $this->container['orderComplete'] = $orderComplete;
 
         return $this;
     }
 
     /**
-     * Gets claims_notify_extended
+     * Gets claimsNotifyExtended
      *
      * @return bool
      */
     public function getClaimsNotifyExtended()
     {
-        return $this->container['claims_notify_extended'];
+        return $this->container['claimsNotifyExtended'];
     }
 
     /**
-     * Sets claims_notify_extended
+     * Sets claimsNotifyExtended
      *
-     * @param bool $claims_notify_extended claims_notify_extended
+     * @param bool $claimsNotifyExtended claimsNotifyExtended
      *
      * @return $this
      */
-    public function setClaimsNotifyExtended($claims_notify_extended)
+    public function setClaimsNotifyExtended($claimsNotifyExtended)
     {
-        $this->container['claims_notify_extended'] = $claims_notify_extended;
+        $this->container['claimsNotifyExtended'] = $claimsNotifyExtended;
 
         return $this;
     }
@@ -959,25 +959,25 @@ class TmchMark implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets smd_file
+     * Gets smdFile
      *
      * @return string
      */
     public function getSmdFile()
     {
-        return $this->container['smd_file'];
+        return $this->container['smdFile'];
     }
 
     /**
-     * Sets smd_file
+     * Sets smdFile
      *
-     * @param string $smd_file smd_file
+     * @param string $smdFile smdFile
      *
      * @return $this
      */
-    public function setSmdFile($smd_file)
+    public function setSmdFile($smdFile)
     {
-        $this->container['smd_file'] = $smd_file;
+        $this->container['smdFile'] = $smdFile;
 
         return $this;
     }

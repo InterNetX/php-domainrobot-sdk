@@ -62,21 +62,21 @@ class TransferOut implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'domain' => 'string',
-        'gaining_registrar' => 'string',
-        'loosing_registrar' => 'string',
+        'gainingRegistrar' => 'string',
+        'loosingRegistrar' => 'string',
         'start' => '\DateTime',
         'reminder' => '\DateTime',
-        'auto_ack' => '\DateTime',
-        'auto_nack' => '\DateTime',
+        'autoAck' => '\DateTime',
+        'autoNack' => '\DateTime',
         'end' => '\DateTime',
-        'auto_answer' => 'bool',
+        'autoAnswer' => 'bool',
         'recipient' => 'string',
         'mailserver' => 'string',
-        'delivered_mailserver' => 'string',
+        'deliveredMailserver' => 'string',
         'delivered' => '\DateTime',
         'transaction' => 'string',
         'type' => '\Domainrobot\Model\TransferAnswer',
-        'nack_reason' => 'int'
+        'nackReason' => 'int'
     ];
 
     /**
@@ -90,21 +90,21 @@ class TransferOut implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'domain' => null,
-        'gaining_registrar' => null,
-        'loosing_registrar' => null,
+        'gainingRegistrar' => null,
+        'loosingRegistrar' => null,
         'start' => 'date-time',
         'reminder' => 'date-time',
-        'auto_ack' => 'date-time',
-        'auto_nack' => 'date-time',
+        'autoAck' => 'date-time',
+        'autoNack' => 'date-time',
         'end' => 'date-time',
-        'auto_answer' => null,
+        'autoAnswer' => null,
         'recipient' => null,
         'mailserver' => null,
-        'delivered_mailserver' => null,
+        'deliveredMailserver' => null,
         'delivered' => 'date-time',
         'transaction' => null,
         'type' => null,
-        'nack_reason' => 'int32'
+        'nackReason' => 'int32'
     ];
 
     /**
@@ -139,21 +139,21 @@ class TransferOut implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'domain' => 'domain',
-        'gaining_registrar' => 'gainingRegistrar',
-        'loosing_registrar' => 'loosingRegistrar',
+        'gainingRegistrar' => 'gainingRegistrar',
+        'loosingRegistrar' => 'loosingRegistrar',
         'start' => 'start',
         'reminder' => 'reminder',
-        'auto_ack' => 'autoAck',
-        'auto_nack' => 'autoNack',
+        'autoAck' => 'autoAck',
+        'autoNack' => 'autoNack',
         'end' => 'end',
-        'auto_answer' => 'autoAnswer',
+        'autoAnswer' => 'autoAnswer',
         'recipient' => 'recipient',
         'mailserver' => 'mailserver',
-        'delivered_mailserver' => 'deliveredMailserver',
+        'deliveredMailserver' => 'deliveredMailserver',
         'delivered' => 'delivered',
         'transaction' => 'transaction',
         'type' => 'type',
-        'nack_reason' => 'nackReason'
+        'nackReason' => 'nackReason'
     ];
 
     /**
@@ -167,21 +167,21 @@ class TransferOut implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'domain' => 'setDomain',
-        'gaining_registrar' => 'setGainingRegistrar',
-        'loosing_registrar' => 'setLoosingRegistrar',
+        'gainingRegistrar' => 'setGainingRegistrar',
+        'loosingRegistrar' => 'setLoosingRegistrar',
         'start' => 'setStart',
         'reminder' => 'setReminder',
-        'auto_ack' => 'setAutoAck',
-        'auto_nack' => 'setAutoNack',
+        'autoAck' => 'setAutoAck',
+        'autoNack' => 'setAutoNack',
         'end' => 'setEnd',
-        'auto_answer' => 'setAutoAnswer',
+        'autoAnswer' => 'setAutoAnswer',
         'recipient' => 'setRecipient',
         'mailserver' => 'setMailserver',
-        'delivered_mailserver' => 'setDeliveredMailserver',
+        'deliveredMailserver' => 'setDeliveredMailserver',
         'delivered' => 'setDelivered',
         'transaction' => 'setTransaction',
         'type' => 'setType',
-        'nack_reason' => 'setNackReason'
+        'nackReason' => 'setNackReason'
     ];
 
     /**
@@ -195,21 +195,21 @@ class TransferOut implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'domain' => 'getDomain',
-        'gaining_registrar' => 'getGainingRegistrar',
-        'loosing_registrar' => 'getLoosingRegistrar',
+        'gainingRegistrar' => 'getGainingRegistrar',
+        'loosingRegistrar' => 'getLoosingRegistrar',
         'start' => 'getStart',
         'reminder' => 'getReminder',
-        'auto_ack' => 'getAutoAck',
-        'auto_nack' => 'getAutoNack',
+        'autoAck' => 'getAutoAck',
+        'autoNack' => 'getAutoNack',
         'end' => 'getEnd',
-        'auto_answer' => 'getAutoAnswer',
+        'autoAnswer' => 'getAutoAnswer',
         'recipient' => 'getRecipient',
         'mailserver' => 'getMailserver',
-        'delivered_mailserver' => 'getDeliveredMailserver',
+        'deliveredMailserver' => 'getDeliveredMailserver',
         'delivered' => 'getDelivered',
         'transaction' => 'getTransaction',
         'type' => 'getType',
-        'nack_reason' => 'getNackReason'
+        'nackReason' => 'getNackReason'
     ];
 
     /**
@@ -277,21 +277,21 @@ class TransferOut implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
-        $this->container['gaining_registrar'] = isset($data['gaining_registrar']) ? $this->createData($data['gaining_registrar'], 'gaining_registrar')  : null;
-        $this->container['loosing_registrar'] = isset($data['loosing_registrar']) ? $this->createData($data['loosing_registrar'], 'loosing_registrar')  : null;
+        $this->container['gainingRegistrar'] = isset($data['gainingRegistrar']) ? $this->createData($data['gainingRegistrar'], 'gainingRegistrar')  : null;
+        $this->container['loosingRegistrar'] = isset($data['loosingRegistrar']) ? $this->createData($data['loosingRegistrar'], 'loosingRegistrar')  : null;
         $this->container['start'] = isset($data['start']) ? $this->createData($data['start'], 'start')  : null;
         $this->container['reminder'] = isset($data['reminder']) ? $this->createData($data['reminder'], 'reminder')  : null;
-        $this->container['auto_ack'] = isset($data['auto_ack']) ? $this->createData($data['auto_ack'], 'auto_ack')  : null;
-        $this->container['auto_nack'] = isset($data['auto_nack']) ? $this->createData($data['auto_nack'], 'auto_nack')  : null;
+        $this->container['autoAck'] = isset($data['autoAck']) ? $this->createData($data['autoAck'], 'autoAck')  : null;
+        $this->container['autoNack'] = isset($data['autoNack']) ? $this->createData($data['autoNack'], 'autoNack')  : null;
         $this->container['end'] = isset($data['end']) ? $this->createData($data['end'], 'end')  : null;
-        $this->container['auto_answer'] = isset($data['auto_answer']) ? $this->createData($data['auto_answer'], 'auto_answer')  : null;
+        $this->container['autoAnswer'] = isset($data['autoAnswer']) ? $this->createData($data['autoAnswer'], 'autoAnswer')  : null;
         $this->container['recipient'] = isset($data['recipient']) ? $this->createData($data['recipient'], 'recipient')  : null;
         $this->container['mailserver'] = isset($data['mailserver']) ? $this->createData($data['mailserver'], 'mailserver')  : null;
-        $this->container['delivered_mailserver'] = isset($data['delivered_mailserver']) ? $this->createData($data['delivered_mailserver'], 'delivered_mailserver')  : null;
+        $this->container['deliveredMailserver'] = isset($data['deliveredMailserver']) ? $this->createData($data['deliveredMailserver'], 'deliveredMailserver')  : null;
         $this->container['delivered'] = isset($data['delivered']) ? $this->createData($data['delivered'], 'delivered')  : null;
         $this->container['transaction'] = isset($data['transaction']) ? $this->createData($data['transaction'], 'transaction')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
-        $this->container['nack_reason'] = isset($data['nack_reason']) ? $this->createData($data['nack_reason'], 'nack_reason')  : null;
+        $this->container['nackReason'] = isset($data['nackReason']) ? $this->createData($data['nackReason'], 'nackReason')  : null;
     }
 
     /**
@@ -485,49 +485,49 @@ class TransferOut implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets gaining_registrar
+     * Gets gainingRegistrar
      *
      * @return string
      */
     public function getGainingRegistrar()
     {
-        return $this->container['gaining_registrar'];
+        return $this->container['gainingRegistrar'];
     }
 
     /**
-     * Sets gaining_registrar
+     * Sets gainingRegistrar
      *
-     * @param string $gaining_registrar The gaining registrar.
+     * @param string $gainingRegistrar The gaining registrar.
      *
      * @return $this
      */
-    public function setGainingRegistrar($gaining_registrar)
+    public function setGainingRegistrar($gainingRegistrar)
     {
-        $this->container['gaining_registrar'] = $gaining_registrar;
+        $this->container['gainingRegistrar'] = $gainingRegistrar;
 
         return $this;
     }
 
     /**
-     * Gets loosing_registrar
+     * Gets loosingRegistrar
      *
      * @return string
      */
     public function getLoosingRegistrar()
     {
-        return $this->container['loosing_registrar'];
+        return $this->container['loosingRegistrar'];
     }
 
     /**
-     * Sets loosing_registrar
+     * Sets loosingRegistrar
      *
-     * @param string $loosing_registrar The loosing registrar.
+     * @param string $loosingRegistrar The loosing registrar.
      *
      * @return $this
      */
-    public function setLoosingRegistrar($loosing_registrar)
+    public function setLoosingRegistrar($loosingRegistrar)
     {
-        $this->container['loosing_registrar'] = $loosing_registrar;
+        $this->container['loosingRegistrar'] = $loosingRegistrar;
 
         return $this;
     }
@@ -581,49 +581,49 @@ class TransferOut implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets auto_ack
+     * Gets autoAck
      *
      * @return \DateTime
      */
     public function getAutoAck()
     {
-        return $this->container['auto_ack'];
+        return $this->container['autoAck'];
     }
 
     /**
-     * Sets auto_ack
+     * Sets autoAck
      *
-     * @param \DateTime $auto_ack The auto ack date.
+     * @param \DateTime $autoAck The auto ack date.
      *
      * @return $this
      */
-    public function setAutoAck($auto_ack)
+    public function setAutoAck($autoAck)
     {
-        $this->container['auto_ack'] = $auto_ack;
+        $this->container['autoAck'] = $autoAck;
 
         return $this;
     }
 
     /**
-     * Gets auto_nack
+     * Gets autoNack
      *
      * @return \DateTime
      */
     public function getAutoNack()
     {
-        return $this->container['auto_nack'];
+        return $this->container['autoNack'];
     }
 
     /**
-     * Sets auto_nack
+     * Sets autoNack
      *
-     * @param \DateTime $auto_nack The auto nack date.
+     * @param \DateTime $autoNack The auto nack date.
      *
      * @return $this
      */
-    public function setAutoNack($auto_nack)
+    public function setAutoNack($autoNack)
     {
-        $this->container['auto_nack'] = $auto_nack;
+        $this->container['autoNack'] = $autoNack;
 
         return $this;
     }
@@ -653,25 +653,25 @@ class TransferOut implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets auto_answer
+     * Gets autoAnswer
      *
      * @return bool
      */
     public function getAutoAnswer()
     {
-        return $this->container['auto_answer'];
+        return $this->container['autoAnswer'];
     }
 
     /**
-     * Sets auto_answer
+     * Sets autoAnswer
      *
-     * @param bool $auto_answer Autoanswer active.
+     * @param bool $autoAnswer Autoanswer active.
      *
      * @return $this
      */
-    public function setAutoAnswer($auto_answer)
+    public function setAutoAnswer($autoAnswer)
     {
-        $this->container['auto_answer'] = $auto_answer;
+        $this->container['autoAnswer'] = $autoAnswer;
 
         return $this;
     }
@@ -725,25 +725,25 @@ class TransferOut implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets delivered_mailserver
+     * Gets deliveredMailserver
      *
      * @return string
      */
     public function getDeliveredMailserver()
     {
-        return $this->container['delivered_mailserver'];
+        return $this->container['deliveredMailserver'];
     }
 
     /**
-     * Sets delivered_mailserver
+     * Sets deliveredMailserver
      *
-     * @param string $delivered_mailserver The delivered mailserver.
+     * @param string $deliveredMailserver The delivered mailserver.
      *
      * @return $this
      */
-    public function setDeliveredMailserver($delivered_mailserver)
+    public function setDeliveredMailserver($deliveredMailserver)
     {
-        $this->container['delivered_mailserver'] = $delivered_mailserver;
+        $this->container['deliveredMailserver'] = $deliveredMailserver;
 
         return $this;
     }
@@ -821,25 +821,25 @@ class TransferOut implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets nack_reason
+     * Gets nackReason
      *
      * @return int
      */
     public function getNackReason()
     {
-        return $this->container['nack_reason'];
+        return $this->container['nackReason'];
     }
 
     /**
-     * Sets nack_reason
+     * Sets nackReason
      *
-     * @param int $nack_reason The reason.
+     * @param int $nackReason The reason.
      *
      * @return $this
      */
-    public function setNackReason($nack_reason)
+    public function setNackReason($nackReason)
     {
-        $this->container['nack_reason'] = $nack_reason;
+        $this->container['nackReason'] = $nackReason;
 
         return $this;
     }

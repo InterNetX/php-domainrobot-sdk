@@ -62,9 +62,9 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'name' => 'string',
-        'use_default_ips' => 'bool',
-        'name_servers' => '\Domainrobot\Model\VirtualNameServer[]',
-        'system_name_server_group' => '\Domainrobot\Model\PhysicalNameServerGroup'
+        'useDefaultIps' => 'bool',
+        'nameServers' => '\Domainrobot\Model\VirtualNameServer[]',
+        'systemNameServerGroup' => '\Domainrobot\Model\PhysicalNameServerGroup'
     ];
 
     /**
@@ -78,9 +78,9 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'name' => null,
-        'use_default_ips' => null,
-        'name_servers' => null,
-        'system_name_server_group' => null
+        'useDefaultIps' => null,
+        'nameServers' => null,
+        'systemNameServerGroup' => null
     ];
 
     /**
@@ -115,9 +115,9 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'name' => 'name',
-        'use_default_ips' => 'useDefaultIps',
-        'name_servers' => 'nameServers',
-        'system_name_server_group' => 'systemNameServerGroup'
+        'useDefaultIps' => 'useDefaultIps',
+        'nameServers' => 'nameServers',
+        'systemNameServerGroup' => 'systemNameServerGroup'
     ];
 
     /**
@@ -131,9 +131,9 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'name' => 'setName',
-        'use_default_ips' => 'setUseDefaultIps',
-        'name_servers' => 'setNameServers',
-        'system_name_server_group' => 'setSystemNameServerGroup'
+        'useDefaultIps' => 'setUseDefaultIps',
+        'nameServers' => 'setNameServers',
+        'systemNameServerGroup' => 'setSystemNameServerGroup'
     ];
 
     /**
@@ -147,9 +147,9 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'name' => 'getName',
-        'use_default_ips' => 'getUseDefaultIps',
-        'name_servers' => 'getNameServers',
-        'system_name_server_group' => 'getSystemNameServerGroup'
+        'useDefaultIps' => 'getUseDefaultIps',
+        'nameServers' => 'getNameServers',
+        'systemNameServerGroup' => 'getSystemNameServerGroup'
     ];
 
     /**
@@ -217,9 +217,9 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['use_default_ips'] = isset($data['use_default_ips']) ? $this->createData($data['use_default_ips'], 'use_default_ips')  : null;
-        $this->container['name_servers'] = isset($data['name_servers']) ? $this->createData($data['name_servers'], 'name_servers')  : null;
-        $this->container['system_name_server_group'] = isset($data['system_name_server_group']) ? $this->createData($data['system_name_server_group'], 'system_name_server_group')  : null;
+        $this->container['useDefaultIps'] = isset($data['useDefaultIps']) ? $this->createData($data['useDefaultIps'], 'useDefaultIps')  : null;
+        $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
+        $this->container['systemNameServerGroup'] = isset($data['systemNameServerGroup']) ? $this->createData($data['systemNameServerGroup'], 'systemNameServerGroup')  : null;
     }
 
     /**
@@ -271,8 +271,8 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['system_name_server_group'] === null) {
-            $invalidProperties[] = "'system_name_server_group' can't be null";
+        if ($this->container['systemNameServerGroup'] === null) {
+            $invalidProperties[] = "'systemNameServerGroup' can't be null";
         }
         return $invalidProperties;
     }
@@ -410,73 +410,73 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets use_default_ips
+     * Gets useDefaultIps
      *
      * @return bool
      */
     public function getUseDefaultIps()
     {
-        return $this->container['use_default_ips'];
+        return $this->container['useDefaultIps'];
     }
 
     /**
-     * Sets use_default_ips
+     * Sets useDefaultIps
      *
-     * @param bool $use_default_ips The useDefaultIps
+     * @param bool $useDefaultIps The useDefaultIps
      *
      * @return $this
      */
-    public function setUseDefaultIps($use_default_ips)
+    public function setUseDefaultIps($useDefaultIps)
     {
-        $this->container['use_default_ips'] = $use_default_ips;
+        $this->container['useDefaultIps'] = $useDefaultIps;
 
         return $this;
     }
 
     /**
-     * Gets name_servers
+     * Gets nameServers
      *
      * @return \Domainrobot\Model\VirtualNameServer[]
      */
     public function getNameServers()
     {
-        return $this->container['name_servers'];
+        return $this->container['nameServers'];
     }
 
     /**
-     * Sets name_servers
+     * Sets nameServers
      *
-     * @param \Domainrobot\Model\VirtualNameServer[] $name_servers The name servers of the group.
+     * @param \Domainrobot\Model\VirtualNameServer[] $nameServers The name servers of the group.
      *
      * @return $this
      */
-    public function setNameServers($name_servers)
+    public function setNameServers($nameServers)
     {
-        $this->container['name_servers'] = $name_servers;
+        $this->container['nameServers'] = $nameServers;
 
         return $this;
     }
 
     /**
-     * Gets system_name_server_group
+     * Gets systemNameServerGroup
      *
      * @return \Domainrobot\Model\PhysicalNameServerGroup
      */
     public function getSystemNameServerGroup()
     {
-        return $this->container['system_name_server_group'];
+        return $this->container['systemNameServerGroup'];
     }
 
     /**
-     * Sets system_name_server_group
+     * Sets systemNameServerGroup
      *
-     * @param \Domainrobot\Model\PhysicalNameServerGroup $system_name_server_group The custom label for the group
+     * @param \Domainrobot\Model\PhysicalNameServerGroup $systemNameServerGroup The custom label for the group
      *
      * @return $this
      */
-    public function setSystemNameServerGroup($system_name_server_group)
+    public function setSystemNameServerGroup($systemNameServerGroup)
     {
-        $this->container['system_name_server_group'] = $system_name_server_group;
+        $this->container['systemNameServerGroup'] = $systemNameServerGroup;
 
         return $this;
     }

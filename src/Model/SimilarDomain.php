@@ -57,8 +57,8 @@ class SimilarDomain implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'related_domain_price' => 'double',
-        'related_domains' => 'string'
+        'relatedDomainPrice' => 'double',
+        'relatedDomains' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class SimilarDomain implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'related_domain_price' => 'double',
-        'related_domains' => null
+        'relatedDomainPrice' => 'double',
+        'relatedDomains' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class SimilarDomain implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'related_domain_price' => 'relatedDomainPrice',
-        'related_domains' => 'relatedDomains'
+        'relatedDomainPrice' => 'relatedDomainPrice',
+        'relatedDomains' => 'relatedDomains'
     ];
 
     /**
@@ -108,8 +108,8 @@ class SimilarDomain implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'related_domain_price' => 'setRelatedDomainPrice',
-        'related_domains' => 'setRelatedDomains'
+        'relatedDomainPrice' => 'setRelatedDomainPrice',
+        'relatedDomains' => 'setRelatedDomains'
     ];
 
     /**
@@ -118,8 +118,8 @@ class SimilarDomain implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'related_domain_price' => 'getRelatedDomainPrice',
-        'related_domains' => 'getRelatedDomains'
+        'relatedDomainPrice' => 'getRelatedDomainPrice',
+        'relatedDomains' => 'getRelatedDomains'
     ];
 
     /**
@@ -182,8 +182,8 @@ class SimilarDomain implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['related_domain_price'] = isset($data['related_domain_price']) ? $this->createData($data['related_domain_price'], 'related_domain_price')  : null;
-        $this->container['related_domains'] = isset($data['related_domains']) ? $this->createData($data['related_domains'], 'related_domains')  : null;
+        $this->container['relatedDomainPrice'] = isset($data['relatedDomainPrice']) ? $this->createData($data['relatedDomainPrice'], 'relatedDomainPrice')  : null;
+        $this->container['relatedDomains'] = isset($data['relatedDomains']) ? $this->createData($data['relatedDomains'], 'relatedDomains')  : null;
     }
 
     /**
@@ -251,49 +251,49 @@ class SimilarDomain implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets related_domain_price
+     * Gets relatedDomainPrice
      *
      * @return double
      */
     public function getRelatedDomainPrice()
     {
-        return $this->container['related_domain_price'];
+        return $this->container['relatedDomainPrice'];
     }
 
     /**
-     * Sets related_domain_price
+     * Sets relatedDomainPrice
      *
-     * @param double $related_domain_price related_domain_price
+     * @param double $relatedDomainPrice relatedDomainPrice
      *
      * @return $this
      */
-    public function setRelatedDomainPrice($related_domain_price)
+    public function setRelatedDomainPrice($relatedDomainPrice)
     {
-        $this->container['related_domain_price'] = $related_domain_price;
+        $this->container['relatedDomainPrice'] = $relatedDomainPrice;
 
         return $this;
     }
 
     /**
-     * Gets related_domains
+     * Gets relatedDomains
      *
      * @return string
      */
     public function getRelatedDomains()
     {
-        return $this->container['related_domains'];
+        return $this->container['relatedDomains'];
     }
 
     /**
-     * Sets related_domains
+     * Sets relatedDomains
      *
-     * @param string $related_domains related_domains
+     * @param string $relatedDomains relatedDomains
      *
      * @return $this
      */
-    public function setRelatedDomains($related_domains)
+    public function setRelatedDomains($relatedDomains)
     {
-        $this->container['related_domains'] = $related_domains;
+        $this->container['relatedDomains'] = $relatedDomains;
 
         return $this;
     }

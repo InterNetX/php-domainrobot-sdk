@@ -61,8 +61,8 @@ class Meta implements ModelInterface, ArrayAccess
         'dnssec' => 'bool',
         'description' => 'string',
         'title' => 'string',
-        'certificate_issure' => 'string',
-        'certificate_valid' => 'bool',
+        'certificateIssure' => 'string',
+        'certificateValid' => 'bool',
         'ipv4' => 'string[]',
         'ipv6' => 'string[]',
         'mx' => 'string[]',
@@ -79,8 +79,8 @@ class Meta implements ModelInterface, ArrayAccess
         'dnssec' => null,
         'description' => null,
         'title' => null,
-        'certificate_issure' => null,
-        'certificate_valid' => null,
+        'certificateIssure' => null,
+        'certificateValid' => null,
         'ipv4' => null,
         'ipv6' => null,
         'mx' => null,
@@ -118,8 +118,8 @@ class Meta implements ModelInterface, ArrayAccess
         'dnssec' => 'dnssec',
         'description' => 'description',
         'title' => 'title',
-        'certificate_issure' => 'certificateIssure',
-        'certificate_valid' => 'certificateValid',
+        'certificateIssure' => 'certificateIssure',
+        'certificateValid' => 'certificateValid',
         'ipv4' => 'ipv4',
         'ipv6' => 'ipv6',
         'mx' => 'mx',
@@ -136,8 +136,8 @@ class Meta implements ModelInterface, ArrayAccess
         'dnssec' => 'setDnssec',
         'description' => 'setDescription',
         'title' => 'setTitle',
-        'certificate_issure' => 'setCertificateIssure',
-        'certificate_valid' => 'setCertificateValid',
+        'certificateIssure' => 'setCertificateIssure',
+        'certificateValid' => 'setCertificateValid',
         'ipv4' => 'setIpv4',
         'ipv6' => 'setIpv6',
         'mx' => 'setMx',
@@ -154,8 +154,8 @@ class Meta implements ModelInterface, ArrayAccess
         'dnssec' => 'getDnssec',
         'description' => 'getDescription',
         'title' => 'getTitle',
-        'certificate_issure' => 'getCertificateIssure',
-        'certificate_valid' => 'getCertificateValid',
+        'certificateIssure' => 'getCertificateIssure',
+        'certificateValid' => 'getCertificateValid',
         'ipv4' => 'getIpv4',
         'ipv6' => 'getIpv6',
         'mx' => 'getMx',
@@ -226,8 +226,8 @@ class Meta implements ModelInterface, ArrayAccess
         $this->container['dnssec'] = isset($data['dnssec']) ? $this->createData($data['dnssec'], 'dnssec')  : null;
         $this->container['description'] = isset($data['description']) ? $this->createData($data['description'], 'description')  : null;
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
-        $this->container['certificate_issure'] = isset($data['certificate_issure']) ? $this->createData($data['certificate_issure'], 'certificate_issure')  : null;
-        $this->container['certificate_valid'] = isset($data['certificate_valid']) ? $this->createData($data['certificate_valid'], 'certificate_valid')  : null;
+        $this->container['certificateIssure'] = isset($data['certificateIssure']) ? $this->createData($data['certificateIssure'], 'certificateIssure')  : null;
+        $this->container['certificateValid'] = isset($data['certificateValid']) ? $this->createData($data['certificateValid'], 'certificateValid')  : null;
         $this->container['ipv4'] = isset($data['ipv4']) ? $this->createData($data['ipv4'], 'ipv4')  : null;
         $this->container['ipv6'] = isset($data['ipv6']) ? $this->createData($data['ipv6'], 'ipv6')  : null;
         $this->container['mx'] = isset($data['mx']) ? $this->createData($data['mx'], 'mx')  : null;
@@ -395,49 +395,49 @@ class Meta implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets certificate_issure
+     * Gets certificateIssure
      *
      * @return string
      */
     public function getCertificateIssure()
     {
-        return $this->container['certificate_issure'];
+        return $this->container['certificateIssure'];
     }
 
     /**
-     * Sets certificate_issure
+     * Sets certificateIssure
      *
-     * @param string $certificate_issure certificate_issure
+     * @param string $certificateIssure certificateIssure
      *
      * @return $this
      */
-    public function setCertificateIssure($certificate_issure)
+    public function setCertificateIssure($certificateIssure)
     {
-        $this->container['certificate_issure'] = $certificate_issure;
+        $this->container['certificateIssure'] = $certificateIssure;
 
         return $this;
     }
 
     /**
-     * Gets certificate_valid
+     * Gets certificateValid
      *
      * @return bool
      */
     public function getCertificateValid()
     {
-        return $this->container['certificate_valid'];
+        return $this->container['certificateValid'];
     }
 
     /**
-     * Sets certificate_valid
+     * Sets certificateValid
      *
-     * @param bool $certificate_valid certificate_valid
+     * @param bool $certificateValid certificateValid
      *
      * @return $this
      */
-    public function setCertificateValid($certificate_valid)
+    public function setCertificateValid($certificateValid)
     {
-        $this->container['certificate_valid'] = $certificate_valid;
+        $this->container['certificateValid'] = $certificateValid;
 
         return $this;
     }

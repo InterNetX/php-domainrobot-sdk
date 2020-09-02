@@ -68,14 +68,14 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'customer' => '\Domainrobot\Model\Customer',
         'period' => '\Domainrobot\Model\TimePeriod',
         'discountable' => 'bool',
-        'log_id' => 'int',
+        'logId' => 'int',
         'refund' => 'int',
-        'price_conditions' => '\Domainrobot\Model\PriceServiceEntity[]',
+        'priceConditions' => '\Domainrobot\Model\PriceServiceEntity[]',
         'comment' => 'string',
-        'normal_price' => '\Domainrobot\Model\ExchangedPrice',
+        'normalPrice' => '\Domainrobot\Model\ExchangedPrice',
         'valid' => '\DateTime',
-        'vat_rate' => 'double',
-        'vat_amount' => 'double',
+        'vatRate' => 'double',
+        'vatAmount' => 'double',
         'rate' => 'double'
     ];
 
@@ -96,14 +96,14 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'customer' => null,
         'period' => null,
         'discountable' => null,
-        'log_id' => 'int64',
+        'logId' => 'int64',
         'refund' => 'int32',
-        'price_conditions' => null,
+        'priceConditions' => null,
         'comment' => null,
-        'normal_price' => null,
+        'normalPrice' => null,
         'valid' => 'date-time',
-        'vat_rate' => 'double',
-        'vat_amount' => 'double',
+        'vatRate' => 'double',
+        'vatAmount' => 'double',
         'rate' => 'double'
     ];
 
@@ -145,14 +145,14 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'customer' => 'customer',
         'period' => 'period',
         'discountable' => 'discountable',
-        'log_id' => 'logId',
+        'logId' => 'logId',
         'refund' => 'refund',
-        'price_conditions' => 'priceConditions',
+        'priceConditions' => 'priceConditions',
         'comment' => 'comment',
-        'normal_price' => 'normalPrice',
+        'normalPrice' => 'normalPrice',
         'valid' => 'valid',
-        'vat_rate' => 'vatRate',
-        'vat_amount' => 'vatAmount',
+        'vatRate' => 'vatRate',
+        'vatAmount' => 'vatAmount',
         'rate' => 'rate'
     ];
 
@@ -173,14 +173,14 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'customer' => 'setCustomer',
         'period' => 'setPeriod',
         'discountable' => 'setDiscountable',
-        'log_id' => 'setLogId',
+        'logId' => 'setLogId',
         'refund' => 'setRefund',
-        'price_conditions' => 'setPriceConditions',
+        'priceConditions' => 'setPriceConditions',
         'comment' => 'setComment',
-        'normal_price' => 'setNormalPrice',
+        'normalPrice' => 'setNormalPrice',
         'valid' => 'setValid',
-        'vat_rate' => 'setVatRate',
-        'vat_amount' => 'setVatAmount',
+        'vatRate' => 'setVatRate',
+        'vatAmount' => 'setVatAmount',
         'rate' => 'setRate'
     ];
 
@@ -201,14 +201,14 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'customer' => 'getCustomer',
         'period' => 'getPeriod',
         'discountable' => 'getDiscountable',
-        'log_id' => 'getLogId',
+        'logId' => 'getLogId',
         'refund' => 'getRefund',
-        'price_conditions' => 'getPriceConditions',
+        'priceConditions' => 'getPriceConditions',
         'comment' => 'getComment',
-        'normal_price' => 'getNormalPrice',
+        'normalPrice' => 'getNormalPrice',
         'valid' => 'getValid',
-        'vat_rate' => 'getVatRate',
-        'vat_amount' => 'getVatAmount',
+        'vatRate' => 'getVatRate',
+        'vatAmount' => 'getVatAmount',
         'rate' => 'getRate'
     ];
 
@@ -283,14 +283,14 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         $this->container['customer'] = isset($data['customer']) ? $this->createData($data['customer'], 'customer')  : null;
         $this->container['period'] = isset($data['period']) ? $this->createData($data['period'], 'period')  : null;
         $this->container['discountable'] = isset($data['discountable']) ? $this->createData($data['discountable'], 'discountable')  : null;
-        $this->container['log_id'] = isset($data['log_id']) ? $this->createData($data['log_id'], 'log_id')  : null;
+        $this->container['logId'] = isset($data['logId']) ? $this->createData($data['logId'], 'logId')  : null;
         $this->container['refund'] = isset($data['refund']) ? $this->createData($data['refund'], 'refund')  : null;
-        $this->container['price_conditions'] = isset($data['price_conditions']) ? $this->createData($data['price_conditions'], 'price_conditions')  : null;
+        $this->container['priceConditions'] = isset($data['priceConditions']) ? $this->createData($data['priceConditions'], 'priceConditions')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
-        $this->container['normal_price'] = isset($data['normal_price']) ? $this->createData($data['normal_price'], 'normal_price')  : null;
+        $this->container['normalPrice'] = isset($data['normalPrice']) ? $this->createData($data['normalPrice'], 'normalPrice')  : null;
         $this->container['valid'] = isset($data['valid']) ? $this->createData($data['valid'], 'valid')  : null;
-        $this->container['vat_rate'] = isset($data['vat_rate']) ? $this->createData($data['vat_rate'], 'vat_rate')  : null;
-        $this->container['vat_amount'] = isset($data['vat_amount']) ? $this->createData($data['vat_amount'], 'vat_amount')  : null;
+        $this->container['vatRate'] = isset($data['vatRate']) ? $this->createData($data['vatRate'], 'vatRate')  : null;
+        $this->container['vatAmount'] = isset($data['vatAmount']) ? $this->createData($data['vatAmount'], 'vatAmount')  : null;
         $this->container['rate'] = isset($data['rate']) ? $this->createData($data['rate'], 'rate')  : null;
     }
 
@@ -626,25 +626,25 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets log_id
+     * Gets logId
      *
      * @return int
      */
     public function getLogId()
     {
-        return $this->container['log_id'];
+        return $this->container['logId'];
     }
 
     /**
-     * Sets log_id
+     * Sets logId
      *
-     * @param int $log_id Lorem Ipum
+     * @param int $logId Lorem Ipum
      *
      * @return $this
      */
-    public function setLogId($log_id)
+    public function setLogId($logId)
     {
-        $this->container['log_id'] = $log_id;
+        $this->container['logId'] = $logId;
 
         return $this;
     }
@@ -674,25 +674,25 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets price_conditions
+     * Gets priceConditions
      *
      * @return \Domainrobot\Model\PriceServiceEntity[]
      */
     public function getPriceConditions()
     {
-        return $this->container['price_conditions'];
+        return $this->container['priceConditions'];
     }
 
     /**
-     * Sets price_conditions
+     * Sets priceConditions
      *
-     * @param \Domainrobot\Model\PriceServiceEntity[] $price_conditions Lorem Ipum
+     * @param \Domainrobot\Model\PriceServiceEntity[] $priceConditions Lorem Ipum
      *
      * @return $this
      */
-    public function setPriceConditions($price_conditions)
+    public function setPriceConditions($priceConditions)
     {
-        $this->container['price_conditions'] = $price_conditions;
+        $this->container['priceConditions'] = $priceConditions;
 
         return $this;
     }
@@ -722,25 +722,25 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets normal_price
+     * Gets normalPrice
      *
      * @return \Domainrobot\Model\ExchangedPrice
      */
     public function getNormalPrice()
     {
-        return $this->container['normal_price'];
+        return $this->container['normalPrice'];
     }
 
     /**
-     * Sets normal_price
+     * Sets normalPrice
      *
-     * @param \Domainrobot\Model\ExchangedPrice $normal_price Lorem Ipum
+     * @param \Domainrobot\Model\ExchangedPrice $normalPrice Lorem Ipum
      *
      * @return $this
      */
-    public function setNormalPrice($normal_price)
+    public function setNormalPrice($normalPrice)
     {
-        $this->container['normal_price'] = $normal_price;
+        $this->container['normalPrice'] = $normalPrice;
 
         return $this;
     }
@@ -770,49 +770,49 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets vat_rate
+     * Gets vatRate
      *
      * @return double
      */
     public function getVatRate()
     {
-        return $this->container['vat_rate'];
+        return $this->container['vatRate'];
     }
 
     /**
-     * Sets vat_rate
+     * Sets vatRate
      *
-     * @param double $vat_rate The vat rate of the price
+     * @param double $vatRate The vat rate of the price
      *
      * @return $this
      */
-    public function setVatRate($vat_rate)
+    public function setVatRate($vatRate)
     {
-        $this->container['vat_rate'] = $vat_rate;
+        $this->container['vatRate'] = $vatRate;
 
         return $this;
     }
 
     /**
-     * Gets vat_amount
+     * Gets vatAmount
      *
      * @return double
      */
     public function getVatAmount()
     {
-        return $this->container['vat_amount'];
+        return $this->container['vatAmount'];
     }
 
     /**
-     * Sets vat_amount
+     * Sets vatAmount
      *
-     * @param double $vat_amount The calculated vat amount
+     * @param double $vatAmount The calculated vat amount
      *
      * @return $this
      */
-    public function setVatAmount($vat_amount)
+    public function setVatAmount($vatAmount)
     {
-        $this->container['vat_amount'] = $vat_amount;
+        $this->container['vatAmount'] = $vatAmount;
 
         return $this;
     }

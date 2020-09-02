@@ -59,22 +59,22 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
         'max' => 'int',
-        'max_sld_length' => 'int',
-        'use_dash' => 'bool',
+        'maxSldLength' => 'int',
+        'useDash' => 'bool',
         'tlds' => 'string[]',
-        'online_presence_url' => 'string',
-        'online_presence_title' => 'string',
-        'related_urls' => 'string[]',
+        'onlinePresenceUrl' => 'string',
+        'onlinePresenceTitle' => 'string',
+        'relatedUrls' => 'string[]',
         'category' => 'string',
-        'online_presence_description' => 'string',
-        'preferred_name' => 'string',
+        'onlinePresenceDescription' => 'string',
+        'preferredName' => 'string',
         'location' => 'string',
         'business' => 'bool',
-        'short_name' => 'string',
-        'full_name' => 'string',
-        'first_name' => 'string',
-        'middle_names' => 'string[]',
-        'last_name' => 'string',
+        'shortName' => 'string',
+        'fullName' => 'string',
+        'firstName' => 'string',
+        'middleNames' => 'string[]',
+        'lastName' => 'string',
         'email' => 'string',
         'hometown' => 'string',
         'skills' => 'string[]'
@@ -88,22 +88,22 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'services' => null,
         'max' => 'int32',
-        'max_sld_length' => 'int32',
-        'use_dash' => null,
+        'maxSldLength' => 'int32',
+        'useDash' => null,
         'tlds' => null,
-        'online_presence_url' => null,
-        'online_presence_title' => null,
-        'related_urls' => null,
+        'onlinePresenceUrl' => null,
+        'onlinePresenceTitle' => null,
+        'relatedUrls' => null,
         'category' => null,
-        'online_presence_description' => null,
-        'preferred_name' => null,
+        'onlinePresenceDescription' => null,
+        'preferredName' => null,
         'location' => null,
         'business' => null,
-        'short_name' => null,
-        'full_name' => null,
-        'first_name' => null,
-        'middle_names' => null,
-        'last_name' => null,
+        'shortName' => null,
+        'fullName' => null,
+        'firstName' => null,
+        'middleNames' => null,
+        'lastName' => null,
         'email' => null,
         'hometown' => null,
         'skills' => null
@@ -138,22 +138,22 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'services' => 'services',
         'max' => 'max',
-        'max_sld_length' => 'maxSldLength',
-        'use_dash' => 'useDash',
+        'maxSldLength' => 'maxSldLength',
+        'useDash' => 'useDash',
         'tlds' => 'tlds',
-        'online_presence_url' => 'onlinePresenceUrl',
-        'online_presence_title' => 'onlinePresenceTitle',
-        'related_urls' => 'relatedUrls',
+        'onlinePresenceUrl' => 'onlinePresenceUrl',
+        'onlinePresenceTitle' => 'onlinePresenceTitle',
+        'relatedUrls' => 'relatedUrls',
         'category' => 'category',
-        'online_presence_description' => 'onlinePresenceDescription',
-        'preferred_name' => 'preferredName',
+        'onlinePresenceDescription' => 'onlinePresenceDescription',
+        'preferredName' => 'preferredName',
         'location' => 'location',
         'business' => 'business',
-        'short_name' => 'shortName',
-        'full_name' => 'fullName',
-        'first_name' => 'firstName',
-        'middle_names' => 'middleNames',
-        'last_name' => 'lastName',
+        'shortName' => 'shortName',
+        'fullName' => 'fullName',
+        'firstName' => 'firstName',
+        'middleNames' => 'middleNames',
+        'lastName' => 'lastName',
         'email' => 'email',
         'hometown' => 'hometown',
         'skills' => 'skills'
@@ -167,22 +167,22 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     protected static $setters = [
         'services' => 'setServices',
         'max' => 'setMax',
-        'max_sld_length' => 'setMaxSldLength',
-        'use_dash' => 'setUseDash',
+        'maxSldLength' => 'setMaxSldLength',
+        'useDash' => 'setUseDash',
         'tlds' => 'setTlds',
-        'online_presence_url' => 'setOnlinePresenceUrl',
-        'online_presence_title' => 'setOnlinePresenceTitle',
-        'related_urls' => 'setRelatedUrls',
+        'onlinePresenceUrl' => 'setOnlinePresenceUrl',
+        'onlinePresenceTitle' => 'setOnlinePresenceTitle',
+        'relatedUrls' => 'setRelatedUrls',
         'category' => 'setCategory',
-        'online_presence_description' => 'setOnlinePresenceDescription',
-        'preferred_name' => 'setPreferredName',
+        'onlinePresenceDescription' => 'setOnlinePresenceDescription',
+        'preferredName' => 'setPreferredName',
         'location' => 'setLocation',
         'business' => 'setBusiness',
-        'short_name' => 'setShortName',
-        'full_name' => 'setFullName',
-        'first_name' => 'setFirstName',
-        'middle_names' => 'setMiddleNames',
-        'last_name' => 'setLastName',
+        'shortName' => 'setShortName',
+        'fullName' => 'setFullName',
+        'firstName' => 'setFirstName',
+        'middleNames' => 'setMiddleNames',
+        'lastName' => 'setLastName',
         'email' => 'setEmail',
         'hometown' => 'setHometown',
         'skills' => 'setSkills'
@@ -196,22 +196,22 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     protected static $getters = [
         'services' => 'getServices',
         'max' => 'getMax',
-        'max_sld_length' => 'getMaxSldLength',
-        'use_dash' => 'getUseDash',
+        'maxSldLength' => 'getMaxSldLength',
+        'useDash' => 'getUseDash',
         'tlds' => 'getTlds',
-        'online_presence_url' => 'getOnlinePresenceUrl',
-        'online_presence_title' => 'getOnlinePresenceTitle',
-        'related_urls' => 'getRelatedUrls',
+        'onlinePresenceUrl' => 'getOnlinePresenceUrl',
+        'onlinePresenceTitle' => 'getOnlinePresenceTitle',
+        'relatedUrls' => 'getRelatedUrls',
         'category' => 'getCategory',
-        'online_presence_description' => 'getOnlinePresenceDescription',
-        'preferred_name' => 'getPreferredName',
+        'onlinePresenceDescription' => 'getOnlinePresenceDescription',
+        'preferredName' => 'getPreferredName',
         'location' => 'getLocation',
         'business' => 'getBusiness',
-        'short_name' => 'getShortName',
-        'full_name' => 'getFullName',
-        'first_name' => 'getFirstName',
-        'middle_names' => 'getMiddleNames',
-        'last_name' => 'getLastName',
+        'shortName' => 'getShortName',
+        'fullName' => 'getFullName',
+        'firstName' => 'getFirstName',
+        'middleNames' => 'getMiddleNames',
+        'lastName' => 'getLastName',
         'email' => 'getEmail',
         'hometown' => 'getHometown',
         'skills' => 'getSkills'
@@ -279,22 +279,22 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
-        $this->container['max_sld_length'] = isset($data['max_sld_length']) ? $this->createData($data['max_sld_length'], 'max_sld_length')  : null;
-        $this->container['use_dash'] = isset($data['use_dash']) ? $this->createData($data['use_dash'], 'use_dash')  : null;
+        $this->container['maxSldLength'] = isset($data['maxSldLength']) ? $this->createData($data['maxSldLength'], 'maxSldLength')  : null;
+        $this->container['useDash'] = isset($data['useDash']) ? $this->createData($data['useDash'], 'useDash')  : null;
         $this->container['tlds'] = isset($data['tlds']) ? $this->createData($data['tlds'], 'tlds')  : null;
-        $this->container['online_presence_url'] = isset($data['online_presence_url']) ? $this->createData($data['online_presence_url'], 'online_presence_url')  : null;
-        $this->container['online_presence_title'] = isset($data['online_presence_title']) ? $this->createData($data['online_presence_title'], 'online_presence_title')  : null;
-        $this->container['related_urls'] = isset($data['related_urls']) ? $this->createData($data['related_urls'], 'related_urls')  : null;
+        $this->container['onlinePresenceUrl'] = isset($data['onlinePresenceUrl']) ? $this->createData($data['onlinePresenceUrl'], 'onlinePresenceUrl')  : null;
+        $this->container['onlinePresenceTitle'] = isset($data['onlinePresenceTitle']) ? $this->createData($data['onlinePresenceTitle'], 'onlinePresenceTitle')  : null;
+        $this->container['relatedUrls'] = isset($data['relatedUrls']) ? $this->createData($data['relatedUrls'], 'relatedUrls')  : null;
         $this->container['category'] = isset($data['category']) ? $this->createData($data['category'], 'category')  : null;
-        $this->container['online_presence_description'] = isset($data['online_presence_description']) ? $this->createData($data['online_presence_description'], 'online_presence_description')  : null;
-        $this->container['preferred_name'] = isset($data['preferred_name']) ? $this->createData($data['preferred_name'], 'preferred_name')  : null;
+        $this->container['onlinePresenceDescription'] = isset($data['onlinePresenceDescription']) ? $this->createData($data['onlinePresenceDescription'], 'onlinePresenceDescription')  : null;
+        $this->container['preferredName'] = isset($data['preferredName']) ? $this->createData($data['preferredName'], 'preferredName')  : null;
         $this->container['location'] = isset($data['location']) ? $this->createData($data['location'], 'location')  : null;
         $this->container['business'] = isset($data['business']) ? $this->createData($data['business'], 'business')  : null;
-        $this->container['short_name'] = isset($data['short_name']) ? $this->createData($data['short_name'], 'short_name')  : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $this->createData($data['full_name'], 'full_name')  : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $this->createData($data['first_name'], 'first_name')  : null;
-        $this->container['middle_names'] = isset($data['middle_names']) ? $this->createData($data['middle_names'], 'middle_names')  : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $this->createData($data['last_name'], 'last_name')  : null;
+        $this->container['shortName'] = isset($data['shortName']) ? $this->createData($data['shortName'], 'shortName')  : null;
+        $this->container['fullName'] = isset($data['fullName']) ? $this->createData($data['fullName'], 'fullName')  : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $this->createData($data['firstName'], 'firstName')  : null;
+        $this->container['middleNames'] = isset($data['middleNames']) ? $this->createData($data['middleNames'], 'middleNames')  : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $this->createData($data['lastName'], 'lastName')  : null;
         $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
         $this->container['hometown'] = isset($data['hometown']) ? $this->createData($data['hometown'], 'hometown')  : null;
         $this->container['skills'] = isset($data['skills']) ? $this->createData($data['skills'], 'skills')  : null;
@@ -413,49 +413,49 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets max_sld_length
+     * Gets maxSldLength
      *
      * @return int
      */
     public function getMaxSldLength()
     {
-        return $this->container['max_sld_length'];
+        return $this->container['maxSldLength'];
     }
 
     /**
-     * Sets max_sld_length
+     * Sets maxSldLength
      *
-     * @param int $max_sld_length Maximum sld length for suggested domains
+     * @param int $maxSldLength Maximum sld length for suggested domains
      *
      * @return $this
      */
-    public function setMaxSldLength($max_sld_length)
+    public function setMaxSldLength($maxSldLength)
     {
-        $this->container['max_sld_length'] = $max_sld_length;
+        $this->container['maxSldLength'] = $maxSldLength;
 
         return $this;
     }
 
     /**
-     * Gets use_dash
+     * Gets useDash
      *
      * @return bool
      */
     public function getUseDash()
     {
-        return $this->container['use_dash'];
+        return $this->container['useDash'];
     }
 
     /**
-     * Sets use_dash
+     * Sets useDash
      *
-     * @param bool $use_dash Suggested domains with dash
+     * @param bool $useDash Suggested domains with dash
      *
      * @return $this
      */
-    public function setUseDash($use_dash)
+    public function setUseDash($useDash)
     {
-        $this->container['use_dash'] = $use_dash;
+        $this->container['useDash'] = $useDash;
 
         return $this;
     }
@@ -485,73 +485,73 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets online_presence_url
+     * Gets onlinePresenceUrl
      *
      * @return string
      */
     public function getOnlinePresenceUrl()
     {
-        return $this->container['online_presence_url'];
+        return $this->container['onlinePresenceUrl'];
     }
 
     /**
-     * Sets online_presence_url
+     * Sets onlinePresenceUrl
      *
-     * @param string $online_presence_url The primary online presence URL.
+     * @param string $onlinePresenceUrl The primary online presence URL.
      *
      * @return $this
      */
-    public function setOnlinePresenceUrl($online_presence_url)
+    public function setOnlinePresenceUrl($onlinePresenceUrl)
     {
-        $this->container['online_presence_url'] = $online_presence_url;
+        $this->container['onlinePresenceUrl'] = $onlinePresenceUrl;
 
         return $this;
     }
 
     /**
-     * Gets online_presence_title
+     * Gets onlinePresenceTitle
      *
      * @return string
      */
     public function getOnlinePresenceTitle()
     {
-        return $this->container['online_presence_title'];
+        return $this->container['onlinePresenceTitle'];
     }
 
     /**
-     * Sets online_presence_title
+     * Sets onlinePresenceTitle
      *
-     * @param string $online_presence_title The title of a website or a page.
+     * @param string $onlinePresenceTitle The title of a website or a page.
      *
      * @return $this
      */
-    public function setOnlinePresenceTitle($online_presence_title)
+    public function setOnlinePresenceTitle($onlinePresenceTitle)
     {
-        $this->container['online_presence_title'] = $online_presence_title;
+        $this->container['onlinePresenceTitle'] = $onlinePresenceTitle;
 
         return $this;
     }
 
     /**
-     * Gets related_urls
+     * Gets relatedUrls
      *
      * @return string[]
      */
     public function getRelatedUrls()
     {
-        return $this->container['related_urls'];
+        return $this->container['relatedUrls'];
     }
 
     /**
-     * Sets related_urls
+     * Sets relatedUrls
      *
-     * @param string[] $related_urls List of related URLs.
+     * @param string[] $relatedUrls List of related URLs.
      *
      * @return $this
      */
-    public function setRelatedUrls($related_urls)
+    public function setRelatedUrls($relatedUrls)
     {
-        $this->container['related_urls'] = $related_urls;
+        $this->container['relatedUrls'] = $relatedUrls;
 
         return $this;
     }
@@ -581,49 +581,49 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets online_presence_description
+     * Gets onlinePresenceDescription
      *
      * @return string
      */
     public function getOnlinePresenceDescription()
     {
-        return $this->container['online_presence_description'];
+        return $this->container['onlinePresenceDescription'];
     }
 
     /**
-     * Sets online_presence_description
+     * Sets onlinePresenceDescription
      *
-     * @param string $online_presence_description Description of the page.
+     * @param string $onlinePresenceDescription Description of the page.
      *
      * @return $this
      */
-    public function setOnlinePresenceDescription($online_presence_description)
+    public function setOnlinePresenceDescription($onlinePresenceDescription)
     {
-        $this->container['online_presence_description'] = $online_presence_description;
+        $this->container['onlinePresenceDescription'] = $onlinePresenceDescription;
 
         return $this;
     }
 
     /**
-     * Gets preferred_name
+     * Gets preferredName
      *
      * @return string
      */
     public function getPreferredName()
     {
-        return $this->container['preferred_name'];
+        return $this->container['preferredName'];
     }
 
     /**
-     * Sets preferred_name
+     * Sets preferredName
      *
-     * @param string $preferred_name Preferred name. This parameter value isused to create exact match suggestions inpreferred TLDs prioritizing them aboveother suggestions.
+     * @param string $preferredName Preferred name. This parameter value isused to create exact match suggestions inpreferred TLDs prioritizing them aboveother suggestions.
      *
      * @return $this
      */
-    public function setPreferredName($preferred_name)
+    public function setPreferredName($preferredName)
     {
-        $this->container['preferred_name'] = $preferred_name;
+        $this->container['preferredName'] = $preferredName;
 
         return $this;
     }
@@ -677,121 +677,121 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets short_name
+     * Gets shortName
      *
      * @return string
      */
     public function getShortName()
     {
-        return $this->container['short_name'];
+        return $this->container['shortName'];
     }
 
     /**
-     * Sets short_name
+     * Sets shortName
      *
-     * @param string $short_name Short name (nick name).
+     * @param string $shortName Short name (nick name).
      *
      * @return $this
      */
-    public function setShortName($short_name)
+    public function setShortName($shortName)
     {
-        $this->container['short_name'] = $short_name;
+        $this->container['shortName'] = $shortName;
 
         return $this;
     }
 
     /**
-     * Gets full_name
+     * Gets fullName
      *
      * @return string
      */
     public function getFullName()
     {
-        return $this->container['full_name'];
+        return $this->container['fullName'];
     }
 
     /**
-     * Sets full_name
+     * Sets fullName
      *
-     * @param string $full_name Full name.
+     * @param string $fullName Full name.
      *
      * @return $this
      */
-    public function setFullName($full_name)
+    public function setFullName($fullName)
     {
-        $this->container['full_name'] = $full_name;
+        $this->container['fullName'] = $fullName;
 
         return $this;
     }
 
     /**
-     * Gets first_name
+     * Gets firstName
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['first_name'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets first_name
+     * Sets firstName
      *
-     * @param string $first_name First name.
+     * @param string $firstName First name.
      *
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets middle_names
+     * Gets middleNames
      *
      * @return string[]
      */
     public function getMiddleNames()
     {
-        return $this->container['middle_names'];
+        return $this->container['middleNames'];
     }
 
     /**
-     * Sets middle_names
+     * Sets middleNames
      *
-     * @param string[] $middle_names List of middle names.
+     * @param string[] $middleNames List of middle names.
      *
      * @return $this
      */
-    public function setMiddleNames($middle_names)
+    public function setMiddleNames($middleNames)
     {
-        $this->container['middle_names'] = $middle_names;
+        $this->container['middleNames'] = $middleNames;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
+     * Sets lastName
      *
-     * @param string $last_name Last name.
+     * @param string $lastName Last name.
      *
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }

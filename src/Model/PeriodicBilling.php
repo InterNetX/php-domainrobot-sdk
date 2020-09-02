@@ -65,10 +65,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'object' => 'string',
         'description' => 'string',
         'period' => '\Domainrobot\Model\TimePeriod',
-        'article_type_label' => 'string',
-        'article_label' => 'string',
+        'articleTypeLabel' => 'string',
+        'articleLabel' => 'string',
         'item' => '\Domainrobot\Model\PeriodicBilling[]',
-        'business_case' => 'string'
+        'businessCase' => 'string'
     ];
 
     /**
@@ -85,10 +85,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'object' => null,
         'description' => null,
         'period' => null,
-        'article_type_label' => null,
-        'article_label' => null,
+        'articleTypeLabel' => null,
+        'articleLabel' => null,
         'item' => null,
-        'business_case' => null
+        'businessCase' => null
     ];
 
     /**
@@ -126,10 +126,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'object' => 'object',
         'description' => 'description',
         'period' => 'period',
-        'article_type_label' => 'articleTypeLabel',
-        'article_label' => 'articleLabel',
+        'articleTypeLabel' => 'articleTypeLabel',
+        'articleLabel' => 'articleLabel',
         'item' => 'item',
-        'business_case' => 'businessCase'
+        'businessCase' => 'businessCase'
     ];
 
     /**
@@ -146,10 +146,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'object' => 'setObject',
         'description' => 'setDescription',
         'period' => 'setPeriod',
-        'article_type_label' => 'setArticleTypeLabel',
-        'article_label' => 'setArticleLabel',
+        'articleTypeLabel' => 'setArticleTypeLabel',
+        'articleLabel' => 'setArticleLabel',
         'item' => 'setItem',
-        'business_case' => 'setBusinessCase'
+        'businessCase' => 'setBusinessCase'
     ];
 
     /**
@@ -166,10 +166,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'object' => 'getObject',
         'description' => 'getDescription',
         'period' => 'getPeriod',
-        'article_type_label' => 'getArticleTypeLabel',
-        'article_label' => 'getArticleLabel',
+        'articleTypeLabel' => 'getArticleTypeLabel',
+        'articleLabel' => 'getArticleLabel',
         'item' => 'getItem',
-        'business_case' => 'getBusinessCase'
+        'businessCase' => 'getBusinessCase'
     ];
 
     /**
@@ -240,10 +240,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         $this->container['object'] = isset($data['object']) ? $this->createData($data['object'], 'object')  : null;
         $this->container['description'] = isset($data['description']) ? $this->createData($data['description'], 'description')  : null;
         $this->container['period'] = isset($data['period']) ? $this->createData($data['period'], 'period')  : null;
-        $this->container['article_type_label'] = isset($data['article_type_label']) ? $this->createData($data['article_type_label'], 'article_type_label')  : null;
-        $this->container['article_label'] = isset($data['article_label']) ? $this->createData($data['article_label'], 'article_label')  : null;
+        $this->container['articleTypeLabel'] = isset($data['articleTypeLabel']) ? $this->createData($data['articleTypeLabel'], 'articleTypeLabel')  : null;
+        $this->container['articleLabel'] = isset($data['articleLabel']) ? $this->createData($data['articleLabel'], 'articleLabel')  : null;
         $this->container['item'] = isset($data['item']) ? $this->createData($data['item'], 'item')  : null;
-        $this->container['business_case'] = isset($data['business_case']) ? $this->createData($data['business_case'], 'business_case')  : null;
+        $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
     }
 
     /**
@@ -503,49 +503,49 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets article_type_label
+     * Gets articleTypeLabel
      *
      * @return string
      */
     public function getArticleTypeLabel()
     {
-        return $this->container['article_type_label'];
+        return $this->container['articleTypeLabel'];
     }
 
     /**
-     * Sets article_type_label
+     * Sets articleTypeLabel
      *
-     * @param string $article_type_label The article type label of the subscription, e.g. domain
+     * @param string $articleTypeLabel The article type label of the subscription, e.g. domain
      *
      * @return $this
      */
-    public function setArticleTypeLabel($article_type_label)
+    public function setArticleTypeLabel($articleTypeLabel)
     {
-        $this->container['article_type_label'] = $article_type_label;
+        $this->container['articleTypeLabel'] = $articleTypeLabel;
 
         return $this;
     }
 
     /**
-     * Gets article_label
+     * Gets articleLabel
      *
      * @return string
      */
     public function getArticleLabel()
     {
-        return $this->container['article_label'];
+        return $this->container['articleLabel'];
     }
 
     /**
-     * Sets article_label
+     * Sets articleLabel
      *
-     * @param string $article_label The article label of the subscription, e.g. backup_mx
+     * @param string $articleLabel The article label of the subscription, e.g. backup_mx
      *
      * @return $this
      */
-    public function setArticleLabel($article_label)
+    public function setArticleLabel($articleLabel)
     {
-        $this->container['article_label'] = $article_label;
+        $this->container['articleLabel'] = $articleLabel;
 
         return $this;
     }
@@ -575,25 +575,25 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets business_case
+     * Gets businessCase
      *
      * @return string
      */
     public function getBusinessCase()
     {
-        return $this->container['business_case'];
+        return $this->container['businessCase'];
     }
 
     /**
-     * Sets business_case
+     * Sets businessCase
      *
-     * @param string $business_case The businessCase of the subscription, e.g. create
+     * @param string $businessCase The businessCase of the subscription, e.g. create
      *
      * @return $this
      */
-    public function setBusinessCase($business_case)
+    public function setBusinessCase($businessCase)
     {
-        $this->container['business_case'] = $business_case;
+        $this->container['businessCase'] = $businessCase;
 
         return $this;
     }

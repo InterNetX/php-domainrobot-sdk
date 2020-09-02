@@ -62,7 +62,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'status' => '\Domainrobot\Model\JobStatusConstants',
-        'sub_status' => 'string',
+        'subStatus' => 'string',
         'execution' => '\DateTime',
         'id' => 'int'
     ];
@@ -78,7 +78,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'status' => null,
-        'sub_status' => null,
+        'subStatus' => null,
         'execution' => 'date-time',
         'id' => 'int64'
     ];
@@ -115,7 +115,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'status' => 'status',
-        'sub_status' => 'subStatus',
+        'subStatus' => 'subStatus',
         'execution' => 'execution',
         'id' => 'id'
     ];
@@ -131,7 +131,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'status' => 'setStatus',
-        'sub_status' => 'setSubStatus',
+        'subStatus' => 'setSubStatus',
         'execution' => 'setExecution',
         'id' => 'setId'
     ];
@@ -147,7 +147,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'status' => 'getStatus',
-        'sub_status' => 'getSubStatus',
+        'subStatus' => 'getSubStatus',
         'execution' => 'getExecution',
         'id' => 'getId'
     ];
@@ -217,7 +217,7 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['sub_status'] = isset($data['sub_status']) ? $this->createData($data['sub_status'], 'sub_status')  : null;
+        $this->container['subStatus'] = isset($data['subStatus']) ? $this->createData($data['subStatus'], 'subStatus')  : null;
         $this->container['execution'] = isset($data['execution']) ? $this->createData($data['execution'], 'execution')  : null;
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
     }
@@ -407,25 +407,25 @@ class WorkflowSpool implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets sub_status
+     * Gets subStatus
      *
      * @return string
      */
     public function getSubStatus()
     {
-        return $this->container['sub_status'];
+        return $this->container['subStatus'];
     }
 
     /**
-     * Sets sub_status
+     * Sets subStatus
      *
-     * @param string $sub_status The substatus of the job.
+     * @param string $subStatus The substatus of the job.
      *
      * @return $this
      */
-    public function setSubStatus($sub_status)
+    public function setSubStatus($subStatus)
     {
-        $this->container['sub_status'] = $sub_status;
+        $this->container['subStatus'] = $subStatus;
 
         return $this;
     }

@@ -57,7 +57,7 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'wallet_address' => 'string'
+        'walletAddress' => 'string'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'wallet_address' => null
+        'walletAddress' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'wallet_address' => 'walletAddress'
+        'walletAddress' => 'walletAddress'
     ];
 
     /**
@@ -105,7 +105,7 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'wallet_address' => 'setWalletAddress'
+        'walletAddress' => 'setWalletAddress'
     ];
 
     /**
@@ -114,7 +114,7 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'wallet_address' => 'getWalletAddress'
+        'walletAddress' => 'getWalletAddress'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['wallet_address'] = isset($data['wallet_address']) ? $this->createData($data['wallet_address'], 'wallet_address')  : null;
+        $this->container['walletAddress'] = isset($data['walletAddress']) ? $this->createData($data['walletAddress'], 'walletAddress')  : null;
     }
 
     /**
@@ -245,25 +245,25 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets wallet_address
+     * Gets walletAddress
      *
      * @return string
      */
     public function getWalletAddress()
     {
-        return $this->container['wallet_address'];
+        return $this->container['walletAddress'];
     }
 
     /**
-     * Sets wallet_address
+     * Sets walletAddress
      *
-     * @param string $wallet_address The .luxe wallet address
+     * @param string $walletAddress The .luxe wallet address
      *
      * @return $this
      */
-    public function setWalletAddress($wallet_address)
+    public function setWalletAddress($walletAddress)
     {
-        $this->container['wallet_address'] = $wallet_address;
+        $this->container['walletAddress'] = $walletAddress;
 
         return $this;
     }

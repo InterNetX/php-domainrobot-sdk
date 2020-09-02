@@ -57,14 +57,14 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'eligibility_id' => 'string',
-        'eligibility_id_type' => '\Domainrobot\Model\AuEligibilityIdTypeConstants',
-        'eligibility_name' => 'string',
-        'eligibility_type' => '\Domainrobot\Model\AuEligibilityTypeConstants',
-        'policy_reason' => 'int',
-        'registrant_id' => 'string',
-        'registrant_id_type' => '\Domainrobot\Model\AuRegistrantIdTypeConstants',
-        'registrant_name' => 'string'
+        'eligibilityId' => 'string',
+        'eligibilityIdType' => '\Domainrobot\Model\AuEligibilityIdTypeConstants',
+        'eligibilityName' => 'string',
+        'eligibilityType' => '\Domainrobot\Model\AuEligibilityTypeConstants',
+        'policyReason' => 'int',
+        'registrantId' => 'string',
+        'registrantIdType' => '\Domainrobot\Model\AuRegistrantIdTypeConstants',
+        'registrantName' => 'string'
     ];
 
     /**
@@ -73,14 +73,14 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'eligibility_id' => null,
-        'eligibility_id_type' => null,
-        'eligibility_name' => null,
-        'eligibility_type' => null,
-        'policy_reason' => 'int32',
-        'registrant_id' => null,
-        'registrant_id_type' => null,
-        'registrant_name' => null
+        'eligibilityId' => null,
+        'eligibilityIdType' => null,
+        'eligibilityName' => null,
+        'eligibilityType' => null,
+        'policyReason' => 'int32',
+        'registrantId' => null,
+        'registrantIdType' => null,
+        'registrantName' => null
     ];
 
     /**
@@ -110,14 +110,14 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'eligibility_id' => 'eligibilityId',
-        'eligibility_id_type' => 'eligibilityIdType',
-        'eligibility_name' => 'eligibilityName',
-        'eligibility_type' => 'eligibilityType',
-        'policy_reason' => 'policyReason',
-        'registrant_id' => 'registrantId',
-        'registrant_id_type' => 'registrantIdType',
-        'registrant_name' => 'registrantName'
+        'eligibilityId' => 'eligibilityId',
+        'eligibilityIdType' => 'eligibilityIdType',
+        'eligibilityName' => 'eligibilityName',
+        'eligibilityType' => 'eligibilityType',
+        'policyReason' => 'policyReason',
+        'registrantId' => 'registrantId',
+        'registrantIdType' => 'registrantIdType',
+        'registrantName' => 'registrantName'
     ];
 
     /**
@@ -126,14 +126,14 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'eligibility_id' => 'setEligibilityId',
-        'eligibility_id_type' => 'setEligibilityIdType',
-        'eligibility_name' => 'setEligibilityName',
-        'eligibility_type' => 'setEligibilityType',
-        'policy_reason' => 'setPolicyReason',
-        'registrant_id' => 'setRegistrantId',
-        'registrant_id_type' => 'setRegistrantIdType',
-        'registrant_name' => 'setRegistrantName'
+        'eligibilityId' => 'setEligibilityId',
+        'eligibilityIdType' => 'setEligibilityIdType',
+        'eligibilityName' => 'setEligibilityName',
+        'eligibilityType' => 'setEligibilityType',
+        'policyReason' => 'setPolicyReason',
+        'registrantId' => 'setRegistrantId',
+        'registrantIdType' => 'setRegistrantIdType',
+        'registrantName' => 'setRegistrantName'
     ];
 
     /**
@@ -142,14 +142,14 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'eligibility_id' => 'getEligibilityId',
-        'eligibility_id_type' => 'getEligibilityIdType',
-        'eligibility_name' => 'getEligibilityName',
-        'eligibility_type' => 'getEligibilityType',
-        'policy_reason' => 'getPolicyReason',
-        'registrant_id' => 'getRegistrantId',
-        'registrant_id_type' => 'getRegistrantIdType',
-        'registrant_name' => 'getRegistrantName'
+        'eligibilityId' => 'getEligibilityId',
+        'eligibilityIdType' => 'getEligibilityIdType',
+        'eligibilityName' => 'getEligibilityName',
+        'eligibilityType' => 'getEligibilityType',
+        'policyReason' => 'getPolicyReason',
+        'registrantId' => 'getRegistrantId',
+        'registrantIdType' => 'getRegistrantIdType',
+        'registrantName' => 'getRegistrantName'
     ];
 
     /**
@@ -212,14 +212,14 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['eligibility_id'] = isset($data['eligibility_id']) ? $this->createData($data['eligibility_id'], 'eligibility_id')  : null;
-        $this->container['eligibility_id_type'] = isset($data['eligibility_id_type']) ? $this->createData($data['eligibility_id_type'], 'eligibility_id_type')  : null;
-        $this->container['eligibility_name'] = isset($data['eligibility_name']) ? $this->createData($data['eligibility_name'], 'eligibility_name')  : null;
-        $this->container['eligibility_type'] = isset($data['eligibility_type']) ? $this->createData($data['eligibility_type'], 'eligibility_type')  : null;
-        $this->container['policy_reason'] = isset($data['policy_reason']) ? $this->createData($data['policy_reason'], 'policy_reason')  : null;
-        $this->container['registrant_id'] = isset($data['registrant_id']) ? $this->createData($data['registrant_id'], 'registrant_id')  : null;
-        $this->container['registrant_id_type'] = isset($data['registrant_id_type']) ? $this->createData($data['registrant_id_type'], 'registrant_id_type')  : null;
-        $this->container['registrant_name'] = isset($data['registrant_name']) ? $this->createData($data['registrant_name'], 'registrant_name')  : null;
+        $this->container['eligibilityId'] = isset($data['eligibilityId']) ? $this->createData($data['eligibilityId'], 'eligibilityId')  : null;
+        $this->container['eligibilityIdType'] = isset($data['eligibilityIdType']) ? $this->createData($data['eligibilityIdType'], 'eligibilityIdType')  : null;
+        $this->container['eligibilityName'] = isset($data['eligibilityName']) ? $this->createData($data['eligibilityName'], 'eligibilityName')  : null;
+        $this->container['eligibilityType'] = isset($data['eligibilityType']) ? $this->createData($data['eligibilityType'], 'eligibilityType')  : null;
+        $this->container['policyReason'] = isset($data['policyReason']) ? $this->createData($data['policyReason'], 'policyReason')  : null;
+        $this->container['registrantId'] = isset($data['registrantId']) ? $this->createData($data['registrantId'], 'registrantId')  : null;
+        $this->container['registrantIdType'] = isset($data['registrantIdType']) ? $this->createData($data['registrantIdType'], 'registrantIdType')  : null;
+        $this->container['registrantName'] = isset($data['registrantName']) ? $this->createData($data['registrantName'], 'registrantName')  : null;
     }
 
     /**
@@ -287,193 +287,193 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets eligibility_id
+     * Gets eligibilityId
      *
      * @return string
      */
     public function getEligibilityId()
     {
-        return $this->container['eligibility_id'];
+        return $this->container['eligibilityId'];
     }
 
     /**
-     * Sets eligibility_id
+     * Sets eligibilityId
      *
-     * @param string $eligibility_id The corresponding ID number for the eligibility name if applicable, if in doubt just use the same details as your Registrant ID.
+     * @param string $eligibilityId The corresponding ID number for the eligibility name if applicable, if in doubt just use the same details as your Registrant ID.
      *
      * @return $this
      */
-    public function setEligibilityId($eligibility_id)
+    public function setEligibilityId($eligibilityId)
     {
-        $this->container['eligibility_id'] = $eligibility_id;
+        $this->container['eligibilityId'] = $eligibilityId;
 
         return $this;
     }
 
     /**
-     * Gets eligibility_id_type
+     * Gets eligibilityIdType
      *
      * @return \Domainrobot\Model\AuEligibilityIdTypeConstants
      */
     public function getEligibilityIdType()
     {
-        return $this->container['eligibility_id_type'];
+        return $this->container['eligibilityIdType'];
     }
 
     /**
-     * Sets eligibility_id_type
+     * Sets eligibilityIdType
      *
-     * @param \Domainrobot\Model\AuEligibilityIdTypeConstants $eligibility_id_type The type of Eligibility ID.
+     * @param \Domainrobot\Model\AuEligibilityIdTypeConstants $eligibilityIdType The type of Eligibility ID.
      *
      * @return $this
      */
-    public function setEligibilityIdType($eligibility_id_type)
+    public function setEligibilityIdType($eligibilityIdType)
     {
-        $this->container['eligibility_id_type'] = $eligibility_id_type;
+        $this->container['eligibilityIdType'] = $eligibilityIdType;
 
         return $this;
     }
 
     /**
-     * Gets eligibility_name
+     * Gets eligibilityName
      *
      * @return string
      */
     public function getEligibilityName()
     {
-        return $this->container['eligibility_name'];
+        return $this->container['eligibilityName'];
     }
 
     /**
-     * Sets eligibility_name
+     * Sets eligibilityName
      *
-     * @param string $eligibility_name This field is usually optional and whether it is required is determined by your policy reason for the domain registration, if in doubt just use the same details as your Registrant Name.
+     * @param string $eligibilityName This field is usually optional and whether it is required is determined by your policy reason for the domain registration, if in doubt just use the same details as your Registrant Name.
      *
      * @return $this
      */
-    public function setEligibilityName($eligibility_name)
+    public function setEligibilityName($eligibilityName)
     {
-        $this->container['eligibility_name'] = $eligibility_name;
+        $this->container['eligibilityName'] = $eligibilityName;
 
         return $this;
     }
 
     /**
-     * Gets eligibility_type
+     * Gets eligibilityType
      *
      * @return \Domainrobot\Model\AuEligibilityTypeConstants
      */
     public function getEligibilityType()
     {
-        return $this->container['eligibility_type'];
+        return $this->container['eligibilityType'];
     }
 
     /**
-     * Sets eligibility_type
+     * Sets eligibilityType
      *
-     * @param \Domainrobot\Model\AuEligibilityTypeConstants $eligibility_type The type of entity that the registrant is.
+     * @param \Domainrobot\Model\AuEligibilityTypeConstants $eligibilityType The type of entity that the registrant is.
      *
      * @return $this
      */
-    public function setEligibilityType($eligibility_type)
+    public function setEligibilityType($eligibilityType)
     {
-        $this->container['eligibility_type'] = $eligibility_type;
+        $this->container['eligibilityType'] = $eligibilityType;
 
         return $this;
     }
 
     /**
-     * Gets policy_reason
+     * Gets policyReason
      *
      * @return int
      */
     public function getPolicyReason()
     {
-        return $this->container['policy_reason'];
+        return $this->container['policyReason'];
     }
 
     /**
-     * Sets policy_reason
+     * Sets policyReason
      *
-     * @param int $policy_reason Reason for eligibility.
+     * @param int $policyReason Reason for eligibility.
      *
      * @return $this
      */
-    public function setPolicyReason($policy_reason)
+    public function setPolicyReason($policyReason)
     {
-        $this->container['policy_reason'] = $policy_reason;
+        $this->container['policyReason'] = $policyReason;
 
         return $this;
     }
 
     /**
-     * Gets registrant_id
+     * Gets registrantId
      *
      * @return string
      */
     public function getRegistrantId()
     {
-        return $this->container['registrant_id'];
+        return $this->container['registrantId'];
     }
 
     /**
-     * Sets registrant_id
+     * Sets registrantId
      *
-     * @param string $registrant_id Australian Business Number or Registered Business Number.
+     * @param string $registrantId Australian Business Number or Registered Business Number.
      *
      * @return $this
      */
-    public function setRegistrantId($registrant_id)
+    public function setRegistrantId($registrantId)
     {
-        $this->container['registrant_id'] = $registrant_id;
+        $this->container['registrantId'] = $registrantId;
 
         return $this;
     }
 
     /**
-     * Gets registrant_id_type
+     * Gets registrantIdType
      *
      * @return \Domainrobot\Model\AuRegistrantIdTypeConstants
      */
     public function getRegistrantIdType()
     {
-        return $this->container['registrant_id_type'];
+        return $this->container['registrantIdType'];
     }
 
     /**
-     * Sets registrant_id_type
+     * Sets registrantIdType
      *
-     * @param \Domainrobot\Model\AuRegistrantIdTypeConstants $registrant_id_type Concerns the Registrant ID which you have selected in the Registrant ID form field.
+     * @param \Domainrobot\Model\AuRegistrantIdTypeConstants $registrantIdType Concerns the Registrant ID which you have selected in the Registrant ID form field.
      *
      * @return $this
      */
-    public function setRegistrantIdType($registrant_id_type)
+    public function setRegistrantIdType($registrantIdType)
     {
-        $this->container['registrant_id_type'] = $registrant_id_type;
+        $this->container['registrantIdType'] = $registrantIdType;
 
         return $this;
     }
 
     /**
-     * Gets registrant_name
+     * Gets registrantName
      *
      * @return string
      */
     public function getRegistrantName()
     {
-        return $this->container['registrant_name'];
+        return $this->container['registrantName'];
     }
 
     /**
-     * Sets registrant_name
+     * Sets registrantName
      *
-     * @param string $registrant_name The registrants name.
+     * @param string $registrantName The registrants name.
      *
      * @return $this
      */
-    public function setRegistrantName($registrant_name)
+    public function setRegistrantName($registrantName)
     {
-        $this->container['registrant_name'] = $registrant_name;
+        $this->container['registrantName'] = $registrantName;
 
         return $this;
     }

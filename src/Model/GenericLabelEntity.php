@@ -61,7 +61,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'label' => 'string',
         'name' => 'string',
-        'package_label' => 'string'
+        'packageLabel' => 'string'
     ];
 
     /**
@@ -74,7 +74,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'label' => null,
         'name' => null,
-        'package_label' => null
+        'packageLabel' => null
     ];
 
     /**
@@ -108,7 +108,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'label' => 'label',
         'name' => 'name',
-        'package_label' => 'packageLabel'
+        'packageLabel' => 'packageLabel'
     ];
 
     /**
@@ -121,7 +121,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'label' => 'setLabel',
         'name' => 'setName',
-        'package_label' => 'setPackageLabel'
+        'packageLabel' => 'setPackageLabel'
     ];
 
     /**
@@ -134,7 +134,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'label' => 'getLabel',
         'name' => 'getName',
-        'package_label' => 'getPackageLabel'
+        'packageLabel' => 'getPackageLabel'
     ];
 
     /**
@@ -201,7 +201,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['package_label'] = isset($data['package_label']) ? $this->createData($data['package_label'], 'package_label')  : null;
+        $this->container['packageLabel'] = isset($data['packageLabel']) ? $this->createData($data['packageLabel'], 'packageLabel')  : null;
     }
 
     /**
@@ -368,25 +368,25 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets package_label
+     * Gets packageLabel
      *
      * @return string
      */
     public function getPackageLabel()
     {
-        return $this->container['package_label'];
+        return $this->container['packageLabel'];
     }
 
     /**
-     * Sets package_label
+     * Sets packageLabel
      *
-     * @param string $package_label The related package label of the contract
+     * @param string $packageLabel The related package label of the contract
      *
      * @return $this
      */
-    public function setPackageLabel($package_label)
+    public function setPackageLabel($packageLabel)
     {
-        $this->container['package_label'] = $package_label;
+        $this->container['packageLabel'] = $packageLabel;
 
         return $this;
     }

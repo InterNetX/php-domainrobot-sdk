@@ -57,7 +57,7 @@ class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'per_user' => 'int',
+        'perUser' => 'int',
         'codeltaunty' => 'string'
     ];
 
@@ -67,7 +67,7 @@ class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'per_user' => null,
+        'perUser' => null,
         'codeltaunty' => null
     ];
 
@@ -98,7 +98,7 @@ class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'per_user' => 'perUser',
+        'perUser' => 'perUser',
         'codeltaunty' => 'codeltaunty'
     ];
 
@@ -108,7 +108,7 @@ class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'per_user' => 'setPerUser',
+        'perUser' => 'setPerUser',
         'codeltaunty' => 'setCodeltaunty'
     ];
 
@@ -118,7 +118,7 @@ class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'per_user' => 'getPerUser',
+        'perUser' => 'getPerUser',
         'codeltaunty' => 'getCodeltaunty'
     ];
 
@@ -182,7 +182,7 @@ class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['per_user'] = isset($data['per_user']) ? $this->createData($data['per_user'], 'per_user')  : null;
+        $this->container['perUser'] = isset($data['perUser']) ? $this->createData($data['perUser'], 'perUser')  : null;
         $this->container['codeltaunty'] = isset($data['codeltaunty']) ? $this->createData($data['codeltaunty'], 'codeltaunty')  : null;
     }
 
@@ -251,25 +251,25 @@ class AlexaSiteInfoPageViewsPerDay implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets per_user
+     * Gets perUser
      *
      * @return int
      */
     public function getPerUser()
     {
-        return $this->container['per_user'];
+        return $this->container['perUser'];
     }
 
     /**
-     * Sets per_user
+     * Sets perUser
      *
-     * @param int $per_user per_user
+     * @param int $perUser perUser
      *
      * @return $this
      */
-    public function setPerUser($per_user)
+    public function setPerUser($perUser)
     {
-        $this->container['per_user'] = $per_user;
+        $this->container['perUser'] = $perUser;
 
         return $this;
     }

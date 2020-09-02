@@ -57,10 +57,10 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'external_reference' => 'string',
-        'not_after' => '\DateTime',
+        'externalReference' => 'string',
+        'notAfter' => '\DateTime',
         'confirmed' => '\DateTime',
-        'confirm_ip' => 'string'
+        'confirmIp' => 'string'
     ];
 
     /**
@@ -69,10 +69,10 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'external_reference' => null,
-        'not_after' => 'date-time',
+        'externalReference' => null,
+        'notAfter' => 'date-time',
         'confirmed' => 'date-time',
-        'confirm_ip' => null
+        'confirmIp' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_reference' => 'externalReference',
-        'not_after' => 'notAfter',
+        'externalReference' => 'externalReference',
+        'notAfter' => 'notAfter',
         'confirmed' => 'confirmed',
-        'confirm_ip' => 'confirmIp'
+        'confirmIp' => 'confirmIp'
     ];
 
     /**
@@ -114,10 +114,10 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'external_reference' => 'setExternalReference',
-        'not_after' => 'setNotAfter',
+        'externalReference' => 'setExternalReference',
+        'notAfter' => 'setNotAfter',
         'confirmed' => 'setConfirmed',
-        'confirm_ip' => 'setConfirmIp'
+        'confirmIp' => 'setConfirmIp'
     ];
 
     /**
@@ -126,10 +126,10 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'external_reference' => 'getExternalReference',
-        'not_after' => 'getNotAfter',
+        'externalReference' => 'getExternalReference',
+        'notAfter' => 'getNotAfter',
         'confirmed' => 'getConfirmed',
-        'confirm_ip' => 'getConfirmIp'
+        'confirmIp' => 'getConfirmIp'
     ];
 
     /**
@@ -192,10 +192,10 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['external_reference'] = isset($data['external_reference']) ? $this->createData($data['external_reference'], 'external_reference')  : null;
-        $this->container['not_after'] = isset($data['not_after']) ? $this->createData($data['not_after'], 'not_after')  : null;
+        $this->container['externalReference'] = isset($data['externalReference']) ? $this->createData($data['externalReference'], 'externalReference')  : null;
+        $this->container['notAfter'] = isset($data['notAfter']) ? $this->createData($data['notAfter'], 'notAfter')  : null;
         $this->container['confirmed'] = isset($data['confirmed']) ? $this->createData($data['confirmed'], 'confirmed')  : null;
-        $this->container['confirm_ip'] = isset($data['confirm_ip']) ? $this->createData($data['confirm_ip'], 'confirm_ip')  : null;
+        $this->container['confirmIp'] = isset($data['confirmIp']) ? $this->createData($data['confirmIp'], 'confirmIp')  : null;
     }
 
     /**
@@ -263,49 +263,49 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets external_reference
+     * Gets externalReference
      *
      * @return string
      */
     public function getExternalReference()
     {
-        return $this->container['external_reference'];
+        return $this->container['externalReference'];
     }
 
     /**
-     * Sets external_reference
+     * Sets externalReference
      *
-     * @param string $external_reference The external refernce
+     * @param string $externalReference The external refernce
      *
      * @return $this
      */
-    public function setExternalReference($external_reference)
+    public function setExternalReference($externalReference)
     {
-        $this->container['external_reference'] = $external_reference;
+        $this->container['externalReference'] = $externalReference;
 
         return $this;
     }
 
     /**
-     * Gets not_after
+     * Gets notAfter
      *
      * @return \DateTime
      */
     public function getNotAfter()
     {
-        return $this->container['not_after'];
+        return $this->container['notAfter'];
     }
 
     /**
-     * Sets not_after
+     * Sets notAfter
      *
-     * @param \DateTime $not_after Date after the claim expires
+     * @param \DateTime $notAfter Date after the claim expires
      *
      * @return $this
      */
-    public function setNotAfter($not_after)
+    public function setNotAfter($notAfter)
     {
-        $this->container['not_after'] = $not_after;
+        $this->container['notAfter'] = $notAfter;
 
         return $this;
     }
@@ -335,25 +335,25 @@ class DomainTmchClaimNoticeExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets confirm_ip
+     * Gets confirmIp
      *
      * @return string
      */
     public function getConfirmIp()
     {
-        return $this->container['confirm_ip'];
+        return $this->container['confirmIp'];
     }
 
     /**
-     * Sets confirm_ip
+     * Sets confirmIp
      *
-     * @param string $confirm_ip The confirm ip
+     * @param string $confirmIp The confirm ip
      *
      * @return $this
      */
-    public function setConfirmIp($confirm_ip)
+    public function setConfirmIp($confirmIp)
     {
-        $this->container['confirm_ip'] = $confirm_ip;
+        $this->container['confirmIp'] = $confirmIp;
 
         return $this;
     }

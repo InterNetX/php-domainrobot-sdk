@@ -58,22 +58,22 @@ class Claims implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'given_name' => 'string',
-        'family_name' => 'string',
-        'middle_name' => 'string',
+        'givenName' => 'string',
+        'familyName' => 'string',
+        'middleName' => 'string',
         'nickname' => 'string',
-        'preferred_username' => 'string',
+        'preferredUsername' => 'string',
         'profile' => '\Domainrobot\Model\UrlEntity',
         'picture' => '\Domainrobot\Model\UrlEntity',
         'website' => '\Domainrobot\Model\UrlEntity',
         'email' => 'string',
-        'email_verified' => 'bool',
+        'emailVerified' => 'bool',
         'gender' => '\Domainrobot\Model\GenderConstants',
         'birthdate' => '\DateTime',
         'zoneinfo' => 'string',
         'locale' => 'string',
-        'phone_number' => '\Domainrobot\Model\Phone',
-        'phone_number_verified' => 'bool',
+        'phoneNumber' => '\Domainrobot\Model\Phone',
+        'phoneNumberVerified' => 'bool',
         'address' => '\Domainrobot\Model\AddressClaim',
         'organization' => 'string'
     ];
@@ -85,22 +85,22 @@ class Claims implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'given_name' => null,
-        'family_name' => null,
-        'middle_name' => null,
+        'givenName' => null,
+        'familyName' => null,
+        'middleName' => null,
         'nickname' => null,
-        'preferred_username' => null,
+        'preferredUsername' => null,
         'profile' => null,
         'picture' => null,
         'website' => null,
         'email' => null,
-        'email_verified' => null,
+        'emailVerified' => null,
         'gender' => null,
         'birthdate' => 'date-time',
         'zoneinfo' => null,
         'locale' => null,
-        'phone_number' => null,
-        'phone_number_verified' => null,
+        'phoneNumber' => null,
+        'phoneNumberVerified' => null,
         'address' => null,
         'organization' => null
     ];
@@ -133,22 +133,22 @@ class Claims implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'given_name' => 'given_name',
-        'family_name' => 'family_name',
-        'middle_name' => 'middle_name',
+        'givenName' => 'given_name',
+        'familyName' => 'family_name',
+        'middleName' => 'middle_name',
         'nickname' => 'nickname',
-        'preferred_username' => 'preferred_username',
+        'preferredUsername' => 'preferred_username',
         'profile' => 'profile',
         'picture' => 'picture',
         'website' => 'website',
         'email' => 'email',
-        'email_verified' => 'email_verified',
+        'emailVerified' => 'email_verified',
         'gender' => 'gender',
         'birthdate' => 'birthdate',
         'zoneinfo' => 'zoneinfo',
         'locale' => 'locale',
-        'phone_number' => 'phone_number',
-        'phone_number_verified' => 'phone_number_verified',
+        'phoneNumber' => 'phone_number',
+        'phoneNumberVerified' => 'phone_number_verified',
         'address' => 'address',
         'organization' => 'organization'
     ];
@@ -160,22 +160,22 @@ class Claims implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'given_name' => 'setGivenName',
-        'family_name' => 'setFamilyName',
-        'middle_name' => 'setMiddleName',
+        'givenName' => 'setGivenName',
+        'familyName' => 'setFamilyName',
+        'middleName' => 'setMiddleName',
         'nickname' => 'setNickname',
-        'preferred_username' => 'setPreferredUsername',
+        'preferredUsername' => 'setPreferredUsername',
         'profile' => 'setProfile',
         'picture' => 'setPicture',
         'website' => 'setWebsite',
         'email' => 'setEmail',
-        'email_verified' => 'setEmailVerified',
+        'emailVerified' => 'setEmailVerified',
         'gender' => 'setGender',
         'birthdate' => 'setBirthdate',
         'zoneinfo' => 'setZoneinfo',
         'locale' => 'setLocale',
-        'phone_number' => 'setPhoneNumber',
-        'phone_number_verified' => 'setPhoneNumberVerified',
+        'phoneNumber' => 'setPhoneNumber',
+        'phoneNumberVerified' => 'setPhoneNumberVerified',
         'address' => 'setAddress',
         'organization' => 'setOrganization'
     ];
@@ -187,22 +187,22 @@ class Claims implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'given_name' => 'getGivenName',
-        'family_name' => 'getFamilyName',
-        'middle_name' => 'getMiddleName',
+        'givenName' => 'getGivenName',
+        'familyName' => 'getFamilyName',
+        'middleName' => 'getMiddleName',
         'nickname' => 'getNickname',
-        'preferred_username' => 'getPreferredUsername',
+        'preferredUsername' => 'getPreferredUsername',
         'profile' => 'getProfile',
         'picture' => 'getPicture',
         'website' => 'getWebsite',
         'email' => 'getEmail',
-        'email_verified' => 'getEmailVerified',
+        'emailVerified' => 'getEmailVerified',
         'gender' => 'getGender',
         'birthdate' => 'getBirthdate',
         'zoneinfo' => 'getZoneinfo',
         'locale' => 'getLocale',
-        'phone_number' => 'getPhoneNumber',
-        'phone_number_verified' => 'getPhoneNumberVerified',
+        'phoneNumber' => 'getPhoneNumber',
+        'phoneNumberVerified' => 'getPhoneNumberVerified',
         'address' => 'getAddress',
         'organization' => 'getOrganization'
     ];
@@ -268,22 +268,22 @@ class Claims implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['given_name'] = isset($data['given_name']) ? $this->createData($data['given_name'], 'given_name')  : null;
-        $this->container['family_name'] = isset($data['family_name']) ? $this->createData($data['family_name'], 'family_name')  : null;
-        $this->container['middle_name'] = isset($data['middle_name']) ? $this->createData($data['middle_name'], 'middle_name')  : null;
+        $this->container['givenName'] = isset($data['givenName']) ? $this->createData($data['givenName'], 'givenName')  : null;
+        $this->container['familyName'] = isset($data['familyName']) ? $this->createData($data['familyName'], 'familyName')  : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $this->createData($data['middleName'], 'middleName')  : null;
         $this->container['nickname'] = isset($data['nickname']) ? $this->createData($data['nickname'], 'nickname')  : null;
-        $this->container['preferred_username'] = isset($data['preferred_username']) ? $this->createData($data['preferred_username'], 'preferred_username')  : null;
+        $this->container['preferredUsername'] = isset($data['preferredUsername']) ? $this->createData($data['preferredUsername'], 'preferredUsername')  : null;
         $this->container['profile'] = isset($data['profile']) ? $this->createData($data['profile'], 'profile')  : null;
         $this->container['picture'] = isset($data['picture']) ? $this->createData($data['picture'], 'picture')  : null;
         $this->container['website'] = isset($data['website']) ? $this->createData($data['website'], 'website')  : null;
         $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
-        $this->container['email_verified'] = isset($data['email_verified']) ? $this->createData($data['email_verified'], 'email_verified')  : null;
+        $this->container['emailVerified'] = isset($data['emailVerified']) ? $this->createData($data['emailVerified'], 'emailVerified')  : null;
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
         $this->container['birthdate'] = isset($data['birthdate']) ? $this->createData($data['birthdate'], 'birthdate')  : null;
         $this->container['zoneinfo'] = isset($data['zoneinfo']) ? $this->createData($data['zoneinfo'], 'zoneinfo')  : null;
         $this->container['locale'] = isset($data['locale']) ? $this->createData($data['locale'], 'locale')  : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $this->createData($data['phone_number'], 'phone_number')  : null;
-        $this->container['phone_number_verified'] = isset($data['phone_number_verified']) ? $this->createData($data['phone_number_verified'], 'phone_number_verified')  : null;
+        $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $this->createData($data['phoneNumber'], 'phoneNumber')  : null;
+        $this->container['phoneNumberVerified'] = isset($data['phoneNumberVerified']) ? $this->createData($data['phoneNumberVerified'], 'phoneNumberVerified')  : null;
         $this->container['address'] = isset($data['address']) ? $this->createData($data['address'], 'address')  : null;
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
     }
@@ -377,73 +377,73 @@ class Claims implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets given_name
+     * Gets givenName
      *
      * @return string
      */
     public function getGivenName()
     {
-        return $this->container['given_name'];
+        return $this->container['givenName'];
     }
 
     /**
-     * Sets given_name
+     * Sets givenName
      *
-     * @param string $given_name Given name(s) or first name(s) of the End-User. Note that in some cultures, people can have multiple given names; all can be present, with the names being separated by space characters.
+     * @param string $givenName Given name(s) or first name(s) of the End-User. Note that in some cultures, people can have multiple given names; all can be present, with the names being separated by space characters.
      *
      * @return $this
      */
-    public function setGivenName($given_name)
+    public function setGivenName($givenName)
     {
-        $this->container['given_name'] = $given_name;
+        $this->container['givenName'] = $givenName;
 
         return $this;
     }
 
     /**
-     * Gets family_name
+     * Gets familyName
      *
      * @return string
      */
     public function getFamilyName()
     {
-        return $this->container['family_name'];
+        return $this->container['familyName'];
     }
 
     /**
-     * Sets family_name
+     * Sets familyName
      *
-     * @param string $family_name Surname(s) or last name(s) of the End-User. Note that in some cultures, people can have multiple family names or no family name; all can be present, with the names being separated by space characters
+     * @param string $familyName Surname(s) or last name(s) of the End-User. Note that in some cultures, people can have multiple family names or no family name; all can be present, with the names being separated by space characters
      *
      * @return $this
      */
-    public function setFamilyName($family_name)
+    public function setFamilyName($familyName)
     {
-        $this->container['family_name'] = $family_name;
+        $this->container['familyName'] = $familyName;
 
         return $this;
     }
 
     /**
-     * Gets middle_name
+     * Gets middleName
      *
      * @return string
      */
     public function getMiddleName()
     {
-        return $this->container['middle_name'];
+        return $this->container['middleName'];
     }
 
     /**
-     * Sets middle_name
+     * Sets middleName
      *
-     * @param string $middle_name Middle name(s) of the End-User. Note that in some cultures, people can have multiple middle names; all can be present, with the names being separated by space characters. Also note that in some cultures, middle names are not used.
+     * @param string $middleName Middle name(s) of the End-User. Note that in some cultures, people can have multiple middle names; all can be present, with the names being separated by space characters. Also note that in some cultures, middle names are not used.
      *
      * @return $this
      */
-    public function setMiddleName($middle_name)
+    public function setMiddleName($middleName)
     {
-        $this->container['middle_name'] = $middle_name;
+        $this->container['middleName'] = $middleName;
 
         return $this;
     }
@@ -473,25 +473,25 @@ class Claims implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets preferred_username
+     * Gets preferredUsername
      *
      * @return string
      */
     public function getPreferredUsername()
     {
-        return $this->container['preferred_username'];
+        return $this->container['preferredUsername'];
     }
 
     /**
-     * Sets preferred_username
+     * Sets preferredUsername
      *
-     * @param string $preferred_username Shorthand name by which the End-User wishes to be referred to at the RP, such as janedoe or j.doe. This value MAY be any valid JSON string including special characters such as @, /, or whitespace
+     * @param string $preferredUsername Shorthand name by which the End-User wishes to be referred to at the RP, such as janedoe or j.doe. This value MAY be any valid JSON string including special characters such as @, /, or whitespace
      *
      * @return $this
      */
-    public function setPreferredUsername($preferred_username)
+    public function setPreferredUsername($preferredUsername)
     {
-        $this->container['preferred_username'] = $preferred_username;
+        $this->container['preferredUsername'] = $preferredUsername;
 
         return $this;
     }
@@ -593,25 +593,25 @@ class Claims implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets email_verified
+     * Gets emailVerified
      *
      * @return bool
      */
     public function getEmailVerified()
     {
-        return $this->container['email_verified'];
+        return $this->container['emailVerified'];
     }
 
     /**
-     * Sets email_verified
+     * Sets emailVerified
      *
-     * @param bool $email_verified True if the End-User's e-mail address has been verified; otherwise false.
+     * @param bool $emailVerified True if the End-User's e-mail address has been verified; otherwise false.
      *
      * @return $this
      */
-    public function setEmailVerified($email_verified)
+    public function setEmailVerified($emailVerified)
     {
-        $this->container['email_verified'] = $email_verified;
+        $this->container['emailVerified'] = $emailVerified;
 
         return $this;
     }
@@ -713,49 +713,49 @@ class Claims implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets phone_number
+     * Gets phoneNumber
      *
      * @return \Domainrobot\Model\Phone
      */
     public function getPhoneNumber()
     {
-        return $this->container['phone_number'];
+        return $this->container['phoneNumber'];
     }
 
     /**
-     * Sets phone_number
+     * Sets phoneNumber
      *
-     * @param \Domainrobot\Model\Phone $phone_number End-User's preferred telephone number. E.164 [E.164] is RECOMMENDED as the format of this Claim, for example, +1 (425) 555-1212 or +56 (2) 687 2400. .
+     * @param \Domainrobot\Model\Phone $phoneNumber End-User's preferred telephone number. E.164 [E.164] is RECOMMENDED as the format of this Claim, for example, +1 (425) 555-1212 or +56 (2) 687 2400. .
      *
      * @return $this
      */
-    public function setPhoneNumber($phone_number)
+    public function setPhoneNumber($phoneNumber)
     {
-        $this->container['phone_number'] = $phone_number;
+        $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
     }
 
     /**
-     * Gets phone_number_verified
+     * Gets phoneNumberVerified
      *
      * @return bool
      */
     public function getPhoneNumberVerified()
     {
-        return $this->container['phone_number_verified'];
+        return $this->container['phoneNumberVerified'];
     }
 
     /**
-     * Sets phone_number_verified
+     * Sets phoneNumberVerified
      *
-     * @param bool $phone_number_verified True if the End-User's phne number has been verified; otherwise false.
+     * @param bool $phoneNumberVerified True if the End-User's phne number has been verified; otherwise false.
      *
      * @return $this
      */
-    public function setPhoneNumberVerified($phone_number_verified)
+    public function setPhoneNumberVerified($phoneNumberVerified)
     {
-        $this->container['phone_number_verified'] = $phone_number_verified;
+        $this->container['phoneNumberVerified'] = $phoneNumberVerified;
 
         return $this;
     }

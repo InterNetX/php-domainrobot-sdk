@@ -61,13 +61,13 @@ class OTPAuth implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
-        'protocol_type' => '\Domainrobot\Model\ProtocolTypeConstants',
+        'protocolType' => '\Domainrobot\Model\ProtocolTypeConstants',
         'algorithm' => '\Domainrobot\Model\CryptoFormatConstants',
         'timeout' => 'int',
         'digits' => 'int',
         'secret' => 'string',
         'tokens' => 'string[]',
-        'qr_code' => '\Domainrobot\Model\BasicDocument'
+        'qrCode' => '\Domainrobot\Model\BasicDocument'
     ];
 
     /**
@@ -80,13 +80,13 @@ class OTPAuth implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'owner' => null,
         'updater' => null,
-        'protocol_type' => null,
+        'protocolType' => null,
         'algorithm' => null,
         'timeout' => 'int32',
         'digits' => 'int32',
         'secret' => null,
         'tokens' => null,
-        'qr_code' => null
+        'qrCode' => null
     ];
 
     /**
@@ -120,13 +120,13 @@ class OTPAuth implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'owner' => 'owner',
         'updater' => 'updater',
-        'protocol_type' => 'protocolType',
+        'protocolType' => 'protocolType',
         'algorithm' => 'algorithm',
         'timeout' => 'timeout',
         'digits' => 'digits',
         'secret' => 'secret',
         'tokens' => 'tokens',
-        'qr_code' => 'qrCode'
+        'qrCode' => 'qrCode'
     ];
 
     /**
@@ -139,13 +139,13 @@ class OTPAuth implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
-        'protocol_type' => 'setProtocolType',
+        'protocolType' => 'setProtocolType',
         'algorithm' => 'setAlgorithm',
         'timeout' => 'setTimeout',
         'digits' => 'setDigits',
         'secret' => 'setSecret',
         'tokens' => 'setTokens',
-        'qr_code' => 'setQrCode'
+        'qrCode' => 'setQrCode'
     ];
 
     /**
@@ -158,13 +158,13 @@ class OTPAuth implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
-        'protocol_type' => 'getProtocolType',
+        'protocolType' => 'getProtocolType',
         'algorithm' => 'getAlgorithm',
         'timeout' => 'getTimeout',
         'digits' => 'getDigits',
         'secret' => 'getSecret',
         'tokens' => 'getTokens',
-        'qr_code' => 'getQrCode'
+        'qrCode' => 'getQrCode'
     ];
 
     /**
@@ -231,13 +231,13 @@ class OTPAuth implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['protocol_type'] = isset($data['protocol_type']) ? $this->createData($data['protocol_type'], 'protocol_type')  : null;
+        $this->container['protocolType'] = isset($data['protocolType']) ? $this->createData($data['protocolType'], 'protocolType')  : null;
         $this->container['algorithm'] = isset($data['algorithm']) ? $this->createData($data['algorithm'], 'algorithm')  : null;
         $this->container['timeout'] = isset($data['timeout']) ? $this->createData($data['timeout'], 'timeout')  : null;
         $this->container['digits'] = isset($data['digits']) ? $this->createData($data['digits'], 'digits')  : null;
         $this->container['secret'] = isset($data['secret']) ? $this->createData($data['secret'], 'secret')  : null;
         $this->container['tokens'] = isset($data['tokens']) ? $this->createData($data['tokens'], 'tokens')  : null;
-        $this->container['qr_code'] = isset($data['qr_code']) ? $this->createData($data['qr_code'], 'qr_code')  : null;
+        $this->container['qrCode'] = isset($data['qrCode']) ? $this->createData($data['qrCode'], 'qrCode')  : null;
     }
 
     /**
@@ -289,8 +289,8 @@ class OTPAuth implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['protocol_type'] === null) {
-            $invalidProperties[] = "'protocol_type' can't be null";
+        if ($this->container['protocolType'] === null) {
+            $invalidProperties[] = "'protocolType' can't be null";
         }
         if ($this->container['algorithm'] === null) {
             $invalidProperties[] = "'algorithm' can't be null";
@@ -421,25 +421,25 @@ class OTPAuth implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets protocol_type
+     * Gets protocolType
      *
      * @return \Domainrobot\Model\ProtocolTypeConstants
      */
     public function getProtocolType()
     {
-        return $this->container['protocol_type'];
+        return $this->container['protocolType'];
     }
 
     /**
-     * Sets protocol_type
+     * Sets protocolType
      *
-     * @param \Domainrobot\Model\ProtocolTypeConstants $protocol_type The type of protocol
+     * @param \Domainrobot\Model\ProtocolTypeConstants $protocolType The type of protocol
      *
      * @return $this
      */
-    public function setProtocolType($protocol_type)
+    public function setProtocolType($protocolType)
     {
-        $this->container['protocol_type'] = $protocol_type;
+        $this->container['protocolType'] = $protocolType;
 
         return $this;
     }
@@ -573,25 +573,25 @@ class OTPAuth implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets qr_code
+     * Gets qrCode
      *
      * @return \Domainrobot\Model\BasicDocument
      */
     public function getQrCode()
     {
-        return $this->container['qr_code'];
+        return $this->container['qrCode'];
     }
 
     /**
-     * Sets qr_code
+     * Sets qrCode
      *
-     * @param \Domainrobot\Model\BasicDocument $qr_code The generated qr code png.
+     * @param \Domainrobot\Model\BasicDocument $qrCode The generated qr code png.
      *
      * @return $this
      */
-    public function setQrCode($qr_code)
+    public function setQrCode($qrCode)
     {
-        $this->container['qr_code'] = $qr_code;
+        $this->container['qrCode'] = $qrCode;
 
         return $this;
     }

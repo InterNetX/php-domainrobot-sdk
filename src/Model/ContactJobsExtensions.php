@@ -57,10 +57,10 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'admin_type' => 'bool',
-        'contact_title' => 'string',
-        'hr_member' => 'bool',
-        'industry_class' => 'int',
+        'adminType' => 'bool',
+        'contactTitle' => 'string',
+        'hrMember' => 'bool',
+        'industryClass' => 'int',
         'website' => 'string'
     ];
 
@@ -70,10 +70,10 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'admin_type' => null,
-        'contact_title' => null,
-        'hr_member' => null,
-        'industry_class' => 'int32',
+        'adminType' => null,
+        'contactTitle' => null,
+        'hrMember' => null,
+        'industryClass' => 'int32',
         'website' => null
     ];
 
@@ -104,10 +104,10 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'admin_type' => 'adminType',
-        'contact_title' => 'contactTitle',
-        'hr_member' => 'hrMember',
-        'industry_class' => 'industryClass',
+        'adminType' => 'adminType',
+        'contactTitle' => 'contactTitle',
+        'hrMember' => 'hrMember',
+        'industryClass' => 'industryClass',
         'website' => 'website'
     ];
 
@@ -117,10 +117,10 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'admin_type' => 'setAdminType',
-        'contact_title' => 'setContactTitle',
-        'hr_member' => 'setHrMember',
-        'industry_class' => 'setIndustryClass',
+        'adminType' => 'setAdminType',
+        'contactTitle' => 'setContactTitle',
+        'hrMember' => 'setHrMember',
+        'industryClass' => 'setIndustryClass',
         'website' => 'setWebsite'
     ];
 
@@ -130,10 +130,10 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'admin_type' => 'getAdminType',
-        'contact_title' => 'getContactTitle',
-        'hr_member' => 'getHrMember',
-        'industry_class' => 'getIndustryClass',
+        'adminType' => 'getAdminType',
+        'contactTitle' => 'getContactTitle',
+        'hrMember' => 'getHrMember',
+        'industryClass' => 'getIndustryClass',
         'website' => 'getWebsite'
     ];
 
@@ -197,10 +197,10 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['admin_type'] = isset($data['admin_type']) ? $this->createData($data['admin_type'], 'admin_type')  : null;
-        $this->container['contact_title'] = isset($data['contact_title']) ? $this->createData($data['contact_title'], 'contact_title')  : null;
-        $this->container['hr_member'] = isset($data['hr_member']) ? $this->createData($data['hr_member'], 'hr_member')  : null;
-        $this->container['industry_class'] = isset($data['industry_class']) ? $this->createData($data['industry_class'], 'industry_class')  : null;
+        $this->container['adminType'] = isset($data['adminType']) ? $this->createData($data['adminType'], 'adminType')  : null;
+        $this->container['contactTitle'] = isset($data['contactTitle']) ? $this->createData($data['contactTitle'], 'contactTitle')  : null;
+        $this->container['hrMember'] = isset($data['hrMember']) ? $this->createData($data['hrMember'], 'hrMember')  : null;
+        $this->container['industryClass'] = isset($data['industryClass']) ? $this->createData($data['industryClass'], 'industryClass')  : null;
         $this->container['website'] = isset($data['website']) ? $this->createData($data['website'], 'website')  : null;
     }
 
@@ -269,97 +269,97 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets admin_type
+     * Gets adminType
      *
      * @return bool
      */
     public function getAdminType()
     {
-        return $this->container['admin_type'];
+        return $this->container['adminType'];
     }
 
     /**
-     * Sets admin_type
+     * Sets adminType
      *
-     * @param bool $admin_type Contact is the administrative contact with the permission to act as an independent agent / recruiter on behalf of the listed registrant.
+     * @param bool $adminType Contact is the administrative contact with the permission to act as an independent agent / recruiter on behalf of the listed registrant.
      *
      * @return $this
      */
-    public function setAdminType($admin_type)
+    public function setAdminType($adminType)
     {
-        $this->container['admin_type'] = $admin_type;
+        $this->container['adminType'] = $adminType;
 
         return $this;
     }
 
     /**
-     * Gets contact_title
+     * Gets contactTitle
      *
      * @return string
      */
     public function getContactTitle()
     {
-        return $this->container['contact_title'];
+        return $this->container['contactTitle'];
     }
 
     /**
-     * Sets contact_title
+     * Sets contactTitle
      *
-     * @param string $contact_title Title of the domain contact in the organization.
+     * @param string $contactTitle Title of the domain contact in the organization.
      *
      * @return $this
      */
-    public function setContactTitle($contact_title)
+    public function setContactTitle($contactTitle)
     {
-        $this->container['contact_title'] = $contact_title;
+        $this->container['contactTitle'] = $contactTitle;
 
         return $this;
     }
 
     /**
-     * Gets hr_member
+     * Gets hrMember
      *
      * @return bool
      */
     public function getHrMember()
     {
-        return $this->container['hr_member'];
+        return $this->container['hrMember'];
     }
 
     /**
-     * Sets hr_member
+     * Sets hrMember
      *
-     * @param bool $hr_member Choose whether the contact is is a member of the Human Resource Organization
+     * @param bool $hrMember Choose whether the contact is is a member of the Human Resource Organization
      *
      * @return $this
      */
-    public function setHrMember($hr_member)
+    public function setHrMember($hrMember)
     {
-        $this->container['hr_member'] = $hr_member;
+        $this->container['hrMember'] = $hrMember;
 
         return $this;
     }
 
     /**
-     * Gets industry_class
+     * Gets industryClass
      *
      * @return int
      */
     public function getIndustryClass()
     {
-        return $this->container['industry_class'];
+        return $this->container['industryClass'];
     }
 
     /**
-     * Sets industry_class
+     * Sets industryClass
      *
-     * @param int $industry_class The Industry class.
+     * @param int $industryClass The Industry class.
      *
      * @return $this
      */
-    public function setIndustryClass($industry_class)
+    public function setIndustryClass($industryClass)
     {
-        $this->container['industry_class'] = $industry_class;
+        $this->container['industryClass'] = $industryClass;
 
         return $this;
     }

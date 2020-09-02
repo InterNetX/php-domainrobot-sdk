@@ -62,13 +62,13 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'agent' => '\Domainrobot\Model\Id4MeAgent',
-        'verify_expire' => '\DateTime',
+        'verifyExpire' => '\DateTime',
         'addons' => '\Domainrobot\Model\Configuration',
-        'magic_link' => 'string',
+        'magicLink' => 'string',
         'claims' => '\Domainrobot\Model\Claims',
-        'show_claims' => 'bool',
-        'reset_url' => 'string',
-        'reset_url_expire' => '\DateTime',
+        'showClaims' => 'bool',
+        'resetUrl' => 'string',
+        'resetUrlExpire' => '\DateTime',
         'name' => 'string',
         'status' => '\Domainrobot\Model\IdentityStatus',
         'language' => 'string',
@@ -86,13 +86,13 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'agent' => null,
-        'verify_expire' => 'date-time',
+        'verifyExpire' => 'date-time',
         'addons' => null,
-        'magic_link' => null,
+        'magicLink' => null,
         'claims' => null,
-        'show_claims' => null,
-        'reset_url' => null,
-        'reset_url_expire' => 'date-time',
+        'showClaims' => null,
+        'resetUrl' => null,
+        'resetUrlExpire' => 'date-time',
         'name' => null,
         'status' => null,
         'language' => null,
@@ -131,13 +131,13 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'agent' => 'agent',
-        'verify_expire' => 'verifyExpire',
+        'verifyExpire' => 'verifyExpire',
         'addons' => 'addons',
-        'magic_link' => 'magicLink',
+        'magicLink' => 'magicLink',
         'claims' => 'claims',
-        'show_claims' => 'showClaims',
-        'reset_url' => 'resetUrl',
-        'reset_url_expire' => 'resetUrlExpire',
+        'showClaims' => 'showClaims',
+        'resetUrl' => 'resetUrl',
+        'resetUrlExpire' => 'resetUrlExpire',
         'name' => 'name',
         'status' => 'status',
         'language' => 'language',
@@ -155,13 +155,13 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'agent' => 'setAgent',
-        'verify_expire' => 'setVerifyExpire',
+        'verifyExpire' => 'setVerifyExpire',
         'addons' => 'setAddons',
-        'magic_link' => 'setMagicLink',
+        'magicLink' => 'setMagicLink',
         'claims' => 'setClaims',
-        'show_claims' => 'setShowClaims',
-        'reset_url' => 'setResetUrl',
-        'reset_url_expire' => 'setResetUrlExpire',
+        'showClaims' => 'setShowClaims',
+        'resetUrl' => 'setResetUrl',
+        'resetUrlExpire' => 'setResetUrlExpire',
         'name' => 'setName',
         'status' => 'setStatus',
         'language' => 'setLanguage',
@@ -179,13 +179,13 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'agent' => 'getAgent',
-        'verify_expire' => 'getVerifyExpire',
+        'verifyExpire' => 'getVerifyExpire',
         'addons' => 'getAddons',
-        'magic_link' => 'getMagicLink',
+        'magicLink' => 'getMagicLink',
         'claims' => 'getClaims',
-        'show_claims' => 'getShowClaims',
-        'reset_url' => 'getResetUrl',
-        'reset_url_expire' => 'getResetUrlExpire',
+        'showClaims' => 'getShowClaims',
+        'resetUrl' => 'getResetUrl',
+        'resetUrlExpire' => 'getResetUrlExpire',
         'name' => 'getName',
         'status' => 'getStatus',
         'language' => 'getLanguage',
@@ -257,13 +257,13 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['agent'] = isset($data['agent']) ? $this->createData($data['agent'], 'agent')  : null;
-        $this->container['verify_expire'] = isset($data['verify_expire']) ? $this->createData($data['verify_expire'], 'verify_expire')  : null;
+        $this->container['verifyExpire'] = isset($data['verifyExpire']) ? $this->createData($data['verifyExpire'], 'verifyExpire')  : null;
         $this->container['addons'] = isset($data['addons']) ? $this->createData($data['addons'], 'addons')  : null;
-        $this->container['magic_link'] = isset($data['magic_link']) ? $this->createData($data['magic_link'], 'magic_link')  : null;
+        $this->container['magicLink'] = isset($data['magicLink']) ? $this->createData($data['magicLink'], 'magicLink')  : null;
         $this->container['claims'] = isset($data['claims']) ? $this->createData($data['claims'], 'claims')  : null;
-        $this->container['show_claims'] = isset($data['show_claims']) ? $this->createData($data['show_claims'], 'show_claims')  : null;
-        $this->container['reset_url'] = isset($data['reset_url']) ? $this->createData($data['reset_url'], 'reset_url')  : null;
-        $this->container['reset_url_expire'] = isset($data['reset_url_expire']) ? $this->createData($data['reset_url_expire'], 'reset_url_expire')  : null;
+        $this->container['showClaims'] = isset($data['showClaims']) ? $this->createData($data['showClaims'], 'showClaims')  : null;
+        $this->container['resetUrl'] = isset($data['resetUrl']) ? $this->createData($data['resetUrl'], 'resetUrl')  : null;
+        $this->container['resetUrlExpire'] = isset($data['resetUrlExpire']) ? $this->createData($data['resetUrlExpire'], 'resetUrlExpire')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
@@ -461,25 +461,25 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets verify_expire
+     * Gets verifyExpire
      *
      * @return \DateTime
      */
     public function getVerifyExpire()
     {
-        return $this->container['verify_expire'];
+        return $this->container['verifyExpire'];
     }
 
     /**
-     * Sets verify_expire
+     * Sets verifyExpire
      *
-     * @param \DateTime $verify_expire Expiration of verification
+     * @param \DateTime $verifyExpire Expiration of verification
      *
      * @return $this
      */
-    public function setVerifyExpire($verify_expire)
+    public function setVerifyExpire($verifyExpire)
     {
-        $this->container['verify_expire'] = $verify_expire;
+        $this->container['verifyExpire'] = $verifyExpire;
 
         return $this;
     }
@@ -509,25 +509,25 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets magic_link
+     * Gets magicLink
      *
      * @return string
      */
     public function getMagicLink()
     {
-        return $this->container['magic_link'];
+        return $this->container['magicLink'];
     }
 
     /**
-     * Sets magic_link
+     * Sets magicLink
      *
-     * @param string $magic_link The generated magic link
+     * @param string $magicLink The generated magic link
      *
      * @return $this
      */
-    public function setMagicLink($magic_link)
+    public function setMagicLink($magicLink)
     {
-        $this->container['magic_link'] = $magic_link;
+        $this->container['magicLink'] = $magicLink;
 
         return $this;
     }
@@ -557,73 +557,73 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets show_claims
+     * Gets showClaims
      *
      * @return bool
      */
     public function getShowClaims()
     {
-        return $this->container['show_claims'];
+        return $this->container['showClaims'];
     }
 
     /**
-     * Sets show_claims
+     * Sets showClaims
      *
-     * @param bool $show_claims Enables showing claims.
+     * @param bool $showClaims Enables showing claims.
      *
      * @return $this
      */
-    public function setShowClaims($show_claims)
+    public function setShowClaims($showClaims)
     {
-        $this->container['show_claims'] = $show_claims;
+        $this->container['showClaims'] = $showClaims;
 
         return $this;
     }
 
     /**
-     * Gets reset_url
+     * Gets resetUrl
      *
      * @return string
      */
     public function getResetUrl()
     {
-        return $this->container['reset_url'];
+        return $this->container['resetUrl'];
     }
 
     /**
-     * Sets reset_url
+     * Sets resetUrl
      *
-     * @param string $reset_url Url to redirect to passwort reset
+     * @param string $resetUrl Url to redirect to passwort reset
      *
      * @return $this
      */
-    public function setResetUrl($reset_url)
+    public function setResetUrl($resetUrl)
     {
-        $this->container['reset_url'] = $reset_url;
+        $this->container['resetUrl'] = $resetUrl;
 
         return $this;
     }
 
     /**
-     * Gets reset_url_expire
+     * Gets resetUrlExpire
      *
      * @return \DateTime
      */
     public function getResetUrlExpire()
     {
-        return $this->container['reset_url_expire'];
+        return $this->container['resetUrlExpire'];
     }
 
     /**
-     * Sets reset_url_expire
+     * Sets resetUrlExpire
      *
-     * @param \DateTime $reset_url_expire time when reset url expire
+     * @param \DateTime $resetUrlExpire time when reset url expire
      *
      * @return $this
      */
-    public function setResetUrlExpire($reset_url_expire)
+    public function setResetUrlExpire($resetUrlExpire)
     {
-        $this->container['reset_url_expire'] = $reset_url_expire;
+        $this->container['resetUrlExpire'] = $resetUrlExpire;
 
         return $this;
     }

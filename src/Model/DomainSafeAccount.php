@@ -64,7 +64,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
         'name' => 'string',
         'mobile' => '\Domainrobot\Model\Phone',
         'pin' => 'string',
-        'revalidation_number' => '\Domainrobot\Model\Phone',
+        'revalidationNumber' => '\Domainrobot\Model\Phone',
         'safeuser' => '\Domainrobot\Model\DomainSafeUser[]'
     ];
 
@@ -81,7 +81,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
         'name' => null,
         'mobile' => null,
         'pin' => null,
-        'revalidation_number' => null,
+        'revalidationNumber' => null,
         'safeuser' => null
     ];
 
@@ -119,7 +119,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
         'name' => 'name',
         'mobile' => 'mobile',
         'pin' => 'pin',
-        'revalidation_number' => 'revalidationNumber',
+        'revalidationNumber' => 'revalidationNumber',
         'safeuser' => 'safeuser'
     ];
 
@@ -136,7 +136,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'mobile' => 'setMobile',
         'pin' => 'setPin',
-        'revalidation_number' => 'setRevalidationNumber',
+        'revalidationNumber' => 'setRevalidationNumber',
         'safeuser' => 'setSafeuser'
     ];
 
@@ -153,7 +153,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'mobile' => 'getMobile',
         'pin' => 'getPin',
-        'revalidation_number' => 'getRevalidationNumber',
+        'revalidationNumber' => 'getRevalidationNumber',
         'safeuser' => 'getSafeuser'
     ];
 
@@ -224,7 +224,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['mobile'] = isset($data['mobile']) ? $this->createData($data['mobile'], 'mobile')  : null;
         $this->container['pin'] = isset($data['pin']) ? $this->createData($data['pin'], 'pin')  : null;
-        $this->container['revalidation_number'] = isset($data['revalidation_number']) ? $this->createData($data['revalidation_number'], 'revalidation_number')  : null;
+        $this->container['revalidationNumber'] = isset($data['revalidationNumber']) ? $this->createData($data['revalidationNumber'], 'revalidationNumber')  : null;
         $this->container['safeuser'] = isset($data['safeuser']) ? $this->createData($data['safeuser'], 'safeuser')  : null;
     }
 
@@ -467,25 +467,25 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets revalidation_number
+     * Gets revalidationNumber
      *
      * @return \Domainrobot\Model\Phone
      */
     public function getRevalidationNumber()
     {
-        return $this->container['revalidation_number'];
+        return $this->container['revalidationNumber'];
     }
 
     /**
-     * Sets revalidation_number
+     * Sets revalidationNumber
      *
-     * @param \Domainrobot\Model\Phone $revalidation_number The revalidationNumber of the object.
+     * @param \Domainrobot\Model\Phone $revalidationNumber The revalidationNumber of the object.
      *
      * @return $this
      */
-    public function setRevalidationNumber($revalidation_number)
+    public function setRevalidationNumber($revalidationNumber)
     {
-        $this->container['revalidation_number'] = $revalidation_number;
+        $this->container['revalidationNumber'] = $revalidationNumber;
 
         return $this;
     }

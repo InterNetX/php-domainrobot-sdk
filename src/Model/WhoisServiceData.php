@@ -57,7 +57,7 @@ class WhoisServiceData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'debug_time' => 'int',
+        'debugTime' => 'int',
         'status' => '\Domainrobot\Model\DomainStudioServiceStatus',
         'message' => 'string',
         'data' => '\Domainrobot\Model\WhoisStatus'
@@ -69,7 +69,7 @@ class WhoisServiceData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'debug_time' => 'int64',
+        'debugTime' => 'int64',
         'status' => null,
         'message' => null,
         'data' => null
@@ -102,7 +102,7 @@ class WhoisServiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'debug_time' => 'debugTime',
+        'debugTime' => 'debugTime',
         'status' => 'status',
         'message' => 'message',
         'data' => 'data'
@@ -114,7 +114,7 @@ class WhoisServiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'debug_time' => 'setDebugTime',
+        'debugTime' => 'setDebugTime',
         'status' => 'setStatus',
         'message' => 'setMessage',
         'data' => 'setData'
@@ -126,7 +126,7 @@ class WhoisServiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'debug_time' => 'getDebugTime',
+        'debugTime' => 'getDebugTime',
         'status' => 'getStatus',
         'message' => 'getMessage',
         'data' => 'getData'
@@ -192,7 +192,7 @@ class WhoisServiceData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['debug_time'] = isset($data['debug_time']) ? $this->createData($data['debug_time'], 'debug_time')  : null;
+        $this->container['debugTime'] = isset($data['debugTime']) ? $this->createData($data['debugTime'], 'debugTime')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['message'] = isset($data['message']) ? $this->createData($data['message'], 'message')  : null;
         $this->container['data'] = isset($data['data']) ? $this->createData($data['data'], 'data')  : null;
@@ -263,25 +263,25 @@ class WhoisServiceData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets debug_time
+     * Gets debugTime
      *
      * @return int
      */
     public function getDebugTime()
     {
-        return $this->container['debug_time'];
+        return $this->container['debugTime'];
     }
 
     /**
-     * Sets debug_time
+     * Sets debugTime
      *
-     * @param int $debug_time The debug time
+     * @param int $debugTime The debug time
      *
      * @return $this
      */
-    public function setDebugTime($debug_time)
+    public function setDebugTime($debugTime)
     {
-        $this->container['debug_time'] = $debug_time;
+        $this->container['debugTime'] = $debugTime;
 
         return $this;
     }

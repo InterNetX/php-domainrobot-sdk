@@ -59,10 +59,10 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'article_label' => 'string',
-        'limit_self' => 'int',
-        'limit_children' => 'int',
-        'article_type_label' => 'string',
+        'articleLabel' => 'string',
+        'limitSelf' => 'int',
+        'limitChildren' => 'int',
+        'articleTypeLabel' => 'string',
         'count' => 'int'
     ];
 
@@ -74,10 +74,10 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
-        'article_label' => null,
-        'limit_self' => 'int32',
-        'limit_children' => 'int32',
-        'article_type_label' => null,
+        'articleLabel' => null,
+        'limitSelf' => 'int32',
+        'limitChildren' => 'int32',
+        'articleTypeLabel' => null,
         'count' => 'int32'
     ];
 
@@ -110,10 +110,10 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'article_label' => 'articleLabel',
-        'limit_self' => 'limitSelf',
-        'limit_children' => 'limitChildren',
-        'article_type_label' => 'articleTypeLabel',
+        'articleLabel' => 'articleLabel',
+        'limitSelf' => 'limitSelf',
+        'limitChildren' => 'limitChildren',
+        'articleTypeLabel' => 'articleTypeLabel',
         'count' => 'count'
     ];
 
@@ -125,10 +125,10 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'article_label' => 'setArticleLabel',
-        'limit_self' => 'setLimitSelf',
-        'limit_children' => 'setLimitChildren',
-        'article_type_label' => 'setArticleTypeLabel',
+        'articleLabel' => 'setArticleLabel',
+        'limitSelf' => 'setLimitSelf',
+        'limitChildren' => 'setLimitChildren',
+        'articleTypeLabel' => 'setArticleTypeLabel',
         'count' => 'setCount'
     ];
 
@@ -140,10 +140,10 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'article_label' => 'getArticleLabel',
-        'limit_self' => 'getLimitSelf',
-        'limit_children' => 'getLimitChildren',
-        'article_type_label' => 'getArticleTypeLabel',
+        'articleLabel' => 'getArticleLabel',
+        'limitSelf' => 'getLimitSelf',
+        'limitChildren' => 'getLimitChildren',
+        'articleTypeLabel' => 'getArticleTypeLabel',
         'count' => 'getCount'
     ];
 
@@ -209,10 +209,10 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['article_label'] = isset($data['article_label']) ? $this->createData($data['article_label'], 'article_label')  : null;
-        $this->container['limit_self'] = isset($data['limit_self']) ? $this->createData($data['limit_self'], 'limit_self')  : null;
-        $this->container['limit_children'] = isset($data['limit_children']) ? $this->createData($data['limit_children'], 'limit_children')  : null;
-        $this->container['article_type_label'] = isset($data['article_type_label']) ? $this->createData($data['article_type_label'], 'article_type_label')  : null;
+        $this->container['articleLabel'] = isset($data['articleLabel']) ? $this->createData($data['articleLabel'], 'articleLabel')  : null;
+        $this->container['limitSelf'] = isset($data['limitSelf']) ? $this->createData($data['limitSelf'], 'limitSelf')  : null;
+        $this->container['limitChildren'] = isset($data['limitChildren']) ? $this->createData($data['limitChildren'], 'limitChildren')  : null;
+        $this->container['articleTypeLabel'] = isset($data['articleTypeLabel']) ? $this->createData($data['articleTypeLabel'], 'articleTypeLabel')  : null;
         $this->container['count'] = isset($data['count']) ? $this->createData($data['count'], 'count')  : null;
     }
 
@@ -329,97 +329,97 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets article_label
+     * Gets articleLabel
      *
      * @return string
      */
     public function getArticleLabel()
     {
-        return $this->container['article_label'];
+        return $this->container['articleLabel'];
     }
 
     /**
-     * Sets article_label
+     * Sets articleLabel
      *
-     * @param string $article_label article_label
+     * @param string $articleLabel articleLabel
      *
      * @return $this
      */
-    public function setArticleLabel($article_label)
+    public function setArticleLabel($articleLabel)
     {
-        $this->container['article_label'] = $article_label;
+        $this->container['articleLabel'] = $articleLabel;
 
         return $this;
     }
 
     /**
-     * Gets limit_self
+     * Gets limitSelf
      *
      * @return int
      */
     public function getLimitSelf()
     {
-        return $this->container['limit_self'];
+        return $this->container['limitSelf'];
     }
 
     /**
-     * Sets limit_self
+     * Sets limitSelf
      *
-     * @param int $limit_self limit_self
+     * @param int $limitSelf limitSelf
      *
      * @return $this
      */
-    public function setLimitSelf($limit_self)
+    public function setLimitSelf($limitSelf)
     {
-        $this->container['limit_self'] = $limit_self;
+        $this->container['limitSelf'] = $limitSelf;
 
         return $this;
     }
 
     /**
-     * Gets limit_children
+     * Gets limitChildren
      *
      * @return int
      */
     public function getLimitChildren()
     {
-        return $this->container['limit_children'];
+        return $this->container['limitChildren'];
     }
 
     /**
-     * Sets limit_children
+     * Sets limitChildren
      *
-     * @param int $limit_children limit_children
+     * @param int $limitChildren limitChildren
      *
      * @return $this
      */
-    public function setLimitChildren($limit_children)
+    public function setLimitChildren($limitChildren)
     {
-        $this->container['limit_children'] = $limit_children;
+        $this->container['limitChildren'] = $limitChildren;
 
         return $this;
     }
 
     /**
-     * Gets article_type_label
+     * Gets articleTypeLabel
      *
      * @return string
      */
     public function getArticleTypeLabel()
     {
-        return $this->container['article_type_label'];
+        return $this->container['articleTypeLabel'];
     }
 
     /**
-     * Sets article_type_label
+     * Sets articleTypeLabel
      *
-     * @param string $article_type_label article_type_label
+     * @param string $articleTypeLabel articleTypeLabel
      *
      * @return $this
      */
-    public function setArticleTypeLabel($article_type_label)
+    public function setArticleTypeLabel($articleTypeLabel)
     {
-        $this->container['article_type_label'] = $article_type_label;
+        $this->container['articleTypeLabel'] = $articleTypeLabel;
 
         return $this;
     }

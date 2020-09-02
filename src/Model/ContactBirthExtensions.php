@@ -59,7 +59,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'country' => 'string',
         'day' => '\DateTime',
-        'postal_code' => 'string',
+        'postalCode' => 'string',
         'place' => 'string'
     ];
 
@@ -71,7 +71,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'country' => null,
         'day' => 'date-time',
-        'postal_code' => null,
+        'postalCode' => null,
         'place' => null
     ];
 
@@ -104,7 +104,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'country' => 'country',
         'day' => 'day',
-        'postal_code' => 'postalCode',
+        'postalCode' => 'postalCode',
         'place' => 'place'
     ];
 
@@ -116,7 +116,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     protected static $setters = [
         'country' => 'setCountry',
         'day' => 'setDay',
-        'postal_code' => 'setPostalCode',
+        'postalCode' => 'setPostalCode',
         'place' => 'setPlace'
     ];
 
@@ -128,7 +128,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     protected static $getters = [
         'country' => 'getCountry',
         'day' => 'getDay',
-        'postal_code' => 'getPostalCode',
+        'postalCode' => 'getPostalCode',
         'place' => 'getPlace'
     ];
 
@@ -194,7 +194,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     {
         $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
         $this->container['day'] = isset($data['day']) ? $this->createData($data['day'], 'day')  : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $this->createData($data['postal_code'], 'postal_code')  : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $this->createData($data['postalCode'], 'postalCode')  : null;
         $this->container['place'] = isset($data['place']) ? $this->createData($data['place'], 'place')  : null;
     }
 
@@ -311,25 +311,25 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets postal_code
+     * Gets postalCode
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postal_code'];
+        return $this->container['postalCode'];
     }
 
     /**
-     * Sets postal_code
+     * Sets postalCode
      *
-     * @param string $postal_code The postalCode.
+     * @param string $postalCode The postalCode.
      *
      * @return $this
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postalCode)
     {
-        $this->container['postal_code'] = $postal_code;
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

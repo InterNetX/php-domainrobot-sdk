@@ -60,7 +60,7 @@ class RecipientLog implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'host' => 'string',
-        'last_response' => 'string',
+        'lastResponse' => 'string',
         'trace' => 'string'
     ];
 
@@ -73,7 +73,7 @@ class RecipientLog implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'updated' => 'date-time',
         'host' => null,
-        'last_response' => null,
+        'lastResponse' => null,
         'trace' => null
     ];
 
@@ -107,7 +107,7 @@ class RecipientLog implements ModelInterface, ArrayAccess
         'created' => 'created',
         'updated' => 'updated',
         'host' => 'host',
-        'last_response' => 'lastResponse',
+        'lastResponse' => 'lastResponse',
         'trace' => 'trace'
     ];
 
@@ -120,7 +120,7 @@ class RecipientLog implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'host' => 'setHost',
-        'last_response' => 'setLastResponse',
+        'lastResponse' => 'setLastResponse',
         'trace' => 'setTrace'
     ];
 
@@ -133,7 +133,7 @@ class RecipientLog implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'host' => 'getHost',
-        'last_response' => 'getLastResponse',
+        'lastResponse' => 'getLastResponse',
         'trace' => 'getTrace'
     ];
 
@@ -200,7 +200,7 @@ class RecipientLog implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['host'] = isset($data['host']) ? $this->createData($data['host'], 'host')  : null;
-        $this->container['last_response'] = isset($data['last_response']) ? $this->createData($data['last_response'], 'last_response')  : null;
+        $this->container['lastResponse'] = isset($data['lastResponse']) ? $this->createData($data['lastResponse'], 'lastResponse')  : null;
         $this->container['trace'] = isset($data['trace']) ? $this->createData($data['trace'], 'trace')  : null;
     }
 
@@ -341,25 +341,25 @@ class RecipientLog implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets last_response
+     * Gets lastResponse
      *
      * @return string
      */
     public function getLastResponse()
     {
-        return $this->container['last_response'];
+        return $this->container['lastResponse'];
     }
 
     /**
-     * Sets last_response
+     * Sets lastResponse
      *
-     * @param string $last_response the last reponse of the server communication
+     * @param string $lastResponse the last reponse of the server communication
      *
      * @return $this
      */
-    public function setLastResponse($last_response)
+    public function setLastResponse($lastResponse)
     {
-        $this->container['last_response'] = $last_response;
+        $this->container['lastResponse'] = $lastResponse;
 
         return $this;
     }

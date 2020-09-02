@@ -57,9 +57,9 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'parking_extensions' => '\Domainrobot\Model\DomainParkingExtensions',
-        'tmch_claims_notice_extensions' => '\Domainrobot\Model\DomainTmchClaimNoticeExtensions',
-        'verification_extensions' => '\Domainrobot\Model\ContactVerificationDomain'
+        'parkingExtensions' => '\Domainrobot\Model\DomainParkingExtensions',
+        'tmchClaimsNoticeExtensions' => '\Domainrobot\Model\DomainTmchClaimNoticeExtensions',
+        'verificationExtensions' => '\Domainrobot\Model\ContactVerificationDomain'
     ];
 
     /**
@@ -68,9 +68,9 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'parking_extensions' => null,
-        'tmch_claims_notice_extensions' => null,
-        'verification_extensions' => null
+        'parkingExtensions' => null,
+        'tmchClaimsNoticeExtensions' => null,
+        'verificationExtensions' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'parking_extensions' => 'parkingExtensions',
-        'tmch_claims_notice_extensions' => 'tmchClaimsNoticeExtensions',
-        'verification_extensions' => 'verificationExtensions'
+        'parkingExtensions' => 'parkingExtensions',
+        'tmchClaimsNoticeExtensions' => 'tmchClaimsNoticeExtensions',
+        'verificationExtensions' => 'verificationExtensions'
     ];
 
     /**
@@ -111,9 +111,9 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'parking_extensions' => 'setParkingExtensions',
-        'tmch_claims_notice_extensions' => 'setTmchClaimsNoticeExtensions',
-        'verification_extensions' => 'setVerificationExtensions'
+        'parkingExtensions' => 'setParkingExtensions',
+        'tmchClaimsNoticeExtensions' => 'setTmchClaimsNoticeExtensions',
+        'verificationExtensions' => 'setVerificationExtensions'
     ];
 
     /**
@@ -122,9 +122,9 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'parking_extensions' => 'getParkingExtensions',
-        'tmch_claims_notice_extensions' => 'getTmchClaimsNoticeExtensions',
-        'verification_extensions' => 'getVerificationExtensions'
+        'parkingExtensions' => 'getParkingExtensions',
+        'tmchClaimsNoticeExtensions' => 'getTmchClaimsNoticeExtensions',
+        'verificationExtensions' => 'getVerificationExtensions'
     ];
 
     /**
@@ -187,9 +187,9 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['parking_extensions'] = isset($data['parking_extensions']) ? $this->createData($data['parking_extensions'], 'parking_extensions')  : null;
-        $this->container['tmch_claims_notice_extensions'] = isset($data['tmch_claims_notice_extensions']) ? $this->createData($data['tmch_claims_notice_extensions'], 'tmch_claims_notice_extensions')  : null;
-        $this->container['verification_extensions'] = isset($data['verification_extensions']) ? $this->createData($data['verification_extensions'], 'verification_extensions')  : null;
+        $this->container['parkingExtensions'] = isset($data['parkingExtensions']) ? $this->createData($data['parkingExtensions'], 'parkingExtensions')  : null;
+        $this->container['tmchClaimsNoticeExtensions'] = isset($data['tmchClaimsNoticeExtensions']) ? $this->createData($data['tmchClaimsNoticeExtensions'], 'tmchClaimsNoticeExtensions')  : null;
+        $this->container['verificationExtensions'] = isset($data['verificationExtensions']) ? $this->createData($data['verificationExtensions'], 'verificationExtensions')  : null;
     }
 
     /**
@@ -257,73 +257,73 @@ class DomainExtensions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets parking_extensions
+     * Gets parkingExtensions
      *
      * @return \Domainrobot\Model\DomainParkingExtensions
      */
     public function getParkingExtensions()
     {
-        return $this->container['parking_extensions'];
+        return $this->container['parkingExtensions'];
     }
 
     /**
-     * Sets parking_extensions
+     * Sets parkingExtensions
      *
-     * @param \Domainrobot\Model\DomainParkingExtensions $parking_extensions parking_extensions
+     * @param \Domainrobot\Model\DomainParkingExtensions $parkingExtensions parkingExtensions
      *
      * @return $this
      */
-    public function setParkingExtensions($parking_extensions)
+    public function setParkingExtensions($parkingExtensions)
     {
-        $this->container['parking_extensions'] = $parking_extensions;
+        $this->container['parkingExtensions'] = $parkingExtensions;
 
         return $this;
     }
 
     /**
-     * Gets tmch_claims_notice_extensions
+     * Gets tmchClaimsNoticeExtensions
      *
      * @return \Domainrobot\Model\DomainTmchClaimNoticeExtensions
      */
     public function getTmchClaimsNoticeExtensions()
     {
-        return $this->container['tmch_claims_notice_extensions'];
+        return $this->container['tmchClaimsNoticeExtensions'];
     }
 
     /**
-     * Sets tmch_claims_notice_extensions
+     * Sets tmchClaimsNoticeExtensions
      *
-     * @param \Domainrobot\Model\DomainTmchClaimNoticeExtensions $tmch_claims_notice_extensions tmch_claims_notice_extensions
+     * @param \Domainrobot\Model\DomainTmchClaimNoticeExtensions $tmchClaimsNoticeExtensions tmchClaimsNoticeExtensions
      *
      * @return $this
      */
-    public function setTmchClaimsNoticeExtensions($tmch_claims_notice_extensions)
+    public function setTmchClaimsNoticeExtensions($tmchClaimsNoticeExtensions)
     {
-        $this->container['tmch_claims_notice_extensions'] = $tmch_claims_notice_extensions;
+        $this->container['tmchClaimsNoticeExtensions'] = $tmchClaimsNoticeExtensions;
 
         return $this;
     }
 
     /**
-     * Gets verification_extensions
+     * Gets verificationExtensions
      *
      * @return \Domainrobot\Model\ContactVerificationDomain
      */
     public function getVerificationExtensions()
     {
-        return $this->container['verification_extensions'];
+        return $this->container['verificationExtensions'];
     }
 
     /**
-     * Sets verification_extensions
+     * Sets verificationExtensions
      *
-     * @param \Domainrobot\Model\ContactVerificationDomain $verification_extensions verification_extensions
+     * @param \Domainrobot\Model\ContactVerificationDomain $verificationExtensions verificationExtensions
      *
      * @return $this
      */
-    public function setVerificationExtensions($verification_extensions)
+    public function setVerificationExtensions($verificationExtensions)
     {
-        $this->container['verification_extensions'] = $verification_extensions;
+        $this->container['verificationExtensions'] = $verificationExtensions;
 
         return $this;
     }

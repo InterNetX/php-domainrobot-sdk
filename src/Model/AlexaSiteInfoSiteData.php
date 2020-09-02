@@ -59,7 +59,7 @@ class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'title' => 'string',
         'description' => 'string',
-        'online_since' => 'string'
+        'onlineSince' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'title' => null,
         'description' => null,
-        'online_since' => null
+        'onlineSince' => null
     ];
 
     /**
@@ -102,7 +102,7 @@ class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'title' => 'title',
         'description' => 'description',
-        'online_since' => 'onlineSince'
+        'onlineSince' => 'onlineSince'
     ];
 
     /**
@@ -113,7 +113,7 @@ class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
     protected static $setters = [
         'title' => 'setTitle',
         'description' => 'setDescription',
-        'online_since' => 'setOnlineSince'
+        'onlineSince' => 'setOnlineSince'
     ];
 
     /**
@@ -124,7 +124,7 @@ class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
     protected static $getters = [
         'title' => 'getTitle',
         'description' => 'getDescription',
-        'online_since' => 'getOnlineSince'
+        'onlineSince' => 'getOnlineSince'
     ];
 
     /**
@@ -189,7 +189,7 @@ class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
     {
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
         $this->container['description'] = isset($data['description']) ? $this->createData($data['description'], 'description')  : null;
-        $this->container['online_since'] = isset($data['online_since']) ? $this->createData($data['online_since'], 'online_since')  : null;
+        $this->container['onlineSince'] = isset($data['onlineSince']) ? $this->createData($data['onlineSince'], 'onlineSince')  : null;
     }
 
     /**
@@ -305,25 +305,25 @@ class AlexaSiteInfoSiteData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets online_since
+     * Gets onlineSince
      *
      * @return string
      */
     public function getOnlineSince()
     {
-        return $this->container['online_since'];
+        return $this->container['onlineSince'];
     }
 
     /**
-     * Sets online_since
+     * Sets onlineSince
      *
-     * @param string $online_since online_since
+     * @param string $onlineSince onlineSince
      *
      * @return $this
      */
-    public function setOnlineSince($online_since)
+    public function setOnlineSince($onlineSince)
     {
-        $this->container['online_since'] = $online_since;
+        $this->container['onlineSince'] = $onlineSince;
 
         return $this;
     }

@@ -63,7 +63,7 @@ class NewPassword implements ModelInterface, ArrayAccess
         'password' => 'string',
         'email' => 'string',
         'mobile' => 'string',
-        'tan_methods' => 'string[]',
+        'tanMethods' => 'string[]',
         'token' => 'string',
         'method' => 'string'
     ];
@@ -80,7 +80,7 @@ class NewPassword implements ModelInterface, ArrayAccess
         'password' => null,
         'email' => null,
         'mobile' => null,
-        'tan_methods' => null,
+        'tanMethods' => null,
         'token' => null,
         'method' => null
     ];
@@ -118,7 +118,7 @@ class NewPassword implements ModelInterface, ArrayAccess
         'password' => 'password',
         'email' => 'email',
         'mobile' => 'mobile',
-        'tan_methods' => 'tanMethods',
+        'tanMethods' => 'tanMethods',
         'token' => 'token',
         'method' => 'method'
     ];
@@ -135,7 +135,7 @@ class NewPassword implements ModelInterface, ArrayAccess
         'password' => 'setPassword',
         'email' => 'setEmail',
         'mobile' => 'setMobile',
-        'tan_methods' => 'setTanMethods',
+        'tanMethods' => 'setTanMethods',
         'token' => 'setToken',
         'method' => 'setMethod'
     ];
@@ -152,7 +152,7 @@ class NewPassword implements ModelInterface, ArrayAccess
         'password' => 'getPassword',
         'email' => 'getEmail',
         'mobile' => 'getMobile',
-        'tan_methods' => 'getTanMethods',
+        'tanMethods' => 'getTanMethods',
         'token' => 'getToken',
         'method' => 'getMethod'
     ];
@@ -223,7 +223,7 @@ class NewPassword implements ModelInterface, ArrayAccess
         $this->container['password'] = isset($data['password']) ? $this->createData($data['password'], 'password')  : null;
         $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
         $this->container['mobile'] = isset($data['mobile']) ? $this->createData($data['mobile'], 'mobile')  : null;
-        $this->container['tan_methods'] = isset($data['tan_methods']) ? $this->createData($data['tan_methods'], 'tan_methods')  : null;
+        $this->container['tanMethods'] = isset($data['tanMethods']) ? $this->createData($data['tanMethods'], 'tanMethods')  : null;
         $this->container['token'] = isset($data['token']) ? $this->createData($data['token'], 'token')  : null;
         $this->container['method'] = isset($data['method']) ? $this->createData($data['method'], 'method')  : null;
     }
@@ -437,25 +437,25 @@ class NewPassword implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets tan_methods
+     * Gets tanMethods
      *
      * @return string[]
      */
     public function getTanMethods()
     {
-        return $this->container['tan_methods'];
+        return $this->container['tanMethods'];
     }
 
     /**
-     * Sets tan_methods
+     * Sets tanMethods
      *
-     * @param string[] $tan_methods The tan methods available for the user
+     * @param string[] $tanMethods The tan methods available for the user
      *
      * @return $this
      */
-    public function setTanMethods($tan_methods)
+    public function setTanMethods($tanMethods)
     {
-        $this->container['tan_methods'] = $tan_methods;
+        $this->container['tanMethods'] = $tanMethods;
 
         return $this;
     }

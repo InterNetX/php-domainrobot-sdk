@@ -68,7 +68,7 @@ class MailProxy implements ModelInterface, ArrayAccess
         'protection' => '\Domainrobot\Model\ProtectionConstants',
         'greylisting' => 'bool',
         'virus' => 'string',
-        'banned_files' => 'string',
+        'bannedFiles' => 'string',
         'header' => 'string',
         'spam' => '\Domainrobot\Model\SpamPolicy',
         'whitelist' => '\Domainrobot\Model\MailList',
@@ -93,7 +93,7 @@ class MailProxy implements ModelInterface, ArrayAccess
         'protection' => null,
         'greylisting' => null,
         'virus' => null,
-        'banned_files' => null,
+        'bannedFiles' => null,
         'header' => null,
         'spam' => null,
         'whitelist' => null,
@@ -139,7 +139,7 @@ class MailProxy implements ModelInterface, ArrayAccess
         'protection' => 'protection',
         'greylisting' => 'greylisting',
         'virus' => 'virus',
-        'banned_files' => 'bannedFiles',
+        'bannedFiles' => 'bannedFiles',
         'header' => 'header',
         'spam' => 'spam',
         'whitelist' => 'whitelist',
@@ -164,7 +164,7 @@ class MailProxy implements ModelInterface, ArrayAccess
         'protection' => 'setProtection',
         'greylisting' => 'setGreylisting',
         'virus' => 'setVirus',
-        'banned_files' => 'setBannedFiles',
+        'bannedFiles' => 'setBannedFiles',
         'header' => 'setHeader',
         'spam' => 'setSpam',
         'whitelist' => 'setWhitelist',
@@ -189,7 +189,7 @@ class MailProxy implements ModelInterface, ArrayAccess
         'protection' => 'getProtection',
         'greylisting' => 'getGreylisting',
         'virus' => 'getVirus',
-        'banned_files' => 'getBannedFiles',
+        'bannedFiles' => 'getBannedFiles',
         'header' => 'getHeader',
         'spam' => 'getSpam',
         'whitelist' => 'getWhitelist',
@@ -325,7 +325,7 @@ class MailProxy implements ModelInterface, ArrayAccess
         $this->container['protection'] = isset($data['protection']) ? $this->createData($data['protection'], 'protection')  : null;
         $this->container['greylisting'] = isset($data['greylisting']) ? $this->createData($data['greylisting'], 'greylisting')  : null;
         $this->container['virus'] = isset($data['virus']) ? $this->createData($data['virus'], 'virus')  : null;
-        $this->container['banned_files'] = isset($data['banned_files']) ? $this->createData($data['banned_files'], 'banned_files')  : null;
+        $this->container['bannedFiles'] = isset($data['bannedFiles']) ? $this->createData($data['bannedFiles'], 'bannedFiles')  : null;
         $this->container['header'] = isset($data['header']) ? $this->createData($data['header'], 'header')  : null;
         $this->container['spam'] = isset($data['spam']) ? $this->createData($data['spam'], 'spam')  : null;
         $this->container['whitelist'] = isset($data['whitelist']) ? $this->createData($data['whitelist'], 'whitelist')  : null;
@@ -397,9 +397,9 @@ class MailProxy implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getBannedFilesAllowableValues();
-        if (!is_null($this->container['banned_files']) && !in_array($this->container['banned_files'], $allowedValues, true)) {
+        if (!is_null($this->container['bannedFiles']) && !in_array($this->container['bannedFiles'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'banned_files', must be one of '%s'",
+                "invalid value for 'bannedFiles', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -701,34 +701,34 @@ class MailProxy implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets banned_files
+     * Gets bannedFiles
      *
      * @return string
      */
     public function getBannedFiles()
     {
-        return $this->container['banned_files'];
+        return $this->container['bannedFiles'];
     }
 
     /**
-     * Sets banned_files
+     * Sets bannedFiles
      *
-     * @param string $banned_files The banned files options to use
+     * @param string $bannedFiles The banned files options to use
      *
      * @return $this
      */
-    public function setBannedFiles($banned_files)
+    public function setBannedFiles($bannedFiles)
     {
         $allowedValues = $this->getBannedFilesAllowableValues();
-        if (!is_null($banned_files) && !in_array($banned_files, $allowedValues, true)) {
+        if (!is_null($bannedFiles) && !in_array($bannedFiles, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'banned_files', must be one of '%s'",
+                    "Invalid value for 'bannedFiles', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['banned_files'] = $banned_files;
+        $this->container['bannedFiles'] = $bannedFiles;
 
         return $this;
     }

@@ -60,9 +60,9 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'name' => 'string',
         'method' => '\Domainrobot\Model\AuthMethodConstants',
         'dns' => 'string',
-        'file_name' => 'string',
-        'file_content' => 'string',
-        'approver_emails' => 'string[]',
+        'fileName' => 'string',
+        'fileContent' => 'string',
+        'approverEmails' => 'string[]',
         'provisioning' => 'bool'
     ];
 
@@ -75,9 +75,9 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'name' => null,
         'method' => null,
         'dns' => null,
-        'file_name' => null,
-        'file_content' => null,
-        'approver_emails' => null,
+        'fileName' => null,
+        'fileContent' => null,
+        'approverEmails' => null,
         'provisioning' => null
     ];
 
@@ -111,9 +111,9 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'name' => 'name',
         'method' => 'method',
         'dns' => 'dns',
-        'file_name' => 'fileName',
-        'file_content' => 'fileContent',
-        'approver_emails' => 'approverEmails',
+        'fileName' => 'fileName',
+        'fileContent' => 'fileContent',
+        'approverEmails' => 'approverEmails',
         'provisioning' => 'provisioning'
     ];
 
@@ -126,9 +126,9 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'method' => 'setMethod',
         'dns' => 'setDns',
-        'file_name' => 'setFileName',
-        'file_content' => 'setFileContent',
-        'approver_emails' => 'setApproverEmails',
+        'fileName' => 'setFileName',
+        'fileContent' => 'setFileContent',
+        'approverEmails' => 'setApproverEmails',
         'provisioning' => 'setProvisioning'
     ];
 
@@ -141,9 +141,9 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'method' => 'getMethod',
         'dns' => 'getDns',
-        'file_name' => 'getFileName',
-        'file_content' => 'getFileContent',
-        'approver_emails' => 'getApproverEmails',
+        'fileName' => 'getFileName',
+        'fileContent' => 'getFileContent',
+        'approverEmails' => 'getApproverEmails',
         'provisioning' => 'getProvisioning'
     ];
 
@@ -210,9 +210,9 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['method'] = isset($data['method']) ? $this->createData($data['method'], 'method')  : null;
         $this->container['dns'] = isset($data['dns']) ? $this->createData($data['dns'], 'dns')  : null;
-        $this->container['file_name'] = isset($data['file_name']) ? $this->createData($data['file_name'], 'file_name')  : null;
-        $this->container['file_content'] = isset($data['file_content']) ? $this->createData($data['file_content'], 'file_content')  : null;
-        $this->container['approver_emails'] = isset($data['approver_emails']) ? $this->createData($data['approver_emails'], 'approver_emails')  : null;
+        $this->container['fileName'] = isset($data['fileName']) ? $this->createData($data['fileName'], 'fileName')  : null;
+        $this->container['fileContent'] = isset($data['fileContent']) ? $this->createData($data['fileContent'], 'fileContent')  : null;
+        $this->container['approverEmails'] = isset($data['approverEmails']) ? $this->createData($data['approverEmails'], 'approverEmails')  : null;
         $this->container['provisioning'] = isset($data['provisioning']) ? $this->createData($data['provisioning'], 'provisioning')  : null;
     }
 
@@ -353,73 +353,73 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets file_name
+     * Gets fileName
      *
      * @return string
      */
     public function getFileName()
     {
-        return $this->container['file_name'];
+        return $this->container['fileName'];
     }
 
     /**
-     * Sets file_name
+     * Sets fileName
      *
-     * @param string $file_name The filename for file based authentication.
+     * @param string $fileName The filename for file based authentication.
      *
      * @return $this
      */
-    public function setFileName($file_name)
+    public function setFileName($fileName)
     {
-        $this->container['file_name'] = $file_name;
+        $this->container['fileName'] = $fileName;
 
         return $this;
     }
 
     /**
-     * Gets file_content
+     * Gets fileContent
      *
      * @return string
      */
     public function getFileContent()
     {
-        return $this->container['file_content'];
+        return $this->container['fileContent'];
     }
 
     /**
-     * Sets file_content
+     * Sets fileContent
      *
-     * @param string $file_content The content for file based authentication.
+     * @param string $fileContent The content for file based authentication.
      *
      * @return $this
      */
-    public function setFileContent($file_content)
+    public function setFileContent($fileContent)
     {
-        $this->container['file_content'] = $file_content;
+        $this->container['fileContent'] = $fileContent;
 
         return $this;
     }
 
     /**
-     * Gets approver_emails
+     * Gets approverEmails
      *
      * @return string[]
      */
     public function getApproverEmails()
     {
-        return $this->container['approver_emails'];
+        return $this->container['approverEmails'];
     }
 
     /**
-     * Sets approver_emails
+     * Sets approverEmails
      *
-     * @param string[] $approver_emails The approver addresses for email based authentication.
+     * @param string[] $approverEmails The approver addresses for email based authentication.
      *
      * @return $this
      */
-    public function setApproverEmails($approver_emails)
+    public function setApproverEmails($approverEmails)
     {
-        $this->container['approver_emails'] = $approver_emails;
+        $this->container['approverEmails'] = $approverEmails;
 
         return $this;
     }

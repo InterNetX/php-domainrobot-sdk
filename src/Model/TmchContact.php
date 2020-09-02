@@ -62,7 +62,7 @@ class TmchContact implements ModelInterface, ArrayAccess
         'organization' => 'string',
         'street' => 'string',
         'city' => 'string',
-        'postal_code' => 'string',
+        'postalCode' => 'string',
         'state' => 'string',
         'country' => 'string',
         'email' => 'string',
@@ -81,7 +81,7 @@ class TmchContact implements ModelInterface, ArrayAccess
         'organization' => null,
         'street' => null,
         'city' => null,
-        'postal_code' => null,
+        'postalCode' => null,
         'state' => null,
         'country' => null,
         'email' => null,
@@ -121,7 +121,7 @@ class TmchContact implements ModelInterface, ArrayAccess
         'organization' => 'organization',
         'street' => 'street',
         'city' => 'city',
-        'postal_code' => 'postalCode',
+        'postalCode' => 'postalCode',
         'state' => 'state',
         'country' => 'country',
         'email' => 'email',
@@ -140,7 +140,7 @@ class TmchContact implements ModelInterface, ArrayAccess
         'organization' => 'setOrganization',
         'street' => 'setStreet',
         'city' => 'setCity',
-        'postal_code' => 'setPostalCode',
+        'postalCode' => 'setPostalCode',
         'state' => 'setState',
         'country' => 'setCountry',
         'email' => 'setEmail',
@@ -159,7 +159,7 @@ class TmchContact implements ModelInterface, ArrayAccess
         'organization' => 'getOrganization',
         'street' => 'getStreet',
         'city' => 'getCity',
-        'postal_code' => 'getPostalCode',
+        'postalCode' => 'getPostalCode',
         'state' => 'getState',
         'country' => 'getCountry',
         'email' => 'getEmail',
@@ -232,7 +232,7 @@ class TmchContact implements ModelInterface, ArrayAccess
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
         $this->container['street'] = isset($data['street']) ? $this->createData($data['street'], 'street')  : null;
         $this->container['city'] = isset($data['city']) ? $this->createData($data['city'], 'city')  : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $this->createData($data['postal_code'], 'postal_code')  : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $this->createData($data['postalCode'], 'postalCode')  : null;
         $this->container['state'] = isset($data['state']) ? $this->createData($data['state'], 'state')  : null;
         $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
         $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
@@ -431,25 +431,25 @@ class TmchContact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets postal_code
+     * Gets postalCode
      *
      * @return string
      */
     public function getPostalCode()
     {
-        return $this->container['postal_code'];
+        return $this->container['postalCode'];
     }
 
     /**
-     * Sets postal_code
+     * Sets postalCode
      *
-     * @param string $postal_code postal_code
+     * @param string $postalCode postalCode
      *
      * @return $this
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postalCode)
     {
-        $this->container['postal_code'] = $postal_code;
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

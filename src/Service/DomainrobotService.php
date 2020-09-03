@@ -21,7 +21,7 @@ class DomainrobotService
      *
      * @var DomainrobotConfig
      */
-    protected $domainrobotConfig;
+    public $domainrobotConfig;
 
     /**
      *

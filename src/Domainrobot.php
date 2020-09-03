@@ -132,6 +132,13 @@ class Domainrobot
     public $restore;
 
     /**
+     * Interface for pcDomains Requests
+     *
+     * @var PcDomainsService
+     */
+    public $pcDomains;
+
+    /**
      * [
      *   "url" => string, //optional
      *   "auth" => DomainrobotAuth //optional

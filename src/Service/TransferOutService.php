@@ -10,6 +10,7 @@ use Domainrobot\Model\Query;
 use Domainrobot\Model\TransferAnswer;
 use Domainrobot\Model\TransferOut;
 use Domainrobot\Service\DomainrobotService;
+use InvalidArgumentException;
 
 class TransferOutService extends DomainrobotService
 {

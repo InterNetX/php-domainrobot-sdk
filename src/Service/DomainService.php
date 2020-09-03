@@ -37,8 +37,10 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
+        // return $domainrobotResult->getResult();
+
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -131,7 +133,7 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -167,7 +169,7 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -473,7 +475,7 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -509,7 +511,7 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 

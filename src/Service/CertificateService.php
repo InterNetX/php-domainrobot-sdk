@@ -40,7 +40,7 @@ class CertificateService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -269,7 +269,7 @@ class CertificateService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -306,7 +306,7 @@ class CertificateService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -349,7 +349,7 @@ class CertificateService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0.id', '')
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
@@ -430,7 +430,7 @@ class CertificateService extends DomainrobotService
         );
 
         if (!empty($matches)) {
-            $body->$setMethod(implode("\n", [
+            $body->$setMethod(implode("\r\n", [
                 $matches[1],
                 $matches[2],
                 $matches[3]

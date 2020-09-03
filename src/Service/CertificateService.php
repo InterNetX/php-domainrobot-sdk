@@ -430,7 +430,7 @@ class CertificateService extends DomainrobotService
         );
 
         if (!empty($matches)) {
-            $body->$setMethod(implode("\n", [
+            $body->$setMethod(implode("\r\n", [
                 $matches[1],
                 $matches[2],
                 $matches[3]

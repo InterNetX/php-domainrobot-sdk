@@ -6,6 +6,7 @@ use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
+use Domainrobot\Model\JsonNoData;
 use Domainrobot\Model\Zone;
 use Domainrobot\Model\ZoneStream;
 use Domainrobot\Model\Query;
@@ -241,7 +242,7 @@ class ZoneService extends DomainrobotService
      *
      * @param string $name
      * @param string $systemNameServer
-     * @return void
+     * @return JsonNoData
      */
     public function delete($name, $systemNameServer)
     {
@@ -249,6 +250,8 @@ class ZoneService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new JsonNoData();
     }
 
     /**

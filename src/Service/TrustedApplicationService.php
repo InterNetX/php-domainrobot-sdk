@@ -6,6 +6,7 @@ use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
+use Domainrobot\Model\JsonNoData;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\TrustedApplication;
 use Domainrobot\Service\DomainrobotService;
@@ -148,7 +149,7 @@ class TrustedApplicationService extends DomainrobotService
      * Sends a TrustedApplication delete request.
      *
      * @param int $id
-     * @return void
+     * @return JsonNoData
      */
     public function delete($id)
     {
@@ -156,6 +157,8 @@ class TrustedApplicationService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new JsonNoData();
     }
 
 

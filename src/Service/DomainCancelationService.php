@@ -8,6 +8,7 @@ use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\DomainCancelation;
+use Domainrobot\Model\JsonNoData;
 use Domainrobot\Service\DomainrobotService;
 
 class DomainCancelationService extends DomainrobotService
@@ -94,7 +95,7 @@ class DomainCancelationService extends DomainrobotService
      * Deletes an existing cancelation for the given domain.
      *
      * @param string $domain
-     * @return void
+     * @return JsonNoData
      */
     public function delete($domain)
     {
@@ -102,6 +103,8 @@ class DomainCancelationService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new JsonNoData();
     }
 
 

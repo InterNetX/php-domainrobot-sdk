@@ -5,7 +5,6 @@ namespace Domainrobot\Service;
 use Domainrobot\Domainrobot;
 
 use Domainrobot\Lib\DomainrobotConfig;
-use Domainrobot\Model\DomainEnvelope;
 use Domainrobot\Model\DomainEnvelopeSearchRequest;
 use Domainrobot\Model\DomainEnvelopeSearchService;
 use Domainrobot\Model\DomainStudioSourceCustom;
@@ -54,7 +53,7 @@ class WhoisService extends DomainrobotService
     /**
      * Sends a Whois Multi Request
      * 
-     * @param string $domain
+     * @param array $domains
      * @return array $whoisStatus
      */
     public function multi(array $domains)

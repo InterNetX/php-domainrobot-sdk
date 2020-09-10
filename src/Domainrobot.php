@@ -6,6 +6,7 @@ use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Service\CertificateService;
 use Domainrobot\Service\DomainStudioService;
 use Domainrobot\Service\DomainService;
+use Domainrobot\Service\DomainBulkService;
 use Domainrobot\Service\SslContactService;
 use Domainrobot\Service\ContactService;
 use Domainrobot\Service\DomainCancelationService;
@@ -53,6 +54,13 @@ class Domainrobot
     public $domain;
 
     /**
+     * Interface for Domain Bulk Requests
+     *
+     * @var DomainBulkService
+     */
+    public $domainBulk;
+
+    /**
      * Interface for all ssl contact related requests
      *
      * @var SslContactService
@@ -73,7 +81,6 @@ class Domainrobot
      */
     public $domainCancelation;
 
-
     /**
      * Interface for all pollmessage related requests
      *
@@ -88,14 +95,12 @@ class Domainrobot
      */
     public $transferOut;
 
-
     /**
      * Interface for all domain trustedApp related requests
      *
      * @var TrustedApplicationService
      */
     public $trustedApp;
-
 
     /**
      * Interface for all zone related requests
@@ -160,6 +165,7 @@ class Domainrobot
         $this->certificate = new CertificateService($this->domainrobotConfig);
         $this->domainStudio = new DomainStudioService($this->domainrobotConfig);
         $this->domain = new DomainService($this->domainrobotConfig);
+        $this->domainBulk = new DomainBulkService($this->domainrobotConfig);
         $this->sslContact = new SslContactService($this->domainrobotConfig);
         $this->contact = new ContactService($this->domainrobotConfig);
         $this->domainCancelation = new DomainCancelationService($this->domainrobotConfig);
@@ -173,6 +179,7 @@ class Domainrobot
         $this->restore = new RestoreService($this->domainrobotConfig);
         $this->pcDomains = new PcDomainsService($this->domainrobotConfig);
         $this->whois = new WhoisService($this->domainrobotConfig);
+
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

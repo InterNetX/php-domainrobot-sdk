@@ -193,39 +193,54 @@ class QueryOrder implements ModelInterface, ArrayAccess
     }
 
     /**
-    *
-    * @param mixed[] $data
-    * @param string $property
-    * @return mixed
-    */
-    public function createData($data = null, $property){
-        if($data === null){
+     * create data according to types;
+     * non object types will just be returend as is:
+     * object types will return an instance of themselves or and array of instances
+     *
+     * @param mixed[] $data
+     * @param string $property
+     * @return mixed
+     */
+    public function createData($data = null, $property)
+    {
+        if ($data === null) {
             return '';
         }
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
 
-        if(count($matches) > 0 && count($matches) < 3){
+        // handle object types
+        if (count($matches) > 0 && count($matches) < 3) {
             try {
+                if (!is_array($data)) {
+                    return $data;
+                }
+                
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
                 return $reflectionInstance;
-            }catch(\Exception $ex){
+            } catch (\Exception $ex) {
                 return $data;
             }
-        }else if(count($matches) >= 3){
+        } elseif (count($matches) >= 3) {
+            // Object[]
+            // arrays of objects have to be handled differently
             $reflectionInstances = [];
             foreach($data as $d){
                 try {
+                    if(!is_array($d)){
+                        $reflectionInstances[] = $d;
+                        continue;
+                    }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);
-
-                    return $reflectionInstances;
+                    $reflectionInstances[] = $reflection->newInstance($d);                   
                 } catch (\Exception $ex) {
-                    return $data;
+                    return $d;
                 }
+
+                return $reflectionInstances;
             }
         }
 
@@ -407,6 +422,8 @@ class QueryOrder implements ModelInterface, ArrayAccess
      */
     public function toArray($retrieveAllValues = false){
         $container = $this->container;
+
+        $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (!$retrieveAllValues && empty($value)) {
                 unset($container[$key]);
@@ -431,8 +448,9 @@ class QueryOrder implements ModelInterface, ArrayAccess
                     }
                 }
             }
+            $cleanContainer[self::$attributeMap[$key]] = $value;
         };
-        return $container;
+        return $cleanContainer;
     }
 }
 

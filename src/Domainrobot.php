@@ -16,8 +16,9 @@ use Domainrobot\Service\PollMessageService;
 use Domainrobot\Service\UserService;
 use Domainrobot\Service\PriceService;
 use Domainrobot\Service\JobService;
-use Domainrobot\Service\PcDomainsService;
 use Domainrobot\Service\RestoreService;
+use Domainrobot\Service\PcDomainsService;
+use Domainrobot\Service\WhoisService;
 
 class Domainrobot
 {
@@ -139,6 +140,13 @@ class Domainrobot
     public $pcDomains;
 
     /**
+     * Interface for Whois Requests
+     *
+     * @var WhoisService
+     */
+    public $whois;
+
+    /**
      * [
      *   "url" => string, //optional
      *   "auth" => DomainrobotAuth //optional
@@ -164,6 +172,7 @@ class Domainrobot
         $this->job = new JobService($this->domainrobotConfig);
         $this->restore = new RestoreService($this->domainrobotConfig);
         $this->pcDomains = new PcDomainsService($this->domainrobotConfig);
+        $this->whois = new WhoisService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

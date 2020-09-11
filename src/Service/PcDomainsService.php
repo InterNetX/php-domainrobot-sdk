@@ -19,6 +19,11 @@ use Domainrobot\Model\Majestic;
 use Domainrobot\Model\SocialMedia;
 use Domainrobot\Model\Wayback;
 
+/**
+ * Implementation of the PcDomains API functions.
+ *
+ * @author Christian Pleintinger
+ */
 class PcDomainsService extends DomainrobotService
 {
     /**

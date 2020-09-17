@@ -243,10 +243,6 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
         // handle object types
         if (count($matches) > 0 && count($matches) < 3) {
             try {
-                if (!is_array($data)) {
-                    return $data;
-                }
-                
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -258,19 +254,15 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
             // Object[]
             // arrays of objects have to be handled differently
             $reflectionInstances = [];
-            foreach($data as $d){
+            foreach ($data as $d) {
                 try {
-                    if(!is_array($d)){
-                        $reflectionInstances[] = $d;
-                        continue;
-                    }
-                    $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
-                } catch (\Exception $ex) {
-                    return $d;
-                }
+                    $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType));
+                    $reflectionInstances[] = $reflection->newInstance($d);
 
-                return $reflectionInstances;
+                    return $reflectionInstances;
+                } catch (\Exception $ex) {
+                    return $data;
+                }
             }
         }
 
@@ -572,8 +564,6 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
      */
     public function toArray($retrieveAllValues = false){
         $container = $this->container;
-
-        $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (!$retrieveAllValues && empty($value)) {
                 unset($container[$key]);
@@ -582,7 +572,7 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
             
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
-                    $value = $value->toArray();
+                    $value = $value->toArray($retrieveAllValues);
                 }else{
                     if(get_class($value) === "DateTime"){
                         $value = $value->format("Y-m-d\TH:i:s");
@@ -594,13 +584,12 @@ class VirtualNameServer implements ModelInterface, ArrayAccess
             if (is_array($value)) {
                 foreach ($value as &$v) {
                     if (gettype($v) === "object") {
-                        $v = $v->toArray();
+                        $v = $v->toArray($retrieveAllValues);
                     }
                 }
             }
-            $cleanContainer[self::$attributeMap[$key]] = $value;
         };
-        return $cleanContainer;
+        return $container;
     }
 }
 

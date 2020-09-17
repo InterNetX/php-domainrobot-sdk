@@ -330,7 +330,7 @@ class Configuration implements ModelInterface, ArrayAccess
     public function toArray($retrieveAllValues = false){
         $container = $this->container;
         foreach ($container as $key => &$value) {
-            if (!$retrieveAllValues && empty($value)) {
+            if (!$retrieveAllValues && $value !== FALSE && $value !== '') {
                 unset($container[$key]);
                 continue;
             }

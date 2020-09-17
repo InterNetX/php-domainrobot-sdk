@@ -933,9 +933,11 @@ class TransferOut implements ModelInterface, ArrayAccess
         foreach ($container as $key => &$value) {
             if (
                 $retrieveAllValues === false && 
-                empty($value) === true && 
-                $value !== false && 
-                $value !== ''
+                empty($value) === true &&
+                $value !== false &&
+                $value !== '' &&
+                $value !== 0 &&
+                $value !== '0'
             ) {
                 unset($container[$key]);
                 continue;

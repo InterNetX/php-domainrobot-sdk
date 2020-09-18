@@ -213,6 +213,10 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
         // handle object types
         if (count($matches) > 0 && count($matches) < 3) {
             try {
+                if (!is_array($data)) {
+                    return $data;
+                }
+                
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -224,15 +228,19 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
             // Object[]
             // arrays of objects have to be handled differently
             $reflectionInstances = [];
-            foreach ($data as $d) {
+            foreach($data as $d){
                 try {
-                    $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType));
-                    $reflectionInstances[] = $reflection->newInstance($d);
-
-                    return $reflectionInstances;
+                    if(!is_array($d)){
+                        $reflectionInstances[] = $d;
+                        continue;
+                    }
+                    $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
+                    $reflectionInstances[] = $reflection->newInstance($d);                   
                 } catch (\Exception $ex) {
-                    return $data;
+                    return $d;
                 }
+
+                return $reflectionInstances;
             }
         }
 
@@ -414,6 +422,8 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      */
     public function toArray($retrieveAllValues = false){
         $container = $this->container;
+
+        $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
                 $retrieveAllValues === false && 
@@ -445,8 +455,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
                     }
                 }
             }
+            $cleanContainer[self::$attributeMap[$key]] = $value;
         };
-        return $container;
+        return $cleanContainer;
     }
 }
 

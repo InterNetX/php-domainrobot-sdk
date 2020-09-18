@@ -13,12 +13,20 @@ class DomainrobotConfig {
      * @var String
      */
     private $url;
+
     /**
      * AutoDNS Auth
      *
      * @var DomainrobotAuth
      */
     private $auth;
+
+    /**
+     * Global Domainrobot Headers
+     *
+     * @var [array]
+     */
+    private $headers;
 
     private $logRequestCallback = null;
     private $logResponseCallback = null;
@@ -35,6 +43,7 @@ class DomainrobotConfig {
     {
         $this->setUrl(ArrayHelper::getValueFromArray($config, 'url', DomainrobotConstants::AUTODNS_URL));
         $this->setAuth(ArrayHelper::getValueFromArray($config, 'auth', new DomainrobotAuth()));
+        $this->setHeaders(ArrayHelper::getValueFromArray($config, 'headers', []));
         $this->setLogRequestCallback(ArrayHelper::getValueFromArray($config, 'logRequestCallback', null));
         $this->setLogResponseCallback(ArrayHelper::getValueFromArray($config, 'logResponseCallback', null));
     }
@@ -49,6 +58,11 @@ class DomainrobotConfig {
         $this->auth = $domainrobotAuth;
     }
 
+    private function setHeaders(Array $headers)
+    {
+        $this->headers = $headers;
+    }
+
     public function getUrl() :string
     {
         return $this->url;
@@ -57,6 +71,11 @@ class DomainrobotConfig {
     public function getAuth() :DomainrobotAuth
     {
         return $this->auth;
+    }
+
+    public function getHeaders()
+    {
+        return $this->headers;
     }
 
     public function logRequest()

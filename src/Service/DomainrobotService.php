@@ -53,6 +53,8 @@ class DomainrobotService
                 $this->domainrobotConfig->getAuth()->getPassword()
             ]
         ];
+
+        $this->addHeaders($this->domainrobotConfig->getHeaders());
     }
 
     public function logRequest($callback)

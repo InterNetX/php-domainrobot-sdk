@@ -15,6 +15,7 @@ use Domainrobot\Service\TrustedApplicationService;
 use Domainrobot\Service\ZoneService;
 use Domainrobot\Service\PollMessageService;
 use Domainrobot\Service\UserService;
+use Domainrobot\Service\User2faService;
 use Domainrobot\Service\PriceService;
 use Domainrobot\Service\JobService;
 use Domainrobot\Service\RestoreService;
@@ -23,6 +24,7 @@ use Domainrobot\Service\WhoisService;
 
 class Domainrobot
 {
+    // private static $instance = null;
 
     /**
      *
@@ -117,6 +119,13 @@ class Domainrobot
     public $user;
 
     /**
+     * Interface all two factor authentication requests
+     *
+     * @var UserService
+     */
+    public $user2fa;
+
+    /**
      * Interface for Accounting Requests
      *
      * @var PriceService
@@ -174,12 +183,12 @@ class Domainrobot
         $this->trustedApp = new TrustedApplicationService($this->domainrobotConfig);
         $this->zone = new ZoneService($this->domainrobotConfig);
         $this->user = new UserService($this->domainrobotConfig);
+        $this->user2fa = new User2faService($this->domainrobotConfig);
         $this->price = new PriceService($this->domainrobotConfig);
         $this->job = new JobService($this->domainrobotConfig);
         $this->restore = new RestoreService($this->domainrobotConfig);
         $this->pcDomains = new PcDomainsService($this->domainrobotConfig);
         $this->whois = new WhoisService($this->domainrobotConfig);
-
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

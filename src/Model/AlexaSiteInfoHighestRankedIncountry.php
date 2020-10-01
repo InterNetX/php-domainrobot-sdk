@@ -457,7 +457,7 @@ class AlexaSiteInfoHighestRankedIncountry implements ModelInterface, ArrayAccess
             }
             $cleanContainer[self::$attributeMap[$key]] = $value;
         };
-        return $container;
+        return $cleanContainer;
     }
 }
 

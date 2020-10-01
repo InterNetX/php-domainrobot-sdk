@@ -494,7 +494,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id Lorem Ipsum
+     * @param int $id internal id
      *
      * @return $this
      */
@@ -518,7 +518,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param string $number Lorem Ipsum
+     * @param string $number invoice number
      *
      * @return $this
      */
@@ -542,7 +542,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \Domainrobot\Model\Customer $customer Lorem Ipum
+     * @param \Domainrobot\Model\Customer $customer Customer
      *
      * @return $this
      */
@@ -566,7 +566,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets payment
      *
-     * @param \Domainrobot\Model\PaymentConstants $payment Lorem Ipsum
+     * @param \Domainrobot\Model\PaymentConstants $payment The method of payment: PRE, POST, etc.
      *
      * @return $this
      */
@@ -590,7 +590,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets paymentMode
      *
-     * @param string $paymentMode Lorem Ipsum
+     * @param string $paymentMode Additional payment data, such as provider: ipayment
      *
      * @return $this
      */
@@ -614,7 +614,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets paymentTransaction
      *
-     * @param string $paymentTransaction Lorem Ipsum
+     * @param string $paymentTransaction The payment transaction number
      *
      * @return $this
      */
@@ -662,7 +662,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets sepaMandateReference
      *
-     * @param string $sepaMandateReference Lorem Ipsum
+     * @param string $sepaMandateReference SEPA Mandate Reference
      *
      * @return $this
      */
@@ -686,7 +686,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets sepaMandateCollection
      *
-     * @param \DateTime $sepaMandateCollection Lorem Ipsum
+     * @param \DateTime $sepaMandateCollection Date of SEPA collection
      *
      * @return $this
      */
@@ -710,7 +710,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param double $amount Lorem Ipsum
+     * @param double $amount Invoice amount
      *
      * @return $this
      */
@@ -734,7 +734,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets vatAmount
      *
-     * @param double $vatAmount Lorem Ipsum
+     * @param double $vatAmount Vat amount
      *
      * @return $this
      */
@@ -758,7 +758,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\InvoiceStatusConstants $status Lorem Ipsum
+     * @param \Domainrobot\Model\InvoiceStatusConstants $status Invoice status
      *
      * @return $this
      */
@@ -782,7 +782,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\AccountingDocumentTypeConstants $type Lorem Ipsum
+     * @param \Domainrobot\Model\AccountingDocumentTypeConstants $type Type of invoice
      *
      * @return $this
      */
@@ -806,7 +806,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets failed
      *
-     * @param bool $failed Lorem Ipsum
+     * @param bool $failed Indicator that shows that something is wrong with the process
      *
      * @return $this
      */
@@ -830,7 +830,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency Lorem Ipsum
+     * @param string $currency Used currency of the amount
      *
      * @return $this
      */
@@ -854,7 +854,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets paid
      *
-     * @param \DateTime $paid Lorem Ipsum
+     * @param \DateTime $paid Date of payment
      *
      * @return $this
      */
@@ -878,7 +878,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets document
      *
-     * @param \Domainrobot\Model\Document $document Lorem Ipsum
+     * @param \Domainrobot\Model\Document $document The linked pdf
      *
      * @return $this
      */
@@ -902,7 +902,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets comment
      *
-     * @param string $comment Lorem Ipsum
+     * @param string $comment Comment to the invoice
      *
      * @return $this
      */

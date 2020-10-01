@@ -48,6 +48,8 @@ class CodeSigningType
     const VBA = 'VBA';
     const ADOBE_AIR = 'ADOBE_AIR';
     const APPLE = 'APPLE';
+    const MOZILLA = 'MOZILLA';
+    const OTHER = 'OTHER';
     
     /**
      * Gets allowable values of the enum
@@ -61,6 +63,8 @@ class CodeSigningType
             self::VBA,
             self::ADOBE_AIR,
             self::APPLE,
+            self::MOZILLA,
+            self::OTHER,
         ];
     }
 }

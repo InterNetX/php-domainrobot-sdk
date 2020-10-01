@@ -55,6 +55,7 @@ class AuthenticationStep
     const OV_CALLBACK = 'OV_CALLBACK';
     const FREE_DVUP = 'FREE_DVUP';
     const EV_CLICKTROUGH = 'EV_CLICKTROUGH';
+    const EXTENDED_VERIFICATION = 'EXTENDED_VERIFICATION';
     
     /**
      * Gets allowable values of the enum
@@ -75,6 +76,7 @@ class AuthenticationStep
             self::OV_CALLBACK,
             self::FREE_DVUP,
             self::EV_CLICKTROUGH,
+            self::EXTENDED_VERIFICATION,
         ];
     }
 }

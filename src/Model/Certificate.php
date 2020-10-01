@@ -76,6 +76,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'serialNumber' => 'string',
         'product' => 'string',
         'codeSigningType' => '\Domainrobot\Model\CodeSigningType',
+        'codeSigningProvisioningMethod' => '\Domainrobot\Model\CodeSigningProvisioningMethod',
+        'codeSigningHardwarePlatform' => '\Domainrobot\Model\CodeSigningHardwarePlatform',
         'certificateType' => '\Domainrobot\Model\CertificateType',
         'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
         'expire' => '\DateTime',
@@ -120,6 +122,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'serialNumber' => null,
         'product' => null,
         'codeSigningType' => null,
+        'codeSigningProvisioningMethod' => null,
+        'codeSigningHardwarePlatform' => null,
         'certificateType' => null,
         'signatureHashAlgorithm' => null,
         'expire' => 'date-time',
@@ -185,6 +189,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'serialNumber' => 'serialNumber',
         'product' => 'product',
         'codeSigningType' => 'codeSigningType',
+        'codeSigningProvisioningMethod' => 'codeSigningProvisioningMethod',
+        'codeSigningHardwarePlatform' => 'codeSigningHardwarePlatform',
         'certificateType' => 'certificateType',
         'signatureHashAlgorithm' => 'signatureHashAlgorithm',
         'expire' => 'expire',
@@ -229,6 +235,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'serialNumber' => 'setSerialNumber',
         'product' => 'setProduct',
         'codeSigningType' => 'setCodeSigningType',
+        'codeSigningProvisioningMethod' => 'setCodeSigningProvisioningMethod',
+        'codeSigningHardwarePlatform' => 'setCodeSigningHardwarePlatform',
         'certificateType' => 'setCertificateType',
         'signatureHashAlgorithm' => 'setSignatureHashAlgorithm',
         'expire' => 'setExpire',
@@ -273,6 +281,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'serialNumber' => 'getSerialNumber',
         'product' => 'getProduct',
         'codeSigningType' => 'getCodeSigningType',
+        'codeSigningProvisioningMethod' => 'getCodeSigningProvisioningMethod',
+        'codeSigningHardwarePlatform' => 'getCodeSigningHardwarePlatform',
         'certificateType' => 'getCertificateType',
         'signatureHashAlgorithm' => 'getSignatureHashAlgorithm',
         'expire' => 'getExpire',
@@ -371,6 +381,8 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['serialNumber'] = isset($data['serialNumber']) ? $this->createData($data['serialNumber'], 'serialNumber')  : null;
         $this->container['product'] = isset($data['product']) ? $this->createData($data['product'], 'product')  : null;
         $this->container['codeSigningType'] = isset($data['codeSigningType']) ? $this->createData($data['codeSigningType'], 'codeSigningType')  : null;
+        $this->container['codeSigningProvisioningMethod'] = isset($data['codeSigningProvisioningMethod']) ? $this->createData($data['codeSigningProvisioningMethod'], 'codeSigningProvisioningMethod')  : null;
+        $this->container['codeSigningHardwarePlatform'] = isset($data['codeSigningHardwarePlatform']) ? $this->createData($data['codeSigningHardwarePlatform'], 'codeSigningHardwarePlatform')  : null;
         $this->container['certificateType'] = isset($data['certificateType']) ? $this->createData($data['certificateType'], 'certificateType')  : null;
         $this->container['signatureHashAlgorithm'] = isset($data['signatureHashAlgorithm']) ? $this->createData($data['signatureHashAlgorithm'], 'signatureHashAlgorithm')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
@@ -463,8 +475,8 @@ class Certificate implements ModelInterface, ArrayAccess
         if ($this->container['product'] === null) {
             $invalidProperties[] = "'product' can't be null";
         }
-        if (!is_null($this->container['password']) && !preg_match("/^[-a-zA-Z0-9]{8,32}$/", $this->container['password'])) {
-            $invalidProperties[] = "invalid value for 'password', must be conform to the pattern /^[-a-zA-Z0-9]{8,32}$/.";
+        if (!is_null($this->container['password']) && !preg_match("/^[a-zA-Z0-9]{8,32}$/", $this->container['password'])) {
+            $invalidProperties[] = "invalid value for 'password', must be conform to the pattern /^[a-zA-Z0-9]{8,32}$/.";
         }
 
         return $invalidProperties;
@@ -939,6 +951,54 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets codeSigningProvisioningMethod
+     *
+     * @return \Domainrobot\Model\CodeSigningProvisioningMethod
+     */
+    public function getCodeSigningProvisioningMethod()
+    {
+        return $this->container['codeSigningProvisioningMethod'];
+    }
+
+    /**
+     * Sets codeSigningProvisioningMethod
+     *
+     * @param \Domainrobot\Model\CodeSigningProvisioningMethod $codeSigningProvisioningMethod The provisioning method for the code signing token
+     *
+     * @return $this
+     */
+    public function setCodeSigningProvisioningMethod($codeSigningProvisioningMethod)
+    {
+        $this->container['codeSigningProvisioningMethod'] = $codeSigningProvisioningMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets codeSigningHardwarePlatform
+     *
+     * @return \Domainrobot\Model\CodeSigningHardwarePlatform
+     */
+    public function getCodeSigningHardwarePlatform()
+    {
+        return $this->container['codeSigningHardwarePlatform'];
+    }
+
+    /**
+     * Sets codeSigningHardwarePlatform
+     *
+     * @param \Domainrobot\Model\CodeSigningHardwarePlatform $codeSigningHardwarePlatform The hardware platform for the code signing token.
+     *
+     * @return $this
+     */
+    public function setCodeSigningHardwarePlatform($codeSigningHardwarePlatform)
+    {
+        $this->container['codeSigningHardwarePlatform'] = $codeSigningHardwarePlatform;
+
+        return $this;
+    }
+
+    /**
      * Gets certificateType
      *
      * @return \Domainrobot\Model\CertificateType
@@ -1102,8 +1162,8 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setPassword($password)
     {
 
-        if (!is_null($password) && (!preg_match("/^[-a-zA-Z0-9]{8,32}$/", $password))) {
-            throw new \InvalidArgumentException("invalid value for $password when calling Certificate., must conform to the pattern /^[-a-zA-Z0-9]{8,32}$/.");
+        if (!is_null($password) && (!preg_match("/^[a-zA-Z0-9]{8,32}$/", $password))) {
+            throw new \InvalidArgumentException("invalid value for $password when calling Certificate., must conform to the pattern /^[a-zA-Z0-9]{8,32}$/.");
         }
 
         $this->container['password'] = $password;

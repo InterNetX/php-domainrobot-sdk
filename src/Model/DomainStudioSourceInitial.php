@@ -58,6 +58,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
+        'onlyAvailable' => 'bool',
         'tlds' => 'string[]'
     ];
 
@@ -68,6 +69,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'services' => null,
+        'onlyAvailable' => null,
         'tlds' => null
     ];
 
@@ -99,6 +101,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'services' => 'services',
+        'onlyAvailable' => 'onlyAvailable',
         'tlds' => 'tlds'
     ];
 
@@ -109,6 +112,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'services' => 'setServices',
+        'onlyAvailable' => 'setOnlyAvailable',
         'tlds' => 'setTlds'
     ];
 
@@ -119,6 +123,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'services' => 'getServices',
+        'onlyAvailable' => 'getOnlyAvailable',
         'tlds' => 'getTlds'
     ];
 
@@ -183,6 +188,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
+        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
         $this->container['tlds'] = isset($data['tlds']) ? $this->createData($data['tlds'], 'tlds')  : null;
     }
 
@@ -285,6 +291,30 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     public function setServices($services)
     {
         $this->container['services'] = $services;
+
+        return $this;
+    }
+
+    /**
+     * Gets onlyAvailable
+     *
+     * @return bool
+     */
+    public function getOnlyAvailable()
+    {
+        return $this->container['onlyAvailable'];
+    }
+
+    /**
+     * Sets onlyAvailable
+     *
+     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
+     *
+     * @return $this
+     */
+    public function setOnlyAvailable($onlyAvailable)
+    {
+        $this->container['onlyAvailable'] = $onlyAvailable;
 
         return $this;
     }

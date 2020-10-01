@@ -64,7 +64,11 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => '\Domainrobot\Model\DomainStudioSourceSimilar',
         'recommended' => '\Domainrobot\Model\DomainStudioSourceRecommended',
         'custom' => '\Domainrobot\Model\DomainStudioSourceCustom',
-        'onlinePresence' => '\Domainrobot\Model\DomainStudioSourceOnlinePresence'
+        'onlinePresence' => '\Domainrobot\Model\DomainStudioSourceOnlinePresence',
+        'personalNames' => '\Domainrobot\Model\DomainStudioSourcePersonalNames',
+        'spinWord' => '\Domainrobot\Model\DomainStudioSourceSpinWord',
+        'upcoming' => '\Domainrobot\Model\DomainStudioSourceUpcoming',
+        'prefixSuffix' => '\Domainrobot\Model\DomainStudioSourcePrefixSuffix'
     ];
 
     /**
@@ -80,7 +84,11 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => null,
         'recommended' => null,
         'custom' => null,
-        'onlinePresence' => null
+        'onlinePresence' => null,
+        'personalNames' => null,
+        'spinWord' => null,
+        'upcoming' => null,
+        'prefixSuffix' => null
     ];
 
     /**
@@ -117,7 +125,11 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => 'similar',
         'recommended' => 'recommended',
         'custom' => 'custom',
-        'onlinePresence' => 'onlinePresence'
+        'onlinePresence' => 'onlinePresence',
+        'personalNames' => 'personalNames',
+        'spinWord' => 'spinWord',
+        'upcoming' => 'upcoming',
+        'prefixSuffix' => 'prefixSuffix'
     ];
 
     /**
@@ -133,7 +145,11 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => 'setSimilar',
         'recommended' => 'setRecommended',
         'custom' => 'setCustom',
-        'onlinePresence' => 'setOnlinePresence'
+        'onlinePresence' => 'setOnlinePresence',
+        'personalNames' => 'setPersonalNames',
+        'spinWord' => 'setSpinWord',
+        'upcoming' => 'setUpcoming',
+        'prefixSuffix' => 'setPrefixSuffix'
     ];
 
     /**
@@ -149,7 +165,11 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'similar' => 'getSimilar',
         'recommended' => 'getRecommended',
         'custom' => 'getCustom',
-        'onlinePresence' => 'getOnlinePresence'
+        'onlinePresence' => 'getOnlinePresence',
+        'personalNames' => 'getPersonalNames',
+        'spinWord' => 'getSpinWord',
+        'upcoming' => 'getUpcoming',
+        'prefixSuffix' => 'getPrefixSuffix'
     ];
 
     /**
@@ -220,6 +240,10 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         $this->container['recommended'] = isset($data['recommended']) ? $this->createData($data['recommended'], 'recommended')  : null;
         $this->container['custom'] = isset($data['custom']) ? $this->createData($data['custom'], 'custom')  : null;
         $this->container['onlinePresence'] = isset($data['onlinePresence']) ? $this->createData($data['onlinePresence'], 'onlinePresence')  : null;
+        $this->container['personalNames'] = isset($data['personalNames']) ? $this->createData($data['personalNames'], 'personalNames')  : null;
+        $this->container['spinWord'] = isset($data['spinWord']) ? $this->createData($data['spinWord'], 'spinWord')  : null;
+        $this->container['upcoming'] = isset($data['upcoming']) ? $this->createData($data['upcoming'], 'upcoming')  : null;
+        $this->container['prefixSuffix'] = isset($data['prefixSuffix']) ? $this->createData($data['prefixSuffix'], 'prefixSuffix')  : null;
     }
 
     /**
@@ -489,6 +513,102 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     public function setOnlinePresence($onlinePresence)
     {
         $this->container['onlinePresence'] = $onlinePresence;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalNames
+     *
+     * @return \Domainrobot\Model\DomainStudioSourcePersonalNames
+     */
+    public function getPersonalNames()
+    {
+        return $this->container['personalNames'];
+    }
+
+    /**
+     * Sets personalNames
+     *
+     * @param \Domainrobot\Model\DomainStudioSourcePersonalNames $personalNames The configuration for the personal names source
+     *
+     * @return $this
+     */
+    public function setPersonalNames($personalNames)
+    {
+        $this->container['personalNames'] = $personalNames;
+
+        return $this;
+    }
+
+    /**
+     * Gets spinWord
+     *
+     * @return \Domainrobot\Model\DomainStudioSourceSpinWord
+     */
+    public function getSpinWord()
+    {
+        return $this->container['spinWord'];
+    }
+
+    /**
+     * Sets spinWord
+     *
+     * @param \Domainrobot\Model\DomainStudioSourceSpinWord $spinWord The configuration for the spin word source
+     *
+     * @return $this
+     */
+    public function setSpinWord($spinWord)
+    {
+        $this->container['spinWord'] = $spinWord;
+
+        return $this;
+    }
+
+    /**
+     * Gets upcoming
+     *
+     * @return \Domainrobot\Model\DomainStudioSourceUpcoming
+     */
+    public function getUpcoming()
+    {
+        return $this->container['upcoming'];
+    }
+
+    /**
+     * Sets upcoming
+     *
+     * @param \Domainrobot\Model\DomainStudioSourceUpcoming $upcoming The configuration for the upcoming source
+     *
+     * @return $this
+     */
+    public function setUpcoming($upcoming)
+    {
+        $this->container['upcoming'] = $upcoming;
+
+        return $this;
+    }
+
+    /**
+     * Gets prefixSuffix
+     *
+     * @return \Domainrobot\Model\DomainStudioSourcePrefixSuffix
+     */
+    public function getPrefixSuffix()
+    {
+        return $this->container['prefixSuffix'];
+    }
+
+    /**
+     * Sets prefixSuffix
+     *
+     * @param \Domainrobot\Model\DomainStudioSourcePrefixSuffix $prefixSuffix The configuration for the prefix suffix source
+     *
+     * @return $this
+     */
+    public function setPrefixSuffix($prefixSuffix)
+    {
+        $this->container['prefixSuffix'] = $prefixSuffix;
 
         return $this;
     }

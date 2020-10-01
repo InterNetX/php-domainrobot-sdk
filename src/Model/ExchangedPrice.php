@@ -76,7 +76,8 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'valid' => '\DateTime',
         'vatRate' => 'double',
         'vatAmount' => 'double',
-        'rate' => 'double'
+        'rate' => 'double',
+        'exchangeFee' => 'float'
     ];
 
     /**
@@ -104,7 +105,8 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'valid' => 'date-time',
         'vatRate' => 'double',
         'vatAmount' => 'double',
-        'rate' => 'double'
+        'rate' => 'double',
+        'exchangeFee' => 'float'
     ];
 
     /**
@@ -153,7 +155,8 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'valid' => 'valid',
         'vatRate' => 'vatRate',
         'vatAmount' => 'vatAmount',
-        'rate' => 'rate'
+        'rate' => 'rate',
+        'exchangeFee' => 'exchangeFee'
     ];
 
     /**
@@ -181,7 +184,8 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'valid' => 'setValid',
         'vatRate' => 'setVatRate',
         'vatAmount' => 'setVatAmount',
-        'rate' => 'setRate'
+        'rate' => 'setRate',
+        'exchangeFee' => 'setExchangeFee'
     ];
 
     /**
@@ -209,7 +213,8 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'valid' => 'getValid',
         'vatRate' => 'getVatRate',
         'vatAmount' => 'getVatAmount',
-        'rate' => 'getRate'
+        'rate' => 'getRate',
+        'exchangeFee' => 'getExchangeFee'
     ];
 
     /**
@@ -292,6 +297,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         $this->container['vatRate'] = isset($data['vatRate']) ? $this->createData($data['vatRate'], 'vatRate')  : null;
         $this->container['vatAmount'] = isset($data['vatAmount']) ? $this->createData($data['vatAmount'], 'vatAmount')  : null;
         $this->container['rate'] = isset($data['rate']) ? $this->createData($data['rate'], 'rate')  : null;
+        $this->container['exchangeFee'] = isset($data['exchangeFee']) ? $this->createData($data['exchangeFee'], 'exchangeFee')  : null;
     }
 
     /**
@@ -845,13 +851,37 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets rate
      *
-     * @param double $rate The exchnage rate between account and price
+     * @param double $rate The exchange rate between account and price
      *
      * @return $this
      */
     public function setRate($rate)
     {
         $this->container['rate'] = $rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets exchangeFee
+     *
+     * @return float
+     */
+    public function getExchangeFee()
+    {
+        return $this->container['exchangeFee'];
+    }
+
+    /**
+     * Sets exchangeFee
+     *
+     * @param float $exchangeFee The exchange fee if the price currency does not match the billing currency
+     *
+     * @return $this
+     */
+    public function setExchangeFee($exchangeFee)
+    {
+        $this->container['exchangeFee'] = $exchangeFee;
 
         return $this;
     }

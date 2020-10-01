@@ -61,7 +61,11 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'string',
         'source' => '\Domainrobot\Model\DomainStudioDomainSource',
         'services' => '\Domainrobot\Model\DomainStudioService',
-        'debugTime' => 'bool'
+        'debugTime' => 'int',
+        'portfolio' => 'bool',
+        'forceDnsCheck' => 'bool',
+        'onlyAvailable' => 'bool',
+        'isPrereg' => 'bool'
     ];
 
     /**
@@ -74,7 +78,11 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => null,
         'source' => null,
         'services' => null,
-        'debugTime' => null
+        'debugTime' => 'int64',
+        'portfolio' => null,
+        'forceDnsCheck' => null,
+        'onlyAvailable' => null,
+        'isPrereg' => null
     ];
 
     /**
@@ -108,7 +116,11 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'idn',
         'source' => 'source',
         'services' => 'services',
-        'debugTime' => 'debugTime'
+        'debugTime' => 'debugTime',
+        'portfolio' => 'portfolio',
+        'forceDnsCheck' => 'forceDnsCheck',
+        'onlyAvailable' => 'onlyAvailable',
+        'isPrereg' => 'isPrereg'
     ];
 
     /**
@@ -121,7 +133,11 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'setIdn',
         'source' => 'setSource',
         'services' => 'setServices',
-        'debugTime' => 'setDebugTime'
+        'debugTime' => 'setDebugTime',
+        'portfolio' => 'setPortfolio',
+        'forceDnsCheck' => 'setForceDnsCheck',
+        'onlyAvailable' => 'setOnlyAvailable',
+        'isPrereg' => 'setIsPrereg'
     ];
 
     /**
@@ -134,7 +150,11 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'idn' => 'getIdn',
         'source' => 'getSource',
         'services' => 'getServices',
-        'debugTime' => 'getDebugTime'
+        'debugTime' => 'getDebugTime',
+        'portfolio' => 'getPortfolio',
+        'forceDnsCheck' => 'getForceDnsCheck',
+        'onlyAvailable' => 'getOnlyAvailable',
+        'isPrereg' => 'getIsPrereg'
     ];
 
     /**
@@ -202,6 +222,10 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['debugTime'] = isset($data['debugTime']) ? $this->createData($data['debugTime'], 'debugTime')  : null;
+        $this->container['portfolio'] = isset($data['portfolio']) ? $this->createData($data['portfolio'], 'portfolio')  : null;
+        $this->container['forceDnsCheck'] = isset($data['forceDnsCheck']) ? $this->createData($data['forceDnsCheck'], 'forceDnsCheck')  : null;
+        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
+        $this->container['isPrereg'] = isset($data['isPrereg']) ? $this->createData($data['isPrereg'], 'isPrereg')  : null;
     }
 
     /**
@@ -382,7 +406,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     /**
      * Gets debugTime
      *
-     * @return bool
+     * @return int
      */
     public function getDebugTime()
     {
@@ -392,13 +416,109 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     /**
      * Sets debugTime
      *
-     * @param bool $debugTime Defines if the user already owns this domain.
+     * @param int $debugTime The processing time for this domain.
      *
      * @return $this
      */
     public function setDebugTime($debugTime)
     {
         $this->container['debugTime'] = $debugTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets portfolio
+     *
+     * @return bool
+     */
+    public function getPortfolio()
+    {
+        return $this->container['portfolio'];
+    }
+
+    /**
+     * Sets portfolio
+     *
+     * @param bool $portfolio Defines if the user already owns this domain.
+     *
+     * @return $this
+     */
+    public function setPortfolio($portfolio)
+    {
+        $this->container['portfolio'] = $portfolio;
+
+        return $this;
+    }
+
+    /**
+     * Gets forceDnsCheck
+     *
+     * @return bool
+     */
+    public function getForceDnsCheck()
+    {
+        return $this->container['forceDnsCheck'];
+    }
+
+    /**
+     * Sets forceDnsCheck
+     *
+     * @param bool $forceDnsCheck All whois checks will be done via dns check.
+     *
+     * @return $this
+     */
+    public function setForceDnsCheck($forceDnsCheck)
+    {
+        $this->container['forceDnsCheck'] = $forceDnsCheck;
+
+        return $this;
+    }
+
+    /**
+     * Gets onlyAvailable
+     *
+     * @return bool
+     */
+    public function getOnlyAvailable()
+    {
+        return $this->container['onlyAvailable'];
+    }
+
+    /**
+     * Sets onlyAvailable
+     *
+     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
+     *
+     * @return $this
+     */
+    public function setOnlyAvailable($onlyAvailable)
+    {
+        $this->container['onlyAvailable'] = $onlyAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets isPrereg
+     *
+     * @return bool
+     */
+    public function getIsPrereg()
+    {
+        return $this->container['isPrereg'];
+    }
+
+    /**
+     * Sets isPrereg
+     *
+     * @param bool $isPrereg Defines whether this domain name is only available for preregistration.
+     *
+     * @return $this
+     */
+    public function setIsPrereg($isPrereg)
+    {
+        $this->container['isPrereg'] = $isPrereg;
 
         return $this;
     }

@@ -278,7 +278,7 @@ class WorkflowEvent implements ModelInterface, ArrayAccess
     /**
      * Sets vertex
      *
-     * @param int $vertex Lorem Ipsum
+     * @param int $vertex Vertex
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class WorkflowEvent implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type Lorem Ipsum
+     * @param string $type Event type
      *
      * @return $this
      */

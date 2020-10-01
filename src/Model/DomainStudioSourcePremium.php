@@ -58,6 +58,7 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
+        'onlyAvailable' => 'bool',
         'promoTlds' => 'string[]',
         'topTlds' => 'string[]',
         'max' => 'int'
@@ -70,6 +71,7 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'services' => null,
+        'onlyAvailable' => null,
         'promoTlds' => null,
         'topTlds' => null,
         'max' => 'int32'
@@ -103,6 +105,7 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'services' => 'services',
+        'onlyAvailable' => 'onlyAvailable',
         'promoTlds' => 'promoTlds',
         'topTlds' => 'topTlds',
         'max' => 'max'
@@ -115,6 +118,7 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'services' => 'setServices',
+        'onlyAvailable' => 'setOnlyAvailable',
         'promoTlds' => 'setPromoTlds',
         'topTlds' => 'setTopTlds',
         'max' => 'setMax'
@@ -127,6 +131,7 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'services' => 'getServices',
+        'onlyAvailable' => 'getOnlyAvailable',
         'promoTlds' => 'getPromoTlds',
         'topTlds' => 'getTopTlds',
         'max' => 'getMax'
@@ -193,6 +198,7 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
+        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
         $this->container['promoTlds'] = isset($data['promoTlds']) ? $this->createData($data['promoTlds'], 'promoTlds')  : null;
         $this->container['topTlds'] = isset($data['topTlds']) ? $this->createData($data['topTlds'], 'topTlds')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
@@ -297,6 +303,30 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
     public function setServices($services)
     {
         $this->container['services'] = $services;
+
+        return $this;
+    }
+
+    /**
+     * Gets onlyAvailable
+     *
+     * @return bool
+     */
+    public function getOnlyAvailable()
+    {
+        return $this->container['onlyAvailable'];
+    }
+
+    /**
+     * Sets onlyAvailable
+     *
+     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
+     *
+     * @return $this
+     */
+    public function setOnlyAvailable($onlyAvailable)
+    {
+        $this->container['onlyAvailable'] = $onlyAvailable;
 
         return $this;
     }

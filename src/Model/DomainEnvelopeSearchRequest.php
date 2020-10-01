@@ -61,8 +61,11 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'currency' => 'string',
         'debug' => 'bool',
         'checkPortfolio' => 'bool',
+        'forceDnsCheck' => 'bool',
+        'allowDuplicates' => 'bool',
         'sources' => '\Domainrobot\Model\DomainStudioSources',
-        'clientIp' => 'string'
+        'clientIp' => 'string',
+        'onlyAvailable' => 'bool'
     ];
 
     /**
@@ -75,8 +78,11 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'currency' => null,
         'debug' => null,
         'checkPortfolio' => null,
+        'forceDnsCheck' => null,
+        'allowDuplicates' => null,
         'sources' => null,
-        'clientIp' => null
+        'clientIp' => null,
+        'onlyAvailable' => null
     ];
 
     /**
@@ -110,8 +116,11 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'currency' => 'currency',
         'debug' => 'debug',
         'checkPortfolio' => 'checkPortfolio',
+        'forceDnsCheck' => 'forceDnsCheck',
+        'allowDuplicates' => 'allowDuplicates',
         'sources' => 'sources',
-        'clientIp' => 'clientIp'
+        'clientIp' => 'clientIp',
+        'onlyAvailable' => 'onlyAvailable'
     ];
 
     /**
@@ -124,8 +133,11 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'currency' => 'setCurrency',
         'debug' => 'setDebug',
         'checkPortfolio' => 'setCheckPortfolio',
+        'forceDnsCheck' => 'setForceDnsCheck',
+        'allowDuplicates' => 'setAllowDuplicates',
         'sources' => 'setSources',
-        'clientIp' => 'setClientIp'
+        'clientIp' => 'setClientIp',
+        'onlyAvailable' => 'setOnlyAvailable'
     ];
 
     /**
@@ -138,8 +150,11 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'currency' => 'getCurrency',
         'debug' => 'getDebug',
         'checkPortfolio' => 'getCheckPortfolio',
+        'forceDnsCheck' => 'getForceDnsCheck',
+        'allowDuplicates' => 'getAllowDuplicates',
         'sources' => 'getSources',
-        'clientIp' => 'getClientIp'
+        'clientIp' => 'getClientIp',
+        'onlyAvailable' => 'getOnlyAvailable'
     ];
 
     /**
@@ -206,8 +221,11 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
         $this->container['debug'] = isset($data['debug']) ? $this->createData($data['debug'], 'debug')  : null;
         $this->container['checkPortfolio'] = isset($data['checkPortfolio']) ? $this->createData($data['checkPortfolio'], 'checkPortfolio')  : null;
+        $this->container['forceDnsCheck'] = isset($data['forceDnsCheck']) ? $this->createData($data['forceDnsCheck'], 'forceDnsCheck')  : null;
+        $this->container['allowDuplicates'] = isset($data['allowDuplicates']) ? $this->createData($data['allowDuplicates'], 'allowDuplicates')  : null;
         $this->container['sources'] = isset($data['sources']) ? $this->createData($data['sources'], 'sources')  : null;
         $this->container['clientIp'] = isset($data['clientIp']) ? $this->createData($data['clientIp'], 'clientIp')  : null;
+        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
     }
 
     /**
@@ -386,6 +404,54 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets forceDnsCheck
+     *
+     * @return bool
+     */
+    public function getForceDnsCheck()
+    {
+        return $this->container['forceDnsCheck'];
+    }
+
+    /**
+     * Sets forceDnsCheck
+     *
+     * @param bool $forceDnsCheck All whois checks will be done via dns check.
+     *
+     * @return $this
+     */
+    public function setForceDnsCheck($forceDnsCheck)
+    {
+        $this->container['forceDnsCheck'] = $forceDnsCheck;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowDuplicates
+     *
+     * @return bool
+     */
+    public function getAllowDuplicates()
+    {
+        return $this->container['allowDuplicates'];
+    }
+
+    /**
+     * Sets allowDuplicates
+     *
+     * @param bool $allowDuplicates Allow duplicate domain names from different sources.
+     *
+     * @return $this
+     */
+    public function setAllowDuplicates($allowDuplicates)
+    {
+        $this->container['allowDuplicates'] = $allowDuplicates;
+
+        return $this;
+    }
+
+    /**
      * Gets sources
      *
      * @return \Domainrobot\Model\DomainStudioSources
@@ -429,6 +495,30 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     public function setClientIp($clientIp)
     {
         $this->container['clientIp'] = $clientIp;
+
+        return $this;
+    }
+
+    /**
+     * Gets onlyAvailable
+     *
+     * @return bool
+     */
+    public function getOnlyAvailable()
+    {
+        return $this->container['onlyAvailable'];
+    }
+
+    /**
+     * Sets onlyAvailable
+     *
+     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
+     *
+     * @return $this
+     */
+    public function setOnlyAvailable($onlyAvailable)
+    {
+        $this->container['onlyAvailable'] = $onlyAvailable;
 
         return $this;
     }

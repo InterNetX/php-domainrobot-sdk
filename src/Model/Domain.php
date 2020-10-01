@@ -63,6 +63,7 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'name' => 'string',
         'idn' => 'string',
+        'domainCreated' => '\DateTime',
         'nicMemberLabel' => 'string',
         'registryStatus' => '\Domainrobot\Model\RegistryStatusConstants',
         'nameServers' => '\Domainrobot\Model\NameServer[]',
@@ -75,13 +76,10 @@ class Domain implements ModelInterface, ArrayAccess
         'parking' => '\Domainrobot\Model\ParkingProviderConstants',
         'extensions' => '\Domainrobot\Model\DomainExtensions',
         'logId' => 'int',
-        'nsCheck' => '\Domainrobot\Model\DNSCheck',
         'confirmOrder' => 'bool',
         'confirmOwnerConsent' => 'bool',
         'ignoreWhois' => 'bool',
         'comment' => 'string',
-        'includeWWW' => 'bool',
-        'includeWildcard' => 'bool',
         'registrarStatus' => '\Domainrobot\Model\RegistryStatusConstants',
         'registrarStatusReason' => 'string',
         'removeCancelation' => 'bool',
@@ -124,6 +122,7 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => null,
         'name' => null,
         'idn' => null,
+        'domainCreated' => 'date-time',
         'nicMemberLabel' => null,
         'registryStatus' => null,
         'nameServers' => null,
@@ -136,13 +135,10 @@ class Domain implements ModelInterface, ArrayAccess
         'parking' => null,
         'extensions' => null,
         'logId' => 'int64',
-        'nsCheck' => null,
         'confirmOrder' => null,
         'confirmOwnerConsent' => null,
         'ignoreWhois' => null,
         'comment' => null,
-        'includeWWW' => null,
-        'includeWildcard' => null,
         'registrarStatus' => null,
         'registrarStatusReason' => null,
         'removeCancelation' => null,
@@ -206,6 +202,7 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => 'updater',
         'name' => 'name',
         'idn' => 'idn',
+        'domainCreated' => 'domainCreated',
         'nicMemberLabel' => 'nicMemberLabel',
         'registryStatus' => 'registryStatus',
         'nameServers' => 'nameServers',
@@ -218,13 +215,10 @@ class Domain implements ModelInterface, ArrayAccess
         'parking' => 'parking',
         'extensions' => 'extensions',
         'logId' => 'logId',
-        'nsCheck' => 'nsCheck',
         'confirmOrder' => 'confirmOrder',
         'confirmOwnerConsent' => 'confirmOwnerConsent',
         'ignoreWhois' => 'ignoreWhois',
         'comment' => 'comment',
-        'includeWWW' => 'includeWWW',
-        'includeWildcard' => 'includeWildcard',
         'registrarStatus' => 'registrarStatus',
         'registrarStatusReason' => 'registrarStatusReason',
         'removeCancelation' => 'removeCancelation',
@@ -267,6 +261,7 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => 'setUpdater',
         'name' => 'setName',
         'idn' => 'setIdn',
+        'domainCreated' => 'setDomainCreated',
         'nicMemberLabel' => 'setNicMemberLabel',
         'registryStatus' => 'setRegistryStatus',
         'nameServers' => 'setNameServers',
@@ -279,13 +274,10 @@ class Domain implements ModelInterface, ArrayAccess
         'parking' => 'setParking',
         'extensions' => 'setExtensions',
         'logId' => 'setLogId',
-        'nsCheck' => 'setNsCheck',
         'confirmOrder' => 'setConfirmOrder',
         'confirmOwnerConsent' => 'setConfirmOwnerConsent',
         'ignoreWhois' => 'setIgnoreWhois',
         'comment' => 'setComment',
-        'includeWWW' => 'setIncludeWWW',
-        'includeWildcard' => 'setIncludeWildcard',
         'registrarStatus' => 'setRegistrarStatus',
         'registrarStatusReason' => 'setRegistrarStatusReason',
         'removeCancelation' => 'setRemoveCancelation',
@@ -328,6 +320,7 @@ class Domain implements ModelInterface, ArrayAccess
         'updater' => 'getUpdater',
         'name' => 'getName',
         'idn' => 'getIdn',
+        'domainCreated' => 'getDomainCreated',
         'nicMemberLabel' => 'getNicMemberLabel',
         'registryStatus' => 'getRegistryStatus',
         'nameServers' => 'getNameServers',
@@ -340,13 +333,10 @@ class Domain implements ModelInterface, ArrayAccess
         'parking' => 'getParking',
         'extensions' => 'getExtensions',
         'logId' => 'getLogId',
-        'nsCheck' => 'getNsCheck',
         'confirmOrder' => 'getConfirmOrder',
         'confirmOwnerConsent' => 'getConfirmOwnerConsent',
         'ignoreWhois' => 'getIgnoreWhois',
         'comment' => 'getComment',
-        'includeWWW' => 'getIncludeWWW',
-        'includeWildcard' => 'getIncludeWildcard',
         'registrarStatus' => 'getRegistrarStatus',
         'registrarStatusReason' => 'getRegistrarStatusReason',
         'removeCancelation' => 'getRemoveCancelation',
@@ -443,6 +433,7 @@ class Domain implements ModelInterface, ArrayAccess
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
+        $this->container['domainCreated'] = isset($data['domainCreated']) ? $this->createData($data['domainCreated'], 'domainCreated')  : null;
         $this->container['nicMemberLabel'] = isset($data['nicMemberLabel']) ? $this->createData($data['nicMemberLabel'], 'nicMemberLabel')  : null;
         $this->container['registryStatus'] = isset($data['registryStatus']) ? $this->createData($data['registryStatus'], 'registryStatus')  : null;
         $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
@@ -455,13 +446,10 @@ class Domain implements ModelInterface, ArrayAccess
         $this->container['parking'] = isset($data['parking']) ? $this->createData($data['parking'], 'parking')  : null;
         $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
         $this->container['logId'] = isset($data['logId']) ? $this->createData($data['logId'], 'logId')  : null;
-        $this->container['nsCheck'] = isset($data['nsCheck']) ? $this->createData($data['nsCheck'], 'nsCheck')  : null;
         $this->container['confirmOrder'] = isset($data['confirmOrder']) ? $this->createData($data['confirmOrder'], 'confirmOrder')  : null;
         $this->container['confirmOwnerConsent'] = isset($data['confirmOwnerConsent']) ? $this->createData($data['confirmOwnerConsent'], 'confirmOwnerConsent')  : null;
         $this->container['ignoreWhois'] = isset($data['ignoreWhois']) ? $this->createData($data['ignoreWhois'], 'ignoreWhois')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
-        $this->container['includeWWW'] = isset($data['includeWWW']) ? $this->createData($data['includeWWW'], 'includeWWW')  : null;
-        $this->container['includeWildcard'] = isset($data['includeWildcard']) ? $this->createData($data['includeWildcard'], 'includeWildcard')  : null;
         $this->container['registrarStatus'] = isset($data['registrarStatus']) ? $this->createData($data['registrarStatus'], 'registrarStatus')  : null;
         $this->container['registrarStatusReason'] = isset($data['registrarStatusReason']) ? $this->createData($data['registrarStatusReason'], 'registrarStatusReason')  : null;
         $this->container['removeCancelation'] = isset($data['removeCancelation']) ? $this->createData($data['removeCancelation'], 'removeCancelation')  : null;
@@ -725,6 +713,30 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets domainCreated
+     *
+     * @return \DateTime
+     */
+    public function getDomainCreated()
+    {
+        return $this->container['domainCreated'];
+    }
+
+    /**
+     * Sets domainCreated
+     *
+     * @param \DateTime $domainCreated The domain creation of the domain at the registry.
+     *
+     * @return $this
+     */
+    public function setDomainCreated($domainCreated)
+    {
+        $this->container['domainCreated'] = $domainCreated;
+
+        return $this;
+    }
+
+    /**
      * Gets nicMemberLabel
      *
      * @return string
@@ -833,7 +845,7 @@ class Domain implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param \Domainrobot\Model\TimePeriod $period The renew period in years.
+     * @param \Domainrobot\Model\TimePeriod $period The period in years, depends on the requested action
      *
      * @return $this
      */
@@ -1013,30 +1025,6 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets nsCheck
-     *
-     * @return \Domainrobot\Model\DNSCheck
-     */
-    public function getNsCheck()
-    {
-        return $this->container['nsCheck'];
-    }
-
-    /**
-     * Sets nsCheck
-     *
-     * @param \Domainrobot\Model\DNSCheck $nsCheck An additional nameserver check will be carried out.
-     *
-     * @return $this
-     */
-    public function setNsCheck($nsCheck)
-    {
-        $this->container['nsCheck'] = $nsCheck;
-
-        return $this;
-    }
-
-    /**
      * Gets confirmOrder
      *
      * @return bool
@@ -1128,54 +1116,6 @@ class Domain implements ModelInterface, ArrayAccess
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets includeWWW
-     *
-     * @return bool
-     */
-    public function getIncludeWWW()
-    {
-        return $this->container['includeWWW'];
-    }
-
-    /**
-     * Sets includeWWW
-     *
-     * @param bool $includeWWW Enable utomatic creation of the www subdomain.
-     *
-     * @return $this
-     */
-    public function setIncludeWWW($includeWWW)
-    {
-        $this->container['includeWWW'] = $includeWWW;
-
-        return $this;
-    }
-
-    /**
-     * Gets includeWildcard
-     *
-     * @return bool
-     */
-    public function getIncludeWildcard()
-    {
-        return $this->container['includeWildcard'];
-    }
-
-    /**
-     * Sets includeWildcard
-     *
-     * @param bool $includeWildcard Enable include wildcard.
-     *
-     * @return $this
-     */
-    public function setIncludeWildcard($includeWildcard)
-    {
-        $this->container['includeWildcard'] = $includeWildcard;
 
         return $this;
     }

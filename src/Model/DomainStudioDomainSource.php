@@ -51,6 +51,9 @@ class DomainStudioDomainSource
     const RECOMMENDED = 'RECOMMENDED';
     const CUSTOM = 'CUSTOM';
     const ONLINE_PRESENCE = 'ONLINE_PRESENCE';
+    const SPIN_WORD = 'SPIN_WORD';
+    const PERSONAL_NAMES = 'PERSONAL_NAMES';
+    const UPCOMING = 'UPCOMING';
     
     /**
      * Gets allowable values of the enum
@@ -67,6 +70,9 @@ class DomainStudioDomainSource
             self::RECOMMENDED,
             self::CUSTOM,
             self::ONLINE_PRESENCE,
+            self::SPIN_WORD,
+            self::PERSONAL_NAMES,
+            self::UPCOMING,
         ];
     }
 }

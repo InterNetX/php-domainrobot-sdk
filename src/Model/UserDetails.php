@@ -62,7 +62,8 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetVerifyEmail' => 'string',
         'passwordResetEmail' => 'string',
         'fname' => 'string',
-        'lname' => 'string'
+        'lname' => 'string',
+        'phone' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetVerifyEmail' => null,
         'passwordResetEmail' => null,
         'fname' => null,
-        'lname' => null
+        'lname' => null,
+        'phone' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetVerifyEmail' => 'passwordResetVerifyEmail',
         'passwordResetEmail' => 'passwordResetEmail',
         'fname' => 'fname',
-        'lname' => 'lname'
+        'lname' => 'lname',
+        'phone' => 'phone'
     ];
 
     /**
@@ -125,7 +128,8 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetVerifyEmail' => 'setPasswordResetVerifyEmail',
         'passwordResetEmail' => 'setPasswordResetEmail',
         'fname' => 'setFname',
-        'lname' => 'setLname'
+        'lname' => 'setLname',
+        'phone' => 'setPhone'
     ];
 
     /**
@@ -139,7 +143,8 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetVerifyEmail' => 'getPasswordResetVerifyEmail',
         'passwordResetEmail' => 'getPasswordResetEmail',
         'fname' => 'getFname',
-        'lname' => 'getLname'
+        'lname' => 'getLname',
+        'phone' => 'getPhone'
     ];
 
     /**
@@ -208,6 +213,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         $this->container['passwordResetEmail'] = isset($data['passwordResetEmail']) ? $this->createData($data['passwordResetEmail'], 'passwordResetEmail')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
+        $this->container['phone'] = isset($data['phone']) ? $this->createData($data['phone'], 'phone')  : null;
     }
 
     /**
@@ -429,6 +435,30 @@ class UserDetails implements ModelInterface, ArrayAccess
     public function setLname($lname)
     {
         $this->container['lname'] = $lname;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone The phone number of the guest user
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
 
         return $this;
     }

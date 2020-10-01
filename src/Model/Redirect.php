@@ -572,7 +572,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets title
      *
-     * @param string $title Lorem Ipsum
+     * @param string $title Name of the redirection
      *
      * @return $this
      */
@@ -596,7 +596,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets backups
      *
-     * @param string[] $backups Lorem Ipsum
+     * @param string[] $backups Alternative URLs for frame redirect
      *
      * @return $this
      */

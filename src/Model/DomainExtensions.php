@@ -59,7 +59,8 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'parkingExtensions' => '\Domainrobot\Model\DomainParkingExtensions',
         'tmchClaimsNoticeExtensions' => '\Domainrobot\Model\DomainTmchClaimNoticeExtensions',
-        'verificationExtensions' => '\Domainrobot\Model\ContactVerificationDomain'
+        'verificationExtensions' => '\Domainrobot\Model\ContactVerificationDomain',
+        'cancelationExtensions' => '\Domainrobot\Model\DomainCancelationExtensions'
     ];
 
     /**
@@ -70,7 +71,8 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'parkingExtensions' => null,
         'tmchClaimsNoticeExtensions' => null,
-        'verificationExtensions' => null
+        'verificationExtensions' => null,
+        'cancelationExtensions' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'parkingExtensions' => 'parkingExtensions',
         'tmchClaimsNoticeExtensions' => 'tmchClaimsNoticeExtensions',
-        'verificationExtensions' => 'verificationExtensions'
+        'verificationExtensions' => 'verificationExtensions',
+        'cancelationExtensions' => 'cancelationExtensions'
     ];
 
     /**
@@ -113,7 +116,8 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     protected static $setters = [
         'parkingExtensions' => 'setParkingExtensions',
         'tmchClaimsNoticeExtensions' => 'setTmchClaimsNoticeExtensions',
-        'verificationExtensions' => 'setVerificationExtensions'
+        'verificationExtensions' => 'setVerificationExtensions',
+        'cancelationExtensions' => 'setCancelationExtensions'
     ];
 
     /**
@@ -124,7 +128,8 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     protected static $getters = [
         'parkingExtensions' => 'getParkingExtensions',
         'tmchClaimsNoticeExtensions' => 'getTmchClaimsNoticeExtensions',
-        'verificationExtensions' => 'getVerificationExtensions'
+        'verificationExtensions' => 'getVerificationExtensions',
+        'cancelationExtensions' => 'getCancelationExtensions'
     ];
 
     /**
@@ -190,6 +195,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
         $this->container['parkingExtensions'] = isset($data['parkingExtensions']) ? $this->createData($data['parkingExtensions'], 'parkingExtensions')  : null;
         $this->container['tmchClaimsNoticeExtensions'] = isset($data['tmchClaimsNoticeExtensions']) ? $this->createData($data['tmchClaimsNoticeExtensions'], 'tmchClaimsNoticeExtensions')  : null;
         $this->container['verificationExtensions'] = isset($data['verificationExtensions']) ? $this->createData($data['verificationExtensions'], 'verificationExtensions')  : null;
+        $this->container['cancelationExtensions'] = isset($data['cancelationExtensions']) ? $this->createData($data['cancelationExtensions'], 'cancelationExtensions')  : null;
     }
 
     /**
@@ -339,6 +345,30 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     public function setVerificationExtensions($verificationExtensions)
     {
         $this->container['verificationExtensions'] = $verificationExtensions;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelationExtensions
+     *
+     * @return \Domainrobot\Model\DomainCancelationExtensions
+     */
+    public function getCancelationExtensions()
+    {
+        return $this->container['cancelationExtensions'];
+    }
+
+    /**
+     * Sets cancelationExtensions
+     *
+     * @param \Domainrobot\Model\DomainCancelationExtensions $cancelationExtensions cancelationExtensions
+     *
+     * @return $this
+     */
+    public function setCancelationExtensions($cancelationExtensions)
+    {
+        $this->container['cancelationExtensions'] = $cancelationExtensions;
 
         return $this;
     }

@@ -59,7 +59,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'owner' => '\Domainrobot\Model\BasicUser',
-        'job' => '\Domainrobot\Model\WorkflowSpool',
+        'job' => '\Domainrobot\Model\Job',
         'notify' => '\Domainrobot\Model\NotifyMessage',
         'stid' => 'string',
         'ctid' => 'string',
@@ -364,7 +364,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Gets job
      *
-     * @return \Domainrobot\Model\WorkflowSpool
+     * @return \Domainrobot\Model\Job
      */
     public function getJob()
     {
@@ -374,7 +374,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets job
      *
-     * @param \Domainrobot\Model\WorkflowSpool $job The job data. Available if the message is a job message
+     * @param \Domainrobot\Model\Job $job The job data. Available if the message is a job message
      *
      * @return $this
      */

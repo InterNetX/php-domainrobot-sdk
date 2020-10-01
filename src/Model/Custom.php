@@ -57,8 +57,7 @@ class Custom implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'key' => 'string',
-        'value' => 'string'
+        'key' => 'string'
     ];
 
     /**
@@ -67,8 +66,7 @@ class Custom implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'key' => null,
-        'value' => null
+        'key' => null
     ];
 
     /**
@@ -98,8 +96,7 @@ class Custom implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
-        'value' => 'value'
+        'key' => 'key'
     ];
 
     /**
@@ -108,8 +105,7 @@ class Custom implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'value' => 'setValue'
+        'key' => 'setKey'
     ];
 
     /**
@@ -118,8 +114,7 @@ class Custom implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'value' => 'getValue'
+        'key' => 'getKey'
     ];
 
     /**
@@ -183,7 +178,6 @@ class Custom implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['key'] = isset($data['key']) ? $this->createData($data['key'], 'key')  : null;
-        $this->container['value'] = isset($data['value']) ? $this->createData($data['value'], 'value')  : null;
     }
 
     /**
@@ -253,9 +247,6 @@ class Custom implements ModelInterface, ArrayAccess
         if ($this->container['key'] === null) {
             $invalidProperties[] = "'key' can't be null";
         }
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -284,37 +275,13 @@ class Custom implements ModelInterface, ArrayAccess
     /**
      * Sets key
      *
-     * @param string $key Lorem Ipsum
+     * @param string $key The key of the additional data of a booking item
      *
      * @return $this
      */
     public function setKey($key)
     {
         $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets value
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string $value Lorem Ipsum
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
 
         return $this;
     }

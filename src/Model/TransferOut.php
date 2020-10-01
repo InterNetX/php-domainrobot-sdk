@@ -848,7 +848,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets nackReason
      *
-     * @param int $nackReason The reason.
+     * @param int $nackReason The reason. Possible values are : 1 = Evidence of fraud / 2 = Current UDRP action / 3 = Court order / 4 = Identity dispute / 5 = No payment for previous registration period / 6 = Express written objection to the transfer from the transfer contact.
      *
      * @return $this
      */

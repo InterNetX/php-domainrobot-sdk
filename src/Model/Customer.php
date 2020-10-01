@@ -76,6 +76,7 @@ class Customer implements ModelInterface, ArrayAccess
         'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
         'paymentCurrency' => '\Domainrobot\Model\Currency',
+        'discountValid' => '\DateTime',
         'invoiceLanguage' => 'string',
         'taxable' => 'bool',
         'card' => '\Domainrobot\Model\Card',
@@ -83,6 +84,7 @@ class Customer implements ModelInterface, ArrayAccess
         'billingUsers' => '\Domainrobot\Model\BasicUser[]',
         'account' => '\Domainrobot\Model\Account',
         'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
+        'autodelete' => 'bool',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
@@ -114,6 +116,7 @@ class Customer implements ModelInterface, ArrayAccess
         'payment' => null,
         'paymentMode' => null,
         'paymentCurrency' => null,
+        'discountValid' => 'date-time',
         'invoiceLanguage' => null,
         'taxable' => null,
         'card' => null,
@@ -121,6 +124,7 @@ class Customer implements ModelInterface, ArrayAccess
         'billingUsers' => null,
         'account' => null,
         'clearAccount' => null,
+        'autodelete' => null,
         'fname' => null,
         'lname' => null,
         'pcode' => null,
@@ -173,6 +177,7 @@ class Customer implements ModelInterface, ArrayAccess
         'payment' => 'payment',
         'paymentMode' => 'paymentMode',
         'paymentCurrency' => 'paymentCurrency',
+        'discountValid' => 'discountValid',
         'invoiceLanguage' => 'invoiceLanguage',
         'taxable' => 'taxable',
         'card' => 'card',
@@ -180,6 +185,7 @@ class Customer implements ModelInterface, ArrayAccess
         'billingUsers' => 'billingUsers',
         'account' => 'account',
         'clearAccount' => 'clearAccount',
+        'autodelete' => 'autodelete',
         'fname' => 'fname',
         'lname' => 'lname',
         'pcode' => 'pcode',
@@ -211,6 +217,7 @@ class Customer implements ModelInterface, ArrayAccess
         'payment' => 'setPayment',
         'paymentMode' => 'setPaymentMode',
         'paymentCurrency' => 'setPaymentCurrency',
+        'discountValid' => 'setDiscountValid',
         'invoiceLanguage' => 'setInvoiceLanguage',
         'taxable' => 'setTaxable',
         'card' => 'setCard',
@@ -218,6 +225,7 @@ class Customer implements ModelInterface, ArrayAccess
         'billingUsers' => 'setBillingUsers',
         'account' => 'setAccount',
         'clearAccount' => 'setClearAccount',
+        'autodelete' => 'setAutodelete',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'pcode' => 'setPcode',
@@ -249,6 +257,7 @@ class Customer implements ModelInterface, ArrayAccess
         'payment' => 'getPayment',
         'paymentMode' => 'getPaymentMode',
         'paymentCurrency' => 'getPaymentCurrency',
+        'discountValid' => 'getDiscountValid',
         'invoiceLanguage' => 'getInvoiceLanguage',
         'taxable' => 'getTaxable',
         'card' => 'getCard',
@@ -256,6 +265,7 @@ class Customer implements ModelInterface, ArrayAccess
         'billingUsers' => 'getBillingUsers',
         'account' => 'getAccount',
         'clearAccount' => 'getClearAccount',
+        'autodelete' => 'getAutodelete',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'pcode' => 'getPcode',
@@ -341,6 +351,7 @@ class Customer implements ModelInterface, ArrayAccess
         $this->container['payment'] = isset($data['payment']) ? $this->createData($data['payment'], 'payment')  : null;
         $this->container['paymentMode'] = isset($data['paymentMode']) ? $this->createData($data['paymentMode'], 'paymentMode')  : null;
         $this->container['paymentCurrency'] = isset($data['paymentCurrency']) ? $this->createData($data['paymentCurrency'], 'paymentCurrency')  : null;
+        $this->container['discountValid'] = isset($data['discountValid']) ? $this->createData($data['discountValid'], 'discountValid')  : null;
         $this->container['invoiceLanguage'] = isset($data['invoiceLanguage']) ? $this->createData($data['invoiceLanguage'], 'invoiceLanguage')  : null;
         $this->container['taxable'] = isset($data['taxable']) ? $this->createData($data['taxable'], 'taxable')  : null;
         $this->container['card'] = isset($data['card']) ? $this->createData($data['card'], 'card')  : null;
@@ -348,6 +359,7 @@ class Customer implements ModelInterface, ArrayAccess
         $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
         $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
         $this->container['clearAccount'] = isset($data['clearAccount']) ? $this->createData($data['clearAccount'], 'clearAccount')  : null;
+        $this->container['autodelete'] = isset($data['autodelete']) ? $this->createData($data['autodelete'], 'autodelete')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
@@ -454,9 +466,6 @@ class Customer implements ModelInterface, ArrayAccess
         if ($this->container['addressLines'] === null) {
             $invalidProperties[] = "'addressLines' can't be null";
         }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
         }
@@ -479,9 +488,6 @@ class Customer implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'lname', the character length must be bigger than or equal to 0.";
         }
 
-        if ($this->container['pcode'] === null) {
-            $invalidProperties[] = "'pcode' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -975,6 +981,30 @@ class Customer implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets discountValid
+     *
+     * @return \DateTime
+     */
+    public function getDiscountValid()
+    {
+        return $this->container['discountValid'];
+    }
+
+    /**
+     * Sets discountValid
+     *
+     * @param \DateTime $discountValid The end of a promo discount.
+     *
+     * @return $this
+     */
+    public function setDiscountValid($discountValid)
+    {
+        $this->container['discountValid'] = $discountValid;
+
+        return $this;
+    }
+
+    /**
      * Gets invoiceLanguage
      *
      * @return string
@@ -1138,6 +1168,30 @@ class Customer implements ModelInterface, ArrayAccess
     public function setClearAccount($clearAccount)
     {
         $this->container['clearAccount'] = $clearAccount;
+
+        return $this;
+    }
+
+    /**
+     * Gets autodelete
+     *
+     * @return bool
+     */
+    public function getAutodelete()
+    {
+        return $this->container['autodelete'];
+    }
+
+    /**
+     * Sets autodelete
+     *
+     * @param bool $autodelete Flag indication if the customer is autodelete
+     *
+     * @return $this
+     */
+    public function setAutodelete($autodelete)
+    {
+        $this->container['autodelete'] = $autodelete;
 
         return $this;
     }

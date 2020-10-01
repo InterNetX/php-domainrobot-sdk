@@ -58,6 +58,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
+        'onlyAvailable' => 'bool',
         'max' => 'int',
         'maxSldLength' => 'int',
         'useDash' => 'bool',
@@ -87,6 +88,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'services' => null,
+        'onlyAvailable' => null,
         'max' => 'int32',
         'maxSldLength' => 'int32',
         'useDash' => null,
@@ -137,6 +139,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'services' => 'services',
+        'onlyAvailable' => 'onlyAvailable',
         'max' => 'max',
         'maxSldLength' => 'maxSldLength',
         'useDash' => 'useDash',
@@ -166,6 +169,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'services' => 'setServices',
+        'onlyAvailable' => 'setOnlyAvailable',
         'max' => 'setMax',
         'maxSldLength' => 'setMaxSldLength',
         'useDash' => 'setUseDash',
@@ -195,6 +199,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'services' => 'getServices',
+        'onlyAvailable' => 'getOnlyAvailable',
         'max' => 'getMax',
         'maxSldLength' => 'getMaxSldLength',
         'useDash' => 'getUseDash',
@@ -278,6 +283,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
+        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
         $this->container['maxSldLength'] = isset($data['maxSldLength']) ? $this->createData($data['maxSldLength'], 'maxSldLength')  : null;
         $this->container['useDash'] = isset($data['useDash']) ? $this->createData($data['useDash'], 'useDash')  : null;
@@ -399,6 +405,30 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     public function setServices($services)
     {
         $this->container['services'] = $services;
+
+        return $this;
+    }
+
+    /**
+     * Gets onlyAvailable
+     *
+     * @return bool
+     */
+    public function getOnlyAvailable()
+    {
+        return $this->container['onlyAvailable'];
+    }
+
+    /**
+     * Sets onlyAvailable
+     *
+     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
+     *
+     * @return $this
+     */
+    public function setOnlyAvailable($onlyAvailable)
+    {
+        $this->container['onlyAvailable'] = $onlyAvailable;
 
         return $this;
     }

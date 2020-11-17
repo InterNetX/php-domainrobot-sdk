@@ -157,6 +157,7 @@ class ZoneService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+        
         $data = $domainrobotResult->getResult()['data'];
         $zones = array();
         foreach ($data as $d) {
@@ -218,6 +219,8 @@ class ZoneService extends DomainrobotService
     {
         $domainrobotPromise = $this->infoAsync($name, $systemNameServer);
         $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new Zone(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }

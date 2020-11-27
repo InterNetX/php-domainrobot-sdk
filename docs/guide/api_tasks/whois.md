@@ -13,4 +13,4 @@ General call of tasks:
 List of all available tasks with linked examples:
 
 * single(string $domain)
-* [multi](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/examples/whois/WhoisMulti.js)(array $domains)
+* [multi](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/examples/whois/WhoisMulti.php)(array $domains)

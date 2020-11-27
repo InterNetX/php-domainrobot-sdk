@@ -82,6 +82,7 @@ module.exports = {
 						"api_tasks/transfer_out",
 						"api_tasks/trusted_app",
 						"api_tasks/user",
+						"api_tasks/whois",
 						"api_tasks/zone",
 					],
 				},

@@ -14,7 +14,7 @@ class SDKController
      *
      * @return string
      */
-    public function domainStudioSearch()
+    public function whoisMulti()
     {
         $domainrobot = new Domainrobot([
             'url' => 'https://api.autodns.com/v1',

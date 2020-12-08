@@ -107,6 +107,41 @@ paths:
           description: Too many requests; Quota limit reached
           schema:
             $ref: '#/definitions/ApiEstimationErrorResponse'
+  '/v1/smu_check/{username}':
+    get:
+      tags:
+         - social media
+      summary: Check if usernames are available on different social media plattforms
+      description: Check if usernames are available on different social media plattform
+      produces:
+        - application/json
+      parameters:
+        - name: username
+          in: path
+          description: Username to check
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiSocialMediaResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '401':
+          description: Unauthorized; Invalid or missing JWT
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '422':
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
+        '429':
+          description: Too many requests; Quota limit reached
+          schema:
+            $ref: '#/definitions/ApiEstimationErrorResponse'
   '/domainstudio/suggest/{keyword}':
     get:
       tags:

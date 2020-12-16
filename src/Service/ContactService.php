@@ -29,9 +29,14 @@ class ContactService extends DomainrobotService
      * @param Contact $body
      * @return Contact
      */
-    public function create(Contact $body)
+    public function create(Contact $body, array $keys = [])
     {
-        $domainrobotPromise = $this->createAsync($body);
+        $keysString = '';
+        if ( count($keys) > 0 ) {
+            $keysString = '?keys[]=' . implode('&keys[]=', $keys);
+        }
+
+        $domainrobotPromise = $this->createAsync($body, $keysString);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -45,10 +50,10 @@ class ContactService extends DomainrobotService
      * @param Contact $body
      * @return DomainrobotPromise
      */
-    public function createAsync(Contact $body)
+    public function createAsync(Contact $body, $keysString)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/contact",
+            $this->domainrobotConfig->getUrl() . "/contact" . $keysString,
             'POST',
             ["json" => $body->toArray()]
         );

@@ -16,4 +16,4 @@ List of all available tasks with linked examples:
   * $country: [ISO Code](https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste) (ISO-3166 ALPHA-2)
 * [majestic](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/pc_domains/Majestic.php)(Domains $domains)
 * [smuCheck](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/pc_domains/SocialMediaUsernameCheck.php)(string $username)
-* [wayback](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/pc_domains/Wayback.php)(string $domain)
+* [wayback](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/pc_domains/Wayback.php)(string $domain)

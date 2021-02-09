@@ -257,9 +257,9 @@ class JsonResponseDataListJsonResponseDataCertificate implements ModelInterface,
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

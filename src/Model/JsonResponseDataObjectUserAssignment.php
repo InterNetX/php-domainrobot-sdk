@@ -257,9 +257,9 @@ class JsonResponseDataObjectUserAssignment implements ModelInterface, ArrayAcces
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

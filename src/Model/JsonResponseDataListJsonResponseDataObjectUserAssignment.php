@@ -257,9 +257,9 @@ class JsonResponseDataListJsonResponseDataObjectUserAssignment implements ModelI
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

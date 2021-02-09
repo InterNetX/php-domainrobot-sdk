@@ -293,9 +293,9 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

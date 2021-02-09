@@ -233,9 +233,9 @@ class EstimationParametersV1WikipediaPageview implements ModelInterface, ArrayAc
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

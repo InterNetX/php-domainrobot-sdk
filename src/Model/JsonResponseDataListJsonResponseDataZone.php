@@ -257,9 +257,9 @@ class JsonResponseDataListJsonResponseDataZone implements ModelInterface, ArrayA
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

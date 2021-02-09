@@ -257,9 +257,9 @@ class JsonResponseDataListJsonResponseDataMailProxy implements ModelInterface, A
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

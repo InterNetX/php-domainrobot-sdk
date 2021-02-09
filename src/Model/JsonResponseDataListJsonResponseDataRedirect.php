@@ -257,9 +257,9 @@ class JsonResponseDataListJsonResponseDataRedirect implements ModelInterface, Ar
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

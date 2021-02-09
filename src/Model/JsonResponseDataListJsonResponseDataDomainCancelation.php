@@ -257,9 +257,9 @@ class JsonResponseDataListJsonResponseDataDomainCancelation implements ModelInte
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

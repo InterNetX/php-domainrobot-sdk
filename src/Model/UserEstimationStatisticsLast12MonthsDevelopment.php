@@ -239,9 +239,9 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
                 } catch (\Exception $ex) {
                     return $d;
                 }
-
-                return $reflectionInstances;
             }
+
+            return $reflectionInstances;
         }
 
         return $data;

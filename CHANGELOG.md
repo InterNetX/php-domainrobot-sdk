@@ -1,5 +1,50 @@
 # Changelog
 
+## [0.8.4] - 2021-02-15
+
+* Fixed error in property parameter of Model::createData() Method
+
+## [0.8.3] - 2021-02-09
+
+* Changing Version Number in composer.json
+
+## [0.8.2] - 2021-09-21
+
+* DEV-3508
+* Fixed Bug in Model::createData() Method
+
+## [0.8.1] - 2020-12-11
+
+* PUI-710
+
+## [0.8.0] - 2020-08-25
+
+* fixed a bug in models which caused wrong handling of certain objects
+* added bulk service for domains
+
+## [0.7.4] - 2020-09-03
+
+* bugfixes
+
+## [0.7.3] - 2020-09-02
+
+## [0.7.2] - 2020-09-02
+
+* fix attributes
+
+## [0.7.1] - 2020-09-02
+
+* Fix models
+
+## [0.7.0] - 2020-08-25
+
+* added pc.domains Service from InterNetX GmbH for Domain price checks
+    ** for more information visit pc.domains
+* added more examples and fixed broken examples
+* rebuilt src/Model Structure to allow unlimited depth and stacking of models
+* reworked Model constructors
+* added Models for all pc.domains routes
+
 ## [0.6.2] - 2020-07-29
 
 * Added new PriceService class

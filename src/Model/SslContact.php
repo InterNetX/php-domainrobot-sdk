@@ -285,9 +285,9 @@ class SslContact implements ModelInterface, ArrayAccess
      * @param string $property
      * @return mixed
      */
-    public function createData($data = null, $property)
+    public function createData($data = null, $property = '')
     {
-        if ($data === null) {
+        if ($data === null || $property === '') {
             return '';
         }
         $swaggerType = self::$swaggerTypes[$property];

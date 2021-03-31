@@ -1,0 +1,18 @@
+{
+
+    "stid": "20200311-app3-dev-3257",
+    "status": {
+        "code": "N400101",
+        "text": "Certificate order was started successfully.",
+        "type": "NOTIFY"
+    },
+    "object": {
+        "type": "Certificate",
+        "value": "junkdragons.de"
+    },
+    "data": [
+        {
+            "id": 4297939738
+        }
+    ]
+}

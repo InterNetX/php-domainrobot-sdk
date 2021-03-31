@@ -11,7 +11,9 @@
         }
     },
     "require-dev": {
-        "internetx/internetx-swagger-files": "dev-master"
+        "internetx/internetx-swagger-files": "dev-master",
+        "atoum/atoum": "^4.0",
+        "atoum/stubs": "^2.6"
     },
     "require": {
         "guzzlehttp/guzzle": "^7.2.0"

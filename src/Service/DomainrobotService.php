@@ -75,6 +75,10 @@ class DomainrobotService
         return $this;
     }
 
+    public function addGuzzleClientConfig($additionalConfig){
+        $this->guzzleClientConfig = array_merge($this->guzzleClientConfig, $additionalConfig);
+    }
+
     /**
      * General guzzle interface
      *

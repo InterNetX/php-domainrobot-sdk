@@ -1,0 +1,37 @@
+{
+
+		"stid": "20200311-app2-dev-14279",
+		"status": {
+			"code": "S400110",
+			"text": "CSR key was checked successfully.",
+			"type": "SUCCESS"
+		},
+		"data": [
+			{
+				"plain": "-----BEGIN CERTIFICATE REQUEST-----\nMIICozCCAYsCAQAwXjELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDEXMBUGA1UEAwwOanVua2RyYWdvbnMuZGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCg0iCqdclIXkKqtt/XW0t4D8bWIqWm9BnQtlfjDi4OkTT7VbBlP3CMmBE7ex+XwD9YAcntYLTBZsmFSTvVtucgbgDytbz02Y8KYCGhW5CbiZf+zJsSlB/UA4YG1ObfFIdMSqdjGAzagaClRIpvcjRNdnBVJ3Ul6P9cu++YPe46j04zz4TWaoZi61tKPAzKw94lHkvtDdP5mkaz3MVFkIBRZgO79ArGTD7oa5m1aAVqOxam2BqNY+DQ59BdmKes9rPObqiTp5DY28y1uMQc/0pN8QwIIoVX8lzjLA7Sz2SvkxhAFzY2dkhc4+1VfYkIO8jeV4jtVTD4ZrJoEIky6xGHAgMBAAGgADANBgkqhkiG9w0BAQsFAAOCAQEAamGkZwnvIlIWy5AXNTM6as/+dWGJ1rCmAhh4npGkWOZHKsK9kFFhMwhwn4IJY0r5y7c9M+6/K8pYHQayInWtVjZcVI3NUNCt6dQ5QzNAexNkgjiOl/JNlaced7kKxQe+P3o0vHRO4Vefw7LkyMrM4K8iZgB2DX++Iyj6Cn5v95DTX01ndabW+ycKPFznrZcVnqwL0HznaAnHF9Q6XMyEEcr70G3QofekvdjmRc1WhzYEKi8yk3FBQyYrA54s9dcIj2jbTgZFW4vxyS/BLSVfAShHP9IOYi5zb2zUYugtQX13KXLe5eCwa6S99FpFlkStgaczjdoacebYadX6zVC8Uw==\n-----END CERTIFICATE REQUEST-----",
+				"name": "junkdragons.de",
+				"keySize": 2048,
+				"countryCode": "AU",
+				"state": "Some-State",
+				"organization": "Internet Widgits Pty Ltd",
+				"product": "BASIC_SSL",
+				"authentication": [
+					{
+						"name": "junkdragons.de",
+						"method": "DNS",
+						"dns": "_dnsauth.junkdragons.de.\t300\tIN\tTXT\t\"202003111007103gz85txmpl9x77x0ndm055v1w8lcmretx8wgshot6369xxu3lg\"",
+						"provisioning": true
+					},
+					{
+						"name": "junkdragons.de",
+						"method": "FILE",
+						"fileName": "junkdragons.de/.well-known/pki-validation/fileauth.txt",
+						"fileContent": "2020031110071149hu0i9pe92wgypcio2rl527857rtqakhmlm7qn1decuse9lus"
+					}
+				],
+				"algorithm": "RSA",
+				"signatureHashAlgorithm": "SHA256"
+			}
+		],
+		"ctid": "ctid-test-12323"
+}

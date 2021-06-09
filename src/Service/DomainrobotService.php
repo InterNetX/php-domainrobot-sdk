@@ -102,7 +102,7 @@ class DomainrobotService
         )->then(
             /**
              *
-             * @return DomainrobotException
+             * @return DomainrobotResult
              */
             function (ResponseInterface $response) use ($url, $startTime) {
                 $rawResponse = $response->getBody()->getContents();
@@ -115,7 +115,7 @@ class DomainrobotService
                     microtime(true) - $startTime
                 );
 
-                return new DomainrobotResult($decodedResponse, $response->getStatusCode());
+                return new DomainrobotResult($decodedResponse, $response->getStatusCode(), $response->getHeaders());
             },
             /**
              *

@@ -2,19 +2,17 @@
 
 namespace Domainrobot\Lib;
 
-use ReflectionClass;
-
 class DomainrobotResult {
 
     private $result;
     private $statusCode;
-    private $returnObject;
+    private $headers;
 
-
-    public function __construct($result, $statusCode)
+    public function __construct($result, $statusCode, $headers)
     {
         $this->setResult($result);
         $this->setStatusCode($statusCode);
+        $this->setHeaders($headers);
     }
 
     public function getStatusCode()
@@ -35,6 +33,16 @@ class DomainrobotResult {
     public function setResult($result)
     {
         return $this->result = $result;
+    }
+
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    public function setHeaders($headers)
+    {
+        return $this->headers = $headers;
     }
 
     public function isSuccess(){

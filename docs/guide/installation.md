@@ -71,7 +71,7 @@ $domainrobot = new Domainrobot([
 $loginData = new LoginData([
   'user' => 'user',
   'password' => 'password',
-  'context' => '9'
+  'context' => 4
 ]);
 
 // login and create the session id

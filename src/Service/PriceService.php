@@ -2,14 +2,8 @@
 
 namespace Domainrobot\Service;
 
-use Domainrobot\Domainrobot;
-use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
-use Domainrobot\Model\Certificate;
-use Domainrobot\Model\CertificateData;
-use Domainrobot\Model\ObjectJob;
-use Domainrobot\Model\Query;
 use Domainrobot\Service\DomainrobotService;
 
 class PriceService extends DomainrobotService

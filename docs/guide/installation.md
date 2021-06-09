@@ -29,7 +29,7 @@ use Domainrobot\Domainrobot;
 
 internetx/php-domainrobot-sdk uses the [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/) so once you've installed the package via composer and the required autoload.php file, you can start to implement your first task.
 
-## Usage
+## Usage - Basic Auth
 
 Before you can interact with the API you need to specify your authentication credentials, the baseurl and the context.
 
@@ -44,6 +44,59 @@ $domainrobot = new Domainrobot([
         "password" => "password",
         "context" => 4
     ])
+]);
+```
+
+## Usage - Session ID
+
+Additionally to the authentication through basic auth, the API also offers the possibility
+to use a so called session id. This ID has to be created once and should then be stored (in a session or something similar) by your application for further usage.
+The underlying idea behind this is comparable to a JWT authentciation approach.
+
+You can find more information on this topic here: [Authentication via SessionID](https://help.internetx.com/display/APIXMLEN/Authentication#Authentication-AuthenticationviaSessionID)
+
+Below you can find a simple example of how to setup a session id authentication process.
+
+```php
+use Domainrobot\Domainrobot;
+use Domainrobot\Model\LoginData;
+
+// when working with a session id you don't need to declare the auth block here
+$domainrobot = new Domainrobot([
+  'url' => 'https://api.demo.autodns.com/v1'
+]);
+
+// set your authentication data in a separate model
+//this will is only needed for the initial call to get our session id
+$loginData = new LoginData([
+  'user' => 'user',
+  'password' => 'password',
+  'context' => '9'
+]);
+
+// login and create the session id
+
+// there are certain query parameters that you can define
+// all those parameters are entirely optional
+// the default config looks like this
+$queryParams = [
+    'acl' => true,
+    'profile' => true,
+    'customer' => true,
+    'timeout' => 10
+];
+
+$domainrobot->login->sessionID($loginData, $queryParams);
+
+// session id is located in the headers so we have to get those
+// headers['x-domainrobot-sessionid'] should be stored in a session or something similar
+$headers = $domainrobot::getLastDomainrobotResult()->getHeaders();
+
+$domainrobot = new Domainrobot([
+  'url' => 'https://api.demo.autodns.com/v1',
+  'headers' => [
+    'X-Domainrobot-SessionId' => $headers['X-Domainrobot-Stid'] 
+  ]
 ]);
 ```
 

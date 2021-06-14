@@ -61,6 +61,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'client' => 'string',
         'group' => 'int',
         'name' => 'string',
+        'type' => '\Domainrobot\Model\CustomerType',
         'organization' => 'string',
         'vatNumber' => 'string',
         'gender' => '\Domainrobot\Model\GenderConstants',
@@ -75,16 +76,18 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'billingEmails' => 'string[]',
         'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
-        'paymentCurrency' => '\Domainrobot\Model\Currency',
+        'paymentCurrency' => 'string',
         'discountValid' => '\DateTime',
         'invoiceLanguage' => 'string',
         'taxable' => 'bool',
         'card' => '\Domainrobot\Model\Card',
         'contracts' => '\Domainrobot\Model\CustomerContract[]',
-        'billingUsers' => '\Domainrobot\Model\BasicUser[]',
-        'account' => '\Domainrobot\Model\Account',
-        'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
         'autodelete' => 'bool',
+        'pending' => 'bool',
+        'verifications' => '\Domainrobot\Model\BasicCustomerSpoolVerification[]',
+        'account' => '\Domainrobot\Model\Account',
+        'billingUsers' => '\Domainrobot\Model\BasicUser[]',
+        'comments' => '\Domainrobot\Model\Comment[]',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
@@ -101,6 +104,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'client' => null,
         'group' => 'int64',
         'name' => null,
+        'type' => null,
         'organization' => null,
         'vatNumber' => null,
         'gender' => null,
@@ -121,10 +125,12 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'taxable' => null,
         'card' => null,
         'contracts' => null,
-        'billingUsers' => null,
-        'account' => null,
-        'clearAccount' => null,
         'autodelete' => null,
+        'pending' => null,
+        'verifications' => null,
+        'account' => null,
+        'billingUsers' => null,
+        'comments' => null,
         'fname' => null,
         'lname' => null,
         'pcode' => null,
@@ -162,6 +168,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'client' => 'client',
         'group' => 'group',
         'name' => 'name',
+        'type' => 'type',
         'organization' => 'organization',
         'vatNumber' => 'vatNumber',
         'gender' => 'gender',
@@ -182,10 +189,12 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'taxable' => 'taxable',
         'card' => 'card',
         'contracts' => 'contracts',
-        'billingUsers' => 'billingUsers',
-        'account' => 'account',
-        'clearAccount' => 'clearAccount',
         'autodelete' => 'autodelete',
+        'pending' => 'pending',
+        'verifications' => 'verifications',
+        'account' => 'account',
+        'billingUsers' => 'billingUsers',
+        'comments' => 'comments',
         'fname' => 'fname',
         'lname' => 'lname',
         'pcode' => 'pcode',
@@ -202,6 +211,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'client' => 'setClient',
         'group' => 'setGroup',
         'name' => 'setName',
+        'type' => 'setType',
         'organization' => 'setOrganization',
         'vatNumber' => 'setVatNumber',
         'gender' => 'setGender',
@@ -222,10 +232,12 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'taxable' => 'setTaxable',
         'card' => 'setCard',
         'contracts' => 'setContracts',
-        'billingUsers' => 'setBillingUsers',
-        'account' => 'setAccount',
-        'clearAccount' => 'setClearAccount',
         'autodelete' => 'setAutodelete',
+        'pending' => 'setPending',
+        'verifications' => 'setVerifications',
+        'account' => 'setAccount',
+        'billingUsers' => 'setBillingUsers',
+        'comments' => 'setComments',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'pcode' => 'setPcode',
@@ -242,6 +254,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'client' => 'getClient',
         'group' => 'getGroup',
         'name' => 'getName',
+        'type' => 'getType',
         'organization' => 'getOrganization',
         'vatNumber' => 'getVatNumber',
         'gender' => 'getGender',
@@ -262,10 +275,12 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'taxable' => 'getTaxable',
         'card' => 'getCard',
         'contracts' => 'getContracts',
-        'billingUsers' => 'getBillingUsers',
-        'account' => 'getAccount',
-        'clearAccount' => 'getClearAccount',
         'autodelete' => 'getAutodelete',
+        'pending' => 'getPending',
+        'verifications' => 'getVerifications',
+        'account' => 'getAccount',
+        'billingUsers' => 'getBillingUsers',
+        'comments' => 'getComments',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'pcode' => 'getPcode',
@@ -336,6 +351,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['client'] = isset($data['client']) ? $this->createData($data['client'], 'client')  : null;
         $this->container['group'] = isset($data['group']) ? $this->createData($data['group'], 'group')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
+        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
         $this->container['vatNumber'] = isset($data['vatNumber']) ? $this->createData($data['vatNumber'], 'vatNumber')  : null;
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
@@ -356,10 +372,12 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['taxable'] = isset($data['taxable']) ? $this->createData($data['taxable'], 'taxable')  : null;
         $this->container['card'] = isset($data['card']) ? $this->createData($data['card'], 'card')  : null;
         $this->container['contracts'] = isset($data['contracts']) ? $this->createData($data['contracts'], 'contracts')  : null;
-        $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
-        $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
-        $this->container['clearAccount'] = isset($data['clearAccount']) ? $this->createData($data['clearAccount'], 'clearAccount')  : null;
         $this->container['autodelete'] = isset($data['autodelete']) ? $this->createData($data['autodelete'], 'autodelete')  : null;
+        $this->container['pending'] = isset($data['pending']) ? $this->createData($data['pending'], 'pending')  : null;
+        $this->container['verifications'] = isset($data['verifications']) ? $this->createData($data['verifications'], 'verifications')  : null;
+        $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
+        $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
+        $this->container['comments'] = isset($data['comments']) ? $this->createData($data['comments'], 'comments')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
@@ -609,6 +627,30 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return \Domainrobot\Model\CustomerType
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \Domainrobot\Model\CustomerType $type The type of the customer.
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -959,7 +1001,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Gets paymentCurrency
      *
-     * @return \Domainrobot\Model\Currency
+     * @return string
      */
     public function getPaymentCurrency()
     {
@@ -969,7 +1011,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets paymentCurrency
      *
-     * @param \Domainrobot\Model\Currency $paymentCurrency The payment currency of the customer.
+     * @param string $paymentCurrency The payment currency of the customer.
      *
      * @return $this
      */
@@ -1101,25 +1143,73 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets billingUsers
+     * Gets autodelete
      *
-     * @return \Domainrobot\Model\BasicUser[]
+     * @return bool
      */
-    public function getBillingUsers()
+    public function getAutodelete()
     {
-        return $this->container['billingUsers'];
+        return $this->container['autodelete'];
     }
 
     /**
-     * Sets billingUsers
+     * Sets autodelete
      *
-     * @param \Domainrobot\Model\BasicUser[] $billingUsers The billing users.
+     * @param bool $autodelete Flag indication if the customer is autodelete
      *
      * @return $this
      */
-    public function setBillingUsers($billingUsers)
+    public function setAutodelete($autodelete)
     {
-        $this->container['billingUsers'] = $billingUsers;
+        $this->container['autodelete'] = $autodelete;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending
+     *
+     * @return bool
+     */
+    public function getPending()
+    {
+        return $this->container['pending'];
+    }
+
+    /**
+     * Sets pending
+     *
+     * @param bool $pending Flag indication if the customer data are pending
+     *
+     * @return $this
+     */
+    public function setPending($pending)
+    {
+        $this->container['pending'] = $pending;
+
+        return $this;
+    }
+
+    /**
+     * Gets verifications
+     *
+     * @return \Domainrobot\Model\BasicCustomerSpoolVerification[]
+     */
+    public function getVerifications()
+    {
+        return $this->container['verifications'];
+    }
+
+    /**
+     * Sets verifications
+     *
+     * @param \Domainrobot\Model\BasicCustomerSpoolVerification[] $verifications Shows the pending email verifications
+     *
+     * @return $this
+     */
+    public function setVerifications($verifications)
+    {
+        $this->container['verifications'] = $verifications;
 
         return $this;
     }
@@ -1149,49 +1239,49 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets clearAccount
+     * Gets billingUsers
      *
-     * @return \Domainrobot\Model\ClearAccountPeriod
+     * @return \Domainrobot\Model\BasicUser[]
      */
-    public function getClearAccount()
+    public function getBillingUsers()
     {
-        return $this->container['clearAccount'];
+        return $this->container['billingUsers'];
     }
 
     /**
-     * Sets clearAccount
+     * Sets billingUsers
      *
-     * @param \Domainrobot\Model\ClearAccountPeriod $clearAccount The period after the post payment account will be cleared to zero
+     * @param \Domainrobot\Model\BasicUser[] $billingUsers The billing users.
      *
      * @return $this
      */
-    public function setClearAccount($clearAccount)
+    public function setBillingUsers($billingUsers)
     {
-        $this->container['clearAccount'] = $clearAccount;
+        $this->container['billingUsers'] = $billingUsers;
 
         return $this;
     }
 
     /**
-     * Gets autodelete
+     * Gets comments
      *
-     * @return bool
+     * @return \Domainrobot\Model\Comment[]
      */
-    public function getAutodelete()
+    public function getComments()
     {
-        return $this->container['autodelete'];
+        return $this->container['comments'];
     }
 
     /**
-     * Sets autodelete
+     * Sets comments
      *
-     * @param bool $autodelete Flag indication if the customer is autodelete
+     * @param \Domainrobot\Model\Comment[] $comments The comments of the customer
      *
      * @return $this
      */
-    public function setAutodelete($autodelete)
+    public function setComments($comments)
     {
-        $this->container['autodelete'] = $autodelete;
+        $this->container['comments'] = $comments;
 
         return $this;
     }

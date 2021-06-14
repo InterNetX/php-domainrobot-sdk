@@ -74,10 +74,10 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'barcelona' => '\Domainrobot\Model\ContactBarcelonaExtensions',
         'general' => '\Domainrobot\Model\ContactGeneralExtensions',
         'nz' => '\Domainrobot\Model\ContactNzExtensions',
-        'scot' => '\Domainrobot\Model\ContactScotExtensions',
         'sport' => '\Domainrobot\Model\ContactSportExtensions',
         'luxe' => '\Domainrobot\Model\ContactLuxeExtensions',
         'madrid' => '\Domainrobot\Model\ContactMadridExtensions',
+        'scot' => '\Domainrobot\Model\ContactScotExtensions',
         'ie' => '\Domainrobot\Model\ContactIeExtensions'
     ];
 
@@ -104,10 +104,10 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'barcelona' => null,
         'general' => null,
         'nz' => null,
-        'scot' => null,
         'sport' => null,
         'luxe' => null,
         'madrid' => null,
+        'scot' => null,
         'ie' => null
     ];
 
@@ -155,10 +155,10 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'barcelona' => 'barcelona',
         'general' => 'general',
         'nz' => 'nz',
-        'scot' => 'scot',
         'sport' => 'sport',
         'luxe' => 'luxe',
         'madrid' => 'madrid',
+        'scot' => 'scot',
         'ie' => 'ie'
     ];
 
@@ -185,10 +185,10 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'barcelona' => 'setBarcelona',
         'general' => 'setGeneral',
         'nz' => 'setNz',
-        'scot' => 'setScot',
         'sport' => 'setSport',
         'luxe' => 'setLuxe',
         'madrid' => 'setMadrid',
+        'scot' => 'setScot',
         'ie' => 'setIe'
     ];
 
@@ -215,10 +215,10 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'barcelona' => 'getBarcelona',
         'general' => 'getGeneral',
         'nz' => 'getNz',
-        'scot' => 'getScot',
         'sport' => 'getSport',
         'luxe' => 'getLuxe',
         'madrid' => 'getMadrid',
+        'scot' => 'getScot',
         'ie' => 'getIe'
     ];
 
@@ -299,10 +299,10 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         $this->container['barcelona'] = isset($data['barcelona']) ? $this->createData($data['barcelona'], 'barcelona')  : null;
         $this->container['general'] = isset($data['general']) ? $this->createData($data['general'], 'general')  : null;
         $this->container['nz'] = isset($data['nz']) ? $this->createData($data['nz'], 'nz')  : null;
-        $this->container['scot'] = isset($data['scot']) ? $this->createData($data['scot'], 'scot')  : null;
         $this->container['sport'] = isset($data['sport']) ? $this->createData($data['sport'], 'sport')  : null;
         $this->container['luxe'] = isset($data['luxe']) ? $this->createData($data['luxe'], 'luxe')  : null;
         $this->container['madrid'] = isset($data['madrid']) ? $this->createData($data['madrid'], 'madrid')  : null;
+        $this->container['scot'] = isset($data['scot']) ? $this->createData($data['scot'], 'scot')  : null;
         $this->container['ie'] = isset($data['ie']) ? $this->createData($data['ie'], 'ie')  : null;
     }
 
@@ -794,30 +794,6 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets scot
-     *
-     * @return \Domainrobot\Model\ContactScotExtensions
-     */
-    public function getScot()
-    {
-        return $this->container['scot'];
-    }
-
-    /**
-     * Sets scot
-     *
-     * @param \Domainrobot\Model\ContactScotExtensions $scot The .scot contact extensions.
-     *
-     * @return $this
-     */
-    public function setScot($scot)
-    {
-        $this->container['scot'] = $scot;
-
-        return $this;
-    }
-
-    /**
      * Gets sport
      *
      * @return \Domainrobot\Model\ContactSportExtensions
@@ -885,6 +861,30 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     public function setMadrid($madrid)
     {
         $this->container['madrid'] = $madrid;
+
+        return $this;
+    }
+
+    /**
+     * Gets scot
+     *
+     * @return \Domainrobot\Model\ContactScotExtensions
+     */
+    public function getScot()
+    {
+        return $this->container['scot'];
+    }
+
+    /**
+     * Sets scot
+     *
+     * @param \Domainrobot\Model\ContactScotExtensions $scot The .scot contact extensions.
+     *
+     * @return $this
+     */
+    public function setScot($scot)
+    {
+        $this->container['scot'] = $scot;
 
         return $this;
     }

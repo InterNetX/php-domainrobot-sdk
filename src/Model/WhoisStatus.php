@@ -57,7 +57,8 @@ class WhoisStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'status' => '\Domainrobot\Model\DomainStudioDomainStatus'
+        'status' => '\Domainrobot\Model\DomainStudioDomainStatus',
+        'priceClass' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class WhoisStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'status' => null
+        'status' => null,
+        'priceClass' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class WhoisStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status'
+        'status' => 'status',
+        'priceClass' => 'priceClass'
     ];
 
     /**
@@ -105,7 +108,8 @@ class WhoisStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'priceClass' => 'setPriceClass'
     ];
 
     /**
@@ -114,7 +118,8 @@ class WhoisStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'priceClass' => 'getPriceClass'
     ];
 
     /**
@@ -178,6 +183,7 @@ class WhoisStatus implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
+        $this->container['priceClass'] = isset($data['priceClass']) ? $this->createData($data['priceClass'], 'priceClass')  : null;
     }
 
     /**
@@ -279,6 +285,30 @@ class WhoisStatus implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceClass
+     *
+     * @return string
+     */
+    public function getPriceClass()
+    {
+        return $this->container['priceClass'];
+    }
+
+    /**
+     * Sets priceClass
+     *
+     * @param string $priceClass The price class for premium domains
+     *
+     * @return $this
+     */
+    public function setPriceClass($priceClass)
+    {
+        $this->container['priceClass'] = $priceClass;
 
         return $this;
     }

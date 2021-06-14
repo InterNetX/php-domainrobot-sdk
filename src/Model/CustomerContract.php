@@ -60,6 +60,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'contract' => '\Domainrobot\Model\GenericLabelEntity',
+        'accountManager' => '\Domainrobot\Model\AccountManager',
         'notice' => 'string',
         'ticketNumber' => 'string'
     ];
@@ -73,6 +74,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'updated' => 'date-time',
         'contract' => null,
+        'accountManager' => null,
         'notice' => null,
         'ticketNumber' => null
     ];
@@ -107,6 +109,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'created' => 'created',
         'updated' => 'updated',
         'contract' => 'contract',
+        'accountManager' => 'accountManager',
         'notice' => 'notice',
         'ticketNumber' => 'ticketNumber'
     ];
@@ -120,6 +123,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'contract' => 'setContract',
+        'accountManager' => 'setAccountManager',
         'notice' => 'setNotice',
         'ticketNumber' => 'setTicketNumber'
     ];
@@ -133,6 +137,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'contract' => 'getContract',
+        'accountManager' => 'getAccountManager',
         'notice' => 'getNotice',
         'ticketNumber' => 'getTicketNumber'
     ];
@@ -200,6 +205,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['contract'] = isset($data['contract']) ? $this->createData($data['contract'], 'contract')  : null;
+        $this->container['accountManager'] = isset($data['accountManager']) ? $this->createData($data['accountManager'], 'accountManager')  : null;
         $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
         $this->container['ticketNumber'] = isset($data['ticketNumber']) ? $this->createData($data['ticketNumber'], 'ticketNumber')  : null;
     }
@@ -354,6 +360,30 @@ class CustomerContract implements ModelInterface, ArrayAccess
     public function setContract($contract)
     {
         $this->container['contract'] = $contract;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountManager
+     *
+     * @return \Domainrobot\Model\AccountManager
+     */
+    public function getAccountManager()
+    {
+        return $this->container['accountManager'];
+    }
+
+    /**
+     * Sets accountManager
+     *
+     * @param \Domainrobot\Model\AccountManager $accountManager The name of the manager.
+     *
+     * @return $this
+     */
+    public function setAccountManager($accountManager)
+    {
+        $this->container['accountManager'] = $accountManager;
 
         return $this;
     }

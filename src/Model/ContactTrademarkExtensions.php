@@ -74,8 +74,8 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
         'name' => null,
         'number' => null,
         'country' => null,
-        'regdate' => 'date-time',
-        'appdate' => 'date-time',
+        'regdate' => 'date',
+        'appdate' => 'date',
         'office' => null
     ];
 

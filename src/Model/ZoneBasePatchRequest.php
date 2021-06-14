@@ -74,6 +74,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'string',
         'zoneGrantsAdd' => 'string[]',
         'zoneGrantsRem' => 'string[]',
+        'modifiers' => '\Domainrobot\Model\Modifier[]',
         'nameServers' => '\Domainrobot\Model\NameServer[]',
         'main' => '\Domainrobot\Model\MainIp',
         'wwwInclude' => 'bool',
@@ -110,6 +111,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => null,
         'zoneGrantsAdd' => null,
         'zoneGrantsRem' => null,
+        'modifiers' => null,
         'nameServers' => null,
         'main' => null,
         'wwwInclude' => null,
@@ -167,6 +169,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'sourceVirtualHostname',
         'zoneGrantsAdd' => 'zoneGrantsAdd',
         'zoneGrantsRem' => 'zoneGrantsRem',
+        'modifiers' => 'modifiers',
         'nameServers' => 'nameServers',
         'main' => 'main',
         'wwwInclude' => 'wwwInclude',
@@ -203,6 +206,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'setSourceVirtualHostname',
         'zoneGrantsAdd' => 'setZoneGrantsAdd',
         'zoneGrantsRem' => 'setZoneGrantsRem',
+        'modifiers' => 'setModifiers',
         'nameServers' => 'setNameServers',
         'main' => 'setMain',
         'wwwInclude' => 'setWwwInclude',
@@ -239,6 +243,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'getSourceVirtualHostname',
         'zoneGrantsAdd' => 'getZoneGrantsAdd',
         'zoneGrantsRem' => 'getZoneGrantsRem',
+        'modifiers' => 'getModifiers',
         'nameServers' => 'getNameServers',
         'main' => 'getMain',
         'wwwInclude' => 'getWwwInclude',
@@ -329,6 +334,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         $this->container['sourceVirtualHostname'] = isset($data['sourceVirtualHostname']) ? $this->createData($data['sourceVirtualHostname'], 'sourceVirtualHostname')  : null;
         $this->container['zoneGrantsAdd'] = isset($data['zoneGrantsAdd']) ? $this->createData($data['zoneGrantsAdd'], 'zoneGrantsAdd')  : null;
         $this->container['zoneGrantsRem'] = isset($data['zoneGrantsRem']) ? $this->createData($data['zoneGrantsRem'], 'zoneGrantsRem')  : null;
+        $this->container['modifiers'] = isset($data['modifiers']) ? $this->createData($data['modifiers'], 'modifiers')  : null;
         $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
         $this->container['main'] = isset($data['main']) ? $this->createData($data['main'], 'main')  : null;
         $this->container['wwwInclude'] = isset($data['wwwInclude']) ? $this->createData($data['wwwInclude'], 'wwwInclude')  : null;
@@ -828,6 +834,30 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     public function setZoneGrantsRem($zoneGrantsRem)
     {
         $this->container['zoneGrantsRem'] = $zoneGrantsRem;
+
+        return $this;
+    }
+
+    /**
+     * Gets modifiers
+     *
+     * @return \Domainrobot\Model\Modifier[]
+     */
+    public function getModifiers()
+    {
+        return $this->container['modifiers'];
+    }
+
+    /**
+     * Sets modifiers
+     *
+     * @param \Domainrobot\Model\Modifier[] $modifiers The modifer to apply on the objects
+     *
+     * @return $this
+     */
+    public function setModifiers($modifiers)
+    {
+        $this->container['modifiers'] = $modifiers;
 
         return $this;
     }

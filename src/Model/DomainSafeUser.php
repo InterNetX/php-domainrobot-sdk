@@ -58,6 +58,7 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'context' => 'int',
+        'mobile' => '\Domainrobot\Model\Phone',
         'user' => 'string',
         'pin' => 'string'
     ];
@@ -69,6 +70,7 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'context' => 'int32',
+        'mobile' => null,
         'user' => null,
         'pin' => null
     ];
@@ -101,6 +103,7 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'context' => 'context',
+        'mobile' => 'mobile',
         'user' => 'user',
         'pin' => 'pin'
     ];
@@ -112,6 +115,7 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'context' => 'setContext',
+        'mobile' => 'setMobile',
         'user' => 'setUser',
         'pin' => 'setPin'
     ];
@@ -123,6 +127,7 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'context' => 'getContext',
+        'mobile' => 'getMobile',
         'user' => 'getUser',
         'pin' => 'getPin'
     ];
@@ -188,6 +193,7 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['context'] = isset($data['context']) ? $this->createData($data['context'], 'context')  : null;
+        $this->container['mobile'] = isset($data['mobile']) ? $this->createData($data['mobile'], 'mobile')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
         $this->container['pin'] = isset($data['pin']) ? $this->createData($data['pin'], 'pin')  : null;
     }
@@ -297,6 +303,30 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
     public function setContext($context)
     {
         $this->container['context'] = $context;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile
+     *
+     * @return \Domainrobot\Model\Phone
+     */
+    public function getMobile()
+    {
+        return $this->container['mobile'];
+    }
+
+    /**
+     * Sets mobile
+     *
+     * @param \Domainrobot\Model\Phone $mobile The mobile of the user.
+     *
+     * @return $this
+     */
+    public function setMobile($mobile)
+    {
+        $this->container['mobile'] = $mobile;
 
         return $this;
     }

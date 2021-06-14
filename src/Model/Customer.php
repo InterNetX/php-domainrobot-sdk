@@ -61,6 +61,7 @@ class Customer implements ModelInterface, ArrayAccess
         'client' => 'string',
         'group' => 'int',
         'name' => 'string',
+        'type' => '\Domainrobot\Model\CustomerType',
         'organization' => 'string',
         'vatNumber' => 'string',
         'gender' => '\Domainrobot\Model\GenderConstants',
@@ -82,13 +83,21 @@ class Customer implements ModelInterface, ArrayAccess
         'card' => '\Domainrobot\Model\Card',
         'contracts' => '\Domainrobot\Model\CustomerContract[]',
         'billingUsers' => '\Domainrobot\Model\BasicUser[]',
+        'comments' => '\Domainrobot\Model\Comment[]',
+        'contacts' => '\Domainrobot\Model\Contact[]',
         'account' => '\Domainrobot\Model\Account',
         'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
         'autodelete' => 'bool',
+        'pending' => 'bool',
+        'verifications' => '\Domainrobot\Model\BasicCustomerSpoolVerification[]',
+        'tags' => '\Domainrobot\Model\CustomerTag[]',
+        'pin' => 'string',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
-        'sepa' => '\Domainrobot\Model\SEPAMandate'
+        'technical' => '\Domainrobot\Model\GenericCustomer',
+        'sepa' => '\Domainrobot\Model\SEPAMandate',
+        'pricelists' => '\Domainrobot\Model\CustomerPriceLists'
     ];
 
     /**
@@ -101,6 +110,7 @@ class Customer implements ModelInterface, ArrayAccess
         'client' => null,
         'group' => 'int64',
         'name' => null,
+        'type' => null,
         'organization' => null,
         'vatNumber' => null,
         'gender' => null,
@@ -122,13 +132,21 @@ class Customer implements ModelInterface, ArrayAccess
         'card' => null,
         'contracts' => null,
         'billingUsers' => null,
+        'comments' => null,
+        'contacts' => null,
         'account' => null,
         'clearAccount' => null,
         'autodelete' => null,
+        'pending' => null,
+        'verifications' => null,
+        'tags' => null,
+        'pin' => null,
         'fname' => null,
         'lname' => null,
         'pcode' => null,
-        'sepa' => null
+        'technical' => null,
+        'sepa' => null,
+        'pricelists' => null
     ];
 
     /**
@@ -162,6 +180,7 @@ class Customer implements ModelInterface, ArrayAccess
         'client' => 'client',
         'group' => 'group',
         'name' => 'name',
+        'type' => 'type',
         'organization' => 'organization',
         'vatNumber' => 'vatNumber',
         'gender' => 'gender',
@@ -183,13 +202,21 @@ class Customer implements ModelInterface, ArrayAccess
         'card' => 'card',
         'contracts' => 'contracts',
         'billingUsers' => 'billingUsers',
+        'comments' => 'comments',
+        'contacts' => 'contacts',
         'account' => 'account',
         'clearAccount' => 'clearAccount',
         'autodelete' => 'autodelete',
+        'pending' => 'pending',
+        'verifications' => 'verifications',
+        'tags' => 'tags',
+        'pin' => 'pin',
         'fname' => 'fname',
         'lname' => 'lname',
         'pcode' => 'pcode',
-        'sepa' => 'sepa'
+        'technical' => 'technical',
+        'sepa' => 'sepa',
+        'pricelists' => 'pricelists'
     ];
 
     /**
@@ -202,6 +229,7 @@ class Customer implements ModelInterface, ArrayAccess
         'client' => 'setClient',
         'group' => 'setGroup',
         'name' => 'setName',
+        'type' => 'setType',
         'organization' => 'setOrganization',
         'vatNumber' => 'setVatNumber',
         'gender' => 'setGender',
@@ -223,13 +251,21 @@ class Customer implements ModelInterface, ArrayAccess
         'card' => 'setCard',
         'contracts' => 'setContracts',
         'billingUsers' => 'setBillingUsers',
+        'comments' => 'setComments',
+        'contacts' => 'setContacts',
         'account' => 'setAccount',
         'clearAccount' => 'setClearAccount',
         'autodelete' => 'setAutodelete',
+        'pending' => 'setPending',
+        'verifications' => 'setVerifications',
+        'tags' => 'setTags',
+        'pin' => 'setPin',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'pcode' => 'setPcode',
-        'sepa' => 'setSepa'
+        'technical' => 'setTechnical',
+        'sepa' => 'setSepa',
+        'pricelists' => 'setPricelists'
     ];
 
     /**
@@ -242,6 +278,7 @@ class Customer implements ModelInterface, ArrayAccess
         'client' => 'getClient',
         'group' => 'getGroup',
         'name' => 'getName',
+        'type' => 'getType',
         'organization' => 'getOrganization',
         'vatNumber' => 'getVatNumber',
         'gender' => 'getGender',
@@ -263,13 +300,21 @@ class Customer implements ModelInterface, ArrayAccess
         'card' => 'getCard',
         'contracts' => 'getContracts',
         'billingUsers' => 'getBillingUsers',
+        'comments' => 'getComments',
+        'contacts' => 'getContacts',
         'account' => 'getAccount',
         'clearAccount' => 'getClearAccount',
         'autodelete' => 'getAutodelete',
+        'pending' => 'getPending',
+        'verifications' => 'getVerifications',
+        'tags' => 'getTags',
+        'pin' => 'getPin',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'pcode' => 'getPcode',
-        'sepa' => 'getSepa'
+        'technical' => 'getTechnical',
+        'sepa' => 'getSepa',
+        'pricelists' => 'getPricelists'
     ];
 
     /**
@@ -336,6 +381,7 @@ class Customer implements ModelInterface, ArrayAccess
         $this->container['client'] = isset($data['client']) ? $this->createData($data['client'], 'client')  : null;
         $this->container['group'] = isset($data['group']) ? $this->createData($data['group'], 'group')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
+        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
         $this->container['vatNumber'] = isset($data['vatNumber']) ? $this->createData($data['vatNumber'], 'vatNumber')  : null;
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
@@ -357,13 +403,21 @@ class Customer implements ModelInterface, ArrayAccess
         $this->container['card'] = isset($data['card']) ? $this->createData($data['card'], 'card')  : null;
         $this->container['contracts'] = isset($data['contracts']) ? $this->createData($data['contracts'], 'contracts')  : null;
         $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
+        $this->container['comments'] = isset($data['comments']) ? $this->createData($data['comments'], 'comments')  : null;
+        $this->container['contacts'] = isset($data['contacts']) ? $this->createData($data['contacts'], 'contacts')  : null;
         $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
         $this->container['clearAccount'] = isset($data['clearAccount']) ? $this->createData($data['clearAccount'], 'clearAccount')  : null;
         $this->container['autodelete'] = isset($data['autodelete']) ? $this->createData($data['autodelete'], 'autodelete')  : null;
+        $this->container['pending'] = isset($data['pending']) ? $this->createData($data['pending'], 'pending')  : null;
+        $this->container['verifications'] = isset($data['verifications']) ? $this->createData($data['verifications'], 'verifications')  : null;
+        $this->container['tags'] = isset($data['tags']) ? $this->createData($data['tags'], 'tags')  : null;
+        $this->container['pin'] = isset($data['pin']) ? $this->createData($data['pin'], 'pin')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
+        $this->container['technical'] = isset($data['technical']) ? $this->createData($data['technical'], 'technical')  : null;
         $this->container['sepa'] = isset($data['sepa']) ? $this->createData($data['sepa'], 'sepa')  : null;
+        $this->container['pricelists'] = isset($data['pricelists']) ? $this->createData($data['pricelists'], 'pricelists')  : null;
     }
 
     /**
@@ -609,6 +663,30 @@ class Customer implements ModelInterface, ArrayAccess
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return \Domainrobot\Model\CustomerType
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \Domainrobot\Model\CustomerType $type The type of the customer.
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -1125,6 +1203,54 @@ class Customer implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets comments
+     *
+     * @return \Domainrobot\Model\Comment[]
+     */
+    public function getComments()
+    {
+        return $this->container['comments'];
+    }
+
+    /**
+     * Sets comments
+     *
+     * @param \Domainrobot\Model\Comment[] $comments The comments of the customer
+     *
+     * @return $this
+     */
+    public function setComments($comments)
+    {
+        $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets contacts
+     *
+     * @return \Domainrobot\Model\Contact[]
+     */
+    public function getContacts()
+    {
+        return $this->container['contacts'];
+    }
+
+    /**
+     * Sets contacts
+     *
+     * @param \Domainrobot\Model\Contact[] $contacts The contacts of the customer
+     *
+     * @return $this
+     */
+    public function setContacts($contacts)
+    {
+        $this->container['contacts'] = $contacts;
+
+        return $this;
+    }
+
+    /**
      * Gets account
      *
      * @return \Domainrobot\Model\Account
@@ -1192,6 +1318,102 @@ class Customer implements ModelInterface, ArrayAccess
     public function setAutodelete($autodelete)
     {
         $this->container['autodelete'] = $autodelete;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending
+     *
+     * @return bool
+     */
+    public function getPending()
+    {
+        return $this->container['pending'];
+    }
+
+    /**
+     * Sets pending
+     *
+     * @param bool $pending Flag indication if the customer data are pending
+     *
+     * @return $this
+     */
+    public function setPending($pending)
+    {
+        $this->container['pending'] = $pending;
+
+        return $this;
+    }
+
+    /**
+     * Gets verifications
+     *
+     * @return \Domainrobot\Model\BasicCustomerSpoolVerification[]
+     */
+    public function getVerifications()
+    {
+        return $this->container['verifications'];
+    }
+
+    /**
+     * Sets verifications
+     *
+     * @param \Domainrobot\Model\BasicCustomerSpoolVerification[] $verifications Shows the pending email verifications
+     *
+     * @return $this
+     */
+    public function setVerifications($verifications)
+    {
+        $this->container['verifications'] = $verifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return \Domainrobot\Model\CustomerTag[]
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param \Domainrobot\Model\CustomerTag[] $tags The customers tags.
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets pin
+     *
+     * @return string
+     */
+    public function getPin()
+    {
+        return $this->container['pin'];
+    }
+
+    /**
+     * Sets pin
+     *
+     * @param string $pin The pin number.
+     *
+     * @return $this
+     */
+    public function setPin($pin)
+    {
+        $this->container['pin'] = $pin;
 
         return $this;
     }
@@ -1283,6 +1505,30 @@ class Customer implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets technical
+     *
+     * @return \Domainrobot\Model\GenericCustomer
+     */
+    public function getTechnical()
+    {
+        return $this->container['technical'];
+    }
+
+    /**
+     * Sets technical
+     *
+     * @param \Domainrobot\Model\GenericCustomer $technical technical Customer.
+     *
+     * @return $this
+     */
+    public function setTechnical($technical)
+    {
+        $this->container['technical'] = $technical;
+
+        return $this;
+    }
+
+    /**
      * Gets sepa
      *
      * @return \Domainrobot\Model\SEPAMandate
@@ -1302,6 +1548,30 @@ class Customer implements ModelInterface, ArrayAccess
     public function setSepa($sepa)
     {
         $this->container['sepa'] = $sepa;
+
+        return $this;
+    }
+
+    /**
+     * Gets pricelists
+     *
+     * @return \Domainrobot\Model\CustomerPriceLists
+     */
+    public function getPricelists()
+    {
+        return $this->container['pricelists'];
+    }
+
+    /**
+     * Sets pricelists
+     *
+     * @param \Domainrobot\Model\CustomerPriceLists $pricelists the customer PriceLists
+     *
+     * @return $this
+     */
+    public function setPricelists($pricelists)
+    {
+        $this->container['pricelists'] = $pricelists;
 
         return $this;
     }

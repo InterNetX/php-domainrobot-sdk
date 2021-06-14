@@ -59,6 +59,8 @@ class SslContact implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
+        'extensions' => '\Domainrobot\Model\SslContactExtensions',
+        'references' => '\Domainrobot\Model\SslContactReference[]',
         'fname' => 'string',
         'lname' => 'string',
         'phone' => 'string',
@@ -84,6 +86,8 @@ class SslContact implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
+        'extensions' => null,
+        'references' => null,
         'fname' => null,
         'lname' => null,
         'phone' => null,
@@ -130,6 +134,8 @@ class SslContact implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
+        'extensions' => 'extensions',
+        'references' => 'references',
         'fname' => 'fname',
         'lname' => 'lname',
         'phone' => 'phone',
@@ -155,6 +161,8 @@ class SslContact implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
+        'extensions' => 'setExtensions',
+        'references' => 'setReferences',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'phone' => 'setPhone',
@@ -180,6 +188,8 @@ class SslContact implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
+        'extensions' => 'getExtensions',
+        'references' => 'getReferences',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'phone' => 'getPhone',
@@ -259,6 +269,8 @@ class SslContact implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
+        $this->container['references'] = isset($data['references']) ? $this->createData($data['references'], 'references')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['phone'] = isset($data['phone']) ? $this->createData($data['phone'], 'phone')  : null;
@@ -414,6 +426,54 @@ class SslContact implements ModelInterface, ArrayAccess
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets extensions
+     *
+     * @return \Domainrobot\Model\SslContactExtensions
+     */
+    public function getExtensions()
+    {
+        return $this->container['extensions'];
+    }
+
+    /**
+     * Sets extensions
+     *
+     * @param \Domainrobot\Model\SslContactExtensions $extensions The contact extensions
+     *
+     * @return $this
+     */
+    public function setExtensions($extensions)
+    {
+        $this->container['extensions'] = $extensions;
+
+        return $this;
+    }
+
+    /**
+     * Gets references
+     *
+     * @return \Domainrobot\Model\SslContactReference[]
+     */
+    public function getReferences()
+    {
+        return $this->container['references'];
+    }
+
+    /**
+     * Sets references
+     *
+     * @param \Domainrobot\Model\SslContactReference[] $references The contact references
+     *
+     * @return $this
+     */
+    public function setReferences($references)
+    {
+        $this->container['references'] = $references;
 
         return $this;
     }

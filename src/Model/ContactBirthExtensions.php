@@ -70,7 +70,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'country' => null,
-        'day' => 'date-time',
+        'day' => 'date',
         'postalCode' => null,
         'place' => null
     ];

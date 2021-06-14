@@ -61,7 +61,6 @@ class Certificate implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
-        'extension' => '\Domainrobot\Model\ExtendedValidationExtension',
         'id' => 'int',
         'partnerOrderId' => 'string',
         'orderId' => 'string',
@@ -81,6 +80,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateType' => '\Domainrobot\Model\CertificateType',
         'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
         'expire' => '\DateTime',
+        'payable' => '\DateTime',
+        'extension' => '\Domainrobot\Model\ExtendedValidationExtension',
         'subjectAlternativeNames' => '\Domainrobot\Model\SubjectAlternativeName[]',
         'histories' => '\Domainrobot\Model\CertificateHistory[]',
         'certificationAuthority' => '\Domainrobot\Model\CaCertificate[]',
@@ -94,7 +95,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => '\Domainrobot\Model\CertificateTransparencyPrivacyConstants',
         'domain' => 'string',
         'hasCsr' => 'bool',
-        'idn' => 'string'
+        'idn' => 'string',
+        'multiyear' => 'bool'
     ];
 
     /**
@@ -107,7 +109,6 @@ class Certificate implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'owner' => null,
         'updater' => null,
-        'extension' => null,
         'id' => 'int32',
         'partnerOrderId' => null,
         'orderId' => null,
@@ -127,6 +128,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateType' => null,
         'signatureHashAlgorithm' => null,
         'expire' => 'date-time',
+        'payable' => 'date-time',
+        'extension' => null,
         'subjectAlternativeNames' => null,
         'histories' => null,
         'certificationAuthority' => null,
@@ -140,7 +143,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => null,
         'domain' => null,
         'hasCsr' => null,
-        'idn' => null
+        'idn' => null,
+        'multiyear' => null
     ];
 
     /**
@@ -174,7 +178,6 @@ class Certificate implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'owner' => 'owner',
         'updater' => 'updater',
-        'extension' => 'extension',
         'id' => 'id',
         'partnerOrderId' => 'partnerOrderId',
         'orderId' => 'orderId',
@@ -194,6 +197,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateType' => 'certificateType',
         'signatureHashAlgorithm' => 'signatureHashAlgorithm',
         'expire' => 'expire',
+        'payable' => 'payable',
+        'extension' => 'extension',
         'subjectAlternativeNames' => 'subjectAlternativeNames',
         'histories' => 'histories',
         'certificationAuthority' => 'certificationAuthority',
@@ -207,7 +212,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => 'certificateTransparencyPrivacy',
         'domain' => 'domain',
         'hasCsr' => 'hasCsr',
-        'idn' => 'idn'
+        'idn' => 'idn',
+        'multiyear' => 'multiyear'
     ];
 
     /**
@@ -220,7 +226,6 @@ class Certificate implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
-        'extension' => 'setExtension',
         'id' => 'setId',
         'partnerOrderId' => 'setPartnerOrderId',
         'orderId' => 'setOrderId',
@@ -240,6 +245,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateType' => 'setCertificateType',
         'signatureHashAlgorithm' => 'setSignatureHashAlgorithm',
         'expire' => 'setExpire',
+        'payable' => 'setPayable',
+        'extension' => 'setExtension',
         'subjectAlternativeNames' => 'setSubjectAlternativeNames',
         'histories' => 'setHistories',
         'certificationAuthority' => 'setCertificationAuthority',
@@ -253,7 +260,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => 'setCertificateTransparencyPrivacy',
         'domain' => 'setDomain',
         'hasCsr' => 'setHasCsr',
-        'idn' => 'setIdn'
+        'idn' => 'setIdn',
+        'multiyear' => 'setMultiyear'
     ];
 
     /**
@@ -266,7 +274,6 @@ class Certificate implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
-        'extension' => 'getExtension',
         'id' => 'getId',
         'partnerOrderId' => 'getPartnerOrderId',
         'orderId' => 'getOrderId',
@@ -286,6 +293,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateType' => 'getCertificateType',
         'signatureHashAlgorithm' => 'getSignatureHashAlgorithm',
         'expire' => 'getExpire',
+        'payable' => 'getPayable',
+        'extension' => 'getExtension',
         'subjectAlternativeNames' => 'getSubjectAlternativeNames',
         'histories' => 'getHistories',
         'certificationAuthority' => 'getCertificationAuthority',
@@ -299,7 +308,8 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => 'getCertificateTransparencyPrivacy',
         'domain' => 'getDomain',
         'hasCsr' => 'getHasCsr',
-        'idn' => 'getIdn'
+        'idn' => 'getIdn',
+        'multiyear' => 'getMultiyear'
     ];
 
     /**
@@ -366,7 +376,6 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['extension'] = isset($data['extension']) ? $this->createData($data['extension'], 'extension')  : null;
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
         $this->container['partnerOrderId'] = isset($data['partnerOrderId']) ? $this->createData($data['partnerOrderId'], 'partnerOrderId')  : null;
         $this->container['orderId'] = isset($data['orderId']) ? $this->createData($data['orderId'], 'orderId')  : null;
@@ -386,6 +395,8 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['certificateType'] = isset($data['certificateType']) ? $this->createData($data['certificateType'], 'certificateType')  : null;
         $this->container['signatureHashAlgorithm'] = isset($data['signatureHashAlgorithm']) ? $this->createData($data['signatureHashAlgorithm'], 'signatureHashAlgorithm')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
+        $this->container['payable'] = isset($data['payable']) ? $this->createData($data['payable'], 'payable')  : null;
+        $this->container['extension'] = isset($data['extension']) ? $this->createData($data['extension'], 'extension')  : null;
         $this->container['subjectAlternativeNames'] = isset($data['subjectAlternativeNames']) ? $this->createData($data['subjectAlternativeNames'], 'subjectAlternativeNames')  : null;
         $this->container['histories'] = isset($data['histories']) ? $this->createData($data['histories'], 'histories')  : null;
         $this->container['certificationAuthority'] = isset($data['certificationAuthority']) ? $this->createData($data['certificationAuthority'], 'certificationAuthority')  : null;
@@ -400,6 +411,7 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
         $this->container['hasCsr'] = isset($data['hasCsr']) ? $this->createData($data['hasCsr'], 'hasCsr')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
+        $this->container['multiyear'] = isset($data['multiyear']) ? $this->createData($data['multiyear'], 'multiyear')  : null;
     }
 
     /**
@@ -586,30 +598,6 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setUpdater($updater)
     {
         $this->container['updater'] = $updater;
-
-        return $this;
-    }
-
-    /**
-     * Gets extension
-     *
-     * @return \Domainrobot\Model\ExtendedValidationExtension
-     */
-    public function getExtension()
-    {
-        return $this->container['extension'];
-    }
-
-    /**
-     * Sets extension
-     *
-     * @param \Domainrobot\Model\ExtendedValidationExtension $extension The certificate extensions for comodo.
-     *
-     * @return $this
-     */
-    public function setExtension($extension)
-    {
-        $this->container['extension'] = $extension;
 
         return $this;
     }
@@ -1059,13 +1047,61 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets expire
      *
-     * @param \DateTime $expire The date on which the certificate expires
+     * @param \DateTime $expire The notAfter date of the certificate
      *
      * @return $this
      */
     public function setExpire($expire)
     {
         $this->container['expire'] = $expire;
+
+        return $this;
+    }
+
+    /**
+     * Gets payable
+     *
+     * @return \DateTime
+     */
+    public function getPayable()
+    {
+        return $this->container['payable'];
+    }
+
+    /**
+     * Sets payable
+     *
+     * @param \DateTime $payable The payable date for the certificate. Indicates when a runtime renewal must take place.
+     *
+     * @return $this
+     */
+    public function setPayable($payable)
+    {
+        $this->container['payable'] = $payable;
+
+        return $this;
+    }
+
+    /**
+     * Gets extension
+     *
+     * @return \Domainrobot\Model\ExtendedValidationExtension
+     */
+    public function getExtension()
+    {
+        return $this->container['extension'];
+    }
+
+    /**
+     * Sets extension
+     *
+     * @param \Domainrobot\Model\ExtendedValidationExtension $extension The certificate extensions for comodo.
+     *
+     * @return $this
+     */
+    public function setExtension($extension)
+    {
+        $this->container['extension'] = $extension;
 
         return $this;
     }
@@ -1407,6 +1443,30 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setIdn($idn)
     {
         $this->container['idn'] = $idn;
+
+        return $this;
+    }
+
+    /**
+     * Gets multiyear
+     *
+     * @return bool
+     */
+    public function getMultiyear()
+    {
+        return $this->container['multiyear'];
+    }
+
+    /**
+     * Sets multiyear
+     *
+     * @param bool $multiyear Defines whether the certificate is a multiyear or not
+     *
+     * @return $this
+     */
+    public function setMultiyear($multiyear)
+    {
+        $this->container['multiyear'] = $multiyear;
 
         return $this;
     }

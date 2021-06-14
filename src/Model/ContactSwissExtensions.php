@@ -58,7 +58,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'enterpriseId' => 'string',
-        'intededUse' => 'string'
+        'intendedUse' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'enterpriseId' => null,
-        'intededUse' => null
+        'intendedUse' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'enterpriseId' => 'enterpriseId',
-        'intededUse' => 'intededUse'
+        'intendedUse' => 'intendedUse'
     ];
 
     /**
@@ -109,7 +109,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'enterpriseId' => 'setEnterpriseId',
-        'intededUse' => 'setIntededUse'
+        'intendedUse' => 'setIntendedUse'
     ];
 
     /**
@@ -119,7 +119,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'enterpriseId' => 'getEnterpriseId',
-        'intededUse' => 'getIntededUse'
+        'intendedUse' => 'getIntendedUse'
     ];
 
     /**
@@ -183,7 +183,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['enterpriseId'] = isset($data['enterpriseId']) ? $this->createData($data['enterpriseId'], 'enterpriseId')  : null;
-        $this->container['intededUse'] = isset($data['intededUse']) ? $this->createData($data['intededUse'], 'intededUse')  : null;
+        $this->container['intendedUse'] = isset($data['intendedUse']) ? $this->createData($data['intendedUse'], 'intendedUse')  : null;
     }
 
     /**
@@ -290,25 +290,25 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets intededUse
+     * Gets intendedUse
      *
      * @return string
      */
-    public function getIntededUse()
+    public function getIntendedUse()
     {
-        return $this->container['intededUse'];
+        return $this->container['intendedUse'];
     }
 
     /**
-     * Sets intededUse
+     * Sets intendedUse
      *
-     * @param string $intededUse The statement of intended use for the domain name.
+     * @param string $intendedUse The statement of intended use for the domain name.
      *
      * @return $this
      */
-    public function setIntededUse($intededUse)
+    public function setIntendedUse($intendedUse)
     {
-        $this->container['intededUse'] = $intededUse;
+        $this->container['intendedUse'] = $intendedUse;
 
         return $this;
     }

@@ -63,7 +63,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'externalReference' => 'string',
         'certificate' => '\Domainrobot\Model\VhostCertificate',
-        'layoutAddon' => '\Domainrobot\Model\Configuration',
+        'layoutAddon' => '\Domainrobot\Model\Id4MeLayoutConfiguration',
         'name' => 'string',
         'status' => '\Domainrobot\Model\Id4MeAgentStatus',
         'records' => 'string[]'
@@ -463,7 +463,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Gets layoutAddon
      *
-     * @return \Domainrobot\Model\Configuration
+     * @return \Domainrobot\Model\Id4MeLayoutConfiguration
      */
     public function getLayoutAddon()
     {
@@ -473,7 +473,7 @@ class Id4MeAgent implements ModelInterface, ArrayAccess
     /**
      * Sets layoutAddon
      *
-     * @param \Domainrobot\Model\Configuration $layoutAddon Layout properties
+     * @param \Domainrobot\Model\Id4MeLayoutConfiguration $layoutAddon Layout properties
      *
      * @return $this
      */

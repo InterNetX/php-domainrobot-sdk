@@ -50,6 +50,13 @@ class SignatureHashAlgorithmConstants
     const SHA384 = 'SHA384';
     const SHA512 = 'SHA512';
     const SHA256 = 'SHA256';
+    const SHA256_SHA1 = 'SHA256_SHA1';
+    const SHA384_SHA1 = 'SHA384_SHA1';
+    const SHA256_SHA256 = 'SHA256_SHA256';
+    const SHA256_ECDSA_SHA1 = 'SHA256ECDSA_SHA1';
+    const SHA384_ECDSA_SHA1 = 'SHA384ECDSA_SHA1';
+    const SHA256_ECDSA_SHA384_ECDSA = 'SHA256ECDSA_SHA384ECDSA';
+    const SHA384_ECDSA_SHA384_ECDSA = 'SHA384ECDSA_SHA384ECDSA';
     
     /**
      * Gets allowable values of the enum
@@ -65,6 +72,13 @@ class SignatureHashAlgorithmConstants
             self::SHA384,
             self::SHA512,
             self::SHA256,
+            self::SHA256_SHA1,
+            self::SHA384_SHA1,
+            self::SHA256_SHA256,
+            self::SHA256_ECDSA_SHA1,
+            self::SHA384_ECDSA_SHA1,
+            self::SHA256_ECDSA_SHA384_ECDSA,
+            self::SHA384_ECDSA_SHA384_ECDSA,
         ];
     }
 }

@@ -49,7 +49,7 @@ class Contact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Contact';
+    protected static $swaggerModelName = 'contact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,32 +59,25 @@ class Contact implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'id' => 'int',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
-        'alias' => 'string',
-        'type' => '\Domainrobot\Model\ContactTypeConstants',
-        'organization' => 'string',
+        'id' => 'int',
+        'customer' => '\Domainrobot\Model\GenericCustomer',
+        'type' => '\Domainrobot\Model\ContactType',
+        'firstName' => 'string',
+        'lastName' => 'string',
         'title' => 'string',
+        'label' => 'string',
+        'locale' => '\Domainrobot\Model\Locale',
+        'gender' => '\Domainrobot\Model\GenderConstants',
+        'postalCode' => 'string',
         'city' => 'string',
         'country' => 'string',
         'state' => 'string',
+        'phones' => '\Domainrobot\Model\Phone[]',
+        'faxes' => '\Domainrobot\Model\Phone[]',
         'email' => 'string',
-        'protection' => '\Domainrobot\Model\ContactProtectionConstants',
-        'sip' => 'string',
-        'remarks' => 'string[]',
-        'domainsafe' => 'bool',
-        'confirmOwnerConsent' => 'bool',
-        'comment' => 'string',
-        'verification' => '\Domainrobot\Model\GenericStatusConstants',
-        'fname' => 'string',
-        'lname' => 'string',
-        'address' => 'string[]',
-        'pcode' => 'string',
-        'phone' => 'string',
-        'fax' => 'string',
-        'nicRef' => '\Domainrobot\Model\ContactReference[]',
-        'extensions' => '\Domainrobot\Model\ContactExtensions'
+        'address' => 'string[]'
     ];
 
     /**
@@ -95,32 +88,25 @@ class Contact implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
-        'id' => 'int32',
         'owner' => null,
         'updater' => null,
-        'alias' => null,
+        'id' => 'int32',
+        'customer' => null,
         'type' => null,
-        'organization' => null,
+        'firstName' => null,
+        'lastName' => null,
         'title' => null,
+        'label' => null,
+        'locale' => null,
+        'gender' => null,
+        'postalCode' => null,
         'city' => null,
         'country' => null,
         'state' => null,
+        'phones' => null,
+        'faxes' => null,
         'email' => null,
-        'protection' => null,
-        'sip' => null,
-        'remarks' => null,
-        'domainsafe' => null,
-        'confirmOwnerConsent' => null,
-        'comment' => null,
-        'verification' => null,
-        'fname' => null,
-        'lname' => null,
-        'address' => null,
-        'pcode' => null,
-        'phone' => null,
-        'fax' => null,
-        'nicRef' => null,
-        'extensions' => null
+        'address' => null
     ];
 
     /**
@@ -152,32 +138,25 @@ class Contact implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'id' => 'id',
         'owner' => 'owner',
         'updater' => 'updater',
-        'alias' => 'alias',
+        'id' => 'id',
+        'customer' => 'customer',
         'type' => 'type',
-        'organization' => 'organization',
+        'firstName' => 'firstName',
+        'lastName' => 'lastName',
         'title' => 'title',
+        'label' => 'label',
+        'locale' => 'locale',
+        'gender' => 'gender',
+        'postalCode' => 'postalCode',
         'city' => 'city',
         'country' => 'country',
         'state' => 'state',
+        'phones' => 'phones',
+        'faxes' => 'faxes',
         'email' => 'email',
-        'protection' => 'protection',
-        'sip' => 'sip',
-        'remarks' => 'remarks',
-        'domainsafe' => 'domainsafe',
-        'confirmOwnerConsent' => 'confirmOwnerConsent',
-        'comment' => 'comment',
-        'verification' => 'verification',
-        'fname' => 'fname',
-        'lname' => 'lname',
-        'address' => 'address',
-        'pcode' => 'pcode',
-        'phone' => 'phone',
-        'fax' => 'fax',
-        'nicRef' => 'nicRef',
-        'extensions' => 'extensions'
+        'address' => 'address'
     ];
 
     /**
@@ -188,32 +167,25 @@ class Contact implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'id' => 'setId',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
-        'alias' => 'setAlias',
+        'id' => 'setId',
+        'customer' => 'setCustomer',
         'type' => 'setType',
-        'organization' => 'setOrganization',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
         'title' => 'setTitle',
+        'label' => 'setLabel',
+        'locale' => 'setLocale',
+        'gender' => 'setGender',
+        'postalCode' => 'setPostalCode',
         'city' => 'setCity',
         'country' => 'setCountry',
         'state' => 'setState',
+        'phones' => 'setPhones',
+        'faxes' => 'setFaxes',
         'email' => 'setEmail',
-        'protection' => 'setProtection',
-        'sip' => 'setSip',
-        'remarks' => 'setRemarks',
-        'domainsafe' => 'setDomainsafe',
-        'confirmOwnerConsent' => 'setConfirmOwnerConsent',
-        'comment' => 'setComment',
-        'verification' => 'setVerification',
-        'fname' => 'setFname',
-        'lname' => 'setLname',
-        'address' => 'setAddress',
-        'pcode' => 'setPcode',
-        'phone' => 'setPhone',
-        'fax' => 'setFax',
-        'nicRef' => 'setNicRef',
-        'extensions' => 'setExtensions'
+        'address' => 'setAddress'
     ];
 
     /**
@@ -224,32 +196,25 @@ class Contact implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'id' => 'getId',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
-        'alias' => 'getAlias',
+        'id' => 'getId',
+        'customer' => 'getCustomer',
         'type' => 'getType',
-        'organization' => 'getOrganization',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
         'title' => 'getTitle',
+        'label' => 'getLabel',
+        'locale' => 'getLocale',
+        'gender' => 'getGender',
+        'postalCode' => 'getPostalCode',
         'city' => 'getCity',
         'country' => 'getCountry',
         'state' => 'getState',
+        'phones' => 'getPhones',
+        'faxes' => 'getFaxes',
         'email' => 'getEmail',
-        'protection' => 'getProtection',
-        'sip' => 'getSip',
-        'remarks' => 'getRemarks',
-        'domainsafe' => 'getDomainsafe',
-        'confirmOwnerConsent' => 'getConfirmOwnerConsent',
-        'comment' => 'getComment',
-        'verification' => 'getVerification',
-        'fname' => 'getFname',
-        'lname' => 'getLname',
-        'address' => 'getAddress',
-        'pcode' => 'getPcode',
-        'phone' => 'getPhone',
-        'fax' => 'getFax',
-        'nicRef' => 'getNicRef',
-        'extensions' => 'getExtensions'
+        'address' => 'getAddress'
     ];
 
     /**
@@ -314,32 +279,25 @@ class Contact implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['alias'] = isset($data['alias']) ? $this->createData($data['alias'], 'alias')  : null;
+        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
+        $this->container['customer'] = isset($data['customer']) ? $this->createData($data['customer'], 'customer')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
-        $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $this->createData($data['firstName'], 'firstName')  : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $this->createData($data['lastName'], 'lastName')  : null;
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
+        $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
+        $this->container['locale'] = isset($data['locale']) ? $this->createData($data['locale'], 'locale')  : null;
+        $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $this->createData($data['postalCode'], 'postalCode')  : null;
         $this->container['city'] = isset($data['city']) ? $this->createData($data['city'], 'city')  : null;
         $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
         $this->container['state'] = isset($data['state']) ? $this->createData($data['state'], 'state')  : null;
+        $this->container['phones'] = isset($data['phones']) ? $this->createData($data['phones'], 'phones')  : null;
+        $this->container['faxes'] = isset($data['faxes']) ? $this->createData($data['faxes'], 'faxes')  : null;
         $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
-        $this->container['protection'] = isset($data['protection']) ? $this->createData($data['protection'], 'protection')  : null;
-        $this->container['sip'] = isset($data['sip']) ? $this->createData($data['sip'], 'sip')  : null;
-        $this->container['remarks'] = isset($data['remarks']) ? $this->createData($data['remarks'], 'remarks')  : null;
-        $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
-        $this->container['confirmOwnerConsent'] = isset($data['confirmOwnerConsent']) ? $this->createData($data['confirmOwnerConsent'], 'confirmOwnerConsent')  : null;
-        $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
-        $this->container['verification'] = isset($data['verification']) ? $this->createData($data['verification'], 'verification')  : null;
-        $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
-        $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['address'] = isset($data['address']) ? $this->createData($data['address'], 'address')  : null;
-        $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
-        $this->container['phone'] = isset($data['phone']) ? $this->createData($data['phone'], 'phone')  : null;
-        $this->container['fax'] = isset($data['fax']) ? $this->createData($data['fax'], 'fax')  : null;
-        $this->container['nicRef'] = isset($data['nicRef']) ? $this->createData($data['nicRef'], 'nicRef')  : null;
-        $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
     }
 
     /**
@@ -406,23 +364,11 @@ class Contact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['customer'] === null) {
+            $invalidProperties[] = "'customer' can't be null";
+        }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
-        }
-        if ($this->container['lname'] === null) {
-            $invalidProperties[] = "'lname' can't be null";
-        }
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
-        }
-        if ($this->container['pcode'] === null) {
-            $invalidProperties[] = "'pcode' can't be null";
         }
         return $invalidProperties;
     }
@@ -488,30 +434,6 @@ class Contact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id The unique identifier of the contact
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets owner
      *
      * @return \Domainrobot\Model\BasicUser
@@ -548,7 +470,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
      *
      * @return $this
      */
@@ -560,25 +482,49 @@ class Contact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets alias
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getAlias()
+    public function getId()
     {
-        return $this->container['alias'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets alias
+     * Sets id
      *
-     * @param string $alias The unique alias of the contact
+     * @param int $id The id.
      *
      * @return $this
      */
-    public function setAlias($alias)
+    public function setId($id)
     {
-        $this->container['alias'] = $alias;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     *
+     * @return \Domainrobot\Model\GenericCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     *
+     * @param \Domainrobot\Model\GenericCustomer $customer customer
+     *
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
 
         return $this;
     }
@@ -586,7 +532,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \Domainrobot\Model\ContactTypeConstants
+     * @return \Domainrobot\Model\ContactType
      */
     public function getType()
     {
@@ -596,7 +542,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\ContactTypeConstants $type The type of the contact
+     * @param \Domainrobot\Model\ContactType $type type
      *
      * @return $this
      */
@@ -608,25 +554,49 @@ class Contact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets organization
+     * Gets firstName
      *
      * @return string
      */
-    public function getOrganization()
+    public function getFirstName()
     {
-        return $this->container['organization'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets organization
+     * Sets firstName
      *
-     * @param string $organization The name of the organization
+     * @param string $firstName firstName
      *
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setFirstName($firstName)
     {
-        $this->container['organization'] = $organization;
+        $this->container['firstName'] = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['lastName'];
+    }
+
+    /**
+     * Sets lastName
+     *
+     * @param string $lastName lastName
+     *
+     * @return $this
+     */
+    public function setLastName($lastName)
+    {
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -644,13 +614,109 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets title
      *
-     * @param string $title The title of the contact
+     * @param string $title title
      *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets label
+     *
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->container['label'];
+    }
+
+    /**
+     * Sets label
+     *
+     * @param string $label label
+     *
+     * @return $this
+     */
+    public function setLabel($label)
+    {
+        $this->container['label'] = $label;
+
+        return $this;
+    }
+
+    /**
+     * Gets locale
+     *
+     * @return \Domainrobot\Model\Locale
+     */
+    public function getLocale()
+    {
+        return $this->container['locale'];
+    }
+
+    /**
+     * Sets locale
+     *
+     * @param \Domainrobot\Model\Locale $locale locale
+     *
+     * @return $this
+     */
+    public function setLocale($locale)
+    {
+        $this->container['locale'] = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets gender
+     *
+     * @return \Domainrobot\Model\GenderConstants
+     */
+    public function getGender()
+    {
+        return $this->container['gender'];
+    }
+
+    /**
+     * Sets gender
+     *
+     * @param \Domainrobot\Model\GenderConstants $gender gender
+     *
+     * @return $this
+     */
+    public function setGender($gender)
+    {
+        $this->container['gender'] = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     *
+     * @param string $postalCode postalCode
+     *
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }
@@ -668,7 +734,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets city
      *
-     * @param string $city The city of the contact
+     * @param string $city city
      *
      * @return $this
      */
@@ -692,7 +758,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param string $country The country of the contact
+     * @param string $country country
      *
      * @return $this
      */
@@ -716,13 +782,61 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param string $state The local country state of the contact
+     * @param string $state state
      *
      * @return $this
      */
     public function setState($state)
     {
         $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets phones
+     *
+     * @return \Domainrobot\Model\Phone[]
+     */
+    public function getPhones()
+    {
+        return $this->container['phones'];
+    }
+
+    /**
+     * Sets phones
+     *
+     * @param \Domainrobot\Model\Phone[] $phones phones
+     *
+     * @return $this
+     */
+    public function setPhones($phones)
+    {
+        $this->container['phones'] = $phones;
+
+        return $this;
+    }
+
+    /**
+     * Gets faxes
+     *
+     * @return \Domainrobot\Model\Phone[]
+     */
+    public function getFaxes()
+    {
+        return $this->container['faxes'];
+    }
+
+    /**
+     * Sets faxes
+     *
+     * @param \Domainrobot\Model\Phone[] $faxes faxes
+     *
+     * @return $this
+     */
+    public function setFaxes($faxes)
+    {
+        $this->container['faxes'] = $faxes;
 
         return $this;
     }
@@ -740,229 +854,13 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email The email of the contact
+     * @param string $email email
      *
      * @return $this
      */
     public function setEmail($email)
     {
         $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets protection
-     *
-     * @return \Domainrobot\Model\ContactProtectionConstants
-     */
-    public function getProtection()
-    {
-        return $this->container['protection'];
-    }
-
-    /**
-     * Sets protection
-     *
-     * @param \Domainrobot\Model\ContactProtectionConstants $protection The protection of the contact
-     *
-     * @return $this
-     */
-    public function setProtection($protection)
-    {
-        $this->container['protection'] = $protection;
-
-        return $this;
-    }
-
-    /**
-     * Gets sip
-     *
-     * @return string
-     */
-    public function getSip()
-    {
-        return $this->container['sip'];
-    }
-
-    /**
-     * Sets sip
-     *
-     * @param string $sip The sip of the contact
-     *
-     * @return $this
-     */
-    public function setSip($sip)
-    {
-        $this->container['sip'] = $sip;
-
-        return $this;
-    }
-
-    /**
-     * Gets remarks
-     *
-     * @return string[]
-     */
-    public function getRemarks()
-    {
-        return $this->container['remarks'];
-    }
-
-    /**
-     * Sets remarks
-     *
-     * @param string[] $remarks The remarks of the contact
-     *
-     * @return $this
-     */
-    public function setRemarks($remarks)
-    {
-        $this->container['remarks'] = $remarks;
-
-        return $this;
-    }
-
-    /**
-     * Gets domainsafe
-     *
-     * @return bool
-     */
-    public function getDomainsafe()
-    {
-        return $this->container['domainsafe'];
-    }
-
-    /**
-     * Sets domainsafe
-     *
-     * @param bool $domainsafe The nic references of the contact
-     *
-     * @return $this
-     */
-    public function setDomainsafe($domainsafe)
-    {
-        $this->container['domainsafe'] = $domainsafe;
-
-        return $this;
-    }
-
-    /**
-     * Gets confirmOwnerConsent
-     *
-     * @return bool
-     */
-    public function getConfirmOwnerConsent()
-    {
-        return $this->container['confirmOwnerConsent'];
-    }
-
-    /**
-     * Sets confirmOwnerConsent
-     *
-     * @param bool $confirmOwnerConsent ???
-     *
-     * @return $this
-     */
-    public function setConfirmOwnerConsent($confirmOwnerConsent)
-    {
-        $this->container['confirmOwnerConsent'] = $confirmOwnerConsent;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment The comment for the contact
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets verification
-     *
-     * @return \Domainrobot\Model\GenericStatusConstants
-     */
-    public function getVerification()
-    {
-        return $this->container['verification'];
-    }
-
-    /**
-     * Sets verification
-     *
-     * @param \Domainrobot\Model\GenericStatusConstants $verification The verification status of the contact
-     *
-     * @return $this
-     */
-    public function setVerification($verification)
-    {
-        $this->container['verification'] = $verification;
-
-        return $this;
-    }
-
-    /**
-     * Gets fname
-     *
-     * @return string
-     */
-    public function getFname()
-    {
-        return $this->container['fname'];
-    }
-
-    /**
-     * Sets fname
-     *
-     * @param string $fname The first name of the contact
-     *
-     * @return $this
-     */
-    public function setFname($fname)
-    {
-        $this->container['fname'] = $fname;
-
-        return $this;
-    }
-
-    /**
-     * Gets lname
-     *
-     * @return string
-     */
-    public function getLname()
-    {
-        return $this->container['lname'];
-    }
-
-    /**
-     * Sets lname
-     *
-     * @param string $lname The last name of the contact
-     *
-     * @return $this
-     */
-    public function setLname($lname)
-    {
-        $this->container['lname'] = $lname;
 
         return $this;
     }
@@ -980,133 +878,13 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param string[] $address The address of the contact.
+     * @param string[] $address address
      *
      * @return $this
      */
     public function setAddress($address)
     {
         $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets pcode
-     *
-     * @return string
-     */
-    public function getPcode()
-    {
-        return $this->container['pcode'];
-    }
-
-    /**
-     * Sets pcode
-     *
-     * @param string $pcode The pcode of the contact
-     *
-     * @return $this
-     */
-    public function setPcode($pcode)
-    {
-        $this->container['pcode'] = $pcode;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string $phone The phone number of the contact
-     *
-     * @return $this
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets fax
-     *
-     * @return string
-     */
-    public function getFax()
-    {
-        return $this->container['fax'];
-    }
-
-    /**
-     * Sets fax
-     *
-     * @param string $fax The fax number of the contact
-     *
-     * @return $this
-     */
-    public function setFax($fax)
-    {
-        $this->container['fax'] = $fax;
-
-        return $this;
-    }
-
-    /**
-     * Gets nicRef
-     *
-     * @return \Domainrobot\Model\ContactReference[]
-     */
-    public function getNicRef()
-    {
-        return $this->container['nicRef'];
-    }
-
-    /**
-     * Sets nicRef
-     *
-     * @param \Domainrobot\Model\ContactReference[] $nicRef The nic references of the contact
-     *
-     * @return $this
-     */
-    public function setNicRef($nicRef)
-    {
-        $this->container['nicRef'] = $nicRef;
-
-        return $this;
-    }
-
-    /**
-     * Gets extensions
-     *
-     * @return \Domainrobot\Model\ContactExtensions
-     */
-    public function getExtensions()
-    {
-        return $this->container['extensions'];
-    }
-
-    /**
-     * Sets extensions
-     *
-     * @param \Domainrobot\Model\ContactExtensions $extensions The contact extensions.
-     *
-     * @return $this
-     */
-    public function setExtensions($extensions)
-    {
-        $this->container['extensions'] = $extensions;
 
         return $this;
     }

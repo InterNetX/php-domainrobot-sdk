@@ -491,7 +491,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param double $amount Lorem Ipum
+     * @param double $amount Amount
      *
      * @return $this
      */
@@ -515,7 +515,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\PriceTypeConstants $type Lorem Ipum
+     * @param \Domainrobot\Model\PriceTypeConstants $type The price type
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency Lorem Ipsum
+     * @param string $currency Used currency
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets priority
      *
-     * @param \Domainrobot\Model\PriorityConstants $priority Lorem Ipum
+     * @param \Domainrobot\Model\PriorityConstants $priority Priority
      *
      * @return $this
      */
@@ -587,7 +587,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \Domainrobot\Model\Customer $customer Lorem Ipum
+     * @param \Domainrobot\Model\Customer $customer Customer
      *
      * @return $this
      */
@@ -611,7 +611,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param \Domainrobot\Model\TimePeriod $period Lorem Ipum
+     * @param \Domainrobot\Model\TimePeriod $period The activity period of a product
      *
      * @return $this
      */
@@ -635,7 +635,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets discountable
      *
-     * @param bool $discountable Lorem Ipum
+     * @param bool $discountable Indicates if price discountable is possible
      *
      * @return $this
      */
@@ -659,7 +659,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets logId
      *
-     * @param int $logId Lorem Ipum
+     * @param int $logId Id of the created log
      *
      * @return $this
      */
@@ -683,7 +683,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets refund
      *
-     * @param int $refund Lorem Ipum
+     * @param int $refund Refund
      *
      * @return $this
      */
@@ -707,7 +707,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets priceConditions
      *
-     * @param \Domainrobot\Model\PriceServiceEntity[] $priceConditions Lorem Ipum
+     * @param \Domainrobot\Model\PriceServiceEntity[] $priceConditions Price condition
      *
      * @return $this
      */
@@ -731,7 +731,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets comment
      *
-     * @param string $comment Lorem Ipum
+     * @param string $comment Comments
      *
      * @return $this
      */
@@ -755,7 +755,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets normalPrice
      *
-     * @param \Domainrobot\Model\ExchangedPrice $normalPrice Lorem Ipum
+     * @param \Domainrobot\Model\ExchangedPrice $normalPrice Normal price
      *
      * @return $this
      */
@@ -779,7 +779,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets valid
      *
-     * @param \DateTime $valid Lorem Ipum
+     * @param \DateTime $valid Date until the price is valid
      *
      * @return $this
      */

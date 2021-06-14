@@ -302,7 +302,7 @@ class PriceServiceEntity implements ModelInterface, ArrayAccess
     /**
      * Sets condition
      *
-     * @param \Domainrobot\Model\ServiceEntity $condition Lorem Ipum
+     * @param \Domainrobot\Model\ServiceEntity $condition service entity
      *
      * @return $this
      */

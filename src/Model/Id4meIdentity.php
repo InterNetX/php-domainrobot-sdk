@@ -63,7 +63,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'agent' => '\Domainrobot\Model\Id4MeAgent',
         'verifyExpire' => '\DateTime',
-        'addons' => '\Domainrobot\Model\Configuration',
+        'addons' => '\Domainrobot\Model\Id4MeIdentityAddons',
         'magicLink' => 'string',
         'claims' => '\Domainrobot\Model\Claims',
         'showClaims' => 'bool',
@@ -502,7 +502,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Gets addons
      *
-     * @return \Domainrobot\Model\Configuration
+     * @return \Domainrobot\Model\Id4MeIdentityAddons
      */
     public function getAddons()
     {
@@ -512,7 +512,7 @@ class Id4meIdentity implements ModelInterface, ArrayAccess
     /**
      * Sets addons
      *
-     * @param \Domainrobot\Model\Configuration $addons Additional information
+     * @param \Domainrobot\Model\Id4MeIdentityAddons $addons Additional information
      *
      * @return $this
      */

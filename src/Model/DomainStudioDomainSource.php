@@ -54,6 +54,7 @@ class DomainStudioDomainSource
     const SPIN_WORD = 'SPIN_WORD';
     const PERSONAL_NAMES = 'PERSONAL_NAMES';
     const UPCOMING = 'UPCOMING';
+    const MARKET = 'MARKET';
     
     /**
      * Gets allowable values of the enum
@@ -73,6 +74,7 @@ class DomainStudioDomainSource
             self::SPIN_WORD,
             self::PERSONAL_NAMES,
             self::UPCOMING,
+            self::MARKET,
         ];
     }
 }

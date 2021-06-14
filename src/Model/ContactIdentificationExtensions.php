@@ -71,8 +71,8 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'number' => null,
         'authority' => null,
-        'dateOfIssue' => 'date-time',
-        'validTill' => 'date-time'
+        'dateOfIssue' => 'date',
+        'validTill' => 'date'
     ];
 
     /**

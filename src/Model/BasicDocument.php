@@ -70,7 +70,8 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'uuid' => 'string',
         'alias' => 'string',
         'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser'
+        'updater' => '\Domainrobot\Model\BasicUser',
+        'expire' => '\DateTime'
     ];
 
     /**
@@ -92,7 +93,8 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'uuid' => null,
         'alias' => null,
         'owner' => null,
-        'updater' => null
+        'updater' => null,
+        'expire' => 'date-time'
     ];
 
     /**
@@ -135,7 +137,8 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'uuid' => 'uuid',
         'alias' => 'alias',
         'owner' => 'owner',
-        'updater' => 'updater'
+        'updater' => 'updater',
+        'expire' => 'expire'
     ];
 
     /**
@@ -157,7 +160,8 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'uuid' => 'setUuid',
         'alias' => 'setAlias',
         'owner' => 'setOwner',
-        'updater' => 'setUpdater'
+        'updater' => 'setUpdater',
+        'expire' => 'setExpire'
     ];
 
     /**
@@ -179,7 +183,8 @@ class BasicDocument implements ModelInterface, ArrayAccess
         'uuid' => 'getUuid',
         'alias' => 'getAlias',
         'owner' => 'getOwner',
-        'updater' => 'getUpdater'
+        'updater' => 'getUpdater',
+        'expire' => 'getExpire'
     ];
 
     /**
@@ -256,6 +261,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         $this->container['alias'] = isset($data['alias']) ? $this->createData($data['alias'], 'alias')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
+        $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
     }
 
     /**
@@ -672,6 +678,30 @@ class BasicDocument implements ModelInterface, ArrayAccess
     public function setUpdater($updater)
     {
         $this->container['updater'] = $updater;
+
+        return $this;
+    }
+
+    /**
+     * Gets expire
+     *
+     * @return \DateTime
+     */
+    public function getExpire()
+    {
+        return $this->container['expire'];
+    }
+
+    /**
+     * Sets expire
+     *
+     * @param \DateTime $expire The expire date.
+     *
+     * @return $this
+     */
+    public function setExpire($expire)
+    {
+        $this->container['expire'] = $expire;
 
         return $this;
     }

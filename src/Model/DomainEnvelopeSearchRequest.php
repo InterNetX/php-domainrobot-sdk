@@ -57,15 +57,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'searchToken' => 'string',
-        'currency' => 'string',
-        'debug' => 'bool',
-        'checkPortfolio' => 'bool',
-        'forceDnsCheck' => 'bool',
-        'allowDuplicates' => 'bool',
-        'sources' => '\Domainrobot\Model\DomainStudioSources',
-        'clientIp' => 'string',
-        'onlyAvailable' => 'bool'
+        'searchToken' => 'string'
     ];
 
     /**
@@ -74,15 +66,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'searchToken' => null,
-        'currency' => null,
-        'debug' => null,
-        'checkPortfolio' => null,
-        'forceDnsCheck' => null,
-        'allowDuplicates' => null,
-        'sources' => null,
-        'clientIp' => null,
-        'onlyAvailable' => null
+        'searchToken' => null
     ];
 
     /**
@@ -112,15 +96,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'searchToken' => 'searchToken',
-        'currency' => 'currency',
-        'debug' => 'debug',
-        'checkPortfolio' => 'checkPortfolio',
-        'forceDnsCheck' => 'forceDnsCheck',
-        'allowDuplicates' => 'allowDuplicates',
-        'sources' => 'sources',
-        'clientIp' => 'clientIp',
-        'onlyAvailable' => 'onlyAvailable'
+        'searchToken' => 'searchToken'
     ];
 
     /**
@@ -129,15 +105,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'searchToken' => 'setSearchToken',
-        'currency' => 'setCurrency',
-        'debug' => 'setDebug',
-        'checkPortfolio' => 'setCheckPortfolio',
-        'forceDnsCheck' => 'setForceDnsCheck',
-        'allowDuplicates' => 'setAllowDuplicates',
-        'sources' => 'setSources',
-        'clientIp' => 'setClientIp',
-        'onlyAvailable' => 'setOnlyAvailable'
+        'searchToken' => 'setSearchToken'
     ];
 
     /**
@@ -146,15 +114,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'searchToken' => 'getSearchToken',
-        'currency' => 'getCurrency',
-        'debug' => 'getDebug',
-        'checkPortfolio' => 'getCheckPortfolio',
-        'forceDnsCheck' => 'getForceDnsCheck',
-        'allowDuplicates' => 'getAllowDuplicates',
-        'sources' => 'getSources',
-        'clientIp' => 'getClientIp',
-        'onlyAvailable' => 'getOnlyAvailable'
+        'searchToken' => 'getSearchToken'
     ];
 
     /**
@@ -218,14 +178,6 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['searchToken'] = isset($data['searchToken']) ? $this->createData($data['searchToken'], 'searchToken')  : null;
-        $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
-        $this->container['debug'] = isset($data['debug']) ? $this->createData($data['debug'], 'debug')  : null;
-        $this->container['checkPortfolio'] = isset($data['checkPortfolio']) ? $this->createData($data['checkPortfolio'], 'checkPortfolio')  : null;
-        $this->container['forceDnsCheck'] = isset($data['forceDnsCheck']) ? $this->createData($data['forceDnsCheck'], 'forceDnsCheck')  : null;
-        $this->container['allowDuplicates'] = isset($data['allowDuplicates']) ? $this->createData($data['allowDuplicates'], 'allowDuplicates')  : null;
-        $this->container['sources'] = isset($data['sources']) ? $this->createData($data['sources'], 'sources')  : null;
-        $this->container['clientIp'] = isset($data['clientIp']) ? $this->createData($data['clientIp'], 'clientIp')  : null;
-        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
     }
 
     /**
@@ -327,198 +279,6 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     public function setSearchToken($searchToken)
     {
         $this->container['searchToken'] = $searchToken;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string $currency The currency for every price lookup
-     *
-     * @return $this
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets debug
-     *
-     * @return bool
-     */
-    public function getDebug()
-    {
-        return $this->container['debug'];
-    }
-
-    /**
-     * Sets debug
-     *
-     * @param bool $debug Activates debugging
-     *
-     * @return $this
-     */
-    public function setDebug($debug)
-    {
-        $this->container['debug'] = $debug;
-
-        return $this;
-    }
-
-    /**
-     * Gets checkPortfolio
-     *
-     * @return bool
-     */
-    public function getCheckPortfolio()
-    {
-        return $this->container['checkPortfolio'];
-    }
-
-    /**
-     * Sets checkPortfolio
-     *
-     * @param bool $checkPortfolio Activates the check for each domain whether the user already owns it.
-     *
-     * @return $this
-     */
-    public function setCheckPortfolio($checkPortfolio)
-    {
-        $this->container['checkPortfolio'] = $checkPortfolio;
-
-        return $this;
-    }
-
-    /**
-     * Gets forceDnsCheck
-     *
-     * @return bool
-     */
-    public function getForceDnsCheck()
-    {
-        return $this->container['forceDnsCheck'];
-    }
-
-    /**
-     * Sets forceDnsCheck
-     *
-     * @param bool $forceDnsCheck All whois checks will be done via dns check.
-     *
-     * @return $this
-     */
-    public function setForceDnsCheck($forceDnsCheck)
-    {
-        $this->container['forceDnsCheck'] = $forceDnsCheck;
-
-        return $this;
-    }
-
-    /**
-     * Gets allowDuplicates
-     *
-     * @return bool
-     */
-    public function getAllowDuplicates()
-    {
-        return $this->container['allowDuplicates'];
-    }
-
-    /**
-     * Sets allowDuplicates
-     *
-     * @param bool $allowDuplicates Allow duplicate domain names from different sources.
-     *
-     * @return $this
-     */
-    public function setAllowDuplicates($allowDuplicates)
-    {
-        $this->container['allowDuplicates'] = $allowDuplicates;
-
-        return $this;
-    }
-
-    /**
-     * Gets sources
-     *
-     * @return \Domainrobot\Model\DomainStudioSources
-     */
-    public function getSources()
-    {
-        return $this->container['sources'];
-    }
-
-    /**
-     * Sets sources
-     *
-     * @param \Domainrobot\Model\DomainStudioSources $sources Wrapper for the configuration for each source
-     *
-     * @return $this
-     */
-    public function setSources($sources)
-    {
-        $this->container['sources'] = $sources;
-
-        return $this;
-    }
-
-    /**
-     * Gets clientIp
-     *
-     * @return string
-     */
-    public function getClientIp()
-    {
-        return $this->container['clientIp'];
-    }
-
-    /**
-     * Sets clientIp
-     *
-     * @param string $clientIp The ip of the client
-     *
-     * @return $this
-     */
-    public function setClientIp($clientIp)
-    {
-        $this->container['clientIp'] = $clientIp;
-
-        return $this;
-    }
-
-    /**
-     * Gets onlyAvailable
-     *
-     * @return bool
-     */
-    public function getOnlyAvailable()
-    {
-        return $this->container['onlyAvailable'];
-    }
-
-    /**
-     * Sets onlyAvailable
-     *
-     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
-     *
-     * @return $this
-     */
-    public function setOnlyAvailable($onlyAvailable)
-    {
-        $this->container['onlyAvailable'] = $onlyAvailable;
 
         return $this;
     }

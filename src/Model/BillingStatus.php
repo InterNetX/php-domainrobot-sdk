@@ -55,6 +55,7 @@ class BillingStatus
     const RESTORE = 'RESTORE';
     const AUTODELETE = 'AUTODELETE';
     const REMOVED = 'REMOVED';
+    const DROP = 'DROP';
     
     /**
      * Gets allowable values of the enum
@@ -75,6 +76,7 @@ class BillingStatus
             self::RESTORE,
             self::AUTODELETE,
             self::REMOVED,
+            self::DROP,
         ];
     }
 }

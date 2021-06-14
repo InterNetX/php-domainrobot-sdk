@@ -58,6 +58,8 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'joiCountryName' => 'string',
+        'joiLocality' => 'string',
+        'joiStateOrProvince' => 'string',
         'companyNumber' => 'string',
         'businessCategory' => '\Domainrobot\Model\BusinessCategory'
     ];
@@ -69,6 +71,8 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'joiCountryName' => null,
+        'joiLocality' => null,
+        'joiStateOrProvince' => null,
         'companyNumber' => null,
         'businessCategory' => null
     ];
@@ -101,6 +105,8 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'joiCountryName' => 'joiCountryName',
+        'joiLocality' => 'joiLocality',
+        'joiStateOrProvince' => 'joiStateOrProvince',
         'companyNumber' => 'companyNumber',
         'businessCategory' => 'businessCategory'
     ];
@@ -112,6 +118,8 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'joiCountryName' => 'setJoiCountryName',
+        'joiLocality' => 'setJoiLocality',
+        'joiStateOrProvince' => 'setJoiStateOrProvince',
         'companyNumber' => 'setCompanyNumber',
         'businessCategory' => 'setBusinessCategory'
     ];
@@ -123,6 +131,8 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'joiCountryName' => 'getJoiCountryName',
+        'joiLocality' => 'getJoiLocality',
+        'joiStateOrProvince' => 'getJoiStateOrProvince',
         'companyNumber' => 'getCompanyNumber',
         'businessCategory' => 'getBusinessCategory'
     ];
@@ -188,6 +198,8 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['joiCountryName'] = isset($data['joiCountryName']) ? $this->createData($data['joiCountryName'], 'joiCountryName')  : null;
+        $this->container['joiLocality'] = isset($data['joiLocality']) ? $this->createData($data['joiLocality'], 'joiLocality')  : null;
+        $this->container['joiStateOrProvince'] = isset($data['joiStateOrProvince']) ? $this->createData($data['joiStateOrProvince'], 'joiStateOrProvince')  : null;
         $this->container['companyNumber'] = isset($data['companyNumber']) ? $this->createData($data['companyNumber'], 'companyNumber')  : null;
         $this->container['businessCategory'] = isset($data['businessCategory']) ? $this->createData($data['businessCategory'], 'businessCategory')  : null;
     }
@@ -291,6 +303,54 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     public function setJoiCountryName($joiCountryName)
     {
         $this->container['joiCountryName'] = $joiCountryName;
+
+        return $this;
+    }
+
+    /**
+     * Gets joiLocality
+     *
+     * @return string
+     */
+    public function getJoiLocality()
+    {
+        return $this->container['joiLocality'];
+    }
+
+    /**
+     * Sets joiLocality
+     *
+     * @param string $joiLocality Locality or city of judicial formation
+     *
+     * @return $this
+     */
+    public function setJoiLocality($joiLocality)
+    {
+        $this->container['joiLocality'] = $joiLocality;
+
+        return $this;
+    }
+
+    /**
+     * Gets joiStateOrProvince
+     *
+     * @return string
+     */
+    public function getJoiStateOrProvince()
+    {
+        return $this->container['joiStateOrProvince'];
+    }
+
+    /**
+     * Sets joiStateOrProvince
+     *
+     * @param string $joiStateOrProvince State or province of judicial formation
+     *
+     * @return $this
+     */
+    public function setJoiStateOrProvince($joiStateOrProvince)
+    {
+        $this->container['joiStateOrProvince'] = $joiStateOrProvince;
 
         return $this;
     }

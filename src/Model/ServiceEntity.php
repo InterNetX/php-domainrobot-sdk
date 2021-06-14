@@ -335,7 +335,7 @@ class ServiceEntity implements ModelInterface, ArrayAccess
     /**
      * Sets label
      *
-     * @param string $label Lorem Ipum
+     * @param string $label The unique identifier
      *
      * @return $this
      */

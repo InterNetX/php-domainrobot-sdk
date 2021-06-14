@@ -61,7 +61,9 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
         'onlyAvailable' => 'bool',
         'promoTlds' => 'string[]',
         'topTlds' => 'string[]',
-        'max' => 'int'
+        'max' => 'int',
+        'priceMin' => 'int',
+        'priceMax' => 'int'
     ];
 
     /**
@@ -74,7 +76,9 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
         'onlyAvailable' => null,
         'promoTlds' => null,
         'topTlds' => null,
-        'max' => 'int32'
+        'max' => 'int32',
+        'priceMin' => 'int32',
+        'priceMax' => 'int32'
     ];
 
     /**
@@ -108,7 +112,9 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
         'onlyAvailable' => 'onlyAvailable',
         'promoTlds' => 'promoTlds',
         'topTlds' => 'topTlds',
-        'max' => 'max'
+        'max' => 'max',
+        'priceMin' => 'priceMin',
+        'priceMax' => 'priceMax'
     ];
 
     /**
@@ -121,7 +127,9 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
         'onlyAvailable' => 'setOnlyAvailable',
         'promoTlds' => 'setPromoTlds',
         'topTlds' => 'setTopTlds',
-        'max' => 'setMax'
+        'max' => 'setMax',
+        'priceMin' => 'setPriceMin',
+        'priceMax' => 'setPriceMax'
     ];
 
     /**
@@ -134,7 +142,9 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
         'onlyAvailable' => 'getOnlyAvailable',
         'promoTlds' => 'getPromoTlds',
         'topTlds' => 'getTopTlds',
-        'max' => 'getMax'
+        'max' => 'getMax',
+        'priceMin' => 'getPriceMin',
+        'priceMax' => 'getPriceMax'
     ];
 
     /**
@@ -202,6 +212,8 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
         $this->container['promoTlds'] = isset($data['promoTlds']) ? $this->createData($data['promoTlds'], 'promoTlds')  : null;
         $this->container['topTlds'] = isset($data['topTlds']) ? $this->createData($data['topTlds'], 'topTlds')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
+        $this->container['priceMin'] = isset($data['priceMin']) ? $this->createData($data['priceMin'], 'priceMin')  : null;
+        $this->container['priceMax'] = isset($data['priceMax']) ? $this->createData($data['priceMax'], 'priceMax')  : null;
     }
 
     /**
@@ -399,6 +411,54 @@ class DomainStudioSourcePremium implements ModelInterface, ArrayAccess
     public function setMax($max)
     {
         $this->container['max'] = $max;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceMin
+     *
+     * @return int
+     */
+    public function getPriceMin()
+    {
+        return $this->container['priceMin'];
+    }
+
+    /**
+     * Sets priceMin
+     *
+     * @param int $priceMin The minumum price.
+     *
+     * @return $this
+     */
+    public function setPriceMin($priceMin)
+    {
+        $this->container['priceMin'] = $priceMin;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceMax
+     *
+     * @return int
+     */
+    public function getPriceMax()
+    {
+        return $this->container['priceMax'];
+    }
+
+    /**
+     * Sets priceMax
+     *
+     * @param int $priceMax The maximum price.
+     *
+     * @return $this
+     */
+    public function setPriceMax($priceMax)
+    {
+        $this->container['priceMax'] = $priceMax;
 
         return $this;
     }

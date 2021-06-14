@@ -57,6 +57,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'mode' => '\Domainrobot\Model\PolicyMode',
         'modifySubject' => 'bool',
         'tagHeader' => 'double',
         'spam' => 'double',
@@ -70,6 +71,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'mode' => null,
         'modifySubject' => null,
         'tagHeader' => 'double',
         'spam' => 'double',
@@ -104,6 +106,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'mode' => 'mode',
         'modifySubject' => 'modifySubject',
         'tagHeader' => 'tagHeader',
         'spam' => 'spam',
@@ -117,6 +120,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'mode' => 'setMode',
         'modifySubject' => 'setModifySubject',
         'tagHeader' => 'setTagHeader',
         'spam' => 'setSpam',
@@ -130,6 +134,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'mode' => 'getMode',
         'modifySubject' => 'getModifySubject',
         'tagHeader' => 'getTagHeader',
         'spam' => 'getSpam',
@@ -197,6 +202,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['mode'] = isset($data['mode']) ? $this->createData($data['mode'], 'mode')  : null;
         $this->container['modifySubject'] = isset($data['modifySubject']) ? $this->createData($data['modifySubject'], 'modifySubject')  : null;
         $this->container['tagHeader'] = isset($data['tagHeader']) ? $this->createData($data['tagHeader'], 'tagHeader')  : null;
         $this->container['spam'] = isset($data['spam']) ? $this->createData($data['spam'], 'spam')  : null;
@@ -310,6 +316,30 @@ class SpamPolicy implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets mode
+     *
+     * @return \Domainrobot\Model\PolicyMode
+     */
+    public function getMode()
+    {
+        return $this->container['mode'];
+    }
+
+    /**
+     * Sets mode
+     *
+     * @param \Domainrobot\Model\PolicyMode $mode mode
+     *
+     * @return $this
+     */
+    public function setMode($mode)
+    {
+        $this->container['mode'] = $mode;
+
+        return $this;
+    }
 
     /**
      * Gets modifySubject

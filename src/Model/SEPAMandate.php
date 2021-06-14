@@ -59,13 +59,15 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
+        'document' => '\Domainrobot\Model\Document',
         'reference' => 'string',
         'confirmSignature' => '\DateTime',
-        'confirmIp' => '\Domainrobot\Model\InetAddress',
+        'confirmIp' => 'string',
         'confirmUseragent' => 'string',
         'confirmChecked' => 'bool',
         'expire' => '\DateTime',
         'histories' => '\Domainrobot\Model\SEPAMandate[]',
+        'status' => '\Domainrobot\Model\SepaStatus',
         'accountHolder' => 'string',
         'iban' => 'string',
         'bic' => 'string'
@@ -79,6 +81,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
+        'document' => null,
         'reference' => null,
         'confirmSignature' => 'date-time',
         'confirmIp' => null,
@@ -86,6 +89,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'confirmChecked' => null,
         'expire' => 'date-time',
         'histories' => null,
+        'status' => null,
         'accountHolder' => null,
         'iban' => null,
         'bic' => null
@@ -120,6 +124,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
+        'document' => 'document',
         'reference' => 'reference',
         'confirmSignature' => 'confirmSignature',
         'confirmIp' => 'confirmIp',
@@ -127,6 +132,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'confirmChecked' => 'confirmChecked',
         'expire' => 'expire',
         'histories' => 'histories',
+        'status' => 'status',
         'accountHolder' => 'accountHolder',
         'iban' => 'iban',
         'bic' => 'bic'
@@ -140,6 +146,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
+        'document' => 'setDocument',
         'reference' => 'setReference',
         'confirmSignature' => 'setConfirmSignature',
         'confirmIp' => 'setConfirmIp',
@@ -147,6 +154,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'confirmChecked' => 'setConfirmChecked',
         'expire' => 'setExpire',
         'histories' => 'setHistories',
+        'status' => 'setStatus',
         'accountHolder' => 'setAccountHolder',
         'iban' => 'setIban',
         'bic' => 'setBic'
@@ -160,6 +168,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
+        'document' => 'getDocument',
         'reference' => 'getReference',
         'confirmSignature' => 'getConfirmSignature',
         'confirmIp' => 'getConfirmIp',
@@ -167,6 +176,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         'confirmChecked' => 'getConfirmChecked',
         'expire' => 'getExpire',
         'histories' => 'getHistories',
+        'status' => 'getStatus',
         'accountHolder' => 'getAccountHolder',
         'iban' => 'getIban',
         'bic' => 'getBic'
@@ -234,6 +244,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['document'] = isset($data['document']) ? $this->createData($data['document'], 'document')  : null;
         $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
         $this->container['confirmSignature'] = isset($data['confirmSignature']) ? $this->createData($data['confirmSignature'], 'confirmSignature')  : null;
         $this->container['confirmIp'] = isset($data['confirmIp']) ? $this->createData($data['confirmIp'], 'confirmIp')  : null;
@@ -241,6 +252,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         $this->container['confirmChecked'] = isset($data['confirmChecked']) ? $this->createData($data['confirmChecked'], 'confirmChecked')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
         $this->container['histories'] = isset($data['histories']) ? $this->createData($data['histories'], 'histories')  : null;
+        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['accountHolder'] = isset($data['accountHolder']) ? $this->createData($data['accountHolder'], 'accountHolder')  : null;
         $this->container['iban'] = isset($data['iban']) ? $this->createData($data['iban'], 'iban')  : null;
         $this->container['bic'] = isset($data['bic']) ? $this->createData($data['bic'], 'bic')  : null;
@@ -383,6 +395,30 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets document
+     *
+     * @return \Domainrobot\Model\Document
+     */
+    public function getDocument()
+    {
+        return $this->container['document'];
+    }
+
+    /**
+     * Sets document
+     *
+     * @param \Domainrobot\Model\Document $document The linked pdf
+     *
+     * @return $this
+     */
+    public function setDocument($document)
+    {
+        $this->container['document'] = $document;
+
+        return $this;
+    }
+
+    /**
      * Gets reference
      *
      * @return string
@@ -433,7 +469,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     /**
      * Gets confirmIp
      *
-     * @return \Domainrobot\Model\InetAddress
+     * @return string
      */
     public function getConfirmIp()
     {
@@ -443,7 +479,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     /**
      * Sets confirmIp
      *
-     * @param \Domainrobot\Model\InetAddress $confirmIp The address of the confirm signature
+     * @param string $confirmIp The address of the confirm signature
      *
      * @return $this
      */
@@ -546,6 +582,30 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     public function setHistories($histories)
     {
         $this->container['histories'] = $histories;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return \Domainrobot\Model\SepaStatus
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param \Domainrobot\Model\SepaStatus $status The status of the mandate
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }

@@ -60,7 +60,13 @@ class ContextHost implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'master' => 'bool',
+        'csr' => 'string',
+        'serverCert' => 'string',
+        'caCert' => 'string',
         'status' => '\Domainrobot\Model\JobStatusConstants',
+        'subStatus' => 'string',
+        'zone' => '\Domainrobot\Model\ContextHostZone',
+        'certificate' => '\Domainrobot\Model\BasicCertificate',
         'name' => 'string'
     ];
 
@@ -73,7 +79,13 @@ class ContextHost implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'updated' => 'date-time',
         'master' => null,
+        'csr' => null,
+        'serverCert' => null,
+        'caCert' => null,
         'status' => null,
+        'subStatus' => null,
+        'zone' => null,
+        'certificate' => null,
         'name' => null
     ];
 
@@ -107,7 +119,13 @@ class ContextHost implements ModelInterface, ArrayAccess
         'created' => 'created',
         'updated' => 'updated',
         'master' => 'master',
+        'csr' => 'csr',
+        'serverCert' => 'serverCert',
+        'caCert' => 'caCert',
         'status' => 'status',
+        'subStatus' => 'subStatus',
+        'zone' => 'zone',
+        'certificate' => 'certificate',
         'name' => 'name'
     ];
 
@@ -120,7 +138,13 @@ class ContextHost implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'master' => 'setMaster',
+        'csr' => 'setCsr',
+        'serverCert' => 'setServerCert',
+        'caCert' => 'setCaCert',
         'status' => 'setStatus',
+        'subStatus' => 'setSubStatus',
+        'zone' => 'setZone',
+        'certificate' => 'setCertificate',
         'name' => 'setName'
     ];
 
@@ -133,7 +157,13 @@ class ContextHost implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'master' => 'getMaster',
+        'csr' => 'getCsr',
+        'serverCert' => 'getServerCert',
+        'caCert' => 'getCaCert',
         'status' => 'getStatus',
+        'subStatus' => 'getSubStatus',
+        'zone' => 'getZone',
+        'certificate' => 'getCertificate',
         'name' => 'getName'
     ];
 
@@ -200,7 +230,13 @@ class ContextHost implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['master'] = isset($data['master']) ? $this->createData($data['master'], 'master')  : null;
+        $this->container['csr'] = isset($data['csr']) ? $this->createData($data['csr'], 'csr')  : null;
+        $this->container['serverCert'] = isset($data['serverCert']) ? $this->createData($data['serverCert'], 'serverCert')  : null;
+        $this->container['caCert'] = isset($data['caCert']) ? $this->createData($data['caCert'], 'caCert')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
+        $this->container['subStatus'] = isset($data['subStatus']) ? $this->createData($data['subStatus'], 'subStatus')  : null;
+        $this->container['zone'] = isset($data['zone']) ? $this->createData($data['zone'], 'zone')  : null;
+        $this->container['certificate'] = isset($data['certificate']) ? $this->createData($data['certificate'], 'certificate')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
     }
 
@@ -356,6 +392,78 @@ class ContextHost implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets csr
+     *
+     * @return string
+     */
+    public function getCsr()
+    {
+        return $this->container['csr'];
+    }
+
+    /**
+     * Sets csr
+     *
+     * @param string $csr The csr of the certificate
+     *
+     * @return $this
+     */
+    public function setCsr($csr)
+    {
+        $this->container['csr'] = $csr;
+
+        return $this;
+    }
+
+    /**
+     * Gets serverCert
+     *
+     * @return string
+     */
+    public function getServerCert()
+    {
+        return $this->container['serverCert'];
+    }
+
+    /**
+     * Sets serverCert
+     *
+     * @param string $serverCert The server certificate.
+     *
+     * @return $this
+     */
+    public function setServerCert($serverCert)
+    {
+        $this->container['serverCert'] = $serverCert;
+
+        return $this;
+    }
+
+    /**
+     * Gets caCert
+     *
+     * @return string
+     */
+    public function getCaCert()
+    {
+        return $this->container['caCert'];
+    }
+
+    /**
+     * Sets caCert
+     *
+     * @param string $caCert The intermediates of the certificate
+     *
+     * @return $this
+     */
+    public function setCaCert($caCert)
+    {
+        $this->container['caCert'] = $caCert;
+
+        return $this;
+    }
+
+    /**
      * Gets status
      *
      * @return \Domainrobot\Model\JobStatusConstants
@@ -375,6 +483,78 @@ class ContextHost implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets subStatus
+     *
+     * @return string
+     */
+    public function getSubStatus()
+    {
+        return $this->container['subStatus'];
+    }
+
+    /**
+     * Sets subStatus
+     *
+     * @param string $subStatus The job substatus
+     *
+     * @return $this
+     */
+    public function setSubStatus($subStatus)
+    {
+        $this->container['subStatus'] = $subStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets zone
+     *
+     * @return \Domainrobot\Model\ContextHostZone
+     */
+    public function getZone()
+    {
+        return $this->container['zone'];
+    }
+
+    /**
+     * Sets zone
+     *
+     * @param \Domainrobot\Model\ContextHostZone $zone The zones of the host
+     *
+     * @return $this
+     */
+    public function setZone($zone)
+    {
+        $this->container['zone'] = $zone;
+
+        return $this;
+    }
+
+    /**
+     * Gets certificate
+     *
+     * @return \Domainrobot\Model\BasicCertificate
+     */
+    public function getCertificate()
+    {
+        return $this->container['certificate'];
+    }
+
+    /**
+     * Sets certificate
+     *
+     * @param \Domainrobot\Model\BasicCertificate $certificate The zones of the host
+     *
+     * @return $this
+     */
+    public function setCertificate($certificate)
+    {
+        $this->container['certificate'] = $certificate;
 
         return $this;
     }

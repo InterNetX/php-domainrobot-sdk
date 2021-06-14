@@ -58,7 +58,8 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'contactType' => '\Domainrobot\Model\IeContactTypeConstants',
-        'croNumber' => 'int'
+        'croNumber' => 'string',
+        'supportingNumber' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'contactType' => null,
-        'croNumber' => 'int32'
+        'croNumber' => null,
+        'supportingNumber' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'contactType' => 'contactType',
-        'croNumber' => 'croNumber'
+        'croNumber' => 'croNumber',
+        'supportingNumber' => 'supportingNumber'
     ];
 
     /**
@@ -109,7 +112,8 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'contactType' => 'setContactType',
-        'croNumber' => 'setCroNumber'
+        'croNumber' => 'setCroNumber',
+        'supportingNumber' => 'setSupportingNumber'
     ];
 
     /**
@@ -119,7 +123,8 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'contactType' => 'getContactType',
-        'croNumber' => 'getCroNumber'
+        'croNumber' => 'getCroNumber',
+        'supportingNumber' => 'getSupportingNumber'
     ];
 
     /**
@@ -184,6 +189,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     {
         $this->container['contactType'] = isset($data['contactType']) ? $this->createData($data['contactType'], 'contactType')  : null;
         $this->container['croNumber'] = isset($data['croNumber']) ? $this->createData($data['croNumber'], 'croNumber')  : null;
+        $this->container['supportingNumber'] = isset($data['supportingNumber']) ? $this->createData($data['supportingNumber'], 'supportingNumber')  : null;
     }
 
     /**
@@ -278,7 +284,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets contactType
      *
-     * @param \Domainrobot\Model\IeContactTypeConstants $contactType The contact’s Connection to Ireland (CTI) category that is used to indicate how the Registrant meets specific presence requirements.
+     * @param \Domainrobot\Model\IeContactTypeConstants $contactType The contact’s Connection to Ireland (CTI) category that is used to indicate how the Registrant meets specific presence requirements. CTI category values include Charity, Company, and Other. CTI category information is mandatory if you intend to use the contact as a Registrant for a domain name. This property is only supported if you have specified that you are using the Fury 2.0 extension during your EPP login.
      *
      * @return $this
      */
@@ -292,7 +298,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets croNumber
      *
-     * @return int
+     * @return string
      */
     public function getCroNumber()
     {
@@ -302,13 +308,37 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets croNumber
      *
-     * @param int $croNumber The Companies Registration Office (CRO) identifier that can be used to ensure the company is in a valid state to be registering domains.
+     * @param string $croNumber The Companies Registration Office (CRO) identifier that can be used to ensure the company is in a valid state to be registering domains.
      *
      * @return $this
      */
     public function setCroNumber($croNumber)
     {
         $this->container['croNumber'] = $croNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets supportingNumber
+     *
+     * @return string
+     */
+    public function getSupportingNumber()
+    {
+        return $this->container['supportingNumber'];
+    }
+
+    /**
+     * Sets supportingNumber
+     *
+     * @param string $supportingNumber The identifier for a charity or a supporting number (RBN or VAT, for example) for other contact types.
+     *
+     * @return $this
+     */
+    public function setSupportingNumber($supportingNumber)
+    {
+        $this->container['supportingNumber'] = $supportingNumber;
 
         return $this;
     }

@@ -61,6 +61,8 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'label' => 'string',
         'name' => 'string',
+        'category' => 'string',
+        'configuration' => 'map[string,object]',
         'packageLabel' => 'string'
     ];
 
@@ -74,6 +76,8 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'label' => null,
         'name' => null,
+        'category' => null,
+        'configuration' => null,
         'packageLabel' => null
     ];
 
@@ -108,6 +112,8 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'label' => 'label',
         'name' => 'name',
+        'category' => 'category',
+        'configuration' => 'configuration',
         'packageLabel' => 'packageLabel'
     ];
 
@@ -121,6 +127,8 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'label' => 'setLabel',
         'name' => 'setName',
+        'category' => 'setCategory',
+        'configuration' => 'setConfiguration',
         'packageLabel' => 'setPackageLabel'
     ];
 
@@ -134,6 +142,8 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'label' => 'getLabel',
         'name' => 'getName',
+        'category' => 'getCategory',
+        'configuration' => 'getConfiguration',
         'packageLabel' => 'getPackageLabel'
     ];
 
@@ -201,6 +211,8 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
+        $this->container['category'] = isset($data['category']) ? $this->createData($data['category'], 'category')  : null;
+        $this->container['configuration'] = isset($data['configuration']) ? $this->createData($data['configuration'], 'configuration')  : null;
         $this->container['packageLabel'] = isset($data['packageLabel']) ? $this->createData($data['packageLabel'], 'packageLabel')  : null;
     }
 
@@ -347,7 +359,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     /**
      * Sets label
      *
-     * @param string $label Lorem Ipum
+     * @param string $label The unique identifier
      *
      * @return $this
      */
@@ -378,6 +390,54 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param string $category category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets configuration
+     *
+     * @return map[string,object]
+     */
+    public function getConfiguration()
+    {
+        return $this->container['configuration'];
+    }
+
+    /**
+     * Sets configuration
+     *
+     * @param map[string,object] $configuration Lorem Ipum
+     *
+     * @return $this
+     */
+    public function setConfiguration($configuration)
+    {
+        $this->container['configuration'] = $configuration;
 
         return $this;
     }

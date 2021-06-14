@@ -67,6 +67,7 @@ class User implements ModelInterface, ArrayAccess
         'authType' => '\Domainrobot\Model\AuthType',
         'details' => '\Domainrobot\Model\UserDetails',
         'lock' => '\Domainrobot\Model\UserLock',
+        'oldPassword' => 'string',
         'acls' => '\Domainrobot\Model\UserAcls',
         'profiles' => '\Domainrobot\Model\UserProfileViews',
         'serviceProfiles' => '\Domainrobot\Model\ServiceProfiles',
@@ -76,6 +77,7 @@ class User implements ModelInterface, ArrayAccess
         'subscriptions' => '\Domainrobot\Model\Subscription[]',
         'applications' => '\Domainrobot\Model\TrustedApplication[]',
         'restrictions' => '\Domainrobot\Model\IpRestrictions',
+        'customerLevel' => 'int',
         'user' => 'string',
         'language' => 'string',
         'parent' => '\Domainrobot\Model\User',
@@ -98,6 +100,7 @@ class User implements ModelInterface, ArrayAccess
         'authType' => null,
         'details' => null,
         'lock' => null,
+        'oldPassword' => null,
         'acls' => null,
         'profiles' => null,
         'serviceProfiles' => null,
@@ -107,6 +110,7 @@ class User implements ModelInterface, ArrayAccess
         'subscriptions' => null,
         'applications' => null,
         'restrictions' => null,
+        'customerLevel' => 'int32',
         'user' => null,
         'language' => null,
         'parent' => null,
@@ -150,6 +154,7 @@ class User implements ModelInterface, ArrayAccess
         'authType' => 'authType',
         'details' => 'details',
         'lock' => 'lock',
+        'oldPassword' => 'oldPassword',
         'acls' => 'acls',
         'profiles' => 'profiles',
         'serviceProfiles' => 'serviceProfiles',
@@ -159,6 +164,7 @@ class User implements ModelInterface, ArrayAccess
         'subscriptions' => 'subscriptions',
         'applications' => 'applications',
         'restrictions' => 'restrictions',
+        'customerLevel' => 'customerLevel',
         'user' => 'user',
         'language' => 'language',
         'parent' => 'parent',
@@ -181,6 +187,7 @@ class User implements ModelInterface, ArrayAccess
         'authType' => 'setAuthType',
         'details' => 'setDetails',
         'lock' => 'setLock',
+        'oldPassword' => 'setOldPassword',
         'acls' => 'setAcls',
         'profiles' => 'setProfiles',
         'serviceProfiles' => 'setServiceProfiles',
@@ -190,6 +197,7 @@ class User implements ModelInterface, ArrayAccess
         'subscriptions' => 'setSubscriptions',
         'applications' => 'setApplications',
         'restrictions' => 'setRestrictions',
+        'customerLevel' => 'setCustomerLevel',
         'user' => 'setUser',
         'language' => 'setLanguage',
         'parent' => 'setParent',
@@ -212,6 +220,7 @@ class User implements ModelInterface, ArrayAccess
         'authType' => 'getAuthType',
         'details' => 'getDetails',
         'lock' => 'getLock',
+        'oldPassword' => 'getOldPassword',
         'acls' => 'getAcls',
         'profiles' => 'getProfiles',
         'serviceProfiles' => 'getServiceProfiles',
@@ -221,6 +230,7 @@ class User implements ModelInterface, ArrayAccess
         'subscriptions' => 'getSubscriptions',
         'applications' => 'getApplications',
         'restrictions' => 'getRestrictions',
+        'customerLevel' => 'getCustomerLevel',
         'user' => 'getUser',
         'language' => 'getLanguage',
         'parent' => 'getParent',
@@ -297,6 +307,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['authType'] = isset($data['authType']) ? $this->createData($data['authType'], 'authType')  : null;
         $this->container['details'] = isset($data['details']) ? $this->createData($data['details'], 'details')  : null;
         $this->container['lock'] = isset($data['lock']) ? $this->createData($data['lock'], 'lock')  : null;
+        $this->container['oldPassword'] = isset($data['oldPassword']) ? $this->createData($data['oldPassword'], 'oldPassword')  : null;
         $this->container['acls'] = isset($data['acls']) ? $this->createData($data['acls'], 'acls')  : null;
         $this->container['profiles'] = isset($data['profiles']) ? $this->createData($data['profiles'], 'profiles')  : null;
         $this->container['serviceProfiles'] = isset($data['serviceProfiles']) ? $this->createData($data['serviceProfiles'], 'serviceProfiles')  : null;
@@ -306,6 +317,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['subscriptions'] = isset($data['subscriptions']) ? $this->createData($data['subscriptions'], 'subscriptions')  : null;
         $this->container['applications'] = isset($data['applications']) ? $this->createData($data['applications'], 'applications')  : null;
         $this->container['restrictions'] = isset($data['restrictions']) ? $this->createData($data['restrictions'], 'restrictions')  : null;
+        $this->container['customerLevel'] = isset($data['customerLevel']) ? $this->createData($data['customerLevel'], 'customerLevel')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['parent'] = isset($data['parent']) ? $this->createData($data['parent'], 'parent')  : null;
@@ -642,6 +654,30 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets oldPassword
+     *
+     * @return string
+     */
+    public function getOldPassword()
+    {
+        return $this->container['oldPassword'];
+    }
+
+    /**
+     * Sets oldPassword
+     *
+     * @param string $oldPassword The old password.
+     *
+     * @return $this
+     */
+    public function setOldPassword($oldPassword)
+    {
+        $this->container['oldPassword'] = $oldPassword;
+
+        return $this;
+    }
+
+    /**
      * Gets acls
      *
      * @return \Domainrobot\Model\UserAcls
@@ -853,6 +889,30 @@ class User implements ModelInterface, ArrayAccess
     public function setRestrictions($restrictions)
     {
         $this->container['restrictions'] = $restrictions;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerLevel
+     *
+     * @return int
+     */
+    public function getCustomerLevel()
+    {
+        return $this->container['customerLevel'];
+    }
+
+    /**
+     * Sets customerLevel
+     *
+     * @param int $customerLevel The actual customer level for the user.
+     *
+     * @return $this
+     */
+    public function setCustomerLevel($customerLevel)
+    {
+        $this->container['customerLevel'] = $customerLevel;
 
         return $this;
     }

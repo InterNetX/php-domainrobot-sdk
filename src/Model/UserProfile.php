@@ -64,6 +64,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'key' => 'string',
         'value' => 'string',
         'flag' => '\Domainrobot\Model\UserProfileFlag',
+        'inherited' => 'bool',
         'readonly' => 'bool'
     ];
 
@@ -80,6 +81,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'key' => null,
         'value' => null,
         'flag' => null,
+        'inherited' => null,
         'readonly' => null
     ];
 
@@ -117,6 +119,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'key' => 'key',
         'value' => 'value',
         'flag' => 'flag',
+        'inherited' => 'inherited',
         'readonly' => 'readonly'
     ];
 
@@ -133,6 +136,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'key' => 'setKey',
         'value' => 'setValue',
         'flag' => 'setFlag',
+        'inherited' => 'setInherited',
         'readonly' => 'setReadonly'
     ];
 
@@ -149,6 +153,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'key' => 'getKey',
         'value' => 'getValue',
         'flag' => 'getFlag',
+        'inherited' => 'getInherited',
         'readonly' => 'getReadonly'
     ];
 
@@ -219,6 +224,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         $this->container['key'] = isset($data['key']) ? $this->createData($data['key'], 'key')  : null;
         $this->container['value'] = isset($data['value']) ? $this->createData($data['value'], 'value')  : null;
         $this->container['flag'] = isset($data['flag']) ? $this->createData($data['flag'], 'flag')  : null;
+        $this->container['inherited'] = isset($data['inherited']) ? $this->createData($data['inherited'], 'inherited')  : null;
         $this->container['readonly'] = isset($data['readonly']) ? $this->createData($data['readonly'], 'readonly')  : null;
     }
 
@@ -474,6 +480,30 @@ class UserProfile implements ModelInterface, ArrayAccess
     public function setFlag($flag)
     {
         $this->container['flag'] = $flag;
+
+        return $this;
+    }
+
+    /**
+     * Gets inherited
+     *
+     * @return bool
+     */
+    public function getInherited()
+    {
+        return $this->container['inherited'];
+    }
+
+    /**
+     * Sets inherited
+     *
+     * @param bool $inherited Is true if the value was inherited
+     *
+     * @return $this
+     */
+    public function setInherited($inherited)
+    {
+        $this->container['inherited'] = $inherited;
 
         return $this;
     }

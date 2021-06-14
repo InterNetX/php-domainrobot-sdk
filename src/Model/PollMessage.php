@@ -65,6 +65,7 @@ class PollMessage implements ModelInterface, ArrayAccess
         'ctid' => 'string',
         'messages' => '\Domainrobot\Model\Message[]',
         'flags' => 'string',
+        'notice' => 'string',
         'created' => '\DateTime',
         'object' => '\Domainrobot\Model\ResponseObject'
     ];
@@ -83,6 +84,7 @@ class PollMessage implements ModelInterface, ArrayAccess
         'ctid' => null,
         'messages' => null,
         'flags' => null,
+        'notice' => null,
         'created' => 'date-time',
         'object' => null
     ];
@@ -122,6 +124,7 @@ class PollMessage implements ModelInterface, ArrayAccess
         'ctid' => 'ctid',
         'messages' => 'messages',
         'flags' => 'flags',
+        'notice' => 'notice',
         'created' => 'created',
         'object' => 'object'
     ];
@@ -140,6 +143,7 @@ class PollMessage implements ModelInterface, ArrayAccess
         'ctid' => 'setCtid',
         'messages' => 'setMessages',
         'flags' => 'setFlags',
+        'notice' => 'setNotice',
         'created' => 'setCreated',
         'object' => 'setObject'
     ];
@@ -158,6 +162,7 @@ class PollMessage implements ModelInterface, ArrayAccess
         'ctid' => 'getCtid',
         'messages' => 'getMessages',
         'flags' => 'getFlags',
+        'notice' => 'getNotice',
         'created' => 'getCreated',
         'object' => 'getObject'
     ];
@@ -230,6 +235,7 @@ class PollMessage implements ModelInterface, ArrayAccess
         $this->container['ctid'] = isset($data['ctid']) ? $this->createData($data['ctid'], 'ctid')  : null;
         $this->container['messages'] = isset($data['messages']) ? $this->createData($data['messages'], 'messages')  : null;
         $this->container['flags'] = isset($data['flags']) ? $this->createData($data['flags'], 'flags')  : null;
+        $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['object'] = isset($data['object']) ? $this->createData($data['object'], 'object')  : null;
     }
@@ -501,6 +507,30 @@ class PollMessage implements ModelInterface, ArrayAccess
     public function setFlags($flags)
     {
         $this->container['flags'] = $flags;
+
+        return $this;
+    }
+
+    /**
+     * Gets notice
+     *
+     * @return string
+     */
+    public function getNotice()
+    {
+        return $this->container['notice'];
+    }
+
+    /**
+     * Sets notice
+     *
+     * @param string $notice Optional notice.
+     *
+     * @return $this
+     */
+    public function setNotice($notice)
+    {
+        $this->container['notice'] = $notice;
 
         return $this;
     }

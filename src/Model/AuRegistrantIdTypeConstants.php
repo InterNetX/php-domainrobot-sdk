@@ -46,6 +46,14 @@ class AuRegistrantIdTypeConstants
     const ACN = 'ACN';
     const ABN = 'ABN';
     const OTHER = 'OTHER';
+    const TAS = 'TAS';
+    const VIC = 'VIC';
+    const NSW = 'NSW';
+    const ACT = 'ACT';
+    const QLD = 'QLD';
+    const NT = 'NT';
+    const WA = 'WA';
+    const SA = 'SA';
     
     /**
      * Gets allowable values of the enum
@@ -57,6 +65,14 @@ class AuRegistrantIdTypeConstants
             self::ACN,
             self::ABN,
             self::OTHER,
+            self::TAS,
+            self::VIC,
+            self::NSW,
+            self::ACT,
+            self::QLD,
+            self::NT,
+            self::WA,
+            self::SA,
         ];
     }
 }

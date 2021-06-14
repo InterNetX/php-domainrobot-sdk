@@ -60,6 +60,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'initial' => '\Domainrobot\Model\DomainStudioSourceInitial',
         'suggestion' => '\Domainrobot\Model\DomainStudioSourceSuggestion',
         'premium' => '\Domainrobot\Model\DomainStudioSourcePremium',
+        'market' => '\Domainrobot\Model\DomainStudioSourceMarket',
         'geo' => '\Domainrobot\Model\DomainStudioSourceGeo',
         'similar' => '\Domainrobot\Model\DomainStudioSourceSimilar',
         'recommended' => '\Domainrobot\Model\DomainStudioSourceRecommended',
@@ -80,6 +81,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'initial' => null,
         'suggestion' => null,
         'premium' => null,
+        'market' => null,
         'geo' => null,
         'similar' => null,
         'recommended' => null,
@@ -121,6 +123,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'initial' => 'initial',
         'suggestion' => 'suggestion',
         'premium' => 'premium',
+        'market' => 'market',
         'geo' => 'geo',
         'similar' => 'similar',
         'recommended' => 'recommended',
@@ -141,6 +144,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'initial' => 'setInitial',
         'suggestion' => 'setSuggestion',
         'premium' => 'setPremium',
+        'market' => 'setMarket',
         'geo' => 'setGeo',
         'similar' => 'setSimilar',
         'recommended' => 'setRecommended',
@@ -161,6 +165,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'initial' => 'getInitial',
         'suggestion' => 'getSuggestion',
         'premium' => 'getPremium',
+        'market' => 'getMarket',
         'geo' => 'getGeo',
         'similar' => 'getSimilar',
         'recommended' => 'getRecommended',
@@ -235,6 +240,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         $this->container['initial'] = isset($data['initial']) ? $this->createData($data['initial'], 'initial')  : null;
         $this->container['suggestion'] = isset($data['suggestion']) ? $this->createData($data['suggestion'], 'suggestion')  : null;
         $this->container['premium'] = isset($data['premium']) ? $this->createData($data['premium'], 'premium')  : null;
+        $this->container['market'] = isset($data['market']) ? $this->createData($data['market'], 'market')  : null;
         $this->container['geo'] = isset($data['geo']) ? $this->createData($data['geo'], 'geo')  : null;
         $this->container['similar'] = isset($data['similar']) ? $this->createData($data['similar'], 'similar')  : null;
         $this->container['recommended'] = isset($data['recommended']) ? $this->createData($data['recommended'], 'recommended')  : null;
@@ -393,6 +399,30 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     public function setPremium($premium)
     {
         $this->container['premium'] = $premium;
+
+        return $this;
+    }
+
+    /**
+     * Gets market
+     *
+     * @return \Domainrobot\Model\DomainStudioSourceMarket
+     */
+    public function getMarket()
+    {
+        return $this->container['market'];
+    }
+
+    /**
+     * Sets market
+     *
+     * @param \Domainrobot\Model\DomainStudioSourceMarket $market The configuration for the market source
+     *
+     * @return $this
+     */
+    public function setMarket($market)
+    {
+        $this->container['market'] = $market;
 
         return $this;
     }

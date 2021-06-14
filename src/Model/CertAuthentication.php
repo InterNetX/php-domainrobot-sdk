@@ -63,7 +63,8 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'fileName' => 'string',
         'fileContent' => 'string',
         'approverEmails' => 'string[]',
-        'provisioning' => 'bool'
+        'provisioning' => 'bool',
+        'domains' => '\Domainrobot\Model\CertAuthentication[]'
     ];
 
     /**
@@ -78,7 +79,8 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'fileName' => null,
         'fileContent' => null,
         'approverEmails' => null,
-        'provisioning' => null
+        'provisioning' => null,
+        'domains' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'fileName' => 'fileName',
         'fileContent' => 'fileContent',
         'approverEmails' => 'approverEmails',
-        'provisioning' => 'provisioning'
+        'provisioning' => 'provisioning',
+        'domains' => 'domains'
     ];
 
     /**
@@ -129,7 +132,8 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'fileName' => 'setFileName',
         'fileContent' => 'setFileContent',
         'approverEmails' => 'setApproverEmails',
-        'provisioning' => 'setProvisioning'
+        'provisioning' => 'setProvisioning',
+        'domains' => 'setDomains'
     ];
 
     /**
@@ -144,7 +148,8 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'fileName' => 'getFileName',
         'fileContent' => 'getFileContent',
         'approverEmails' => 'getApproverEmails',
-        'provisioning' => 'getProvisioning'
+        'provisioning' => 'getProvisioning',
+        'domains' => 'getDomains'
     ];
 
     /**
@@ -214,6 +219,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         $this->container['fileContent'] = isset($data['fileContent']) ? $this->createData($data['fileContent'], 'fileContent')  : null;
         $this->container['approverEmails'] = isset($data['approverEmails']) ? $this->createData($data['approverEmails'], 'approverEmails')  : null;
         $this->container['provisioning'] = isset($data['provisioning']) ? $this->createData($data['provisioning'], 'provisioning')  : null;
+        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
     }
 
     /**
@@ -459,6 +465,30 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     public function setProvisioning($provisioning)
     {
         $this->container['provisioning'] = $provisioning;
+
+        return $this;
+    }
+
+    /**
+     * Gets domains
+     *
+     * @return \Domainrobot\Model\CertAuthentication[]
+     */
+    public function getDomains()
+    {
+        return $this->container['domains'];
+    }
+
+    /**
+     * Sets domains
+     *
+     * @param \Domainrobot\Model\CertAuthentication[] $domains The authentication data for every domain.
+     *
+     * @return $this
+     */
+    public function setDomains($domains)
+    {
+        $this->container['domains'] = $domains;
 
         return $this;
     }

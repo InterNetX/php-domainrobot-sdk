@@ -57,9 +57,14 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'created' => '\DateTime',
+        'updated' => '\DateTime',
+        'type' => '\Domainrobot\Model\SanType',
+        'sslCertificateId' => 'int',
         'name' => 'string',
         'approverEmail' => 'string',
-        'orderId' => 'string'
+        'orderId' => 'string',
+        'free' => 'bool'
     ];
 
     /**
@@ -68,9 +73,14 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'created' => 'date-time',
+        'updated' => 'date-time',
+        'type' => null,
+        'sslCertificateId' => 'int32',
         'name' => null,
         'approverEmail' => null,
-        'orderId' => null
+        'orderId' => null,
+        'free' => null
     ];
 
     /**
@@ -100,9 +110,14 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'created' => 'created',
+        'updated' => 'updated',
+        'type' => 'type',
+        'sslCertificateId' => 'sslCertificateId',
         'name' => 'name',
         'approverEmail' => 'approverEmail',
-        'orderId' => 'orderId'
+        'orderId' => 'orderId',
+        'free' => 'free'
     ];
 
     /**
@@ -111,9 +126,14 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'created' => 'setCreated',
+        'updated' => 'setUpdated',
+        'type' => 'setType',
+        'sslCertificateId' => 'setSslCertificateId',
         'name' => 'setName',
         'approverEmail' => 'setApproverEmail',
-        'orderId' => 'setOrderId'
+        'orderId' => 'setOrderId',
+        'free' => 'setFree'
     ];
 
     /**
@@ -122,9 +142,14 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'created' => 'getCreated',
+        'updated' => 'getUpdated',
+        'type' => 'getType',
+        'sslCertificateId' => 'getSslCertificateId',
         'name' => 'getName',
         'approverEmail' => 'getApproverEmail',
-        'orderId' => 'getOrderId'
+        'orderId' => 'getOrderId',
+        'free' => 'getFree'
     ];
 
     /**
@@ -187,9 +212,14 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
+        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
+        $this->container['sslCertificateId'] = isset($data['sslCertificateId']) ? $this->createData($data['sslCertificateId'], 'sslCertificateId')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['approverEmail'] = isset($data['approverEmail']) ? $this->createData($data['approverEmail'], 'approverEmail')  : null;
         $this->container['orderId'] = isset($data['orderId']) ? $this->createData($data['orderId'], 'orderId')  : null;
+        $this->container['free'] = isset($data['free']) ? $this->createData($data['free'], 'free')  : null;
     }
 
     /**
@@ -272,6 +302,102 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->container['created'];
+    }
+
+    /**
+     * Sets created
+     *
+     * @param \DateTime $created The created date.
+     *
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     *
+     * @param \DateTime $updated The updated date.
+     *
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return \Domainrobot\Model\SanType
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \Domainrobot\Model\SanType $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets sslCertificateId
+     *
+     * @return int
+     */
+    public function getSslCertificateId()
+    {
+        return $this->container['sslCertificateId'];
+    }
+
+    /**
+     * Sets sslCertificateId
+     *
+     * @param int $sslCertificateId sslCertificateId
+     *
+     * @return $this
+     */
+    public function setSslCertificateId($sslCertificateId)
+    {
+        $this->container['sslCertificateId'] = $sslCertificateId;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string
@@ -339,6 +465,30 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
     public function setOrderId($orderId)
     {
         $this->container['orderId'] = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * Gets free
+     *
+     * @return bool
+     */
+    public function getFree()
+    {
+        return $this->container['free'];
+    }
+
+    /**
+     * Sets free
+     *
+     * @param bool $free Defines whether the san was free or not
+     *
+     * @return $this
+     */
+    public function setFree($free)
+    {
+        $this->container['free'] = $free;
 
         return $this;
     }

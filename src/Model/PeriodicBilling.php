@@ -68,7 +68,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleTypeLabel' => 'string',
         'articleLabel' => 'string',
         'item' => '\Domainrobot\Model\PeriodicBilling[]',
-        'businessCase' => 'string'
+        'expire' => '\DateTime',
+        'cancelation' => '\DateTime',
+        'businessCase' => 'string',
+        'extensions' => '\Domainrobot\Model\BillingEventExtensions'
     ];
 
     /**
@@ -88,7 +91,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleTypeLabel' => null,
         'articleLabel' => null,
         'item' => null,
-        'businessCase' => null
+        'expire' => 'date-time',
+        'cancelation' => 'date-time',
+        'businessCase' => null,
+        'extensions' => null
     ];
 
     /**
@@ -129,7 +135,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleTypeLabel' => 'articleTypeLabel',
         'articleLabel' => 'articleLabel',
         'item' => 'item',
-        'businessCase' => 'businessCase'
+        'expire' => 'expire',
+        'cancelation' => 'cancelation',
+        'businessCase' => 'businessCase',
+        'extensions' => 'extensions'
     ];
 
     /**
@@ -149,7 +158,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleTypeLabel' => 'setArticleTypeLabel',
         'articleLabel' => 'setArticleLabel',
         'item' => 'setItem',
-        'businessCase' => 'setBusinessCase'
+        'expire' => 'setExpire',
+        'cancelation' => 'setCancelation',
+        'businessCase' => 'setBusinessCase',
+        'extensions' => 'setExtensions'
     ];
 
     /**
@@ -169,7 +181,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleTypeLabel' => 'getArticleTypeLabel',
         'articleLabel' => 'getArticleLabel',
         'item' => 'getItem',
-        'businessCase' => 'getBusinessCase'
+        'expire' => 'getExpire',
+        'cancelation' => 'getCancelation',
+        'businessCase' => 'getBusinessCase',
+        'extensions' => 'getExtensions'
     ];
 
     /**
@@ -243,7 +258,10 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         $this->container['articleTypeLabel'] = isset($data['articleTypeLabel']) ? $this->createData($data['articleTypeLabel'], 'articleTypeLabel')  : null;
         $this->container['articleLabel'] = isset($data['articleLabel']) ? $this->createData($data['articleLabel'], 'articleLabel')  : null;
         $this->container['item'] = isset($data['item']) ? $this->createData($data['item'], 'item')  : null;
+        $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
+        $this->container['cancelation'] = isset($data['cancelation']) ? $this->createData($data['cancelation'], 'cancelation')  : null;
         $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
+        $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
     }
 
     /**
@@ -590,6 +608,54 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets expire
+     *
+     * @return \DateTime
+     */
+    public function getExpire()
+    {
+        return $this->container['expire'];
+    }
+
+    /**
+     * Sets expire
+     *
+     * @param \DateTime $expire The expire date.
+     *
+     * @return $this
+     */
+    public function setExpire($expire)
+    {
+        $this->container['expire'] = $expire;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelation
+     *
+     * @return \DateTime
+     */
+    public function getCancelation()
+    {
+        return $this->container['cancelation'];
+    }
+
+    /**
+     * Sets cancelation
+     *
+     * @param \DateTime $cancelation The cancelation date.
+     *
+     * @return $this
+     */
+    public function setCancelation($cancelation)
+    {
+        $this->container['cancelation'] = $cancelation;
+
+        return $this;
+    }
+
+    /**
      * Gets businessCase
      *
      * @return string
@@ -609,6 +675,30 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     public function setBusinessCase($businessCase)
     {
         $this->container['businessCase'] = $businessCase;
+
+        return $this;
+    }
+
+    /**
+     * Gets extensions
+     *
+     * @return \Domainrobot\Model\BillingEventExtensions
+     */
+    public function getExtensions()
+    {
+        return $this->container['extensions'];
+    }
+
+    /**
+     * Sets extensions
+     *
+     * @param \Domainrobot\Model\BillingEventExtensions $extensions The additional data
+     *
+     * @return $this
+     */
+    public function setExtensions($extensions)
+    {
+        $this->container['extensions'] = $extensions;
 
         return $this;
     }

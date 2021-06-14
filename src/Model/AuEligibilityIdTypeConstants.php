@@ -45,15 +45,14 @@ class AuEligibilityIdTypeConstants
      */
     const ACN = 'ACN';
     const ABN = 'ABN';
-    const VIC_BN = 'VIC_BN';
-    const NSW_BN = 'NSW_BN';
+    const VIC = 'VIC';
+    const NSW = 'NSW';
     const SA = 'SA';
-    const BN = 'BN';
-    const NT_BN = 'NT_BN';
-    const WA_BN = 'WA_BN';
-    const TAS_BN = 'TAS_BN';
-    const ACT_BN = 'ACT_BN';
-    const QLD_BN = 'QLD_BN';
+    const NT = 'NT';
+    const WA = 'WA';
+    const TAS = 'TAS';
+    const ACT = 'ACT';
+    const QLD = 'QLD';
     const TM = 'TM';
     const OTHER = 'OTHER';
     
@@ -66,15 +65,14 @@ class AuEligibilityIdTypeConstants
         return [
             self::ACN,
             self::ABN,
-            self::VIC_BN,
-            self::NSW_BN,
+            self::VIC,
+            self::NSW,
             self::SA,
-            self::BN,
-            self::NT_BN,
-            self::WA_BN,
-            self::TAS_BN,
-            self::ACT_BN,
-            self::QLD_BN,
+            self::NT,
+            self::WA,
+            self::TAS,
+            self::ACT,
+            self::QLD,
             self::TM,
             self::OTHER,
         ];

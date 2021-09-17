@@ -57,7 +57,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'contactType' => '\Domainrobot\Model\IeContactTypeConstants',
+        'contactType' => 'string',
         'croNumber' => 'string',
         'supportingNumber' => 'string'
     ];
@@ -274,7 +274,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Gets contactType
      *
-     * @return \Domainrobot\Model\IeContactTypeConstants
+     * @return string
      */
     public function getContactType()
     {
@@ -284,7 +284,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets contactType
      *
-     * @param \Domainrobot\Model\IeContactTypeConstants $contactType The contact’s Connection to Ireland (CTI) category that is used to indicate how the Registrant meets specific presence requirements. CTI category values include Charity, Company, and Other. CTI category information is mandatory if you intend to use the contact as a Registrant for a domain name. This property is only supported if you have specified that you are using the Fury 2.0 extension during your EPP login.
+     * @param string $contactType EPP Element = <fury:key>IE_CONTACT_TYPE Description: The contact’s Connection to Ireland (CTI) category that is used to indicate how the Registrant meets specific presence requirements. CTI category values include Charity, Company, and Other. CTI category information is mandatory if you intend to use the contact as a Registrant for a domain name. This property is only supported if you have specified that you are using the Fury 2.0 extension during your EPP login
      *
      * @return $this
      */
@@ -308,7 +308,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets croNumber
      *
-     * @param string $croNumber The Companies Registration Office (CRO) identifier that can be used to ensure the company is in a valid state to be registering domains.
+     * @param string $croNumber EPP Element = <fury:key>IE_CRO_NUMBER Description: The Companies Registration Office (CRO) identifier that can be used to ensure the company is in a valid state to be registering domains.
      *
      * @return $this
      */
@@ -332,7 +332,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets supportingNumber
      *
-     * @param string $supportingNumber The identifier for a charity or a supporting number (RBN or VAT, for example) for other contact types.
+     * @param string $supportingNumber EPP Element = <fury:key>IE_SUPPORTING_NUMBER Description: The identifier for a charity or a supporting number (RBN or VAT, for example) for other contact typesn
      *
      * @return $this
      */

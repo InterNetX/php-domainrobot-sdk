@@ -63,7 +63,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'id' => 'int',
         'number' => 'string',
-        'customer' => '\Domainrobot\Model\Customer',
+        'customer' => '\Domainrobot\Model\GenericCustomer',
         'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
         'paymentTransaction' => 'string',
@@ -532,7 +532,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets customer
      *
-     * @return \Domainrobot\Model\Customer
+     * @return \Domainrobot\Model\GenericCustomer
      */
     public function getCustomer()
     {
@@ -542,7 +542,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \Domainrobot\Model\Customer $customer Customer
+     * @param \Domainrobot\Model\GenericCustomer $customer Customer
      *
      * @return $this
      */

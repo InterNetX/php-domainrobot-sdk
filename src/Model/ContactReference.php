@@ -61,6 +61,7 @@ class ContactReference implements ModelInterface, ArrayAccess
         'status' => '\Domainrobot\Model\ObjectStatus',
         'type' => '\Domainrobot\Model\ContactReferenceType',
         'role' => '\Domainrobot\Model\ContactReferenceType',
+        'verification' => '\Domainrobot\Model\GenericStatusConstants',
         'name' => 'string'
     ];
 
@@ -74,6 +75,7 @@ class ContactReference implements ModelInterface, ArrayAccess
         'status' => null,
         'type' => null,
         'role' => null,
+        'verification' => null,
         'name' => null
     ];
 
@@ -108,6 +110,7 @@ class ContactReference implements ModelInterface, ArrayAccess
         'status' => 'status',
         'type' => 'type',
         'role' => 'role',
+        'verification' => 'verification',
         'name' => 'name'
     ];
 
@@ -121,6 +124,7 @@ class ContactReference implements ModelInterface, ArrayAccess
         'status' => 'setStatus',
         'type' => 'setType',
         'role' => 'setRole',
+        'verification' => 'setVerification',
         'name' => 'setName'
     ];
 
@@ -134,6 +138,7 @@ class ContactReference implements ModelInterface, ArrayAccess
         'status' => 'getStatus',
         'type' => 'getType',
         'role' => 'getRole',
+        'verification' => 'getVerification',
         'name' => 'getName'
     ];
 
@@ -201,6 +206,7 @@ class ContactReference implements ModelInterface, ArrayAccess
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['role'] = isset($data['role']) ? $this->createData($data['role'], 'role')  : null;
+        $this->container['verification'] = isset($data['verification']) ? $this->createData($data['verification'], 'verification')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
     }
 
@@ -375,6 +381,30 @@ class ContactReference implements ModelInterface, ArrayAccess
     public function setRole($role)
     {
         $this->container['role'] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Gets verification
+     *
+     * @return \Domainrobot\Model\GenericStatusConstants
+     */
+    public function getVerification()
+    {
+        return $this->container['verification'];
+    }
+
+    /**
+     * Sets verification
+     *
+     * @param \Domainrobot\Model\GenericStatusConstants $verification The external verification status
+     *
+     * @return $this
+     */
+    public function setVerification($verification)
+    {
+        $this->container['verification'] = $verification;
 
         return $this;
     }

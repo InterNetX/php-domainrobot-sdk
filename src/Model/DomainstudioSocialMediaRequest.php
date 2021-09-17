@@ -1,6 +1,6 @@
 <?php
 /**
- * Job
+ * DomainstudioSocialMediaRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * Job Class Doc Comment
+ * DomainstudioSocialMediaRequest Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Job implements ModelInterface, ArrayAccess
+class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Job implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Job';
+    protected static $swaggerModelName = 'DomainstudioSocialMediaRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,17 +57,7 @@ class Job implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'created' => '\DateTime',
-        'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
-        'status' => '\Domainrobot\Model\JobStatusConstants',
-        'subStatus' => 'string',
-        'execution' => '\DateTime',
-        'events' => '\Domainrobot\Model\WorkflowEvent[]',
-        'action' => 'string',
-        'subType' => 'string',
-        'id' => 'int'
+        'searchToken' => 'string'
     ];
 
     /**
@@ -76,17 +66,7 @@ class Job implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'created' => 'date-time',
-        'updated' => 'date-time',
-        'owner' => null,
-        'updater' => null,
-        'status' => null,
-        'subStatus' => null,
-        'execution' => 'date-time',
-        'events' => null,
-        'action' => null,
-        'subType' => null,
-        'id' => 'int64'
+        'searchToken' => null
     ];
 
     /**
@@ -116,17 +96,7 @@ class Job implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'created' => 'created',
-        'updated' => 'updated',
-        'owner' => 'owner',
-        'updater' => 'updater',
-        'status' => 'status',
-        'subStatus' => 'subStatus',
-        'execution' => 'execution',
-        'events' => 'events',
-        'action' => 'action',
-        'subType' => 'subType',
-        'id' => 'id'
+        'searchToken' => 'searchToken'
     ];
 
     /**
@@ -135,17 +105,7 @@ class Job implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'created' => 'setCreated',
-        'updated' => 'setUpdated',
-        'owner' => 'setOwner',
-        'updater' => 'setUpdater',
-        'status' => 'setStatus',
-        'subStatus' => 'setSubStatus',
-        'execution' => 'setExecution',
-        'events' => 'setEvents',
-        'action' => 'setAction',
-        'subType' => 'setSubType',
-        'id' => 'setId'
+        'searchToken' => 'setSearchToken'
     ];
 
     /**
@@ -154,17 +114,7 @@ class Job implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'created' => 'getCreated',
-        'updated' => 'getUpdated',
-        'owner' => 'getOwner',
-        'updater' => 'getUpdater',
-        'status' => 'getStatus',
-        'subStatus' => 'getSubStatus',
-        'execution' => 'getExecution',
-        'events' => 'getEvents',
-        'action' => 'getAction',
-        'subType' => 'getSubType',
-        'id' => 'getId'
+        'searchToken' => 'getSearchToken'
     ];
 
     /**
@@ -227,17 +177,7 @@ class Job implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
-        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
-        $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['subStatus'] = isset($data['subStatus']) ? $this->createData($data['subStatus'], 'subStatus')  : null;
-        $this->container['execution'] = isset($data['execution']) ? $this->createData($data['execution'], 'execution')  : null;
-        $this->container['events'] = isset($data['events']) ? $this->createData($data['events'], 'events')  : null;
-        $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
-        $this->container['subType'] = isset($data['subType']) ? $this->createData($data['subType'], 'subType')  : null;
-        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
+        $this->container['searchToken'] = isset($data['searchToken']) ? $this->createData($data['searchToken'], 'searchToken')  : null;
     }
 
     /**
@@ -320,265 +260,25 @@ class Job implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets created
-     *
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     *
-     * @param \DateTime $created The created date.
-     *
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated
-     *
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     *
-     * @param \DateTime $updated The updated date.
-     *
-     * @return $this
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets owner
-     *
-     * @return \Domainrobot\Model\BasicUser
-     */
-    public function getOwner()
-    {
-        return $this->container['owner'];
-    }
-
-    /**
-     * Sets owner
-     *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
-     *
-     * @return $this
-     */
-    public function setOwner($owner)
-    {
-        $this->container['owner'] = $owner;
-
-        return $this;
-    }
-
-    /**
-     * Gets updater
-     *
-     * @return \Domainrobot\Model\BasicUser
-     */
-    public function getUpdater()
-    {
-        return $this->container['updater'];
-    }
-
-    /**
-     * Sets updater
-     *
-     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
-     *
-     * @return $this
-     */
-    public function setUpdater($updater)
-    {
-        $this->container['updater'] = $updater;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return \Domainrobot\Model\JobStatusConstants
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param \Domainrobot\Model\JobStatusConstants $status The status of the job.
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets subStatus
+     * Gets searchToken
      *
      * @return string
      */
-    public function getSubStatus()
+    public function getSearchToken()
     {
-        return $this->container['subStatus'];
+        return $this->container['searchToken'];
     }
 
     /**
-     * Sets subStatus
+     * Sets searchToken
      *
-     * @param string $subStatus The substatus of the job.
+     * @param string $searchToken Domain search token
      *
      * @return $this
      */
-    public function setSubStatus($subStatus)
+    public function setSearchToken($searchToken)
     {
-        $this->container['subStatus'] = $subStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets execution
-     *
-     * @return \DateTime
-     */
-    public function getExecution()
-    {
-        return $this->container['execution'];
-    }
-
-    /**
-     * Sets execution
-     *
-     * @param \DateTime $execution The next execution date of the job.
-     *
-     * @return $this
-     */
-    public function setExecution($execution)
-    {
-        $this->container['execution'] = $execution;
-
-        return $this;
-    }
-
-    /**
-     * Gets events
-     *
-     * @return \Domainrobot\Model\WorkflowEvent[]
-     */
-    public function getEvents()
-    {
-        return $this->container['events'];
-    }
-
-    /**
-     * Sets events
-     *
-     * @param \Domainrobot\Model\WorkflowEvent[] $events The events.
-     *
-     * @return $this
-     */
-    public function setEvents($events)
-    {
-        $this->container['events'] = $events;
-
-        return $this;
-    }
-
-    /**
-     * Gets action
-     *
-     * @return string
-     */
-    public function getAction()
-    {
-        return $this->container['action'];
-    }
-
-    /**
-     * Sets action
-     *
-     * @param string $action The job action.
-     *
-     * @return $this
-     */
-    public function setAction($action)
-    {
-        $this->container['action'] = $action;
-
-        return $this;
-    }
-
-    /**
-     * Gets subType
-     *
-     * @return string
-     */
-    public function getSubType()
-    {
-        return $this->container['subType'];
-    }
-
-    /**
-     * Sets subType
-     *
-     * @param string $subType The job subtype.
-     *
-     * @return $this
-     */
-    public function setSubType($subType)
-    {
-        $this->container['subType'] = $subType;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id The job id.
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
+        $this->container['searchToken'] = $searchToken;
 
         return $this;
     }

@@ -49,6 +49,7 @@ class BillingStatus
     const IGNORE = 'IGNORE';
     const CUSTOMER_CHANGED = 'CUSTOMER_CHANGED';
     const USER_CHANGED = 'USER_CHANGED';
+    const UPGRADE = 'UPGRADE';
     const ACTIVE = 'ACTIVE';
     const CANCELED = 'CANCELED';
     const CANCELED_EXPIRE = 'CANCELED_EXPIRE';
@@ -70,6 +71,7 @@ class BillingStatus
             self::IGNORE,
             self::CUSTOMER_CHANGED,
             self::USER_CHANGED,
+            self::UPGRADE,
             self::ACTIVE,
             self::CANCELED,
             self::CANCELED_EXPIRE,

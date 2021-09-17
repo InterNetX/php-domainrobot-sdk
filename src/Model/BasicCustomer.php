@@ -63,6 +63,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'name' => 'string',
         'type' => '\Domainrobot\Model\CustomerType',
         'organization' => 'string',
+        'organization2' => 'string',
         'vatNumber' => 'string',
         'gender' => '\Domainrobot\Model\GenderConstants',
         'title' => 'string',
@@ -74,11 +75,13 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => '\Domainrobot\Model\Phone',
         'emails' => 'string[]',
         'billingEmails' => 'string[]',
+        'contacts' => '\Domainrobot\Model\Contact[]',
         'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
         'paymentCurrency' => 'string',
         'discountValid' => '\DateTime',
         'invoiceLanguage' => 'string',
+        'pin' => 'string',
         'taxable' => 'bool',
         'card' => '\Domainrobot\Model\Card',
         'contracts' => '\Domainrobot\Model\CustomerContract[]',
@@ -106,6 +109,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'name' => null,
         'type' => null,
         'organization' => null,
+        'organization2' => null,
         'vatNumber' => null,
         'gender' => null,
         'title' => null,
@@ -117,11 +121,13 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => null,
         'emails' => null,
         'billingEmails' => null,
+        'contacts' => null,
         'payment' => null,
         'paymentMode' => null,
         'paymentCurrency' => null,
         'discountValid' => 'date-time',
         'invoiceLanguage' => null,
+        'pin' => null,
         'taxable' => null,
         'card' => null,
         'contracts' => null,
@@ -170,6 +176,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'name' => 'name',
         'type' => 'type',
         'organization' => 'organization',
+        'organization2' => 'organization2',
         'vatNumber' => 'vatNumber',
         'gender' => 'gender',
         'title' => 'title',
@@ -181,11 +188,13 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => 'fax',
         'emails' => 'emails',
         'billingEmails' => 'billingEmails',
+        'contacts' => 'contacts',
         'payment' => 'payment',
         'paymentMode' => 'paymentMode',
         'paymentCurrency' => 'paymentCurrency',
         'discountValid' => 'discountValid',
         'invoiceLanguage' => 'invoiceLanguage',
+        'pin' => 'pin',
         'taxable' => 'taxable',
         'card' => 'card',
         'contracts' => 'contracts',
@@ -213,6 +222,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'type' => 'setType',
         'organization' => 'setOrganization',
+        'organization2' => 'setOrganization2',
         'vatNumber' => 'setVatNumber',
         'gender' => 'setGender',
         'title' => 'setTitle',
@@ -224,11 +234,13 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => 'setFax',
         'emails' => 'setEmails',
         'billingEmails' => 'setBillingEmails',
+        'contacts' => 'setContacts',
         'payment' => 'setPayment',
         'paymentMode' => 'setPaymentMode',
         'paymentCurrency' => 'setPaymentCurrency',
         'discountValid' => 'setDiscountValid',
         'invoiceLanguage' => 'setInvoiceLanguage',
+        'pin' => 'setPin',
         'taxable' => 'setTaxable',
         'card' => 'setCard',
         'contracts' => 'setContracts',
@@ -256,6 +268,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'type' => 'getType',
         'organization' => 'getOrganization',
+        'organization2' => 'getOrganization2',
         'vatNumber' => 'getVatNumber',
         'gender' => 'getGender',
         'title' => 'getTitle',
@@ -267,11 +280,13 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => 'getFax',
         'emails' => 'getEmails',
         'billingEmails' => 'getBillingEmails',
+        'contacts' => 'getContacts',
         'payment' => 'getPayment',
         'paymentMode' => 'getPaymentMode',
         'paymentCurrency' => 'getPaymentCurrency',
         'discountValid' => 'getDiscountValid',
         'invoiceLanguage' => 'getInvoiceLanguage',
+        'pin' => 'getPin',
         'taxable' => 'getTaxable',
         'card' => 'getCard',
         'contracts' => 'getContracts',
@@ -353,6 +368,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['organization'] = isset($data['organization']) ? $this->createData($data['organization'], 'organization')  : null;
+        $this->container['organization2'] = isset($data['organization2']) ? $this->createData($data['organization2'], 'organization2')  : null;
         $this->container['vatNumber'] = isset($data['vatNumber']) ? $this->createData($data['vatNumber'], 'vatNumber')  : null;
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
@@ -364,11 +380,13 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['fax'] = isset($data['fax']) ? $this->createData($data['fax'], 'fax')  : null;
         $this->container['emails'] = isset($data['emails']) ? $this->createData($data['emails'], 'emails')  : null;
         $this->container['billingEmails'] = isset($data['billingEmails']) ? $this->createData($data['billingEmails'], 'billingEmails')  : null;
+        $this->container['contacts'] = isset($data['contacts']) ? $this->createData($data['contacts'], 'contacts')  : null;
         $this->container['payment'] = isset($data['payment']) ? $this->createData($data['payment'], 'payment')  : null;
         $this->container['paymentMode'] = isset($data['paymentMode']) ? $this->createData($data['paymentMode'], 'paymentMode')  : null;
         $this->container['paymentCurrency'] = isset($data['paymentCurrency']) ? $this->createData($data['paymentCurrency'], 'paymentCurrency')  : null;
         $this->container['discountValid'] = isset($data['discountValid']) ? $this->createData($data['discountValid'], 'discountValid')  : null;
         $this->container['invoiceLanguage'] = isset($data['invoiceLanguage']) ? $this->createData($data['invoiceLanguage'], 'invoiceLanguage')  : null;
+        $this->container['pin'] = isset($data['pin']) ? $this->createData($data['pin'], 'pin')  : null;
         $this->container['taxable'] = isset($data['taxable']) ? $this->createData($data['taxable'], 'taxable')  : null;
         $this->container['card'] = isset($data['card']) ? $this->createData($data['card'], 'card')  : null;
         $this->container['contracts'] = isset($data['contracts']) ? $this->createData($data['contracts'], 'contracts')  : null;
@@ -687,6 +705,30 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets organization2
+     *
+     * @return string
+     */
+    public function getOrganization2()
+    {
+        return $this->container['organization2'];
+    }
+
+    /**
+     * Sets organization2
+     *
+     * @param string $organization2 The second line for the organization name.
+     *
+     * @return $this
+     */
+    public function setOrganization2($organization2)
+    {
+        $this->container['organization2'] = $organization2;
+
+        return $this;
+    }
+
+    /**
      * Gets vatNumber
      *
      * @return string
@@ -951,6 +993,30 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets contacts
+     *
+     * @return \Domainrobot\Model\Contact[]
+     */
+    public function getContacts()
+    {
+        return $this->container['contacts'];
+    }
+
+    /**
+     * Sets contacts
+     *
+     * @param \Domainrobot\Model\Contact[] $contacts The contacts.
+     *
+     * @return $this
+     */
+    public function setContacts($contacts)
+    {
+        $this->container['contacts'] = $contacts;
+
+        return $this;
+    }
+
+    /**
      * Gets payment
      *
      * @return \Domainrobot\Model\PaymentConstants
@@ -1066,6 +1132,30 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     public function setInvoiceLanguage($invoiceLanguage)
     {
         $this->container['invoiceLanguage'] = $invoiceLanguage;
+
+        return $this;
+    }
+
+    /**
+     * Gets pin
+     *
+     * @return string
+     */
+    public function getPin()
+    {
+        return $this->container['pin'];
+    }
+
+    /**
+     * Sets pin
+     *
+     * @param string $pin The pin number.
+     *
+     * @return $this
+     */
+    public function setPin($pin)
+    {
+        $this->container['pin'] = $pin;
 
         return $this;
     }

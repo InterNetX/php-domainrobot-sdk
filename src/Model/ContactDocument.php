@@ -1,6 +1,6 @@
 <?php
 /**
- * Id4MeLayoutConfiguration
+ * ContactDocument
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * Id4MeLayoutConfiguration Class Doc Comment
+ * ContactDocument Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
+class ContactDocument implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Id4MeLayoutConfiguration';
+    protected static $swaggerModelName = 'ContactDocument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,18 +57,13 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'title' => 'string',
-        'privacy' => 'string',
-        'secondaryColor' => 'string',
-        'loginLogoSrc' => 'string',
-        'menuLogoSrc' => 'string',
-        'loginLogoHeight' => 'string',
-        'menuLogoWidth' => 'string',
-        'about' => 'string',
-        'loginLogoWidth' => 'string',
-        'menuLogoHeight' => 'string',
-        'primaryColor' => 'string',
-        'primaryText' => 'string'
+        'created' => '\DateTime',
+        'updated' => '\DateTime',
+        'contact' => '\Domainrobot\Model\Contact',
+        'document' => '\Domainrobot\Model\Document',
+        'type' => '\Domainrobot\Model\CnAuditDocumentType',
+        'verification' => '\Domainrobot\Model\GenericStatusConstants',
+        'expire' => '\DateTime'
     ];
 
     /**
@@ -77,18 +72,13 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'title' => null,
-        'privacy' => null,
-        'secondaryColor' => null,
-        'loginLogoSrc' => null,
-        'menuLogoSrc' => null,
-        'loginLogoHeight' => null,
-        'menuLogoWidth' => null,
-        'about' => null,
-        'loginLogoWidth' => null,
-        'menuLogoHeight' => null,
-        'primaryColor' => null,
-        'primaryText' => null
+        'created' => 'date-time',
+        'updated' => 'date-time',
+        'contact' => null,
+        'document' => null,
+        'type' => null,
+        'verification' => null,
+        'expire' => 'date-time'
     ];
 
     /**
@@ -118,18 +108,13 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'privacy' => 'privacy',
-        'secondaryColor' => 'secondaryColor',
-        'loginLogoSrc' => 'loginLogoSrc',
-        'menuLogoSrc' => 'menuLogoSrc',
-        'loginLogoHeight' => 'loginLogoHeight',
-        'menuLogoWidth' => 'menuLogoWidth',
-        'about' => 'about',
-        'loginLogoWidth' => 'loginLogoWidth',
-        'menuLogoHeight' => 'menuLogoHeight',
-        'primaryColor' => 'primaryColor',
-        'primaryText' => 'primaryText'
+        'created' => 'created',
+        'updated' => 'updated',
+        'contact' => 'contact',
+        'document' => 'document',
+        'type' => 'type',
+        'verification' => 'verification',
+        'expire' => 'expire'
     ];
 
     /**
@@ -138,18 +123,13 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'privacy' => 'setPrivacy',
-        'secondaryColor' => 'setSecondaryColor',
-        'loginLogoSrc' => 'setLoginLogoSrc',
-        'menuLogoSrc' => 'setMenuLogoSrc',
-        'loginLogoHeight' => 'setLoginLogoHeight',
-        'menuLogoWidth' => 'setMenuLogoWidth',
-        'about' => 'setAbout',
-        'loginLogoWidth' => 'setLoginLogoWidth',
-        'menuLogoHeight' => 'setMenuLogoHeight',
-        'primaryColor' => 'setPrimaryColor',
-        'primaryText' => 'setPrimaryText'
+        'created' => 'setCreated',
+        'updated' => 'setUpdated',
+        'contact' => 'setContact',
+        'document' => 'setDocument',
+        'type' => 'setType',
+        'verification' => 'setVerification',
+        'expire' => 'setExpire'
     ];
 
     /**
@@ -158,18 +138,13 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'privacy' => 'getPrivacy',
-        'secondaryColor' => 'getSecondaryColor',
-        'loginLogoSrc' => 'getLoginLogoSrc',
-        'menuLogoSrc' => 'getMenuLogoSrc',
-        'loginLogoHeight' => 'getLoginLogoHeight',
-        'menuLogoWidth' => 'getMenuLogoWidth',
-        'about' => 'getAbout',
-        'loginLogoWidth' => 'getLoginLogoWidth',
-        'menuLogoHeight' => 'getMenuLogoHeight',
-        'primaryColor' => 'getPrimaryColor',
-        'primaryText' => 'getPrimaryText'
+        'created' => 'getCreated',
+        'updated' => 'getUpdated',
+        'contact' => 'getContact',
+        'document' => 'getDocument',
+        'type' => 'getType',
+        'verification' => 'getVerification',
+        'expire' => 'getExpire'
     ];
 
     /**
@@ -232,18 +207,13 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
-        $this->container['privacy'] = isset($data['privacy']) ? $this->createData($data['privacy'], 'privacy')  : null;
-        $this->container['secondaryColor'] = isset($data['secondaryColor']) ? $this->createData($data['secondaryColor'], 'secondaryColor')  : null;
-        $this->container['loginLogoSrc'] = isset($data['loginLogoSrc']) ? $this->createData($data['loginLogoSrc'], 'loginLogoSrc')  : null;
-        $this->container['menuLogoSrc'] = isset($data['menuLogoSrc']) ? $this->createData($data['menuLogoSrc'], 'menuLogoSrc')  : null;
-        $this->container['loginLogoHeight'] = isset($data['loginLogoHeight']) ? $this->createData($data['loginLogoHeight'], 'loginLogoHeight')  : null;
-        $this->container['menuLogoWidth'] = isset($data['menuLogoWidth']) ? $this->createData($data['menuLogoWidth'], 'menuLogoWidth')  : null;
-        $this->container['about'] = isset($data['about']) ? $this->createData($data['about'], 'about')  : null;
-        $this->container['loginLogoWidth'] = isset($data['loginLogoWidth']) ? $this->createData($data['loginLogoWidth'], 'loginLogoWidth')  : null;
-        $this->container['menuLogoHeight'] = isset($data['menuLogoHeight']) ? $this->createData($data['menuLogoHeight'], 'menuLogoHeight')  : null;
-        $this->container['primaryColor'] = isset($data['primaryColor']) ? $this->createData($data['primaryColor'], 'primaryColor')  : null;
-        $this->container['primaryText'] = isset($data['primaryText']) ? $this->createData($data['primaryText'], 'primaryText')  : null;
+        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
+        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['contact'] = isset($data['contact']) ? $this->createData($data['contact'], 'contact')  : null;
+        $this->container['document'] = isset($data['document']) ? $this->createData($data['document'], 'document')  : null;
+        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
+        $this->container['verification'] = isset($data['verification']) ? $this->createData($data['verification'], 'verification')  : null;
+        $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
     }
 
     /**
@@ -310,6 +280,15 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['contact'] === null) {
+            $invalidProperties[] = "'contact' can't be null";
+        }
+        if ($this->container['document'] === null) {
+            $invalidProperties[] = "'document' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -326,289 +305,169 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets title
+     * Gets created
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getTitle()
+    public function getCreated()
     {
-        return $this->container['title'];
+        return $this->container['created'];
     }
 
     /**
-     * Sets title
+     * Sets created
      *
-     * @param string $title title
+     * @param \DateTime $created The created date.
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setCreated($created)
     {
-        $this->container['title'] = $title;
+        $this->container['created'] = $created;
 
         return $this;
     }
 
     /**
-     * Gets privacy
+     * Gets updated
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getPrivacy()
+    public function getUpdated()
     {
-        return $this->container['privacy'];
+        return $this->container['updated'];
     }
 
     /**
-     * Sets privacy
+     * Sets updated
      *
-     * @param string $privacy privacy
+     * @param \DateTime $updated The updated date.
      *
      * @return $this
      */
-    public function setPrivacy($privacy)
+    public function setUpdated($updated)
     {
-        $this->container['privacy'] = $privacy;
+        $this->container['updated'] = $updated;
 
         return $this;
     }
 
     /**
-     * Gets secondaryColor
+     * Gets contact
      *
-     * @return string
+     * @return \Domainrobot\Model\Contact
      */
-    public function getSecondaryColor()
+    public function getContact()
     {
-        return $this->container['secondaryColor'];
+        return $this->container['contact'];
     }
 
     /**
-     * Sets secondaryColor
+     * Sets contact
      *
-     * @param string $secondaryColor secondaryColor
+     * @param \Domainrobot\Model\Contact $contact contact
      *
      * @return $this
      */
-    public function setSecondaryColor($secondaryColor)
+    public function setContact($contact)
     {
-        $this->container['secondaryColor'] = $secondaryColor;
+        $this->container['contact'] = $contact;
 
         return $this;
     }
 
     /**
-     * Gets loginLogoSrc
+     * Gets document
      *
-     * @return string
+     * @return \Domainrobot\Model\Document
      */
-    public function getLoginLogoSrc()
+    public function getDocument()
     {
-        return $this->container['loginLogoSrc'];
+        return $this->container['document'];
     }
 
     /**
-     * Sets loginLogoSrc
+     * Sets document
      *
-     * @param string $loginLogoSrc loginLogoSrc
+     * @param \Domainrobot\Model\Document $document document
      *
      * @return $this
      */
-    public function setLoginLogoSrc($loginLogoSrc)
+    public function setDocument($document)
     {
-        $this->container['loginLogoSrc'] = $loginLogoSrc;
+        $this->container['document'] = $document;
 
         return $this;
     }
 
     /**
-     * Gets menuLogoSrc
+     * Gets type
      *
-     * @return string
+     * @return \Domainrobot\Model\CnAuditDocumentType
      */
-    public function getMenuLogoSrc()
+    public function getType()
     {
-        return $this->container['menuLogoSrc'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets menuLogoSrc
+     * Sets type
      *
-     * @param string $menuLogoSrc menuLogoSrc
+     * @param \Domainrobot\Model\CnAuditDocumentType $type type
      *
      * @return $this
      */
-    public function setMenuLogoSrc($menuLogoSrc)
+    public function setType($type)
     {
-        $this->container['menuLogoSrc'] = $menuLogoSrc;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets loginLogoHeight
+     * Gets verification
      *
-     * @return string
+     * @return \Domainrobot\Model\GenericStatusConstants
      */
-    public function getLoginLogoHeight()
+    public function getVerification()
     {
-        return $this->container['loginLogoHeight'];
+        return $this->container['verification'];
     }
 
     /**
-     * Sets loginLogoHeight
+     * Sets verification
      *
-     * @param string $loginLogoHeight loginLogoHeight
+     * @param \Domainrobot\Model\GenericStatusConstants $verification The verification status of the contact
      *
      * @return $this
      */
-    public function setLoginLogoHeight($loginLogoHeight)
+    public function setVerification($verification)
     {
-        $this->container['loginLogoHeight'] = $loginLogoHeight;
+        $this->container['verification'] = $verification;
 
         return $this;
     }
 
     /**
-     * Gets menuLogoWidth
+     * Gets expire
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getMenuLogoWidth()
+    public function getExpire()
     {
-        return $this->container['menuLogoWidth'];
+        return $this->container['expire'];
     }
 
     /**
-     * Sets menuLogoWidth
+     * Sets expire
      *
-     * @param string $menuLogoWidth menuLogoWidth
+     * @param \DateTime $expire The expire date.
      *
      * @return $this
      */
-    public function setMenuLogoWidth($menuLogoWidth)
+    public function setExpire($expire)
     {
-        $this->container['menuLogoWidth'] = $menuLogoWidth;
-
-        return $this;
-    }
-
-    /**
-     * Gets about
-     *
-     * @return string
-     */
-    public function getAbout()
-    {
-        return $this->container['about'];
-    }
-
-    /**
-     * Sets about
-     *
-     * @param string $about about
-     *
-     * @return $this
-     */
-    public function setAbout($about)
-    {
-        $this->container['about'] = $about;
-
-        return $this;
-    }
-
-    /**
-     * Gets loginLogoWidth
-     *
-     * @return string
-     */
-    public function getLoginLogoWidth()
-    {
-        return $this->container['loginLogoWidth'];
-    }
-
-    /**
-     * Sets loginLogoWidth
-     *
-     * @param string $loginLogoWidth loginLogoWidth
-     *
-     * @return $this
-     */
-    public function setLoginLogoWidth($loginLogoWidth)
-    {
-        $this->container['loginLogoWidth'] = $loginLogoWidth;
-
-        return $this;
-    }
-
-    /**
-     * Gets menuLogoHeight
-     *
-     * @return string
-     */
-    public function getMenuLogoHeight()
-    {
-        return $this->container['menuLogoHeight'];
-    }
-
-    /**
-     * Sets menuLogoHeight
-     *
-     * @param string $menuLogoHeight menuLogoHeight
-     *
-     * @return $this
-     */
-    public function setMenuLogoHeight($menuLogoHeight)
-    {
-        $this->container['menuLogoHeight'] = $menuLogoHeight;
-
-        return $this;
-    }
-
-    /**
-     * Gets primaryColor
-     *
-     * @return string
-     */
-    public function getPrimaryColor()
-    {
-        return $this->container['primaryColor'];
-    }
-
-    /**
-     * Sets primaryColor
-     *
-     * @param string $primaryColor primaryColor
-     *
-     * @return $this
-     */
-    public function setPrimaryColor($primaryColor)
-    {
-        $this->container['primaryColor'] = $primaryColor;
-
-        return $this;
-    }
-
-    /**
-     * Gets primaryText
-     *
-     * @return string
-     */
-    public function getPrimaryText()
-    {
-        return $this->container['primaryText'];
-    }
-
-    /**
-     * Sets primaryText
-     *
-     * @param string $primaryText primaryText
-     *
-     * @return $this
-     */
-    public function setPrimaryText($primaryText)
-    {
-        $this->container['primaryText'] = $primaryText;
+        $this->container['expire'] = $expire;
 
         return $this;
     }

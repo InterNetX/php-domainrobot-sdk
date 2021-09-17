@@ -65,7 +65,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'type' => '\Domainrobot\Model\PriceTypeConstants',
         'currency' => 'string',
         'priority' => '\Domainrobot\Model\PriorityConstants',
-        'customer' => '\Domainrobot\Model\Customer',
+        'customer' => '\Domainrobot\Model\GenericCustomer',
         'period' => '\Domainrobot\Model\TimePeriod',
         'discountable' => 'bool',
         'logId' => 'int',
@@ -577,7 +577,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Gets customer
      *
-     * @return \Domainrobot\Model\Customer
+     * @return \Domainrobot\Model\GenericCustomer
      */
     public function getCustomer()
     {
@@ -587,7 +587,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \Domainrobot\Model\Customer $customer Customer
+     * @param \Domainrobot\Model\GenericCustomer $customer Customer
      *
      * @return $this
      */

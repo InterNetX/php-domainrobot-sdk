@@ -66,6 +66,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'description' => 'string',
         'period' => '\Domainrobot\Model\TimePeriod',
         'articleTypeLabel' => 'string',
+        'payable' => '\DateTime',
         'articleLabel' => 'string',
         'item' => '\Domainrobot\Model\PeriodicBilling[]',
         'expire' => '\DateTime',
@@ -93,6 +94,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'description' => null,
         'period' => null,
         'articleTypeLabel' => null,
+        'payable' => 'date-time',
         'articleLabel' => null,
         'item' => null,
         'expire' => 'date-time',
@@ -141,6 +143,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'description' => 'description',
         'period' => 'period',
         'articleTypeLabel' => 'articleTypeLabel',
+        'payable' => 'payable',
         'articleLabel' => 'articleLabel',
         'item' => 'item',
         'expire' => 'expire',
@@ -168,6 +171,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'description' => 'setDescription',
         'period' => 'setPeriod',
         'articleTypeLabel' => 'setArticleTypeLabel',
+        'payable' => 'setPayable',
         'articleLabel' => 'setArticleLabel',
         'item' => 'setItem',
         'expire' => 'setExpire',
@@ -195,6 +199,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'description' => 'getDescription',
         'period' => 'getPeriod',
         'articleTypeLabel' => 'getArticleTypeLabel',
+        'payable' => 'getPayable',
         'articleLabel' => 'getArticleLabel',
         'item' => 'getItem',
         'expire' => 'getExpire',
@@ -276,6 +281,7 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $this->createData($data['description'], 'description')  : null;
         $this->container['period'] = isset($data['period']) ? $this->createData($data['period'], 'period')  : null;
         $this->container['articleTypeLabel'] = isset($data['articleTypeLabel']) ? $this->createData($data['articleTypeLabel'], 'articleTypeLabel')  : null;
+        $this->container['payable'] = isset($data['payable']) ? $this->createData($data['payable'], 'payable')  : null;
         $this->container['articleLabel'] = isset($data['articleLabel']) ? $this->createData($data['articleLabel'], 'articleLabel')  : null;
         $this->container['item'] = isset($data['item']) ? $this->createData($data['item'], 'item')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
@@ -579,6 +585,30 @@ class Subscription implements ModelInterface, ArrayAccess
     public function setArticleTypeLabel($articleTypeLabel)
     {
         $this->container['articleTypeLabel'] = $articleTypeLabel;
+
+        return $this;
+    }
+
+    /**
+     * Gets payable
+     *
+     * @return \DateTime
+     */
+    public function getPayable()
+    {
+        return $this->container['payable'];
+    }
+
+    /**
+     * Sets payable
+     *
+     * @param \DateTime $payable The date then the event should be billed.
+     *
+     * @return $this
+     */
+    public function setPayable($payable)
+    {
+        $this->container['payable'] = $payable;
 
         return $this;
     }

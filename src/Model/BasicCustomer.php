@@ -75,7 +75,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => '\Domainrobot\Model\Phone',
         'emails' => 'string[]',
         'billingEmails' => 'string[]',
-        'contacts' => '\Domainrobot\Model\Contact[]',
+        'contacts' => '\Domainrobot\Model\BasicCustomerContact[]',
         'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
         'paymentCurrency' => 'string',
@@ -91,6 +91,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'account' => '\Domainrobot\Model\Account',
         'billingUsers' => '\Domainrobot\Model\BasicUser[]',
         'comments' => '\Domainrobot\Model\Comment[]',
+        'persistent' => '\Domainrobot\Model\BasicCustomer',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
@@ -137,6 +138,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'account' => null,
         'billingUsers' => null,
         'comments' => null,
+        'persistent' => null,
         'fname' => null,
         'lname' => null,
         'pcode' => null,
@@ -204,6 +206,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'account' => 'account',
         'billingUsers' => 'billingUsers',
         'comments' => 'comments',
+        'persistent' => 'persistent',
         'fname' => 'fname',
         'lname' => 'lname',
         'pcode' => 'pcode',
@@ -250,6 +253,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'account' => 'setAccount',
         'billingUsers' => 'setBillingUsers',
         'comments' => 'setComments',
+        'persistent' => 'setPersistent',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'pcode' => 'setPcode',
@@ -296,6 +300,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'account' => 'getAccount',
         'billingUsers' => 'getBillingUsers',
         'comments' => 'getComments',
+        'persistent' => 'getPersistent',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'pcode' => 'getPcode',
@@ -396,6 +401,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
         $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
         $this->container['comments'] = isset($data['comments']) ? $this->createData($data['comments'], 'comments')  : null;
+        $this->container['persistent'] = isset($data['persistent']) ? $this->createData($data['persistent'], 'persistent')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
@@ -995,7 +1001,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Gets contacts
      *
-     * @return \Domainrobot\Model\Contact[]
+     * @return \Domainrobot\Model\BasicCustomerContact[]
      */
     public function getContacts()
     {
@@ -1005,7 +1011,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets contacts
      *
-     * @param \Domainrobot\Model\Contact[] $contacts The contacts.
+     * @param \Domainrobot\Model\BasicCustomerContact[] $contacts The contacts.
      *
      * @return $this
      */
@@ -1372,6 +1378,30 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     public function setComments($comments)
     {
         $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets persistent
+     *
+     * @return \Domainrobot\Model\BasicCustomer
+     */
+    public function getPersistent()
+    {
+        return $this->container['persistent'];
+    }
+
+    /**
+     * Sets persistent
+     *
+     * @param \Domainrobot\Model\BasicCustomer $persistent the current customer
+     *
+     * @return $this
+     */
+    public function setPersistent($persistent)
+    {
+        $this->container['persistent'] = $persistent;
 
         return $this;
     }

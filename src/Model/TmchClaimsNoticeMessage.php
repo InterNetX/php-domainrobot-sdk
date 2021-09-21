@@ -1,6 +1,6 @@
 <?php
 /**
- * MailServiceMessage
+ * TmchClaimsNoticeMessage
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * MailServiceMessage Class Doc Comment
+ * TmchClaimsNoticeMessage Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MailServiceMessage implements ModelInterface, ArrayAccess
+class TmchClaimsNoticeMessage implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MailServiceMessage';
+    protected static $swaggerModelName = 'TmchClaimsNoticeMessage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,14 +58,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'created' => '\DateTime',
-        'updated' => '\DateTime',
-        'id' => 'int',
-        'reference' => 'string',
-        'from' => 'string',
-        'subject' => 'string',
-        'status' => '\Domainrobot\Model\DeliveryStatus',
-        'recipients' => '\Domainrobot\Model\Recipient[]',
-        'externalReference' => 'string'
+        'updated' => '\DateTime'
     ];
 
     /**
@@ -75,14 +68,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'created' => 'date-time',
-        'updated' => 'date-time',
-        'id' => 'int64',
-        'reference' => null,
-        'from' => null,
-        'subject' => null,
-        'status' => null,
-        'recipients' => null,
-        'externalReference' => null
+        'updated' => 'date-time'
     ];
 
     /**
@@ -113,14 +99,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'created' => 'created',
-        'updated' => 'updated',
-        'id' => 'id',
-        'reference' => 'reference',
-        'from' => 'from',
-        'subject' => 'subject',
-        'status' => 'status',
-        'recipients' => 'recipients',
-        'externalReference' => 'externalReference'
+        'updated' => 'updated'
     ];
 
     /**
@@ -130,14 +109,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'created' => 'setCreated',
-        'updated' => 'setUpdated',
-        'id' => 'setId',
-        'reference' => 'setReference',
-        'from' => 'setFrom',
-        'subject' => 'setSubject',
-        'status' => 'setStatus',
-        'recipients' => 'setRecipients',
-        'externalReference' => 'setExternalReference'
+        'updated' => 'setUpdated'
     ];
 
     /**
@@ -147,14 +119,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'created' => 'getCreated',
-        'updated' => 'getUpdated',
-        'id' => 'getId',
-        'reference' => 'getReference',
-        'from' => 'getFrom',
-        'subject' => 'getSubject',
-        'status' => 'getStatus',
-        'recipients' => 'getRecipients',
-        'externalReference' => 'getExternalReference'
+        'updated' => 'getUpdated'
     ];
 
     /**
@@ -219,13 +184,6 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
-        $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
-        $this->container['from'] = isset($data['from']) ? $this->createData($data['from'], 'from')  : null;
-        $this->container['subject'] = isset($data['subject']) ? $this->createData($data['subject'], 'subject')  : null;
-        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['recipients'] = isset($data['recipients']) ? $this->createData($data['recipients'], 'recipients')  : null;
-        $this->container['externalReference'] = isset($data['externalReference']) ? $this->createData($data['externalReference'], 'externalReference')  : null;
     }
 
     /**
@@ -351,174 +309,6 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id the id of the message entry
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string $reference The message id of the email
-     *
-     * @return $this
-     */
-    public function setReference($reference)
-    {
-        $this->container['reference'] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * Gets from
-     *
-     * @return string
-     */
-    public function getFrom()
-    {
-        return $this->container['from'];
-    }
-
-    /**
-     * Sets from
-     *
-     * @param string $from The mail from header
-     *
-     * @return $this
-     */
-    public function setFrom($from)
-    {
-        $this->container['from'] = $from;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string $subject the subject of the email
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return \Domainrobot\Model\DeliveryStatus
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param \Domainrobot\Model\DeliveryStatus $status the actual delivery status of the email
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets recipients
-     *
-     * @return \Domainrobot\Model\Recipient[]
-     */
-    public function getRecipients()
-    {
-        return $this->container['recipients'];
-    }
-
-    /**
-     * Sets recipients
-     *
-     * @param \Domainrobot\Model\Recipient[] $recipients the recipients of the email
-     *
-     * @return $this
-     */
-    public function setRecipients($recipients)
-    {
-        $this->container['recipients'] = $recipients;
-
-        return $this;
-    }
-
-    /**
-     * Gets externalReference
-     *
-     * @return string
-     */
-    public function getExternalReference()
-    {
-        return $this->container['externalReference'];
-    }
-
-    /**
-     * Sets externalReference
-     *
-     * @param string $externalReference The external reference of the email
-     *
-     * @return $this
-     */
-    public function setExternalReference($externalReference)
-    {
-        $this->container['externalReference'] = $externalReference;
 
         return $this;
     }

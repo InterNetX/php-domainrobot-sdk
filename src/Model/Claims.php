@@ -71,7 +71,7 @@ class Claims implements ModelInterface, ArrayAccess
         'gender' => '\Domainrobot\Model\GenderConstants',
         'birthdate' => '\DateTime',
         'zoneinfo' => 'string',
-        'locale' => 'string',
+        'language' => 'string',
         'phoneNumber' => '\Domainrobot\Model\Phone',
         'phoneNumberVerified' => 'bool',
         'address' => '\Domainrobot\Model\AddressClaim',
@@ -98,7 +98,7 @@ class Claims implements ModelInterface, ArrayAccess
         'gender' => null,
         'birthdate' => 'date-time',
         'zoneinfo' => null,
-        'locale' => null,
+        'language' => null,
         'phoneNumber' => null,
         'phoneNumberVerified' => null,
         'address' => null,
@@ -146,7 +146,7 @@ class Claims implements ModelInterface, ArrayAccess
         'gender' => 'gender',
         'birthdate' => 'birthdate',
         'zoneinfo' => 'zoneinfo',
-        'locale' => 'locale',
+        'language' => 'language',
         'phoneNumber' => 'phone_number',
         'phoneNumberVerified' => 'phone_number_verified',
         'address' => 'address',
@@ -173,7 +173,7 @@ class Claims implements ModelInterface, ArrayAccess
         'gender' => 'setGender',
         'birthdate' => 'setBirthdate',
         'zoneinfo' => 'setZoneinfo',
-        'locale' => 'setLocale',
+        'language' => 'setLanguage',
         'phoneNumber' => 'setPhoneNumber',
         'phoneNumberVerified' => 'setPhoneNumberVerified',
         'address' => 'setAddress',
@@ -200,7 +200,7 @@ class Claims implements ModelInterface, ArrayAccess
         'gender' => 'getGender',
         'birthdate' => 'getBirthdate',
         'zoneinfo' => 'getZoneinfo',
-        'locale' => 'getLocale',
+        'language' => 'getLanguage',
         'phoneNumber' => 'getPhoneNumber',
         'phoneNumberVerified' => 'getPhoneNumberVerified',
         'address' => 'getAddress',
@@ -281,7 +281,7 @@ class Claims implements ModelInterface, ArrayAccess
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
         $this->container['birthdate'] = isset($data['birthdate']) ? $this->createData($data['birthdate'], 'birthdate')  : null;
         $this->container['zoneinfo'] = isset($data['zoneinfo']) ? $this->createData($data['zoneinfo'], 'zoneinfo')  : null;
-        $this->container['locale'] = isset($data['locale']) ? $this->createData($data['locale'], 'locale')  : null;
+        $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $this->createData($data['phoneNumber'], 'phoneNumber')  : null;
         $this->container['phoneNumberVerified'] = isset($data['phoneNumberVerified']) ? $this->createData($data['phoneNumberVerified'], 'phoneNumberVerified')  : null;
         $this->container['address'] = isset($data['address']) ? $this->createData($data['address'], 'address')  : null;
@@ -704,25 +704,25 @@ class Claims implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets locale
+     * Gets language
      *
      * @return string
      */
-    public function getLocale()
+    public function getLanguage()
     {
-        return $this->container['locale'];
+        return $this->container['language'];
     }
 
     /**
-     * Sets locale
+     * Sets language
      *
-     * @param string $locale The locale.
+     * @param string $language The language.
      *
      * @return $this
      */
-    public function setLocale($locale)
+    public function setLanguage($language)
     {
-        $this->container['locale'] = $locale;
+        $this->container['language'] = $language;
 
         return $this;
     }

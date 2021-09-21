@@ -46,6 +46,7 @@ class AuthType
     const PASSWORD = 'PASSWORD';
     const PASSWORD_TOKEN = 'PASSWORD_TOKEN';
     const ALIAS = 'ALIAS';
+    const INVITE = 'INVITE';
     
     /**
      * Gets allowable values of the enum
@@ -57,6 +58,7 @@ class AuthType
             self::PASSWORD,
             self::PASSWORD_TOKEN,
             self::ALIAS,
+            self::INVITE,
         ];
     }
 }

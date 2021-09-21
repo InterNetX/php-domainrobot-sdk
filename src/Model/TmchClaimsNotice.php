@@ -1,6 +1,6 @@
 <?php
 /**
- * MailServiceMessage
+ * TmchClaimsNotice
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * MailServiceMessage Class Doc Comment
+ * TmchClaimsNotice Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MailServiceMessage implements ModelInterface, ArrayAccess
+class TmchClaimsNotice implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MailServiceMessage';
+    protected static $swaggerModelName = 'TmchClaimsNotice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,20 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'id' => 'int',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'reference' => 'string',
-        'from' => 'string',
-        'subject' => 'string',
-        'status' => '\Domainrobot\Model\DeliveryStatus',
-        'recipients' => '\Domainrobot\Model\Recipient[]',
-        'externalReference' => 'string'
+        'name' => '\Domainrobot\Model\Domain',
+        'idn' => 'string',
+        'ownerc' => '\Domainrobot\Model\Contact',
+        'messageSent' => '\DateTime',
+        'email' => 'string',
+        'confirmed' => '\DateTime',
+        'confirmIP' => '\Domainrobot\Model\InetAddress',
+        'status' => '\Domainrobot\Model\GenericStatusConstants',
+        'comment' => 'string',
+        'tmchClaimsNoticeMails' => '\Domainrobot\Model\TmchClaimsNoticeMessage[]',
+        'expire' => '\DateTime'
     ];
 
     /**
@@ -76,13 +83,20 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
-        'id' => 'int64',
+        'owner' => null,
+        'updater' => null,
         'reference' => null,
-        'from' => null,
-        'subject' => null,
+        'name' => null,
+        'idn' => null,
+        'ownerc' => null,
+        'messageSent' => 'date-time',
+        'email' => null,
+        'confirmed' => 'date-time',
+        'confirmIP' => null,
         'status' => null,
-        'recipients' => null,
-        'externalReference' => null
+        'comment' => null,
+        'tmchClaimsNoticeMails' => null,
+        'expire' => 'date-time'
     ];
 
     /**
@@ -114,13 +128,20 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'id' => 'id',
+        'owner' => 'owner',
+        'updater' => 'updater',
         'reference' => 'reference',
-        'from' => 'from',
-        'subject' => 'subject',
+        'name' => 'name',
+        'idn' => 'idn',
+        'ownerc' => 'ownerc',
+        'messageSent' => 'messageSent',
+        'email' => 'email',
+        'confirmed' => 'confirmed',
+        'confirmIP' => 'confirmIP',
         'status' => 'status',
-        'recipients' => 'recipients',
-        'externalReference' => 'externalReference'
+        'comment' => 'comment',
+        'tmchClaimsNoticeMails' => 'tmchClaimsNoticeMails',
+        'expire' => 'expire'
     ];
 
     /**
@@ -131,13 +152,20 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'id' => 'setId',
+        'owner' => 'setOwner',
+        'updater' => 'setUpdater',
         'reference' => 'setReference',
-        'from' => 'setFrom',
-        'subject' => 'setSubject',
+        'name' => 'setName',
+        'idn' => 'setIdn',
+        'ownerc' => 'setOwnerc',
+        'messageSent' => 'setMessageSent',
+        'email' => 'setEmail',
+        'confirmed' => 'setConfirmed',
+        'confirmIP' => 'setConfirmIP',
         'status' => 'setStatus',
-        'recipients' => 'setRecipients',
-        'externalReference' => 'setExternalReference'
+        'comment' => 'setComment',
+        'tmchClaimsNoticeMails' => 'setTmchClaimsNoticeMails',
+        'expire' => 'setExpire'
     ];
 
     /**
@@ -148,13 +176,20 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'id' => 'getId',
+        'owner' => 'getOwner',
+        'updater' => 'getUpdater',
         'reference' => 'getReference',
-        'from' => 'getFrom',
-        'subject' => 'getSubject',
+        'name' => 'getName',
+        'idn' => 'getIdn',
+        'ownerc' => 'getOwnerc',
+        'messageSent' => 'getMessageSent',
+        'email' => 'getEmail',
+        'confirmed' => 'getConfirmed',
+        'confirmIP' => 'getConfirmIP',
         'status' => 'getStatus',
-        'recipients' => 'getRecipients',
-        'externalReference' => 'getExternalReference'
+        'comment' => 'getComment',
+        'tmchClaimsNoticeMails' => 'getTmchClaimsNoticeMails',
+        'expire' => 'getExpire'
     ];
 
     /**
@@ -219,13 +254,20 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
+        $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
+        $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
-        $this->container['from'] = isset($data['from']) ? $this->createData($data['from'], 'from')  : null;
-        $this->container['subject'] = isset($data['subject']) ? $this->createData($data['subject'], 'subject')  : null;
+        $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
+        $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
+        $this->container['ownerc'] = isset($data['ownerc']) ? $this->createData($data['ownerc'], 'ownerc')  : null;
+        $this->container['messageSent'] = isset($data['messageSent']) ? $this->createData($data['messageSent'], 'messageSent')  : null;
+        $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
+        $this->container['confirmed'] = isset($data['confirmed']) ? $this->createData($data['confirmed'], 'confirmed')  : null;
+        $this->container['confirmIP'] = isset($data['confirmIP']) ? $this->createData($data['confirmIP'], 'confirmIP')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['recipients'] = isset($data['recipients']) ? $this->createData($data['recipients'], 'recipients')  : null;
-        $this->container['externalReference'] = isset($data['externalReference']) ? $this->createData($data['externalReference'], 'externalReference')  : null;
+        $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
+        $this->container['tmchClaimsNoticeMails'] = isset($data['tmchClaimsNoticeMails']) ? $this->createData($data['tmchClaimsNoticeMails'], 'tmchClaimsNoticeMails')  : null;
+        $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
     }
 
     /**
@@ -292,6 +334,9 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['confirmIP'] === null) {
+            $invalidProperties[] = "'confirmIP' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -356,25 +401,49 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets id
+     * Gets owner
      *
-     * @return int
+     * @return \Domainrobot\Model\BasicUser
      */
-    public function getId()
+    public function getOwner()
     {
-        return $this->container['id'];
+        return $this->container['owner'];
     }
 
     /**
-     * Sets id
+     * Sets owner
      *
-     * @param int $id the id of the message entry
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
      *
      * @return $this
      */
-    public function setId($id)
+    public function setOwner($owner)
     {
-        $this->container['id'] = $id;
+        $this->container['owner'] = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Gets updater
+     *
+     * @return \Domainrobot\Model\BasicUser
+     */
+    public function getUpdater()
+    {
+        return $this->container['updater'];
+    }
+
+    /**
+     * Sets updater
+     *
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     *
+     * @return $this
+     */
+    public function setUpdater($updater)
+    {
+        $this->container['updater'] = $updater;
 
         return $this;
     }
@@ -392,7 +461,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     /**
      * Sets reference
      *
-     * @param string $reference The message id of the email
+     * @param string $reference reference
      *
      * @return $this
      */
@@ -404,49 +473,169 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets from
+     * Gets name
      *
-     * @return string
+     * @return \Domainrobot\Model\Domain
      */
-    public function getFrom()
+    public function getName()
     {
-        return $this->container['from'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets from
+     * Sets name
      *
-     * @param string $from The mail from header
+     * @param \Domainrobot\Model\Domain $name name
      *
      * @return $this
      */
-    public function setFrom($from)
+    public function setName($name)
     {
-        $this->container['from'] = $from;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets subject
+     * Gets idn
      *
      * @return string
      */
-    public function getSubject()
+    public function getIdn()
     {
-        return $this->container['subject'];
+        return $this->container['idn'];
     }
 
     /**
-     * Sets subject
+     * Sets idn
      *
-     * @param string $subject the subject of the email
+     * @param string $idn idn
      *
      * @return $this
      */
-    public function setSubject($subject)
+    public function setIdn($idn)
     {
-        $this->container['subject'] = $subject;
+        $this->container['idn'] = $idn;
+
+        return $this;
+    }
+
+    /**
+     * Gets ownerc
+     *
+     * @return \Domainrobot\Model\Contact
+     */
+    public function getOwnerc()
+    {
+        return $this->container['ownerc'];
+    }
+
+    /**
+     * Sets ownerc
+     *
+     * @param \Domainrobot\Model\Contact $ownerc ownerc
+     *
+     * @return $this
+     */
+    public function setOwnerc($ownerc)
+    {
+        $this->container['ownerc'] = $ownerc;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageSent
+     *
+     * @return \DateTime
+     */
+    public function getMessageSent()
+    {
+        return $this->container['messageSent'];
+    }
+
+    /**
+     * Sets messageSent
+     *
+     * @param \DateTime $messageSent messageSent
+     *
+     * @return $this
+     */
+    public function setMessageSent($messageSent)
+    {
+        $this->container['messageSent'] = $messageSent;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets confirmed
+     *
+     * @return \DateTime
+     */
+    public function getConfirmed()
+    {
+        return $this->container['confirmed'];
+    }
+
+    /**
+     * Sets confirmed
+     *
+     * @param \DateTime $confirmed confirmed
+     *
+     * @return $this
+     */
+    public function setConfirmed($confirmed)
+    {
+        $this->container['confirmed'] = $confirmed;
+
+        return $this;
+    }
+
+    /**
+     * Gets confirmIP
+     *
+     * @return \Domainrobot\Model\InetAddress
+     */
+    public function getConfirmIP()
+    {
+        return $this->container['confirmIP'];
+    }
+
+    /**
+     * Sets confirmIP
+     *
+     * @param \Domainrobot\Model\InetAddress $confirmIP confirmIP
+     *
+     * @return $this
+     */
+    public function setConfirmIP($confirmIP)
+    {
+        $this->container['confirmIP'] = $confirmIP;
 
         return $this;
     }
@@ -454,7 +643,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \Domainrobot\Model\DeliveryStatus
+     * @return \Domainrobot\Model\GenericStatusConstants
      */
     public function getStatus()
     {
@@ -464,7 +653,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\DeliveryStatus $status the actual delivery status of the email
+     * @param \Domainrobot\Model\GenericStatusConstants $status status
      *
      * @return $this
      */
@@ -476,49 +665,73 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets recipients
+     * Gets comment
      *
-     * @return \Domainrobot\Model\Recipient[]
+     * @return string
      */
-    public function getRecipients()
+    public function getComment()
     {
-        return $this->container['recipients'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets recipients
+     * Sets comment
      *
-     * @param \Domainrobot\Model\Recipient[] $recipients the recipients of the email
+     * @param string $comment comment
      *
      * @return $this
      */
-    public function setRecipients($recipients)
+    public function setComment($comment)
     {
-        $this->container['recipients'] = $recipients;
+        $this->container['comment'] = $comment;
 
         return $this;
     }
 
     /**
-     * Gets externalReference
+     * Gets tmchClaimsNoticeMails
      *
-     * @return string
+     * @return \Domainrobot\Model\TmchClaimsNoticeMessage[]
      */
-    public function getExternalReference()
+    public function getTmchClaimsNoticeMails()
     {
-        return $this->container['externalReference'];
+        return $this->container['tmchClaimsNoticeMails'];
     }
 
     /**
-     * Sets externalReference
+     * Sets tmchClaimsNoticeMails
      *
-     * @param string $externalReference The external reference of the email
+     * @param \Domainrobot\Model\TmchClaimsNoticeMessage[] $tmchClaimsNoticeMails tmchClaimsNoticeMails
      *
      * @return $this
      */
-    public function setExternalReference($externalReference)
+    public function setTmchClaimsNoticeMails($tmchClaimsNoticeMails)
     {
-        $this->container['externalReference'] = $externalReference;
+        $this->container['tmchClaimsNoticeMails'] = $tmchClaimsNoticeMails;
+
+        return $this;
+    }
+
+    /**
+     * Gets expire
+     *
+     * @return \DateTime
+     */
+    public function getExpire()
+    {
+        return $this->container['expire'];
+    }
+
+    /**
+     * Sets expire
+     *
+     * @param \DateTime $expire expire
+     *
+     * @return $this
+     */
+    public function setExpire($expire)
+    {
+        $this->container['expire'] = $expire;
 
         return $this;
     }

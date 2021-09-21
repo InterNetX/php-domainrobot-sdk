@@ -57,7 +57,9 @@ class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'searchToken' => 'string'
+        'searchToken' => 'string',
+        'platforms' => '\Domainrobot\Model\SocialMediaPlatform[]',
+        'clientIp' => 'string'
     ];
 
     /**
@@ -66,7 +68,9 @@ class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'searchToken' => null
+        'searchToken' => null,
+        'platforms' => null,
+        'clientIp' => null
     ];
 
     /**
@@ -96,7 +100,9 @@ class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'searchToken' => 'searchToken'
+        'searchToken' => 'searchToken',
+        'platforms' => 'platforms',
+        'clientIp' => 'clientIp'
     ];
 
     /**
@@ -105,7 +111,9 @@ class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'searchToken' => 'setSearchToken'
+        'searchToken' => 'setSearchToken',
+        'platforms' => 'setPlatforms',
+        'clientIp' => 'setClientIp'
     ];
 
     /**
@@ -114,7 +122,9 @@ class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'searchToken' => 'getSearchToken'
+        'searchToken' => 'getSearchToken',
+        'platforms' => 'getPlatforms',
+        'clientIp' => 'getClientIp'
     ];
 
     /**
@@ -178,6 +188,8 @@ class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['searchToken'] = isset($data['searchToken']) ? $this->createData($data['searchToken'], 'searchToken')  : null;
+        $this->container['platforms'] = isset($data['platforms']) ? $this->createData($data['platforms'], 'platforms')  : null;
+        $this->container['clientIp'] = isset($data['clientIp']) ? $this->createData($data['clientIp'], 'clientIp')  : null;
     }
 
     /**
@@ -279,6 +291,54 @@ class DomainstudioSocialMediaRequest implements ModelInterface, ArrayAccess
     public function setSearchToken($searchToken)
     {
         $this->container['searchToken'] = $searchToken;
+
+        return $this;
+    }
+
+    /**
+     * Gets platforms
+     *
+     * @return \Domainrobot\Model\SocialMediaPlatform[]
+     */
+    public function getPlatforms()
+    {
+        return $this->container['platforms'];
+    }
+
+    /**
+     * Sets platforms
+     *
+     * @param \Domainrobot\Model\SocialMediaPlatform[] $platforms The platforms to check
+     *
+     * @return $this
+     */
+    public function setPlatforms($platforms)
+    {
+        $this->container['platforms'] = $platforms;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientIp
+     *
+     * @return string
+     */
+    public function getClientIp()
+    {
+        return $this->container['clientIp'];
+    }
+
+    /**
+     * Sets clientIp
+     *
+     * @param string $clientIp The ip of the client
+     *
+     * @return $this
+     */
+    public function setClientIp($clientIp)
+    {
+        $this->container['clientIp'] = $clientIp;
 
         return $this;
     }

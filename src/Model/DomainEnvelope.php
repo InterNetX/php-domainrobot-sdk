@@ -64,6 +64,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'debugTime' => 'int',
         'portfolio' => 'bool',
         'forceDnsCheck' => 'bool',
+        'whoisTimeout' => 'int',
         'onlyAvailable' => 'bool',
         'isPrereg' => 'bool'
     ];
@@ -81,6 +82,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'debugTime' => 'int64',
         'portfolio' => null,
         'forceDnsCheck' => null,
+        'whoisTimeout' => 'int32',
         'onlyAvailable' => null,
         'isPrereg' => null
     ];
@@ -119,6 +121,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'debugTime' => 'debugTime',
         'portfolio' => 'portfolio',
         'forceDnsCheck' => 'forceDnsCheck',
+        'whoisTimeout' => 'whoisTimeout',
         'onlyAvailable' => 'onlyAvailable',
         'isPrereg' => 'isPrereg'
     ];
@@ -136,6 +139,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'debugTime' => 'setDebugTime',
         'portfolio' => 'setPortfolio',
         'forceDnsCheck' => 'setForceDnsCheck',
+        'whoisTimeout' => 'setWhoisTimeout',
         'onlyAvailable' => 'setOnlyAvailable',
         'isPrereg' => 'setIsPrereg'
     ];
@@ -153,6 +157,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'debugTime' => 'getDebugTime',
         'portfolio' => 'getPortfolio',
         'forceDnsCheck' => 'getForceDnsCheck',
+        'whoisTimeout' => 'getWhoisTimeout',
         'onlyAvailable' => 'getOnlyAvailable',
         'isPrereg' => 'getIsPrereg'
     ];
@@ -224,6 +229,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         $this->container['debugTime'] = isset($data['debugTime']) ? $this->createData($data['debugTime'], 'debugTime')  : null;
         $this->container['portfolio'] = isset($data['portfolio']) ? $this->createData($data['portfolio'], 'portfolio')  : null;
         $this->container['forceDnsCheck'] = isset($data['forceDnsCheck']) ? $this->createData($data['forceDnsCheck'], 'forceDnsCheck')  : null;
+        $this->container['whoisTimeout'] = isset($data['whoisTimeout']) ? $this->createData($data['whoisTimeout'], 'whoisTimeout')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
         $this->container['isPrereg'] = isset($data['isPrereg']) ? $this->createData($data['isPrereg'], 'isPrereg')  : null;
     }
@@ -471,6 +477,30 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     public function setForceDnsCheck($forceDnsCheck)
     {
         $this->container['forceDnsCheck'] = $forceDnsCheck;
+
+        return $this;
+    }
+
+    /**
+     * Gets whoisTimeout
+     *
+     * @return int
+     */
+    public function getWhoisTimeout()
+    {
+        return $this->container['whoisTimeout'];
+    }
+
+    /**
+     * Sets whoisTimeout
+     *
+     * @param int $whoisTimeout Defines the timeout for the whois duration in seconds
+     *
+     * @return $this
+     */
+    public function setWhoisTimeout($whoisTimeout)
+    {
+        $this->container['whoisTimeout'] = $whoisTimeout;
 
         return $this;
     }

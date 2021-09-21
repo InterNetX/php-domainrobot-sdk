@@ -58,7 +58,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'contactType' => 'string',
-        'croNumber' => 'string',
         'supportingNumber' => 'string'
     ];
 
@@ -69,7 +68,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'contactType' => null,
-        'croNumber' => null,
         'supportingNumber' => null
     ];
 
@@ -101,7 +99,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'contactType' => 'contactType',
-        'croNumber' => 'croNumber',
         'supportingNumber' => 'supportingNumber'
     ];
 
@@ -112,7 +109,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'contactType' => 'setContactType',
-        'croNumber' => 'setCroNumber',
         'supportingNumber' => 'setSupportingNumber'
     ];
 
@@ -123,7 +119,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'contactType' => 'getContactType',
-        'croNumber' => 'getCroNumber',
         'supportingNumber' => 'getSupportingNumber'
     ];
 
@@ -188,7 +183,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['contactType'] = isset($data['contactType']) ? $this->createData($data['contactType'], 'contactType')  : null;
-        $this->container['croNumber'] = isset($data['croNumber']) ? $this->createData($data['croNumber'], 'croNumber')  : null;
         $this->container['supportingNumber'] = isset($data['supportingNumber']) ? $this->createData($data['supportingNumber'], 'supportingNumber')  : null;
     }
 
@@ -291,30 +285,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     public function setContactType($contactType)
     {
         $this->container['contactType'] = $contactType;
-
-        return $this;
-    }
-
-    /**
-     * Gets croNumber
-     *
-     * @return string
-     */
-    public function getCroNumber()
-    {
-        return $this->container['croNumber'];
-    }
-
-    /**
-     * Sets croNumber
-     *
-     * @param string $croNumber EPP Element = <fury:key>IE_CRO_NUMBER Description: The Companies Registration Office (CRO) identifier that can be used to ensure the company is in a valid state to be registering domains.
-     *
-     * @return $this
-     */
-    public function setCroNumber($croNumber)
-    {
-        $this->container['croNumber'] = $croNumber;
 
         return $this;
     }

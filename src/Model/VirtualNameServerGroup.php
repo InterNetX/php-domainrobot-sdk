@@ -64,6 +64,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'name' => 'string',
         'useDefaultIps' => 'bool',
         'nameServers' => '\Domainrobot\Model\VirtualNameServer[]',
+        'id' => 'int',
         'systemNameServerGroup' => '\Domainrobot\Model\PhysicalNameServerGroup'
     ];
 
@@ -80,6 +81,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'name' => null,
         'useDefaultIps' => null,
         'nameServers' => null,
+        'id' => 'int32',
         'systemNameServerGroup' => null
     ];
 
@@ -117,6 +119,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'name' => 'name',
         'useDefaultIps' => 'useDefaultIps',
         'nameServers' => 'nameServers',
+        'id' => 'id',
         'systemNameServerGroup' => 'systemNameServerGroup'
     ];
 
@@ -133,6 +136,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'useDefaultIps' => 'setUseDefaultIps',
         'nameServers' => 'setNameServers',
+        'id' => 'setId',
         'systemNameServerGroup' => 'setSystemNameServerGroup'
     ];
 
@@ -149,6 +153,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'useDefaultIps' => 'getUseDefaultIps',
         'nameServers' => 'getNameServers',
+        'id' => 'getId',
         'systemNameServerGroup' => 'getSystemNameServerGroup'
     ];
 
@@ -219,6 +224,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['useDefaultIps'] = isset($data['useDefaultIps']) ? $this->createData($data['useDefaultIps'], 'useDefaultIps')  : null;
         $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
+        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
         $this->container['systemNameServerGroup'] = isset($data['systemNameServerGroup']) ? $this->createData($data['systemNameServerGroup'], 'systemNameServerGroup')  : null;
     }
 
@@ -468,6 +474,30 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     public function setNameServers($nameServers)
     {
         $this->container['nameServers'] = $nameServers;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id The unique id of the nsVirtualGroup
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

@@ -65,7 +65,8 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'bool',
         'sources' => '\Domainrobot\Model\DomainStudioSources',
         'clientIp' => 'string',
-        'onlyAvailable' => 'bool'
+        'onlyAvailable' => 'bool',
+        'whoisTimeout' => 'int'
     ];
 
     /**
@@ -82,7 +83,8 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => null,
         'sources' => null,
         'clientIp' => null,
-        'onlyAvailable' => null
+        'onlyAvailable' => null,
+        'whoisTimeout' => 'int32'
     ];
 
     /**
@@ -120,7 +122,8 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'allowDuplicates',
         'sources' => 'sources',
         'clientIp' => 'clientIp',
-        'onlyAvailable' => 'onlyAvailable'
+        'onlyAvailable' => 'onlyAvailable',
+        'whoisTimeout' => 'whoisTimeout'
     ];
 
     /**
@@ -137,7 +140,8 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'setAllowDuplicates',
         'sources' => 'setSources',
         'clientIp' => 'setClientIp',
-        'onlyAvailable' => 'setOnlyAvailable'
+        'onlyAvailable' => 'setOnlyAvailable',
+        'whoisTimeout' => 'setWhoisTimeout'
     ];
 
     /**
@@ -154,7 +158,8 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'getAllowDuplicates',
         'sources' => 'getSources',
         'clientIp' => 'getClientIp',
-        'onlyAvailable' => 'getOnlyAvailable'
+        'onlyAvailable' => 'getOnlyAvailable',
+        'whoisTimeout' => 'getWhoisTimeout'
     ];
 
     /**
@@ -226,6 +231,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         $this->container['sources'] = isset($data['sources']) ? $this->createData($data['sources'], 'sources')  : null;
         $this->container['clientIp'] = isset($data['clientIp']) ? $this->createData($data['clientIp'], 'clientIp')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
+        $this->container['whoisTimeout'] = isset($data['whoisTimeout']) ? $this->createData($data['whoisTimeout'], 'whoisTimeout')  : null;
     }
 
     /**
@@ -519,6 +525,30 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     public function setOnlyAvailable($onlyAvailable)
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets whoisTimeout
+     *
+     * @return int
+     */
+    public function getWhoisTimeout()
+    {
+        return $this->container['whoisTimeout'];
+    }
+
+    /**
+     * Sets whoisTimeout
+     *
+     * @param int $whoisTimeout Defines the timeout for the whois duration in seconds
+     *
+     * @return $this
+     */
+    public function setWhoisTimeout($whoisTimeout)
+    {
+        $this->container['whoisTimeout'] = $whoisTimeout;
 
         return $this;
     }

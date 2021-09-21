@@ -59,6 +59,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
+        'id' => 'int',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'amount' => 'double',
@@ -88,6 +89,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
+        'id' => 'int32',
         'owner' => null,
         'updater' => null,
         'amount' => 'double',
@@ -138,6 +140,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
+        'id' => 'id',
         'owner' => 'owner',
         'updater' => 'updater',
         'amount' => 'amount',
@@ -167,6 +170,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
+        'id' => 'setId',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'amount' => 'setAmount',
@@ -196,6 +200,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
+        'id' => 'getId',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'amount' => 'getAmount',
@@ -279,6 +284,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['amount'] = isset($data['amount']) ? $this->createData($data['amount'], 'amount')  : null;
@@ -364,6 +370,9 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
         }
@@ -426,6 +435,30 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id The unique identifier of the price
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

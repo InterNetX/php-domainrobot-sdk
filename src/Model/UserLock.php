@@ -47,6 +47,7 @@ class UserLock
     const CUSTOMER = 'CUSTOMER';
     const EXPIRED = 'EXPIRED';
     const USER = 'USER';
+    const INVITE = 'INVITE';
     
     /**
      * Gets allowable values of the enum
@@ -59,6 +60,7 @@ class UserLock
             self::CUSTOMER,
             self::EXPIRED,
             self::USER,
+            self::INVITE,
         ];
     }
 }

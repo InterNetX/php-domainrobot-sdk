@@ -1,6 +1,6 @@
 <?php
 /**
- * MailServiceMessage
+ * JsonResponseDataAuthSession
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * MailServiceMessage Class Doc Comment
+ * JsonResponseDataAuthSession Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MailServiceMessage implements ModelInterface, ArrayAccess
+class JsonResponseDataAuthSession implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MailServiceMessage';
+    protected static $swaggerModelName = 'JsonResponseDataAuthSession';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,12 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'created' => '\DateTime',
-        'updated' => '\DateTime',
-        'id' => 'int',
-        'reference' => 'string',
-        'from' => 'string',
-        'subject' => 'string',
-        'status' => '\Domainrobot\Model\DeliveryStatus',
-        'recipients' => '\Domainrobot\Model\Recipient[]',
-        'externalReference' => 'string'
+        'stid' => 'string',
+        'messages' => '\Domainrobot\Model\Message[]',
+        'status' => '\Domainrobot\Model\ResponseStatus',
+        'object' => '\Domainrobot\Model\ResponseObject',
+        'data' => '\Domainrobot\Model\AuthSession[]',
+        'ctid' => 'string'
     ];
 
     /**
@@ -74,15 +71,12 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'created' => 'date-time',
-        'updated' => 'date-time',
-        'id' => 'int64',
-        'reference' => null,
-        'from' => null,
-        'subject' => null,
+        'stid' => null,
+        'messages' => null,
         'status' => null,
-        'recipients' => null,
-        'externalReference' => null
+        'object' => null,
+        'data' => null,
+        'ctid' => null
     ];
 
     /**
@@ -112,15 +106,12 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'created' => 'created',
-        'updated' => 'updated',
-        'id' => 'id',
-        'reference' => 'reference',
-        'from' => 'from',
-        'subject' => 'subject',
+        'stid' => 'stid',
+        'messages' => 'messages',
         'status' => 'status',
-        'recipients' => 'recipients',
-        'externalReference' => 'externalReference'
+        'object' => 'object',
+        'data' => 'data',
+        'ctid' => 'ctid'
     ];
 
     /**
@@ -129,15 +120,12 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'created' => 'setCreated',
-        'updated' => 'setUpdated',
-        'id' => 'setId',
-        'reference' => 'setReference',
-        'from' => 'setFrom',
-        'subject' => 'setSubject',
+        'stid' => 'setStid',
+        'messages' => 'setMessages',
         'status' => 'setStatus',
-        'recipients' => 'setRecipients',
-        'externalReference' => 'setExternalReference'
+        'object' => 'setObject',
+        'data' => 'setData',
+        'ctid' => 'setCtid'
     ];
 
     /**
@@ -146,15 +134,12 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'created' => 'getCreated',
-        'updated' => 'getUpdated',
-        'id' => 'getId',
-        'reference' => 'getReference',
-        'from' => 'getFrom',
-        'subject' => 'getSubject',
+        'stid' => 'getStid',
+        'messages' => 'getMessages',
         'status' => 'getStatus',
-        'recipients' => 'getRecipients',
-        'externalReference' => 'getExternalReference'
+        'object' => 'getObject',
+        'data' => 'getData',
+        'ctid' => 'getCtid'
     ];
 
     /**
@@ -217,15 +202,12 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
-        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
-        $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
-        $this->container['from'] = isset($data['from']) ? $this->createData($data['from'], 'from')  : null;
-        $this->container['subject'] = isset($data['subject']) ? $this->createData($data['subject'], 'subject')  : null;
+        $this->container['stid'] = isset($data['stid']) ? $this->createData($data['stid'], 'stid')  : null;
+        $this->container['messages'] = isset($data['messages']) ? $this->createData($data['messages'], 'messages')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['recipients'] = isset($data['recipients']) ? $this->createData($data['recipients'], 'recipients')  : null;
-        $this->container['externalReference'] = isset($data['externalReference']) ? $this->createData($data['externalReference'], 'externalReference')  : null;
+        $this->container['object'] = isset($data['object']) ? $this->createData($data['object'], 'object')  : null;
+        $this->container['data'] = isset($data['data']) ? $this->createData($data['data'], 'data')  : null;
+        $this->container['ctid'] = isset($data['ctid']) ? $this->createData($data['ctid'], 'ctid')  : null;
     }
 
     /**
@@ -308,145 +290,49 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets created
-     *
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     *
-     * @param \DateTime $created The created date.
-     *
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated
-     *
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     *
-     * @param \DateTime $updated The updated date.
-     *
-     * @return $this
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id the id of the message entry
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
+     * Gets stid
      *
      * @return string
      */
-    public function getReference()
+    public function getStid()
     {
-        return $this->container['reference'];
+        return $this->container['stid'];
     }
 
     /**
-     * Sets reference
+     * Sets stid
      *
-     * @param string $reference The message id of the email
+     * @param string $stid The server transaction id for the response.
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setStid($stid)
     {
-        $this->container['reference'] = $reference;
+        $this->container['stid'] = $stid;
 
         return $this;
     }
 
     /**
-     * Gets from
+     * Gets messages
      *
-     * @return string
+     * @return \Domainrobot\Model\Message[]
      */
-    public function getFrom()
+    public function getMessages()
     {
-        return $this->container['from'];
+        return $this->container['messages'];
     }
 
     /**
-     * Sets from
+     * Sets messages
      *
-     * @param string $from The mail from header
+     * @param \Domainrobot\Model\Message[] $messages The messages belonging to the response.
      *
      * @return $this
      */
-    public function setFrom($from)
+    public function setMessages($messages)
     {
-        $this->container['from'] = $from;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string $subject the subject of the email
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
+        $this->container['messages'] = $messages;
 
         return $this;
     }
@@ -454,7 +340,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \Domainrobot\Model\DeliveryStatus
+     * @return \Domainrobot\Model\ResponseStatus
      */
     public function getStatus()
     {
@@ -464,7 +350,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\DeliveryStatus $status the actual delivery status of the email
+     * @param \Domainrobot\Model\ResponseStatus $status The status of the response.
      *
      * @return $this
      */
@@ -476,49 +362,73 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets recipients
+     * Gets object
      *
-     * @return \Domainrobot\Model\Recipient[]
+     * @return \Domainrobot\Model\ResponseObject
      */
-    public function getRecipients()
+    public function getObject()
     {
-        return $this->container['recipients'];
+        return $this->container['object'];
     }
 
     /**
-     * Sets recipients
+     * Sets object
      *
-     * @param \Domainrobot\Model\Recipient[] $recipients the recipients of the email
+     * @param \Domainrobot\Model\ResponseObject $object The object of the response.
      *
      * @return $this
      */
-    public function setRecipients($recipients)
+    public function setObject($object)
     {
-        $this->container['recipients'] = $recipients;
+        $this->container['object'] = $object;
 
         return $this;
     }
 
     /**
-     * Gets externalReference
+     * Gets data
      *
-     * @return string
+     * @return \Domainrobot\Model\AuthSession[]
      */
-    public function getExternalReference()
+    public function getData()
     {
-        return $this->container['externalReference'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets externalReference
+     * Sets data
      *
-     * @param string $externalReference The external reference of the email
+     * @param \Domainrobot\Model\AuthSession[] $data The data for the response. The type of the objects are depending on the request and are also specified in the responseObject value of the response.
      *
      * @return $this
      */
-    public function setExternalReference($externalReference)
+    public function setData($data)
     {
-        $this->container['externalReference'] = $externalReference;
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets ctid
+     *
+     * @return string
+     */
+    public function getCtid()
+    {
+        return $this->container['ctid'];
+    }
+
+    /**
+     * Sets ctid
+     *
+     * @param string $ctid The client transaction id for the response.
+     *
+     * @return $this
+     */
+    public function setCtid($ctid)
+    {
+        $this->container['ctid'] = $ctid;
 
         return $this;
     }

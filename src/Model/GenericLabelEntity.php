@@ -59,11 +59,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'label' => 'string',
-        'name' => 'string',
-        'category' => 'string',
-        'configuration' => 'map[string,object]',
-        'packageLabel' => 'string'
+        'label' => 'string'
     ];
 
     /**
@@ -74,11 +70,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
-        'label' => null,
-        'name' => null,
-        'category' => null,
-        'configuration' => null,
-        'packageLabel' => null
+        'label' => null
     ];
 
     /**
@@ -110,11 +102,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'label' => 'label',
-        'name' => 'name',
-        'category' => 'category',
-        'configuration' => 'configuration',
-        'packageLabel' => 'packageLabel'
+        'label' => 'label'
     ];
 
     /**
@@ -125,11 +113,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'label' => 'setLabel',
-        'name' => 'setName',
-        'category' => 'setCategory',
-        'configuration' => 'setConfiguration',
-        'packageLabel' => 'setPackageLabel'
+        'label' => 'setLabel'
     ];
 
     /**
@@ -140,11 +124,7 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'label' => 'getLabel',
-        'name' => 'getName',
-        'category' => 'getCategory',
-        'configuration' => 'getConfiguration',
-        'packageLabel' => 'getPackageLabel'
+        'label' => 'getLabel'
     ];
 
     /**
@@ -210,10 +190,6 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
-        $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['category'] = isset($data['category']) ? $this->createData($data['category'], 'category')  : null;
-        $this->container['configuration'] = isset($data['configuration']) ? $this->createData($data['configuration'], 'configuration')  : null;
-        $this->container['packageLabel'] = isset($data['packageLabel']) ? $this->createData($data['packageLabel'], 'packageLabel')  : null;
     }
 
     /**
@@ -366,102 +342,6 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     public function setLabel($label)
     {
         $this->container['label'] = $label;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name The name of the contract.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets category
-     *
-     * @return string
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     *
-     * @param string $category category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->container['category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Gets configuration
-     *
-     * @return map[string,object]
-     */
-    public function getConfiguration()
-    {
-        return $this->container['configuration'];
-    }
-
-    /**
-     * Sets configuration
-     *
-     * @param map[string,object] $configuration Lorem Ipum
-     *
-     * @return $this
-     */
-    public function setConfiguration($configuration)
-    {
-        $this->container['configuration'] = $configuration;
-
-        return $this;
-    }
-
-    /**
-     * Gets packageLabel
-     *
-     * @return string
-     */
-    public function getPackageLabel()
-    {
-        return $this->container['packageLabel'];
-    }
-
-    /**
-     * Sets packageLabel
-     *
-     * @param string $packageLabel The related package label of the contract
-     *
-     * @return $this
-     */
-    public function setPackageLabel($packageLabel)
-    {
-        $this->container['packageLabel'] = $packageLabel;
 
         return $this;
     }

@@ -76,7 +76,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'certificate' => '\Domainrobot\Model\Certificate',
         'idn' => 'string',
         'checkCaa' => 'bool',
-        'businessCase' => 'string'
+        'businessCase' => 'string',
+        'ecCurve' => '\Domainrobot\Model\CsrHashAlgorithmConstants'
     ];
 
     /**
@@ -104,7 +105,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'certificate' => null,
         'idn' => null,
         'checkCaa' => null,
-        'businessCase' => null
+        'businessCase' => null,
+        'ecCurve' => null
     ];
 
     /**
@@ -153,7 +155,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'certificate' => 'certificate',
         'idn' => 'idn',
         'checkCaa' => 'checkCaa',
-        'businessCase' => 'businessCase'
+        'businessCase' => 'businessCase',
+        'ecCurve' => 'ecCurve'
     ];
 
     /**
@@ -181,7 +184,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'certificate' => 'setCertificate',
         'idn' => 'setIdn',
         'checkCaa' => 'setCheckCaa',
-        'businessCase' => 'setBusinessCase'
+        'businessCase' => 'setBusinessCase',
+        'ecCurve' => 'setEcCurve'
     ];
 
     /**
@@ -209,7 +213,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'certificate' => 'getCertificate',
         'idn' => 'getIdn',
         'checkCaa' => 'getCheckCaa',
-        'businessCase' => 'getBusinessCase'
+        'businessCase' => 'getBusinessCase',
+        'ecCurve' => 'getEcCurve'
     ];
 
     /**
@@ -292,6 +297,7 @@ class CertificateData implements ModelInterface, ArrayAccess
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['checkCaa'] = isset($data['checkCaa']) ? $this->createData($data['checkCaa'], 'checkCaa')  : null;
         $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
+        $this->container['ecCurve'] = isset($data['ecCurve']) ? $this->createData($data['ecCurve'], 'ecCurve')  : null;
     }
 
     /**
@@ -849,6 +855,30 @@ class CertificateData implements ModelInterface, ArrayAccess
     public function setBusinessCase($businessCase)
     {
         $this->container['businessCase'] = $businessCase;
+
+        return $this;
+    }
+
+    /**
+     * Gets ecCurve
+     *
+     * @return \Domainrobot\Model\CsrHashAlgorithmConstants
+     */
+    public function getEcCurve()
+    {
+        return $this->container['ecCurve'];
+    }
+
+    /**
+     * Sets ecCurve
+     *
+     * @param \Domainrobot\Model\CsrHashAlgorithmConstants $ecCurve The ec curve of the public key.
+     *
+     * @return $this
+     */
+    public function setEcCurve($ecCurve)
+    {
+        $this->container['ecCurve'] = $ecCurve;
 
         return $this;
     }

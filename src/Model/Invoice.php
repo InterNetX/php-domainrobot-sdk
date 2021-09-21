@@ -78,7 +78,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'currency' => 'string',
         'paid' => '\DateTime',
         'document' => '\Domainrobot\Model\Document',
-        'comment' => 'string'
+        'comment' => 'string',
+        'extension' => '\Domainrobot\Model\Configuration'
     ];
 
     /**
@@ -108,7 +109,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'currency' => null,
         'paid' => 'date-time',
         'document' => null,
-        'comment' => null
+        'comment' => null,
+        'extension' => null
     ];
 
     /**
@@ -159,7 +161,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'currency' => 'currency',
         'paid' => 'paid',
         'document' => 'document',
-        'comment' => 'comment'
+        'comment' => 'comment',
+        'extension' => 'extension'
     ];
 
     /**
@@ -189,7 +192,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'currency' => 'setCurrency',
         'paid' => 'setPaid',
         'document' => 'setDocument',
-        'comment' => 'setComment'
+        'comment' => 'setComment',
+        'extension' => 'setExtension'
     ];
 
     /**
@@ -219,7 +223,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'currency' => 'getCurrency',
         'paid' => 'getPaid',
         'document' => 'getDocument',
-        'comment' => 'getComment'
+        'comment' => 'getComment',
+        'extension' => 'getExtension'
     ];
 
     /**
@@ -304,6 +309,7 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['paid'] = isset($data['paid']) ? $this->createData($data['paid'], 'paid')  : null;
         $this->container['document'] = isset($data['document']) ? $this->createData($data['document'], 'document')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
+        $this->container['extension'] = isset($data['extension']) ? $this->createData($data['extension'], 'extension')  : null;
     }
 
     /**
@@ -909,6 +915,30 @@ class Invoice implements ModelInterface, ArrayAccess
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets extension
+     *
+     * @return \Domainrobot\Model\Configuration
+     */
+    public function getExtension()
+    {
+        return $this->container['extension'];
+    }
+
+    /**
+     * Sets extension
+     *
+     * @param \Domainrobot\Model\Configuration $extension Additional information
+     *
+     * @return $this
+     */
+    public function setExtension($extension)
+    {
+        $this->container['extension'] = $extension;
 
         return $this;
     }

@@ -59,16 +59,16 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'title' => 'string',
         'privacy' => 'string',
+        'loginLogoWidth' => 'string',
+        'menuLogoHeight' => 'string',
+        'menuLogoWidth' => 'string',
+        'primaryColor' => 'string',
+        'primaryText' => 'string',
         'secondaryColor' => 'string',
         'loginLogoSrc' => 'string',
         'menuLogoSrc' => 'string',
         'loginLogoHeight' => 'string',
-        'menuLogoWidth' => 'string',
-        'about' => 'string',
-        'loginLogoWidth' => 'string',
-        'menuLogoHeight' => 'string',
-        'primaryColor' => 'string',
-        'primaryText' => 'string'
+        'about' => 'string'
     ];
 
     /**
@@ -79,16 +79,16 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'title' => null,
         'privacy' => null,
+        'loginLogoWidth' => null,
+        'menuLogoHeight' => null,
+        'menuLogoWidth' => null,
+        'primaryColor' => null,
+        'primaryText' => null,
         'secondaryColor' => null,
         'loginLogoSrc' => null,
         'menuLogoSrc' => null,
         'loginLogoHeight' => null,
-        'menuLogoWidth' => null,
-        'about' => null,
-        'loginLogoWidth' => null,
-        'menuLogoHeight' => null,
-        'primaryColor' => null,
-        'primaryText' => null
+        'about' => null
     ];
 
     /**
@@ -120,16 +120,16 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'title' => 'title',
         'privacy' => 'privacy',
+        'loginLogoWidth' => 'loginLogoWidth',
+        'menuLogoHeight' => 'menuLogoHeight',
+        'menuLogoWidth' => 'menuLogoWidth',
+        'primaryColor' => 'primaryColor',
+        'primaryText' => 'primaryText',
         'secondaryColor' => 'secondaryColor',
         'loginLogoSrc' => 'loginLogoSrc',
         'menuLogoSrc' => 'menuLogoSrc',
         'loginLogoHeight' => 'loginLogoHeight',
-        'menuLogoWidth' => 'menuLogoWidth',
-        'about' => 'about',
-        'loginLogoWidth' => 'loginLogoWidth',
-        'menuLogoHeight' => 'menuLogoHeight',
-        'primaryColor' => 'primaryColor',
-        'primaryText' => 'primaryText'
+        'about' => 'about'
     ];
 
     /**
@@ -140,16 +140,16 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     protected static $setters = [
         'title' => 'setTitle',
         'privacy' => 'setPrivacy',
+        'loginLogoWidth' => 'setLoginLogoWidth',
+        'menuLogoHeight' => 'setMenuLogoHeight',
+        'menuLogoWidth' => 'setMenuLogoWidth',
+        'primaryColor' => 'setPrimaryColor',
+        'primaryText' => 'setPrimaryText',
         'secondaryColor' => 'setSecondaryColor',
         'loginLogoSrc' => 'setLoginLogoSrc',
         'menuLogoSrc' => 'setMenuLogoSrc',
         'loginLogoHeight' => 'setLoginLogoHeight',
-        'menuLogoWidth' => 'setMenuLogoWidth',
-        'about' => 'setAbout',
-        'loginLogoWidth' => 'setLoginLogoWidth',
-        'menuLogoHeight' => 'setMenuLogoHeight',
-        'primaryColor' => 'setPrimaryColor',
-        'primaryText' => 'setPrimaryText'
+        'about' => 'setAbout'
     ];
 
     /**
@@ -160,16 +160,16 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     protected static $getters = [
         'title' => 'getTitle',
         'privacy' => 'getPrivacy',
+        'loginLogoWidth' => 'getLoginLogoWidth',
+        'menuLogoHeight' => 'getMenuLogoHeight',
+        'menuLogoWidth' => 'getMenuLogoWidth',
+        'primaryColor' => 'getPrimaryColor',
+        'primaryText' => 'getPrimaryText',
         'secondaryColor' => 'getSecondaryColor',
         'loginLogoSrc' => 'getLoginLogoSrc',
         'menuLogoSrc' => 'getMenuLogoSrc',
         'loginLogoHeight' => 'getLoginLogoHeight',
-        'menuLogoWidth' => 'getMenuLogoWidth',
-        'about' => 'getAbout',
-        'loginLogoWidth' => 'getLoginLogoWidth',
-        'menuLogoHeight' => 'getMenuLogoHeight',
-        'primaryColor' => 'getPrimaryColor',
-        'primaryText' => 'getPrimaryText'
+        'about' => 'getAbout'
     ];
 
     /**
@@ -234,16 +234,16 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     {
         $this->container['title'] = isset($data['title']) ? $this->createData($data['title'], 'title')  : null;
         $this->container['privacy'] = isset($data['privacy']) ? $this->createData($data['privacy'], 'privacy')  : null;
+        $this->container['loginLogoWidth'] = isset($data['loginLogoWidth']) ? $this->createData($data['loginLogoWidth'], 'loginLogoWidth')  : null;
+        $this->container['menuLogoHeight'] = isset($data['menuLogoHeight']) ? $this->createData($data['menuLogoHeight'], 'menuLogoHeight')  : null;
+        $this->container['menuLogoWidth'] = isset($data['menuLogoWidth']) ? $this->createData($data['menuLogoWidth'], 'menuLogoWidth')  : null;
+        $this->container['primaryColor'] = isset($data['primaryColor']) ? $this->createData($data['primaryColor'], 'primaryColor')  : null;
+        $this->container['primaryText'] = isset($data['primaryText']) ? $this->createData($data['primaryText'], 'primaryText')  : null;
         $this->container['secondaryColor'] = isset($data['secondaryColor']) ? $this->createData($data['secondaryColor'], 'secondaryColor')  : null;
         $this->container['loginLogoSrc'] = isset($data['loginLogoSrc']) ? $this->createData($data['loginLogoSrc'], 'loginLogoSrc')  : null;
         $this->container['menuLogoSrc'] = isset($data['menuLogoSrc']) ? $this->createData($data['menuLogoSrc'], 'menuLogoSrc')  : null;
         $this->container['loginLogoHeight'] = isset($data['loginLogoHeight']) ? $this->createData($data['loginLogoHeight'], 'loginLogoHeight')  : null;
-        $this->container['menuLogoWidth'] = isset($data['menuLogoWidth']) ? $this->createData($data['menuLogoWidth'], 'menuLogoWidth')  : null;
         $this->container['about'] = isset($data['about']) ? $this->createData($data['about'], 'about')  : null;
-        $this->container['loginLogoWidth'] = isset($data['loginLogoWidth']) ? $this->createData($data['loginLogoWidth'], 'loginLogoWidth')  : null;
-        $this->container['menuLogoHeight'] = isset($data['menuLogoHeight']) ? $this->createData($data['menuLogoHeight'], 'menuLogoHeight')  : null;
-        $this->container['primaryColor'] = isset($data['primaryColor']) ? $this->createData($data['primaryColor'], 'primaryColor')  : null;
-        $this->container['primaryText'] = isset($data['primaryText']) ? $this->createData($data['primaryText'], 'primaryText')  : null;
     }
 
     /**
@@ -374,6 +374,126 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets loginLogoWidth
+     *
+     * @return string
+     */
+    public function getLoginLogoWidth()
+    {
+        return $this->container['loginLogoWidth'];
+    }
+
+    /**
+     * Sets loginLogoWidth
+     *
+     * @param string $loginLogoWidth loginLogoWidth
+     *
+     * @return $this
+     */
+    public function setLoginLogoWidth($loginLogoWidth)
+    {
+        $this->container['loginLogoWidth'] = $loginLogoWidth;
+
+        return $this;
+    }
+
+    /**
+     * Gets menuLogoHeight
+     *
+     * @return string
+     */
+    public function getMenuLogoHeight()
+    {
+        return $this->container['menuLogoHeight'];
+    }
+
+    /**
+     * Sets menuLogoHeight
+     *
+     * @param string $menuLogoHeight menuLogoHeight
+     *
+     * @return $this
+     */
+    public function setMenuLogoHeight($menuLogoHeight)
+    {
+        $this->container['menuLogoHeight'] = $menuLogoHeight;
+
+        return $this;
+    }
+
+    /**
+     * Gets menuLogoWidth
+     *
+     * @return string
+     */
+    public function getMenuLogoWidth()
+    {
+        return $this->container['menuLogoWidth'];
+    }
+
+    /**
+     * Sets menuLogoWidth
+     *
+     * @param string $menuLogoWidth menuLogoWidth
+     *
+     * @return $this
+     */
+    public function setMenuLogoWidth($menuLogoWidth)
+    {
+        $this->container['menuLogoWidth'] = $menuLogoWidth;
+
+        return $this;
+    }
+
+    /**
+     * Gets primaryColor
+     *
+     * @return string
+     */
+    public function getPrimaryColor()
+    {
+        return $this->container['primaryColor'];
+    }
+
+    /**
+     * Sets primaryColor
+     *
+     * @param string $primaryColor primaryColor
+     *
+     * @return $this
+     */
+    public function setPrimaryColor($primaryColor)
+    {
+        $this->container['primaryColor'] = $primaryColor;
+
+        return $this;
+    }
+
+    /**
+     * Gets primaryText
+     *
+     * @return string
+     */
+    public function getPrimaryText()
+    {
+        return $this->container['primaryText'];
+    }
+
+    /**
+     * Sets primaryText
+     *
+     * @param string $primaryText primaryText
+     *
+     * @return $this
+     */
+    public function setPrimaryText($primaryText)
+    {
+        $this->container['primaryText'] = $primaryText;
+
+        return $this;
+    }
+
+    /**
      * Gets secondaryColor
      *
      * @return string
@@ -470,30 +590,6 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets menuLogoWidth
-     *
-     * @return string
-     */
-    public function getMenuLogoWidth()
-    {
-        return $this->container['menuLogoWidth'];
-    }
-
-    /**
-     * Sets menuLogoWidth
-     *
-     * @param string $menuLogoWidth menuLogoWidth
-     *
-     * @return $this
-     */
-    public function setMenuLogoWidth($menuLogoWidth)
-    {
-        $this->container['menuLogoWidth'] = $menuLogoWidth;
-
-        return $this;
-    }
-
-    /**
      * Gets about
      *
      * @return string
@@ -513,102 +609,6 @@ class Id4MeLayoutConfiguration implements ModelInterface, ArrayAccess
     public function setAbout($about)
     {
         $this->container['about'] = $about;
-
-        return $this;
-    }
-
-    /**
-     * Gets loginLogoWidth
-     *
-     * @return string
-     */
-    public function getLoginLogoWidth()
-    {
-        return $this->container['loginLogoWidth'];
-    }
-
-    /**
-     * Sets loginLogoWidth
-     *
-     * @param string $loginLogoWidth loginLogoWidth
-     *
-     * @return $this
-     */
-    public function setLoginLogoWidth($loginLogoWidth)
-    {
-        $this->container['loginLogoWidth'] = $loginLogoWidth;
-
-        return $this;
-    }
-
-    /**
-     * Gets menuLogoHeight
-     *
-     * @return string
-     */
-    public function getMenuLogoHeight()
-    {
-        return $this->container['menuLogoHeight'];
-    }
-
-    /**
-     * Sets menuLogoHeight
-     *
-     * @param string $menuLogoHeight menuLogoHeight
-     *
-     * @return $this
-     */
-    public function setMenuLogoHeight($menuLogoHeight)
-    {
-        $this->container['menuLogoHeight'] = $menuLogoHeight;
-
-        return $this;
-    }
-
-    /**
-     * Gets primaryColor
-     *
-     * @return string
-     */
-    public function getPrimaryColor()
-    {
-        return $this->container['primaryColor'];
-    }
-
-    /**
-     * Sets primaryColor
-     *
-     * @param string $primaryColor primaryColor
-     *
-     * @return $this
-     */
-    public function setPrimaryColor($primaryColor)
-    {
-        $this->container['primaryColor'] = $primaryColor;
-
-        return $this;
-    }
-
-    /**
-     * Gets primaryText
-     *
-     * @return string
-     */
-    public function getPrimaryText()
-    {
-        return $this->container['primaryText'];
-    }
-
-    /**
-     * Sets primaryText
-     *
-     * @param string $primaryText primaryText
-     *
-     * @return $this
-     */
-    public function setPrimaryText($primaryText)
-    {
-        $this->container['primaryText'] = $primaryText;
 
         return $this;
     }

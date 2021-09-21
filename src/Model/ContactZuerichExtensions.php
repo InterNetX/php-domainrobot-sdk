@@ -1,6 +1,6 @@
 <?php
 /**
- * MailServiceMessage
+ * ContactZuerichExtensions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * MailServiceMessage Class Doc Comment
+ * ContactZuerichExtensions Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MailServiceMessage implements ModelInterface, ArrayAccess
+class ContactZuerichExtensions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MailServiceMessage';
+    protected static $swaggerModelName = 'ContactZuerichExtensions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,8 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'created' => '\DateTime',
-        'updated' => '\DateTime',
-        'id' => 'int',
-        'reference' => 'string',
-        'from' => 'string',
-        'subject' => 'string',
-        'status' => '\Domainrobot\Model\DeliveryStatus',
-        'recipients' => '\Domainrobot\Model\Recipient[]',
-        'externalReference' => 'string'
+        'enterpriseId' => 'string',
+        'isAuthority' => 'bool'
     ];
 
     /**
@@ -74,15 +67,8 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'created' => 'date-time',
-        'updated' => 'date-time',
-        'id' => 'int64',
-        'reference' => null,
-        'from' => null,
-        'subject' => null,
-        'status' => null,
-        'recipients' => null,
-        'externalReference' => null
+        'enterpriseId' => null,
+        'isAuthority' => null
     ];
 
     /**
@@ -112,15 +98,8 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'created' => 'created',
-        'updated' => 'updated',
-        'id' => 'id',
-        'reference' => 'reference',
-        'from' => 'from',
-        'subject' => 'subject',
-        'status' => 'status',
-        'recipients' => 'recipients',
-        'externalReference' => 'externalReference'
+        'enterpriseId' => 'enterpriseId',
+        'isAuthority' => 'isAuthority'
     ];
 
     /**
@@ -129,15 +108,8 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'created' => 'setCreated',
-        'updated' => 'setUpdated',
-        'id' => 'setId',
-        'reference' => 'setReference',
-        'from' => 'setFrom',
-        'subject' => 'setSubject',
-        'status' => 'setStatus',
-        'recipients' => 'setRecipients',
-        'externalReference' => 'setExternalReference'
+        'enterpriseId' => 'setEnterpriseId',
+        'isAuthority' => 'setIsAuthority'
     ];
 
     /**
@@ -146,15 +118,8 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'created' => 'getCreated',
-        'updated' => 'getUpdated',
-        'id' => 'getId',
-        'reference' => 'getReference',
-        'from' => 'getFrom',
-        'subject' => 'getSubject',
-        'status' => 'getStatus',
-        'recipients' => 'getRecipients',
-        'externalReference' => 'getExternalReference'
+        'enterpriseId' => 'getEnterpriseId',
+        'isAuthority' => 'getIsAuthority'
     ];
 
     /**
@@ -217,15 +182,8 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
-        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
-        $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
-        $this->container['from'] = isset($data['from']) ? $this->createData($data['from'], 'from')  : null;
-        $this->container['subject'] = isset($data['subject']) ? $this->createData($data['subject'], 'subject')  : null;
-        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
-        $this->container['recipients'] = isset($data['recipients']) ? $this->createData($data['recipients'], 'recipients')  : null;
-        $this->container['externalReference'] = isset($data['externalReference']) ? $this->createData($data['externalReference'], 'externalReference')  : null;
+        $this->container['enterpriseId'] = isset($data['enterpriseId']) ? $this->createData($data['enterpriseId'], 'enterpriseId')  : null;
+        $this->container['isAuthority'] = isset($data['isAuthority']) ? $this->createData($data['isAuthority'], 'isAuthority')  : null;
     }
 
     /**
@@ -308,217 +266,49 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets created
-     *
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     *
-     * @param \DateTime $created The created date.
-     *
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated
-     *
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     *
-     * @param \DateTime $updated The updated date.
-     *
-     * @return $this
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id the id of the message entry
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
+     * Gets enterpriseId
      *
      * @return string
      */
-    public function getReference()
+    public function getEnterpriseId()
     {
-        return $this->container['reference'];
+        return $this->container['enterpriseId'];
     }
 
     /**
-     * Sets reference
+     * Sets enterpriseId
      *
-     * @param string $reference The message id of the email
+     * @param string $enterpriseId The enterprise ID, in the specific context of .zuerich based on current rules, is the Swiss UID/IDE/IDI.
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setEnterpriseId($enterpriseId)
     {
-        $this->container['reference'] = $reference;
+        $this->container['enterpriseId'] = $enterpriseId;
 
         return $this;
     }
 
     /**
-     * Gets from
+     * Gets isAuthority
      *
-     * @return string
+     * @return bool
      */
-    public function getFrom()
+    public function getIsAuthority()
     {
-        return $this->container['from'];
+        return $this->container['isAuthority'];
     }
 
     /**
-     * Sets from
+     * Sets isAuthority
      *
-     * @param string $from The mail from header
+     * @param bool $isAuthority Indicates whether the organization is an authority. Should be set to true if the organization is an authority.
      *
      * @return $this
      */
-    public function setFrom($from)
+    public function setIsAuthority($isAuthority)
     {
-        $this->container['from'] = $from;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string $subject the subject of the email
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return \Domainrobot\Model\DeliveryStatus
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param \Domainrobot\Model\DeliveryStatus $status the actual delivery status of the email
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets recipients
-     *
-     * @return \Domainrobot\Model\Recipient[]
-     */
-    public function getRecipients()
-    {
-        return $this->container['recipients'];
-    }
-
-    /**
-     * Sets recipients
-     *
-     * @param \Domainrobot\Model\Recipient[] $recipients the recipients of the email
-     *
-     * @return $this
-     */
-    public function setRecipients($recipients)
-    {
-        $this->container['recipients'] = $recipients;
-
-        return $this;
-    }
-
-    /**
-     * Gets externalReference
-     *
-     * @return string
-     */
-    public function getExternalReference()
-    {
-        return $this->container['externalReference'];
-    }
-
-    /**
-     * Sets externalReference
-     *
-     * @param string $externalReference The external reference of the email
-     *
-     * @return $this
-     */
-    public function setExternalReference($externalReference)
-    {
-        $this->container['externalReference'] = $externalReference;
+        $this->container['isAuthority'] = $isAuthority;
 
         return $this;
     }

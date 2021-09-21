@@ -1,6 +1,6 @@
 <?php
 /**
- * CsrHashAlgorithmConstants
+ * SocialMediaPlatform
  *
  * PHP version 5
  *
@@ -31,20 +31,27 @@ namespace Domainrobot\Model;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * CsrHashAlgorithmConstants Class Doc Comment
+ * SocialMediaPlatform Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CsrHashAlgorithmConstants
+class SocialMediaPlatform
 {
     /**
      * Possible values of this enum
      */
-    const PRIME_256_V1 = 'PRIME_256_V1';
-    const SECP_384_R1 = 'SECP_384_R1';
+    const FACEBOOK = 'FACEBOOK';
+    const TWITTER = 'TWITTER';
+    const PINTEREST = 'PINTEREST';
+    const YOUTUBE = 'YOUTUBE';
+    const TIKTOK = 'TIKTOK';
+    const GITHUB = 'GITHUB';
+    const TWITCH = 'TWITCH';
+    const VIMEO = 'VIMEO';
+    const VK = 'VK';
     
     /**
      * Gets allowable values of the enum
@@ -53,8 +60,15 @@ class CsrHashAlgorithmConstants
     public static function getAllowableEnumValues()
     {
         return [
-            self::PRIME_256_V1,
-            self::SECP_384_R1,
+            self::FACEBOOK,
+            self::TWITTER,
+            self::PINTEREST,
+            self::YOUTUBE,
+            self::TIKTOK,
+            self::GITHUB,
+            self::TWITCH,
+            self::VIMEO,
+            self::VK,
         ];
     }
 }

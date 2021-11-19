@@ -58,7 +58,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'contactType' => 'string',
-        'croNumber' => 'string',
         'supportingNumber' => 'string'
     ];
 
@@ -69,7 +68,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'contactType' => null,
-        'croNumber' => null,
         'supportingNumber' => null
     ];
 
@@ -101,7 +99,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'contactType' => 'contactType',
-        'croNumber' => 'croNumber',
         'supportingNumber' => 'supportingNumber'
     ];
 
@@ -112,7 +109,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'contactType' => 'setContactType',
-        'croNumber' => 'setCroNumber',
         'supportingNumber' => 'setSupportingNumber'
     ];
 
@@ -123,7 +119,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'contactType' => 'getContactType',
-        'croNumber' => 'getCroNumber',
         'supportingNumber' => 'getSupportingNumber'
     ];
 
@@ -188,7 +183,6 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['contactType'] = isset($data['contactType']) ? $this->createData($data['contactType'], 'contactType')  : null;
-        $this->container['croNumber'] = isset($data['croNumber']) ? $this->createData($data['croNumber'], 'croNumber')  : null;
         $this->container['supportingNumber'] = isset($data['supportingNumber']) ? $this->createData($data['supportingNumber'], 'supportingNumber')  : null;
     }
 
@@ -284,37 +278,13 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets contactType
      *
-     * @param string $contactType EPP Element = <fury:key>IE_CONTACT_TYPE Description: The contact’s Connection to Ireland (CTI) category that is used to indicate how the Registrant meets specific presence requirements. CTI category values include Charity, Company, and Other. CTI category information is mandatory if you intend to use the contact as a Registrant for a domain name. This property is only supported if you have specified that you are using the Fury 2.0 extension during your EPP login
+     * @param string $contactType Describes the connection to Ireland that is eligible for domain registration.   Possible values:  Company - for Irish companies with CRO number  Charity - is not supported by us  Other - person or organization without CRO number
      *
      * @return $this
      */
     public function setContactType($contactType)
     {
         $this->container['contactType'] = $contactType;
-
-        return $this;
-    }
-
-    /**
-     * Gets croNumber
-     *
-     * @return string
-     */
-    public function getCroNumber()
-    {
-        return $this->container['croNumber'];
-    }
-
-    /**
-     * Sets croNumber
-     *
-     * @param string $croNumber EPP Element = <fury:key>IE_CRO_NUMBER Description: The Companies Registration Office (CRO) identifier that can be used to ensure the company is in a valid state to be registering domains.
-     *
-     * @return $this
-     */
-    public function setCroNumber($croNumber)
-    {
-        $this->container['croNumber'] = $croNumber;
 
         return $this;
     }
@@ -332,7 +302,7 @@ class ContactIeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets supportingNumber
      *
-     * @param string $supportingNumber EPP Element = <fury:key>IE_SUPPORTING_NUMBER Description: The identifier for a charity or a supporting number (RBN or VAT, for example) for other contact typesn
+     * @param string $supportingNumber Can be an EU trademark number or an Irish RBN. Needed for other person or organization of type OTH (Other).  For type COM (Commercial) the company number from the general contact details is used.
      *
      * @return $this
      */

@@ -372,6 +372,9 @@ class SslContact implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'organization', the character length must be bigger than or equal to 0.";
         }
 
+        if ($this->container['country'] === null) {
+            $invalidProperties[] = "'country' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }

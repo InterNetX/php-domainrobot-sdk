@@ -81,7 +81,8 @@ class User implements ModelInterface, ArrayAccess
         'user' => 'string',
         'language' => 'string',
         'parent' => '\Domainrobot\Model\User',
-        'directCustomer' => 'bool'
+        'directCustomer' => 'bool',
+        'clientAccount' => '\Domainrobot\Model\ExternalAccounting'
     ];
 
     /**
@@ -114,7 +115,8 @@ class User implements ModelInterface, ArrayAccess
         'user' => null,
         'language' => null,
         'parent' => null,
-        'directCustomer' => null
+        'directCustomer' => null,
+        'clientAccount' => null
     ];
 
     /**
@@ -168,7 +170,8 @@ class User implements ModelInterface, ArrayAccess
         'user' => 'user',
         'language' => 'language',
         'parent' => 'parent',
-        'directCustomer' => 'directCustomer'
+        'directCustomer' => 'directCustomer',
+        'clientAccount' => 'clientAccount'
     ];
 
     /**
@@ -201,7 +204,8 @@ class User implements ModelInterface, ArrayAccess
         'user' => 'setUser',
         'language' => 'setLanguage',
         'parent' => 'setParent',
-        'directCustomer' => 'setDirectCustomer'
+        'directCustomer' => 'setDirectCustomer',
+        'clientAccount' => 'setClientAccount'
     ];
 
     /**
@@ -234,7 +238,8 @@ class User implements ModelInterface, ArrayAccess
         'user' => 'getUser',
         'language' => 'getLanguage',
         'parent' => 'getParent',
-        'directCustomer' => 'getDirectCustomer'
+        'directCustomer' => 'getDirectCustomer',
+        'clientAccount' => 'getClientAccount'
     ];
 
     /**
@@ -322,6 +327,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['parent'] = isset($data['parent']) ? $this->createData($data['parent'], 'parent')  : null;
         $this->container['directCustomer'] = isset($data['directCustomer']) ? $this->createData($data['directCustomer'], 'directCustomer')  : null;
+        $this->container['clientAccount'] = isset($data['clientAccount']) ? $this->createData($data['clientAccount'], 'clientAccount')  : null;
     }
 
     /**
@@ -1014,6 +1020,30 @@ class User implements ModelInterface, ArrayAccess
     public function setDirectCustomer($directCustomer)
     {
         $this->container['directCustomer'] = $directCustomer;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientAccount
+     *
+     * @return \Domainrobot\Model\ExternalAccounting
+     */
+    public function getClientAccount()
+    {
+        return $this->container['clientAccount'];
+    }
+
+    /**
+     * Sets clientAccount
+     *
+     * @param \Domainrobot\Model\ExternalAccounting $clientAccount The client accounting data for the user.
+     *
+     * @return $this
+     */
+    public function setClientAccount($clientAccount)
+    {
+        $this->container['clientAccount'] = $clientAccount;
 
         return $this;
     }

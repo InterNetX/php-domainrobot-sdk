@@ -79,7 +79,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'paid' => '\DateTime',
         'document' => '\Domainrobot\Model\Document',
         'comment' => 'string',
-        'extension' => '\Domainrobot\Model\Configuration'
+        'extension' => '\Domainrobot\Model\Configuration',
+        'messages' => 'string[]'
     ];
 
     /**
@@ -110,7 +111,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'paid' => 'date-time',
         'document' => null,
         'comment' => null,
-        'extension' => null
+        'extension' => null,
+        'messages' => null
     ];
 
     /**
@@ -162,7 +164,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'paid' => 'paid',
         'document' => 'document',
         'comment' => 'comment',
-        'extension' => 'extension'
+        'extension' => 'extension',
+        'messages' => 'messages'
     ];
 
     /**
@@ -193,7 +196,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'paid' => 'setPaid',
         'document' => 'setDocument',
         'comment' => 'setComment',
-        'extension' => 'setExtension'
+        'extension' => 'setExtension',
+        'messages' => 'setMessages'
     ];
 
     /**
@@ -224,7 +228,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'paid' => 'getPaid',
         'document' => 'getDocument',
         'comment' => 'getComment',
-        'extension' => 'getExtension'
+        'extension' => 'getExtension',
+        'messages' => 'getMessages'
     ];
 
     /**
@@ -310,6 +315,7 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['document'] = isset($data['document']) ? $this->createData($data['document'], 'document')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['extension'] = isset($data['extension']) ? $this->createData($data['extension'], 'extension')  : null;
+        $this->container['messages'] = isset($data['messages']) ? $this->createData($data['messages'], 'messages')  : null;
     }
 
     /**
@@ -939,6 +945,30 @@ class Invoice implements ModelInterface, ArrayAccess
     public function setExtension($extension)
     {
         $this->container['extension'] = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Gets messages
+     *
+     * @return string[]
+     */
+    public function getMessages()
+    {
+        return $this->container['messages'];
+    }
+
+    /**
+     * Sets messages
+     *
+     * @param string[] $messages messages
+     *
+     * @return $this
+     */
+    public function setMessages($messages)
+    {
+        $this->container['messages'] = $messages;
 
         return $this;
     }

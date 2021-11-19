@@ -1,6 +1,6 @@
 <?php
 /**
- * NotifyMessage
+ * ProviderEntity
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * NotifyMessage Class Doc Comment
+ * ProviderEntity Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class NotifyMessage implements ModelInterface, ArrayAccess
+class ProviderEntity implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NotifyMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'NotifyMessage';
+    protected static $swaggerModelName = 'ProviderEntity';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,10 @@ class NotifyMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'object' => '\Domainrobot\Model\ResponseObject'
+        'created' => '\DateTime',
+        'updated' => '\DateTime',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser'
     ];
 
     /**
@@ -67,8 +69,10 @@ class NotifyMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-        'object' => null
+        'created' => 'date-time',
+        'updated' => 'date-time',
+        'owner' => null,
+        'updater' => null
     ];
 
     /**
@@ -98,8 +102,10 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'object' => 'object'
+        'created' => 'created',
+        'updated' => 'updated',
+        'owner' => 'owner',
+        'updater' => 'updater'
     ];
 
     /**
@@ -108,8 +114,10 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'object' => 'setObject'
+        'created' => 'setCreated',
+        'updated' => 'setUpdated',
+        'owner' => 'setOwner',
+        'updater' => 'setUpdater'
     ];
 
     /**
@@ -118,8 +126,10 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'object' => 'getObject'
+        'created' => 'getCreated',
+        'updated' => 'getUpdated',
+        'owner' => 'getOwner',
+        'updater' => 'getUpdater'
     ];
 
     /**
@@ -182,8 +192,10 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
-        $this->container['object'] = isset($data['object']) ? $this->createData($data['object'], 'object')  : null;
+        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
+        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
+        $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
     }
 
     /**
@@ -266,49 +278,97 @@ class NotifyMessage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets created
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getType()
+    public function getCreated()
     {
-        return $this->container['type'];
+        return $this->container['created'];
     }
 
     /**
-     * Sets type
+     * Sets created
      *
-     * @param string $type The specific message type.
+     * @param \DateTime $created The created date.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setCreated($created)
     {
-        $this->container['type'] = $type;
+        $this->container['created'] = $created;
 
         return $this;
     }
 
     /**
-     * Gets object
+     * Gets updated
      *
-     * @return \Domainrobot\Model\ResponseObject
+     * @return \DateTime
      */
-    public function getObject()
+    public function getUpdated()
     {
-        return $this->container['object'];
+        return $this->container['updated'];
     }
 
     /**
-     * Sets object
+     * Sets updated
      *
-     * @param \Domainrobot\Model\ResponseObject $object The additional data object, e.g. transfer or certificate authorization data
+     * @param \DateTime $updated The updated date.
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setUpdated($updated)
     {
-        $this->container['object'] = $object;
+        $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets owner
+     *
+     * @return \Domainrobot\Model\BasicUser
+     */
+    public function getOwner()
+    {
+        return $this->container['owner'];
+    }
+
+    /**
+     * Sets owner
+     *
+     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     *
+     * @return $this
+     */
+    public function setOwner($owner)
+    {
+        $this->container['owner'] = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Gets updater
+     *
+     * @return \Domainrobot\Model\BasicUser
+     */
+    public function getUpdater()
+    {
+        return $this->container['updater'];
+    }
+
+    /**
+     * Sets updater
+     *
+     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     *
+     * @return $this
+     */
+    public function setUpdater($updater)
+    {
+        $this->container['updater'] = $updater;
 
         return $this;
     }

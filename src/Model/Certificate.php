@@ -96,7 +96,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'domain' => 'string',
         'hasCsr' => 'bool',
         'idn' => 'string',
-        'multiyear' => 'bool'
+        'multiyear' => 'bool',
+        'reissueRequired' => 'bool',
+        'reissueStatus' => 'string'
     ];
 
     /**
@@ -144,7 +146,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'domain' => null,
         'hasCsr' => null,
         'idn' => null,
-        'multiyear' => null
+        'multiyear' => null,
+        'reissueRequired' => null,
+        'reissueStatus' => null
     ];
 
     /**
@@ -213,7 +217,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'domain' => 'domain',
         'hasCsr' => 'hasCsr',
         'idn' => 'idn',
-        'multiyear' => 'multiyear'
+        'multiyear' => 'multiyear',
+        'reissueRequired' => 'reissueRequired',
+        'reissueStatus' => 'reissueStatus'
     ];
 
     /**
@@ -261,7 +267,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'domain' => 'setDomain',
         'hasCsr' => 'setHasCsr',
         'idn' => 'setIdn',
-        'multiyear' => 'setMultiyear'
+        'multiyear' => 'setMultiyear',
+        'reissueRequired' => 'setReissueRequired',
+        'reissueStatus' => 'setReissueStatus'
     ];
 
     /**
@@ -309,7 +317,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'domain' => 'getDomain',
         'hasCsr' => 'getHasCsr',
         'idn' => 'getIdn',
-        'multiyear' => 'getMultiyear'
+        'multiyear' => 'getMultiyear',
+        'reissueRequired' => 'getReissueRequired',
+        'reissueStatus' => 'getReissueStatus'
     ];
 
     /**
@@ -412,6 +422,8 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['hasCsr'] = isset($data['hasCsr']) ? $this->createData($data['hasCsr'], 'hasCsr')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['multiyear'] = isset($data['multiyear']) ? $this->createData($data['multiyear'], 'multiyear')  : null;
+        $this->container['reissueRequired'] = isset($data['reissueRequired']) ? $this->createData($data['reissueRequired'], 'reissueRequired')  : null;
+        $this->container['reissueStatus'] = isset($data['reissueStatus']) ? $this->createData($data['reissueStatus'], 'reissueStatus')  : null;
     }
 
     /**
@@ -1467,6 +1479,54 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setMultiyear($multiyear)
     {
         $this->container['multiyear'] = $multiyear;
+
+        return $this;
+    }
+
+    /**
+     * Gets reissueRequired
+     *
+     * @return bool
+     */
+    public function getReissueRequired()
+    {
+        return $this->container['reissueRequired'];
+    }
+
+    /**
+     * Sets reissueRequired
+     *
+     * @param bool $reissueRequired Defines whether a reissue is required for this certificate
+     *
+     * @return $this
+     */
+    public function setReissueRequired($reissueRequired)
+    {
+        $this->container['reissueRequired'] = $reissueRequired;
+
+        return $this;
+    }
+
+    /**
+     * Gets reissueStatus
+     *
+     * @return string
+     */
+    public function getReissueStatus()
+    {
+        return $this->container['reissueStatus'];
+    }
+
+    /**
+     * Sets reissueStatus
+     *
+     * @param string $reissueStatus Describes the status of a reissue for this certificate
+     *
+     * @return $this
+     */
+    public function setReissueStatus($reissueStatus)
+    {
+        $this->container['reissueStatus'] = $reissueStatus;
 
         return $this;
     }

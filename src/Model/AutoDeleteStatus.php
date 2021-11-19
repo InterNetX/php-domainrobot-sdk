@@ -1,6 +1,6 @@
 <?php
 /**
- * IeContactTypeConstants
+ * AutoDeleteStatus
  *
  * PHP version 5
  *
@@ -31,20 +31,32 @@ namespace Domainrobot\Model;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * IeContactTypeConstants Class Doc Comment
+ * AutoDeleteStatus Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class IeContactTypeConstants
+class AutoDeleteStatus
 {
     /**
      * Possible values of this enum
      */
-    const COM = 'COM';
-    const OTH = 'OTH';
+    const CONFIRMED = 'CONFIRMED';
+    const DELETED = 'DELETED';
+    const NOTIFY = 'NOTIFY';
+    const NOTIFY_5 = 'NOTIFY_5';
+    const NOTIFY_10 = 'NOTIFY_10';
+    const NOTIFY_15 = 'NOTIFY_15';
+    const NOTIFY_20 = 'NOTIFY_20';
+    const NOTIFY_30 = 'NOTIFY_30';
+    const NOTIFY_35 = 'NOTIFY_35';
+    const NOTIFY_45 = 'NOTIFY_45';
+    const PENDING = 'PENDING';
+    const RENEWED = 'RENEWED';
+    const RESTORED = 'RESTORED';
+    const CANCELED = 'CANCELED';
     
     /**
      * Gets allowable values of the enum
@@ -53,8 +65,20 @@ class IeContactTypeConstants
     public static function getAllowableEnumValues()
     {
         return [
-            self::COM,
-            self::OTH,
+            self::CONFIRMED,
+            self::DELETED,
+            self::NOTIFY,
+            self::NOTIFY_5,
+            self::NOTIFY_10,
+            self::NOTIFY_15,
+            self::NOTIFY_20,
+            self::NOTIFY_30,
+            self::NOTIFY_35,
+            self::NOTIFY_45,
+            self::PENDING,
+            self::RENEWED,
+            self::RESTORED,
+            self::CANCELED,
         ];
     }
 }

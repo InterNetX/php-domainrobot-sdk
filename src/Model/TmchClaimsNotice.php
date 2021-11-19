@@ -70,6 +70,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
         'confirmed' => '\DateTime',
         'confirmIP' => '\Domainrobot\Model\InetAddress',
         'status' => '\Domainrobot\Model\GenericStatusConstants',
+        'data' => 'string',
         'comment' => 'string',
         'tmchClaimsNoticeMails' => '\Domainrobot\Model\TmchClaimsNoticeMessage[]',
         'expire' => '\DateTime'
@@ -94,6 +95,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
         'confirmed' => 'date-time',
         'confirmIP' => null,
         'status' => null,
+        'data' => null,
         'comment' => null,
         'tmchClaimsNoticeMails' => null,
         'expire' => 'date-time'
@@ -139,6 +141,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
         'confirmed' => 'confirmed',
         'confirmIP' => 'confirmIP',
         'status' => 'status',
+        'data' => 'data',
         'comment' => 'comment',
         'tmchClaimsNoticeMails' => 'tmchClaimsNoticeMails',
         'expire' => 'expire'
@@ -163,6 +166,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
         'confirmed' => 'setConfirmed',
         'confirmIP' => 'setConfirmIP',
         'status' => 'setStatus',
+        'data' => 'setData',
         'comment' => 'setComment',
         'tmchClaimsNoticeMails' => 'setTmchClaimsNoticeMails',
         'expire' => 'setExpire'
@@ -187,6 +191,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
         'confirmed' => 'getConfirmed',
         'confirmIP' => 'getConfirmIP',
         'status' => 'getStatus',
+        'data' => 'getData',
         'comment' => 'getComment',
         'tmchClaimsNoticeMails' => 'getTmchClaimsNoticeMails',
         'expire' => 'getExpire'
@@ -265,6 +270,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
         $this->container['confirmed'] = isset($data['confirmed']) ? $this->createData($data['confirmed'], 'confirmed')  : null;
         $this->container['confirmIP'] = isset($data['confirmIP']) ? $this->createData($data['confirmIP'], 'confirmIP')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
+        $this->container['data'] = isset($data['data']) ? $this->createData($data['data'], 'data')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['tmchClaimsNoticeMails'] = isset($data['tmchClaimsNoticeMails']) ? $this->createData($data['tmchClaimsNoticeMails'], 'tmchClaimsNoticeMails')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
@@ -660,6 +666,30 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return string
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param string $data data
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
 
         return $this;
     }

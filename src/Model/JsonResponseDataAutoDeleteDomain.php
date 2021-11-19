@@ -1,6 +1,6 @@
 <?php
 /**
- * NotifyMessage
+ * JsonResponseDataAutoDeleteDomain
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * NotifyMessage Class Doc Comment
+ * JsonResponseDataAutoDeleteDomain Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class NotifyMessage implements ModelInterface, ArrayAccess
+class JsonResponseDataAutoDeleteDomain implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NotifyMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'NotifyMessage';
+    protected static $swaggerModelName = 'JsonResponseDataAutoDeleteDomain';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,12 @@ class NotifyMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'object' => '\Domainrobot\Model\ResponseObject'
+        'stid' => 'string',
+        'messages' => '\Domainrobot\Model\Message[]',
+        'status' => '\Domainrobot\Model\ResponseStatus',
+        'object' => '\Domainrobot\Model\ResponseObject',
+        'data' => '\Domainrobot\Model\AutoDeleteDomain[]',
+        'ctid' => 'string'
     ];
 
     /**
@@ -67,8 +71,12 @@ class NotifyMessage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-        'object' => null
+        'stid' => null,
+        'messages' => null,
+        'status' => null,
+        'object' => null,
+        'data' => null,
+        'ctid' => null
     ];
 
     /**
@@ -98,8 +106,12 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'object' => 'object'
+        'stid' => 'stid',
+        'messages' => 'messages',
+        'status' => 'status',
+        'object' => 'object',
+        'data' => 'data',
+        'ctid' => 'ctid'
     ];
 
     /**
@@ -108,8 +120,12 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'object' => 'setObject'
+        'stid' => 'setStid',
+        'messages' => 'setMessages',
+        'status' => 'setStatus',
+        'object' => 'setObject',
+        'data' => 'setData',
+        'ctid' => 'setCtid'
     ];
 
     /**
@@ -118,8 +134,12 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'object' => 'getObject'
+        'stid' => 'getStid',
+        'messages' => 'getMessages',
+        'status' => 'getStatus',
+        'object' => 'getObject',
+        'data' => 'getData',
+        'ctid' => 'getCtid'
     ];
 
     /**
@@ -182,8 +202,12 @@ class NotifyMessage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
+        $this->container['stid'] = isset($data['stid']) ? $this->createData($data['stid'], 'stid')  : null;
+        $this->container['messages'] = isset($data['messages']) ? $this->createData($data['messages'], 'messages')  : null;
+        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['object'] = isset($data['object']) ? $this->createData($data['object'], 'object')  : null;
+        $this->container['data'] = isset($data['data']) ? $this->createData($data['data'], 'data')  : null;
+        $this->container['ctid'] = isset($data['ctid']) ? $this->createData($data['ctid'], 'ctid')  : null;
     }
 
     /**
@@ -266,25 +290,73 @@ class NotifyMessage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets stid
      *
      * @return string
      */
-    public function getType()
+    public function getStid()
     {
-        return $this->container['type'];
+        return $this->container['stid'];
     }
 
     /**
-     * Sets type
+     * Sets stid
      *
-     * @param string $type The specific message type.
+     * @param string $stid The server transaction id for the response.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setStid($stid)
     {
-        $this->container['type'] = $type;
+        $this->container['stid'] = $stid;
+
+        return $this;
+    }
+
+    /**
+     * Gets messages
+     *
+     * @return \Domainrobot\Model\Message[]
+     */
+    public function getMessages()
+    {
+        return $this->container['messages'];
+    }
+
+    /**
+     * Sets messages
+     *
+     * @param \Domainrobot\Model\Message[] $messages The messages belonging to the response.
+     *
+     * @return $this
+     */
+    public function setMessages($messages)
+    {
+        $this->container['messages'] = $messages;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return \Domainrobot\Model\ResponseStatus
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param \Domainrobot\Model\ResponseStatus $status The status of the response.
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -302,13 +374,61 @@ class NotifyMessage implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \Domainrobot\Model\ResponseObject $object The additional data object, e.g. transfer or certificate authorization data
+     * @param \Domainrobot\Model\ResponseObject $object The object of the response.
      *
      * @return $this
      */
     public function setObject($object)
     {
         $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return \Domainrobot\Model\AutoDeleteDomain[]
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \Domainrobot\Model\AutoDeleteDomain[] $data The data for the response. The type of the objects are depending on the request and are also specified in the responseObject value of the response.
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets ctid
+     *
+     * @return string
+     */
+    public function getCtid()
+    {
+        return $this->container['ctid'];
+    }
+
+    /**
+     * Sets ctid
+     *
+     * @param string $ctid The client transaction id for the response.
+     *
+     * @return $this
+     */
+    public function setCtid($ctid)
+    {
+        $this->container['ctid'] = $ctid;
 
         return $this;
     }

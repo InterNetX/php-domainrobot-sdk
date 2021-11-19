@@ -1,6 +1,6 @@
 <?php
 /**
- * IeContactTypeConstants
+ * PriceRounding
  *
  * PHP version 5
  *
@@ -31,20 +31,23 @@ namespace Domainrobot\Model;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * IeContactTypeConstants Class Doc Comment
+ * PriceRounding Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class IeContactTypeConstants
+class PriceRounding
 {
     /**
      * Possible values of this enum
      */
-    const COM = 'COM';
-    const OTH = 'OTH';
+    const NONE = 'NONE';
+    const ROUND_X0 = 'ROUND_X0';
+    const ROUND_00 = 'ROUND_00';
+    const ROUND_X9 = 'ROUND_X9';
+    const ROUND_99 = 'ROUND_99';
     
     /**
      * Gets allowable values of the enum
@@ -53,8 +56,11 @@ class IeContactTypeConstants
     public static function getAllowableEnumValues()
     {
         return [
-            self::COM,
-            self::OTH,
+            self::NONE,
+            self::ROUND_X0,
+            self::ROUND_00,
+            self::ROUND_X9,
+            self::ROUND_99,
         ];
     }
 }

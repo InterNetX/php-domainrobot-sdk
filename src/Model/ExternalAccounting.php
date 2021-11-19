@@ -1,6 +1,6 @@
 <?php
 /**
- * VirtualNameServerGroup
+ * ExternalAccounting
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * VirtualNameServerGroup Class Doc Comment
+ * ExternalAccounting Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class VirtualNameServerGroup implements ModelInterface, ArrayAccess
+class ExternalAccounting implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'VirtualNameServerGroup';
+    protected static $swaggerModelName = 'ExternalAccounting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,11 +61,20 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
-        'name' => 'string',
-        'useDefaultIps' => 'bool',
-        'nameServers' => '\Domainrobot\Model\VirtualNameServer[]',
-        'id' => 'int',
-        'systemNameServerGroup' => '\Domainrobot\Model\PhysicalNameServerGroup'
+        'provider' => '\Domainrobot\Model\ProviderEntity',
+        'label' => 'string',
+        'reportTo' => 'string',
+        'priceType' => '\Domainrobot\Model\PriceTypeConstants',
+        'priceMarkupType' => '\Domainrobot\Model\PriceMarkupType',
+        'priceMarkup' => 'double',
+        'priceRounding' => '\Domainrobot\Model\PriceRounding',
+        'currency' => 'string',
+        'country' => 'string',
+        'creditorIdentifier' => 'string',
+        'customerNumberMin' => 'int',
+        'customerNumberMax' => 'int',
+        'creditLimit' => 'double',
+        'discount' => 'int'
     ];
 
     /**
@@ -78,11 +87,20 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'owner' => null,
         'updater' => null,
-        'name' => null,
-        'useDefaultIps' => null,
-        'nameServers' => null,
-        'id' => 'int32',
-        'systemNameServerGroup' => null
+        'provider' => null,
+        'label' => null,
+        'reportTo' => null,
+        'priceType' => null,
+        'priceMarkupType' => null,
+        'priceMarkup' => 'double',
+        'priceRounding' => null,
+        'currency' => null,
+        'country' => null,
+        'creditorIdentifier' => null,
+        'customerNumberMin' => 'int64',
+        'customerNumberMax' => 'int64',
+        'creditLimit' => 'double',
+        'discount' => 'int32'
     ];
 
     /**
@@ -116,11 +134,20 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'owner' => 'owner',
         'updater' => 'updater',
-        'name' => 'name',
-        'useDefaultIps' => 'useDefaultIps',
-        'nameServers' => 'nameServers',
-        'id' => 'id',
-        'systemNameServerGroup' => 'systemNameServerGroup'
+        'provider' => 'provider',
+        'label' => 'label',
+        'reportTo' => 'reportTo',
+        'priceType' => 'priceType',
+        'priceMarkupType' => 'priceMarkupType',
+        'priceMarkup' => 'priceMarkup',
+        'priceRounding' => 'priceRounding',
+        'currency' => 'currency',
+        'country' => 'country',
+        'creditorIdentifier' => 'creditorIdentifier',
+        'customerNumberMin' => 'customerNumberMin',
+        'customerNumberMax' => 'customerNumberMax',
+        'creditLimit' => 'creditLimit',
+        'discount' => 'discount'
     ];
 
     /**
@@ -133,11 +160,20 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
-        'name' => 'setName',
-        'useDefaultIps' => 'setUseDefaultIps',
-        'nameServers' => 'setNameServers',
-        'id' => 'setId',
-        'systemNameServerGroup' => 'setSystemNameServerGroup'
+        'provider' => 'setProvider',
+        'label' => 'setLabel',
+        'reportTo' => 'setReportTo',
+        'priceType' => 'setPriceType',
+        'priceMarkupType' => 'setPriceMarkupType',
+        'priceMarkup' => 'setPriceMarkup',
+        'priceRounding' => 'setPriceRounding',
+        'currency' => 'setCurrency',
+        'country' => 'setCountry',
+        'creditorIdentifier' => 'setCreditorIdentifier',
+        'customerNumberMin' => 'setCustomerNumberMin',
+        'customerNumberMax' => 'setCustomerNumberMax',
+        'creditLimit' => 'setCreditLimit',
+        'discount' => 'setDiscount'
     ];
 
     /**
@@ -150,11 +186,20 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
-        'name' => 'getName',
-        'useDefaultIps' => 'getUseDefaultIps',
-        'nameServers' => 'getNameServers',
-        'id' => 'getId',
-        'systemNameServerGroup' => 'getSystemNameServerGroup'
+        'provider' => 'getProvider',
+        'label' => 'getLabel',
+        'reportTo' => 'getReportTo',
+        'priceType' => 'getPriceType',
+        'priceMarkupType' => 'getPriceMarkupType',
+        'priceMarkup' => 'getPriceMarkup',
+        'priceRounding' => 'getPriceRounding',
+        'currency' => 'getCurrency',
+        'country' => 'getCountry',
+        'creditorIdentifier' => 'getCreditorIdentifier',
+        'customerNumberMin' => 'getCustomerNumberMin',
+        'customerNumberMax' => 'getCustomerNumberMax',
+        'creditLimit' => 'getCreditLimit',
+        'discount' => 'getDiscount'
     ];
 
     /**
@@ -221,11 +266,20 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['useDefaultIps'] = isset($data['useDefaultIps']) ? $this->createData($data['useDefaultIps'], 'useDefaultIps')  : null;
-        $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
-        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
-        $this->container['systemNameServerGroup'] = isset($data['systemNameServerGroup']) ? $this->createData($data['systemNameServerGroup'], 'systemNameServerGroup')  : null;
+        $this->container['provider'] = isset($data['provider']) ? $this->createData($data['provider'], 'provider')  : null;
+        $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
+        $this->container['reportTo'] = isset($data['reportTo']) ? $this->createData($data['reportTo'], 'reportTo')  : null;
+        $this->container['priceType'] = isset($data['priceType']) ? $this->createData($data['priceType'], 'priceType')  : null;
+        $this->container['priceMarkupType'] = isset($data['priceMarkupType']) ? $this->createData($data['priceMarkupType'], 'priceMarkupType')  : null;
+        $this->container['priceMarkup'] = isset($data['priceMarkup']) ? $this->createData($data['priceMarkup'], 'priceMarkup')  : null;
+        $this->container['priceRounding'] = isset($data['priceRounding']) ? $this->createData($data['priceRounding'], 'priceRounding')  : null;
+        $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
+        $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
+        $this->container['creditorIdentifier'] = isset($data['creditorIdentifier']) ? $this->createData($data['creditorIdentifier'], 'creditorIdentifier')  : null;
+        $this->container['customerNumberMin'] = isset($data['customerNumberMin']) ? $this->createData($data['customerNumberMin'], 'customerNumberMin')  : null;
+        $this->container['customerNumberMax'] = isset($data['customerNumberMax']) ? $this->createData($data['customerNumberMax'], 'customerNumberMax')  : null;
+        $this->container['creditLimit'] = isset($data['creditLimit']) ? $this->createData($data['creditLimit'], 'creditLimit')  : null;
+        $this->container['discount'] = isset($data['discount']) ? $this->createData($data['discount'], 'discount')  : null;
     }
 
     /**
@@ -292,13 +346,6 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['name']) && !preg_match("/(?i)\\b(?!default\\b)\\w+/", $this->container['name'])) {
-            $invalidProperties[] = "invalid value for 'name', must be conform to the pattern /(?i)\\b(?!default\\b)\\w+/.";
-        }
-
-        if ($this->container['systemNameServerGroup'] === null) {
-            $invalidProperties[] = "'systemNameServerGroup' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -411,126 +458,337 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name
+     * Gets provider
+     *
+     * @return \Domainrobot\Model\ProviderEntity
+     */
+    public function getProvider()
+    {
+        return $this->container['provider'];
+    }
+
+    /**
+     * Sets provider
+     *
+     * @param \Domainrobot\Model\ProviderEntity $provider The provider of the external_accounting
+     *
+     * @return $this
+     */
+    public function setProvider($provider)
+    {
+        $this->container['provider'] = $provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets label
      *
      * @return string
      */
-    public function getName()
+    public function getLabel()
     {
-        return $this->container['name'];
+        return $this->container['label'];
     }
 
     /**
-     * Sets name
+     * Sets label
      *
-     * @param string $name The custom label for the group
+     * @param string $label The label to identify the provider
      *
      * @return $this
      */
-    public function setName($name)
+    public function setLabel($label)
     {
-
-        if (!is_null($name) && (!preg_match("/(?i)\\b(?!default\\b)\\w+/", $name))) {
-            throw new \InvalidArgumentException("invalid value for $name when calling VirtualNameServerGroup., must conform to the pattern /(?i)\\b(?!default\\b)\\w+/.");
-        }
-
-        $this->container['name'] = $name;
+        $this->container['label'] = $label;
 
         return $this;
     }
 
     /**
-     * Gets useDefaultIps
+     * Gets reportTo
      *
-     * @return bool
+     * @return string
      */
-    public function getUseDefaultIps()
+    public function getReportTo()
     {
-        return $this->container['useDefaultIps'];
+        return $this->container['reportTo'];
     }
 
     /**
-     * Sets useDefaultIps
+     * Sets reportTo
      *
-     * @param bool $useDefaultIps The useDefaultIps
+     * @param string $reportTo The email address for reporting
      *
      * @return $this
      */
-    public function setUseDefaultIps($useDefaultIps)
+    public function setReportTo($reportTo)
     {
-        $this->container['useDefaultIps'] = $useDefaultIps;
+        $this->container['reportTo'] = $reportTo;
 
         return $this;
     }
 
     /**
-     * Gets nameServers
+     * Gets priceType
      *
-     * @return \Domainrobot\Model\VirtualNameServer[]
+     * @return \Domainrobot\Model\PriceTypeConstants
      */
-    public function getNameServers()
+    public function getPriceType()
     {
-        return $this->container['nameServers'];
+        return $this->container['priceType'];
     }
 
     /**
-     * Sets nameServers
+     * Sets priceType
      *
-     * @param \Domainrobot\Model\VirtualNameServer[] $nameServers The name servers of the group.
+     * @param \Domainrobot\Model\PriceTypeConstants $priceType The price type
      *
      * @return $this
      */
-    public function setNameServers($nameServers)
+    public function setPriceType($priceType)
     {
-        $this->container['nameServers'] = $nameServers;
+        $this->container['priceType'] = $priceType;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets priceMarkupType
+     *
+     * @return \Domainrobot\Model\PriceMarkupType
+     */
+    public function getPriceMarkupType()
+    {
+        return $this->container['priceMarkupType'];
+    }
+
+    /**
+     * Sets priceMarkupType
+     *
+     * @param \Domainrobot\Model\PriceMarkupType $priceMarkupType The type of markup
+     *
+     * @return $this
+     */
+    public function setPriceMarkupType($priceMarkupType)
+    {
+        $this->container['priceMarkupType'] = $priceMarkupType;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceMarkup
+     *
+     * @return double
+     */
+    public function getPriceMarkup()
+    {
+        return $this->container['priceMarkup'];
+    }
+
+    /**
+     * Sets priceMarkup
+     *
+     * @param double $priceMarkup markup value in percent or absolute
+     *
+     * @return $this
+     */
+    public function setPriceMarkup($priceMarkup)
+    {
+        $this->container['priceMarkup'] = $priceMarkup;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceRounding
+     *
+     * @return \Domainrobot\Model\PriceRounding
+     */
+    public function getPriceRounding()
+    {
+        return $this->container['priceRounding'];
+    }
+
+    /**
+     * Sets priceRounding
+     *
+     * @param \Domainrobot\Model\PriceRounding $priceRounding The type of rounding
+     *
+     * @return $this
+     */
+    public function setPriceRounding($priceRounding)
+    {
+        $this->container['priceRounding'] = $priceRounding;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Used currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string $country Used country. Needed for calculation of taxes
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets creditorIdentifier
+     *
+     * @return string
+     */
+    public function getCreditorIdentifier()
+    {
+        return $this->container['creditorIdentifier'];
+    }
+
+    /**
+     * Sets creditorIdentifier
+     *
+     * @param string $creditorIdentifier The creditor identifier
+     *
+     * @return $this
+     */
+    public function setCreditorIdentifier($creditorIdentifier)
+    {
+        $this->container['creditorIdentifier'] = $creditorIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerNumberMin
      *
      * @return int
      */
-    public function getId()
+    public function getCustomerNumberMin()
     {
-        return $this->container['id'];
+        return $this->container['customerNumberMin'];
     }
 
     /**
-     * Sets id
+     * Sets customerNumberMin
      *
-     * @param int $id The unique id of the nsVirtualGroup
+     * @param int $customerNumberMin The lower end of the generated customer group numbers
      *
      * @return $this
      */
-    public function setId($id)
+    public function setCustomerNumberMin($customerNumberMin)
     {
-        $this->container['id'] = $id;
+        $this->container['customerNumberMin'] = $customerNumberMin;
 
         return $this;
     }
 
     /**
-     * Gets systemNameServerGroup
+     * Gets customerNumberMax
      *
-     * @return \Domainrobot\Model\PhysicalNameServerGroup
+     * @return int
      */
-    public function getSystemNameServerGroup()
+    public function getCustomerNumberMax()
     {
-        return $this->container['systemNameServerGroup'];
+        return $this->container['customerNumberMax'];
     }
 
     /**
-     * Sets systemNameServerGroup
+     * Sets customerNumberMax
      *
-     * @param \Domainrobot\Model\PhysicalNameServerGroup $systemNameServerGroup The custom label for the group
+     * @param int $customerNumberMax The upper end of the generated customer group numbers
      *
      * @return $this
      */
-    public function setSystemNameServerGroup($systemNameServerGroup)
+    public function setCustomerNumberMax($customerNumberMax)
     {
-        $this->container['systemNameServerGroup'] = $systemNameServerGroup;
+        $this->container['customerNumberMax'] = $customerNumberMax;
+
+        return $this;
+    }
+
+    /**
+     * Gets creditLimit
+     *
+     * @return double
+     */
+    public function getCreditLimit()
+    {
+        return $this->container['creditLimit'];
+    }
+
+    /**
+     * Sets creditLimit
+     *
+     * @param double $creditLimit The creditLimit for the customer of the accounting
+     *
+     * @return $this
+     */
+    public function setCreditLimit($creditLimit)
+    {
+        $this->container['creditLimit'] = $creditLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets discount
+     *
+     * @return int
+     */
+    public function getDiscount()
+    {
+        return $this->container['discount'];
+    }
+
+    /**
+     * Sets discount
+     *
+     * @param int $discount The discount for the customer of the accounting
+     *
+     * @return $this
+     */
+    public function setDiscount($discount)
+    {
+        $this->container['discount'] = $discount;
 
         return $this;
     }

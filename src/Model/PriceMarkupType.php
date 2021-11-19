@@ -1,6 +1,6 @@
 <?php
 /**
- * IeContactTypeConstants
+ * PriceMarkupType
  *
  * PHP version 5
  *
@@ -31,20 +31,20 @@ namespace Domainrobot\Model;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * IeContactTypeConstants Class Doc Comment
+ * PriceMarkupType Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class IeContactTypeConstants
+class PriceMarkupType
 {
     /**
      * Possible values of this enum
      */
-    const COM = 'COM';
-    const OTH = 'OTH';
+    const PERCENT = 'PERCENT';
+    const ABSOLUTE = 'ABSOLUTE';
     
     /**
      * Gets allowable values of the enum
@@ -53,8 +53,8 @@ class IeContactTypeConstants
     public static function getAllowableEnumValues()
     {
         return [
-            self::COM,
-            self::OTH,
+            self::PERCENT,
+            self::ABSOLUTE,
         ];
     }
 }

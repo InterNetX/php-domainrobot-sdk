@@ -72,7 +72,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'state' => 'string',
         'country' => 'string',
         'phone' => 'string',
-        'fax' => '\Domainrobot\Model\Phone',
+        'fax' => 'string',
         'emails' => 'string[]',
         'billingEmails' => 'string[]',
         'contacts' => '\Domainrobot\Model\BasicCustomerContact[]',
@@ -929,7 +929,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Gets fax
      *
-     * @return \Domainrobot\Model\Phone
+     * @return string
      */
     public function getFax()
     {
@@ -939,7 +939,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets fax
      *
-     * @param \Domainrobot\Model\Phone $fax The fax number.
+     * @param string $fax The fax number of the customer
      *
      * @return $this
      */

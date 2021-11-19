@@ -58,7 +58,8 @@ class CertAuthenticationStatus implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'status' => '\Domainrobot\Model\AuthenticateStatus',
-        'step' => '\Domainrobot\Model\AuthenticationStep'
+        'step' => '\Domainrobot\Model\AuthenticationStep',
+        'updated' => '\DateTime'
     ];
 
     /**
@@ -68,7 +69,8 @@ class CertAuthenticationStatus implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'status' => null,
-        'step' => null
+        'step' => null,
+        'updated' => 'date-time'
     ];
 
     /**
@@ -99,7 +101,8 @@ class CertAuthenticationStatus implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'status' => 'status',
-        'step' => 'step'
+        'step' => 'step',
+        'updated' => 'updated'
     ];
 
     /**
@@ -109,7 +112,8 @@ class CertAuthenticationStatus implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'status' => 'setStatus',
-        'step' => 'setStep'
+        'step' => 'setStep',
+        'updated' => 'setUpdated'
     ];
 
     /**
@@ -119,7 +123,8 @@ class CertAuthenticationStatus implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'status' => 'getStatus',
-        'step' => 'getStep'
+        'step' => 'getStep',
+        'updated' => 'getUpdated'
     ];
 
     /**
@@ -184,6 +189,7 @@ class CertAuthenticationStatus implements ModelInterface, ArrayAccess
     {
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['step'] = isset($data['step']) ? $this->createData($data['step'], 'step')  : null;
+        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
     }
 
     /**
@@ -309,6 +315,30 @@ class CertAuthenticationStatus implements ModelInterface, ArrayAccess
     public function setStep($step)
     {
         $this->container['step'] = $step;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     *
+     * @param \DateTime $updated The date of the last modification
+     *
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

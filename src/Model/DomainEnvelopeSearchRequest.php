@@ -66,7 +66,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'sources' => '\Domainrobot\Model\DomainStudioSources',
         'clientIp' => 'string',
         'onlyAvailable' => 'bool',
-        'whoisTimeout' => 'int'
+        'whoisTimeout' => 'int',
+        'ignorePremium' => 'bool',
+        'ignoreMarket' => 'bool'
     ];
 
     /**
@@ -84,7 +86,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'sources' => null,
         'clientIp' => null,
         'onlyAvailable' => null,
-        'whoisTimeout' => 'int32'
+        'whoisTimeout' => 'int32',
+        'ignorePremium' => null,
+        'ignoreMarket' => null
     ];
 
     /**
@@ -123,7 +127,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'sources' => 'sources',
         'clientIp' => 'clientIp',
         'onlyAvailable' => 'onlyAvailable',
-        'whoisTimeout' => 'whoisTimeout'
+        'whoisTimeout' => 'whoisTimeout',
+        'ignorePremium' => 'ignorePremium',
+        'ignoreMarket' => 'ignoreMarket'
     ];
 
     /**
@@ -141,7 +147,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'sources' => 'setSources',
         'clientIp' => 'setClientIp',
         'onlyAvailable' => 'setOnlyAvailable',
-        'whoisTimeout' => 'setWhoisTimeout'
+        'whoisTimeout' => 'setWhoisTimeout',
+        'ignorePremium' => 'setIgnorePremium',
+        'ignoreMarket' => 'setIgnoreMarket'
     ];
 
     /**
@@ -159,7 +167,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'sources' => 'getSources',
         'clientIp' => 'getClientIp',
         'onlyAvailable' => 'getOnlyAvailable',
-        'whoisTimeout' => 'getWhoisTimeout'
+        'whoisTimeout' => 'getWhoisTimeout',
+        'ignorePremium' => 'getIgnorePremium',
+        'ignoreMarket' => 'getIgnoreMarket'
     ];
 
     /**
@@ -232,6 +242,8 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         $this->container['clientIp'] = isset($data['clientIp']) ? $this->createData($data['clientIp'], 'clientIp')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
         $this->container['whoisTimeout'] = isset($data['whoisTimeout']) ? $this->createData($data['whoisTimeout'], 'whoisTimeout')  : null;
+        $this->container['ignorePremium'] = isset($data['ignorePremium']) ? $this->createData($data['ignorePremium'], 'ignorePremium')  : null;
+        $this->container['ignoreMarket'] = isset($data['ignoreMarket']) ? $this->createData($data['ignoreMarket'], 'ignoreMarket')  : null;
     }
 
     /**
@@ -549,6 +561,54 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     public function setWhoisTimeout($whoisTimeout)
     {
         $this->container['whoisTimeout'] = $whoisTimeout;
+
+        return $this;
+    }
+
+    /**
+     * Gets ignorePremium
+     *
+     * @return bool
+     */
+    public function getIgnorePremium()
+    {
+        return $this->container['ignorePremium'];
+    }
+
+    /**
+     * Sets ignorePremium
+     *
+     * @param bool $ignorePremium If set to true, the inital, recommended, geo, custom and suggestion sources are filtered for premium domains. This can result in empty lists!
+     *
+     * @return $this
+     */
+    public function setIgnorePremium($ignorePremium)
+    {
+        $this->container['ignorePremium'] = $ignorePremium;
+
+        return $this;
+    }
+
+    /**
+     * Gets ignoreMarket
+     *
+     * @return bool
+     */
+    public function getIgnoreMarket()
+    {
+        return $this->container['ignoreMarket'];
+    }
+
+    /**
+     * Sets ignoreMarket
+     *
+     * @param bool $ignoreMarket If set to true, the inital, recommended, geo, custom  and suggestion sources are filtered for market domains. This can result in empty lists!
+     *
+     * @return $this
+     */
+    public function setIgnoreMarket($ignoreMarket)
+    {
+        $this->container['ignoreMarket'] = $ignoreMarket;
 
         return $this;
     }

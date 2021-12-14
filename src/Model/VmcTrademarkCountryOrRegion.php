@@ -1,6 +1,6 @@
 <?php
 /**
- * CertificateType
+ * VmcTrademarkCountryOrRegion
  *
  * PHP version 5
  *
@@ -31,23 +31,26 @@ namespace Domainrobot\Model;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * CertificateType Class Doc Comment
+ * VmcTrademarkCountryOrRegion Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CertificateType
+class VmcTrademarkCountryOrRegion
 {
     /**
      * Possible values of this enum
      */
-    const FQDN = 'FQDN';
-    const MAIL = 'MAIL';
-    const CODE = 'CODE';
-    const DOCUMENT = 'DOCUMENT';
-    const VMC = 'VMC';
+    const US = 'US';
+    const CA = 'CA';
+    const EM = 'EM';
+    const GB = 'GB';
+    const DE = 'DE';
+    const JP = 'JP';
+    const AU = 'AU';
+    const ES = 'ES';
     
     /**
      * Gets allowable values of the enum
@@ -56,11 +59,14 @@ class CertificateType
     public static function getAllowableEnumValues()
     {
         return [
-            self::FQDN,
-            self::MAIL,
-            self::CODE,
-            self::DOCUMENT,
-            self::VMC,
+            self::US,
+            self::CA,
+            self::EM,
+            self::GB,
+            self::DE,
+            self::JP,
+            self::AU,
+            self::ES,
         ];
     }
 }

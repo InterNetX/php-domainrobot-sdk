@@ -1,6 +1,6 @@
 <?php
 /**
- * ExternalAccounting
+ * DomainPremium
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ExternalAccounting Class Doc Comment
+ * DomainPremium Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ExternalAccounting implements ModelInterface, ArrayAccess
+class DomainPremium implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExternalAccounting';
+    protected static $swaggerModelName = 'DomainPremium';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,22 +61,16 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
-        'provider' => '\Domainrobot\Model\ProviderEntity',
-        'label' => 'string',
-        'reportTo' => 'string',
-        'priceType' => '\Domainrobot\Model\PriceTypeConstants',
-        'priceMarkupType' => '\Domainrobot\Model\PriceMarkupType',
-        'priceMarkup' => 'double',
-        'priceRounding' => '\Domainrobot\Model\PriceRounding',
+        'name' => 'string',
+        'idn' => 'string',
+        'priceClass' => 'string',
+        'priceClassRenew' => 'string',
+        'price' => 'double',
         'currency' => 'string',
-        'country' => 'string',
-        'creditorIdentifier' => 'string',
-        'customerNumberMin' => 'int',
-        'customerNumberMax' => 'int',
-        'creditLimit' => 'double',
-        'discount' => 'int',
-        'priceListSyncStatus' => '\Domainrobot\Model\GenericStatusConstants',
-        'priceListSync' => '\DateTime'
+        'provider' => 'string',
+        'configuration' => '\Domainrobot\Model\Configuration',
+        'metric' => '\Domainrobot\Model\Metric',
+        'premiumStatus' => '\Domainrobot\Model\PremiumStatusConstants'
     ];
 
     /**
@@ -89,22 +83,16 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'owner' => null,
         'updater' => null,
-        'provider' => null,
-        'label' => null,
-        'reportTo' => null,
-        'priceType' => null,
-        'priceMarkupType' => null,
-        'priceMarkup' => 'double',
-        'priceRounding' => null,
+        'name' => null,
+        'idn' => null,
+        'priceClass' => null,
+        'priceClassRenew' => null,
+        'price' => 'double',
         'currency' => null,
-        'country' => null,
-        'creditorIdentifier' => null,
-        'customerNumberMin' => 'int64',
-        'customerNumberMax' => 'int64',
-        'creditLimit' => 'double',
-        'discount' => 'int32',
-        'priceListSyncStatus' => null,
-        'priceListSync' => 'date-time'
+        'provider' => null,
+        'configuration' => null,
+        'metric' => null,
+        'premiumStatus' => null
     ];
 
     /**
@@ -138,22 +126,16 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'owner' => 'owner',
         'updater' => 'updater',
-        'provider' => 'provider',
-        'label' => 'label',
-        'reportTo' => 'reportTo',
-        'priceType' => 'priceType',
-        'priceMarkupType' => 'priceMarkupType',
-        'priceMarkup' => 'priceMarkup',
-        'priceRounding' => 'priceRounding',
+        'name' => 'name',
+        'idn' => 'idn',
+        'priceClass' => 'priceClass',
+        'priceClassRenew' => 'priceClassRenew',
+        'price' => 'price',
         'currency' => 'currency',
-        'country' => 'country',
-        'creditorIdentifier' => 'creditorIdentifier',
-        'customerNumberMin' => 'customerNumberMin',
-        'customerNumberMax' => 'customerNumberMax',
-        'creditLimit' => 'creditLimit',
-        'discount' => 'discount',
-        'priceListSyncStatus' => 'priceListSyncStatus',
-        'priceListSync' => 'priceListSync'
+        'provider' => 'provider',
+        'configuration' => 'configuration',
+        'metric' => 'metric',
+        'premiumStatus' => 'premiumStatus'
     ];
 
     /**
@@ -166,22 +148,16 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
-        'provider' => 'setProvider',
-        'label' => 'setLabel',
-        'reportTo' => 'setReportTo',
-        'priceType' => 'setPriceType',
-        'priceMarkupType' => 'setPriceMarkupType',
-        'priceMarkup' => 'setPriceMarkup',
-        'priceRounding' => 'setPriceRounding',
+        'name' => 'setName',
+        'idn' => 'setIdn',
+        'priceClass' => 'setPriceClass',
+        'priceClassRenew' => 'setPriceClassRenew',
+        'price' => 'setPrice',
         'currency' => 'setCurrency',
-        'country' => 'setCountry',
-        'creditorIdentifier' => 'setCreditorIdentifier',
-        'customerNumberMin' => 'setCustomerNumberMin',
-        'customerNumberMax' => 'setCustomerNumberMax',
-        'creditLimit' => 'setCreditLimit',
-        'discount' => 'setDiscount',
-        'priceListSyncStatus' => 'setPriceListSyncStatus',
-        'priceListSync' => 'setPriceListSync'
+        'provider' => 'setProvider',
+        'configuration' => 'setConfiguration',
+        'metric' => 'setMetric',
+        'premiumStatus' => 'setPremiumStatus'
     ];
 
     /**
@@ -194,22 +170,16 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
-        'provider' => 'getProvider',
-        'label' => 'getLabel',
-        'reportTo' => 'getReportTo',
-        'priceType' => 'getPriceType',
-        'priceMarkupType' => 'getPriceMarkupType',
-        'priceMarkup' => 'getPriceMarkup',
-        'priceRounding' => 'getPriceRounding',
+        'name' => 'getName',
+        'idn' => 'getIdn',
+        'priceClass' => 'getPriceClass',
+        'priceClassRenew' => 'getPriceClassRenew',
+        'price' => 'getPrice',
         'currency' => 'getCurrency',
-        'country' => 'getCountry',
-        'creditorIdentifier' => 'getCreditorIdentifier',
-        'customerNumberMin' => 'getCustomerNumberMin',
-        'customerNumberMax' => 'getCustomerNumberMax',
-        'creditLimit' => 'getCreditLimit',
-        'discount' => 'getDiscount',
-        'priceListSyncStatus' => 'getPriceListSyncStatus',
-        'priceListSync' => 'getPriceListSync'
+        'provider' => 'getProvider',
+        'configuration' => 'getConfiguration',
+        'metric' => 'getMetric',
+        'premiumStatus' => 'getPremiumStatus'
     ];
 
     /**
@@ -276,22 +246,16 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['provider'] = isset($data['provider']) ? $this->createData($data['provider'], 'provider')  : null;
-        $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
-        $this->container['reportTo'] = isset($data['reportTo']) ? $this->createData($data['reportTo'], 'reportTo')  : null;
-        $this->container['priceType'] = isset($data['priceType']) ? $this->createData($data['priceType'], 'priceType')  : null;
-        $this->container['priceMarkupType'] = isset($data['priceMarkupType']) ? $this->createData($data['priceMarkupType'], 'priceMarkupType')  : null;
-        $this->container['priceMarkup'] = isset($data['priceMarkup']) ? $this->createData($data['priceMarkup'], 'priceMarkup')  : null;
-        $this->container['priceRounding'] = isset($data['priceRounding']) ? $this->createData($data['priceRounding'], 'priceRounding')  : null;
+        $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
+        $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
+        $this->container['priceClass'] = isset($data['priceClass']) ? $this->createData($data['priceClass'], 'priceClass')  : null;
+        $this->container['priceClassRenew'] = isset($data['priceClassRenew']) ? $this->createData($data['priceClassRenew'], 'priceClassRenew')  : null;
+        $this->container['price'] = isset($data['price']) ? $this->createData($data['price'], 'price')  : null;
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
-        $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
-        $this->container['creditorIdentifier'] = isset($data['creditorIdentifier']) ? $this->createData($data['creditorIdentifier'], 'creditorIdentifier')  : null;
-        $this->container['customerNumberMin'] = isset($data['customerNumberMin']) ? $this->createData($data['customerNumberMin'], 'customerNumberMin')  : null;
-        $this->container['customerNumberMax'] = isset($data['customerNumberMax']) ? $this->createData($data['customerNumberMax'], 'customerNumberMax')  : null;
-        $this->container['creditLimit'] = isset($data['creditLimit']) ? $this->createData($data['creditLimit'], 'creditLimit')  : null;
-        $this->container['discount'] = isset($data['discount']) ? $this->createData($data['discount'], 'discount')  : null;
-        $this->container['priceListSyncStatus'] = isset($data['priceListSyncStatus']) ? $this->createData($data['priceListSyncStatus'], 'priceListSyncStatus')  : null;
-        $this->container['priceListSync'] = isset($data['priceListSync']) ? $this->createData($data['priceListSync'], 'priceListSync')  : null;
+        $this->container['provider'] = isset($data['provider']) ? $this->createData($data['provider'], 'provider')  : null;
+        $this->container['configuration'] = isset($data['configuration']) ? $this->createData($data['configuration'], 'configuration')  : null;
+        $this->container['metric'] = isset($data['metric']) ? $this->createData($data['metric'], 'metric')  : null;
+        $this->container['premiumStatus'] = isset($data['premiumStatus']) ? $this->createData($data['premiumStatus'], 'premiumStatus')  : null;
     }
 
     /**
@@ -358,6 +322,15 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['priceClass'] === null) {
+            $invalidProperties[] = "'priceClass' can't be null";
+        }
+        if ($this->container['provider'] === null) {
+            $invalidProperties[] = "'provider' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -470,169 +443,121 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets provider
-     *
-     * @return \Domainrobot\Model\ProviderEntity
-     */
-    public function getProvider()
-    {
-        return $this->container['provider'];
-    }
-
-    /**
-     * Sets provider
-     *
-     * @param \Domainrobot\Model\ProviderEntity $provider The provider of the external_accounting
-     *
-     * @return $this
-     */
-    public function setProvider($provider)
-    {
-        $this->container['provider'] = $provider;
-
-        return $this;
-    }
-
-    /**
-     * Gets label
+     * Gets name
      *
      * @return string
      */
-    public function getLabel()
+    public function getName()
     {
-        return $this->container['label'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets label
+     * Sets name
      *
-     * @param string $label The label to identify the provider
+     * @param string $name The domain name
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setName($name)
     {
-        $this->container['label'] = $label;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets reportTo
+     * Gets idn
      *
      * @return string
      */
-    public function getReportTo()
+    public function getIdn()
     {
-        return $this->container['reportTo'];
+        return $this->container['idn'];
     }
 
     /**
-     * Sets reportTo
+     * Sets idn
      *
-     * @param string $reportTo The email address for reporting
+     * @param string $idn The unicode domain name
      *
      * @return $this
      */
-    public function setReportTo($reportTo)
+    public function setIdn($idn)
     {
-        $this->container['reportTo'] = $reportTo;
+        $this->container['idn'] = $idn;
 
         return $this;
     }
 
     /**
-     * Gets priceType
+     * Gets priceClass
      *
-     * @return \Domainrobot\Model\PriceTypeConstants
+     * @return string
      */
-    public function getPriceType()
+    public function getPriceClass()
     {
-        return $this->container['priceType'];
+        return $this->container['priceClass'];
     }
 
     /**
-     * Sets priceType
+     * Sets priceClass
      *
-     * @param \Domainrobot\Model\PriceTypeConstants $priceType The price type
+     * @param string $priceClass The related price class
      *
      * @return $this
      */
-    public function setPriceType($priceType)
+    public function setPriceClass($priceClass)
     {
-        $this->container['priceType'] = $priceType;
+        $this->container['priceClass'] = $priceClass;
 
         return $this;
     }
 
     /**
-     * Gets priceMarkupType
+     * Gets priceClassRenew
      *
-     * @return \Domainrobot\Model\PriceMarkupType
+     * @return string
      */
-    public function getPriceMarkupType()
+    public function getPriceClassRenew()
     {
-        return $this->container['priceMarkupType'];
+        return $this->container['priceClassRenew'];
     }
 
     /**
-     * Sets priceMarkupType
+     * Sets priceClassRenew
      *
-     * @param \Domainrobot\Model\PriceMarkupType $priceMarkupType The type of markup
+     * @param string $priceClassRenew The related price class for the domain renew
      *
      * @return $this
      */
-    public function setPriceMarkupType($priceMarkupType)
+    public function setPriceClassRenew($priceClassRenew)
     {
-        $this->container['priceMarkupType'] = $priceMarkupType;
+        $this->container['priceClassRenew'] = $priceClassRenew;
 
         return $this;
     }
 
     /**
-     * Gets priceMarkup
+     * Gets price
      *
      * @return double
      */
-    public function getPriceMarkup()
+    public function getPrice()
     {
-        return $this->container['priceMarkup'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets priceMarkup
+     * Sets price
      *
-     * @param double $priceMarkup markup value in percent or absolute
+     * @param double $price The current price amount
      *
      * @return $this
      */
-    public function setPriceMarkup($priceMarkup)
+    public function setPrice($price)
     {
-        $this->container['priceMarkup'] = $priceMarkup;
-
-        return $this;
-    }
-
-    /**
-     * Gets priceRounding
-     *
-     * @return \Domainrobot\Model\PriceRounding
-     */
-    public function getPriceRounding()
-    {
-        return $this->container['priceRounding'];
-    }
-
-    /**
-     * Sets priceRounding
-     *
-     * @param \Domainrobot\Model\PriceRounding $priceRounding The type of rounding
-     *
-     * @return $this
-     */
-    public function setPriceRounding($priceRounding)
-    {
-        $this->container['priceRounding'] = $priceRounding;
+        $this->container['price'] = $price;
 
         return $this;
     }
@@ -650,7 +575,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency Used currency
+     * @param string $currency The current currency
      *
      * @return $this
      */
@@ -662,193 +587,97 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets country
+     * Gets provider
      *
      * @return string
      */
-    public function getCountry()
+    public function getProvider()
     {
-        return $this->container['country'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets country
+     * Sets provider
      *
-     * @param string $country Used country. Needed for calculation of taxes
+     * @param string $provider provider
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setProvider($provider)
     {
-        $this->container['country'] = $country;
+        $this->container['provider'] = $provider;
 
         return $this;
     }
 
     /**
-     * Gets creditorIdentifier
+     * Gets configuration
      *
-     * @return string
+     * @return \Domainrobot\Model\Configuration
      */
-    public function getCreditorIdentifier()
+    public function getConfiguration()
     {
-        return $this->container['creditorIdentifier'];
+        return $this->container['configuration'];
     }
 
     /**
-     * Sets creditorIdentifier
+     * Sets configuration
      *
-     * @param string $creditorIdentifier The creditor identifier
+     * @param \Domainrobot\Model\Configuration $configuration Additional information
      *
      * @return $this
      */
-    public function setCreditorIdentifier($creditorIdentifier)
+    public function setConfiguration($configuration)
     {
-        $this->container['creditorIdentifier'] = $creditorIdentifier;
+        $this->container['configuration'] = $configuration;
 
         return $this;
     }
 
     /**
-     * Gets customerNumberMin
+     * Gets metric
      *
-     * @return int
+     * @return \Domainrobot\Model\Metric
      */
-    public function getCustomerNumberMin()
+    public function getMetric()
     {
-        return $this->container['customerNumberMin'];
+        return $this->container['metric'];
     }
 
     /**
-     * Sets customerNumberMin
+     * Sets metric
      *
-     * @param int $customerNumberMin The lower end of the generated customer group numbers
+     * @param \Domainrobot\Model\Metric $metric Some domain metrics
      *
      * @return $this
      */
-    public function setCustomerNumberMin($customerNumberMin)
+    public function setMetric($metric)
     {
-        $this->container['customerNumberMin'] = $customerNumberMin;
+        $this->container['metric'] = $metric;
 
         return $this;
     }
 
     /**
-     * Gets customerNumberMax
+     * Gets premiumStatus
      *
-     * @return int
+     * @return \Domainrobot\Model\PremiumStatusConstants
      */
-    public function getCustomerNumberMax()
+    public function getPremiumStatus()
     {
-        return $this->container['customerNumberMax'];
+        return $this->container['premiumStatus'];
     }
 
     /**
-     * Sets customerNumberMax
+     * Sets premiumStatus
      *
-     * @param int $customerNumberMax The upper end of the generated customer group numbers
+     * @param \Domainrobot\Model\PremiumStatusConstants $premiumStatus The actual domain premium status
      *
      * @return $this
      */
-    public function setCustomerNumberMax($customerNumberMax)
+    public function setPremiumStatus($premiumStatus)
     {
-        $this->container['customerNumberMax'] = $customerNumberMax;
-
-        return $this;
-    }
-
-    /**
-     * Gets creditLimit
-     *
-     * @return double
-     */
-    public function getCreditLimit()
-    {
-        return $this->container['creditLimit'];
-    }
-
-    /**
-     * Sets creditLimit
-     *
-     * @param double $creditLimit The creditLimit for the customer of the accounting
-     *
-     * @return $this
-     */
-    public function setCreditLimit($creditLimit)
-    {
-        $this->container['creditLimit'] = $creditLimit;
-
-        return $this;
-    }
-
-    /**
-     * Gets discount
-     *
-     * @return int
-     */
-    public function getDiscount()
-    {
-        return $this->container['discount'];
-    }
-
-    /**
-     * Sets discount
-     *
-     * @param int $discount The discount for the customer of the accounting
-     *
-     * @return $this
-     */
-    public function setDiscount($discount)
-    {
-        $this->container['discount'] = $discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets priceListSyncStatus
-     *
-     * @return \Domainrobot\Model\GenericStatusConstants
-     */
-    public function getPriceListSyncStatus()
-    {
-        return $this->container['priceListSyncStatus'];
-    }
-
-    /**
-     * Sets priceListSyncStatus
-     *
-     * @param \Domainrobot\Model\GenericStatusConstants $priceListSyncStatus The status of the pricelist sync
-     *
-     * @return $this
-     */
-    public function setPriceListSyncStatus($priceListSyncStatus)
-    {
-        $this->container['priceListSyncStatus'] = $priceListSyncStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets priceListSync
-     *
-     * @return \DateTime
-     */
-    public function getPriceListSync()
-    {
-        return $this->container['priceListSync'];
-    }
-
-    /**
-     * Sets priceListSync
-     *
-     * @param \DateTime $priceListSync The date when the last pricelist sync finished
-     *
-     * @return $this
-     */
-    public function setPriceListSync($priceListSync)
-    {
-        $this->container['priceListSync'] = $priceListSync;
+        $this->container['premiumStatus'] = $premiumStatus;
 
         return $this;
     }

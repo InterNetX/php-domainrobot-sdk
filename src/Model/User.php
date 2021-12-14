@@ -82,7 +82,8 @@ class User implements ModelInterface, ArrayAccess
         'language' => 'string',
         'parent' => '\Domainrobot\Model\User',
         'directCustomer' => 'bool',
-        'clientAccount' => '\Domainrobot\Model\ExternalAccounting'
+        'clientAccounts' => '\Domainrobot\Model\ExternalAccounting[]',
+        'tasklimits' => '\Domainrobot\Model\Limit[]'
     ];
 
     /**
@@ -116,7 +117,8 @@ class User implements ModelInterface, ArrayAccess
         'language' => null,
         'parent' => null,
         'directCustomer' => null,
-        'clientAccount' => null
+        'clientAccounts' => null,
+        'tasklimits' => null
     ];
 
     /**
@@ -171,7 +173,8 @@ class User implements ModelInterface, ArrayAccess
         'language' => 'language',
         'parent' => 'parent',
         'directCustomer' => 'directCustomer',
-        'clientAccount' => 'clientAccount'
+        'clientAccounts' => 'clientAccounts',
+        'tasklimits' => 'tasklimits'
     ];
 
     /**
@@ -205,7 +208,8 @@ class User implements ModelInterface, ArrayAccess
         'language' => 'setLanguage',
         'parent' => 'setParent',
         'directCustomer' => 'setDirectCustomer',
-        'clientAccount' => 'setClientAccount'
+        'clientAccounts' => 'setClientAccounts',
+        'tasklimits' => 'setTasklimits'
     ];
 
     /**
@@ -239,7 +243,8 @@ class User implements ModelInterface, ArrayAccess
         'language' => 'getLanguage',
         'parent' => 'getParent',
         'directCustomer' => 'getDirectCustomer',
-        'clientAccount' => 'getClientAccount'
+        'clientAccounts' => 'getClientAccounts',
+        'tasklimits' => 'getTasklimits'
     ];
 
     /**
@@ -327,7 +332,8 @@ class User implements ModelInterface, ArrayAccess
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['parent'] = isset($data['parent']) ? $this->createData($data['parent'], 'parent')  : null;
         $this->container['directCustomer'] = isset($data['directCustomer']) ? $this->createData($data['directCustomer'], 'directCustomer')  : null;
-        $this->container['clientAccount'] = isset($data['clientAccount']) ? $this->createData($data['clientAccount'], 'clientAccount')  : null;
+        $this->container['clientAccounts'] = isset($data['clientAccounts']) ? $this->createData($data['clientAccounts'], 'clientAccounts')  : null;
+        $this->container['tasklimits'] = isset($data['tasklimits']) ? $this->createData($data['tasklimits'], 'tasklimits')  : null;
     }
 
     /**
@@ -1025,25 +1031,49 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets clientAccount
+     * Gets clientAccounts
      *
-     * @return \Domainrobot\Model\ExternalAccounting
+     * @return \Domainrobot\Model\ExternalAccounting[]
      */
-    public function getClientAccount()
+    public function getClientAccounts()
     {
-        return $this->container['clientAccount'];
+        return $this->container['clientAccounts'];
     }
 
     /**
-     * Sets clientAccount
+     * Sets clientAccounts
      *
-     * @param \Domainrobot\Model\ExternalAccounting $clientAccount The client accounting data for the user.
+     * @param \Domainrobot\Model\ExternalAccounting[] $clientAccounts The client accounting datas for the user.
      *
      * @return $this
      */
-    public function setClientAccount($clientAccount)
+    public function setClientAccounts($clientAccounts)
     {
-        $this->container['clientAccount'] = $clientAccount;
+        $this->container['clientAccounts'] = $clientAccounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets tasklimits
+     *
+     * @return \Domainrobot\Model\Limit[]
+     */
+    public function getTasklimits()
+    {
+        return $this->container['tasklimits'];
+    }
+
+    /**
+     * Sets tasklimits
+     *
+     * @param \Domainrobot\Model\Limit[] $tasklimits The task limits of the user.
+     *
+     * @return $this
+     */
+    public function setTasklimits($tasklimits)
+    {
+        $this->container['tasklimits'] = $tasklimits;
 
         return $this;
     }

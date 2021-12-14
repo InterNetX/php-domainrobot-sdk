@@ -1,6 +1,6 @@
 <?php
 /**
- * CertificateType
+ * PremiumStatusConstants
  *
  * PHP version 5
  *
@@ -31,23 +31,25 @@ namespace Domainrobot\Model;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * CertificateType Class Doc Comment
+ * PremiumStatusConstants Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CertificateType
+class PremiumStatusConstants
 {
     /**
      * Possible values of this enum
      */
-    const FQDN = 'FQDN';
-    const MAIL = 'MAIL';
-    const CODE = 'CODE';
-    const DOCUMENT = 'DOCUMENT';
-    const VMC = 'VMC';
+    const ASSIGNED = 'ASSIGNED';
+    const FREE = 'FREE';
+    const INACTIVE = 'INACTIVE';
+    const EAP = 'EAP';
+    const SYNC_ERROR = 'SYNC_ERROR';
+    const OFFERED = 'OFFERED';
+    const ON_HOLD = 'ON_HOLD';
     
     /**
      * Gets allowable values of the enum
@@ -56,11 +58,13 @@ class CertificateType
     public static function getAllowableEnumValues()
     {
         return [
-            self::FQDN,
-            self::MAIL,
-            self::CODE,
-            self::DOCUMENT,
-            self::VMC,
+            self::ASSIGNED,
+            self::FREE,
+            self::INACTIVE,
+            self::EAP,
+            self::SYNC_ERROR,
+            self::OFFERED,
+            self::ON_HOLD,
         ];
     }
 }

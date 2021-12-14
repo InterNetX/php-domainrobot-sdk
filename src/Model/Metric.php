@@ -1,6 +1,6 @@
 <?php
 /**
- * ProviderEntity
+ * Metric
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ProviderEntity Class Doc Comment
+ * Metric Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ProviderEntity implements ModelInterface, ArrayAccess
+class Metric implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ProviderEntity implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProviderEntity';
+    protected static $swaggerModelName = 'Metric';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,7 @@ class ProviderEntity implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'created' => '\DateTime',
-        'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
-        'name' => 'string',
-        'types' => 'string[]'
+        'length' => 'int'
     ];
 
     /**
@@ -71,12 +66,7 @@ class ProviderEntity implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'created' => 'date-time',
-        'updated' => 'date-time',
-        'owner' => null,
-        'updater' => null,
-        'name' => null,
-        'types' => null
+        'length' => 'int32'
     ];
 
     /**
@@ -106,12 +96,7 @@ class ProviderEntity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'created' => 'created',
-        'updated' => 'updated',
-        'owner' => 'owner',
-        'updater' => 'updater',
-        'name' => 'name',
-        'types' => 'types'
+        'length' => 'length'
     ];
 
     /**
@@ -120,12 +105,7 @@ class ProviderEntity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'created' => 'setCreated',
-        'updated' => 'setUpdated',
-        'owner' => 'setOwner',
-        'updater' => 'setUpdater',
-        'name' => 'setName',
-        'types' => 'setTypes'
+        'length' => 'setLength'
     ];
 
     /**
@@ -134,12 +114,7 @@ class ProviderEntity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'created' => 'getCreated',
-        'updated' => 'getUpdated',
-        'owner' => 'getOwner',
-        'updater' => 'getUpdater',
-        'name' => 'getName',
-        'types' => 'getTypes'
+        'length' => 'getLength'
     ];
 
     /**
@@ -202,12 +177,7 @@ class ProviderEntity implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
-        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
-        $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['types'] = isset($data['types']) ? $this->createData($data['types'], 'types')  : null;
+        $this->container['length'] = isset($data['length']) ? $this->createData($data['length'], 'length')  : null;
     }
 
     /**
@@ -290,145 +260,25 @@ class ProviderEntity implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets created
+     * Gets length
      *
-     * @return \DateTime
+     * @return int
      */
-    public function getCreated()
+    public function getLength()
     {
-        return $this->container['created'];
+        return $this->container['length'];
     }
 
     /**
-     * Sets created
+     * Sets length
      *
-     * @param \DateTime $created The created date.
+     * @param int $length The lenght of the sld
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setLength($length)
     {
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated
-     *
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     *
-     * @param \DateTime $updated The updated date.
-     *
-     * @return $this
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets owner
-     *
-     * @return \Domainrobot\Model\BasicUser
-     */
-    public function getOwner()
-    {
-        return $this->container['owner'];
-    }
-
-    /**
-     * Sets owner
-     *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
-     *
-     * @return $this
-     */
-    public function setOwner($owner)
-    {
-        $this->container['owner'] = $owner;
-
-        return $this;
-    }
-
-    /**
-     * Gets updater
-     *
-     * @return \Domainrobot\Model\BasicUser
-     */
-    public function getUpdater()
-    {
-        return $this->container['updater'];
-    }
-
-    /**
-     * Sets updater
-     *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
-     *
-     * @return $this
-     */
-    public function setUpdater($updater)
-    {
-        $this->container['updater'] = $updater;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name The name of the provider
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets types
-     *
-     * @return string[]
-     */
-    public function getTypes()
-    {
-        return $this->container['types'];
-    }
-
-    /**
-     * Sets types
-     *
-     * @param string[] $types The supported types
-     *
-     * @return $this
-     */
-    public function setTypes($types)
-    {
-        $this->container['types'] = $types;
+        $this->container['length'] = $length;
 
         return $this;
     }

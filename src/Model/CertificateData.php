@@ -77,7 +77,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'idn' => 'string',
         'checkCaa' => 'bool',
         'businessCase' => 'string',
-        'ecCurve' => '\Domainrobot\Model\CsrHashAlgorithmConstants'
+        'ecCurve' => '\Domainrobot\Model\CsrHashAlgorithmConstants',
+        'vmcLogo' => 'string',
+        'vmcTrademarkRegistrationNumber' => 'string',
+        'vmcTrademarkCountryOrRegion' => '\Domainrobot\Model\VmcTrademarkCountryOrRegion'
     ];
 
     /**
@@ -106,7 +109,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'idn' => null,
         'checkCaa' => null,
         'businessCase' => null,
-        'ecCurve' => null
+        'ecCurve' => null,
+        'vmcLogo' => null,
+        'vmcTrademarkRegistrationNumber' => null,
+        'vmcTrademarkCountryOrRegion' => null
     ];
 
     /**
@@ -156,7 +162,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'idn' => 'idn',
         'checkCaa' => 'checkCaa',
         'businessCase' => 'businessCase',
-        'ecCurve' => 'ecCurve'
+        'ecCurve' => 'ecCurve',
+        'vmcLogo' => 'vmcLogo',
+        'vmcTrademarkRegistrationNumber' => 'vmcTrademarkRegistrationNumber',
+        'vmcTrademarkCountryOrRegion' => 'vmcTrademarkCountryOrRegion'
     ];
 
     /**
@@ -185,7 +194,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'idn' => 'setIdn',
         'checkCaa' => 'setCheckCaa',
         'businessCase' => 'setBusinessCase',
-        'ecCurve' => 'setEcCurve'
+        'ecCurve' => 'setEcCurve',
+        'vmcLogo' => 'setVmcLogo',
+        'vmcTrademarkRegistrationNumber' => 'setVmcTrademarkRegistrationNumber',
+        'vmcTrademarkCountryOrRegion' => 'setVmcTrademarkCountryOrRegion'
     ];
 
     /**
@@ -214,7 +226,10 @@ class CertificateData implements ModelInterface, ArrayAccess
         'idn' => 'getIdn',
         'checkCaa' => 'getCheckCaa',
         'businessCase' => 'getBusinessCase',
-        'ecCurve' => 'getEcCurve'
+        'ecCurve' => 'getEcCurve',
+        'vmcLogo' => 'getVmcLogo',
+        'vmcTrademarkRegistrationNumber' => 'getVmcTrademarkRegistrationNumber',
+        'vmcTrademarkCountryOrRegion' => 'getVmcTrademarkCountryOrRegion'
     ];
 
     /**
@@ -298,6 +313,9 @@ class CertificateData implements ModelInterface, ArrayAccess
         $this->container['checkCaa'] = isset($data['checkCaa']) ? $this->createData($data['checkCaa'], 'checkCaa')  : null;
         $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
         $this->container['ecCurve'] = isset($data['ecCurve']) ? $this->createData($data['ecCurve'], 'ecCurve')  : null;
+        $this->container['vmcLogo'] = isset($data['vmcLogo']) ? $this->createData($data['vmcLogo'], 'vmcLogo')  : null;
+        $this->container['vmcTrademarkRegistrationNumber'] = isset($data['vmcTrademarkRegistrationNumber']) ? $this->createData($data['vmcTrademarkRegistrationNumber'], 'vmcTrademarkRegistrationNumber')  : null;
+        $this->container['vmcTrademarkCountryOrRegion'] = isset($data['vmcTrademarkCountryOrRegion']) ? $this->createData($data['vmcTrademarkCountryOrRegion'], 'vmcTrademarkCountryOrRegion')  : null;
     }
 
     /**
@@ -879,6 +897,78 @@ class CertificateData implements ModelInterface, ArrayAccess
     public function setEcCurve($ecCurve)
     {
         $this->container['ecCurve'] = $ecCurve;
+
+        return $this;
+    }
+
+    /**
+     * Gets vmcLogo
+     *
+     * @return string
+     */
+    public function getVmcLogo()
+    {
+        return $this->container['vmcLogo'];
+    }
+
+    /**
+     * Sets vmcLogo
+     *
+     * @param string $vmcLogo The gzipped and base64 encoded SVG logo
+     *
+     * @return $this
+     */
+    public function setVmcLogo($vmcLogo)
+    {
+        $this->container['vmcLogo'] = $vmcLogo;
+
+        return $this;
+    }
+
+    /**
+     * Gets vmcTrademarkRegistrationNumber
+     *
+     * @return string
+     */
+    public function getVmcTrademarkRegistrationNumber()
+    {
+        return $this->container['vmcTrademarkRegistrationNumber'];
+    }
+
+    /**
+     * Sets vmcTrademarkRegistrationNumber
+     *
+     * @param string $vmcTrademarkRegistrationNumber The trademark registration number
+     *
+     * @return $this
+     */
+    public function setVmcTrademarkRegistrationNumber($vmcTrademarkRegistrationNumber)
+    {
+        $this->container['vmcTrademarkRegistrationNumber'] = $vmcTrademarkRegistrationNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets vmcTrademarkCountryOrRegion
+     *
+     * @return \Domainrobot\Model\VmcTrademarkCountryOrRegion
+     */
+    public function getVmcTrademarkCountryOrRegion()
+    {
+        return $this->container['vmcTrademarkCountryOrRegion'];
+    }
+
+    /**
+     * Sets vmcTrademarkCountryOrRegion
+     *
+     * @param \Domainrobot\Model\VmcTrademarkCountryOrRegion $vmcTrademarkCountryOrRegion Two-letter code for the country or region where the logo is trademarked
+     *
+     * @return $this
+     */
+    public function setVmcTrademarkCountryOrRegion($vmcTrademarkCountryOrRegion)
+    {
+        $this->container['vmcTrademarkCountryOrRegion'] = $vmcTrademarkCountryOrRegion;
 
         return $this;
     }

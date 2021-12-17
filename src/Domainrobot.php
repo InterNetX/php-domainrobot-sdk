@@ -22,6 +22,7 @@ use Domainrobot\Service\RestoreService;
 use Domainrobot\Service\PcDomainsService;
 use Domainrobot\Service\WhoisService;
 use Domainrobot\Service\LoginService;
+use Domainrobot\Service\DomainPremiumService;
 class Domainrobot
 {
     // private static $instance = null;
@@ -167,6 +168,13 @@ class Domainrobot
      */
     public $login;
 
+     /**
+     * Interface for DomainPremium Requests
+     
+     * @var DomainPremiumService
+     */
+    public $domainPremium;
+
     /**
      * [
      *   "url" => string, //optional
@@ -197,6 +205,7 @@ class Domainrobot
         $this->pcDomains = new PcDomainsService($this->domainrobotConfig);
         $this->whois = new WhoisService($this->domainrobotConfig);
         $this->login = new LoginService($this->domainrobotConfig);
+        $this->domainPremium = new DomainPremiumService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

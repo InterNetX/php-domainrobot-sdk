@@ -59,7 +59,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'plain' => 'string',
         'name' => 'string',
-        'san' => 'string[]',
+        'subjectAlternativeNames' => '\Domainrobot\Model\SubjectAlternativeName[]',
         'histories' => '\Domainrobot\Model\CertificateHistory[]',
         'keySize' => 'int',
         'countryCode' => 'string',
@@ -91,7 +91,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'plain' => null,
         'name' => null,
-        'san' => null,
+        'subjectAlternativeNames' => null,
         'histories' => null,
         'keySize' => 'int32',
         'countryCode' => null,
@@ -144,7 +144,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'plain' => 'plain',
         'name' => 'name',
-        'san' => 'san',
+        'subjectAlternativeNames' => 'subjectAlternativeNames',
         'histories' => 'histories',
         'keySize' => 'keySize',
         'countryCode' => 'countryCode',
@@ -176,7 +176,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     protected static $setters = [
         'plain' => 'setPlain',
         'name' => 'setName',
-        'san' => 'setSan',
+        'subjectAlternativeNames' => 'setSubjectAlternativeNames',
         'histories' => 'setHistories',
         'keySize' => 'setKeySize',
         'countryCode' => 'setCountryCode',
@@ -208,7 +208,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     protected static $getters = [
         'plain' => 'getPlain',
         'name' => 'getName',
-        'san' => 'getSan',
+        'subjectAlternativeNames' => 'getSubjectAlternativeNames',
         'histories' => 'getHistories',
         'keySize' => 'getKeySize',
         'countryCode' => 'getCountryCode',
@@ -294,7 +294,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     {
         $this->container['plain'] = isset($data['plain']) ? $this->createData($data['plain'], 'plain')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
-        $this->container['san'] = isset($data['san']) ? $this->createData($data['san'], 'san')  : null;
+        $this->container['subjectAlternativeNames'] = isset($data['subjectAlternativeNames']) ? $this->createData($data['subjectAlternativeNames'], 'subjectAlternativeNames')  : null;
         $this->container['histories'] = isset($data['histories']) ? $this->createData($data['histories'], 'histories')  : null;
         $this->container['keySize'] = isset($data['keySize']) ? $this->createData($data['keySize'], 'keySize')  : null;
         $this->container['countryCode'] = isset($data['countryCode']) ? $this->createData($data['countryCode'], 'countryCode')  : null;
@@ -446,25 +446,25 @@ class CertificateData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets san
+     * Gets subjectAlternativeNames
      *
-     * @return string[]
+     * @return \Domainrobot\Model\SubjectAlternativeName[]
      */
-    public function getSan()
+    public function getSubjectAlternativeNames()
     {
-        return $this->container['san'];
+        return $this->container['subjectAlternativeNames'];
     }
 
     /**
-     * Sets san
+     * Sets subjectAlternativeNames
      *
-     * @param string[] $san The subject alternative names, listed in the csr.
+     * @param \Domainrobot\Model\SubjectAlternativeName[] $subjectAlternativeNames The subject alternative names, listed in the csr.
      *
      * @return $this
      */
-    public function setSan($san)
+    public function setSubjectAlternativeNames($subjectAlternativeNames)
     {
-        $this->container['san'] = $san;
+        $this->container['subjectAlternativeNames'] = $subjectAlternativeNames;
 
         return $this;
     }
@@ -914,7 +914,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets vmcLogo
      *
-     * @param string $vmcLogo The gzipped and base64 encoded SVG logo
+     * @param string $vmcLogo The base64 encoded SVG logo
      *
      * @return $this
      */

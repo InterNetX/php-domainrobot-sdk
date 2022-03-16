@@ -9,18 +9,13 @@ use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\DomainPremium;
 use Domainrobot\Service\DomainrobotService;
 
-/**
- * Implementation of the domainstudio specific API functions.
- *
- * @author Benjamin Krammel
- */
 class DomainPremiumService extends DomainrobotService
 {
     /**
      * Sends a domainpremium info request.
      *
      * @param string $name
-     * @return Domain
+     * @return DomainPremium
      */
     public function info($name)
     {

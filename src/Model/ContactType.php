@@ -46,6 +46,7 @@ class ContactType
     const BILLING = 'BILLING';
     const TECH = 'TECH';
     const LEGAL = 'LEGAL';
+    const PRIMARY = 'PRIMARY';
     const DOMAIN = 'DOMAIN';
     const SSL = 'SSL';
     const SERVER = 'SERVER';
@@ -60,6 +61,7 @@ class ContactType
             self::BILLING,
             self::TECH,
             self::LEGAL,
+            self::PRIMARY,
             self::DOMAIN,
             self::SSL,
             self::SERVER,

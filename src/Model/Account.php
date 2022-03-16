@@ -66,7 +66,8 @@ class Account implements ModelInterface, ArrayAccess
         'minRunningTotalNotificationEmail' => 'string',
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'view' => '\Domainrobot\Model\CurrencyRate'
+        'view' => '\Domainrobot\Model\CurrencyRate',
+        'reserved' => 'double'
     ];
 
     /**
@@ -84,7 +85,8 @@ class Account implements ModelInterface, ArrayAccess
         'minRunningTotalNotificationEmail' => null,
         'created' => 'date-time',
         'updated' => 'date-time',
-        'view' => null
+        'view' => null,
+        'reserved' => 'double'
     ];
 
     /**
@@ -123,7 +125,8 @@ class Account implements ModelInterface, ArrayAccess
         'minRunningTotalNotificationEmail' => 'minRunningTotalNotificationEmail',
         'created' => 'created',
         'updated' => 'updated',
-        'view' => 'view'
+        'view' => 'view',
+        'reserved' => 'reserved'
     ];
 
     /**
@@ -141,7 +144,8 @@ class Account implements ModelInterface, ArrayAccess
         'minRunningTotalNotificationEmail' => 'setMinRunningTotalNotificationEmail',
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'view' => 'setView'
+        'view' => 'setView',
+        'reserved' => 'setReserved'
     ];
 
     /**
@@ -159,7 +163,8 @@ class Account implements ModelInterface, ArrayAccess
         'minRunningTotalNotificationEmail' => 'getMinRunningTotalNotificationEmail',
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'view' => 'getView'
+        'view' => 'getView',
+        'reserved' => 'getReserved'
     ];
 
     /**
@@ -232,6 +237,7 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['view'] = isset($data['view']) ? $this->createData($data['view'], 'view')  : null;
+        $this->container['reserved'] = isset($data['reserved']) ? $this->createData($data['reserved'], 'reserved')  : null;
     }
 
     /**
@@ -552,6 +558,30 @@ class Account implements ModelInterface, ArrayAccess
     public function setView($view)
     {
         $this->container['view'] = $view;
+
+        return $this;
+    }
+
+    /**
+     * Gets reserved
+     *
+     * @return double
+     */
+    public function getReserved()
+    {
+        return $this->container['reserved'];
+    }
+
+    /**
+     * Sets reserved
+     *
+     * @param double $reserved Flag indication if the reserved
+     *
+     * @return $this
+     */
+    public function setReserved($reserved)
+    {
+        $this->container['reserved'] = $reserved;
 
         return $this;
     }

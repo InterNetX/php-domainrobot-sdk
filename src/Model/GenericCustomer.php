@@ -59,9 +59,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'number' => 'int',
         'client' => 'string',
-        'group' => 'int',
-        'adoptExpiration' => '\Domainrobot\Model\AdoptExpiration',
-        'autoDeleteTlds' => 'string'
+        'group' => 'int'
     ];
 
     /**
@@ -72,9 +70,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'number' => 'int64',
         'client' => null,
-        'group' => 'int64',
-        'adoptExpiration' => null,
-        'autoDeleteTlds' => null
+        'group' => 'int64'
     ];
 
     /**
@@ -106,9 +102,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'number' => 'number',
         'client' => 'client',
-        'group' => 'group',
-        'adoptExpiration' => 'adoptExpiration',
-        'autoDeleteTlds' => 'autoDeleteTlds'
+        'group' => 'group'
     ];
 
     /**
@@ -119,9 +113,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     protected static $setters = [
         'number' => 'setNumber',
         'client' => 'setClient',
-        'group' => 'setGroup',
-        'adoptExpiration' => 'setAdoptExpiration',
-        'autoDeleteTlds' => 'setAutoDeleteTlds'
+        'group' => 'setGroup'
     ];
 
     /**
@@ -132,9 +124,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     protected static $getters = [
         'number' => 'getNumber',
         'client' => 'getClient',
-        'group' => 'getGroup',
-        'adoptExpiration' => 'getAdoptExpiration',
-        'autoDeleteTlds' => 'getAutoDeleteTlds'
+        'group' => 'getGroup'
     ];
 
     /**
@@ -200,8 +190,6 @@ class GenericCustomer implements ModelInterface, ArrayAccess
         $this->container['number'] = isset($data['number']) ? $this->createData($data['number'], 'number')  : null;
         $this->container['client'] = isset($data['client']) ? $this->createData($data['client'], 'client')  : null;
         $this->container['group'] = isset($data['group']) ? $this->createData($data['group'], 'group')  : null;
-        $this->container['adoptExpiration'] = isset($data['adoptExpiration']) ? $this->createData($data['adoptExpiration'], 'adoptExpiration')  : null;
-        $this->container['autoDeleteTlds'] = isset($data['autoDeleteTlds']) ? $this->createData($data['autoDeleteTlds'], 'autoDeleteTlds')  : null;
     }
 
     /**
@@ -372,54 +360,6 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     public function setGroup($group)
     {
         $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets adoptExpiration
-     *
-     * @return \Domainrobot\Model\AdoptExpiration
-     */
-    public function getAdoptExpiration()
-    {
-        return $this->container['adoptExpiration'];
-    }
-
-    /**
-     * Sets adoptExpiration
-     *
-     * @param \Domainrobot\Model\AdoptExpiration $adoptExpiration adoptExpiration
-     *
-     * @return $this
-     */
-    public function setAdoptExpiration($adoptExpiration)
-    {
-        $this->container['adoptExpiration'] = $adoptExpiration;
-
-        return $this;
-    }
-
-    /**
-     * Gets autoDeleteTlds
-     *
-     * @return string
-     */
-    public function getAutoDeleteTlds()
-    {
-        return $this->container['autoDeleteTlds'];
-    }
-
-    /**
-     * Sets autoDeleteTlds
-     *
-     * @param string $autoDeleteTlds autoDeleteTlds
-     *
-     * @return $this
-     */
-    public function setAutoDeleteTlds($autoDeleteTlds)
-    {
-        $this->container['autoDeleteTlds'] = $autoDeleteTlds;
 
         return $this;
     }

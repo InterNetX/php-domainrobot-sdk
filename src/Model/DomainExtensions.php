@@ -57,6 +57,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'domainBuyExtensions' => '\Domainrobot\Model\DomainBuyExtensions',
         'parkingExtensions' => '\Domainrobot\Model\DomainParkingExtensions',
         'tmchClaimsNoticeExtensions' => '\Domainrobot\Model\DomainTmchClaimNoticeExtensions',
         'verificationExtensions' => '\Domainrobot\Model\ContactVerificationDomain',
@@ -69,6 +70,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'domainBuyExtensions' => null,
         'parkingExtensions' => null,
         'tmchClaimsNoticeExtensions' => null,
         'verificationExtensions' => null,
@@ -102,6 +104,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'domainBuyExtensions' => 'domainBuyExtensions',
         'parkingExtensions' => 'parkingExtensions',
         'tmchClaimsNoticeExtensions' => 'tmchClaimsNoticeExtensions',
         'verificationExtensions' => 'verificationExtensions',
@@ -114,6 +117,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'domainBuyExtensions' => 'setDomainBuyExtensions',
         'parkingExtensions' => 'setParkingExtensions',
         'tmchClaimsNoticeExtensions' => 'setTmchClaimsNoticeExtensions',
         'verificationExtensions' => 'setVerificationExtensions',
@@ -126,6 +130,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'domainBuyExtensions' => 'getDomainBuyExtensions',
         'parkingExtensions' => 'getParkingExtensions',
         'tmchClaimsNoticeExtensions' => 'getTmchClaimsNoticeExtensions',
         'verificationExtensions' => 'getVerificationExtensions',
@@ -192,6 +197,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['domainBuyExtensions'] = isset($data['domainBuyExtensions']) ? $this->createData($data['domainBuyExtensions'], 'domainBuyExtensions')  : null;
         $this->container['parkingExtensions'] = isset($data['parkingExtensions']) ? $this->createData($data['parkingExtensions'], 'parkingExtensions')  : null;
         $this->container['tmchClaimsNoticeExtensions'] = isset($data['tmchClaimsNoticeExtensions']) ? $this->createData($data['tmchClaimsNoticeExtensions'], 'tmchClaimsNoticeExtensions')  : null;
         $this->container['verificationExtensions'] = isset($data['verificationExtensions']) ? $this->createData($data['verificationExtensions'], 'verificationExtensions')  : null;
@@ -276,6 +282,30 @@ class DomainExtensions implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets domainBuyExtensions
+     *
+     * @return \Domainrobot\Model\DomainBuyExtensions
+     */
+    public function getDomainBuyExtensions()
+    {
+        return $this->container['domainBuyExtensions'];
+    }
+
+    /**
+     * Sets domainBuyExtensions
+     *
+     * @param \Domainrobot\Model\DomainBuyExtensions $domainBuyExtensions domainBuyExtensions
+     *
+     * @return $this
+     */
+    public function setDomainBuyExtensions($domainBuyExtensions)
+    {
+        $this->container['domainBuyExtensions'] = $domainBuyExtensions;
+
+        return $this;
+    }
 
     /**
      * Gets parkingExtensions

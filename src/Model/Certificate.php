@@ -511,9 +511,6 @@ class Certificate implements ModelInterface, ArrayAccess
         if ($this->container['lifetime'] === null) {
             $invalidProperties[] = "'lifetime' can't be null";
         }
-        if ($this->container['software'] === null) {
-            $invalidProperties[] = "'software' can't be null";
-        }
         if ($this->container['product'] === null) {
             $invalidProperties[] = "'product' can't be null";
         }
@@ -1562,7 +1559,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets vmcLogo
      *
-     * @param string $vmcLogo The gzipped and base64 encoded SVG logo
+     * @param string $vmcLogo The base64 encoded SVG logo
      *
      * @return $this
      */

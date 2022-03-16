@@ -1,6 +1,6 @@
 <?php
 /**
- * QueryFilter
+ * DomainBuyExtensions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * QueryFilter Class Doc Comment
+ * DomainBuyExtensions Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class QueryFilter implements ModelInterface, ArrayAccess
+class DomainBuyExtensions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QueryFilter';
+    protected static $swaggerModelName = 'DomainBuyExtensions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class QueryFilter implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'key' => 'string',
-        'value' => 'string',
-        'values' => 'string[]',
-        'operator' => '\Domainrobot\Model\Operator',
-        'link' => '\Domainrobot\Model\ConditionType',
-        'filters' => '\Domainrobot\Model\QueryFilter[]'
+        'amount' => 'double',
+        'currency' => 'string'
     ];
 
     /**
@@ -71,12 +67,8 @@ class QueryFilter implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'key' => null,
-        'value' => null,
-        'values' => null,
-        'operator' => null,
-        'link' => null,
-        'filters' => null
+        'amount' => 'double',
+        'currency' => null
     ];
 
     /**
@@ -106,12 +98,8 @@ class QueryFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
-        'value' => 'value',
-        'values' => 'values',
-        'operator' => 'operator',
-        'link' => 'link',
-        'filters' => 'filters'
+        'amount' => 'amount',
+        'currency' => 'currency'
     ];
 
     /**
@@ -120,12 +108,8 @@ class QueryFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'value' => 'setValue',
-        'values' => 'setValues',
-        'operator' => 'setOperator',
-        'link' => 'setLink',
-        'filters' => 'setFilters'
+        'amount' => 'setAmount',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -134,12 +118,8 @@ class QueryFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'value' => 'getValue',
-        'values' => 'getValues',
-        'operator' => 'getOperator',
-        'link' => 'getLink',
-        'filters' => 'getFilters'
+        'amount' => 'getAmount',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -202,12 +182,8 @@ class QueryFilter implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = isset($data['key']) ? $this->createData($data['key'], 'key')  : null;
-        $this->container['value'] = isset($data['value']) ? $this->createData($data['value'], 'value')  : null;
-        $this->container['values'] = isset($data['values']) ? $this->createData($data['values'], 'values')  : null;
-        $this->container['operator'] = isset($data['operator']) ? $this->createData($data['operator'], 'operator')  : null;
-        $this->container['link'] = isset($data['link']) ? $this->createData($data['link'], 'link')  : null;
-        $this->container['filters'] = isset($data['filters']) ? $this->createData($data['filters'], 'filters')  : null;
+        $this->container['amount'] = isset($data['amount']) ? $this->createData($data['amount'], 'amount')  : null;
+        $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
     }
 
     /**
@@ -290,145 +266,49 @@ class QueryFilter implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets key
+     * Gets amount
+     *
+     * @return double
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param double $amount The amount for the domain
+     *
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
      *
      * @return string
      */
-    public function getKey()
+    public function getCurrency()
     {
-        return $this->container['key'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets key
+     * Sets currency
      *
-     * @param string $key key
+     * @param string $currency Used currency of the amount
      *
      * @return $this
      */
-    public function setKey($key)
+    public function setCurrency($currency)
     {
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets value
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string $value value
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets values
-     *
-     * @return string[]
-     */
-    public function getValues()
-    {
-        return $this->container['values'];
-    }
-
-    /**
-     * Sets values
-     *
-     * @param string[] $values values
-     *
-     * @return $this
-     */
-    public function setValues($values)
-    {
-        $this->container['values'] = $values;
-
-        return $this;
-    }
-
-    /**
-     * Gets operator
-     *
-     * @return \Domainrobot\Model\Operator
-     */
-    public function getOperator()
-    {
-        return $this->container['operator'];
-    }
-
-    /**
-     * Sets operator
-     *
-     * @param \Domainrobot\Model\Operator $operator operator
-     *
-     * @return $this
-     */
-    public function setOperator($operator)
-    {
-        $this->container['operator'] = $operator;
-
-        return $this;
-    }
-
-    /**
-     * Gets link
-     *
-     * @return \Domainrobot\Model\ConditionType
-     */
-    public function getLink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     * @param \Domainrobot\Model\ConditionType $link link
-     *
-     * @return $this
-     */
-    public function setLink($link)
-    {
-        $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets filters
-     *
-     * @return \Domainrobot\Model\QueryFilter[]
-     */
-    public function getFilters()
-    {
-        return $this->container['filters'];
-    }
-
-    /**
-     * Sets filters
-     *
-     * @param \Domainrobot\Model\QueryFilter[] $filters filters
-     *
-     * @return $this
-     */
-    public function setFilters($filters)
-    {
-        $this->container['filters'] = $filters;
+        $this->container['currency'] = $currency;
 
         return $this;
     }

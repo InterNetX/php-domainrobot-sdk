@@ -23,6 +23,7 @@ use Domainrobot\Service\PcDomainsService;
 use Domainrobot\Service\WhoisService;
 use Domainrobot\Service\LoginService;
 use Domainrobot\Service\DomainPremiumService;
+use Domainrobot\Service\RedirectService;
 class Domainrobot
 {
     // private static $instance = null;
@@ -163,17 +164,24 @@ class Domainrobot
 
     /**
      * Interface for Login Requests
-     
+     *
      * @var LoginService
      */
     public $login;
 
-     /**
+    /**
      * Interface for DomainPremium Requests
-     
+     *
      * @var DomainPremiumService
      */
     public $domainPremium;
+
+    /**
+     * Interface for Redirect Requests
+     *
+     * @var RedirectService
+     */
+    public $redirect;
 
     /**
      * [
@@ -206,6 +214,7 @@ class Domainrobot
         $this->whois = new WhoisService($this->domainrobotConfig);
         $this->login = new LoginService($this->domainrobotConfig);
         $this->domainPremium = new DomainPremiumService($this->domainrobotConfig);
+        $this->redirect = new RedirectService($this->domainrobotConfig);
     }
 
     public function setDomainrobotConfig(DomainrobotConfig $domainrobotConfig)

@@ -84,7 +84,7 @@ class DomainService extends DomainrobotService
     public function createAuthinfo1Async($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/$name/_authinfo1",
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
             'POST'
         );
     }
@@ -114,7 +114,7 @@ class DomainService extends DomainrobotService
     public function createAuthinfo2Async($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/$name/_authinfo2",
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo2",
             'POST'
         );
     }
@@ -149,7 +149,7 @@ class DomainService extends DomainrobotService
             throw new \InvalidArgumentException("Field Domain.name is missing.");
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/".$body->getName()."/_renew",
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_renew",
             'PUT',
             ["json" => $body->toArray()]
         );
@@ -214,7 +214,7 @@ class DomainService extends DomainrobotService
         }
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/".$body->getName()."/_statusUpdate",
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_statusUpdate",
             'PUT',
             ["json" => $body->toArray()]
         );
@@ -428,7 +428,7 @@ class DomainService extends DomainrobotService
     public function infoAsync($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/$name",
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name,
             'GET'
         );
     }
@@ -456,7 +456,7 @@ class DomainService extends DomainrobotService
     public function deleteAuthinfo1Async($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/$name/_authinfo1",
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
             'DELETE'
         );
     }
@@ -491,7 +491,7 @@ class DomainService extends DomainrobotService
             throw new \InvalidArgumentException("Field Domain.name is missing.");
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/".$body->getName(),
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName(),
             'PUT',
             ["json" => $body->toArray()]
         );
@@ -527,8 +527,113 @@ class DomainService extends DomainrobotService
             throw new \InvalidArgumentException("Field DomainRestore.name is missing.");
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/".$body->getName()."/_restore",
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_restore",
             'PUT',
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Buying a domain from the premium market. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return ObjectJob
+     */
+    public function buy(Domain $body)
+    {
+        $domainrobotPromise = $this->buyAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+
+    /**
+     * Buying a domain from the premium market. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function buyAsync(Domain $body)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/_buy",
+            'POST',
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Changing the ownerc of an existing domain.
+     * Registry must support the trade task.
+     *
+     * @param Domain $body
+     * @return ObjectJob
+     */
+    public function trade(Domain $body)
+    {
+        $domainrobotPromise = $this->tradeAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+    
+    /**
+     * Changing the ownerc of an existing domain.
+     * Registry must support the trade task.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function tradeAsync(Domain $body)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/_trade",
+            'POST',
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Changing the ownerc of an existing domain.
+     *
+     * @param Domain $body
+     * @return ObjectJob
+     */
+    public function ownerChange(Domain $body)
+    {
+        $domainrobotPromise = $this->ownerChangeAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+
+    /**
+     * Changing the ownerc of an existing domain.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function ownerChangeAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_ownerChange",
+            "PUT",
             ["json" => $body->toArray()]
         );
     }

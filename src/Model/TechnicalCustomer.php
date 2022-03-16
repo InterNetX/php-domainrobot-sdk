@@ -1,6 +1,6 @@
 <?php
 /**
- * QueryFilter
+ * TechnicalCustomer
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * QueryFilter Class Doc Comment
+ * TechnicalCustomer Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class QueryFilter implements ModelInterface, ArrayAccess
+class TechnicalCustomer implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QueryFilter';
+    protected static $swaggerModelName = 'TechnicalCustomer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,12 @@ class QueryFilter implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'key' => 'string',
-        'value' => 'string',
-        'values' => 'string[]',
-        'operator' => '\Domainrobot\Model\Operator',
-        'link' => '\Domainrobot\Model\ConditionType',
-        'filters' => '\Domainrobot\Model\QueryFilter[]'
+        'number' => 'int',
+        'client' => 'string',
+        'group' => 'int',
+        'adoptExpiration' => '\Domainrobot\Model\AdoptExpiration',
+        'billingTerm' => '\Domainrobot\Model\BillingTerm',
+        'autoDeleteTlds' => 'string'
     ];
 
     /**
@@ -71,12 +71,12 @@ class QueryFilter implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'key' => null,
-        'value' => null,
-        'values' => null,
-        'operator' => null,
-        'link' => null,
-        'filters' => null
+        'number' => 'int64',
+        'client' => null,
+        'group' => 'int64',
+        'adoptExpiration' => null,
+        'billingTerm' => null,
+        'autoDeleteTlds' => null
     ];
 
     /**
@@ -106,12 +106,12 @@ class QueryFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
-        'value' => 'value',
-        'values' => 'values',
-        'operator' => 'operator',
-        'link' => 'link',
-        'filters' => 'filters'
+        'number' => 'number',
+        'client' => 'client',
+        'group' => 'group',
+        'adoptExpiration' => 'adoptExpiration',
+        'billingTerm' => 'billingTerm',
+        'autoDeleteTlds' => 'autoDeleteTlds'
     ];
 
     /**
@@ -120,12 +120,12 @@ class QueryFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'value' => 'setValue',
-        'values' => 'setValues',
-        'operator' => 'setOperator',
-        'link' => 'setLink',
-        'filters' => 'setFilters'
+        'number' => 'setNumber',
+        'client' => 'setClient',
+        'group' => 'setGroup',
+        'adoptExpiration' => 'setAdoptExpiration',
+        'billingTerm' => 'setBillingTerm',
+        'autoDeleteTlds' => 'setAutoDeleteTlds'
     ];
 
     /**
@@ -134,12 +134,12 @@ class QueryFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'value' => 'getValue',
-        'values' => 'getValues',
-        'operator' => 'getOperator',
-        'link' => 'getLink',
-        'filters' => 'getFilters'
+        'number' => 'getNumber',
+        'client' => 'getClient',
+        'group' => 'getGroup',
+        'adoptExpiration' => 'getAdoptExpiration',
+        'billingTerm' => 'getBillingTerm',
+        'autoDeleteTlds' => 'getAutoDeleteTlds'
     ];
 
     /**
@@ -202,12 +202,12 @@ class QueryFilter implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = isset($data['key']) ? $this->createData($data['key'], 'key')  : null;
-        $this->container['value'] = isset($data['value']) ? $this->createData($data['value'], 'value')  : null;
-        $this->container['values'] = isset($data['values']) ? $this->createData($data['values'], 'values')  : null;
-        $this->container['operator'] = isset($data['operator']) ? $this->createData($data['operator'], 'operator')  : null;
-        $this->container['link'] = isset($data['link']) ? $this->createData($data['link'], 'link')  : null;
-        $this->container['filters'] = isset($data['filters']) ? $this->createData($data['filters'], 'filters')  : null;
+        $this->container['number'] = isset($data['number']) ? $this->createData($data['number'], 'number')  : null;
+        $this->container['client'] = isset($data['client']) ? $this->createData($data['client'], 'client')  : null;
+        $this->container['group'] = isset($data['group']) ? $this->createData($data['group'], 'group')  : null;
+        $this->container['adoptExpiration'] = isset($data['adoptExpiration']) ? $this->createData($data['adoptExpiration'], 'adoptExpiration')  : null;
+        $this->container['billingTerm'] = isset($data['billingTerm']) ? $this->createData($data['billingTerm'], 'billingTerm')  : null;
+        $this->container['autoDeleteTlds'] = isset($data['autoDeleteTlds']) ? $this->createData($data['autoDeleteTlds'], 'autoDeleteTlds')  : null;
     }
 
     /**
@@ -274,6 +274,20 @@ class QueryFilter implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['number'] === null) {
+            $invalidProperties[] = "'number' can't be null";
+        }
+        if ($this->container['client'] === null) {
+            $invalidProperties[] = "'client' can't be null";
+        }
+        if ((mb_strlen($this->container['client']) > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'client', the character length must be smaller than or equal to 2147483647.";
+        }
+
+        if ((mb_strlen($this->container['client']) < 1)) {
+            $invalidProperties[] = "invalid value for 'client', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -290,145 +304,152 @@ class QueryFilter implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets key
+     * Gets number
+     *
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->container['number'];
+    }
+
+    /**
+     * Sets number
+     *
+     * @param int $number number
+     *
+     * @return $this
+     */
+    public function setNumber($number)
+    {
+        $this->container['number'] = $number;
+
+        return $this;
+    }
+
+    /**
+     * Gets client
      *
      * @return string
      */
-    public function getKey()
+    public function getClient()
     {
-        return $this->container['key'];
+        return $this->container['client'];
     }
 
     /**
-     * Sets key
+     * Sets client
      *
-     * @param string $key key
+     * @param string $client client
      *
      * @return $this
      */
-    public function setKey($key)
+    public function setClient($client)
     {
-        $this->container['key'] = $key;
+        if ((mb_strlen($client) > 2147483647)) {
+            throw new \InvalidArgumentException('invalid length for $client when calling TechnicalCustomer., must be smaller than or equal to 2147483647.');
+        }
+        if ((mb_strlen($client) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $client when calling TechnicalCustomer., must be bigger than or equal to 1.');
+        }
+
+        $this->container['client'] = $client;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets group
+     *
+     * @return int
+     */
+    public function getGroup()
+    {
+        return $this->container['group'];
+    }
+
+    /**
+     * Sets group
+     *
+     * @param int $group group
+     *
+     * @return $this
+     */
+    public function setGroup($group)
+    {
+        $this->container['group'] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Gets adoptExpiration
+     *
+     * @return \Domainrobot\Model\AdoptExpiration
+     */
+    public function getAdoptExpiration()
+    {
+        return $this->container['adoptExpiration'];
+    }
+
+    /**
+     * Sets adoptExpiration
+     *
+     * @param \Domainrobot\Model\AdoptExpiration $adoptExpiration adoptExpiration
+     *
+     * @return $this
+     */
+    public function setAdoptExpiration($adoptExpiration)
+    {
+        $this->container['adoptExpiration'] = $adoptExpiration;
+
+        return $this;
+    }
+
+    /**
+     * Gets billingTerm
+     *
+     * @return \Domainrobot\Model\BillingTerm
+     */
+    public function getBillingTerm()
+    {
+        return $this->container['billingTerm'];
+    }
+
+    /**
+     * Sets billingTerm
+     *
+     * @param \Domainrobot\Model\BillingTerm $billingTerm billingTerm
+     *
+     * @return $this
+     */
+    public function setBillingTerm($billingTerm)
+    {
+        $this->container['billingTerm'] = $billingTerm;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoDeleteTlds
      *
      * @return string
      */
-    public function getValue()
+    public function getAutoDeleteTlds()
     {
-        return $this->container['value'];
+        return $this->container['autoDeleteTlds'];
     }
 
     /**
-     * Sets value
+     * Sets autoDeleteTlds
      *
-     * @param string $value value
+     * @param string $autoDeleteTlds autoDeleteTlds
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setAutoDeleteTlds($autoDeleteTlds)
     {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets values
-     *
-     * @return string[]
-     */
-    public function getValues()
-    {
-        return $this->container['values'];
-    }
-
-    /**
-     * Sets values
-     *
-     * @param string[] $values values
-     *
-     * @return $this
-     */
-    public function setValues($values)
-    {
-        $this->container['values'] = $values;
-
-        return $this;
-    }
-
-    /**
-     * Gets operator
-     *
-     * @return \Domainrobot\Model\Operator
-     */
-    public function getOperator()
-    {
-        return $this->container['operator'];
-    }
-
-    /**
-     * Sets operator
-     *
-     * @param \Domainrobot\Model\Operator $operator operator
-     *
-     * @return $this
-     */
-    public function setOperator($operator)
-    {
-        $this->container['operator'] = $operator;
-
-        return $this;
-    }
-
-    /**
-     * Gets link
-     *
-     * @return \Domainrobot\Model\ConditionType
-     */
-    public function getLink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     * @param \Domainrobot\Model\ConditionType $link link
-     *
-     * @return $this
-     */
-    public function setLink($link)
-    {
-        $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets filters
-     *
-     * @return \Domainrobot\Model\QueryFilter[]
-     */
-    public function getFilters()
-    {
-        return $this->container['filters'];
-    }
-
-    /**
-     * Sets filters
-     *
-     * @param \Domainrobot\Model\QueryFilter[] $filters filters
-     *
-     * @return $this
-     */
-    public function setFilters($filters)
-    {
-        $this->container['filters'] = $filters;
+        $this->container['autoDeleteTlds'] = $autoDeleteTlds;
 
         return $this;
     }

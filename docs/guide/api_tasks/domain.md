@@ -26,3 +26,7 @@ List of all available tasks with linked examples:
 * [createAuthinfo2](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainCreateAuthinfo2.php)(string $name)
 * [restoreList](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainRestoreList.php)(Query $query = null);
 * [restore](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainRestore.php)(DomainRestore $domainRestore)
+* [createPremium](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainCreatePremium.php)(Domain $domain)
+* [ownerChange](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainOwnerChange.php)(Domain $domain)
+* [trade](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainTrade.php)(Domain $domain)
+* [buy](https://github.com/InterNetX/php-domainrobot-sdk/blob/master/example/domain/DomainBuy.php)(Domain $domain)

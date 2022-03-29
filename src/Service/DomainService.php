@@ -25,7 +25,7 @@ class DomainService extends DomainrobotService
     }
 
     /**
-     * Sends a Domain create request.
+     * Ordering a new domain. The operation is asynchronous and creates a job.
      *
      * @param Domain $body
      * @return ObjectJob
@@ -37,15 +37,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        // return $domainrobotResult->getResult();
-
         return new ObjectJob([
             "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
 
     /**
-     * Sends a Domain create request.
+     * Ordering a new domain. The operation is asynchronous and creates a job.
      *
      * @param Domain $body
      * @return DomainrobotPromise
@@ -54,481 +52,7 @@ class DomainService extends DomainrobotService
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain",
-            'POST',
-            ["json" => $body->toArray()]
-        );
-    }
-
-    /**
-     * Sends a authinfo1 create request.
-     *
-     * @param string $name
-     * @return Domain
-     */
-    public function createAuthinfo1($name)
-    {
-        $domainrobotPromise = $this->createAuthinfo1Async($name);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
-    }
-
-    /**
-     * Sends a authinfo1 create request.
-     *
-     * @param string $name
-     * @return DomainrobotPromise
-     */
-    public function createAuthinfo1Async($name)
-    {
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
-            'POST'
-        );
-    }
-
-    /**
-     * Sends a authinfo2 create request.
-     *
-     * @param string $name
-     * @return void
-     */
-    public function createAuthinfo2($name)
-    {
-        $domainrobotPromise = $this->createAuthinfo2Async($name);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
-    }
-
-    /**
-     * Sends a authinfo2 create request.
-     *
-     * @param string $name
-     * @return DomainrobotPromise
-     */
-    public function createAuthinfo2Async($name)
-    {
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo2",
-            'POST'
-        );
-    }
-
-    /**
-     * Sends a Domain renew request.
-     *
-     * @param Domain $body
-     * @return ObjectJob
-     */
-    public function renew(Domain $body)
-    {
-        $domainrobotPromise = $this->renewAsync($body);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
-        ]);
-    }
-
-    /**
-     * Sends a Domain renew request.
-     *
-     * @param Domain $body
-     * @return DomainrobotPromise
-     */
-    public function renewAsync(Domain $body)
-    {
-        if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
-        }
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_renew",
-            'PUT',
-            ["json" => $body->toArray()]
-        );
-    }
-
-    /**
-     * Sends a Domain transfer request.
-     *
-     * @param Domain $body
-     * @return ObjectJob
-     */
-    public function transfer(Domain $body)
-    {
-        $domainrobotPromise = $this->transferAsync($body);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
-        ]);
-    }
-
-    /**
-     * Sends a Domain transfer request.
-     *
-     * @param Domain $body
-     * @return DomainrobotPromise
-     */
-    public function transferAsync(Domain $body)
-    {
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/_transfer",
-            'POST',
-            ["json" => $body->toArray()]
-        );
-    }
-
-
-    /**
-     * Update the registry status for an existing domain.
-     *
-     * @param Domain $body
-     * @return void
-     */
-    public function updateStatus(Domain $body)
-    {
-        $domainrobotPromise = $this->updateStatusAsync($body);
-        $domainrobotPromise->wait();
-    }
-
-    /**
-     * Update the registry status for an existing domain.
-     *
-     * @param Domain $body
-     * @return DomainrobotPromise
-     */
-    public function updateStatusAsync(Domain $body)
-    {
-        if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
-        }
-
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_statusUpdate",
-            'PUT',
-            ["json" => $body->toArray()]
-        );
-    }
-
-    /**
-     * Sends a Domain list request.
-     *
-     *
-     * The following keys can be used for filtering, ordering or fetching additional
-     * data via query parameter:
-     *
-     * * sld
-     * * subtld
-     * * tld
-     * * status
-     * * authinfo
-     * * expire
-     * * comment
-     * * ownerc
-     * * updated
-     * * zonec
-     * * nserver
-     * * techc
-     * * adminc
-     * * certificate
-     * * created
-     * * autorenew
-     *
-     * @param Query|null $body
-     * @return Domain[]
-     */
-    public function list(Query $body = null)
-    {
-        $domainrobotPromise = $this->listAsync($body);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-        $data = $domainrobotResult->getResult()['data'];
-        $domains = array();
-        foreach ($data as $d) {
-            $do = new Domain($d);
-            array_push($domains, $do);
-        }
-        return $domains;
-    }
-
-    /**
-     * Sends a Domain list request.
-     *
-     *
-     * The following keys can be used for filtering, ordering or fetching additional
-     * data via query parameter:
-     *
-     * * sld
-     * * subtld
-     * * tld
-     * * status
-     * * authinfo
-     * * expire
-     * * comment
-     * * ownerc
-     * * updated
-     * * zonec
-     * * nserver
-     * * techc
-     * * adminc
-     * * certificate
-     * * created
-     * * autorenew
-     *
-     * @param Query|null $body
-     * @return DomainrobotPromise
-     */
-    public function listAsync(Query $body = null)
-    {
-        $data = null;
-        if ($body != null) {
-            $data = $body->toArray();
-        }
-        return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/_search",
-            'POST',
-            ["json" => $data]
-        ));
-    }
-
-    /**
-     * Sends a Domain restore list request.
-     *
-     *
-     * The following keys can be used for filtering, ordering or fetching additional
-     * data via query parameter:<br>
-     *
-     * * parking
-     * * certificate
-     * * adminc
-     * * cancelation
-     * * action
-     * * zonec
-     * * nserver
-     * * techc
-     * * nsentry
-     * * dnssec
-     * * period
-     * * created
-     * * sld
-     * * tld
-     * * subtld
-     * * deleted
-     * * autorenew
-     * * expire
-     * * domainsafe
-     * * comment
-     * * ownerc
-     * * updated
-     * * remarks
-     * * authinfo
-     * * status
-     *
-     * @param Query|null $body
-     * @return DomainRestore[]
-     */
-    public function restoreList(Query $body = null)
-    {
-        $domainrobotPromise = $this->restoreListAsync($body);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        $data = $domainrobotResult->getResult()['data'];
-        $domainRestores = array();
-        foreach ($data as $d) {
-            $dr = new DomainRestore($d);
-            array_push($domainRestores, $dr);
-        }
-        return $domainRestores;
-    }
-
-    /**
-     * Sends a Domain restore list request.
-     *
-     *
-     * The following keys can be used for filtering, ordering or fetching additional
-     * data via query parameter:<br>
-     *
-     * * parking
-     * * certificate
-     * * adminc
-     * * cancelation
-     * * action
-     * * zonec
-     * * nserver
-     * * techc
-     * * nsentry
-     * * dnssec
-     * * period
-     * * created
-     * * sld
-     * * tld
-     * * subtld
-     * * deleted
-     * * autorenew
-     * * expire
-     * * domainsafe
-     * * comment
-     * * ownerc
-     * * updated
-     * * remarks
-     * * authinfo
-     * * status
-     *
-     * @param Query|null $body
-     * @return DomainrobotPromise
-     */
-    public function restoreListAsync(Query $body = null)
-    {
-        $data = null;
-        if ($body != null) {
-            $data = $body->toArray();
-        }
-        return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/restore/_search",
-            'POST',
-            ["json" => $data]
-        ));
-    }
-
-    /**
-     * Sends a Domain info request.
-     *
-     * @param string $name
-     * @return Domain
-     */
-    public function info($name)
-    {
-        $domainrobotPromise = $this->infoAsync($name);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
-    }
-
-    /**
-     * Sends a Domain info request.
-     *
-     * @param string $name
-     * @return DomainrobotPromise
-     */
-    public function infoAsync($name)
-    {
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name,
-            'GET'
-        );
-    }
-
-    /**
-     * Sends a authinfo1 delete request.
-     *
-     * @param string $name
-     * @return void
-     */
-    public function deleteAuthinfo1($name)
-    {
-        $domainrobotPromise = $this->deleteAuthinfo1Async($name);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-    }
-
-    /**
-     * Sends a authinfo1 delete request.
-     *
-     * @param string $name
-     * @return DomainrobotPromise
-     */
-    public function deleteAuthinfo1Async($name)
-    {
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
-            'DELETE'
-        );
-    }
-
-    /**
-     * Sends a Domain update request.
-     *
-     * @param Domain $body
-     * @return ObjectJob
-     */
-    public function update(Domain $body)
-    {
-        $domainrobotPromise = $this->updateAsync($body);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
-        ]);
-    }
-
-    /**
-     * Sends a Domain update request.
-     *
-     * @param Domain $body
-     * @return DomainrobotPromise
-     */
-    public function updateAsync(Domain $body)
-    {
-        if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
-        }
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName(),
-            'PUT',
-            ["json" => $body->toArray()]
-        );
-    }
-
-    /**
-     * Sends a Domain restore request.
-     *
-     * @param DomainRestore $body
-     * @return ObjectJob
-     */
-    public function restore(DomainRestore $body)
-    {
-        $domainrobotPromise = $this->restoreAsync($body);
-        $domainrobotResult = $domainrobotPromise->wait();
-
-        Domainrobot::setLastDomainrobotResult($domainrobotResult);
-
-        return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
-        ]);
-    }
-
-    /**
-     * Sends a Domain restore request.
-     *
-     * @param DomainRestore $body
-     * @return DomainrobotPromise
-     */
-    public function restoreAsync(DomainRestore $body)
-    {
-        if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field DomainRestore.name is missing.");
-        }
-        return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_restore",
-            'PUT',
+            "POST",
             ["json" => $body->toArray()]
         );
     }
@@ -561,7 +85,123 @@ class DomainService extends DomainrobotService
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_buy",
-            'POST',
+            "POST",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Importing a domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return ObjectJob
+     */
+    public function import(Domain $body)
+    {
+        $domainrobotPromise = $this->buyAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+
+    /**
+     * Importing a domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function importAsync(Domain $body)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/_import",
+            "POST",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Inquiring a list of domains with certain details.
+     * 
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * sld, subtld, tld, status, authinfo, expire, comment, ownerc, updated, zonec, nserver, techc, adminc, certificate, created, autorenew
+     *
+     * @param Query|null $body
+     * @return Domain[]
+     */
+    public function list(Query $body = null)
+    {
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        $data = $domainrobotResult->getResult()['data'];
+
+        $domains = array();
+        foreach ($data as $d) {
+            $do = new Domain($d);
+            array_push($domains, $do);
+        }
+
+        return $domains;
+    }
+
+    /**
+     * Inquiring a list of domains with certain details.
+     * 
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * sld, subtld, tld, status, authinfo, expire, comment, ownerc, updated, zonec, nserver, techc, adminc, certificate, created, autorenew
+     *
+     * @param Query|null $body
+     * @return DomainrobotPromise
+     */
+    public function listAsync(Query $body = null)
+    {
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray();
+        }
+
+        return new DomainrobotPromise($this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/_search",
+            "POST",
+            ["json" => $data]
+        ));
+    }
+
+    /**
+     * Updating the services of a domain.
+     *
+     * @param Domain $body
+     * @return void
+     */
+    public function updateServices(Domain $body)
+    {
+        $domainrobotPromise = $this->updateServicesAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Updating the services of a domain.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function updateServicesAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/_services",
+            "PUT",
             ["json" => $body->toArray()]
         );
     }
@@ -584,7 +224,7 @@ class DomainService extends DomainrobotService
             "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
         ]);
     }
-    
+
     /**
      * Changing the ownerc of an existing domain.
      * Registry must support the trade task.
@@ -596,8 +236,455 @@ class DomainService extends DomainrobotService
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_trade",
-            'POST',
+            "POST",
             ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Transfering a domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return ObjectJob
+     */
+    public function transfer(Domain $body)
+    {
+        $domainrobotPromise = $this->transferAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+
+    /**
+     * Transfering a domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function transferAsync(Domain $body)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/_transfer",
+            "POST",
+            ["json" => $body->toArray()]
+        );
+    }
+    
+    /**
+     * Inquiring a autodelete list.
+     *
+     * @param Query|null $body
+     * @return AutoDeleteDomain[]
+     */
+    public function autodeleteList(Query $body = null)
+    {
+        $domainrobotPromise = $this->autodeleteListAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        $data = $domainrobotResult->getResult()['data'];
+
+        $autoDeleteDomains = array();
+        foreach ($data as $d) {
+            $a = new AutoDeleteDomain($d);
+            array_push($autoDeleteDomains, $a);
+        }
+
+        return $autoDeleteDomains;
+    }
+
+    /**
+     * Inquiring a autodelete list.
+     *
+     * @param Query|null $body
+     * @return DomainrobotPromise
+     */
+    public function autodeleteListAsync(Query $body = null)
+    {
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray();
+        }
+
+        return new DomainrobotPromise($this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/autodelete/_search",
+            "POST",
+            ["json" => $data]
+        ));
+    }
+
+    /**
+     * Inquiring a list of cancelations with certain details. 
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * disconnect, execdate, ctid, created, registryStatus, sld, type, tld, subtld, gainingRegistrar, updated
+     *
+     * @param Query|null $body
+     * @return DomainCancelation[]
+     */
+    public function cancelationList(Query $body = null)
+    {
+        $domainrobotPromise = $this->cancelationListAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        $data = $domainrobotResult->getResult()['data'];
+
+        $domainCancelations = array();
+        foreach ($data as $d) {
+            $dc = new DomainCancelation($d);
+            array_push($domainCancelations, $dc);
+        }
+
+        return $domainCancelations;
+    }
+
+    /**
+     * Inquiring a list of cancelations with certain details. 
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * disconnect, execdate, ctid, created, registryStatus, sld, type, tld, subtld, gainingRegistrar, updated
+     *
+     * @param Query|null $body
+     * @return DomainrobotPromise
+     */
+    public function cancelationListAsync(Query $body = null)
+    {
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray();
+        }
+
+        return new DomainrobotPromise($this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/cancelation/_search",
+            "POST",
+            ["json" => $data]
+        ));
+    }
+
+    /**
+     * Inquiring a list of restorable domains with certain details. 
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * parking, certificate, adminc, cancelation, action, zonec, nserver, techc, nsentry, dnssec, period, created, sld, 
+     * tld, subtld, deleted, autorenew, expire, domainsafe, comment, ownerc, updated, remarks, authinfo, status
+     *
+     * @param Query|null $body
+     * @return DomainRestore[]
+     */
+    public function restoreList(Query $body = null)
+    {
+        $domainrobotPromise = $this->restoreListAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        $data = $domainrobotResult->getResult()['data'];
+
+        $domainRestores = array();
+        foreach ($data as $d) {
+            $dr = new DomainRestore($d);
+            array_push($domainRestores, $dr);
+        }
+
+        return $domainRestores;
+    }
+
+    /**
+     * Inquiring a list of restorable domains with certain details. 
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * parking, certificate, adminc, cancelation, action, zonec, nserver, techc, nsentry, dnssec, period, created, sld, 
+     * tld, subtld, deleted, autorenew, expire, domainsafe, comment, ownerc, updated, remarks, authinfo, status
+     *
+     * @param Query|null $body
+     * @return DomainrobotPromise
+     */
+    public function restoreListAsync(Query $body = null)
+    {
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray();
+        }
+
+        return new DomainrobotPromise($this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/restore/_search",
+            "POST",
+            ["json" => $data]
+        ));
+    }
+
+    /**
+     * Inquiring the data for the specified domain.
+     *
+     * @param string $name
+     * @return Domain
+     */
+    public function info($name)
+    {
+        $domainrobotPromise = $this->infoAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Inquiring the data for the specified domain.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function infoAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name,
+            "GET"
+        );
+    }
+
+    /**
+     * Updating an existing domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return ObjectJob
+     */
+    public function update(Domain $body)
+    {
+        $domainrobotPromise = $this->updateAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+
+    /**
+     * Updating an existing domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function updateAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName(),
+            "PUT",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Creating an AuthInfo1 for the specified domain.
+     *
+     * @param string $name
+     * @return Domain
+     */
+    public function createAuthinfo1($name)
+    {
+        $domainrobotPromise = $this->createAuthinfo1Async($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Creating an AuthInfo1 for the specified domain.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function createAuthinfo1Async($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
+            "POST"
+        );
+    }
+
+    /**
+     * Deleting an existing AuthInfo1 for the specified domain.
+     *
+     * @param string $name
+     * @return void
+     */
+    public function deleteAuthinfo1($name)
+    {
+        $domainrobotPromise = $this->deleteAuthinfo1Async($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Deleting an existing AuthInfo1 for the specified domain.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function deleteAuthinfo1Async($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
+            "DELETE"
+        );
+    }
+
+    /**
+     * Creating an AuthInfo2 for the specified domain.
+     *
+     * @param string $name
+     * @return Domain
+     */
+    public function createAuthinfo2($name)
+    {
+        $domainrobotPromise = $this->createAuthinfo2Async($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Creating an AuthInfo2 for the specified domain.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function createAuthinfo2Async($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo2",
+            "POST"
+        );
+    }
+
+    /**
+     * Invoking an AutoDNSSec key rollover. Note the AutoDNSSec feature must be enabled for the domain.
+     *
+     * @param string $name
+     * @return void
+     */
+    public function autodnsSecKeyRollover($name)
+    {
+        $domainrobotPromise = $this->autodnsSecKeyRolloverAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Invoking an AutoDNSSec key rollover. Note the AutoDNSSec feature must be enabled for the domain.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function autodnsSecKeyRolloverAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_autoDnssecKeyRollover",
+            "PUT"
+        );
+    }
+
+    /**
+     * Updating a comment for an existing domain.
+     *
+     * @param Domain $body
+     * @return void
+     */
+    public function updateComment(Domain $body)
+    {
+        $domainrobotPromise = $this->updateCommentAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Updating a comment for an existing domain.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function updateCommentAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_comment",
+            "PUT",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Adding the domain to the domain safe.
+     *
+     * @param string $name
+     * @return void
+     */
+    public function createDomainSafe($name)
+    {
+        $domainrobotPromise = $this->createDomainSafeAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Adding the domain to the domain safe.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function createDomainSafeAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_domainSafe",
+            "PUT"
+        );
+    }
+
+    /**
+     * Deleting the domain from the domain safe.
+     *
+     * @param string $name
+     * @return void
+     */
+    public function deleteDomainSafe($name)
+    {
+        $domainrobotPromise = $this->deleteDomainSafeAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Deleting the domain from the domain safe.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function deleteDomainSafeAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_domainSafe",
+            "DELETE"
         );
     }
 
@@ -635,6 +722,293 @@ class DomainService extends DomainrobotService
             $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_ownerChange",
             "PUT",
             ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Renewing an existing domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return ObjectJob
+     */
+    public function renew(Domain $body)
+    {
+        $domainrobotPromise = $this->renewAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+
+    /**
+     * Renewing an existing domain. The operation is asynchronous and creates a job.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function renewAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_renew",
+            "PUT",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Restoring an existing domain.
+     *
+     * @param DomainRestore $body
+     * @return ObjectJob
+     */
+    public function restore(DomainRestore $body)
+    {
+        $domainrobotPromise = $this->restoreAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ObjectJob([
+            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+        ]);
+    }
+
+    /**
+     * Restoring an existing domain.
+     *
+     * @param DomainRestore $body
+     * @return DomainrobotPromise
+     */
+    public function restoreAsync(DomainRestore $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field DomainRestore.name is missing.");
+        }
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_restore",
+            "PUT",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Sending the AuthInfo for the specified domain to the domain owner.
+     *
+     * @param string $name
+     * @return void
+     */
+    public function sendAuthinfoToOwnerc($name)
+    {
+        $domainrobotPromise = $this->sendAuthinfoToOwnercAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Sending the AuthInfo for the specified domain to the domain owner.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function sendAuthinfoToOwnercAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_sendAuthinfoToOwnerc",
+            "PUT"
+        );
+    }
+
+    /**
+     * Update the registry status for an existing domain.
+     *
+     * @param Domain $body
+     * @return void
+     */
+    public function updateStatus(Domain $body)
+    {
+        $domainrobotPromise = $this->updateStatusAsync($body);
+        $domainrobotPromise->wait();
+    }
+
+    /**
+     * Update the registry status for an existing domain.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function updateStatusAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_statusUpdate",
+            "PUT",
+            ["json" => $body->toArray()]
+        );
+    }
+    
+    /**
+     * Inquiring the cancelation data for the specified domain.
+     *
+     * @param string $name
+     * @return JsonResponseDataDomainCancelation
+     */
+    public function cancelationInfo($name)
+    {
+        $domainrobotPromise = $this->cancelationInfoAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        // return new JsonResponseDataDomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Inquiring the cancelation data for the specified domain.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function cancelationInfoAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/cancelation",
+            "GET"
+        );
+    }
+
+    /**
+     * Inquiring the cancelation data for the specified domain.
+     *
+     * @param Domain $body
+     * @return JsonResponseDataDomainCancelation
+     */
+    public function cancelationCreate(Domain $body)
+    {
+        $domainrobotPromise = $this->cancelationCreateAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        // return new JsonResponseDataDomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Inquiring the cancelation data for the specified domain.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function cancelationCreateAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain" . $body->getName() . "/cancelation",
+            "POST",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Updating an existing cancelation for the specified domain.
+     *
+     * @param Domain $body
+     * @return JsonResponseDataDomainCancelation
+     */
+    public function cancelationUpdate(Domain $body)
+    {
+        $domainrobotPromise = $this->cancelationUpdateAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        // return new JsonResponseDataDomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Updating an existing cancelation for the specified domain.
+     *
+     * @param Domain $body
+     * @return DomainrobotPromise
+     */
+    public function cancelationUpdateAsync(Domain $body)
+    {
+        if ($body->getName() === null) {
+            throw new \InvalidArgumentException("Field Domain.name is missing.");
+        }
+
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain" . $body->getName() . "/cancelation",
+            "PUT",
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Deleting an existing cancelation for the specified domain.
+     *
+     * @param string $name
+     * @return void
+     */
+    public function cancelationDelete($name)
+    {
+        $domainrobotPromise = $this->cancelationDeleteAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Deleting an existing cancelation for the specified domain.
+     *
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function cancelationDeleteAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/cancelation",
+            "DELETE"
+        );
+    }
+
+    /**
+     * Perform an Whois Request of an Domain
+     * 
+     * @param string $name
+     * @return void
+     */
+    public function whois($name)
+    {
+        $domainrobotPromise = $this->whoisAsync($name);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+    }
+
+    /**
+     * Perform an Whois Request of an Domain
+     * 
+     * @param string $name
+     * @return DomainrobotPromise
+     */
+    public function whoisAsync($name)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_whois",
+            "GET"
         );
     }
 }

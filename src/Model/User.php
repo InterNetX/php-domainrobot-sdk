@@ -83,7 +83,8 @@ class User implements ModelInterface, ArrayAccess
         'parent' => '\Domainrobot\Model\User',
         'directCustomer' => 'bool',
         'clientAccounts' => '\Domainrobot\Model\ExternalAccounting[]',
-        'tasklimits' => '\Domainrobot\Model\Limit[]'
+        'tasklimits' => '\Domainrobot\Model\TaskLimit[]',
+        'trusteeContacts' => '\Domainrobot\Model\TrusteeContact[]'
     ];
 
     /**
@@ -118,7 +119,8 @@ class User implements ModelInterface, ArrayAccess
         'parent' => null,
         'directCustomer' => null,
         'clientAccounts' => null,
-        'tasklimits' => null
+        'tasklimits' => null,
+        'trusteeContacts' => null
     ];
 
     /**
@@ -174,7 +176,8 @@ class User implements ModelInterface, ArrayAccess
         'parent' => 'parent',
         'directCustomer' => 'directCustomer',
         'clientAccounts' => 'clientAccounts',
-        'tasklimits' => 'tasklimits'
+        'tasklimits' => 'tasklimits',
+        'trusteeContacts' => 'trusteeContacts'
     ];
 
     /**
@@ -209,7 +212,8 @@ class User implements ModelInterface, ArrayAccess
         'parent' => 'setParent',
         'directCustomer' => 'setDirectCustomer',
         'clientAccounts' => 'setClientAccounts',
-        'tasklimits' => 'setTasklimits'
+        'tasklimits' => 'setTasklimits',
+        'trusteeContacts' => 'setTrusteeContacts'
     ];
 
     /**
@@ -244,7 +248,8 @@ class User implements ModelInterface, ArrayAccess
         'parent' => 'getParent',
         'directCustomer' => 'getDirectCustomer',
         'clientAccounts' => 'getClientAccounts',
-        'tasklimits' => 'getTasklimits'
+        'tasklimits' => 'getTasklimits',
+        'trusteeContacts' => 'getTrusteeContacts'
     ];
 
     /**
@@ -334,6 +339,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['directCustomer'] = isset($data['directCustomer']) ? $this->createData($data['directCustomer'], 'directCustomer')  : null;
         $this->container['clientAccounts'] = isset($data['clientAccounts']) ? $this->createData($data['clientAccounts'], 'clientAccounts')  : null;
         $this->container['tasklimits'] = isset($data['tasklimits']) ? $this->createData($data['tasklimits'], 'tasklimits')  : null;
+        $this->container['trusteeContacts'] = isset($data['trusteeContacts']) ? $this->createData($data['trusteeContacts'], 'trusteeContacts')  : null;
     }
 
     /**
@@ -1057,7 +1063,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets tasklimits
      *
-     * @return \Domainrobot\Model\Limit[]
+     * @return \Domainrobot\Model\TaskLimit[]
      */
     public function getTasklimits()
     {
@@ -1067,13 +1073,37 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets tasklimits
      *
-     * @param \Domainrobot\Model\Limit[] $tasklimits The task limits of the user.
+     * @param \Domainrobot\Model\TaskLimit[] $tasklimits The task limits of the user.
      *
      * @return $this
      */
     public function setTasklimits($tasklimits)
     {
         $this->container['tasklimits'] = $tasklimits;
+
+        return $this;
+    }
+
+    /**
+     * Gets trusteeContacts
+     *
+     * @return \Domainrobot\Model\TrusteeContact[]
+     */
+    public function getTrusteeContacts()
+    {
+        return $this->container['trusteeContacts'];
+    }
+
+    /**
+     * Sets trusteeContacts
+     *
+     * @param \Domainrobot\Model\TrusteeContact[] $trusteeContacts The trustee Contacts of the user.
+     *
+     * @return $this
+     */
+    public function setTrusteeContacts($trusteeContacts)
+    {
+        $this->container['trusteeContacts'] = $trusteeContacts;
 
         return $this;
     }

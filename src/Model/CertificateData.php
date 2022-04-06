@@ -80,7 +80,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'ecCurve' => '\Domainrobot\Model\CsrHashAlgorithmConstants',
         'vmcLogo' => 'string',
         'vmcTrademarkRegistrationNumber' => 'string',
-        'vmcTrademarkCountryOrRegion' => '\Domainrobot\Model\VmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => '\Domainrobot\Model\VmcTrademarkCountryOrRegion',
+        'scope' => '\Domainrobot\Model\DcvValidationScope'
     ];
 
     /**
@@ -112,7 +113,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'ecCurve' => null,
         'vmcLogo' => null,
         'vmcTrademarkRegistrationNumber' => null,
-        'vmcTrademarkCountryOrRegion' => null
+        'vmcTrademarkCountryOrRegion' => null,
+        'scope' => null
     ];
 
     /**
@@ -165,7 +167,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'ecCurve' => 'ecCurve',
         'vmcLogo' => 'vmcLogo',
         'vmcTrademarkRegistrationNumber' => 'vmcTrademarkRegistrationNumber',
-        'vmcTrademarkCountryOrRegion' => 'vmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => 'vmcTrademarkCountryOrRegion',
+        'scope' => 'scope'
     ];
 
     /**
@@ -197,7 +200,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'ecCurve' => 'setEcCurve',
         'vmcLogo' => 'setVmcLogo',
         'vmcTrademarkRegistrationNumber' => 'setVmcTrademarkRegistrationNumber',
-        'vmcTrademarkCountryOrRegion' => 'setVmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => 'setVmcTrademarkCountryOrRegion',
+        'scope' => 'setScope'
     ];
 
     /**
@@ -229,7 +233,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'ecCurve' => 'getEcCurve',
         'vmcLogo' => 'getVmcLogo',
         'vmcTrademarkRegistrationNumber' => 'getVmcTrademarkRegistrationNumber',
-        'vmcTrademarkCountryOrRegion' => 'getVmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => 'getVmcTrademarkCountryOrRegion',
+        'scope' => 'getScope'
     ];
 
     /**
@@ -316,6 +321,7 @@ class CertificateData implements ModelInterface, ArrayAccess
         $this->container['vmcLogo'] = isset($data['vmcLogo']) ? $this->createData($data['vmcLogo'], 'vmcLogo')  : null;
         $this->container['vmcTrademarkRegistrationNumber'] = isset($data['vmcTrademarkRegistrationNumber']) ? $this->createData($data['vmcTrademarkRegistrationNumber'], 'vmcTrademarkRegistrationNumber')  : null;
         $this->container['vmcTrademarkCountryOrRegion'] = isset($data['vmcTrademarkCountryOrRegion']) ? $this->createData($data['vmcTrademarkCountryOrRegion'], 'vmcTrademarkCountryOrRegion')  : null;
+        $this->container['scope'] = isset($data['scope']) ? $this->createData($data['scope'], 'scope')  : null;
     }
 
     /**
@@ -969,6 +975,30 @@ class CertificateData implements ModelInterface, ArrayAccess
     public function setVmcTrademarkCountryOrRegion($vmcTrademarkCountryOrRegion)
     {
         $this->container['vmcTrademarkCountryOrRegion'] = $vmcTrademarkCountryOrRegion;
+
+        return $this;
+    }
+
+    /**
+     * Gets scope
+     *
+     * @return \Domainrobot\Model\DcvValidationScope
+     */
+    public function getScope()
+    {
+        return $this->container['scope'];
+    }
+
+    /**
+     * Sets scope
+     *
+     * @param \Domainrobot\Model\DcvValidationScope $scope The DCV scope to use for generating the dcv data
+     *
+     * @return $this
+     */
+    public function setScope($scope)
+    {
+        $this->container['scope'] = $scope;
 
         return $this;
     }

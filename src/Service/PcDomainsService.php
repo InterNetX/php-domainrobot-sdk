@@ -69,9 +69,9 @@ class PcDomainsService extends DomainrobotService
     public function estimationAsync(Estimation $estimation)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/v1/estimate",
+            $this->domainrobotConfig->getUrl() . '/v1/estimate',
             'POST',
-            ["json" => $estimation->toArray()]
+            ['json' => $estimation->toArray()]
         );
     }
 
@@ -100,7 +100,7 @@ class PcDomainsService extends DomainrobotService
     public function alexaAsync($domain)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/alexasiteinfo/$domain",
+            $this->domainrobotConfig->getUrl() . '/alexasiteinfo/' . $domain,
             'GET'
         );
     }
@@ -139,9 +139,9 @@ class PcDomainsService extends DomainrobotService
     public function keywordAsync(Keywords $keywords)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/kwe",
+            $this->domainrobotConfig->getUrl() . '/kwe',
             'POST',
-            ["json" => $keywords->toArray()]
+            ['json' => $keywords->toArray()]
         );
     }
 
@@ -172,7 +172,7 @@ class PcDomainsService extends DomainrobotService
     public function metaAsync($domain)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/meta/$domain",
+            $this->domainrobotConfig->getUrl() . '/meta/' . $domain,
             'GET'
         );
     }
@@ -204,7 +204,7 @@ class PcDomainsService extends DomainrobotService
     public function sistrixAsync($domain, $country)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/sistrix/$domain/$country",
+            $this->domainrobotConfig->getUrl() . '/sistrix/' . $domain . '/' . $country,
             'GET'
         );
     }
@@ -242,9 +242,9 @@ class PcDomainsService extends DomainrobotService
     {
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/majestic",
+            $this->domainrobotConfig->getUrl() . '/majestic',
             'POST',
-            ["json" => $domains->toArray()]
+            ['json' => $domains->toArray()]
         );
     }
 
@@ -252,12 +252,12 @@ class PcDomainsService extends DomainrobotService
      * Sends an Social Media User Check Request
      * Checks if Username is available on different Social Media Platforms
      *
-     * @param string $username
+     * @param $body
      * @return SocialMedia
      */
-    public function smuCheck($username)
+    public function smuCheck($body)
     {
-        $domainrobotPromise = $this->smuCheckAsync($username);
+        $domainrobotPromise = $this->smuCheckAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -272,11 +272,12 @@ class PcDomainsService extends DomainrobotService
      * @param string $username
      * @return DomainrobotPromise
      */
-    public function smuCheckAsync($username)
+    public function smuCheckAsync($body)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/v1/smu_check/$username",
-            'GET'
+            $this->domainrobotConfig->getUrl() . '/v1/smu_check',
+            'POST',
+            ['json' => $body->toArray()]
         );
     }
 
@@ -307,7 +308,7 @@ class PcDomainsService extends DomainrobotService
     public function waybackAsync($domain)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/wayback/$domain",
+            $this->domainrobotConfig->getUrl() . '/wayback/' . $domain,
             'GET'
         );
     }

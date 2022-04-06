@@ -59,6 +59,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
         'onlyAvailable' => 'bool',
+        'domains' => 'string[]',
         'promoTlds' => 'string[]',
         'topTlds' => 'string[]',
         'max' => 'int',
@@ -74,6 +75,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'services' => null,
         'onlyAvailable' => null,
+        'domains' => null,
         'promoTlds' => null,
         'topTlds' => null,
         'max' => 'int32',
@@ -110,6 +112,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'services' => 'services',
         'onlyAvailable' => 'onlyAvailable',
+        'domains' => 'domains',
         'promoTlds' => 'promoTlds',
         'topTlds' => 'topTlds',
         'max' => 'max',
@@ -125,6 +128,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     protected static $setters = [
         'services' => 'setServices',
         'onlyAvailable' => 'setOnlyAvailable',
+        'domains' => 'setDomains',
         'promoTlds' => 'setPromoTlds',
         'topTlds' => 'setTopTlds',
         'max' => 'setMax',
@@ -140,6 +144,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     protected static $getters = [
         'services' => 'getServices',
         'onlyAvailable' => 'getOnlyAvailable',
+        'domains' => 'getDomains',
         'promoTlds' => 'getPromoTlds',
         'topTlds' => 'getTopTlds',
         'max' => 'getMax',
@@ -209,6 +214,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
+        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
         $this->container['promoTlds'] = isset($data['promoTlds']) ? $this->createData($data['promoTlds'], 'promoTlds')  : null;
         $this->container['topTlds'] = isset($data['topTlds']) ? $this->createData($data['topTlds'], 'topTlds')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
@@ -339,6 +345,30 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     public function setOnlyAvailable($onlyAvailable)
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets domains
+     *
+     * @return string[]
+     */
+    public function getDomains()
+    {
+        return $this->container['domains'];
+    }
+
+    /**
+     * Sets domains
+     *
+     * @param string[] $domains The generated domains of this source
+     *
+     * @return $this
+     */
+    public function setDomains($domains)
+    {
+        $this->container['domains'] = $domains;
 
         return $this;
     }

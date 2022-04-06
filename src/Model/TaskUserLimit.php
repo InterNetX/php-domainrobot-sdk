@@ -58,8 +58,7 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'user' => '\Domainrobot\Model\BasicUser',
-        'entries' => '\Domainrobot\Model\TaskLimit[]',
-        'count' => '\Domainrobot\Model\TaskCount[]'
+        'entries' => '\Domainrobot\Model\TaskLimit[]'
     ];
 
     /**
@@ -69,8 +68,7 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'user' => null,
-        'entries' => null,
-        'count' => null
+        'entries' => null
     ];
 
     /**
@@ -101,8 +99,7 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'user' => 'user',
-        'entries' => 'entries',
-        'count' => 'count'
+        'entries' => 'entries'
     ];
 
     /**
@@ -112,8 +109,7 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'user' => 'setUser',
-        'entries' => 'setEntries',
-        'count' => 'setCount'
+        'entries' => 'setEntries'
     ];
 
     /**
@@ -123,8 +119,7 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'user' => 'getUser',
-        'entries' => 'getEntries',
-        'count' => 'getCount'
+        'entries' => 'getEntries'
     ];
 
     /**
@@ -189,7 +184,6 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
     {
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
         $this->container['entries'] = isset($data['entries']) ? $this->createData($data['entries'], 'entries')  : null;
-        $this->container['count'] = isset($data['count']) ? $this->createData($data['count'], 'count')  : null;
     }
 
     /**
@@ -318,30 +312,6 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
     public function setEntries($entries)
     {
         $this->container['entries'] = $entries;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return \Domainrobot\Model\TaskCount[]
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param \Domainrobot\Model\TaskCount[] $count count
-     *
-     * @return $this
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
 
         return $this;
     }

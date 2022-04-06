@@ -1,6 +1,6 @@
 <?php
 /**
- * DomainExtensions
+ * TldStatistic
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * DomainExtensions Class Doc Comment
+ * TldStatistic Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DomainExtensions implements ModelInterface, ArrayAccess
+class TldStatistic implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DomainExtensions';
+    protected static $swaggerModelName = 'TldStatistic';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'domainBuyExtensions' => '\Domainrobot\Model\DomainBuyExtensions',
-        'domainAutodeleteExtensions' => '\Domainrobot\Model\DomainAutodeleteExtensions',
-        'parkingExtensions' => '\Domainrobot\Model\DomainParkingExtensions',
-        'tmchClaimsNoticeExtensions' => '\Domainrobot\Model\DomainTmchClaimNoticeExtensions',
-        'verificationExtensions' => '\Domainrobot\Model\ContactVerificationDomain',
-        'cancelationExtensions' => '\Domainrobot\Model\DomainCancelationExtensions'
+        
     ];
 
     /**
@@ -71,12 +66,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'domainBuyExtensions' => null,
-        'domainAutodeleteExtensions' => null,
-        'parkingExtensions' => null,
-        'tmchClaimsNoticeExtensions' => null,
-        'verificationExtensions' => null,
-        'cancelationExtensions' => null
+        
     ];
 
     /**
@@ -106,12 +96,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'domainBuyExtensions' => 'domainBuyExtensions',
-        'domainAutodeleteExtensions' => 'domainAutodeleteExtensions',
-        'parkingExtensions' => 'parkingExtensions',
-        'tmchClaimsNoticeExtensions' => 'tmchClaimsNoticeExtensions',
-        'verificationExtensions' => 'verificationExtensions',
-        'cancelationExtensions' => 'cancelationExtensions'
+        
     ];
 
     /**
@@ -120,12 +105,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'domainBuyExtensions' => 'setDomainBuyExtensions',
-        'domainAutodeleteExtensions' => 'setDomainAutodeleteExtensions',
-        'parkingExtensions' => 'setParkingExtensions',
-        'tmchClaimsNoticeExtensions' => 'setTmchClaimsNoticeExtensions',
-        'verificationExtensions' => 'setVerificationExtensions',
-        'cancelationExtensions' => 'setCancelationExtensions'
+        
     ];
 
     /**
@@ -134,12 +114,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'domainBuyExtensions' => 'getDomainBuyExtensions',
-        'domainAutodeleteExtensions' => 'getDomainAutodeleteExtensions',
-        'parkingExtensions' => 'getParkingExtensions',
-        'tmchClaimsNoticeExtensions' => 'getTmchClaimsNoticeExtensions',
-        'verificationExtensions' => 'getVerificationExtensions',
-        'cancelationExtensions' => 'getCancelationExtensions'
+        
     ];
 
     /**
@@ -202,12 +177,6 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['domainBuyExtensions'] = isset($data['domainBuyExtensions']) ? $this->createData($data['domainBuyExtensions'], 'domainBuyExtensions')  : null;
-        $this->container['domainAutodeleteExtensions'] = isset($data['domainAutodeleteExtensions']) ? $this->createData($data['domainAutodeleteExtensions'], 'domainAutodeleteExtensions')  : null;
-        $this->container['parkingExtensions'] = isset($data['parkingExtensions']) ? $this->createData($data['parkingExtensions'], 'parkingExtensions')  : null;
-        $this->container['tmchClaimsNoticeExtensions'] = isset($data['tmchClaimsNoticeExtensions']) ? $this->createData($data['tmchClaimsNoticeExtensions'], 'tmchClaimsNoticeExtensions')  : null;
-        $this->container['verificationExtensions'] = isset($data['verificationExtensions']) ? $this->createData($data['verificationExtensions'], 'verificationExtensions')  : null;
-        $this->container['cancelationExtensions'] = isset($data['cancelationExtensions']) ? $this->createData($data['cancelationExtensions'], 'cancelationExtensions')  : null;
     }
 
     /**
@@ -288,150 +257,6 @@ class DomainExtensions implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets domainBuyExtensions
-     *
-     * @return \Domainrobot\Model\DomainBuyExtensions
-     */
-    public function getDomainBuyExtensions()
-    {
-        return $this->container['domainBuyExtensions'];
-    }
-
-    /**
-     * Sets domainBuyExtensions
-     *
-     * @param \Domainrobot\Model\DomainBuyExtensions $domainBuyExtensions domainBuyExtensions
-     *
-     * @return $this
-     */
-    public function setDomainBuyExtensions($domainBuyExtensions)
-    {
-        $this->container['domainBuyExtensions'] = $domainBuyExtensions;
-
-        return $this;
-    }
-
-    /**
-     * Gets domainAutodeleteExtensions
-     *
-     * @return \Domainrobot\Model\DomainAutodeleteExtensions
-     */
-    public function getDomainAutodeleteExtensions()
-    {
-        return $this->container['domainAutodeleteExtensions'];
-    }
-
-    /**
-     * Sets domainAutodeleteExtensions
-     *
-     * @param \Domainrobot\Model\DomainAutodeleteExtensions $domainAutodeleteExtensions domainAutodeleteExtensions
-     *
-     * @return $this
-     */
-    public function setDomainAutodeleteExtensions($domainAutodeleteExtensions)
-    {
-        $this->container['domainAutodeleteExtensions'] = $domainAutodeleteExtensions;
-
-        return $this;
-    }
-
-    /**
-     * Gets parkingExtensions
-     *
-     * @return \Domainrobot\Model\DomainParkingExtensions
-     */
-    public function getParkingExtensions()
-    {
-        return $this->container['parkingExtensions'];
-    }
-
-    /**
-     * Sets parkingExtensions
-     *
-     * @param \Domainrobot\Model\DomainParkingExtensions $parkingExtensions parkingExtensions
-     *
-     * @return $this
-     */
-    public function setParkingExtensions($parkingExtensions)
-    {
-        $this->container['parkingExtensions'] = $parkingExtensions;
-
-        return $this;
-    }
-
-    /**
-     * Gets tmchClaimsNoticeExtensions
-     *
-     * @return \Domainrobot\Model\DomainTmchClaimNoticeExtensions
-     */
-    public function getTmchClaimsNoticeExtensions()
-    {
-        return $this->container['tmchClaimsNoticeExtensions'];
-    }
-
-    /**
-     * Sets tmchClaimsNoticeExtensions
-     *
-     * @param \Domainrobot\Model\DomainTmchClaimNoticeExtensions $tmchClaimsNoticeExtensions tmchClaimsNoticeExtensions
-     *
-     * @return $this
-     */
-    public function setTmchClaimsNoticeExtensions($tmchClaimsNoticeExtensions)
-    {
-        $this->container['tmchClaimsNoticeExtensions'] = $tmchClaimsNoticeExtensions;
-
-        return $this;
-    }
-
-    /**
-     * Gets verificationExtensions
-     *
-     * @return \Domainrobot\Model\ContactVerificationDomain
-     */
-    public function getVerificationExtensions()
-    {
-        return $this->container['verificationExtensions'];
-    }
-
-    /**
-     * Sets verificationExtensions
-     *
-     * @param \Domainrobot\Model\ContactVerificationDomain $verificationExtensions verificationExtensions
-     *
-     * @return $this
-     */
-    public function setVerificationExtensions($verificationExtensions)
-    {
-        $this->container['verificationExtensions'] = $verificationExtensions;
-
-        return $this;
-    }
-
-    /**
-     * Gets cancelationExtensions
-     *
-     * @return \Domainrobot\Model\DomainCancelationExtensions
-     */
-    public function getCancelationExtensions()
-    {
-        return $this->container['cancelationExtensions'];
-    }
-
-    /**
-     * Sets cancelationExtensions
-     *
-     * @param \Domainrobot\Model\DomainCancelationExtensions $cancelationExtensions cancelationExtensions
-     *
-     * @return $this
-     */
-    public function setCancelationExtensions($cancelationExtensions)
-    {
-        $this->container['cancelationExtensions'] = $cancelationExtensions;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -59,13 +59,15 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
         'onlyAvailable' => 'bool',
+        'domains' => 'string[]',
         'language' => 'string',
         'max' => 'int',
         'maxSldLength' => 'int',
         'useDash' => 'bool',
         'useNumber' => 'bool',
         'useIdn' => 'bool',
-        'tlds' => 'string[]'
+        'tlds' => 'string[]',
+        'debugTime' => 'int'
     ];
 
     /**
@@ -76,13 +78,15 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'services' => null,
         'onlyAvailable' => null,
+        'domains' => null,
         'language' => null,
         'max' => 'int32',
         'maxSldLength' => 'int32',
         'useDash' => null,
         'useNumber' => null,
         'useIdn' => null,
-        'tlds' => null
+        'tlds' => null,
+        'debugTime' => 'int64'
     ];
 
     /**
@@ -114,13 +118,15 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'services' => 'services',
         'onlyAvailable' => 'onlyAvailable',
+        'domains' => 'domains',
         'language' => 'language',
         'max' => 'max',
         'maxSldLength' => 'maxSldLength',
         'useDash' => 'useDash',
         'useNumber' => 'useNumber',
         'useIdn' => 'useIdn',
-        'tlds' => 'tlds'
+        'tlds' => 'tlds',
+        'debugTime' => 'debugTime'
     ];
 
     /**
@@ -131,13 +137,15 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     protected static $setters = [
         'services' => 'setServices',
         'onlyAvailable' => 'setOnlyAvailable',
+        'domains' => 'setDomains',
         'language' => 'setLanguage',
         'max' => 'setMax',
         'maxSldLength' => 'setMaxSldLength',
         'useDash' => 'setUseDash',
         'useNumber' => 'setUseNumber',
         'useIdn' => 'setUseIdn',
-        'tlds' => 'setTlds'
+        'tlds' => 'setTlds',
+        'debugTime' => 'setDebugTime'
     ];
 
     /**
@@ -148,13 +156,15 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     protected static $getters = [
         'services' => 'getServices',
         'onlyAvailable' => 'getOnlyAvailable',
+        'domains' => 'getDomains',
         'language' => 'getLanguage',
         'max' => 'getMax',
         'maxSldLength' => 'getMaxSldLength',
         'useDash' => 'getUseDash',
         'useNumber' => 'getUseNumber',
         'useIdn' => 'getUseIdn',
-        'tlds' => 'getTlds'
+        'tlds' => 'getTlds',
+        'debugTime' => 'getDebugTime'
     ];
 
     /**
@@ -219,6 +229,7 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
+        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
         $this->container['maxSldLength'] = isset($data['maxSldLength']) ? $this->createData($data['maxSldLength'], 'maxSldLength')  : null;
@@ -226,6 +237,7 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
         $this->container['useNumber'] = isset($data['useNumber']) ? $this->createData($data['useNumber'], 'useNumber')  : null;
         $this->container['useIdn'] = isset($data['useIdn']) ? $this->createData($data['useIdn'], 'useIdn')  : null;
         $this->container['tlds'] = isset($data['tlds']) ? $this->createData($data['tlds'], 'tlds')  : null;
+        $this->container['debugTime'] = isset($data['debugTime']) ? $this->createData($data['debugTime'], 'debugTime')  : null;
     }
 
     /**
@@ -351,6 +363,30 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     public function setOnlyAvailable($onlyAvailable)
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets domains
+     *
+     * @return string[]
+     */
+    public function getDomains()
+    {
+        return $this->container['domains'];
+    }
+
+    /**
+     * Sets domains
+     *
+     * @param string[] $domains The generated domains of this source
+     *
+     * @return $this
+     */
+    public function setDomains($domains)
+    {
+        $this->container['domains'] = $domains;
 
         return $this;
     }
@@ -519,6 +555,30 @@ class DomainStudioSourceSuggestion implements ModelInterface, ArrayAccess
     public function setTlds($tlds)
     {
         $this->container['tlds'] = $tlds;
+
+        return $this;
+    }
+
+    /**
+     * Gets debugTime
+     *
+     * @return int
+     */
+    public function getDebugTime()
+    {
+        return $this->container['debugTime'];
+    }
+
+    /**
+     * Sets debugTime
+     *
+     * @param int $debugTime The debug time
+     *
+     * @return $this
+     */
+    public function setDebugTime($debugTime)
+    {
+        $this->container['debugTime'] = $debugTime;
 
         return $this;
     }

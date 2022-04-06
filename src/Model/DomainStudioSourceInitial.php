@@ -59,6 +59,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
         'onlyAvailable' => 'bool',
+        'domains' => 'string[]',
         'tlds' => 'string[]'
     ];
 
@@ -70,6 +71,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'services' => null,
         'onlyAvailable' => null,
+        'domains' => null,
         'tlds' => null
     ];
 
@@ -102,6 +104,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'services' => 'services',
         'onlyAvailable' => 'onlyAvailable',
+        'domains' => 'domains',
         'tlds' => 'tlds'
     ];
 
@@ -113,6 +116,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     protected static $setters = [
         'services' => 'setServices',
         'onlyAvailable' => 'setOnlyAvailable',
+        'domains' => 'setDomains',
         'tlds' => 'setTlds'
     ];
 
@@ -124,6 +128,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     protected static $getters = [
         'services' => 'getServices',
         'onlyAvailable' => 'getOnlyAvailable',
+        'domains' => 'getDomains',
         'tlds' => 'getTlds'
     ];
 
@@ -189,6 +194,7 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
+        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
         $this->container['tlds'] = isset($data['tlds']) ? $this->createData($data['tlds'], 'tlds')  : null;
     }
 
@@ -315,6 +321,30 @@ class DomainStudioSourceInitial implements ModelInterface, ArrayAccess
     public function setOnlyAvailable($onlyAvailable)
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets domains
+     *
+     * @return string[]
+     */
+    public function getDomains()
+    {
+        return $this->container['domains'];
+    }
+
+    /**
+     * Sets domains
+     *
+     * @param string[] $domains The generated domains of this source
+     *
+     * @return $this
+     */
+    public function setDomains($domains)
+    {
+        $this->container['domains'] = $domains;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * DomainStudioSourcePersonalNames
+ * CustomerPriceList
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * DomainStudioSourcePersonalNames Class Doc Comment
+ * CustomerPriceList Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
+class CustomerPriceList implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DomainStudioSourcePersonalNames';
+    protected static $swaggerModelName = 'CustomerPriceList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,18 +57,9 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
-        'onlyAvailable' => 'bool',
-        'domains' => 'string[]',
-        'max' => 'int',
-        'maxSldLength' => 'int',
-        'useDash' => 'bool',
-        'spinFirstName' => 'bool',
-        'tlds' => 'string[]',
-        'firstName' => 'string',
-        'middleNames' => 'string[]',
-        'lastName' => 'string',
-        'useIdn' => 'bool'
+        'created' => '\DateTime',
+        'updated' => '\DateTime',
+        'priceList' => '\Domainrobot\Model\PriceList'
     ];
 
     /**
@@ -77,18 +68,9 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'services' => null,
-        'onlyAvailable' => null,
-        'domains' => null,
-        'max' => 'int32',
-        'maxSldLength' => 'int32',
-        'useDash' => null,
-        'spinFirstName' => null,
-        'tlds' => null,
-        'firstName' => null,
-        'middleNames' => null,
-        'lastName' => null,
-        'useIdn' => null
+        'created' => 'date-time',
+        'updated' => 'date-time',
+        'priceList' => null
     ];
 
     /**
@@ -118,18 +100,9 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'services' => 'services',
-        'onlyAvailable' => 'onlyAvailable',
-        'domains' => 'domains',
-        'max' => 'max',
-        'maxSldLength' => 'maxSldLength',
-        'useDash' => 'useDash',
-        'spinFirstName' => 'spinFirstName',
-        'tlds' => 'tlds',
-        'firstName' => 'firstName',
-        'middleNames' => 'middleNames',
-        'lastName' => 'lastName',
-        'useIdn' => 'useIdn'
+        'created' => 'created',
+        'updated' => 'updated',
+        'priceList' => 'priceList'
     ];
 
     /**
@@ -138,18 +111,9 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'services' => 'setServices',
-        'onlyAvailable' => 'setOnlyAvailable',
-        'domains' => 'setDomains',
-        'max' => 'setMax',
-        'maxSldLength' => 'setMaxSldLength',
-        'useDash' => 'setUseDash',
-        'spinFirstName' => 'setSpinFirstName',
-        'tlds' => 'setTlds',
-        'firstName' => 'setFirstName',
-        'middleNames' => 'setMiddleNames',
-        'lastName' => 'setLastName',
-        'useIdn' => 'setUseIdn'
+        'created' => 'setCreated',
+        'updated' => 'setUpdated',
+        'priceList' => 'setPriceList'
     ];
 
     /**
@@ -158,18 +122,9 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'services' => 'getServices',
-        'onlyAvailable' => 'getOnlyAvailable',
-        'domains' => 'getDomains',
-        'max' => 'getMax',
-        'maxSldLength' => 'getMaxSldLength',
-        'useDash' => 'getUseDash',
-        'spinFirstName' => 'getSpinFirstName',
-        'tlds' => 'getTlds',
-        'firstName' => 'getFirstName',
-        'middleNames' => 'getMiddleNames',
-        'lastName' => 'getLastName',
-        'useIdn' => 'getUseIdn'
+        'created' => 'getCreated',
+        'updated' => 'getUpdated',
+        'priceList' => 'getPriceList'
     ];
 
     /**
@@ -232,18 +187,9 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
-        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
-        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
-        $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
-        $this->container['maxSldLength'] = isset($data['maxSldLength']) ? $this->createData($data['maxSldLength'], 'maxSldLength')  : null;
-        $this->container['useDash'] = isset($data['useDash']) ? $this->createData($data['useDash'], 'useDash')  : null;
-        $this->container['spinFirstName'] = isset($data['spinFirstName']) ? $this->createData($data['spinFirstName'], 'spinFirstName')  : null;
-        $this->container['tlds'] = isset($data['tlds']) ? $this->createData($data['tlds'], 'tlds')  : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $this->createData($data['firstName'], 'firstName')  : null;
-        $this->container['middleNames'] = isset($data['middleNames']) ? $this->createData($data['middleNames'], 'middleNames')  : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $this->createData($data['lastName'], 'lastName')  : null;
-        $this->container['useIdn'] = isset($data['useIdn']) ? $this->createData($data['useIdn'], 'useIdn')  : null;
+        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
+        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['priceList'] = isset($data['priceList']) ? $this->createData($data['priceList'], 'priceList')  : null;
     }
 
     /**
@@ -326,289 +272,73 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets services
+     * Gets created
      *
-     * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
+     * @return \DateTime
      */
-    public function getServices()
+    public function getCreated()
     {
-        return $this->container['services'];
+        return $this->container['created'];
     }
 
     /**
-     * Sets services
+     * Sets created
      *
-     * @param \Domainrobot\Model\DomainEnvelopeSearchService[] $services The services to fetch extra data from for this source
+     * @param \DateTime $created The created date.
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setCreated($created)
     {
-        $this->container['services'] = $services;
+        $this->container['created'] = $created;
 
         return $this;
     }
 
     /**
-     * Gets onlyAvailable
+     * Gets updated
      *
-     * @return bool
+     * @return \DateTime
      */
-    public function getOnlyAvailable()
+    public function getUpdated()
     {
-        return $this->container['onlyAvailable'];
+        return $this->container['updated'];
     }
 
     /**
-     * Sets onlyAvailable
+     * Sets updated
      *
-     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
+     * @param \DateTime $updated The updated date.
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setUpdated($updated)
     {
-        $this->container['onlyAvailable'] = $onlyAvailable;
+        $this->container['updated'] = $updated;
 
         return $this;
     }
 
     /**
-     * Gets domains
+     * Gets priceList
      *
-     * @return string[]
+     * @return \Domainrobot\Model\PriceList
      */
-    public function getDomains()
+    public function getPriceList()
     {
-        return $this->container['domains'];
+        return $this->container['priceList'];
     }
 
     /**
-     * Sets domains
+     * Sets priceList
      *
-     * @param string[] $domains The generated domains of this source
+     * @param \Domainrobot\Model\PriceList $priceList The priceList label.
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setPriceList($priceList)
     {
-        $this->container['domains'] = $domains;
-
-        return $this;
-    }
-
-    /**
-     * Gets max
-     *
-     * @return int
-     */
-    public function getMax()
-    {
-        return $this->container['max'];
-    }
-
-    /**
-     * Sets max
-     *
-     * @param int $max Maximum fetched suggested domains
-     *
-     * @return $this
-     */
-    public function setMax($max)
-    {
-        $this->container['max'] = $max;
-
-        return $this;
-    }
-
-    /**
-     * Gets maxSldLength
-     *
-     * @return int
-     */
-    public function getMaxSldLength()
-    {
-        return $this->container['maxSldLength'];
-    }
-
-    /**
-     * Sets maxSldLength
-     *
-     * @param int $maxSldLength Maximum sld length for suggested domains
-     *
-     * @return $this
-     */
-    public function setMaxSldLength($maxSldLength)
-    {
-        $this->container['maxSldLength'] = $maxSldLength;
-
-        return $this;
-    }
-
-    /**
-     * Gets useDash
-     *
-     * @return bool
-     */
-    public function getUseDash()
-    {
-        return $this->container['useDash'];
-    }
-
-    /**
-     * Sets useDash
-     *
-     * @param bool $useDash Suggested domains with dash
-     *
-     * @return $this
-     */
-    public function setUseDash($useDash)
-    {
-        $this->container['useDash'] = $useDash;
-
-        return $this;
-    }
-
-    /**
-     * Gets spinFirstName
-     *
-     * @return bool
-     */
-    public function getSpinFirstName()
-    {
-        return $this->container['spinFirstName'];
-    }
-
-    /**
-     * Sets spinFirstName
-     *
-     * @param bool $spinFirstName Spin the first-name with relevant nicknames
-     *
-     * @return $this
-     */
-    public function setSpinFirstName($spinFirstName)
-    {
-        $this->container['spinFirstName'] = $spinFirstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets tlds
-     *
-     * @return string[]
-     */
-    public function getTlds()
-    {
-        return $this->container['tlds'];
-    }
-
-    /**
-     * Sets tlds
-     *
-     * @param string[] $tlds Selected tlds
-     *
-     * @return $this
-     */
-    public function setTlds($tlds)
-    {
-        $this->container['tlds'] = $tlds;
-
-        return $this;
-    }
-
-    /**
-     * Gets firstName
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->container['firstName'];
-    }
-
-    /**
-     * Sets firstName
-     *
-     * @param string $firstName First name.
-     *
-     * @return $this
-     */
-    public function setFirstName($firstName)
-    {
-        $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets middleNames
-     *
-     * @return string[]
-     */
-    public function getMiddleNames()
-    {
-        return $this->container['middleNames'];
-    }
-
-    /**
-     * Sets middleNames
-     *
-     * @param string[] $middleNames List of middle names.
-     *
-     * @return $this
-     */
-    public function setMiddleNames($middleNames)
-    {
-        $this->container['middleNames'] = $middleNames;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     *
-     * @param string $lastName Last name.
-     *
-     * @return $this
-     */
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets useIdn
-     *
-     * @return bool
-     */
-    public function getUseIdn()
-    {
-        return $this->container['useIdn'];
-    }
-
-    /**
-     * Sets useIdn
-     *
-     * @param bool $useIdn Suggested domains with idn
-     *
-     * @return $this
-     */
-    public function setUseIdn($useIdn)
-    {
-        $this->container['useIdn'] = $useIdn;
+        $this->container['priceList'] = $priceList;
 
         return $this;
     }

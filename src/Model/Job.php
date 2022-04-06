@@ -65,8 +65,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'string',
         'execution' => '\DateTime',
         'events' => '\Domainrobot\Model\WorkflowEvent[]',
-        'subType' => 'string',
         'action' => 'string',
+        'subType' => 'string',
         'id' => 'int'
     ];
 
@@ -84,8 +84,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => null,
         'execution' => 'date-time',
         'events' => null,
-        'subType' => null,
         'action' => null,
+        'subType' => null,
         'id' => 'int64'
     ];
 
@@ -124,8 +124,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'subStatus',
         'execution' => 'execution',
         'events' => 'events',
-        'subType' => 'subType',
         'action' => 'action',
+        'subType' => 'subType',
         'id' => 'id'
     ];
 
@@ -143,8 +143,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'setSubStatus',
         'execution' => 'setExecution',
         'events' => 'setEvents',
-        'subType' => 'setSubType',
         'action' => 'setAction',
+        'subType' => 'setSubType',
         'id' => 'setId'
     ];
 
@@ -162,8 +162,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'getSubStatus',
         'execution' => 'getExecution',
         'events' => 'getEvents',
-        'subType' => 'getSubType',
         'action' => 'getAction',
+        'subType' => 'getSubType',
         'id' => 'getId'
     ];
 
@@ -235,8 +235,8 @@ class Job implements ModelInterface, ArrayAccess
         $this->container['subStatus'] = isset($data['subStatus']) ? $this->createData($data['subStatus'], 'subStatus')  : null;
         $this->container['execution'] = isset($data['execution']) ? $this->createData($data['execution'], 'execution')  : null;
         $this->container['events'] = isset($data['events']) ? $this->createData($data['events'], 'events')  : null;
-        $this->container['subType'] = isset($data['subType']) ? $this->createData($data['subType'], 'subType')  : null;
         $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
+        $this->container['subType'] = isset($data['subType']) ? $this->createData($data['subType'], 'subType')  : null;
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
     }
 
@@ -512,30 +512,6 @@ class Job implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets subType
-     *
-     * @return string
-     */
-    public function getSubType()
-    {
-        return $this->container['subType'];
-    }
-
-    /**
-     * Sets subType
-     *
-     * @param string $subType The job subtype.
-     *
-     * @return $this
-     */
-    public function setSubType($subType)
-    {
-        $this->container['subType'] = $subType;
-
-        return $this;
-    }
-
-    /**
      * Gets action
      *
      * @return string
@@ -555,6 +531,30 @@ class Job implements ModelInterface, ArrayAccess
     public function setAction($action)
     {
         $this->container['action'] = $action;
+
+        return $this;
+    }
+
+    /**
+     * Gets subType
+     *
+     * @return string
+     */
+    public function getSubType()
+    {
+        return $this->container['subType'];
+    }
+
+    /**
+     * Sets subType
+     *
+     * @param string $subType The job subtype.
+     *
+     * @return $this
+     */
+    public function setSubType($subType)
+    {
+        $this->container['subType'] = $subType;
 
         return $this;
     }

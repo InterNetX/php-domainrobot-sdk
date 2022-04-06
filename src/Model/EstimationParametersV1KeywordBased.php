@@ -57,20 +57,20 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'word' => 'object',
-        'version' => 'object',
-        'segments' => 'null[]',
-        'numWords' => 'object',
-        'keywords' => 'null[]',
-        'numKeywords' => 'object',
-        'averageKeywordFrequency' => 'object',
-        'averageKeywordPrice' => 'object',
-        'prefix' => 'object',
-        'averagePrefixFrequency' => 'object',
-        'averagePrefixPrice' => 'object',
-        'suffix' => 'object',
-        'averageSuffixFrequency' => 'object',
-        'averageSuffixPrice' => 'object'
+        'word' => 'string',
+        'version' => 'string',
+        'segments' => 'string[]',
+        'numWords' => 'float',
+        'keywords' => 'string[]',
+        'numKeywords' => 'float',
+        'averageKeywordFrequency' => 'float',
+        'averageKeywordPrice' => 'float',
+        'prefix' => 'string',
+        'averagePrefixFrequency' => 'float',
+        'averagePrefixPrice' => 'float',
+        'suffix' => 'string',
+        'averageSuffixFrequency' => 'float',
+        'averageSuffixPrice' => 'float'
     ];
 
     /**
@@ -133,9 +133,9 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
         'prefix' => 'prefix&quot;',
         'averagePrefixFrequency' => 'averagePrefixFrequency',
         'averagePrefixPrice' => 'averagePrefixPrice',
-        'suffix' => 'suffix&quot;',
+        'suffix' => 'suffix',
         'averageSuffixFrequency' => 'averageSuffixFrequency',
-        'averageSuffixPrice' => 'averageSuffixPrice&quot;'
+        'averageSuffixPrice' => 'averageSuffixPrice'
     ];
 
     /**
@@ -340,7 +340,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets word
      *
-     * @return object
+     * @return string
      */
     public function getWord()
     {
@@ -350,7 +350,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets word
      *
-     * @param object $word word
+     * @param string $word word
      *
      * @return $this
      */
@@ -364,7 +364,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets version
      *
-     * @return object
+     * @return string
      */
     public function getVersion()
     {
@@ -374,7 +374,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets version
      *
-     * @param object $version version
+     * @param string $version version
      *
      * @return $this
      */
@@ -388,7 +388,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets segments
      *
-     * @return null[]
+     * @return string[]
      */
     public function getSegments()
     {
@@ -398,7 +398,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets segments
      *
-     * @param null[] $segments segments
+     * @param string[] $segments segments
      *
      * @return $this
      */
@@ -412,7 +412,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets numWords
      *
-     * @return object
+     * @return float
      */
     public function getNumWords()
     {
@@ -422,7 +422,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets numWords
      *
-     * @param object $numWords numWords
+     * @param float $numWords numWords
      *
      * @return $this
      */
@@ -436,7 +436,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets keywords
      *
-     * @return null[]
+     * @return string[]
      */
     public function getKeywords()
     {
@@ -446,7 +446,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets keywords
      *
-     * @param null[] $keywords keywords
+     * @param string[] $keywords keywords
      *
      * @return $this
      */
@@ -460,7 +460,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets numKeywords
      *
-     * @return object
+     * @return float
      */
     public function getNumKeywords()
     {
@@ -470,7 +470,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets numKeywords
      *
-     * @param object $numKeywords numKeywords
+     * @param float $numKeywords numKeywords
      *
      * @return $this
      */
@@ -484,7 +484,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets averageKeywordFrequency
      *
-     * @return object
+     * @return float
      */
     public function getAverageKeywordFrequency()
     {
@@ -494,7 +494,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets averageKeywordFrequency
      *
-     * @param object $averageKeywordFrequency averageKeywordFrequency
+     * @param float $averageKeywordFrequency averageKeywordFrequency
      *
      * @return $this
      */
@@ -508,7 +508,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets averageKeywordPrice
      *
-     * @return object
+     * @return float
      */
     public function getAverageKeywordPrice()
     {
@@ -518,7 +518,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets averageKeywordPrice
      *
-     * @param object $averageKeywordPrice averageKeywordPrice
+     * @param float $averageKeywordPrice averageKeywordPrice
      *
      * @return $this
      */
@@ -532,7 +532,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets prefix
      *
-     * @return object
+     * @return string
      */
     public function getPrefix()
     {
@@ -542,7 +542,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets prefix
      *
-     * @param object $prefix prefix
+     * @param string $prefix prefix
      *
      * @return $this
      */
@@ -556,7 +556,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets averagePrefixFrequency
      *
-     * @return object
+     * @return float
      */
     public function getAveragePrefixFrequency()
     {
@@ -566,7 +566,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets averagePrefixFrequency
      *
-     * @param object $averagePrefixFrequency averagePrefixFrequency
+     * @param float $averagePrefixFrequency averagePrefixFrequency
      *
      * @return $this
      */
@@ -580,7 +580,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets averagePrefixPrice
      *
-     * @return object
+     * @return float
      */
     public function getAveragePrefixPrice()
     {
@@ -590,7 +590,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets averagePrefixPrice
      *
-     * @param object $averagePrefixPrice averagePrefixPrice
+     * @param float $averagePrefixPrice averagePrefixPrice
      *
      * @return $this
      */
@@ -604,7 +604,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets suffix
      *
-     * @return object
+     * @return string
      */
     public function getSuffix()
     {
@@ -614,7 +614,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets suffix
      *
-     * @param object $suffix suffix
+     * @param string $suffix suffix
      *
      * @return $this
      */
@@ -628,7 +628,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets averageSuffixFrequency
      *
-     * @return object
+     * @return float
      */
     public function getAverageSuffixFrequency()
     {
@@ -638,7 +638,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets averageSuffixFrequency
      *
-     * @param object $averageSuffixFrequency averageSuffixFrequency
+     * @param float $averageSuffixFrequency averageSuffixFrequency
      *
      * @return $this
      */
@@ -652,7 +652,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Gets averageSuffixPrice
      *
-     * @return object
+     * @return float
      */
     public function getAverageSuffixPrice()
     {
@@ -662,7 +662,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     /**
      * Sets averageSuffixPrice
      *
-     * @param object $averageSuffixPrice averageSuffixPrice
+     * @param float $averageSuffixPrice averageSuffixPrice
      *
      * @return $this
      */

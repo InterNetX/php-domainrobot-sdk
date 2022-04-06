@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
  - [Keywords](docs/Model/Keywords.md)
  - [Majestic](docs/Model/Majestic.md)
  - [Meta](docs/Model/Meta.md)
+ - [Platform](docs/Model/Platform.md)
  - [SimilarDomain](docs/Model/SimilarDomain.md)
  - [Sistrix](docs/Model/Sistrix.md)
  - [SocialMedia](docs/Model/SocialMedia.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * DomainStudioSourcePersonalNames
+ * TldDns
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * DomainStudioSourcePersonalNames Class Doc Comment
+ * TldDns Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
+class TldDns implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DomainStudioSourcePersonalNames';
+    protected static $swaggerModelName = 'TldDns';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,18 +57,17 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
-        'onlyAvailable' => 'bool',
-        'domains' => 'string[]',
-        'max' => 'int',
-        'maxSldLength' => 'int',
-        'useDash' => 'bool',
-        'spinFirstName' => 'bool',
-        'tlds' => 'string[]',
-        'firstName' => 'string',
-        'middleNames' => 'string[]',
-        'lastName' => 'string',
-        'useIdn' => 'bool'
+        'dnssecMin' => 'int',
+        'dnssecMax' => 'int',
+        'dnssecAlgorithms' => 'int[]',
+        'nserverMin' => 'int',
+        'nserverMax' => 'int',
+        'ipv4Min' => 'int',
+        'ipv4Max' => 'int',
+        'ipv6Min' => 'int',
+        'ipv6Max' => 'int',
+        'nsentryMin' => 'int',
+        'nsentryMax' => 'int'
     ];
 
     /**
@@ -77,18 +76,17 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'services' => null,
-        'onlyAvailable' => null,
-        'domains' => null,
-        'max' => 'int32',
-        'maxSldLength' => 'int32',
-        'useDash' => null,
-        'spinFirstName' => null,
-        'tlds' => null,
-        'firstName' => null,
-        'middleNames' => null,
-        'lastName' => null,
-        'useIdn' => null
+        'dnssecMin' => 'int32',
+        'dnssecMax' => 'int32',
+        'dnssecAlgorithms' => 'int32',
+        'nserverMin' => 'int32',
+        'nserverMax' => 'int32',
+        'ipv4Min' => 'int32',
+        'ipv4Max' => 'int32',
+        'ipv6Min' => 'int32',
+        'ipv6Max' => 'int32',
+        'nsentryMin' => 'int32',
+        'nsentryMax' => 'int32'
     ];
 
     /**
@@ -118,18 +116,17 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'services' => 'services',
-        'onlyAvailable' => 'onlyAvailable',
-        'domains' => 'domains',
-        'max' => 'max',
-        'maxSldLength' => 'maxSldLength',
-        'useDash' => 'useDash',
-        'spinFirstName' => 'spinFirstName',
-        'tlds' => 'tlds',
-        'firstName' => 'firstName',
-        'middleNames' => 'middleNames',
-        'lastName' => 'lastName',
-        'useIdn' => 'useIdn'
+        'dnssecMin' => 'dnssecMin',
+        'dnssecMax' => 'dnssecMax',
+        'dnssecAlgorithms' => 'dnssecAlgorithms',
+        'nserverMin' => 'nserverMin',
+        'nserverMax' => 'nserverMax',
+        'ipv4Min' => 'ipv4Min',
+        'ipv4Max' => 'ipv4Max',
+        'ipv6Min' => 'ipv6Min',
+        'ipv6Max' => 'ipv6Max',
+        'nsentryMin' => 'nsentryMin',
+        'nsentryMax' => 'nsentryMax'
     ];
 
     /**
@@ -138,18 +135,17 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'services' => 'setServices',
-        'onlyAvailable' => 'setOnlyAvailable',
-        'domains' => 'setDomains',
-        'max' => 'setMax',
-        'maxSldLength' => 'setMaxSldLength',
-        'useDash' => 'setUseDash',
-        'spinFirstName' => 'setSpinFirstName',
-        'tlds' => 'setTlds',
-        'firstName' => 'setFirstName',
-        'middleNames' => 'setMiddleNames',
-        'lastName' => 'setLastName',
-        'useIdn' => 'setUseIdn'
+        'dnssecMin' => 'setDnssecMin',
+        'dnssecMax' => 'setDnssecMax',
+        'dnssecAlgorithms' => 'setDnssecAlgorithms',
+        'nserverMin' => 'setNserverMin',
+        'nserverMax' => 'setNserverMax',
+        'ipv4Min' => 'setIpv4Min',
+        'ipv4Max' => 'setIpv4Max',
+        'ipv6Min' => 'setIpv6Min',
+        'ipv6Max' => 'setIpv6Max',
+        'nsentryMin' => 'setNsentryMin',
+        'nsentryMax' => 'setNsentryMax'
     ];
 
     /**
@@ -158,18 +154,17 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'services' => 'getServices',
-        'onlyAvailable' => 'getOnlyAvailable',
-        'domains' => 'getDomains',
-        'max' => 'getMax',
-        'maxSldLength' => 'getMaxSldLength',
-        'useDash' => 'getUseDash',
-        'spinFirstName' => 'getSpinFirstName',
-        'tlds' => 'getTlds',
-        'firstName' => 'getFirstName',
-        'middleNames' => 'getMiddleNames',
-        'lastName' => 'getLastName',
-        'useIdn' => 'getUseIdn'
+        'dnssecMin' => 'getDnssecMin',
+        'dnssecMax' => 'getDnssecMax',
+        'dnssecAlgorithms' => 'getDnssecAlgorithms',
+        'nserverMin' => 'getNserverMin',
+        'nserverMax' => 'getNserverMax',
+        'ipv4Min' => 'getIpv4Min',
+        'ipv4Max' => 'getIpv4Max',
+        'ipv6Min' => 'getIpv6Min',
+        'ipv6Max' => 'getIpv6Max',
+        'nsentryMin' => 'getNsentryMin',
+        'nsentryMax' => 'getNsentryMax'
     ];
 
     /**
@@ -232,18 +227,17 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
-        $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
-        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
-        $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
-        $this->container['maxSldLength'] = isset($data['maxSldLength']) ? $this->createData($data['maxSldLength'], 'maxSldLength')  : null;
-        $this->container['useDash'] = isset($data['useDash']) ? $this->createData($data['useDash'], 'useDash')  : null;
-        $this->container['spinFirstName'] = isset($data['spinFirstName']) ? $this->createData($data['spinFirstName'], 'spinFirstName')  : null;
-        $this->container['tlds'] = isset($data['tlds']) ? $this->createData($data['tlds'], 'tlds')  : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $this->createData($data['firstName'], 'firstName')  : null;
-        $this->container['middleNames'] = isset($data['middleNames']) ? $this->createData($data['middleNames'], 'middleNames')  : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $this->createData($data['lastName'], 'lastName')  : null;
-        $this->container['useIdn'] = isset($data['useIdn']) ? $this->createData($data['useIdn'], 'useIdn')  : null;
+        $this->container['dnssecMin'] = isset($data['dnssecMin']) ? $this->createData($data['dnssecMin'], 'dnssecMin')  : null;
+        $this->container['dnssecMax'] = isset($data['dnssecMax']) ? $this->createData($data['dnssecMax'], 'dnssecMax')  : null;
+        $this->container['dnssecAlgorithms'] = isset($data['dnssecAlgorithms']) ? $this->createData($data['dnssecAlgorithms'], 'dnssecAlgorithms')  : null;
+        $this->container['nserverMin'] = isset($data['nserverMin']) ? $this->createData($data['nserverMin'], 'nserverMin')  : null;
+        $this->container['nserverMax'] = isset($data['nserverMax']) ? $this->createData($data['nserverMax'], 'nserverMax')  : null;
+        $this->container['ipv4Min'] = isset($data['ipv4Min']) ? $this->createData($data['ipv4Min'], 'ipv4Min')  : null;
+        $this->container['ipv4Max'] = isset($data['ipv4Max']) ? $this->createData($data['ipv4Max'], 'ipv4Max')  : null;
+        $this->container['ipv6Min'] = isset($data['ipv6Min']) ? $this->createData($data['ipv6Min'], 'ipv6Min')  : null;
+        $this->container['ipv6Max'] = isset($data['ipv6Max']) ? $this->createData($data['ipv6Max'], 'ipv6Max')  : null;
+        $this->container['nsentryMin'] = isset($data['nsentryMin']) ? $this->createData($data['nsentryMin'], 'nsentryMin')  : null;
+        $this->container['nsentryMax'] = isset($data['nsentryMax']) ? $this->createData($data['nsentryMax'], 'nsentryMax')  : null;
     }
 
     /**
@@ -326,289 +320,265 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets services
-     *
-     * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
-     */
-    public function getServices()
-    {
-        return $this->container['services'];
-    }
-
-    /**
-     * Sets services
-     *
-     * @param \Domainrobot\Model\DomainEnvelopeSearchService[] $services The services to fetch extra data from for this source
-     *
-     * @return $this
-     */
-    public function setServices($services)
-    {
-        $this->container['services'] = $services;
-
-        return $this;
-    }
-
-    /**
-     * Gets onlyAvailable
-     *
-     * @return bool
-     */
-    public function getOnlyAvailable()
-    {
-        return $this->container['onlyAvailable'];
-    }
-
-    /**
-     * Sets onlyAvailable
-     *
-     * @param bool $onlyAvailable Defines whether to return only free domain names when service WHOIS is used for a source.
-     *
-     * @return $this
-     */
-    public function setOnlyAvailable($onlyAvailable)
-    {
-        $this->container['onlyAvailable'] = $onlyAvailable;
-
-        return $this;
-    }
-
-    /**
-     * Gets domains
-     *
-     * @return string[]
-     */
-    public function getDomains()
-    {
-        return $this->container['domains'];
-    }
-
-    /**
-     * Sets domains
-     *
-     * @param string[] $domains The generated domains of this source
-     *
-     * @return $this
-     */
-    public function setDomains($domains)
-    {
-        $this->container['domains'] = $domains;
-
-        return $this;
-    }
-
-    /**
-     * Gets max
+     * Gets dnssecMin
      *
      * @return int
      */
-    public function getMax()
+    public function getDnssecMin()
     {
-        return $this->container['max'];
+        return $this->container['dnssecMin'];
     }
 
     /**
-     * Sets max
+     * Sets dnssecMin
      *
-     * @param int $max Maximum fetched suggested domains
+     * @param int $dnssecMin dnssecMin
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setDnssecMin($dnssecMin)
     {
-        $this->container['max'] = $max;
+        $this->container['dnssecMin'] = $dnssecMin;
 
         return $this;
     }
 
     /**
-     * Gets maxSldLength
+     * Gets dnssecMax
      *
      * @return int
      */
-    public function getMaxSldLength()
+    public function getDnssecMax()
     {
-        return $this->container['maxSldLength'];
+        return $this->container['dnssecMax'];
     }
 
     /**
-     * Sets maxSldLength
+     * Sets dnssecMax
      *
-     * @param int $maxSldLength Maximum sld length for suggested domains
+     * @param int $dnssecMax dnssecMax
      *
      * @return $this
      */
-    public function setMaxSldLength($maxSldLength)
+    public function setDnssecMax($dnssecMax)
     {
-        $this->container['maxSldLength'] = $maxSldLength;
+        $this->container['dnssecMax'] = $dnssecMax;
 
         return $this;
     }
 
     /**
-     * Gets useDash
+     * Gets dnssecAlgorithms
      *
-     * @return bool
+     * @return int[]
      */
-    public function getUseDash()
+    public function getDnssecAlgorithms()
     {
-        return $this->container['useDash'];
+        return $this->container['dnssecAlgorithms'];
     }
 
     /**
-     * Sets useDash
+     * Sets dnssecAlgorithms
      *
-     * @param bool $useDash Suggested domains with dash
+     * @param int[] $dnssecAlgorithms dnssecAlgorithms
      *
      * @return $this
      */
-    public function setUseDash($useDash)
+    public function setDnssecAlgorithms($dnssecAlgorithms)
     {
-        $this->container['useDash'] = $useDash;
+        $this->container['dnssecAlgorithms'] = $dnssecAlgorithms;
 
         return $this;
     }
 
     /**
-     * Gets spinFirstName
+     * Gets nserverMin
      *
-     * @return bool
+     * @return int
      */
-    public function getSpinFirstName()
+    public function getNserverMin()
     {
-        return $this->container['spinFirstName'];
+        return $this->container['nserverMin'];
     }
 
     /**
-     * Sets spinFirstName
+     * Sets nserverMin
      *
-     * @param bool $spinFirstName Spin the first-name with relevant nicknames
+     * @param int $nserverMin nserverMin
      *
      * @return $this
      */
-    public function setSpinFirstName($spinFirstName)
+    public function setNserverMin($nserverMin)
     {
-        $this->container['spinFirstName'] = $spinFirstName;
+        $this->container['nserverMin'] = $nserverMin;
 
         return $this;
     }
 
     /**
-     * Gets tlds
+     * Gets nserverMax
      *
-     * @return string[]
+     * @return int
      */
-    public function getTlds()
+    public function getNserverMax()
     {
-        return $this->container['tlds'];
+        return $this->container['nserverMax'];
     }
 
     /**
-     * Sets tlds
+     * Sets nserverMax
      *
-     * @param string[] $tlds Selected tlds
+     * @param int $nserverMax nserverMax
      *
      * @return $this
      */
-    public function setTlds($tlds)
+    public function setNserverMax($nserverMax)
     {
-        $this->container['tlds'] = $tlds;
+        $this->container['nserverMax'] = $nserverMax;
 
         return $this;
     }
 
     /**
-     * Gets firstName
+     * Gets ipv4Min
      *
-     * @return string
+     * @return int
      */
-    public function getFirstName()
+    public function getIpv4Min()
     {
-        return $this->container['firstName'];
+        return $this->container['ipv4Min'];
     }
 
     /**
-     * Sets firstName
+     * Sets ipv4Min
      *
-     * @param string $firstName First name.
+     * @param int $ipv4Min ipv4Min
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setIpv4Min($ipv4Min)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['ipv4Min'] = $ipv4Min;
 
         return $this;
     }
 
     /**
-     * Gets middleNames
+     * Gets ipv4Max
      *
-     * @return string[]
+     * @return int
      */
-    public function getMiddleNames()
+    public function getIpv4Max()
     {
-        return $this->container['middleNames'];
+        return $this->container['ipv4Max'];
     }
 
     /**
-     * Sets middleNames
+     * Sets ipv4Max
      *
-     * @param string[] $middleNames List of middle names.
+     * @param int $ipv4Max ipv4Max
      *
      * @return $this
      */
-    public function setMiddleNames($middleNames)
+    public function setIpv4Max($ipv4Max)
     {
-        $this->container['middleNames'] = $middleNames;
+        $this->container['ipv4Max'] = $ipv4Max;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets ipv6Min
      *
-     * @return string
+     * @return int
      */
-    public function getLastName()
+    public function getIpv6Min()
     {
-        return $this->container['lastName'];
+        return $this->container['ipv6Min'];
     }
 
     /**
-     * Sets lastName
+     * Sets ipv6Min
      *
-     * @param string $lastName Last name.
+     * @param int $ipv6Min ipv6Min
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setIpv6Min($ipv6Min)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['ipv6Min'] = $ipv6Min;
 
         return $this;
     }
 
     /**
-     * Gets useIdn
+     * Gets ipv6Max
      *
-     * @return bool
+     * @return int
      */
-    public function getUseIdn()
+    public function getIpv6Max()
     {
-        return $this->container['useIdn'];
+        return $this->container['ipv6Max'];
     }
 
     /**
-     * Sets useIdn
+     * Sets ipv6Max
      *
-     * @param bool $useIdn Suggested domains with idn
+     * @param int $ipv6Max ipv6Max
      *
      * @return $this
      */
-    public function setUseIdn($useIdn)
+    public function setIpv6Max($ipv6Max)
     {
-        $this->container['useIdn'] = $useIdn;
+        $this->container['ipv6Max'] = $ipv6Max;
+
+        return $this;
+    }
+
+    /**
+     * Gets nsentryMin
+     *
+     * @return int
+     */
+    public function getNsentryMin()
+    {
+        return $this->container['nsentryMin'];
+    }
+
+    /**
+     * Sets nsentryMin
+     *
+     * @param int $nsentryMin nsentryMin
+     *
+     * @return $this
+     */
+    public function setNsentryMin($nsentryMin)
+    {
+        $this->container['nsentryMin'] = $nsentryMin;
+
+        return $this;
+    }
+
+    /**
+     * Gets nsentryMax
+     *
+     * @return int
+     */
+    public function getNsentryMax()
+    {
+        return $this->container['nsentryMax'];
+    }
+
+    /**
+     * Sets nsentryMax
+     *
+     * @param int $nsentryMax nsentryMax
+     *
+     * @return $this
+     */
+    public function setNsentryMax($nsentryMax)
+    {
+        $this->container['nsentryMax'] = $nsentryMax;
 
         return $this;
     }

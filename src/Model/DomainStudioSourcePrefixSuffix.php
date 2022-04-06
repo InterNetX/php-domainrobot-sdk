@@ -59,6 +59,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'services' => '\Domainrobot\Model\DomainEnvelopeSearchService[]',
         'onlyAvailable' => 'bool',
+        'domains' => 'string[]',
         'language' => 'string',
         'max' => 'int',
         'maxSldLength' => 'int',
@@ -77,6 +78,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'services' => null,
         'onlyAvailable' => null,
+        'domains' => null,
         'language' => null,
         'max' => 'int32',
         'maxSldLength' => 'int32',
@@ -116,6 +118,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'services' => 'services',
         'onlyAvailable' => 'onlyAvailable',
+        'domains' => 'domains',
         'language' => 'language',
         'max' => 'max',
         'maxSldLength' => 'maxSldLength',
@@ -134,6 +137,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     protected static $setters = [
         'services' => 'setServices',
         'onlyAvailable' => 'setOnlyAvailable',
+        'domains' => 'setDomains',
         'language' => 'setLanguage',
         'max' => 'setMax',
         'maxSldLength' => 'setMaxSldLength',
@@ -152,6 +156,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     protected static $getters = [
         'services' => 'getServices',
         'onlyAvailable' => 'getOnlyAvailable',
+        'domains' => 'getDomains',
         'language' => 'getLanguage',
         'max' => 'getMax',
         'maxSldLength' => 'getMaxSldLength',
@@ -224,6 +229,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     {
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
+        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
         $this->container['maxSldLength'] = isset($data['maxSldLength']) ? $this->createData($data['maxSldLength'], 'maxSldLength')  : null;
@@ -357,6 +363,30 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     public function setOnlyAvailable($onlyAvailable)
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets domains
+     *
+     * @return string[]
+     */
+    public function getDomains()
+    {
+        return $this->container['domains'];
+    }
+
+    /**
+     * Sets domains
+     *
+     * @param string[] $domains The generated domains of this source
+     *
+     * @return $this
+     */
+    public function setDomains($domains)
+    {
+        $this->container['domains'] = $domains;
 
         return $this;
     }

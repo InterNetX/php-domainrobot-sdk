@@ -275,7 +275,7 @@ class PcDomainsService extends DomainrobotService
     public function smuCheckAsync($body)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . '/v1/smu_check',
+            $this->domainrobotConfig->getUrl() . '/smu_check',
             'POST',
             ['json' => $body->toArray()]
         );

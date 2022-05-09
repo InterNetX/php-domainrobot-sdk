@@ -125,12 +125,12 @@ class DomainrobotService
                 if ($exception instanceof ClientException || $exception instanceof ServerException) {
                     $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
 
-                    throw new DomainrobotException($contents, $exception->getResponse()->getStatusCode(), "Domainrobot Error");
+                    throw new DomainrobotException($contents, $exception->getResponse()->getStatusCode(), $exception->getMessage());
                 }
                 // RequestException | ClientException
                 $msg = $exception->getMessage();
 
-                throw new DomainrobotException($msg, $exception->getCode(), "Domainrobot Error");
+                throw new DomainrobotException($msg, $exception->getCode(), $exception->getMessage());
             }
         );
         return new DomainrobotPromise($promise);

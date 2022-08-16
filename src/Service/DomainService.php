@@ -125,16 +125,16 @@ class DomainService extends DomainrobotService
 
     /**
      * Inquiring a list of domains with certain details.
-     * 
-     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     *
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter:
      * sld, subtld, tld, status, authinfo, expire, comment, ownerc, updated, zonec, nserver, techc, adminc, certificate, created, autorenew
      *
      * @param Query|null $body
      * @return Domain[]
      */
-    public function list(Query $body = null)
+    public function list(Query $body = null, $keys = [])
     {
-        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotPromise = $this->listAsync($body, $keys);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -152,22 +152,27 @@ class DomainService extends DomainrobotService
 
     /**
      * Inquiring a list of domains with certain details.
-     * 
-     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     *
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter:
      * sld, subtld, tld, status, authinfo, expire, comment, ownerc, updated, zonec, nserver, techc, adminc, certificate, created, autorenew
      *
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function listAsync(Query $body = null)
+    public function listAsync(Query $body = null, $keys = [])
     {
         $data = null;
         if ($body != null) {
             $data = $body->toArray();
         }
 
+        $keyString = '';
+        if (count($keys) > 0) {
+            $keyString = "?keys[]=" . implode("&keys[]=", $keys);
+        }
+
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/_search",
+            $this->domainrobotConfig->getUrl() . "/domain/_search". $keyString,
             "POST",
             ["json" => $data]
         ));
@@ -319,8 +324,8 @@ class DomainService extends DomainrobotService
     }
 
     /**
-     * Inquiring a list of cancelations with certain details. 
-     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * Inquiring a list of cancelations with certain details.
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter:
      * disconnect, execdate, ctid, created, registryStatus, sld, type, tld, subtld, gainingRegistrar, updated
      *
      * @param Query|null $body
@@ -345,8 +350,8 @@ class DomainService extends DomainrobotService
     }
 
     /**
-     * Inquiring a list of cancelations with certain details. 
-     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
+     * Inquiring a list of cancelations with certain details.
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter:
      * disconnect, execdate, ctid, created, registryStatus, sld, type, tld, subtld, gainingRegistrar, updated
      *
      * @param Query|null $body
@@ -367,9 +372,9 @@ class DomainService extends DomainrobotService
     }
 
     /**
-     * Inquiring a list of restorable domains with certain details. 
-     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
-     * parking, certificate, adminc, cancelation, action, zonec, nserver, techc, nsentry, dnssec, period, created, sld, 
+     * Inquiring a list of restorable domains with certain details.
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter:
+     * parking, certificate, adminc, cancelation, action, zonec, nserver, techc, nsentry, dnssec, period, created, sld,
      * tld, subtld, deleted, autorenew, expire, domainsafe, comment, ownerc, updated, remarks, authinfo, status
      *
      * @param Query|null $body
@@ -394,9 +399,9 @@ class DomainService extends DomainrobotService
     }
 
     /**
-     * Inquiring a list of restorable domains with certain details. 
-     * The following keys can be used for filtering, ordering and fetching additional data via query parameter: 
-     * parking, certificate, adminc, cancelation, action, zonec, nserver, techc, nsentry, dnssec, period, created, sld, 
+     * Inquiring a list of restorable domains with certain details.
+     * The following keys can be used for filtering, ordering and fetching additional data via query parameter:
+     * parking, certificate, adminc, cancelation, action, zonec, nserver, techc, nsentry, dnssec, period, created, sld,
      * tld, subtld, deleted, autorenew, expire, domainsafe, comment, ownerc, updated, remarks, authinfo, status
      *
      * @param Query|null $body
@@ -986,7 +991,7 @@ class DomainService extends DomainrobotService
 
     /**
      * Perform an Whois Request of an Domain
-     * 
+     *
      * @param string $name
      * @return void
      */
@@ -1000,7 +1005,7 @@ class DomainService extends DomainrobotService
 
     /**
      * Perform an Whois Request of an Domain
-     * 
+     *
      * @param string $name
      * @return DomainrobotPromise
      */

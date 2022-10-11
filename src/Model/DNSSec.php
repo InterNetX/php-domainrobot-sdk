@@ -282,8 +282,8 @@ class DNSSec implements ModelInterface, ArrayAccess
         if ($this->container['publicKey'] === null) {
             $invalidProperties[] = "'publicKey' can't be null";
         }
-        if (!preg_match("/^[\\sA-Za-z0-9+\/]+[=]*$/", $this->container['publicKey'])) {
-            $invalidProperties[] = "invalid value for 'publicKey', must be conform to the pattern /^[\\sA-Za-z0-9+\/]+[=]*$/.";
+        if (!preg_match("/^[\\sa-zA-Z0-9+\/\\n=]{8,}$/", $this->container['publicKey'])) {
+            $invalidProperties[] = "invalid value for 'publicKey', must be conform to the pattern /^[\\sa-zA-Z0-9+\/\\n=]{8,}$/.";
         }
 
         return $invalidProperties;
@@ -401,8 +401,8 @@ class DNSSec implements ModelInterface, ArrayAccess
     public function setPublicKey($publicKey)
     {
 
-        if ((!preg_match("/^[\\sA-Za-z0-9+\/]+[=]*$/", $publicKey))) {
-            throw new \InvalidArgumentException("invalid value for $publicKey when calling DNSSec., must conform to the pattern /^[\\sA-Za-z0-9+\/]+[=]*$/.");
+        if ((!preg_match("/^[\\sa-zA-Z0-9+\/\\n=]{8,}$/", $publicKey))) {
+            throw new \InvalidArgumentException("invalid value for $publicKey when calling DNSSec., must conform to the pattern /^[\\sa-zA-Z0-9+\/\\n=]{8,}$/.");
         }
 
         $this->container['publicKey'] = $publicKey;

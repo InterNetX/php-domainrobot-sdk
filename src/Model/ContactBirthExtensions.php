@@ -290,7 +290,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param string $country The country.
+     * @param string $country Birth country (ISO 3166 Country Code).
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets day
      *
-     * @param \DateTime $day The day.
+     * @param \DateTime $day Birthday (yyyy-MM-dd).
      *
      * @return $this
      */
@@ -338,7 +338,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets postalCode
      *
-     * @param string $postalCode The postalCode.
+     * @param string $postalCode Postal code of the birth place.
      *
      * @return $this
      */
@@ -362,7 +362,7 @@ class ContactBirthExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets place
      *
-     * @param string $place The place.
+     * @param string $place Birth place.
      *
      * @return $this
      */

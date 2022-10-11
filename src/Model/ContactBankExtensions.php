@@ -272,7 +272,7 @@ class ContactBankExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets ftldToken
      *
-     * @param string $ftldToken The FTLD token.
+     * @param string $ftldToken Registration token that you receive by email after successful verification by the registry.
      *
      * @return $this
      */

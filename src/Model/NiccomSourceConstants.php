@@ -48,6 +48,7 @@ class NiccomSourceConstants
     const NIC_NOTIFY = 'NIC_NOTIFY';
     const A3_REQUEST = 'A3_REQUEST';
     const A3_RESPONSE = 'A3_RESPONSE';
+    const LOG_OBJECTS = 'LOG_OBJECTS';
     
     /**
      * Gets allowable values of the enum
@@ -61,6 +62,7 @@ class NiccomSourceConstants
             self::NIC_NOTIFY,
             self::A3_REQUEST,
             self::A3_RESPONSE,
+            self::LOG_OBJECTS,
         ];
     }
 }

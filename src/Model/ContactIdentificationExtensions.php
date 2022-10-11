@@ -290,7 +290,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param string $number The number.
+     * @param string $number Id card number.
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets authority
      *
-     * @param string $authority The authority.
+     * @param string $authority Issuing authority of the identification card.
      *
      * @return $this
      */
@@ -338,7 +338,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets dateOfIssue
      *
-     * @param \DateTime $dateOfIssue The date of issue.
+     * @param \DateTime $dateOfIssue Date on which the identification card was issued.
      *
      * @return $this
      */
@@ -362,7 +362,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets validTill
      *
-     * @param \DateTime $validTill The valid till date.
+     * @param \DateTime $validTill Date on which the validity of the identification card expires.
      *
      * @return $this
      */

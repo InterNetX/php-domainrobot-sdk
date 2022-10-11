@@ -61,7 +61,8 @@ class ObjectJob implements ModelInterface, ArrayAccess
         'object' => '\Domainrobot\Model\ResponseObject',
         'niccomLogs' => '\Domainrobot\Model\NiccomLog[]',
         'authentication' => '\Domainrobot\Model\CertAuthenticationStatus[]',
-        'dcvAuth' => '\Domainrobot\Model\DomainControllValidationStatus[]'
+        'dcvAuth' => '\Domainrobot\Model\DomainControllValidationStatus[]',
+        'notices' => 'string[]'
     ];
 
     /**
@@ -74,7 +75,8 @@ class ObjectJob implements ModelInterface, ArrayAccess
         'object' => null,
         'niccomLogs' => null,
         'authentication' => null,
-        'dcvAuth' => null
+        'dcvAuth' => null,
+        'notices' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class ObjectJob implements ModelInterface, ArrayAccess
         'object' => 'object',
         'niccomLogs' => 'niccomLogs',
         'authentication' => 'authentication',
-        'dcvAuth' => 'dcvAuth'
+        'dcvAuth' => 'dcvAuth',
+        'notices' => 'notices'
     ];
 
     /**
@@ -121,7 +124,8 @@ class ObjectJob implements ModelInterface, ArrayAccess
         'object' => 'setObject',
         'niccomLogs' => 'setNiccomLogs',
         'authentication' => 'setAuthentication',
-        'dcvAuth' => 'setDcvAuth'
+        'dcvAuth' => 'setDcvAuth',
+        'notices' => 'setNotices'
     ];
 
     /**
@@ -134,7 +138,8 @@ class ObjectJob implements ModelInterface, ArrayAccess
         'object' => 'getObject',
         'niccomLogs' => 'getNiccomLogs',
         'authentication' => 'getAuthentication',
-        'dcvAuth' => 'getDcvAuth'
+        'dcvAuth' => 'getDcvAuth',
+        'notices' => 'getNotices'
     ];
 
     /**
@@ -202,6 +207,7 @@ class ObjectJob implements ModelInterface, ArrayAccess
         $this->container['niccomLogs'] = isset($data['niccomLogs']) ? $this->createData($data['niccomLogs'], 'niccomLogs')  : null;
         $this->container['authentication'] = isset($data['authentication']) ? $this->createData($data['authentication'], 'authentication')  : null;
         $this->container['dcvAuth'] = isset($data['dcvAuth']) ? $this->createData($data['dcvAuth'], 'dcvAuth')  : null;
+        $this->container['notices'] = isset($data['notices']) ? $this->createData($data['notices'], 'notices')  : null;
     }
 
     /**
@@ -399,6 +405,30 @@ class ObjectJob implements ModelInterface, ArrayAccess
     public function setDcvAuth($dcvAuth)
     {
         $this->container['dcvAuth'] = $dcvAuth;
+
+        return $this;
+    }
+
+    /**
+     * Gets notices
+     *
+     * @return string[]
+     */
+    public function getNotices()
+    {
+        return $this->container['notices'];
+    }
+
+    /**
+     * Sets notices
+     *
+     * @param string[] $notices Additional notices of the order
+     *
+     * @return $this
+     */
+    public function setNotices($notices)
+    {
+        $this->container['notices'] = $notices;
 
         return $this;
     }

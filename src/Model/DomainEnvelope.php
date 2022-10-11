@@ -60,6 +60,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'domain' => 'string',
         'idn' => 'string',
         'tld' => 'string',
+        'subTld' => 'string',
         'source' => '\Domainrobot\Model\DomainStudioDomainSource',
         'services' => '\Domainrobot\Model\DomainStudioService',
         'debugTime' => 'int',
@@ -79,6 +80,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'domain' => null,
         'idn' => null,
         'tld' => null,
+        'subTld' => null,
         'source' => null,
         'services' => null,
         'debugTime' => 'int64',
@@ -119,6 +121,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'domain' => 'domain',
         'idn' => 'idn',
         'tld' => 'tld',
+        'subTld' => 'subTld',
         'source' => 'source',
         'services' => 'services',
         'debugTime' => 'debugTime',
@@ -138,6 +141,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'domain' => 'setDomain',
         'idn' => 'setIdn',
         'tld' => 'setTld',
+        'subTld' => 'setSubTld',
         'source' => 'setSource',
         'services' => 'setServices',
         'debugTime' => 'setDebugTime',
@@ -157,6 +161,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'domain' => 'getDomain',
         'idn' => 'getIdn',
         'tld' => 'getTld',
+        'subTld' => 'getSubTld',
         'source' => 'getSource',
         'services' => 'getServices',
         'debugTime' => 'getDebugTime',
@@ -230,6 +235,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['tld'] = isset($data['tld']) ? $this->createData($data['tld'], 'tld')  : null;
+        $this->container['subTld'] = isset($data['subTld']) ? $this->createData($data['subTld'], 'subTld')  : null;
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
         $this->container['services'] = isset($data['services']) ? $this->createData($data['services'], 'services')  : null;
         $this->container['debugTime'] = isset($data['debugTime']) ? $this->createData($data['debugTime'], 'debugTime')  : null;
@@ -387,6 +393,30 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     public function setTld($tld)
     {
         $this->container['tld'] = $tld;
+
+        return $this;
+    }
+
+    /**
+     * Gets subTld
+     *
+     * @return string
+     */
+    public function getSubTld()
+    {
+        return $this->container['subTld'];
+    }
+
+    /**
+     * Sets subTld
+     *
+     * @param string $subTld The subTld for the given domain name
+     *
+     * @return $this
+     */
+    public function setSubTld($subTld)
+    {
+        $this->container['subTld'] = $subTld;
 
         return $this;
     }

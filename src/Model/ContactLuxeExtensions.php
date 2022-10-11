@@ -272,7 +272,7 @@ class ContactLuxeExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets walletAddress
      *
-     * @param string $walletAddress The .luxe wallet address
+     * @param string $walletAddress The wallet address
      *
      * @return $this
      */

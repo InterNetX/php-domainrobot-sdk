@@ -72,6 +72,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'bool',
         'source' => 'string',
         'sourceVirtualHostname' => 'string',
+        'purgeType' => '\Domainrobot\Model\PurgeTypes',
         'zoneGrantsAdd' => 'string[]',
         'zoneGrantsRem' => 'string[]',
         'modifiers' => '\Domainrobot\Model\Modifier[]',
@@ -109,6 +110,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => null,
         'source' => null,
         'sourceVirtualHostname' => null,
+        'purgeType' => null,
         'zoneGrantsAdd' => null,
         'zoneGrantsRem' => null,
         'modifiers' => null,
@@ -167,6 +169,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'domainsafe',
         'source' => 'source',
         'sourceVirtualHostname' => 'sourceVirtualHostname',
+        'purgeType' => 'purgeType',
         'zoneGrantsAdd' => 'zoneGrantsAdd',
         'zoneGrantsRem' => 'zoneGrantsRem',
         'modifiers' => 'modifiers',
@@ -204,6 +207,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'setDomainsafe',
         'source' => 'setSource',
         'sourceVirtualHostname' => 'setSourceVirtualHostname',
+        'purgeType' => 'setPurgeType',
         'zoneGrantsAdd' => 'setZoneGrantsAdd',
         'zoneGrantsRem' => 'setZoneGrantsRem',
         'modifiers' => 'setModifiers',
@@ -241,6 +245,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'getDomainsafe',
         'source' => 'getSource',
         'sourceVirtualHostname' => 'getSourceVirtualHostname',
+        'purgeType' => 'getPurgeType',
         'zoneGrantsAdd' => 'getZoneGrantsAdd',
         'zoneGrantsRem' => 'getZoneGrantsRem',
         'modifiers' => 'getModifiers',
@@ -332,6 +337,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
         $this->container['sourceVirtualHostname'] = isset($data['sourceVirtualHostname']) ? $this->createData($data['sourceVirtualHostname'], 'sourceVirtualHostname')  : null;
+        $this->container['purgeType'] = isset($data['purgeType']) ? $this->createData($data['purgeType'], 'purgeType')  : null;
         $this->container['zoneGrantsAdd'] = isset($data['zoneGrantsAdd']) ? $this->createData($data['zoneGrantsAdd'], 'zoneGrantsAdd')  : null;
         $this->container['zoneGrantsRem'] = isset($data['zoneGrantsRem']) ? $this->createData($data['zoneGrantsRem'], 'zoneGrantsRem')  : null;
         $this->container['modifiers'] = isset($data['modifiers']) ? $this->createData($data['modifiers'], 'modifiers')  : null;
@@ -443,7 +449,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -467,7 +473,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -786,6 +792,30 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     public function setSourceVirtualHostname($sourceVirtualHostname)
     {
         $this->container['sourceVirtualHostname'] = $sourceVirtualHostname;
+
+        return $this;
+    }
+
+    /**
+     * Gets purgeType
+     *
+     * @return \Domainrobot\Model\PurgeTypes
+     */
+    public function getPurgeType()
+    {
+        return $this->container['purgeType'];
+    }
+
+    /**
+     * Sets purgeType
+     *
+     * @param \Domainrobot\Model\PurgeTypes $purgeType The Purge Type. Default value is AUTO
+     *
+     * @return $this
+     */
+    public function setPurgeType($purgeType)
+    {
+        $this->container['purgeType'] = $purgeType;
 
         return $this;
     }

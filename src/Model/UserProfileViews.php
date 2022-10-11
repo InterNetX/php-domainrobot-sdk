@@ -57,7 +57,7 @@ class UserProfileViews implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'profiles' => '\Domainrobot\Model\UserProfile[]'
+        'profiles' => '\Domainrobot\Model\UserProfileView[]'
     ];
 
     /**
@@ -262,7 +262,7 @@ class UserProfileViews implements ModelInterface, ArrayAccess
     /**
      * Gets profiles
      *
-     * @return \Domainrobot\Model\UserProfile[]
+     * @return \Domainrobot\Model\UserProfileView[]
      */
     public function getProfiles()
     {
@@ -272,7 +272,7 @@ class UserProfileViews implements ModelInterface, ArrayAccess
     /**
      * Sets profiles
      *
-     * @param \Domainrobot\Model\UserProfile[] $profiles profiles
+     * @param \Domainrobot\Model\UserProfileView[] $profiles profiles
      *
      * @return $this
      */

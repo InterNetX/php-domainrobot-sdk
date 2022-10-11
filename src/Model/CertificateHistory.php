@@ -58,6 +58,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'serialNumber' => 'string',
+        'orderId' => 'string',
         'revoked' => '\DateTime'
     ];
 
@@ -68,6 +69,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'serialNumber' => null,
+        'orderId' => null,
         'revoked' => 'date-time'
     ];
 
@@ -99,6 +101,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'serialNumber' => 'serialNumber',
+        'orderId' => 'orderId',
         'revoked' => 'revoked'
     ];
 
@@ -109,6 +112,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'serialNumber' => 'setSerialNumber',
+        'orderId' => 'setOrderId',
         'revoked' => 'setRevoked'
     ];
 
@@ -119,6 +123,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'serialNumber' => 'getSerialNumber',
+        'orderId' => 'getOrderId',
         'revoked' => 'getRevoked'
     ];
 
@@ -183,6 +188,7 @@ class CertificateHistory implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['serialNumber'] = isset($data['serialNumber']) ? $this->createData($data['serialNumber'], 'serialNumber')  : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $this->createData($data['orderId'], 'orderId')  : null;
         $this->container['revoked'] = isset($data['revoked']) ? $this->createData($data['revoked'], 'revoked')  : null;
     }
 
@@ -285,6 +291,30 @@ class CertificateHistory implements ModelInterface, ArrayAccess
     public function setSerialNumber($serialNumber)
     {
         $this->container['serialNumber'] = $serialNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderId
+     *
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->container['orderId'];
+    }
+
+    /**
+     * Sets orderId
+     *
+     * @param string $orderId The unique certificate order number
+     *
+     * @return $this
+     */
+    public function setOrderId($orderId)
+    {
+        $this->container['orderId'] = $orderId;
 
         return $this;
     }

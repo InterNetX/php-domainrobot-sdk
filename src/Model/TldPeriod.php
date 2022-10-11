@@ -59,7 +59,8 @@ class TldPeriod implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'restoreArgpPeriod' => '\Domainrobot\Model\TimePeriod',
         'restoreRgpPeriod' => '\Domainrobot\Model\TimePeriod',
-        'cancelationPeriod' => '\Domainrobot\Model\TimePeriod'
+        'cancelationPeriod' => '\Domainrobot\Model\TimePeriod',
+        'cancelationPeriodAutoDelete' => '\Domainrobot\Model\TimePeriod'
     ];
 
     /**
@@ -70,7 +71,8 @@ class TldPeriod implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'restoreArgpPeriod' => null,
         'restoreRgpPeriod' => null,
-        'cancelationPeriod' => null
+        'cancelationPeriod' => null,
+        'cancelationPeriodAutoDelete' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class TldPeriod implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'restoreArgpPeriod' => 'restoreArgpPeriod',
         'restoreRgpPeriod' => 'restoreRgpPeriod',
-        'cancelationPeriod' => 'cancelationPeriod'
+        'cancelationPeriod' => 'cancelationPeriod',
+        'cancelationPeriodAutoDelete' => 'cancelationPeriodAutoDelete'
     ];
 
     /**
@@ -113,7 +116,8 @@ class TldPeriod implements ModelInterface, ArrayAccess
     protected static $setters = [
         'restoreArgpPeriod' => 'setRestoreArgpPeriod',
         'restoreRgpPeriod' => 'setRestoreRgpPeriod',
-        'cancelationPeriod' => 'setCancelationPeriod'
+        'cancelationPeriod' => 'setCancelationPeriod',
+        'cancelationPeriodAutoDelete' => 'setCancelationPeriodAutoDelete'
     ];
 
     /**
@@ -124,7 +128,8 @@ class TldPeriod implements ModelInterface, ArrayAccess
     protected static $getters = [
         'restoreArgpPeriod' => 'getRestoreArgpPeriod',
         'restoreRgpPeriod' => 'getRestoreRgpPeriod',
-        'cancelationPeriod' => 'getCancelationPeriod'
+        'cancelationPeriod' => 'getCancelationPeriod',
+        'cancelationPeriodAutoDelete' => 'getCancelationPeriodAutoDelete'
     ];
 
     /**
@@ -190,6 +195,7 @@ class TldPeriod implements ModelInterface, ArrayAccess
         $this->container['restoreArgpPeriod'] = isset($data['restoreArgpPeriod']) ? $this->createData($data['restoreArgpPeriod'], 'restoreArgpPeriod')  : null;
         $this->container['restoreRgpPeriod'] = isset($data['restoreRgpPeriod']) ? $this->createData($data['restoreRgpPeriod'], 'restoreRgpPeriod')  : null;
         $this->container['cancelationPeriod'] = isset($data['cancelationPeriod']) ? $this->createData($data['cancelationPeriod'], 'cancelationPeriod')  : null;
+        $this->container['cancelationPeriodAutoDelete'] = isset($data['cancelationPeriodAutoDelete']) ? $this->createData($data['cancelationPeriodAutoDelete'], 'cancelationPeriodAutoDelete')  : null;
     }
 
     /**
@@ -339,6 +345,30 @@ class TldPeriod implements ModelInterface, ArrayAccess
     public function setCancelationPeriod($cancelationPeriod)
     {
         $this->container['cancelationPeriod'] = $cancelationPeriod;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelationPeriodAutoDelete
+     *
+     * @return \Domainrobot\Model\TimePeriod
+     */
+    public function getCancelationPeriodAutoDelete()
+    {
+        return $this->container['cancelationPeriodAutoDelete'];
+    }
+
+    /**
+     * Sets cancelationPeriodAutoDelete
+     *
+     * @param \Domainrobot\Model\TimePeriod $cancelationPeriodAutoDelete cancelationPeriodAutoDelete
+     *
+     * @return $this
+     */
+    public function setCancelationPeriodAutoDelete($cancelationPeriodAutoDelete)
+    {
+        $this->container['cancelationPeriodAutoDelete'] = $cancelationPeriodAutoDelete;
 
         return $this;
     }

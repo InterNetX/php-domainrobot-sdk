@@ -278,7 +278,7 @@ class DomainBuyExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param double $amount The amount for the domain
+     * @param double $amount Purchase price of the domain.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class DomainBuyExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency Used currency of the amount
+     * @param string $currency Currency of the purchase price.
      *
      * @return $this
      */

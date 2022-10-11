@@ -65,6 +65,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'approverEmails' => 'string[]',
         'provisioning' => 'bool',
         'domains' => '\Domainrobot\Model\CertAuthentication[]',
+        'scope' => '\Domainrobot\Model\DcvValidationScope',
         'status' => '\Domainrobot\Model\AuthenticateStatus'
     ];
 
@@ -82,6 +83,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'approverEmails' => null,
         'provisioning' => null,
         'domains' => null,
+        'scope' => null,
         'status' => null
     ];
 
@@ -120,6 +122,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'approverEmails' => 'approverEmails',
         'provisioning' => 'provisioning',
         'domains' => 'domains',
+        'scope' => 'scope',
         'status' => 'status'
     ];
 
@@ -137,6 +140,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'approverEmails' => 'setApproverEmails',
         'provisioning' => 'setProvisioning',
         'domains' => 'setDomains',
+        'scope' => 'setScope',
         'status' => 'setStatus'
     ];
 
@@ -154,6 +158,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         'approverEmails' => 'getApproverEmails',
         'provisioning' => 'getProvisioning',
         'domains' => 'getDomains',
+        'scope' => 'getScope',
         'status' => 'getStatus'
     ];
 
@@ -225,6 +230,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         $this->container['approverEmails'] = isset($data['approverEmails']) ? $this->createData($data['approverEmails'], 'approverEmails')  : null;
         $this->container['provisioning'] = isset($data['provisioning']) ? $this->createData($data['provisioning'], 'provisioning')  : null;
         $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
+        $this->container['scope'] = isset($data['scope']) ? $this->createData($data['scope'], 'scope')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
     }
 
@@ -495,6 +501,30 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     public function setDomains($domains)
     {
         $this->container['domains'] = $domains;
+
+        return $this;
+    }
+
+    /**
+     * Gets scope
+     *
+     * @return \Domainrobot\Model\DcvValidationScope
+     */
+    public function getScope()
+    {
+        return $this->container['scope'];
+    }
+
+    /**
+     * Sets scope
+     *
+     * @param \Domainrobot\Model\DcvValidationScope $scope The authentication scope.
+     *
+     * @return $this
+     */
+    public function setScope($scope)
+    {
+        $this->container['scope'] = $scope;
 
         return $this;
     }

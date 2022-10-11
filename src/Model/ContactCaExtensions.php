@@ -296,7 +296,7 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets cpr
      *
-     * @param \Domainrobot\Model\CiraCprConstants $cpr The cira cpr.
+     * @param \Domainrobot\Model\CiraCprConstants $cpr Canadian Presence Requirements.  Enter the reason for the authorization to register a .ca domain.
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets officialRepresentative
      *
-     * @param string $officialRepresentative The official representative.
+     * @param string $officialRepresentative Offical representative.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class ContactCaExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets trusteePercentage
      *
-     * @param double $trusteePercentage The trustee percentage.
+     * @param double $trusteePercentage Share of Canadians in a trust.   Value must be <= 66. Mandatory if CPR = TRS (Trust).
      *
      * @return $this
      */

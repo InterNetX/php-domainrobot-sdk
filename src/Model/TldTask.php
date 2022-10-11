@@ -63,7 +63,8 @@ class TldTask implements ModelInterface, ArrayAccess
         'min' => '\Domainrobot\Model\TimePeriod',
         'max' => '\Domainrobot\Model\TimePeriod',
         'processing' => '\Domainrobot\Model\TldTaskProcessing',
-        'authinfo' => '\Domainrobot\Model\AuthInfo'
+        'authinfo' => '\Domainrobot\Model\AuthInfo',
+        'requiredAuthinfo' => 'bool'
     ];
 
     /**
@@ -78,7 +79,8 @@ class TldTask implements ModelInterface, ArrayAccess
         'min' => null,
         'max' => null,
         'processing' => null,
-        'authinfo' => null
+        'authinfo' => null,
+        'requiredAuthinfo' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class TldTask implements ModelInterface, ArrayAccess
         'min' => 'min',
         'max' => 'max',
         'processing' => 'processing',
-        'authinfo' => 'authinfo'
+        'authinfo' => 'authinfo',
+        'requiredAuthinfo' => 'requiredAuthinfo'
     ];
 
     /**
@@ -129,7 +132,8 @@ class TldTask implements ModelInterface, ArrayAccess
         'min' => 'setMin',
         'max' => 'setMax',
         'processing' => 'setProcessing',
-        'authinfo' => 'setAuthinfo'
+        'authinfo' => 'setAuthinfo',
+        'requiredAuthinfo' => 'setRequiredAuthinfo'
     ];
 
     /**
@@ -144,7 +148,8 @@ class TldTask implements ModelInterface, ArrayAccess
         'min' => 'getMin',
         'max' => 'getMax',
         'processing' => 'getProcessing',
-        'authinfo' => 'getAuthinfo'
+        'authinfo' => 'getAuthinfo',
+        'requiredAuthinfo' => 'getRequiredAuthinfo'
     ];
 
     /**
@@ -214,6 +219,7 @@ class TldTask implements ModelInterface, ArrayAccess
         $this->container['max'] = isset($data['max']) ? $this->createData($data['max'], 'max')  : null;
         $this->container['processing'] = isset($data['processing']) ? $this->createData($data['processing'], 'processing')  : null;
         $this->container['authinfo'] = isset($data['authinfo']) ? $this->createData($data['authinfo'], 'authinfo')  : null;
+        $this->container['requiredAuthinfo'] = isset($data['requiredAuthinfo']) ? $this->createData($data['requiredAuthinfo'], 'requiredAuthinfo')  : null;
     }
 
     /**
@@ -459,6 +465,30 @@ class TldTask implements ModelInterface, ArrayAccess
     public function setAuthinfo($authinfo)
     {
         $this->container['authinfo'] = $authinfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets requiredAuthinfo
+     *
+     * @return bool
+     */
+    public function getRequiredAuthinfo()
+    {
+        return $this->container['requiredAuthinfo'];
+    }
+
+    /**
+     * Sets requiredAuthinfo
+     *
+     * @param bool $requiredAuthinfo requiredAuthinfo
+     *
+     * @return $this
+     */
+    public function setRequiredAuthinfo($requiredAuthinfo)
+    {
+        $this->container['requiredAuthinfo'] = $requiredAuthinfo;
 
         return $this;
     }

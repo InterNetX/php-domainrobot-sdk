@@ -51,6 +51,9 @@ class VmcTrademarkCountryOrRegion
     const JP = 'JP';
     const AU = 'AU';
     const ES = 'ES';
+    const IN = 'IN';
+    const KR = 'KR';
+    const BR = 'BR';
     
     /**
      * Gets allowable values of the enum
@@ -67,6 +70,9 @@ class VmcTrademarkCountryOrRegion
             self::JP,
             self::AU,
             self::ES,
+            self::IN,
+            self::KR,
+            self::BR,
         ];
     }
 }

@@ -296,7 +296,7 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets adminType
      *
-     * @param bool $adminType Contact is the administrative contact with the permission to act as an independent agent / recruiter on behalf of the listed registrant.
+     * @param bool $adminType Here you enter whether the contact is the administrative contact with the permission to act as an independent agent /recruiter on behalf of the listed registrant.
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets industryClass
      *
-     * @param int $industryClass The Industry class.
+     * @param int $industryClass The industry class in which the company is active in.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class ContactJobsExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets website
      *
-     * @param string $website The Website.
+     * @param string $website The website URL of the company.
      *
      * @return $this
      */

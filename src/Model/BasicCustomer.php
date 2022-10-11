@@ -92,6 +92,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'billingUsers' => '\Domainrobot\Model\BasicUser[]',
         'comments' => '\Domainrobot\Model\Comment[]',
         'persistent' => '\Domainrobot\Model\BasicCustomer',
+        'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
@@ -139,6 +140,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'billingUsers' => null,
         'comments' => null,
         'persistent' => null,
+        'clearAccount' => null,
         'fname' => null,
         'lname' => null,
         'pcode' => null,
@@ -207,6 +209,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'billingUsers' => 'billingUsers',
         'comments' => 'comments',
         'persistent' => 'persistent',
+        'clearAccount' => 'clearAccount',
         'fname' => 'fname',
         'lname' => 'lname',
         'pcode' => 'pcode',
@@ -254,6 +257,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'billingUsers' => 'setBillingUsers',
         'comments' => 'setComments',
         'persistent' => 'setPersistent',
+        'clearAccount' => 'setClearAccount',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'pcode' => 'setPcode',
@@ -301,6 +305,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'billingUsers' => 'getBillingUsers',
         'comments' => 'getComments',
         'persistent' => 'getPersistent',
+        'clearAccount' => 'getClearAccount',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'pcode' => 'getPcode',
@@ -402,6 +407,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
         $this->container['comments'] = isset($data['comments']) ? $this->createData($data['comments'], 'comments')  : null;
         $this->container['persistent'] = isset($data['persistent']) ? $this->createData($data['persistent'], 'persistent')  : null;
+        $this->container['clearAccount'] = isset($data['clearAccount']) ? $this->createData($data['clearAccount'], 'clearAccount')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
@@ -486,14 +492,11 @@ class BasicCustomer implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'client', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) > 255)) {
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 255)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['name']) < 0)) {
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) < 0)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 0.";
         }
 
@@ -643,10 +646,10 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setName($name)
     {
-        if ((mb_strlen($name) > 255)) {
+        if (!is_null($name) && (mb_strlen($name) > 255)) {
             throw new \InvalidArgumentException('invalid length for $name when calling BasicCustomer., must be smaller than or equal to 255.');
         }
-        if ((mb_strlen($name) < 0)) {
+        if (!is_null($name) && (mb_strlen($name) < 0)) {
             throw new \InvalidArgumentException('invalid length for $name when calling BasicCustomer., must be bigger than or equal to 0.');
         }
 
@@ -1402,6 +1405,30 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     public function setPersistent($persistent)
     {
         $this->container['persistent'] = $persistent;
+
+        return $this;
+    }
+
+    /**
+     * Gets clearAccount
+     *
+     * @return \Domainrobot\Model\ClearAccountPeriod
+     */
+    public function getClearAccount()
+    {
+        return $this->container['clearAccount'];
+    }
+
+    /**
+     * Sets clearAccount
+     *
+     * @param \Domainrobot\Model\ClearAccountPeriod $clearAccount The period after the post payment account will be cleared to zero
+     *
+     * @return $this
+     */
+    public function setClearAccount($clearAccount)
+    {
+        $this->container['clearAccount'] = $clearAccount;
 
         return $this;
     }

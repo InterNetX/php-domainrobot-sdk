@@ -81,7 +81,9 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcLogo' => 'string',
         'vmcTrademarkRegistrationNumber' => 'string',
         'vmcTrademarkCountryOrRegion' => '\Domainrobot\Model\VmcTrademarkCountryOrRegion',
-        'scope' => '\Domainrobot\Model\DcvValidationScope'
+        'scope' => '\Domainrobot\Model\DcvValidationScope',
+        'hasMultiValueDN' => 'bool',
+        'validSignature' => 'bool'
     ];
 
     /**
@@ -114,7 +116,9 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcLogo' => null,
         'vmcTrademarkRegistrationNumber' => null,
         'vmcTrademarkCountryOrRegion' => null,
-        'scope' => null
+        'scope' => null,
+        'hasMultiValueDN' => null,
+        'validSignature' => null
     ];
 
     /**
@@ -168,7 +172,9 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcLogo' => 'vmcLogo',
         'vmcTrademarkRegistrationNumber' => 'vmcTrademarkRegistrationNumber',
         'vmcTrademarkCountryOrRegion' => 'vmcTrademarkCountryOrRegion',
-        'scope' => 'scope'
+        'scope' => 'scope',
+        'hasMultiValueDN' => 'hasMultiValueDN',
+        'validSignature' => 'validSignature'
     ];
 
     /**
@@ -201,7 +207,9 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcLogo' => 'setVmcLogo',
         'vmcTrademarkRegistrationNumber' => 'setVmcTrademarkRegistrationNumber',
         'vmcTrademarkCountryOrRegion' => 'setVmcTrademarkCountryOrRegion',
-        'scope' => 'setScope'
+        'scope' => 'setScope',
+        'hasMultiValueDN' => 'setHasMultiValueDN',
+        'validSignature' => 'setValidSignature'
     ];
 
     /**
@@ -234,7 +242,9 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcLogo' => 'getVmcLogo',
         'vmcTrademarkRegistrationNumber' => 'getVmcTrademarkRegistrationNumber',
         'vmcTrademarkCountryOrRegion' => 'getVmcTrademarkCountryOrRegion',
-        'scope' => 'getScope'
+        'scope' => 'getScope',
+        'hasMultiValueDN' => 'getHasMultiValueDN',
+        'validSignature' => 'getValidSignature'
     ];
 
     /**
@@ -322,6 +332,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         $this->container['vmcTrademarkRegistrationNumber'] = isset($data['vmcTrademarkRegistrationNumber']) ? $this->createData($data['vmcTrademarkRegistrationNumber'], 'vmcTrademarkRegistrationNumber')  : null;
         $this->container['vmcTrademarkCountryOrRegion'] = isset($data['vmcTrademarkCountryOrRegion']) ? $this->createData($data['vmcTrademarkCountryOrRegion'], 'vmcTrademarkCountryOrRegion')  : null;
         $this->container['scope'] = isset($data['scope']) ? $this->createData($data['scope'], 'scope')  : null;
+        $this->container['hasMultiValueDN'] = isset($data['hasMultiValueDN']) ? $this->createData($data['hasMultiValueDN'], 'hasMultiValueDN')  : null;
+        $this->container['validSignature'] = isset($data['validSignature']) ? $this->createData($data['validSignature'], 'validSignature')  : null;
     }
 
     /**
@@ -999,6 +1011,54 @@ class CertificateData implements ModelInterface, ArrayAccess
     public function setScope($scope)
     {
         $this->container['scope'] = $scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets hasMultiValueDN
+     *
+     * @return bool
+     */
+    public function getHasMultiValueDN()
+    {
+        return $this->container['hasMultiValueDN'];
+    }
+
+    /**
+     * Sets hasMultiValueDN
+     *
+     * @param bool $hasMultiValueDN Describes whether the CSR contains multi value DN data
+     *
+     * @return $this
+     */
+    public function setHasMultiValueDN($hasMultiValueDN)
+    {
+        $this->container['hasMultiValueDN'] = $hasMultiValueDN;
+
+        return $this;
+    }
+
+    /**
+     * Gets validSignature
+     *
+     * @return bool
+     */
+    public function getValidSignature()
+    {
+        return $this->container['validSignature'];
+    }
+
+    /**
+     * Sets validSignature
+     *
+     * @param bool $validSignature Describes whether the CSR contains a valid signature or not
+     *
+     * @return $this
+     */
+    public function setValidSignature($validSignature)
+    {
+        $this->container['validSignature'] = $validSignature;
 
         return $this;
     }

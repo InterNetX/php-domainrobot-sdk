@@ -278,7 +278,7 @@ class MainIp implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param string $address address
+     * @param string $address IP address used for the A-record of the zone's e-mail.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class MainIp implements ModelInterface, ArrayAccess
     /**
      * Sets ttl
      *
-     * @param int $ttl The ttl of main address to use
+     * @param int $ttl Time to Live (TTL) Validity period for the IP address of the zone.
      *
      * @return $this
      */

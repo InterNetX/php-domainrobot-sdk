@@ -72,6 +72,7 @@ class Zone implements ModelInterface, ArrayAccess
         'domainsafe' => 'bool',
         'source' => 'string',
         'sourceVirtualHostname' => 'string',
+        'purgeType' => '\Domainrobot\Model\PurgeTypes',
         'nameServers' => '\Domainrobot\Model\NameServer[]',
         'main' => '\Domainrobot\Model\MainIp',
         'wwwInclude' => 'bool',
@@ -104,6 +105,7 @@ class Zone implements ModelInterface, ArrayAccess
         'domainsafe' => null,
         'source' => null,
         'sourceVirtualHostname' => null,
+        'purgeType' => null,
         'nameServers' => null,
         'main' => null,
         'wwwInclude' => null,
@@ -157,6 +159,7 @@ class Zone implements ModelInterface, ArrayAccess
         'domainsafe' => 'domainsafe',
         'source' => 'source',
         'sourceVirtualHostname' => 'sourceVirtualHostname',
+        'purgeType' => 'purgeType',
         'nameServers' => 'nameServers',
         'main' => 'main',
         'wwwInclude' => 'wwwInclude',
@@ -189,6 +192,7 @@ class Zone implements ModelInterface, ArrayAccess
         'domainsafe' => 'setDomainsafe',
         'source' => 'setSource',
         'sourceVirtualHostname' => 'setSourceVirtualHostname',
+        'purgeType' => 'setPurgeType',
         'nameServers' => 'setNameServers',
         'main' => 'setMain',
         'wwwInclude' => 'setWwwInclude',
@@ -221,6 +225,7 @@ class Zone implements ModelInterface, ArrayAccess
         'domainsafe' => 'getDomainsafe',
         'source' => 'getSource',
         'sourceVirtualHostname' => 'getSourceVirtualHostname',
+        'purgeType' => 'getPurgeType',
         'nameServers' => 'getNameServers',
         'main' => 'getMain',
         'wwwInclude' => 'getWwwInclude',
@@ -307,6 +312,7 @@ class Zone implements ModelInterface, ArrayAccess
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
         $this->container['sourceVirtualHostname'] = isset($data['sourceVirtualHostname']) ? $this->createData($data['sourceVirtualHostname'], 'sourceVirtualHostname')  : null;
+        $this->container['purgeType'] = isset($data['purgeType']) ? $this->createData($data['purgeType'], 'purgeType')  : null;
         $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
         $this->container['main'] = isset($data['main']) ? $this->createData($data['main'], 'main')  : null;
         $this->container['wwwInclude'] = isset($data['wwwInclude']) ? $this->createData($data['wwwInclude'], 'wwwInclude')  : null;
@@ -413,7 +419,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -437,7 +443,7 @@ class Zone implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -756,6 +762,30 @@ class Zone implements ModelInterface, ArrayAccess
     public function setSourceVirtualHostname($sourceVirtualHostname)
     {
         $this->container['sourceVirtualHostname'] = $sourceVirtualHostname;
+
+        return $this;
+    }
+
+    /**
+     * Gets purgeType
+     *
+     * @return \Domainrobot\Model\PurgeTypes
+     */
+    public function getPurgeType()
+    {
+        return $this->container['purgeType'];
+    }
+
+    /**
+     * Sets purgeType
+     *
+     * @param \Domainrobot\Model\PurgeTypes $purgeType The Purge Type. Default value is AUTO
+     *
+     * @return $this
+     */
+    public function setPurgeType($purgeType)
+    {
+        $this->container['purgeType'] = $purgeType;
 
         return $this;
     }

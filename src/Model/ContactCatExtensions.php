@@ -272,7 +272,7 @@ class ContactCatExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets intendedUse
      *
-     * @param string $intendedUse The statement of intended use for the domain name.
+     * @param string $intendedUse The intended use for the domain.
      *
      * @return $this
      */

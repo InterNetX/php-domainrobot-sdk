@@ -272,7 +272,7 @@ class ContactItExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets entityType
      *
-     * @param \Domainrobot\Model\ItEntityTypeConstants $entityType The number of the matching entity.
+     * @param \Domainrobot\Model\ItEntityTypeConstants $entityType Entity the contact belongs to.   Depending on what you have entered in it_entity_type, other data must also be specified. You can find a description of this data in the section \"General Extensions\".
      *
      * @return $this
      */

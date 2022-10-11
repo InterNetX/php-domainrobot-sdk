@@ -61,7 +61,7 @@ class ContactDocument implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'contact' => '\Domainrobot\Model\Contact',
         'document' => '\Domainrobot\Model\Document',
-        'type' => '\Domainrobot\Model\CnAuditDocumentType',
+        'type' => '\Domainrobot\Model\ContactDocumentType',
         'verification' => '\Domainrobot\Model\GenericStatusConstants',
         'expire' => '\DateTime'
     ];
@@ -317,7 +317,7 @@ class ContactDocument implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -341,7 +341,7 @@ class ContactDocument implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -403,7 +403,7 @@ class ContactDocument implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \Domainrobot\Model\CnAuditDocumentType
+     * @return \Domainrobot\Model\ContactDocumentType
      */
     public function getType()
     {
@@ -413,7 +413,7 @@ class ContactDocument implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\CnAuditDocumentType $type type
+     * @param \Domainrobot\Model\ContactDocumentType $type type
      *
      * @return $this
      */

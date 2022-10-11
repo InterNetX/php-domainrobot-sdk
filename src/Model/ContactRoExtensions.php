@@ -272,7 +272,7 @@ class ContactRoExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets personType
      *
-     * @param \Domainrobot\Model\RoPersonTypeConstants $personType The entity person type.
+     * @param \Domainrobot\Model\RoPersonTypeConstants $personType Type of group that the contact belongs to.
      *
      * @return $this
      */

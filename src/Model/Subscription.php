@@ -74,8 +74,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'cancelation' => '\DateTime',
         'limits' => '\Domainrobot\Model\BillingObjectLimit[]',
         'acls' => '\Domainrobot\Model\UserAcl[]',
-        'variant' => 'string',
+        'profiles' => '\Domainrobot\Model\UserProfile[]',
         'cancelationEffective' => '\DateTime',
+        'variant' => 'string',
         'businessCase' => 'string',
         'extensions' => '\Domainrobot\Model\BillingEventExtensions'
     ];
@@ -103,8 +104,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'cancelation' => 'date-time',
         'limits' => null,
         'acls' => null,
-        'variant' => null,
+        'profiles' => null,
         'cancelationEffective' => 'date-time',
+        'variant' => null,
         'businessCase' => null,
         'extensions' => null
     ];
@@ -153,8 +155,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'cancelation' => 'cancelation',
         'limits' => 'limits',
         'acls' => 'acls',
-        'variant' => 'variant',
+        'profiles' => 'profiles',
         'cancelationEffective' => 'cancelationEffective',
+        'variant' => 'variant',
         'businessCase' => 'businessCase',
         'extensions' => 'extensions'
     ];
@@ -182,8 +185,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'cancelation' => 'setCancelation',
         'limits' => 'setLimits',
         'acls' => 'setAcls',
-        'variant' => 'setVariant',
+        'profiles' => 'setProfiles',
         'cancelationEffective' => 'setCancelationEffective',
+        'variant' => 'setVariant',
         'businessCase' => 'setBusinessCase',
         'extensions' => 'setExtensions'
     ];
@@ -211,8 +215,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'cancelation' => 'getCancelation',
         'limits' => 'getLimits',
         'acls' => 'getAcls',
-        'variant' => 'getVariant',
+        'profiles' => 'getProfiles',
         'cancelationEffective' => 'getCancelationEffective',
+        'variant' => 'getVariant',
         'businessCase' => 'getBusinessCase',
         'extensions' => 'getExtensions'
     ];
@@ -294,8 +299,9 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['cancelation'] = isset($data['cancelation']) ? $this->createData($data['cancelation'], 'cancelation')  : null;
         $this->container['limits'] = isset($data['limits']) ? $this->createData($data['limits'], 'limits')  : null;
         $this->container['acls'] = isset($data['acls']) ? $this->createData($data['acls'], 'acls')  : null;
-        $this->container['variant'] = isset($data['variant']) ? $this->createData($data['variant'], 'variant')  : null;
+        $this->container['profiles'] = isset($data['profiles']) ? $this->createData($data['profiles'], 'profiles')  : null;
         $this->container['cancelationEffective'] = isset($data['cancelationEffective']) ? $this->createData($data['cancelationEffective'], 'cancelationEffective')  : null;
+        $this->container['variant'] = isset($data['variant']) ? $this->createData($data['variant'], 'variant')  : null;
         $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
         $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
     }
@@ -395,7 +401,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -419,7 +425,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -791,25 +797,25 @@ class Subscription implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets variant
+     * Gets profiles
      *
-     * @return string
+     * @return \Domainrobot\Model\UserProfile[]
      */
-    public function getVariant()
+    public function getProfiles()
     {
-        return $this->container['variant'];
+        return $this->container['profiles'];
     }
 
     /**
-     * Sets variant
+     * Sets profiles
      *
-     * @param string $variant The name variant, e.g nodesecure
+     * @param \Domainrobot\Model\UserProfile[] $profiles The user profiles of the package
      *
      * @return $this
      */
-    public function setVariant($variant)
+    public function setProfiles($profiles)
     {
-        $this->container['variant'] = $variant;
+        $this->container['profiles'] = $profiles;
 
         return $this;
     }
@@ -834,6 +840,30 @@ class Subscription implements ModelInterface, ArrayAccess
     public function setCancelationEffective($cancelationEffective)
     {
         $this->container['cancelationEffective'] = $cancelationEffective;
+
+        return $this;
+    }
+
+    /**
+     * Gets variant
+     *
+     * @return string
+     */
+    public function getVariant()
+    {
+        return $this->container['variant'];
+    }
+
+    /**
+     * Sets variant
+     *
+     * @param string $variant The name variant, e.g nodesecure
+     *
+     * @return $this
+     */
+    public function setVariant($variant)
+    {
+        $this->container['variant'] = $variant;
 
         return $this;
     }

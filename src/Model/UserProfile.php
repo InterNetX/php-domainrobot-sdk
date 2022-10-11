@@ -63,9 +63,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'updater' => '\Domainrobot\Model\BasicUser',
         'key' => 'string',
         'value' => 'string',
-        'flag' => '\Domainrobot\Model\UserProfileFlag',
-        'inherited' => 'bool',
-        'readonly' => 'bool'
+        'flag' => '\Domainrobot\Model\UserProfileFlag'
     ];
 
     /**
@@ -80,9 +78,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'updater' => null,
         'key' => null,
         'value' => null,
-        'flag' => null,
-        'inherited' => null,
-        'readonly' => null
+        'flag' => null
     ];
 
     /**
@@ -118,9 +114,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'updater' => 'updater',
         'key' => 'key',
         'value' => 'value',
-        'flag' => 'flag',
-        'inherited' => 'inherited',
-        'readonly' => 'readonly'
+        'flag' => 'flag'
     ];
 
     /**
@@ -135,9 +129,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'updater' => 'setUpdater',
         'key' => 'setKey',
         'value' => 'setValue',
-        'flag' => 'setFlag',
-        'inherited' => 'setInherited',
-        'readonly' => 'setReadonly'
+        'flag' => 'setFlag'
     ];
 
     /**
@@ -152,9 +144,7 @@ class UserProfile implements ModelInterface, ArrayAccess
         'updater' => 'getUpdater',
         'key' => 'getKey',
         'value' => 'getValue',
-        'flag' => 'getFlag',
-        'inherited' => 'getInherited',
-        'readonly' => 'getReadonly'
+        'flag' => 'getFlag'
     ];
 
     /**
@@ -224,8 +214,6 @@ class UserProfile implements ModelInterface, ArrayAccess
         $this->container['key'] = isset($data['key']) ? $this->createData($data['key'], 'key')  : null;
         $this->container['value'] = isset($data['value']) ? $this->createData($data['value'], 'value')  : null;
         $this->container['flag'] = isset($data['flag']) ? $this->createData($data['flag'], 'flag')  : null;
-        $this->container['inherited'] = isset($data['inherited']) ? $this->createData($data['inherited'], 'inherited')  : null;
-        $this->container['readonly'] = isset($data['readonly']) ? $this->createData($data['readonly'], 'readonly')  : null;
     }
 
     /**
@@ -329,7 +317,7 @@ class UserProfile implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -353,7 +341,7 @@ class UserProfile implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -480,54 +468,6 @@ class UserProfile implements ModelInterface, ArrayAccess
     public function setFlag($flag)
     {
         $this->container['flag'] = $flag;
-
-        return $this;
-    }
-
-    /**
-     * Gets inherited
-     *
-     * @return bool
-     */
-    public function getInherited()
-    {
-        return $this->container['inherited'];
-    }
-
-    /**
-     * Sets inherited
-     *
-     * @param bool $inherited Is true if the value was inherited
-     *
-     * @return $this
-     */
-    public function setInherited($inherited)
-    {
-        $this->container['inherited'] = $inherited;
-
-        return $this;
-    }
-
-    /**
-     * Gets readonly
-     *
-     * @return bool
-     */
-    public function getReadonly()
-    {
-        return $this->container['readonly'];
-    }
-
-    /**
-     * Sets readonly
-     *
-     * @param bool $readonly The read only entry
-     *
-     * @return $this
-     */
-    public function setReadonly($readonly)
-    {
-        $this->container['readonly'] = $readonly;
 
         return $this;
     }

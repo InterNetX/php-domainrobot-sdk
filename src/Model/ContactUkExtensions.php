@@ -272,7 +272,7 @@ class ContactUkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets entityType
      *
-     * @param \Domainrobot\Model\UkTypeConstants $entityType The entity type.
+     * @param \Domainrobot\Model\UkTypeConstants $entityType Organization type.   For the sub domains ltd.uk, net.uk and plc.uk the selection of <uk _type> is mandatory.  For co.uk and me.uk the selection of <uk_type> is not mandatory.
      *
      * @return $this
      */

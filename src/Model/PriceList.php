@@ -64,7 +64,14 @@ class PriceList implements ModelInterface, ArrayAccess
         'id' => 'int',
         'label' => 'string',
         'client' => 'string',
-        'group' => 'string'
+        'group' => 'string',
+        'type' => '\Domainrobot\Model\Type',
+        'from' => '\DateTime',
+        'to' => '\DateTime',
+        'inactive' => 'bool',
+        'comment' => 'string',
+        'customerPriceListsAdd' => '\Domainrobot\Model\CustomerPriceList[]',
+        'customerPriceListsRem' => '\Domainrobot\Model\CustomerPriceList[]'
     ];
 
     /**
@@ -80,7 +87,14 @@ class PriceList implements ModelInterface, ArrayAccess
         'id' => 'int32',
         'label' => null,
         'client' => null,
-        'group' => null
+        'group' => null,
+        'type' => null,
+        'from' => 'date-time',
+        'to' => 'date-time',
+        'inactive' => null,
+        'comment' => null,
+        'customerPriceListsAdd' => null,
+        'customerPriceListsRem' => null
     ];
 
     /**
@@ -117,7 +131,14 @@ class PriceList implements ModelInterface, ArrayAccess
         'id' => 'id',
         'label' => 'label',
         'client' => 'client',
-        'group' => 'group'
+        'group' => 'group',
+        'type' => 'type',
+        'from' => 'from',
+        'to' => 'to',
+        'inactive' => 'inactive',
+        'comment' => 'comment',
+        'customerPriceListsAdd' => 'customerPriceListsAdd',
+        'customerPriceListsRem' => 'customerPriceListsRem'
     ];
 
     /**
@@ -133,7 +154,14 @@ class PriceList implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'label' => 'setLabel',
         'client' => 'setClient',
-        'group' => 'setGroup'
+        'group' => 'setGroup',
+        'type' => 'setType',
+        'from' => 'setFrom',
+        'to' => 'setTo',
+        'inactive' => 'setInactive',
+        'comment' => 'setComment',
+        'customerPriceListsAdd' => 'setCustomerPriceListsAdd',
+        'customerPriceListsRem' => 'setCustomerPriceListsRem'
     ];
 
     /**
@@ -149,7 +177,14 @@ class PriceList implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'label' => 'getLabel',
         'client' => 'getClient',
-        'group' => 'getGroup'
+        'group' => 'getGroup',
+        'type' => 'getType',
+        'from' => 'getFrom',
+        'to' => 'getTo',
+        'inactive' => 'getInactive',
+        'comment' => 'getComment',
+        'customerPriceListsAdd' => 'getCustomerPriceListsAdd',
+        'customerPriceListsRem' => 'getCustomerPriceListsRem'
     ];
 
     /**
@@ -220,6 +255,13 @@ class PriceList implements ModelInterface, ArrayAccess
         $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
         $this->container['client'] = isset($data['client']) ? $this->createData($data['client'], 'client')  : null;
         $this->container['group'] = isset($data['group']) ? $this->createData($data['group'], 'group')  : null;
+        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
+        $this->container['from'] = isset($data['from']) ? $this->createData($data['from'], 'from')  : null;
+        $this->container['to'] = isset($data['to']) ? $this->createData($data['to'], 'to')  : null;
+        $this->container['inactive'] = isset($data['inactive']) ? $this->createData($data['inactive'], 'inactive')  : null;
+        $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
+        $this->container['customerPriceListsAdd'] = isset($data['customerPriceListsAdd']) ? $this->createData($data['customerPriceListsAdd'], 'customerPriceListsAdd')  : null;
+        $this->container['customerPriceListsRem'] = isset($data['customerPriceListsRem']) ? $this->createData($data['customerPriceListsRem'], 'customerPriceListsRem')  : null;
     }
 
     /**
@@ -314,7 +356,7 @@ class PriceList implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -338,7 +380,7 @@ class PriceList implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -386,7 +428,7 @@ class PriceList implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -489,6 +531,174 @@ class PriceList implements ModelInterface, ArrayAccess
     public function setGroup($group)
     {
         $this->container['group'] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return \Domainrobot\Model\Type
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \Domainrobot\Model\Type $type The type of the price list
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets from
+     *
+     * @return \DateTime
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     *
+     * @param \DateTime $from The from date
+     *
+     * @return $this
+     */
+    public function setFrom($from)
+    {
+        $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets to
+     *
+     * @return \DateTime
+     */
+    public function getTo()
+    {
+        return $this->container['to'];
+    }
+
+    /**
+     * Sets to
+     *
+     * @param \DateTime $to The to date
+     *
+     * @return $this
+     */
+    public function setTo($to)
+    {
+        $this->container['to'] = $to;
+
+        return $this;
+    }
+
+    /**
+     * Gets inactive
+     *
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return $this->container['inactive'];
+    }
+
+    /**
+     * Sets inactive
+     *
+     * @param bool $inactive Flag indication if the priceList is inactive
+     *
+     * @return $this
+     */
+    public function setInactive($inactive)
+    {
+        $this->container['inactive'] = $inactive;
+
+        return $this;
+    }
+
+    /**
+     * Gets comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     * @param string $comment Comments
+     *
+     * @return $this
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerPriceListsAdd
+     *
+     * @return \Domainrobot\Model\CustomerPriceList[]
+     */
+    public function getCustomerPriceListsAdd()
+    {
+        return $this->container['customerPriceListsAdd'];
+    }
+
+    /**
+     * Sets customerPriceListsAdd
+     *
+     * @param \Domainrobot\Model\CustomerPriceList[] $customerPriceListsAdd Used by the patch route
+     *
+     * @return $this
+     */
+    public function setCustomerPriceListsAdd($customerPriceListsAdd)
+    {
+        $this->container['customerPriceListsAdd'] = $customerPriceListsAdd;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerPriceListsRem
+     *
+     * @return \Domainrobot\Model\CustomerPriceList[]
+     */
+    public function getCustomerPriceListsRem()
+    {
+        return $this->container['customerPriceListsRem'];
+    }
+
+    /**
+     * Sets customerPriceListsRem
+     *
+     * @param \Domainrobot\Model\CustomerPriceList[] $customerPriceListsRem Used by the patch route
+     *
+     * @return $this
+     */
+    public function setCustomerPriceListsRem($customerPriceListsRem)
+    {
+        $this->container['customerPriceListsRem'] = $customerPriceListsRem;
 
         return $this;
     }

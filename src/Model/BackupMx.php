@@ -305,7 +305,7 @@ class BackupMx implements ModelInterface, ArrayAccess
     /**
      * Sets domain
      *
-     * @param string $domain The domain of the mail exchange to backup
+     * @param string $domain Domain name for which the BackupMX Record is to be created.
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class BackupMx implements ModelInterface, ArrayAccess
     /**
      * Sets idn
      *
-     * @param string $idn The idn version of the domain.
+     * @param string $idn IDN version of the domain name written in Punycode.
      *
      * @return $this
      */
@@ -353,7 +353,7 @@ class BackupMx implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The date of the creation
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -377,7 +377,7 @@ class BackupMx implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The date of the last updated
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -401,7 +401,7 @@ class BackupMx implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the entry
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class BackupMx implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The last updater of the entry
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */

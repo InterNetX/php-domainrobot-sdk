@@ -65,8 +65,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'string',
         'execution' => '\DateTime',
         'events' => '\Domainrobot\Model\WorkflowEvent[]',
-        'action' => 'string',
         'subType' => 'string',
+        'action' => 'string',
         'id' => 'int'
     ];
 
@@ -84,8 +84,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => null,
         'execution' => 'date-time',
         'events' => null,
-        'action' => null,
         'subType' => null,
+        'action' => null,
         'id' => 'int64'
     ];
 
@@ -124,8 +124,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'subStatus',
         'execution' => 'execution',
         'events' => 'events',
-        'action' => 'action',
         'subType' => 'subType',
+        'action' => 'action',
         'id' => 'id'
     ];
 
@@ -143,8 +143,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'setSubStatus',
         'execution' => 'setExecution',
         'events' => 'setEvents',
-        'action' => 'setAction',
         'subType' => 'setSubType',
+        'action' => 'setAction',
         'id' => 'setId'
     ];
 
@@ -162,8 +162,8 @@ class Job implements ModelInterface, ArrayAccess
         'subStatus' => 'getSubStatus',
         'execution' => 'getExecution',
         'events' => 'getEvents',
-        'action' => 'getAction',
         'subType' => 'getSubType',
+        'action' => 'getAction',
         'id' => 'getId'
     ];
 
@@ -235,8 +235,8 @@ class Job implements ModelInterface, ArrayAccess
         $this->container['subStatus'] = isset($data['subStatus']) ? $this->createData($data['subStatus'], 'subStatus')  : null;
         $this->container['execution'] = isset($data['execution']) ? $this->createData($data['execution'], 'execution')  : null;
         $this->container['events'] = isset($data['events']) ? $this->createData($data['events'], 'events')  : null;
-        $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
         $this->container['subType'] = isset($data['subType']) ? $this->createData($data['subType'], 'subType')  : null;
+        $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
         $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
     }
 
@@ -332,7 +332,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -356,7 +356,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class Job implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -512,30 +512,6 @@ class Job implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets action
-     *
-     * @return string
-     */
-    public function getAction()
-    {
-        return $this->container['action'];
-    }
-
-    /**
-     * Sets action
-     *
-     * @param string $action The job action.
-     *
-     * @return $this
-     */
-    public function setAction($action)
-    {
-        $this->container['action'] = $action;
-
-        return $this;
-    }
-
-    /**
      * Gets subType
      *
      * @return string
@@ -555,6 +531,30 @@ class Job implements ModelInterface, ArrayAccess
     public function setSubType($subType)
     {
         $this->container['subType'] = $subType;
+
+        return $this;
+    }
+
+    /**
+     * Gets action
+     *
+     * @return string
+     */
+    public function getAction()
+    {
+        return $this->container['action'];
+    }
+
+    /**
+     * Sets action
+     *
+     * @param string $action The job action.
+     *
+     * @return $this
+     */
+    public function setAction($action)
+    {
+        $this->container['action'] = $action;
 
         return $this;
     }

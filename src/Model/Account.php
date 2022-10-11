@@ -335,7 +335,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \Domainrobot\Model\GenericCustomer $customer The customer itself
+     * @param \Domainrobot\Model\GenericCustomer $customer The customer object.
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets currentAccountBalance
      *
-     * @param double $currentAccountBalance The real account balance
+     * @param double $currentAccountBalance The current account balance
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets runningTotal
      *
-     * @param double $runningTotal The current total, the amount of all finished and unfinished transactions
+     * @param double $runningTotal The current total, the amount of all finished and unfinished transactions.
      *
      * @return $this
      */
@@ -431,7 +431,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency The currency of the account
+     * @param string $currency Currency in which the account is held.
      *
      * @return $this
      */
@@ -455,7 +455,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets minRunningTotalNotification
      *
-     * @param double $minRunningTotalNotification The minimum running total amount if a notification should be send
+     * @param double $minRunningTotalNotification The minimum account balance at which a notification should be sent.
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets minRunningTotalNotificationEmail
      *
-     * @param string $minRunningTotalNotificationEmail The recipient of the notification limit email
+     * @param string $minRunningTotalNotificationEmail Email address for notification. A notification is sent when the minimum account balance has been reached (minRunningTotalNotification).
      *
      * @return $this
      */
@@ -503,7 +503,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The date of the acccount creation
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -527,7 +527,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The date of the las update.
+     * @param \DateTime $updated The date of the last update.
      *
      * @return $this
      */
@@ -551,7 +551,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets view
      *
-     * @param \Domainrobot\Model\CurrencyRate $view The selected exchange for the account
+     * @param \Domainrobot\Model\CurrencyRate $view The selected exchange for the account.
      *
      * @return $this
      */

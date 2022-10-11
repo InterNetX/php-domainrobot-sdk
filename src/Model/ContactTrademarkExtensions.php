@@ -302,7 +302,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The name.
+     * @param string $name Trademark name.
      *
      * @return $this
      */
@@ -326,7 +326,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param string $number The number.
+     * @param string $number Trademark number.
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param string $country The country.
+     * @param string $country Country in which the trade mark is valid (ISO 3166 Country Code).
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets regdate
      *
-     * @param \DateTime $regdate The registration date.
+     * @param \DateTime $regdate Registration date.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets appdate
      *
-     * @param \DateTime $appdate The application date.
+     * @param \DateTime $appdate Application date of the trade mark (yyyy-MM-dd).
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets office
      *
-     * @param string $office The office.
+     * @param string $office The trademark office where the trademark is registered at.
      *
      * @return $this
      */

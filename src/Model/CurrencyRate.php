@@ -278,7 +278,7 @@ class CurrencyRate implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency The currency of the exchange
+     * @param string $currency Currency of the customer's prepayment account.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class CurrencyRate implements ModelInterface, ArrayAccess
     /**
      * Sets rate
      *
-     * @param double $rate the rate of the exchange
+     * @param double $rate Exchange rate.
      *
      * @return $this
      */

@@ -58,6 +58,7 @@ class SignatureHashAlgorithmConstants
     const SHA256_ECDSA_SHA384_ECDSA = 'SHA256ECDSA_SHA384ECDSA';
     const SHA384_ECDSA_SHA384_ECDSA = 'SHA384ECDSA_SHA384ECDSA';
     const _DEFAULT = 'DEFAULT';
+    const MD5_WITH_RSA_ENCRYPTION = 'MD5_WITH_RSA_ENCRYPTION';
     
     /**
      * Gets allowable values of the enum
@@ -81,6 +82,7 @@ class SignatureHashAlgorithmConstants
             self::SHA256_ECDSA_SHA384_ECDSA,
             self::SHA384_ECDSA_SHA384_ECDSA,
             self::_DEFAULT,
+            self::MD5_WITH_RSA_ENCRYPTION,
         ];
     }
 }

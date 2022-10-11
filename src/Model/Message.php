@@ -58,6 +58,7 @@ class Message implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'text' => 'string',
+        'notice' => 'string',
         'messages' => '\Domainrobot\Model\Message[]',
         'objects' => '\Domainrobot\Model\GenericObject[]',
         'code' => 'string',
@@ -71,6 +72,7 @@ class Message implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'text' => null,
+        'notice' => null,
         'messages' => null,
         'objects' => null,
         'code' => null,
@@ -105,6 +107,7 @@ class Message implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'text' => 'text',
+        'notice' => 'notice',
         'messages' => 'messages',
         'objects' => 'objects',
         'code' => 'code',
@@ -118,6 +121,7 @@ class Message implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'text' => 'setText',
+        'notice' => 'setNotice',
         'messages' => 'setMessages',
         'objects' => 'setObjects',
         'code' => 'setCode',
@@ -131,6 +135,7 @@ class Message implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'text' => 'getText',
+        'notice' => 'getNotice',
         'messages' => 'getMessages',
         'objects' => 'getObjects',
         'code' => 'getCode',
@@ -198,6 +203,7 @@ class Message implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['text'] = isset($data['text']) ? $this->createData($data['text'], 'text')  : null;
+        $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
         $this->container['messages'] = isset($data['messages']) ? $this->createData($data['messages'], 'messages')  : null;
         $this->container['objects'] = isset($data['objects']) ? $this->createData($data['objects'], 'objects')  : null;
         $this->container['code'] = isset($data['code']) ? $this->createData($data['code'], 'code')  : null;
@@ -303,6 +309,30 @@ class Message implements ModelInterface, ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Gets notice
+     *
+     * @return string
+     */
+    public function getNotice()
+    {
+        return $this->container['notice'];
+    }
+
+    /**
+     * Sets notice
+     *
+     * @param string $notice Additional notice if available
+     *
+     * @return $this
+     */
+    public function setNotice($notice)
+    {
+        $this->container['notice'] = $notice;
 
         return $this;
     }

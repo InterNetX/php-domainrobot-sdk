@@ -278,7 +278,7 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets membershipID
      *
-     * @param string $membershipID Membership ID (token) for the .XXX community.
+     * @param string $membershipID Membership ID (token) for the .XXX community.   You receive your ID after you have finished the ICM registry membership process successfully and having created an account there.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class ContactXxxExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets nonResolverDomain
      *
-     * @param bool $nonResolverDomain XXX community membership available or not.
+     * @param bool $nonResolverDomain XXX community membership. Members have a membership ID (token).
      *
      * @return $this
      */

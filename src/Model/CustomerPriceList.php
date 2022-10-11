@@ -59,6 +59,8 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
+        'id' => 'int',
+        'customer' => '\Domainrobot\Model\GenericCustomer',
         'priceList' => '\Domainrobot\Model\PriceList'
     ];
 
@@ -70,6 +72,8 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
+        'id' => 'int32',
+        'customer' => null,
         'priceList' => null
     ];
 
@@ -102,6 +106,8 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
+        'id' => 'id',
+        'customer' => 'customer',
         'priceList' => 'priceList'
     ];
 
@@ -113,6 +119,8 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
+        'id' => 'setId',
+        'customer' => 'setCustomer',
         'priceList' => 'setPriceList'
     ];
 
@@ -124,6 +132,8 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
+        'id' => 'getId',
+        'customer' => 'getCustomer',
         'priceList' => 'getPriceList'
     ];
 
@@ -189,6 +199,8 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
+        $this->container['customer'] = isset($data['customer']) ? $this->createData($data['customer'], 'customer')  : null;
         $this->container['priceList'] = isset($data['priceList']) ? $this->createData($data['priceList'], 'priceList')  : null;
     }
 
@@ -256,6 +268,9 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['customer'] === null) {
+            $invalidProperties[] = "'customer' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -284,7 +299,7 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -308,13 +323,61 @@ class CustomerPriceList implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id The id.
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     *
+     * @return \Domainrobot\Model\GenericCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     *
+     * @param \Domainrobot\Model\GenericCustomer $customer customer
+     *
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
 
         return $this;
     }

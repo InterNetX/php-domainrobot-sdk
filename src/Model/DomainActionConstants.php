@@ -67,6 +67,7 @@ class DomainActionConstants
     const REGISTRAR_UPDATE_STATUS = 'REGISTRAR_UPDATE_STATUS';
     const UPDATE_COMMENT = 'UPDATE_COMMENT';
     const AUTOUPDATE_DNS = 'AUTOUPDATE_DNS';
+    const AUTOUPDATE_DNSSEC = 'AUTOUPDATE_DNSSEC';
     const OWNERCHANGE = 'OWNERCHANGE';
     const OWNERCHANGE_TRANSFER = 'OWNERCHANGE_TRANSFER';
     const OWNERCHANGE_TRANSFER_INTERN = 'OWNERCHANGE_TRANSFER_INTERN';
@@ -80,6 +81,7 @@ class DomainActionConstants
     const AUTHINFO_DELETE = 'AUTHINFO_DELETE';
     const AUTOUPDATE_DEFERRED = 'AUTOUPDATE_DEFERRED';
     const DOMAIN_BUY = 'DOMAIN_BUY';
+    const CONTACT_CREATE = 'CONTACT_CREATE';
     
     /**
      * Gets allowable values of the enum
@@ -112,6 +114,7 @@ class DomainActionConstants
             self::REGISTRAR_UPDATE_STATUS,
             self::UPDATE_COMMENT,
             self::AUTOUPDATE_DNS,
+            self::AUTOUPDATE_DNSSEC,
             self::OWNERCHANGE,
             self::OWNERCHANGE_TRANSFER,
             self::OWNERCHANGE_TRANSFER_INTERN,
@@ -125,6 +128,7 @@ class DomainActionConstants
             self::AUTHINFO_DELETE,
             self::AUTOUPDATE_DEFERRED,
             self::DOMAIN_BUY,
+            self::CONTACT_CREATE,
         ];
     }
 }

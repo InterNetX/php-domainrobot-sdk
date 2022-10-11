@@ -65,6 +65,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'gender' => '\Domainrobot\Model\GenderConstants',
         'vatNumber' => 'string',
         'citizenship' => 'string',
+        'strict' => 'bool',
         'mobilePhone' => 'string'
     ];
 
@@ -82,6 +83,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'gender' => null,
         'vatNumber' => null,
         'citizenship' => null,
+        'strict' => null,
         'mobilePhone' => null
     ];
 
@@ -120,6 +122,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'gender' => 'gender',
         'vatNumber' => 'vatNumber',
         'citizenship' => 'citizenship',
+        'strict' => 'strict',
         'mobilePhone' => 'mobilePhone'
     ];
 
@@ -137,6 +140,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'gender' => 'setGender',
         'vatNumber' => 'setVatNumber',
         'citizenship' => 'setCitizenship',
+        'strict' => 'setStrict',
         'mobilePhone' => 'setMobilePhone'
     ];
 
@@ -154,6 +158,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         'gender' => 'getGender',
         'vatNumber' => 'getVatNumber',
         'citizenship' => 'getCitizenship',
+        'strict' => 'getStrict',
         'mobilePhone' => 'getMobilePhone'
     ];
 
@@ -225,6 +230,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         $this->container['gender'] = isset($data['gender']) ? $this->createData($data['gender'], 'gender')  : null;
         $this->container['vatNumber'] = isset($data['vatNumber']) ? $this->createData($data['vatNumber'], 'vatNumber')  : null;
         $this->container['citizenship'] = isset($data['citizenship']) ? $this->createData($data['citizenship'], 'citizenship')  : null;
+        $this->container['strict'] = isset($data['strict']) ? $this->createData($data['strict'], 'strict')  : null;
         $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $this->createData($data['mobilePhone'], 'mobilePhone')  : null;
     }
 
@@ -392,7 +398,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets language
      *
-     * @param string $language The language.
+     * @param string $language Language of the contact RFC 3066.
      *
      * @return $this
      */
@@ -416,7 +422,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets companyNumber
      *
-     * @param string $companyNumber The company number.
+     * @param string $companyNumber Company number.
      *
      * @return $this
      */
@@ -440,7 +446,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param \Domainrobot\Model\GenderConstants $gender The gender.
+     * @param \Domainrobot\Model\GenderConstants $gender Gender.
      *
      * @return $this
      */
@@ -464,7 +470,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets vatNumber
      *
-     * @param string $vatNumber The vatnumber.
+     * @param string $vatNumber VAT number.
      *
      * @return $this
      */
@@ -488,13 +494,37 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets citizenship
      *
-     * @param string $citizenship The citizenship.
+     * @param string $citizenship Citizenship. For EU citizens living outside the EU.
      *
      * @return $this
      */
     public function setCitizenship($citizenship)
     {
         $this->container['citizenship'] = $citizenship;
+
+        return $this;
+    }
+
+    /**
+     * Gets strict
+     *
+     * @return bool
+     */
+    public function getStrict()
+    {
+        return $this->container['strict'];
+    }
+
+    /**
+     * Sets strict
+     *
+     * @param bool $strict If strict mode should be used for the registry mapping.
+     *
+     * @return $this
+     */
+    public function setStrict($strict)
+    {
+        $this->container['strict'] = $strict;
 
         return $this;
     }
@@ -512,7 +542,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets mobilePhone
      *
-     * @param string $mobilePhone The mobile phonenumber.
+     * @param string $mobilePhone Mobile phone number.
      *
      * @return $this
      */

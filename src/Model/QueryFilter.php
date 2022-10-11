@@ -302,7 +302,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets key
      *
-     * @param string $key key
+     * @param string $key Name of keyword.
      *
      * @return $this
      */
@@ -326,7 +326,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value value
+     * @param string $value Value after which filtering is to be performed.
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     /**
      * Sets operator
      *
-     * @param \Domainrobot\Model\Operator $operator operator
+     * @param \Domainrobot\Model\Operator $operator Comparison operator.
      *
      * @return $this
      */

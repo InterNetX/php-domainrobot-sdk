@@ -338,7 +338,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets eligibilityIdType
      *
-     * @param \Domainrobot\Model\AuEligibilityIdTypeConstants $eligibilityIdType The type of Eligibility ID.
+     * @param \Domainrobot\Model\AuEligibilityIdTypeConstants $eligibilityIdType The type of eligibility id as above.
      *
      * @return $this
      */
@@ -482,7 +482,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets registrantName
      *
-     * @param string $registrantName The registrants name.
+     * @param string $registrantName Name of the registrant.
      *
      * @return $this
      */

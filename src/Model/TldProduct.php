@@ -118,7 +118,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'countryIso' => 'string',
         'geoPol' => 'string',
         'officialLanguage' => 'string',
-        'blockingService' => 'bool',
+        'blockingServices' => 'string[]',
         'restrictions' => '\Domainrobot\Model\Condition[]',
         'country' => '\Domainrobot\Model\Country',
         'dataControllers' => '\Domainrobot\Model\TldDataController[]',
@@ -207,7 +207,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'countryIso' => null,
         'geoPol' => null,
         'officialLanguage' => null,
-        'blockingService' => null,
+        'blockingServices' => null,
         'restrictions' => null,
         'country' => null,
         'dataControllers' => null,
@@ -317,7 +317,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'countryIso' => 'countryIso',
         'geoPol' => 'geoPol',
         'officialLanguage' => 'officialLanguage',
-        'blockingService' => 'blockingService',
+        'blockingServices' => 'blockingServices',
         'restrictions' => 'restrictions',
         'country' => 'country',
         'dataControllers' => 'dataControllers',
@@ -406,7 +406,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'countryIso' => 'setCountryIso',
         'geoPol' => 'setGeoPol',
         'officialLanguage' => 'setOfficialLanguage',
-        'blockingService' => 'setBlockingService',
+        'blockingServices' => 'setBlockingServices',
         'restrictions' => 'setRestrictions',
         'country' => 'setCountry',
         'dataControllers' => 'setDataControllers',
@@ -495,7 +495,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'countryIso' => 'getCountryIso',
         'geoPol' => 'getGeoPol',
         'officialLanguage' => 'getOfficialLanguage',
-        'blockingService' => 'getBlockingService',
+        'blockingServices' => 'getBlockingServices',
         'restrictions' => 'getRestrictions',
         'country' => 'getCountry',
         'dataControllers' => 'getDataControllers',
@@ -638,7 +638,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         $this->container['countryIso'] = isset($data['countryIso']) ? $this->createData($data['countryIso'], 'countryIso')  : null;
         $this->container['geoPol'] = isset($data['geoPol']) ? $this->createData($data['geoPol'], 'geoPol')  : null;
         $this->container['officialLanguage'] = isset($data['officialLanguage']) ? $this->createData($data['officialLanguage'], 'officialLanguage')  : null;
-        $this->container['blockingService'] = isset($data['blockingService']) ? $this->createData($data['blockingService'], 'blockingService')  : null;
+        $this->container['blockingServices'] = isset($data['blockingServices']) ? $this->createData($data['blockingServices'], 'blockingServices')  : null;
         $this->container['restrictions'] = isset($data['restrictions']) ? $this->createData($data['restrictions'], 'restrictions')  : null;
         $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
         $this->container['dataControllers'] = isset($data['dataControllers']) ? $this->createData($data['dataControllers'], 'dataControllers')  : null;
@@ -2204,25 +2204,25 @@ class TldProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets blockingService
+     * Gets blockingServices
      *
-     * @return bool
+     * @return string[]
      */
-    public function getBlockingService()
+    public function getBlockingServices()
     {
-        return $this->container['blockingService'];
+        return $this->container['blockingServices'];
     }
 
     /**
-     * Sets blockingService
+     * Sets blockingServices
      *
-     * @param bool $blockingService blockingService
+     * @param string[] $blockingServices blockingServices
      *
      * @return $this
      */
-    public function setBlockingService($blockingService)
+    public function setBlockingServices($blockingServices)
     {
-        $this->container['blockingService'] = $blockingService;
+        $this->container['blockingServices'] = $blockingServices;
 
         return $this;
     }

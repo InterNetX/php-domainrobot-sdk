@@ -302,7 +302,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets first
      *
-     * @param string $first The first name.
+     * @param string $first First Name. Japanese characters must be used.
      *
      * @return $this
      */
@@ -326,7 +326,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets last
      *
-     * @param string $last The last name.
+     * @param string $last Last Name. Japanese characters must be used.
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param string $organization The organization.
+     * @param string $organization Organization Name. Japanese characters must be used.
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets adressLine1
      *
-     * @param string $adressLine1 The first line of the address.
+     * @param string $adressLine1 First address line. Japanese characters must be used.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets adressLine2
      *
-     * @param string $adressLine2 The second line of the address.
+     * @param string $adressLine2 Second address line. Japanese characters must be used.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets adressLine3
      *
-     * @param string $adressLine3 The third line of the address.
+     * @param string $adressLine3 Third address line. Japanese characters must be used.
      *
      * @return $this
      */

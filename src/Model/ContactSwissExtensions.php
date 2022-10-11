@@ -278,7 +278,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets enterpriseId
      *
-     * @param string $enterpriseId The enterprise ID, in the specific context of .swiss based on current rules, is the Swiss UID/IDE/IDI.
+     * @param string $enterpriseId The enterprise ID, in the specific context of .swiss based on current rules, is the Swiss UID/IDE/IDI.The full name is in German \"Unternehmens-ID\",  in French \"Numéro d’identification des entreprises (IDE)\" and in Italian \"Numero d’identificazione delle imprese\" (IDI).
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class ContactSwissExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets intendedUse
      *
-     * @param string $intendedUse The statement of intended use for the domain name.
+     * @param string $intendedUse The intended use for the domain.
      *
      * @return $this
      */

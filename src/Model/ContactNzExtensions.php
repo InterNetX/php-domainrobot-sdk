@@ -272,7 +272,7 @@ class ContactNzExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets irpo
      *
-     * @param bool $irpo The irpo.
+     * @param bool $irpo Hide contact data in the Whois. Address, telephone, fax are affected.   Permitted only for natural persons (\"individuals\") who do not use the domain name to a significant extent in \"trading\" as defined and used in the Fair Trading Act 1986.
      *
      * @return $this
      */

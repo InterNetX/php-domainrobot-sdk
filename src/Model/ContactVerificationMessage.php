@@ -60,7 +60,8 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
         'created' => '\DateTime',
         'updated' => '\DateTime',
         'mail' => '\Domainrobot\Model\MailServiceMessage',
-        'status' => '\Domainrobot\Model\GenericStatusConstants'
+        'status' => '\Domainrobot\Model\GenericStatusConstants',
+        'lastResponse' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
         'created' => 'date-time',
         'updated' => 'date-time',
         'mail' => null,
-        'status' => null
+        'status' => null,
+        'lastResponse' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
         'created' => 'created',
         'updated' => 'updated',
         'mail' => 'mail',
-        'status' => 'status'
+        'status' => 'status',
+        'lastResponse' => 'lastResponse'
     ];
 
     /**
@@ -117,7 +120,8 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
         'created' => 'setCreated',
         'updated' => 'setUpdated',
         'mail' => 'setMail',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'lastResponse' => 'setLastResponse'
     ];
 
     /**
@@ -129,7 +133,8 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
         'created' => 'getCreated',
         'updated' => 'getUpdated',
         'mail' => 'getMail',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'lastResponse' => 'getLastResponse'
     ];
 
     /**
@@ -196,6 +201,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['mail'] = isset($data['mail']) ? $this->createData($data['mail'], 'mail')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
+        $this->container['lastResponse'] = isset($data['lastResponse']) ? $this->createData($data['lastResponse'], 'lastResponse')  : null;
     }
 
     /**
@@ -290,7 +296,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -314,7 +320,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -369,6 +375,30 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastResponse
+     *
+     * @return string
+     */
+    public function getLastResponse()
+    {
+        return $this->container['lastResponse'];
+    }
+
+    /**
+     * Sets lastResponse
+     *
+     * @param string $lastResponse The last response of the mailserver
+     *
+     * @return $this
+     */
+    public function setLastResponse($lastResponse)
+    {
+        $this->container['lastResponse'] = $lastResponse;
 
         return $this;
     }

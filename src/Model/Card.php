@@ -59,6 +59,7 @@ class Card implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
+        'provider' => '\Domainrobot\Model\Provider',
         'type' => '\Domainrobot\Model\CreditCardVendor',
         'status' => '\Domainrobot\Model\CardStatus',
         'validFrom' => '\DateTime',
@@ -73,6 +74,7 @@ class Card implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
+        'provider' => null,
         'type' => null,
         'status' => null,
         'validFrom' => 'date-time',
@@ -108,6 +110,7 @@ class Card implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
+        'provider' => 'provider',
         'type' => 'type',
         'status' => 'status',
         'validFrom' => 'validFrom',
@@ -122,6 +125,7 @@ class Card implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
+        'provider' => 'setProvider',
         'type' => 'setType',
         'status' => 'setStatus',
         'validFrom' => 'setValidFrom',
@@ -136,6 +140,7 @@ class Card implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
+        'provider' => 'getProvider',
         'type' => 'getType',
         'status' => 'getStatus',
         'validFrom' => 'getValidFrom',
@@ -204,6 +209,7 @@ class Card implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['provider'] = isset($data['provider']) ? $this->createData($data['provider'], 'provider')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['validFrom'] = isset($data['validFrom']) ? $this->createData($data['validFrom'], 'validFrom')  : null;
@@ -302,7 +308,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -326,13 +332,37 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider
+     *
+     * @return \Domainrobot\Model\Provider
+     */
+    public function getProvider()
+    {
+        return $this->container['provider'];
+    }
+
+    /**
+     * Sets provider
+     *
+     * @param \Domainrobot\Model\Provider $provider The provider
+     *
+     * @return $this
+     */
+    public function setProvider($provider)
+    {
+        $this->container['provider'] = $provider;
 
         return $this;
     }

@@ -72,7 +72,6 @@ class Contact implements ModelInterface, ArrayAccess
         'email' => 'string',
         'protection' => '\Domainrobot\Model\ContactProtectionConstants',
         'sip' => 'string',
-        'remarks' => 'string[]',
         'domainsafe' => 'bool',
         'confirmOwnerConsent' => 'bool',
         'comment' => 'string',
@@ -109,7 +108,6 @@ class Contact implements ModelInterface, ArrayAccess
         'email' => null,
         'protection' => null,
         'sip' => null,
-        'remarks' => null,
         'domainsafe' => null,
         'confirmOwnerConsent' => null,
         'comment' => null,
@@ -167,7 +165,6 @@ class Contact implements ModelInterface, ArrayAccess
         'email' => 'email',
         'protection' => 'protection',
         'sip' => 'sip',
-        'remarks' => 'remarks',
         'domainsafe' => 'domainsafe',
         'confirmOwnerConsent' => 'confirmOwnerConsent',
         'comment' => 'comment',
@@ -204,7 +201,6 @@ class Contact implements ModelInterface, ArrayAccess
         'email' => 'setEmail',
         'protection' => 'setProtection',
         'sip' => 'setSip',
-        'remarks' => 'setRemarks',
         'domainsafe' => 'setDomainsafe',
         'confirmOwnerConsent' => 'setConfirmOwnerConsent',
         'comment' => 'setComment',
@@ -241,7 +237,6 @@ class Contact implements ModelInterface, ArrayAccess
         'email' => 'getEmail',
         'protection' => 'getProtection',
         'sip' => 'getSip',
-        'remarks' => 'getRemarks',
         'domainsafe' => 'getDomainsafe',
         'confirmOwnerConsent' => 'getConfirmOwnerConsent',
         'comment' => 'getComment',
@@ -332,7 +327,6 @@ class Contact implements ModelInterface, ArrayAccess
         $this->container['email'] = isset($data['email']) ? $this->createData($data['email'], 'email')  : null;
         $this->container['protection'] = isset($data['protection']) ? $this->createData($data['protection'], 'protection')  : null;
         $this->container['sip'] = isset($data['sip']) ? $this->createData($data['sip'], 'sip')  : null;
-        $this->container['remarks'] = isset($data['remarks']) ? $this->createData($data['remarks'], 'remarks')  : null;
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
         $this->container['confirmOwnerConsent'] = isset($data['confirmOwnerConsent']) ? $this->createData($data['confirmOwnerConsent'], 'confirmOwnerConsent')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
@@ -458,7 +452,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -482,7 +476,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -578,7 +572,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets alias
      *
-     * @param string $alias The unique alias of the contact
+     * @param string $alias A string that is either automatically generated when an alias is not sent or a self-defined string that can be set by the user for the purpose of identifying the domain contact.
      *
      * @return $this
      */
@@ -602,7 +596,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\ContactTypeConstants $type The type of the contact
+     * @param \Domainrobot\Model\ContactTypeConstants $type Domain contact type
      *
      * @return $this
      */
@@ -650,7 +644,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets title
      *
-     * @param string $title The title of the contact
+     * @param string $title A prefix to a person’s name.
      *
      * @return $this
      */
@@ -698,7 +692,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param string $country The country of the contact
+     * @param string $country Country (ISO 3166-1 alpha-2).   Country Code.   Certain strings, such as \"Germany\", are mapped to DE.
      *
      * @return $this
      */
@@ -746,7 +740,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email The email of the contact
+     * @param string $email Email address
      *
      * @return $this
      */
@@ -806,30 +800,6 @@ class Contact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets remarks
-     *
-     * @return string[]
-     */
-    public function getRemarks()
-    {
-        return $this->container['remarks'];
-    }
-
-    /**
-     * Sets remarks
-     *
-     * @param string[] $remarks The remarks of the contact
-     *
-     * @return $this
-     */
-    public function setRemarks($remarks)
-    {
-        $this->container['remarks'] = $remarks;
-
-        return $this;
-    }
-
-    /**
      * Gets domainsafe
      *
      * @return bool
@@ -842,7 +812,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets domainsafe
      *
-     * @param bool $domainsafe The nic references of the contact
+     * @param bool $domainsafe Indicates whether the domain contact is in the DomainSafe.
      *
      * @return $this
      */
@@ -866,7 +836,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets confirmOwnerConsent
      *
-     * @param bool $confirmOwnerConsent ???
+     * @param bool $confirmOwnerConsent Confirmation of the domain holder that he agrees to the changes.    false or blank= Refuse confirmation. Order will not be accepted.   true = Confirm   default value = false    This confirmation has been required since December 7, 2016 due to ICANN's new change of ownership procedure for changes to the domain holder's name, email address or organization. Only for gTLDs and new gTLDs.
      *
      * @return $this
      */
@@ -890,7 +860,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets comment
      *
-     * @param string $comment The comment for the contact
+     * @param string $comment A freely definable text that can be set for a contact. May only be composed of ASCII characters.
      *
      * @return $this
      */
@@ -914,7 +884,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets verification
      *
-     * @param \Domainrobot\Model\GenericStatusConstants $verification The verification status of the contact
+     * @param \Domainrobot\Model\GenericStatusConstants $verification The status of domain contact verification.
      *
      * @return $this
      */
@@ -962,7 +932,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets fname
      *
-     * @param string $fname The first name of the contact
+     * @param string $fname First name
      *
      * @return $this
      */
@@ -986,7 +956,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets lname
      *
-     * @param string $lname The last name of the contact
+     * @param string $lname Last name
      *
      * @return $this
      */
@@ -1010,7 +980,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param string[] $address The address of the contact.
+     * @param string[] $address Street or post box. Depending on the registry, up to 65,536 characters may be possible.
      *
      * @return $this
      */
@@ -1034,7 +1004,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets pcode
      *
-     * @param string $pcode The pcode of the contact
+     * @param string $pcode The postal code (“zip-code”) of the contact.
      *
      * @return $this
      */
@@ -1106,7 +1076,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets nicRef
      *
-     * @param \Domainrobot\Model\ContactReference[] $nicRef The nic references of the contact
+     * @param \Domainrobot\Model\ContactReference[] $nicRef Manually create a NIC reference for the domain contact. This is not required, since the NIC references are always created automatically.  This will no longer be supported in the future.
      *
      * @return $this
      */
@@ -1130,7 +1100,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets extensions
      *
-     * @param \Domainrobot\Model\ContactExtensions $extensions The contact extensions.
+     * @param \Domainrobot\Model\ContactExtensions $extensions Additional data for contacts required by certain TLDs.
      *
      * @return $this
      */

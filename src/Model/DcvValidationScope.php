@@ -45,7 +45,6 @@ class DcvValidationScope
      */
     const FQDN = 'FQDN';
     const BASEDOMAIN = 'BASEDOMAIN';
-    const _DEFAULT = 'DEFAULT';
     
     /**
      * Gets allowable values of the enum
@@ -56,7 +55,6 @@ class DcvValidationScope
         return [
             self::FQDN,
             self::BASEDOMAIN,
-            self::_DEFAULT,
         ];
     }
 }

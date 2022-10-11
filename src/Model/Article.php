@@ -62,6 +62,7 @@ class Article implements ModelInterface, ArrayAccess
         'owner' => '\Domainrobot\Model\BasicUser',
         'updater' => '\Domainrobot\Model\BasicUser',
         'type' => 'string',
+        'category' => 'string',
         'label' => 'string'
     ];
 
@@ -76,6 +77,7 @@ class Article implements ModelInterface, ArrayAccess
         'owner' => null,
         'updater' => null,
         'type' => null,
+        'category' => null,
         'label' => null
     ];
 
@@ -111,6 +113,7 @@ class Article implements ModelInterface, ArrayAccess
         'owner' => 'owner',
         'updater' => 'updater',
         'type' => 'type',
+        'category' => 'category',
         'label' => 'label'
     ];
 
@@ -125,6 +128,7 @@ class Article implements ModelInterface, ArrayAccess
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
         'type' => 'setType',
+        'category' => 'setCategory',
         'label' => 'setLabel'
     ];
 
@@ -139,6 +143,7 @@ class Article implements ModelInterface, ArrayAccess
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
         'type' => 'getType',
+        'category' => 'getCategory',
         'label' => 'getLabel'
     ];
 
@@ -207,6 +212,7 @@ class Article implements ModelInterface, ArrayAccess
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
+        $this->container['category'] = isset($data['category']) ? $this->createData($data['category'], 'category')  : null;
         $this->container['label'] = isset($data['label']) ? $this->createData($data['label'], 'label')  : null;
     }
 
@@ -308,7 +314,7 @@ class Article implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -332,7 +338,7 @@ class Article implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -380,7 +386,7 @@ class Article implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -411,6 +417,30 @@ class Article implements ModelInterface, ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param string $category category of the article
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
 
         return $this;
     }

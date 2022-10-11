@@ -73,6 +73,10 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'refund' => 'int',
         'priceConditions' => '\Domainrobot\Model\PriceServiceEntity[]',
         'comment' => 'string',
+        'taskComment' => 'string',
+        'priceList' => '\Domainrobot\Model\PriceList',
+        'from' => '\DateTime',
+        'until' => '\DateTime',
         'normalPrice' => '\Domainrobot\Model\ExchangedPrice',
         'valid' => '\DateTime',
         'vatRate' => 'double',
@@ -103,6 +107,10 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'refund' => 'int32',
         'priceConditions' => null,
         'comment' => null,
+        'taskComment' => null,
+        'priceList' => null,
+        'from' => 'date-time',
+        'until' => 'date-time',
         'normalPrice' => null,
         'valid' => 'date-time',
         'vatRate' => 'double',
@@ -154,6 +162,10 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'refund' => 'refund',
         'priceConditions' => 'priceConditions',
         'comment' => 'comment',
+        'taskComment' => 'taskComment',
+        'priceList' => 'priceList',
+        'from' => 'from',
+        'until' => 'until',
         'normalPrice' => 'normalPrice',
         'valid' => 'valid',
         'vatRate' => 'vatRate',
@@ -184,6 +196,10 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'refund' => 'setRefund',
         'priceConditions' => 'setPriceConditions',
         'comment' => 'setComment',
+        'taskComment' => 'setTaskComment',
+        'priceList' => 'setPriceList',
+        'from' => 'setFrom',
+        'until' => 'setUntil',
         'normalPrice' => 'setNormalPrice',
         'valid' => 'setValid',
         'vatRate' => 'setVatRate',
@@ -214,6 +230,10 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         'refund' => 'getRefund',
         'priceConditions' => 'getPriceConditions',
         'comment' => 'getComment',
+        'taskComment' => 'getTaskComment',
+        'priceList' => 'getPriceList',
+        'from' => 'getFrom',
+        'until' => 'getUntil',
         'normalPrice' => 'getNormalPrice',
         'valid' => 'getValid',
         'vatRate' => 'getVatRate',
@@ -298,6 +318,10 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         $this->container['refund'] = isset($data['refund']) ? $this->createData($data['refund'], 'refund')  : null;
         $this->container['priceConditions'] = isset($data['priceConditions']) ? $this->createData($data['priceConditions'], 'priceConditions')  : null;
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
+        $this->container['taskComment'] = isset($data['taskComment']) ? $this->createData($data['taskComment'], 'taskComment')  : null;
+        $this->container['priceList'] = isset($data['priceList']) ? $this->createData($data['priceList'], 'priceList')  : null;
+        $this->container['from'] = isset($data['from']) ? $this->createData($data['from'], 'from')  : null;
+        $this->container['until'] = isset($data['until']) ? $this->createData($data['until'], 'until')  : null;
         $this->container['normalPrice'] = isset($data['normalPrice']) ? $this->createData($data['normalPrice'], 'normalPrice')  : null;
         $this->container['valid'] = isset($data['valid']) ? $this->createData($data['valid'], 'valid')  : null;
         $this->container['vatRate'] = isset($data['vatRate']) ? $this->createData($data['vatRate'], 'vatRate')  : null;
@@ -404,7 +428,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -428,7 +452,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -771,6 +795,102 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets taskComment
+     *
+     * @return string
+     */
+    public function getTaskComment()
+    {
+        return $this->container['taskComment'];
+    }
+
+    /**
+     * Sets taskComment
+     *
+     * @param string $taskComment TaskComment
+     *
+     * @return $this
+     */
+    public function setTaskComment($taskComment)
+    {
+        $this->container['taskComment'] = $taskComment;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceList
+     *
+     * @return \Domainrobot\Model\PriceList
+     */
+    public function getPriceList()
+    {
+        return $this->container['priceList'];
+    }
+
+    /**
+     * Sets priceList
+     *
+     * @param \Domainrobot\Model\PriceList $priceList The related priceList label
+     *
+     * @return $this
+     */
+    public function setPriceList($priceList)
+    {
+        $this->container['priceList'] = $priceList;
+
+        return $this;
+    }
+
+    /**
+     * Gets from
+     *
+     * @return \DateTime
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     *
+     * @param \DateTime $from from
+     *
+     * @return $this
+     */
+    public function setFrom($from)
+    {
+        $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets until
+     *
+     * @return \DateTime
+     */
+    public function getUntil()
+    {
+        return $this->container['until'];
+    }
+
+    /**
+     * Sets until
+     *
+     * @param \DateTime $until until
+     *
+     * @return $this
+     */
+    public function setUntil($until)
+    {
+        $this->container['until'] = $until;
 
         return $this;
     }

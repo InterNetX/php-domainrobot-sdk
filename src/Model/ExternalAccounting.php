@@ -67,14 +67,13 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'priceType' => '\Domainrobot\Model\PriceTypeConstants',
         'priceMarkupType' => '\Domainrobot\Model\PriceMarkupType',
         'priceMarkup' => 'double',
-        'priceRounding' => '\Domainrobot\Model\PriceRounding',
+        'priceRounding' => '\Domainrobot\Model\PriceRoundingConstants',
         'currency' => 'string',
         'country' => 'string',
         'creditorIdentifier' => 'string',
         'customerNumberMin' => 'int',
         'customerNumberMax' => 'int',
         'creditLimit' => 'double',
-        'discount' => 'int',
         'priceListSyncStatus' => '\Domainrobot\Model\GenericStatusConstants',
         'priceListSync' => '\DateTime'
     ];
@@ -102,7 +101,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'customerNumberMin' => 'int64',
         'customerNumberMax' => 'int64',
         'creditLimit' => 'double',
-        'discount' => 'int32',
         'priceListSyncStatus' => null,
         'priceListSync' => 'date-time'
     ];
@@ -151,7 +149,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'customerNumberMin' => 'customerNumberMin',
         'customerNumberMax' => 'customerNumberMax',
         'creditLimit' => 'creditLimit',
-        'discount' => 'discount',
         'priceListSyncStatus' => 'priceListSyncStatus',
         'priceListSync' => 'priceListSync'
     ];
@@ -179,7 +176,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'customerNumberMin' => 'setCustomerNumberMin',
         'customerNumberMax' => 'setCustomerNumberMax',
         'creditLimit' => 'setCreditLimit',
-        'discount' => 'setDiscount',
         'priceListSyncStatus' => 'setPriceListSyncStatus',
         'priceListSync' => 'setPriceListSync'
     ];
@@ -207,7 +203,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'customerNumberMin' => 'getCustomerNumberMin',
         'customerNumberMax' => 'getCustomerNumberMax',
         'creditLimit' => 'getCreditLimit',
-        'discount' => 'getDiscount',
         'priceListSyncStatus' => 'getPriceListSyncStatus',
         'priceListSync' => 'getPriceListSync'
     ];
@@ -289,7 +284,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         $this->container['customerNumberMin'] = isset($data['customerNumberMin']) ? $this->createData($data['customerNumberMin'], 'customerNumberMin')  : null;
         $this->container['customerNumberMax'] = isset($data['customerNumberMax']) ? $this->createData($data['customerNumberMax'], 'customerNumberMax')  : null;
         $this->container['creditLimit'] = isset($data['creditLimit']) ? $this->createData($data['creditLimit'], 'creditLimit')  : null;
-        $this->container['discount'] = isset($data['discount']) ? $this->createData($data['discount'], 'discount')  : null;
         $this->container['priceListSyncStatus'] = isset($data['priceListSyncStatus']) ? $this->createData($data['priceListSyncStatus'], 'priceListSyncStatus')  : null;
         $this->container['priceListSync'] = isset($data['priceListSync']) ? $this->createData($data['priceListSync'], 'priceListSync')  : null;
     }
@@ -386,7 +380,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -410,7 +404,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -616,7 +610,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Gets priceRounding
      *
-     * @return \Domainrobot\Model\PriceRounding
+     * @return \Domainrobot\Model\PriceRoundingConstants
      */
     public function getPriceRounding()
     {
@@ -626,7 +620,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets priceRounding
      *
-     * @param \Domainrobot\Model\PriceRounding $priceRounding The type of rounding
+     * @param \Domainrobot\Model\PriceRoundingConstants $priceRounding The type of rounding
      *
      * @return $this
      */
@@ -777,30 +771,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     public function setCreditLimit($creditLimit)
     {
         $this->container['creditLimit'] = $creditLimit;
-
-        return $this;
-    }
-
-    /**
-     * Gets discount
-     *
-     * @return int
-     */
-    public function getDiscount()
-    {
-        return $this->container['discount'];
-    }
-
-    /**
-     * Sets discount
-     *
-     * @param int $discount The discount for the customer of the accounting
-     *
-     * @return $this
-     */
-    public function setDiscount($discount)
-    {
-        $this->container['discount'] = $discount;
 
         return $this;
     }

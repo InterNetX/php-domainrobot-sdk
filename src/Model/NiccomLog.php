@@ -286,6 +286,21 @@ class NiccomLog implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['task'] === null) {
+            $invalidProperties[] = "'task' can't be null";
+        }
+        if ($this->container['source'] === null) {
+            $invalidProperties[] = "'source' can't be null";
+        }
+        if ($this->container['text'] === null) {
+            $invalidProperties[] = "'text' can't be null";
+        }
+        if ($this->container['created'] === null) {
+            $invalidProperties[] = "'created' can't be null";
+        }
         return $invalidProperties;
     }
 

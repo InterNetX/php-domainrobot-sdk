@@ -302,7 +302,7 @@ class ContactZuerichExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets isAuthority
      *
-     * @param bool $isAuthority Indicates whether the organization is an authority. Should be set to true if the organization is an authority.
+     * @param bool $isAuthority Indicates whether the registrant is a public corporation or not.
      *
      * @return $this
      */

@@ -68,6 +68,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'notice' => 'string',
         'logId' => 'int',
         'registryStatus' => '\Domainrobot\Model\RegistryStatusConstants',
+        'status' => '\Domainrobot\Model\CancelationStatusConstants',
         'type' => '\Domainrobot\Model\CancelationTypeConstants',
         'execution' => '\Domainrobot\Model\ExecutionTypeConstants'
     ];
@@ -89,6 +90,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'notice' => null,
         'logId' => 'int64',
         'registryStatus' => null,
+        'status' => null,
         'type' => null,
         'execution' => null
     ];
@@ -131,6 +133,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'notice' => 'notice',
         'logId' => 'logId',
         'registryStatus' => 'registryStatus',
+        'status' => 'status',
         'type' => 'type',
         'execution' => 'execution'
     ];
@@ -152,6 +155,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'notice' => 'setNotice',
         'logId' => 'setLogId',
         'registryStatus' => 'setRegistryStatus',
+        'status' => 'setStatus',
         'type' => 'setType',
         'execution' => 'setExecution'
     ];
@@ -173,6 +177,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         'notice' => 'getNotice',
         'logId' => 'getLogId',
         'registryStatus' => 'getRegistryStatus',
+        'status' => 'getStatus',
         'type' => 'getType',
         'execution' => 'getExecution'
     ];
@@ -248,6 +253,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
         $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
         $this->container['logId'] = isset($data['logId']) ? $this->createData($data['logId'], 'logId')  : null;
         $this->container['registryStatus'] = isset($data['registryStatus']) ? $this->createData($data['registryStatus'], 'registryStatus')  : null;
+        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['execution'] = isset($data['execution']) ? $this->createData($data['execution'], 'execution')  : null;
     }
@@ -356,7 +362,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -380,7 +386,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets updated
      *
-     * @param \DateTime $updated The updated date.
+     * @param \DateTime $updated Date of the last update.
      *
      * @return $this
      */
@@ -428,7 +434,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updater of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -452,7 +458,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets domain
      *
-     * @param string $domain domain
+     * @param string $domain Domain to be cancelled.
      *
      * @return $this
      */
@@ -476,7 +482,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets registryWhen
      *
-     * @param \DateTime $registryWhen The date of the execution. Only necessary when ExecutionType equals DATE.
+     * @param \DateTime $registryWhen The date on which the registry should perform the domain cancelation. Only necessary when ExecutionType equals DATE.
      *
      * @return $this
      */
@@ -500,7 +506,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets gainingRegistrar
      *
-     * @param string $gainingRegistrar gainingRegistrar
+     * @param string $gainingRegistrar The registrar to which the domain is to be transferred. Only possible with preack, for which it is required.   accept_all = All registrars are accepted   Designated registrar (e.g. DENIC-104). Ask the registry for the provider ID of your reseller. The transfer is then only possible to the selected registrar.
      *
      * @return $this
      */
@@ -524,7 +530,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets disconnect
      *
-     * @param bool $disconnect disconnect
+     * @param bool $disconnect Specifies whether the domain is disconnected during a transit. Only possible with transit, for which it is necessary. Default value = false
      *
      * @return $this
      */
@@ -572,7 +578,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets logId
      *
-     * @param int $logId logId
+     * @param int $logId Identifier specifically used for this transfer.
      *
      * @return $this
      */
@@ -603,6 +609,30 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     public function setRegistryStatus($registryStatus)
     {
         $this->container['registryStatus'] = $registryStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return \Domainrobot\Model\CancelationStatusConstants
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param \Domainrobot\Model\CancelationStatusConstants $status Status of the cancelation request.
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -644,7 +674,7 @@ class DomainCancelation implements ModelInterface, ArrayAccess
     /**
      * Sets execution
      *
-     * @param \Domainrobot\Model\ExecutionTypeConstants $execution The execution type.
+     * @param \Domainrobot\Model\ExecutionTypeConstants $execution Date and Time at which the domain is to be canceled.
      *
      * @return $this
      */

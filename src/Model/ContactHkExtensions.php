@@ -302,7 +302,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets documentType
      *
-     * @param \Domainrobot\Model\HkDocumentTypeConstants $documentType The document types.
+     * @param \Domainrobot\Model\HkDocumentTypeConstants $documentType Dokument type für persons and organizations.
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets documentNumber
      *
-     * @param string $documentNumber Document number.
+     * @param string $documentNumber Document number, e.g. id card number.
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets documentOrigin
      *
-     * @param string $documentOrigin Country of licensure.
+     * @param string $documentOrigin Country of issuing authority.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets above18
      *
-     * @param bool $above18 Is the person 18 years of age or older. For Person only.
+     * @param bool $above18 For \"Person\" only. Is the person 18 years of age or older?.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets industryType
      *
-     * @param \Domainrobot\Model\HkIndustryTypeConstants $industryType The industry types.
+     * @param \Domainrobot\Model\HkIndustryTypeConstants $industryType Industry type.
      *
      * @return $this
      */

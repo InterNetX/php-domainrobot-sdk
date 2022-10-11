@@ -54,6 +54,10 @@ class Operator
     const LESS_EQUAL = 'LESS_EQUAL';
     const IS_NULL = 'IS_NULL';
     const IS_NOT_NULL = 'IS_NOT_NULL';
+    const NOT_LESS = 'NOT_LESS';
+    const NOT_GREATER = 'NOT_GREATER';
+    const NOT_LESS_EQUAL = 'NOT_LESS_EQUAL';
+    const NOT_GREATER_EQUAL = 'NOT_GREATER_EQUAL';
     const IN = 'IN';
     
     /**
@@ -74,6 +78,10 @@ class Operator
             self::LESS_EQUAL,
             self::IS_NULL,
             self::IS_NOT_NULL,
+            self::NOT_LESS,
+            self::NOT_GREATER,
+            self::NOT_LESS_EQUAL,
+            self::NOT_GREATER_EQUAL,
             self::IN,
         ];
     }

@@ -272,7 +272,7 @@ class ContactSportExtensions implements ModelInterface, ArrayAccess
     /**
      * Sets intendedUse
      *
-     * @param string $intendedUse The intended use.
+     * @param string $intendedUse The intended use for the domain.
      *
      * @return $this
      */

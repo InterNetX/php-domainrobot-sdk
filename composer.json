@@ -1,6 +1,6 @@
 {
     "name": "internetx/php-domainrobot-sdk",
-    "version": "0.9.10",
+    "version": "0.9.11",
     "description": "A php package for easy integration of the domainrobot API powered by InterNetX GmbH.",
     "type": "library",
     "license": "MIT",

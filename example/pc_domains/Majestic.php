@@ -30,12 +30,16 @@ class SDKController
             $domains = new Domains();
             $domains->setDomains(["internetx.com", "example.com"]);
 
-            $apiMajesticResponse = $domainrobot->pcDomains->majestic($domains);
+            $domainrobot->pcDomains->majestic($domains);
 
         } catch (DomainrobotException $exception) {
             return $exception;
         }
         
-        return $apiMajesticResponse;
+        return [
+          $domainrobot::getLastDomainrobotResult()->getResult(),
+          $domainrobot::getLastDomainrobotResult()->getStatusCode()
+        ];
+
     }
 }

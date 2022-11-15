@@ -153,7 +153,7 @@ class RedirectService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Contact(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new Redirect(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -164,12 +164,12 @@ class RedirectService extends DomainrobotService
      */
     public function updateAsync(Redirect $body)
     {
-        if ($body->getId() === null) {
-            throw new \InvalidArgumentException("Field Redirect.id is missing.");
+        if ($body->getSource() === null) {
+            throw new \InvalidArgumentException("Field Redirect.source is missing.");
         }
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/redirect/" . $body->getId(),
+            $this->domainrobotConfig->getUrl() . "/redirect/" . $body->getSource(),
             'PUT',
             ["json" => $body->toArray()]
         );

@@ -68,6 +68,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'priceMarkupType' => '\Domainrobot\Model\PriceMarkupType',
         'priceMarkup' => 'double',
         'priceRounding' => '\Domainrobot\Model\PriceRoundingConstants',
+        'enablePromoPrice' => 'bool',
         'currency' => 'string',
         'country' => 'string',
         'creditorIdentifier' => 'string',
@@ -95,6 +96,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'priceMarkupType' => null,
         'priceMarkup' => 'double',
         'priceRounding' => null,
+        'enablePromoPrice' => null,
         'currency' => null,
         'country' => null,
         'creditorIdentifier' => null,
@@ -143,6 +145,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'priceMarkupType' => 'priceMarkupType',
         'priceMarkup' => 'priceMarkup',
         'priceRounding' => 'priceRounding',
+        'enablePromoPrice' => 'enablePromoPrice',
         'currency' => 'currency',
         'country' => 'country',
         'creditorIdentifier' => 'creditorIdentifier',
@@ -170,6 +173,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'priceMarkupType' => 'setPriceMarkupType',
         'priceMarkup' => 'setPriceMarkup',
         'priceRounding' => 'setPriceRounding',
+        'enablePromoPrice' => 'setEnablePromoPrice',
         'currency' => 'setCurrency',
         'country' => 'setCountry',
         'creditorIdentifier' => 'setCreditorIdentifier',
@@ -197,6 +201,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         'priceMarkupType' => 'getPriceMarkupType',
         'priceMarkup' => 'getPriceMarkup',
         'priceRounding' => 'getPriceRounding',
+        'enablePromoPrice' => 'getEnablePromoPrice',
         'currency' => 'getCurrency',
         'country' => 'getCountry',
         'creditorIdentifier' => 'getCreditorIdentifier',
@@ -278,6 +283,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         $this->container['priceMarkupType'] = isset($data['priceMarkupType']) ? $this->createData($data['priceMarkupType'], 'priceMarkupType')  : null;
         $this->container['priceMarkup'] = isset($data['priceMarkup']) ? $this->createData($data['priceMarkup'], 'priceMarkup')  : null;
         $this->container['priceRounding'] = isset($data['priceRounding']) ? $this->createData($data['priceRounding'], 'priceRounding')  : null;
+        $this->container['enablePromoPrice'] = isset($data['enablePromoPrice']) ? $this->createData($data['enablePromoPrice'], 'enablePromoPrice')  : null;
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
         $this->container['country'] = isset($data['country']) ? $this->createData($data['country'], 'country')  : null;
         $this->container['creditorIdentifier'] = isset($data['creditorIdentifier']) ? $this->createData($data['creditorIdentifier'], 'creditorIdentifier')  : null;
@@ -428,7 +434,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -452,7 +458,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -627,6 +633,30 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     public function setPriceRounding($priceRounding)
     {
         $this->container['priceRounding'] = $priceRounding;
+
+        return $this;
+    }
+
+    /**
+     * Gets enablePromoPrice
+     *
+     * @return bool
+     */
+    public function getEnablePromoPrice()
+    {
+        return $this->container['enablePromoPrice'];
+    }
+
+    /**
+     * Sets enablePromoPrice
+     *
+     * @param bool $enablePromoPrice Enables promo prices syncronization
+     *
+     * @return $this
+     */
+    public function setEnablePromoPrice($enablePromoPrice)
+    {
+        $this->container['enablePromoPrice'] = $enablePromoPrice;
 
         return $this;
     }

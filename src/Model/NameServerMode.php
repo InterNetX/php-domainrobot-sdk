@@ -1,6 +1,6 @@
 <?php
 /**
- * ParkingAccountType
+ * NameServerMode
  *
  * PHP version 5
  *
@@ -31,20 +31,23 @@ namespace Domainrobot\Model;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * ParkingAccountType Class Doc Comment
+ * NameServerMode Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ParkingAccountType
+class NameServerMode
 {
     /**
      * Possible values of this enum
      */
-    const SEDO = 'SEDO';
-    const PARKING_CREW = 'PARKING_CREW';
+    const MASTER = 'MASTER';
+    const SLAVE = 'SLAVE';
+    const MASTER_SLAVE = 'MASTER_SLAVE';
+    const COMPLETE = 'COMPLETE';
+    const ANYCAST = 'ANYCAST';
     
     /**
      * Gets allowable values of the enum
@@ -53,8 +56,11 @@ class ParkingAccountType
     public static function getAllowableEnumValues()
     {
         return [
-            self::SEDO,
-            self::PARKING_CREW,
+            self::MASTER,
+            self::SLAVE,
+            self::MASTER_SLAVE,
+            self::COMPLETE,
+            self::ANYCAST,
         ];
     }
 }

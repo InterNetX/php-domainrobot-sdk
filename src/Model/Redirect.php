@@ -404,7 +404,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */

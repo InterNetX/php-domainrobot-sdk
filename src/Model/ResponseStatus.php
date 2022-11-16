@@ -284,7 +284,7 @@ class ResponseStatus implements ModelInterface, ArrayAccess
     /**
      * Sets code
      *
-     * @param string $code The result code of the response
+     * @param string $code The result code of the response.
      *
      * @return $this
      */
@@ -332,7 +332,7 @@ class ResponseStatus implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\StatusType $type The status of the response.
+     * @param \Domainrobot\Model\StatusType $type Type of response according to the status of the order.
      *
      * @return $this
      */

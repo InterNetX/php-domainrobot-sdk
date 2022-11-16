@@ -332,7 +332,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id The message id.
+     * @param int $id Message ID. Required for confirming with Poll Confirm.
      *
      * @return $this
      */
@@ -356,7 +356,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the message.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets stid
      *
-     * @param string $stid The server transaction id.
+     * @param string $stid The server transaction ID.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets ctid
      *
-     * @param string $ctid the custom transaction id.
+     * @param string $ctid The custom transaction ID.
      *
      * @return $this
      */
@@ -476,7 +476,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets messages
      *
-     * @param \Domainrobot\Model\Message[] $messages The general localized messages.
+     * @param \Domainrobot\Model\Message[] $messages System messages.
      *
      * @return $this
      */
@@ -548,7 +548,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date.
+     * @param \DateTime $created Date of creation.
      *
      * @return $this
      */
@@ -572,7 +572,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \Domainrobot\Model\ResponseObject $object The object of the job or notify.
+     * @param \Domainrobot\Model\ResponseObject $object \"Response\" object like \"domain\". Object type depends on the request.
      *
      * @return $this
      */

@@ -299,7 +299,7 @@ class Soa implements ModelInterface, ArrayAccess
     /**
      * Sets refresh
      *
-     * @param int $refresh The seconds after the secondary should refresh the zone data
+     * @param int $refresh Number of seconds after which secondary name servers should query the master for the SOA record, to detect zone changes
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class Soa implements ModelInterface, ArrayAccess
     /**
      * Sets retry
      *
-     * @param int $retry The seconds after the secondary should retry the zone data after the refresh has been timeouts
+     * @param int $retry Number of seconds after which secondary name servers should retry to request the serial number from the master   if the master does not respond. It must be less than Refresh.
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class Soa implements ModelInterface, ArrayAccess
     /**
      * Sets expire
      *
-     * @param int $expire The seconds after the zone data will not be delievered, if the zone could not be reached on the master.
+     * @param int $expire Number of seconds after which secondary name servers   should stop answering request for this zone if the master does not respond.   This value must be bigger than the sum of Refresh and Retry.
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class Soa implements ModelInterface, ArrayAccess
     /**
      * Sets ttl
      *
-     * @param int $ttl ttl
+     * @param int $ttl Time-to-live default value of the Resource Record of a zone
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class Soa implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email The email address of the responsible of the zone
+     * @param string $email The email address of the Zone Contact
      *
      * @return $this
      */

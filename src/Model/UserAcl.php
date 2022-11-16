@@ -314,7 +314,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets functionCode
      *
-     * @param string $functionCode The function code to restrict
+     * @param string $functionCode The function code to be restricted
      *
      * @return $this
      */
@@ -362,7 +362,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets childrenLocked
      *
-     * @param bool $childrenLocked The children lock
+     * @param bool $childrenLocked Should all the subordinate users be locked. false = Locked for all sub users true = Release for all sub users Default value = true For XML, 0 (false) and 1 (true) can also be used.
      *
      * @return $this
      */
@@ -386,7 +386,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets userLocked
      *
-     * @param bool $userLocked The user lock
+     * @param bool $userLocked Should the ACL be locked or unlocked for this user. Valid values are: false, true  For XML, 0 (false) and 1 (true) may also be used. Default value is true
      *
      * @return $this
      */
@@ -410,7 +410,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets effective
      *
-     * @param bool $effective The current active lock for the user
+     * @param bool $effective The current effective rights.
      *
      * @return $this
      */
@@ -482,7 +482,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets restriction
      *
-     * @param \Domainrobot\Model\ACLRestriction $restriction The human readable restriction mode
+     * @param \Domainrobot\Model\ACLRestriction $restriction Describes the restriction as a result of the authorisation check. The object defines the different types of restrictions.
      *
      * @return $this
      */

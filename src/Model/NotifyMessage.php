@@ -278,7 +278,7 @@ class NotifyMessage implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type The specific message type.
+     * @param string $type Type of connected operation.
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class NotifyMessage implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \Domainrobot\Model\ResponseObject $object The additional data object, e.g. transfer or certificate authorization data
+     * @param \Domainrobot\Model\ResponseObject $object The ResponseObject object contains information about the object. The object is dependent on the order.
      *
      * @return $this
      */

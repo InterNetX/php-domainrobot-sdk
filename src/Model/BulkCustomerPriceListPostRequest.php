@@ -58,7 +58,9 @@ class BulkCustomerPriceListPostRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'objects' => '\Domainrobot\Model\CustomerPriceList[]',
-        'template' => '\Domainrobot\Model\CustomerPriceList'
+        'template' => '\Domainrobot\Model\CustomerPriceList',
+        'query' => '\Domainrobot\Model\Query',
+        'options' => '\Domainrobot\Model\CustomerPriceList[]'
     ];
 
     /**
@@ -68,7 +70,9 @@ class BulkCustomerPriceListPostRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'objects' => null,
-        'template' => null
+        'template' => null,
+        'query' => null,
+        'options' => null
     ];
 
     /**
@@ -99,7 +103,9 @@ class BulkCustomerPriceListPostRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'objects' => 'objects',
-        'template' => 'template'
+        'template' => 'template',
+        'query' => 'query',
+        'options' => 'options'
     ];
 
     /**
@@ -109,7 +115,9 @@ class BulkCustomerPriceListPostRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'objects' => 'setObjects',
-        'template' => 'setTemplate'
+        'template' => 'setTemplate',
+        'query' => 'setQuery',
+        'options' => 'setOptions'
     ];
 
     /**
@@ -119,7 +127,9 @@ class BulkCustomerPriceListPostRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'objects' => 'getObjects',
-        'template' => 'getTemplate'
+        'template' => 'getTemplate',
+        'query' => 'getQuery',
+        'options' => 'getOptions'
     ];
 
     /**
@@ -184,6 +194,8 @@ class BulkCustomerPriceListPostRequest implements ModelInterface, ArrayAccess
     {
         $this->container['objects'] = isset($data['objects']) ? $this->createData($data['objects'], 'objects')  : null;
         $this->container['template'] = isset($data['template']) ? $this->createData($data['template'], 'template')  : null;
+        $this->container['query'] = isset($data['query']) ? $this->createData($data['query'], 'query')  : null;
+        $this->container['options'] = isset($data['options']) ? $this->createData($data['options'], 'options')  : null;
     }
 
     /**
@@ -309,6 +321,54 @@ class BulkCustomerPriceListPostRequest implements ModelInterface, ArrayAccess
     public function setTemplate($template)
     {
         $this->container['template'] = $template;
+
+        return $this;
+    }
+
+    /**
+     * Gets query
+     *
+     * @return \Domainrobot\Model\Query
+     */
+    public function getQuery()
+    {
+        return $this->container['query'];
+    }
+
+    /**
+     * Sets query
+     *
+     * @param \Domainrobot\Model\Query $query The query to fetch the object instead of defined list
+     *
+     * @return $this
+     */
+    public function setQuery($query)
+    {
+        $this->container['query'] = $query;
+
+        return $this;
+    }
+
+    /**
+     * Gets options
+     *
+     * @return \Domainrobot\Model\CustomerPriceList[]
+     */
+    public function getOptions()
+    {
+        return $this->container['options'];
+    }
+
+    /**
+     * Sets options
+     *
+     * @param \Domainrobot\Model\CustomerPriceList[] $options The objects to process
+     *
+     * @return $this
+     */
+    public function setOptions($options)
+    {
+        $this->container['options'] = $options;
 
         return $this;
     }

@@ -95,6 +95,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => '\Domainrobot\Model\CertificateTransparencyPrivacyConstants',
         'domain' => 'string',
         'hasCsr' => 'bool',
+        'fortify' => 'bool',
         'idn' => 'string',
         'multiyear' => 'bool',
         'reissueRequired' => 'bool',
@@ -148,6 +149,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => null,
         'domain' => null,
         'hasCsr' => null,
+        'fortify' => null,
         'idn' => null,
         'multiyear' => null,
         'reissueRequired' => null,
@@ -222,6 +224,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => 'certificateTransparencyPrivacy',
         'domain' => 'domain',
         'hasCsr' => 'hasCsr',
+        'fortify' => 'fortify',
         'idn' => 'idn',
         'multiyear' => 'multiyear',
         'reissueRequired' => 'reissueRequired',
@@ -275,6 +278,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => 'setCertificateTransparencyPrivacy',
         'domain' => 'setDomain',
         'hasCsr' => 'setHasCsr',
+        'fortify' => 'setFortify',
         'idn' => 'setIdn',
         'multiyear' => 'setMultiyear',
         'reissueRequired' => 'setReissueRequired',
@@ -328,6 +332,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'certificateTransparencyPrivacy' => 'getCertificateTransparencyPrivacy',
         'domain' => 'getDomain',
         'hasCsr' => 'getHasCsr',
+        'fortify' => 'getFortify',
         'idn' => 'getIdn',
         'multiyear' => 'getMultiyear',
         'reissueRequired' => 'getReissueRequired',
@@ -435,6 +440,7 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['certificateTransparencyPrivacy'] = isset($data['certificateTransparencyPrivacy']) ? $this->createData($data['certificateTransparencyPrivacy'], 'certificateTransparencyPrivacy')  : null;
         $this->container['domain'] = isset($data['domain']) ? $this->createData($data['domain'], 'domain')  : null;
         $this->container['hasCsr'] = isset($data['hasCsr']) ? $this->createData($data['hasCsr'], 'hasCsr')  : null;
+        $this->container['fortify'] = isset($data['fortify']) ? $this->createData($data['fortify'], 'fortify')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['multiyear'] = isset($data['multiyear']) ? $this->createData($data['multiyear'], 'multiyear')  : null;
         $this->container['reissueRequired'] = isset($data['reissueRequired']) ? $this->createData($data['reissueRequired'], 'reissueRequired')  : null;
@@ -594,7 +600,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -618,7 +624,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -1446,6 +1452,30 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setHasCsr($hasCsr)
     {
         $this->container['hasCsr'] = $hasCsr;
+
+        return $this;
+    }
+
+    /**
+     * Gets fortify
+     *
+     * @return bool
+     */
+    public function getFortify()
+    {
+        return $this->container['fortify'];
+    }
+
+    /**
+     * Sets fortify
+     *
+     * @param bool $fortify States the certificate should be issued via the Fortify app. Default is false. Only for GlobalSign code and document signing products!
+     *
+     * @return $this
+     */
+    public function setFortify($fortify)
+    {
+        $this->container['fortify'] = $fortify;
 
         return $this;
     }

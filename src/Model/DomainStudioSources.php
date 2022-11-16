@@ -59,7 +59,6 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'initial' => '\Domainrobot\Model\DomainStudioSourceInitial',
         'suggestion' => '\Domainrobot\Model\DomainStudioSourceSuggestion',
-        'semantic' => '\Domainrobot\Model\DomainStudioSourceSuggestion2',
         'premium' => '\Domainrobot\Model\DomainStudioSourcePremium',
         'market' => '\Domainrobot\Model\DomainStudioSourceMarket',
         'geo' => '\Domainrobot\Model\DomainStudioSourceGeo',
@@ -70,7 +69,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => '\Domainrobot\Model\DomainStudioSourcePersonalNames',
         'spinWord' => '\Domainrobot\Model\DomainStudioSourceSpinWord',
         'upcoming' => '\Domainrobot\Model\DomainStudioSourceUpcoming',
-        'prefixSuffix' => '\Domainrobot\Model\DomainStudioSourcePrefixSuffix'
+        'prefixSuffix' => '\Domainrobot\Model\DomainStudioSourcePrefixSuffix',
+        'semantic' => '\Domainrobot\Model\DomainStudioSourceSuggestion2'
     ];
 
     /**
@@ -81,7 +81,6 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'initial' => null,
         'suggestion' => null,
-        'semantic' => null,
         'premium' => null,
         'market' => null,
         'geo' => null,
@@ -92,7 +91,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => null,
         'spinWord' => null,
         'upcoming' => null,
-        'prefixSuffix' => null
+        'prefixSuffix' => null,
+        'semantic' => null
     ];
 
     /**
@@ -124,7 +124,6 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'initial' => 'initial',
         'suggestion' => 'suggestion',
-        'semantic' => 'semantic',
         'premium' => 'premium',
         'market' => 'market',
         'geo' => 'geo',
@@ -135,7 +134,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => 'personalNames',
         'spinWord' => 'spinWord',
         'upcoming' => 'upcoming',
-        'prefixSuffix' => 'prefixSuffix'
+        'prefixSuffix' => 'prefixSuffix',
+        'semantic' => 'semantic'
     ];
 
     /**
@@ -146,7 +146,6 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     protected static $setters = [
         'initial' => 'setInitial',
         'suggestion' => 'setSuggestion',
-        'semantic' => 'setSemantic',
         'premium' => 'setPremium',
         'market' => 'setMarket',
         'geo' => 'setGeo',
@@ -157,7 +156,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => 'setPersonalNames',
         'spinWord' => 'setSpinWord',
         'upcoming' => 'setUpcoming',
-        'prefixSuffix' => 'setPrefixSuffix'
+        'prefixSuffix' => 'setPrefixSuffix',
+        'semantic' => 'setSemantic'
     ];
 
     /**
@@ -168,7 +168,6 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     protected static $getters = [
         'initial' => 'getInitial',
         'suggestion' => 'getSuggestion',
-        'semantic' => 'getSemantic',
         'premium' => 'getPremium',
         'market' => 'getMarket',
         'geo' => 'getGeo',
@@ -179,7 +178,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => 'getPersonalNames',
         'spinWord' => 'getSpinWord',
         'upcoming' => 'getUpcoming',
-        'prefixSuffix' => 'getPrefixSuffix'
+        'prefixSuffix' => 'getPrefixSuffix',
+        'semantic' => 'getSemantic'
     ];
 
     /**
@@ -244,7 +244,6 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     {
         $this->container['initial'] = isset($data['initial']) ? $this->createData($data['initial'], 'initial')  : null;
         $this->container['suggestion'] = isset($data['suggestion']) ? $this->createData($data['suggestion'], 'suggestion')  : null;
-        $this->container['semantic'] = isset($data['semantic']) ? $this->createData($data['semantic'], 'semantic')  : null;
         $this->container['premium'] = isset($data['premium']) ? $this->createData($data['premium'], 'premium')  : null;
         $this->container['market'] = isset($data['market']) ? $this->createData($data['market'], 'market')  : null;
         $this->container['geo'] = isset($data['geo']) ? $this->createData($data['geo'], 'geo')  : null;
@@ -256,6 +255,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         $this->container['spinWord'] = isset($data['spinWord']) ? $this->createData($data['spinWord'], 'spinWord')  : null;
         $this->container['upcoming'] = isset($data['upcoming']) ? $this->createData($data['upcoming'], 'upcoming')  : null;
         $this->container['prefixSuffix'] = isset($data['prefixSuffix']) ? $this->createData($data['prefixSuffix'], 'prefixSuffix')  : null;
+        $this->container['semantic'] = isset($data['semantic']) ? $this->createData($data['semantic'], 'semantic')  : null;
     }
 
     /**
@@ -381,30 +381,6 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     public function setSuggestion($suggestion)
     {
         $this->container['suggestion'] = $suggestion;
-
-        return $this;
-    }
-
-    /**
-     * Gets semantic
-     *
-     * @return \Domainrobot\Model\DomainStudioSourceSuggestion2
-     */
-    public function getSemantic()
-    {
-        return $this->container['semantic'];
-    }
-
-    /**
-     * Sets semantic
-     *
-     * @param \Domainrobot\Model\DomainStudioSourceSuggestion2 $semantic The configuration for the suggestion2 source
-     *
-     * @return $this
-     */
-    public function setSemantic($semantic)
-    {
-        $this->container['semantic'] = $semantic;
 
         return $this;
     }
@@ -669,6 +645,30 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     public function setPrefixSuffix($prefixSuffix)
     {
         $this->container['prefixSuffix'] = $prefixSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets semantic
+     *
+     * @return \Domainrobot\Model\DomainStudioSourceSuggestion2
+     */
+    public function getSemantic()
+    {
+        return $this->container['semantic'];
+    }
+
+    /**
+     * Sets semantic
+     *
+     * @param \Domainrobot\Model\DomainStudioSourceSuggestion2 $semantic The configuration for the suggestion2 source
+     *
+     * @return $this
+     */
+    public function setSemantic($semantic)
+    {
+        $this->container['semantic'] = $semantic;
 
         return $this;
     }

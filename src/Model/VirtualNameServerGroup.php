@@ -375,7 +375,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -399,7 +399,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -423,7 +423,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The custom label for the group
+     * @param string $name Custom name of the name server group.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets useDefaultIps
      *
-     * @param bool $useDefaultIps The useDefaultIps
+     * @param bool $useDefaultIps Use default ip addresses. Default value = false
      *
      * @return $this
      */
@@ -476,7 +476,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets nameServers
      *
-     * @param \Domainrobot\Model\VirtualNameServer[] $nameServers The name servers of the group.
+     * @param \Domainrobot\Model\VirtualNameServer[] $nameServers The nameservers that belong to the group.
      *
      * @return $this
      */
@@ -524,7 +524,7 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets systemNameServerGroup
      *
-     * @param \Domainrobot\Model\PhysicalNameServerGroup $systemNameServerGroup The custom label for the group
+     * @param \Domainrobot\Model\PhysicalNameServerGroup $systemNameServerGroup The group of physical name servers responsible for this virtual name server group.
      *
      * @return $this
      */

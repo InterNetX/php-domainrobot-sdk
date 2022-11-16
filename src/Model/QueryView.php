@@ -296,7 +296,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets limit
      *
-     * @param int $limit limit
+     * @param int $limit Maximum number of objects to be displayed.
      *
      * @return $this
      */
@@ -320,7 +320,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets offset
      *
-     * @param int $offset offset
+     * @param int $offset Defines the starting position of the returned result.
      *
      * @return $this
      */
@@ -344,7 +344,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets children
      *
-     * @param bool $children children
+     * @param bool $children Query subusers. Default value=false
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets from
      *
-     * @param \DateTime $from from
+     * @param \DateTime $from End Date - Required for Historical Task
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class QueryView implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param \DateTime $to to
+     * @param \DateTime $to Start Date - Required for Historical Task.
      *
      * @return $this
      */

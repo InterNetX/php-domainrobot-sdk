@@ -464,7 +464,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -608,7 +608,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The name of the domain.
+     * @param string $name Name of the domain to be pre-registered.
      *
      * @return $this
      */
@@ -632,7 +632,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets authinfo
      *
-     * @param string $authinfo The authinfo.
+     * @param string $authinfo AuthInfo for the domain.
      *
      * @return $this
      */
@@ -656,7 +656,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets nameServers
      *
-     * @param \Domainrobot\Model\NameServer[] $nameServers The nameservers.
+     * @param \Domainrobot\Model\NameServer[] $nameServers The nameserver hostnames used for the domain which contains the DNS information.
      *
      * @return $this
      */
@@ -680,7 +680,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets nameServerEntries
      *
-     * @param string[] $nameServerEntries The nameserver entries.
+     * @param string[] $nameServerEntries The nameserver hostnames used for connecting the domain in the DNS.  Is only used for .de domains.
      *
      * @return $this
      */
@@ -704,7 +704,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\DomainPreregStatusConstants $status The preregistration status of the domain.
+     * @param \Domainrobot\Model\DomainPreregStatusConstants $status Preregistration status.
      *
      * @return $this
      */
@@ -728,7 +728,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets phase
      *
-     * @param string $phase The preregistration phase.
+     * @param string $phase The name of the preregistration phase whose name depends on the TLD.
      *
      * @return $this
      */
@@ -776,7 +776,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets orderReference
      *
-     * @param string $orderReference The unique order reference.
+     * @param string $orderReference The unique reference value of the domain preregistration order.
      *
      * @return $this
      */
@@ -800,7 +800,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets tmchMark
      *
-     * @param \Domainrobot\Model\TmchMark $tmchMark The tmchmark.
+     * @param \Domainrobot\Model\TmchMark $tmchMark TMCH mark reference number.
      *
      * @return $this
      */
@@ -848,7 +848,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets idn
      *
-     * @param string $idn The idn version of the name.
+     * @param string $idn The domain written in IDN form (Punycode syntax).
      *
      * @return $this
      */
@@ -872,7 +872,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets confirmed
      *
-     * @param \DateTime $confirmed The confirmation date.
+     * @param \DateTime $confirmed The date on which the preregistration was confirmed by the user.
      *
      * @return $this
      */
@@ -896,7 +896,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets trustee
      *
-     * @param bool $trustee Trustee active or not.
+     * @param bool $trustee Is a trustee used or not? false = No trustee is used true = A trustee is used Default value = false For XML, 0 (false) and 1 (true) can also be used..
      *
      * @return $this
      */
@@ -920,7 +920,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets domainCreated
      *
-     * @param \DateTime $domainCreated The domain created date.
+     * @param \DateTime $domainCreated Date on which the domain was registered at the registry.
      *
      * @return $this
      */
@@ -944,7 +944,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets domainExpire
      *
-     * @param \DateTime $domainExpire The domain expire date.
+     * @param \DateTime $domainExpire Date on which the domain expires at the registry.
      *
      * @return $this
      */
@@ -968,7 +968,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets registryStatus
      *
-     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus The registry status.
+     * @param \Domainrobot\Model\RegistryStatusConstants $registryStatus Status of the domain at the registry.
      *
      * @return $this
      */
@@ -992,7 +992,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     /**
      * Sets recommended
      *
-     * @param bool $recommended Recommended
+     * @param bool $recommended \"Setting for visibility in list view. Recommended preregistrations  are visible for power users only. false = Not recommended true = Recommended Default value = false For XML, 0 (false) and 1 (true) can also be used.\"
      *
      * @return $this
      */

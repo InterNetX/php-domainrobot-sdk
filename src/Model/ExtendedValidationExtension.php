@@ -296,7 +296,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     /**
      * Sets joiCountryName
      *
-     * @param string $joiCountryName Country of judicial formation
+     * @param string $joiCountryName Country of judicial formation.
      *
      * @return $this
      */
@@ -320,7 +320,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     /**
      * Sets joiLocality
      *
-     * @param string $joiLocality Locality or city of judicial formation
+     * @param string $joiLocality Locality or city of judicial formation.
      *
      * @return $this
      */
@@ -344,7 +344,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     /**
      * Sets joiStateOrProvince
      *
-     * @param string $joiStateOrProvince State or province of judicial formation
+     * @param string $joiStateOrProvince State or province of judicial formation.
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     /**
      * Sets companyNumber
      *
-     * @param string $companyNumber The company number
+     * @param string $companyNumber The company number.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class ExtendedValidationExtension implements ModelInterface, ArrayAccess
     /**
      * Sets businessCategory
      *
-     * @param \Domainrobot\Model\BusinessCategory $businessCategory Additional validation data required for certain Comodo products.
+     * @param \Domainrobot\Model\BusinessCategory $businessCategory Type of business.
      *
      * @return $this
      */

@@ -71,9 +71,6 @@ class Transfer implements ModelInterface, ArrayAccess
         'end' => '\DateTime',
         'autoAnswer' => 'bool',
         'recipient' => 'string',
-        'mailserver' => 'string',
-        'deliveredMailserver' => 'string',
-        'delivered' => '\DateTime',
         'status' => '\Domainrobot\Model\TransferStatusConstants'
     ];
 
@@ -97,9 +94,6 @@ class Transfer implements ModelInterface, ArrayAccess
         'end' => 'date-time',
         'autoAnswer' => null,
         'recipient' => null,
-        'mailserver' => null,
-        'deliveredMailserver' => null,
-        'delivered' => 'date-time',
         'status' => null
     ];
 
@@ -144,9 +138,6 @@ class Transfer implements ModelInterface, ArrayAccess
         'end' => 'end',
         'autoAnswer' => 'autoAnswer',
         'recipient' => 'recipient',
-        'mailserver' => 'mailserver',
-        'deliveredMailserver' => 'deliveredMailserver',
-        'delivered' => 'delivered',
         'status' => 'status'
     ];
 
@@ -170,9 +161,6 @@ class Transfer implements ModelInterface, ArrayAccess
         'end' => 'setEnd',
         'autoAnswer' => 'setAutoAnswer',
         'recipient' => 'setRecipient',
-        'mailserver' => 'setMailserver',
-        'deliveredMailserver' => 'setDeliveredMailserver',
-        'delivered' => 'setDelivered',
         'status' => 'setStatus'
     ];
 
@@ -196,9 +184,6 @@ class Transfer implements ModelInterface, ArrayAccess
         'end' => 'getEnd',
         'autoAnswer' => 'getAutoAnswer',
         'recipient' => 'getRecipient',
-        'mailserver' => 'getMailserver',
-        'deliveredMailserver' => 'getDeliveredMailserver',
-        'delivered' => 'getDelivered',
         'status' => 'getStatus'
     ];
 
@@ -276,9 +261,6 @@ class Transfer implements ModelInterface, ArrayAccess
         $this->container['end'] = isset($data['end']) ? $this->createData($data['end'], 'end')  : null;
         $this->container['autoAnswer'] = isset($data['autoAnswer']) ? $this->createData($data['autoAnswer'], 'autoAnswer')  : null;
         $this->container['recipient'] = isset($data['recipient']) ? $this->createData($data['recipient'], 'recipient')  : null;
-        $this->container['mailserver'] = isset($data['mailserver']) ? $this->createData($data['mailserver'], 'mailserver')  : null;
-        $this->container['deliveredMailserver'] = isset($data['deliveredMailserver']) ? $this->createData($data['deliveredMailserver'], 'deliveredMailserver')  : null;
-        $this->container['delivered'] = isset($data['delivered']) ? $this->createData($data['delivered'], 'delivered')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
     }
 
@@ -425,7 +407,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -449,7 +431,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -545,7 +527,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets start
      *
-     * @param \DateTime $start The start date.
+     * @param \DateTime $start Date on which the transfer started.
      *
      * @return $this
      */
@@ -569,7 +551,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets reminder
      *
-     * @param \DateTime $reminder The reminder date.
+     * @param \DateTime $reminder Date on which the transfer reminder mail is sent.
      *
      * @return $this
      */
@@ -593,7 +575,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets autoAck
      *
-     * @param \DateTime $autoAck The auto ack date.
+     * @param \DateTime $autoAck Date of the automatic ACK on which the transfer is confirmed.
      *
      * @return $this
      */
@@ -617,7 +599,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets autoNack
      *
-     * @param \DateTime $autoNack The auto nack date.
+     * @param \DateTime $autoNack Date of the automatic NACK on which the transfer is rejected.
      *
      * @return $this
      */
@@ -641,7 +623,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets end
      *
-     * @param \DateTime $end The end date.
+     * @param \DateTime $end Date on which the transfer process ends.
      *
      * @return $this
      */
@@ -665,7 +647,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets autoAnswer
      *
-     * @param bool $autoAnswer Autoanswer active.
+     * @param bool $autoAnswer Automatic response to the transfer request.  false = not active  true = active  Default value = false  For XML, 0 (false) and 1 (true) can also be used.
      *
      * @return $this
      */
@@ -689,85 +671,13 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets recipient
      *
-     * @param string $recipient The recipient.
+     * @param string $recipient Receiver of the reminder email.
      *
      * @return $this
      */
     public function setRecipient($recipient)
     {
         $this->container['recipient'] = $recipient;
-
-        return $this;
-    }
-
-    /**
-     * Gets mailserver
-     *
-     * @return string
-     */
-    public function getMailserver()
-    {
-        return $this->container['mailserver'];
-    }
-
-    /**
-     * Sets mailserver
-     *
-     * @param string $mailserver The mailserver.
-     *
-     * @return $this
-     */
-    public function setMailserver($mailserver)
-    {
-        $this->container['mailserver'] = $mailserver;
-
-        return $this;
-    }
-
-    /**
-     * Gets deliveredMailserver
-     *
-     * @return string
-     */
-    public function getDeliveredMailserver()
-    {
-        return $this->container['deliveredMailserver'];
-    }
-
-    /**
-     * Sets deliveredMailserver
-     *
-     * @param string $deliveredMailserver The delivered mailserver.
-     *
-     * @return $this
-     */
-    public function setDeliveredMailserver($deliveredMailserver)
-    {
-        $this->container['deliveredMailserver'] = $deliveredMailserver;
-
-        return $this;
-    }
-
-    /**
-     * Gets delivered
-     *
-     * @return \DateTime
-     */
-    public function getDelivered()
-    {
-        return $this->container['delivered'];
-    }
-
-    /**
-     * Sets delivered
-     *
-     * @param \DateTime $delivered The delivered date.
-     *
-     * @return $this
-     */
-    public function setDelivered($delivered)
-    {
-        $this->container['delivered'] = $delivered;
 
         return $this;
     }
@@ -785,7 +695,7 @@ class Transfer implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\TransferStatusConstants $status The transfer status.
+     * @param \Domainrobot\Model\TransferStatusConstants $status Status of a running transfer.
      *
      * @return $this
      */

@@ -308,7 +308,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param string $organization The organization.
+     * @param string $organization The company name of the user.
      *
      * @return $this
      */
@@ -332,7 +332,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     /**
      * Sets passwordResetMobile
      *
-     * @param string $passwordResetMobile The mobile phone number.
+     * @param string $passwordResetMobile Mobile phone number to which the TAN is sent.
      *
      * @return $this
      */
@@ -356,7 +356,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     /**
      * Sets passwordResetVerifyEmail
      *
-     * @param string $passwordResetVerifyEmail The email address for the verification of the password reset process.
+     * @param string $passwordResetVerifyEmail Email address used for verification when resetting the password.
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     /**
      * Sets passwordResetEmail
      *
-     * @param string $passwordResetEmail The email address for the password reset tan.
+     * @param string $passwordResetEmail Email address to which the TAN is sent.
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     /**
      * Sets fname
      *
-     * @param string $fname The first name.
+     * @param string $fname The first name of the user.
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     /**
      * Sets lname
      *
-     * @param string $lname The last name.
+     * @param string $lname The last name of the user.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param string $phone The phone number of the guest user
+     * @param string $phone The phone number of the user.
      *
      * @return $this
      */

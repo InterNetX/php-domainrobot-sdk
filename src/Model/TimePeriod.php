@@ -278,7 +278,7 @@ class TimePeriod implements ModelInterface, ArrayAccess
     /**
      * Sets unit
      *
-     * @param \Domainrobot\Model\TimeUnitConstants $unit The unit of the period
+     * @param \Domainrobot\Model\TimeUnitConstants $unit Time unit
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class TimePeriod implements ModelInterface, ArrayAccess
     /**
      * Sets period
      *
-     * @param int $period The period value
+     * @param int $period Number of time units
      *
      * @return $this
      */

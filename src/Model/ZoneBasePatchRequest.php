@@ -72,6 +72,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'bool',
         'source' => 'string',
         'sourceVirtualHostname' => 'string',
+        'purgeDate' => '\DateTime',
         'purgeType' => '\Domainrobot\Model\PurgeTypes',
         'zoneGrantsAdd' => 'string[]',
         'zoneGrantsRem' => 'string[]',
@@ -110,6 +111,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => null,
         'source' => null,
         'sourceVirtualHostname' => null,
+        'purgeDate' => 'date-time',
         'purgeType' => null,
         'zoneGrantsAdd' => null,
         'zoneGrantsRem' => null,
@@ -169,6 +171,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'domainsafe',
         'source' => 'source',
         'sourceVirtualHostname' => 'sourceVirtualHostname',
+        'purgeDate' => 'purgeDate',
         'purgeType' => 'purgeType',
         'zoneGrantsAdd' => 'zoneGrantsAdd',
         'zoneGrantsRem' => 'zoneGrantsRem',
@@ -207,6 +210,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'setDomainsafe',
         'source' => 'setSource',
         'sourceVirtualHostname' => 'setSourceVirtualHostname',
+        'purgeDate' => 'setPurgeDate',
         'purgeType' => 'setPurgeType',
         'zoneGrantsAdd' => 'setZoneGrantsAdd',
         'zoneGrantsRem' => 'setZoneGrantsRem',
@@ -245,6 +249,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'domainsafe' => 'getDomainsafe',
         'source' => 'getSource',
         'sourceVirtualHostname' => 'getSourceVirtualHostname',
+        'purgeDate' => 'getPurgeDate',
         'purgeType' => 'getPurgeType',
         'zoneGrantsAdd' => 'getZoneGrantsAdd',
         'zoneGrantsRem' => 'getZoneGrantsRem',
@@ -337,6 +342,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
         $this->container['source'] = isset($data['source']) ? $this->createData($data['source'], 'source')  : null;
         $this->container['sourceVirtualHostname'] = isset($data['sourceVirtualHostname']) ? $this->createData($data['sourceVirtualHostname'], 'sourceVirtualHostname')  : null;
+        $this->container['purgeDate'] = isset($data['purgeDate']) ? $this->createData($data['purgeDate'], 'purgeDate')  : null;
         $this->container['purgeType'] = isset($data['purgeType']) ? $this->createData($data['purgeType'], 'purgeType')  : null;
         $this->container['zoneGrantsAdd'] = isset($data['zoneGrantsAdd']) ? $this->createData($data['zoneGrantsAdd'], 'zoneGrantsAdd')  : null;
         $this->container['zoneGrantsRem'] = isset($data['zoneGrantsRem']) ? $this->createData($data['zoneGrantsRem'], 'zoneGrantsRem')  : null;
@@ -521,7 +527,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets idn
      *
-     * @param string $idn The idn version of the origin.
+     * @param string $idn Punycode version of the origin.
      *
      * @return $this
      */
@@ -569,7 +575,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets dnssec
      *
-     * @param bool $dnssec Enables dnssec
+     * @param bool $dnssec If true dnssec signing for the zone is active.
      *
      * @return $this
      */
@@ -593,7 +599,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets nameServerGroup
      *
-     * @param string $nameServerGroup The name of the name server group, if the zone is managed by
+     * @param string $nameServerGroup Name of the nameserver group.
      *
      * @return $this
      */
@@ -617,7 +623,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets allowTransfer
      *
-     * @param bool $allowTransfer Allow AXFR
+     * @param bool $allowTransfer Allow zone transfer for the defined zone grants
      *
      * @return $this
      */
@@ -641,7 +647,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object
+     * @param \Domainrobot\Model\BasicUser $owner Owner of the zone object
      *
      * @return $this
      */
@@ -665,7 +671,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object
+     * @param \Domainrobot\Model\BasicUser $updater User who last updated the zone.
      *
      * @return $this
      */
@@ -737,7 +743,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets domainsafe
      *
-     * @param bool $domainsafe true if the domain is represented in the domain safe
+     * @param bool $domainsafe Denotes of the zone is present in the DomainSafe service.
      *
      * @return $this
      */
@@ -761,7 +767,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param string $source Nameserver, the zone is copied from via AXFR (for zone_import)
+     * @param string $source Name server from which a zone is copied via AXFR (with zone_import).
      *
      * @return $this
      */
@@ -797,6 +803,30 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets purgeDate
+     *
+     * @return \DateTime
+     */
+    public function getPurgeDate()
+    {
+        return $this->container['purgeDate'];
+    }
+
+    /**
+     * Sets purgeDate
+     *
+     * @param \DateTime $purgeDate Date on which the zone is purged (removed) from the system.
+     *
+     * @return $this
+     */
+    public function setPurgeDate($purgeDate)
+    {
+        $this->container['purgeDate'] = $purgeDate;
+
+        return $this;
+    }
+
+    /**
      * Gets purgeType
      *
      * @return \Domainrobot\Model\PurgeTypes
@@ -809,7 +839,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets purgeType
      *
-     * @param \Domainrobot\Model\PurgeTypes $purgeType The Purge Type. Default value is AUTO
+     * @param \Domainrobot\Model\PurgeTypes $purgeType Setting for automatic zone deletion.
      *
      * @return $this
      */
@@ -905,7 +935,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets nameServers
      *
-     * @param \Domainrobot\Model\NameServer[] $nameServers List of name servers
+     * @param \Domainrobot\Model\NameServer[] $nameServers List of hostnames to be used as name severs.
      *
      * @return $this
      */
@@ -929,7 +959,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets main
      *
-     * @param \Domainrobot\Model\MainIp $main IP address of the zone (A record)
+     * @param \Domainrobot\Model\MainIp $main Main IP address of the zone. Required for ns_action \"primary\" and \"complete\".
      *
      * @return $this
      */
@@ -953,7 +983,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets wwwInclude
      *
-     * @param bool $wwwInclude Automatic generation of resource records \"www\"
+     * @param bool $wwwInclude Create a www A-record automatically?  false = no true = yes   Default = true   For XML, 0 (false) and 1 (true) can also be used.
      *
      * @return $this
      */
@@ -1001,7 +1031,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets freeText
      *
-     * @param string[] $freeText The free text records.
+     * @param string[] $freeText Freely definable resource records to be entered in BIND Syntax.
      *
      * @return $this
      */
@@ -1025,7 +1055,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets action
      *
-     * @param \Domainrobot\Model\NameserverActionConstants $action Additional nameserver check is proceeded
+     * @param \Domainrobot\Model\NameserverActionConstants $action Additional nameserver check is proceeded.
      *
      * @return $this
      */
@@ -1049,7 +1079,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets grants
      *
-     * @param string[] $grants The grants where transfer (axfr) can be done from.
+     * @param string[] $grants A list of IP addresses from which a zone transfer (AXFR) by be started from for this zone.
      *
      * @return $this
      */
@@ -1097,7 +1127,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets roid
      *
-     * @param int $roid The resource object identifier of the zone
+     * @param int $roid The resource object identifier of the zone.
      *
      * @return $this
      */

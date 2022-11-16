@@ -416,7 +416,7 @@ class ParkingDomain implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -440,7 +440,7 @@ class ParkingDomain implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -704,7 +704,7 @@ class ParkingDomain implements ModelInterface, ArrayAccess
     /**
      * Sets registrantAccountId
      *
-     * @param string $registrantAccountId The registrant account id
+     * @param string $registrantAccountId Unique identifier of the registrants account in your systems.
      *
      * @return $this
      */

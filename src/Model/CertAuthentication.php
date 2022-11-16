@@ -374,7 +374,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     /**
      * Sets dns
      *
-     * @param string $dns The dns entry for dns based authentication.
+     * @param string $dns The dns entry for dns based authentication. A zone record as string.
      *
      * @return $this
      */
@@ -470,7 +470,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     /**
      * Sets provisioning
      *
-     * @param bool $provisioning Activates automatic provisioning of the zone for dns based authentication.
+     * @param bool $provisioning Automatic zone provisioning for DNS validation.
      *
      * @return $this
      */

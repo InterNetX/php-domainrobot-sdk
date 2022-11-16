@@ -59,7 +59,7 @@ class Query implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'filters' => '\Domainrobot\Model\QueryFilter[]',
         'view' => '\Domainrobot\Model\QueryView',
-        'orders' => '\Domainrobot\Model\QueryOrder[]'
+        'orders' => '\Domainrobot\Model\Order[]'
     ];
 
     /**
@@ -322,7 +322,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Gets orders
      *
-     * @return \Domainrobot\Model\QueryOrder[]
+     * @return \Domainrobot\Model\Order[]
      */
     public function getOrders()
     {
@@ -332,7 +332,7 @@ class Query implements ModelInterface, ArrayAccess
     /**
      * Sets orders
      *
-     * @param \Domainrobot\Model\QueryOrder[] $orders orders
+     * @param \Domainrobot\Model\Order[] $orders orders
      *
      * @return $this
      */

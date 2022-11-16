@@ -473,7 +473,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\BillingStatus $status The actual status of the entry, active means ok.
+     * @param \Domainrobot\Model\BillingStatus $status Billing status of the subscription.
      *
      * @return $this
      */
@@ -545,7 +545,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param string $object The name of the subscription, e.g. the contract number
+     * @param string $object Name of the subscription or the contract number.
      *
      * @return $this
      */
@@ -713,7 +713,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets expire
      *
-     * @param \DateTime $expire The expire date.
+     * @param \DateTime $expire The expiration date of the subscription.
      *
      * @return $this
      */
@@ -737,7 +737,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets cancelation
      *
-     * @param \DateTime $cancelation The cancelation date.
+     * @param \DateTime $cancelation The cancelation date of the subscription.
      *
      * @return $this
      */
@@ -905,7 +905,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets extensions
      *
-     * @param \Domainrobot\Model\BillingEventExtensions $extensions The additional data
+     * @param \Domainrobot\Model\BillingEventExtensions $extensions Additional information, such as rights and limits.
      *
      * @return $this
      */

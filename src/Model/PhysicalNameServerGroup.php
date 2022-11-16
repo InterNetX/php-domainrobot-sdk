@@ -61,6 +61,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'name' => 'string',
         'articleLabel' => 'string',
+        'supported' => '\Domainrobot\Model\NameServerMode',
         'dnssec' => 'bool',
         'statistic' => 'bool'
     ];
@@ -75,6 +76,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'name' => null,
         'articleLabel' => null,
+        'supported' => null,
         'dnssec' => null,
         'statistic' => null
     ];
@@ -110,6 +112,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'name' => 'name',
         'articleLabel' => 'articleLabel',
+        'supported' => 'supported',
         'dnssec' => 'dnssec',
         'statistic' => 'statistic'
     ];
@@ -124,6 +127,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'name' => 'setName',
         'articleLabel' => 'setArticleLabel',
+        'supported' => 'setSupported',
         'dnssec' => 'setDnssec',
         'statistic' => 'setStatistic'
     ];
@@ -138,6 +142,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'name' => 'getName',
         'articleLabel' => 'getArticleLabel',
+        'supported' => 'getSupported',
         'dnssec' => 'getDnssec',
         'statistic' => 'getStatistic'
     ];
@@ -206,6 +211,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['articleLabel'] = isset($data['articleLabel']) ? $this->createData($data['articleLabel'], 'articleLabel')  : null;
+        $this->container['supported'] = isset($data['supported']) ? $this->createData($data['supported'], 'supported')  : null;
         $this->container['dnssec'] = isset($data['dnssec']) ? $this->createData($data['dnssec'], 'dnssec')  : null;
         $this->container['statistic'] = isset($data['statistic']) ? $this->createData($data['statistic'], 'statistic')  : null;
     }
@@ -381,6 +387,30 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
     public function setArticleLabel($articleLabel)
     {
         $this->container['articleLabel'] = $articleLabel;
+
+        return $this;
+    }
+
+    /**
+     * Gets supported
+     *
+     * @return \Domainrobot\Model\NameServerMode
+     */
+    public function getSupported()
+    {
+        return $this->container['supported'];
+    }
+
+    /**
+     * Sets supported
+     *
+     * @param \Domainrobot\Model\NameServerMode $supported If the group supported
+     *
+     * @return $this
+     */
+    public function setSupported($supported)
+    {
+        $this->container['supported'] = $supported;
 
         return $this;
     }

@@ -71,9 +71,6 @@ class TransferOut implements ModelInterface, ArrayAccess
         'end' => '\DateTime',
         'autoAnswer' => 'bool',
         'recipient' => 'string',
-        'mailserver' => 'string',
-        'deliveredMailserver' => 'string',
-        'delivered' => '\DateTime',
         'transaction' => 'string',
         'type' => '\Domainrobot\Model\TransferAnswer',
         'nackReason' => 'int'
@@ -99,9 +96,6 @@ class TransferOut implements ModelInterface, ArrayAccess
         'end' => 'date-time',
         'autoAnswer' => null,
         'recipient' => null,
-        'mailserver' => null,
-        'deliveredMailserver' => null,
-        'delivered' => 'date-time',
         'transaction' => null,
         'type' => null,
         'nackReason' => 'int32'
@@ -148,9 +142,6 @@ class TransferOut implements ModelInterface, ArrayAccess
         'end' => 'end',
         'autoAnswer' => 'autoAnswer',
         'recipient' => 'recipient',
-        'mailserver' => 'mailserver',
-        'deliveredMailserver' => 'deliveredMailserver',
-        'delivered' => 'delivered',
         'transaction' => 'transaction',
         'type' => 'type',
         'nackReason' => 'nackReason'
@@ -176,9 +167,6 @@ class TransferOut implements ModelInterface, ArrayAccess
         'end' => 'setEnd',
         'autoAnswer' => 'setAutoAnswer',
         'recipient' => 'setRecipient',
-        'mailserver' => 'setMailserver',
-        'deliveredMailserver' => 'setDeliveredMailserver',
-        'delivered' => 'setDelivered',
         'transaction' => 'setTransaction',
         'type' => 'setType',
         'nackReason' => 'setNackReason'
@@ -204,9 +192,6 @@ class TransferOut implements ModelInterface, ArrayAccess
         'end' => 'getEnd',
         'autoAnswer' => 'getAutoAnswer',
         'recipient' => 'getRecipient',
-        'mailserver' => 'getMailserver',
-        'deliveredMailserver' => 'getDeliveredMailserver',
-        'delivered' => 'getDelivered',
         'transaction' => 'getTransaction',
         'type' => 'getType',
         'nackReason' => 'getNackReason'
@@ -286,9 +271,6 @@ class TransferOut implements ModelInterface, ArrayAccess
         $this->container['end'] = isset($data['end']) ? $this->createData($data['end'], 'end')  : null;
         $this->container['autoAnswer'] = isset($data['autoAnswer']) ? $this->createData($data['autoAnswer'], 'autoAnswer')  : null;
         $this->container['recipient'] = isset($data['recipient']) ? $this->createData($data['recipient'], 'recipient')  : null;
-        $this->container['mailserver'] = isset($data['mailserver']) ? $this->createData($data['mailserver'], 'mailserver')  : null;
-        $this->container['deliveredMailserver'] = isset($data['deliveredMailserver']) ? $this->createData($data['deliveredMailserver'], 'deliveredMailserver')  : null;
-        $this->container['delivered'] = isset($data['delivered']) ? $this->createData($data['delivered'], 'delivered')  : null;
         $this->container['transaction'] = isset($data['transaction']) ? $this->createData($data['transaction'], 'transaction')  : null;
         $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
         $this->container['nackReason'] = isset($data['nackReason']) ? $this->createData($data['nackReason'], 'nackReason')  : null;
@@ -440,7 +422,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
      *
      * @return $this
      */
@@ -464,7 +446,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object.
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
      *
      * @return $this
      */
@@ -560,7 +542,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets start
      *
-     * @param \DateTime $start The start date.
+     * @param \DateTime $start Date on which the transfer started.
      *
      * @return $this
      */
@@ -584,7 +566,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets reminder
      *
-     * @param \DateTime $reminder The reminder date.
+     * @param \DateTime $reminder Date on which the transfer reminder mail is sent.
      *
      * @return $this
      */
@@ -608,7 +590,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets autoAck
      *
-     * @param \DateTime $autoAck The auto ack date.
+     * @param \DateTime $autoAck Date of the automatic ACK on which the transfer is confirmed.
      *
      * @return $this
      */
@@ -632,7 +614,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets autoNack
      *
-     * @param \DateTime $autoNack The auto nack date.
+     * @param \DateTime $autoNack Date of the automatic NACK on which the transfer is rejected.
      *
      * @return $this
      */
@@ -656,7 +638,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets end
      *
-     * @param \DateTime $end The end date.
+     * @param \DateTime $end Date on which the transfer process ends.
      *
      * @return $this
      */
@@ -680,7 +662,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets autoAnswer
      *
-     * @param bool $autoAnswer Autoanswer active.
+     * @param bool $autoAnswer Automatic response to the transfer request.  false = not active  true = active  Default value = false  For XML, 0 (false) and 1 (true) can also be used.
      *
      * @return $this
      */
@@ -704,85 +686,13 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets recipient
      *
-     * @param string $recipient The recipient.
+     * @param string $recipient Receiver of the reminder email.
      *
      * @return $this
      */
     public function setRecipient($recipient)
     {
         $this->container['recipient'] = $recipient;
-
-        return $this;
-    }
-
-    /**
-     * Gets mailserver
-     *
-     * @return string
-     */
-    public function getMailserver()
-    {
-        return $this->container['mailserver'];
-    }
-
-    /**
-     * Sets mailserver
-     *
-     * @param string $mailserver The mailserver.
-     *
-     * @return $this
-     */
-    public function setMailserver($mailserver)
-    {
-        $this->container['mailserver'] = $mailserver;
-
-        return $this;
-    }
-
-    /**
-     * Gets deliveredMailserver
-     *
-     * @return string
-     */
-    public function getDeliveredMailserver()
-    {
-        return $this->container['deliveredMailserver'];
-    }
-
-    /**
-     * Sets deliveredMailserver
-     *
-     * @param string $deliveredMailserver The delivered mailserver.
-     *
-     * @return $this
-     */
-    public function setDeliveredMailserver($deliveredMailserver)
-    {
-        $this->container['deliveredMailserver'] = $deliveredMailserver;
-
-        return $this;
-    }
-
-    /**
-     * Gets delivered
-     *
-     * @return \DateTime
-     */
-    public function getDelivered()
-    {
-        return $this->container['delivered'];
-    }
-
-    /**
-     * Sets delivered
-     *
-     * @param \DateTime $delivered The delivered date.
-     *
-     * @return $this
-     */
-    public function setDelivered($delivered)
-    {
-        $this->container['delivered'] = $delivered;
 
         return $this;
     }
@@ -848,7 +758,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     /**
      * Sets nackReason
      *
-     * @param int $nackReason The reason. Possible values are : 1 = Evidence of fraud / 2 = Current UDRP action / 3 = Court order / 4 = Identity dispute / 5 = No payment for previous registration period / 6 = Express written objection to the transfer from the transfer contact.
+     * @param int $nackReason Reason for rejection. Only for type \"nack\", mandatory here.
      *
      * @return $this
      */

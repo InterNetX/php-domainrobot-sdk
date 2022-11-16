@@ -598,7 +598,7 @@ class SslContact implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email The email of the contact
+     * @param string $email The email address of the contact.
      *
      * @return $this
      */
@@ -646,7 +646,7 @@ class SslContact implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param string $organization The name of the organization
+     * @param string $organization The name of organisation of the contact.
      *
      * @return $this
      */
@@ -701,7 +701,7 @@ class SslContact implements ModelInterface, ArrayAccess
     /**
      * Sets pcode
      *
-     * @param string $pcode The pcode of the contact
+     * @param string $pcode The postal code of the contact.
      *
      * @return $this
      */

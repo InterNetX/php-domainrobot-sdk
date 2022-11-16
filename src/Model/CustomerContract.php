@@ -61,6 +61,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'contract' => '\Domainrobot\Model\GenericLabelEntity',
         'accountManager' => '\Domainrobot\Model\AccountManager',
+        'classification' => 'string',
+        'invoiceNotice' => 'string',
         'notice' => 'string',
         'ticketNumber' => 'string'
     ];
@@ -75,6 +77,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'date-time',
         'contract' => null,
         'accountManager' => null,
+        'classification' => null,
+        'invoiceNotice' => null,
         'notice' => null,
         'ticketNumber' => null
     ];
@@ -110,6 +114,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'updated',
         'contract' => 'contract',
         'accountManager' => 'accountManager',
+        'classification' => 'classification',
+        'invoiceNotice' => 'invoiceNotice',
         'notice' => 'notice',
         'ticketNumber' => 'ticketNumber'
     ];
@@ -124,6 +130,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'setUpdated',
         'contract' => 'setContract',
         'accountManager' => 'setAccountManager',
+        'classification' => 'setClassification',
+        'invoiceNotice' => 'setInvoiceNotice',
         'notice' => 'setNotice',
         'ticketNumber' => 'setTicketNumber'
     ];
@@ -138,6 +146,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'updated' => 'getUpdated',
         'contract' => 'getContract',
         'accountManager' => 'getAccountManager',
+        'classification' => 'getClassification',
+        'invoiceNotice' => 'getInvoiceNotice',
         'notice' => 'getNotice',
         'ticketNumber' => 'getTicketNumber'
     ];
@@ -206,6 +216,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['contract'] = isset($data['contract']) ? $this->createData($data['contract'], 'contract')  : null;
         $this->container['accountManager'] = isset($data['accountManager']) ? $this->createData($data['accountManager'], 'accountManager')  : null;
+        $this->container['classification'] = isset($data['classification']) ? $this->createData($data['classification'], 'classification')  : null;
+        $this->container['invoiceNotice'] = isset($data['invoiceNotice']) ? $this->createData($data['invoiceNotice'], 'invoiceNotice')  : null;
         $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
         $this->container['ticketNumber'] = isset($data['ticketNumber']) ? $this->createData($data['ticketNumber'], 'ticketNumber')  : null;
     }
@@ -384,6 +396,54 @@ class CustomerContract implements ModelInterface, ArrayAccess
     public function setAccountManager($accountManager)
     {
         $this->container['accountManager'] = $accountManager;
+
+        return $this;
+    }
+
+    /**
+     * Gets classification
+     *
+     * @return string
+     */
+    public function getClassification()
+    {
+        return $this->container['classification'];
+    }
+
+    /**
+     * Sets classification
+     *
+     * @param string $classification The classification.
+     *
+     * @return $this
+     */
+    public function setClassification($classification)
+    {
+        $this->container['classification'] = $classification;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceNotice
+     *
+     * @return string
+     */
+    public function getInvoiceNotice()
+    {
+        return $this->container['invoiceNotice'];
+    }
+
+    /**
+     * Sets invoiceNotice
+     *
+     * @param string $invoiceNotice The invoiceNotice.
+     *
+     * @return $this
+     */
+    public function setInvoiceNotice($invoiceNotice)
+    {
+        $this->container['invoiceNotice'] = $invoiceNotice;
 
         return $this;
     }

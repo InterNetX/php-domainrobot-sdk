@@ -1,6 +1,6 @@
 <?php
 /**
- * SpamPolicy
+ * Order
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Domainrobot\ObjectSerializer;
 
 /**
- * SpamPolicy Class Doc Comment
+ * Order Class Doc Comment
  *
  * @category Class
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SpamPolicy implements ModelInterface, ArrayAccess
+class Order implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SpamPolicy';
+    protected static $swaggerModelName = 'Order';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,9 @@ class SpamPolicy implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mode' => '\Domainrobot\Model\PolicyMode',
-        'modifySubject' => 'bool',
-        'tagHeader' => 'double',
-        'spam' => 'double',
-        'kill' => 'double',
-        'quarantineDigestInterval' => 'int'
+        'key' => 'string',
+        'ins' => 'string[]',
+        'type' => '\Domainrobot\Model\OrderType'
     ];
 
     /**
@@ -71,12 +68,9 @@ class SpamPolicy implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'mode' => null,
-        'modifySubject' => null,
-        'tagHeader' => 'double',
-        'spam' => 'double',
-        'kill' => 'double',
-        'quarantineDigestInterval' => 'int32'
+        'key' => null,
+        'ins' => null,
+        'type' => null
     ];
 
     /**
@@ -106,12 +100,9 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'mode' => 'mode',
-        'modifySubject' => 'modifySubject',
-        'tagHeader' => 'tagHeader',
-        'spam' => 'spam',
-        'kill' => 'kill',
-        'quarantineDigestInterval' => 'quarantineDigestInterval'
+        'key' => 'key',
+        'ins' => 'ins',
+        'type' => 'type'
     ];
 
     /**
@@ -120,12 +111,9 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'mode' => 'setMode',
-        'modifySubject' => 'setModifySubject',
-        'tagHeader' => 'setTagHeader',
-        'spam' => 'setSpam',
-        'kill' => 'setKill',
-        'quarantineDigestInterval' => 'setQuarantineDigestInterval'
+        'key' => 'setKey',
+        'ins' => 'setIns',
+        'type' => 'setType'
     ];
 
     /**
@@ -134,12 +122,9 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'mode' => 'getMode',
-        'modifySubject' => 'getModifySubject',
-        'tagHeader' => 'getTagHeader',
-        'spam' => 'getSpam',
-        'kill' => 'getKill',
-        'quarantineDigestInterval' => 'getQuarantineDigestInterval'
+        'key' => 'getKey',
+        'ins' => 'getIns',
+        'type' => 'getType'
     ];
 
     /**
@@ -202,12 +187,9 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['mode'] = isset($data['mode']) ? $this->createData($data['mode'], 'mode')  : null;
-        $this->container['modifySubject'] = isset($data['modifySubject']) ? $this->createData($data['modifySubject'], 'modifySubject')  : null;
-        $this->container['tagHeader'] = isset($data['tagHeader']) ? $this->createData($data['tagHeader'], 'tagHeader')  : null;
-        $this->container['spam'] = isset($data['spam']) ? $this->createData($data['spam'], 'spam')  : null;
-        $this->container['kill'] = isset($data['kill']) ? $this->createData($data['kill'], 'kill')  : null;
-        $this->container['quarantineDigestInterval'] = isset($data['quarantineDigestInterval']) ? $this->createData($data['quarantineDigestInterval'], 'quarantineDigestInterval')  : null;
+        $this->container['key'] = isset($data['key']) ? $this->createData($data['key'], 'key')  : null;
+        $this->container['ins'] = isset($data['ins']) ? $this->createData($data['ins'], 'ins')  : null;
+        $this->container['type'] = isset($data['type']) ? $this->createData($data['type'], 'type')  : null;
     }
 
     /**
@@ -274,34 +256,6 @@ class SpamPolicy implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['tagHeader']) && ($this->container['tagHeader'] > 999.9)) {
-            $invalidProperties[] = "invalid value for 'tagHeader', must be smaller than or equal to 999.9.";
-        }
-
-        if (!is_null($this->container['tagHeader']) && ($this->container['tagHeader'] < -999.9)) {
-            $invalidProperties[] = "invalid value for 'tagHeader', must be bigger than or equal to -999.9.";
-        }
-
-        if (!is_null($this->container['spam']) && ($this->container['spam'] > 999.9)) {
-            $invalidProperties[] = "invalid value for 'spam', must be smaller than or equal to 999.9.";
-        }
-
-        if (!is_null($this->container['spam']) && ($this->container['spam'] < -999.9)) {
-            $invalidProperties[] = "invalid value for 'spam', must be bigger than or equal to -999.9.";
-        }
-
-        if (!is_null($this->container['kill']) && ($this->container['kill'] > 999.9)) {
-            $invalidProperties[] = "invalid value for 'kill', must be smaller than or equal to 999.9.";
-        }
-
-        if (!is_null($this->container['kill']) && ($this->container['kill'] < -999.9)) {
-            $invalidProperties[] = "invalid value for 'kill', must be bigger than or equal to -999.9.";
-        }
-
-        if (!is_null($this->container['quarantineDigestInterval']) && ($this->container['quarantineDigestInterval'] < 1440)) {
-            $invalidProperties[] = "invalid value for 'quarantineDigestInterval', must be bigger than or equal to 1440.";
-        }
-
         return $invalidProperties;
     }
 
@@ -318,174 +272,73 @@ class SpamPolicy implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets mode
+     * Gets key
      *
-     * @return \Domainrobot\Model\PolicyMode
+     * @return string
      */
-    public function getMode()
+    public function getKey()
     {
-        return $this->container['mode'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets mode
+     * Sets key
      *
-     * @param \Domainrobot\Model\PolicyMode $mode mode
+     * @param string $key Keyword to be sorted by.
      *
      * @return $this
      */
-    public function setMode($mode)
+    public function setKey($key)
     {
-        $this->container['mode'] = $mode;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets modifySubject
+     * Gets ins
      *
-     * @return bool
+     * @return string[]
      */
-    public function getModifySubject()
+    public function getIns()
     {
-        return $this->container['modifySubject'];
+        return $this->container['ins'];
     }
 
     /**
-     * Sets modifySubject
+     * Sets ins
      *
-     * @param bool $modifySubject Setting for the flag in the subject:  false = The emails should not be marked in the subject  true = The emails should receive the label in the subject.  Default= false  For XML, 0 (false) and 1 (true) can also be used.
+     * @param string[] $ins ins
      *
      * @return $this
      */
-    public function setModifySubject($modifySubject)
+    public function setIns($ins)
     {
-        $this->container['modifySubject'] = $modifySubject;
+        $this->container['ins'] = $ins;
 
         return $this;
     }
 
     /**
-     * Gets tagHeader
+     * Gets type
      *
-     * @return double
+     * @return \Domainrobot\Model\OrderType
      */
-    public function getTagHeader()
+    public function getType()
     {
-        return $this->container['tagHeader'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets tagHeader
+     * Sets type
      *
-     * @param double $tagHeader Enter a score. If an incoming email reaches this value, the email will   be marked as spam in the header. (Header X-Spam Status   and X-Spam Level).  Recommendation:  Value between -999 and 1  Minimum: -999.9  Maximum: 999.9
+     * @param \Domainrobot\Model\OrderType $type Sort order. Default = ASC
      *
      * @return $this
      */
-    public function setTagHeader($tagHeader)
+    public function setType($type)
     {
-
-        if (!is_null($tagHeader) && ($tagHeader > 999.9)) {
-            throw new \InvalidArgumentException('invalid value for $tagHeader when calling SpamPolicy., must be smaller than or equal to 999.9.');
-        }
-        if (!is_null($tagHeader) && ($tagHeader < -999.9)) {
-            throw new \InvalidArgumentException('invalid value for $tagHeader when calling SpamPolicy., must be bigger than or equal to -999.9.');
-        }
-
-        $this->container['tagHeader'] = $tagHeader;
-
-        return $this;
-    }
-
-    /**
-     * Gets spam
-     *
-     * @return double
-     */
-    public function getSpam()
-    {
-        return $this->container['spam'];
-    }
-
-    /**
-     * Sets spam
-     *
-     * @param double $spam Enter a score from which an email should be classified as spam.   The header X-Spam-Flag will be added to emails that reach this score.  Minimum: -999.9  Maximum: 999.9
-     *
-     * @return $this
-     */
-    public function setSpam($spam)
-    {
-
-        if (!is_null($spam) && ($spam > 999.9)) {
-            throw new \InvalidArgumentException('invalid value for $spam when calling SpamPolicy., must be smaller than or equal to 999.9.');
-        }
-        if (!is_null($spam) && ($spam < -999.9)) {
-            throw new \InvalidArgumentException('invalid value for $spam when calling SpamPolicy., must be bigger than or equal to -999.9.');
-        }
-
-        $this->container['spam'] = $spam;
-
-        return $this;
-    }
-
-    /**
-     * Gets kill
-     *
-     * @return double
-     */
-    public function getKill()
-    {
-        return $this->container['kill'];
-    }
-
-    /**
-     * Sets kill
-     *
-     * @param double $kill At what value an email should be quarantined for the selected task  Minimum: -999.9  Maximum: 999.9
-     *
-     * @return $this
-     */
-    public function setKill($kill)
-    {
-
-        if (!is_null($kill) && ($kill > 999.9)) {
-            throw new \InvalidArgumentException('invalid value for $kill when calling SpamPolicy., must be smaller than or equal to 999.9.');
-        }
-        if (!is_null($kill) && ($kill < -999.9)) {
-            throw new \InvalidArgumentException('invalid value for $kill when calling SpamPolicy., must be bigger than or equal to -999.9.');
-        }
-
-        $this->container['kill'] = $kill;
-
-        return $this;
-    }
-
-    /**
-     * Gets quarantineDigestInterval
-     *
-     * @return int
-     */
-    public function getQuarantineDigestInterval()
-    {
-        return $this->container['quarantineDigestInterval'];
-    }
-
-    /**
-     * Sets quarantineDigestInterval
-     *
-     * @param int $quarantineDigestInterval \"Specify how long an email should be kept in quarantine.  Time unit: minutes  Default: 1440 min  Minimum: 1440 min\"
-     *
-     * @return $this
-     */
-    public function setQuarantineDigestInterval($quarantineDigestInterval)
-    {
-
-        if (!is_null($quarantineDigestInterval) && ($quarantineDigestInterval < 1440)) {
-            throw new \InvalidArgumentException('invalid value for $quarantineDigestInterval when calling SpamPolicy., must be bigger than or equal to 1440.');
-        }
-
-        $this->container['quarantineDigestInterval'] = $quarantineDigestInterval;
+        $this->container['type'] = $type;
 
         return $this;
     }

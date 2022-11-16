@@ -362,7 +362,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\SanType $type type
+     * @param \Domainrobot\Model\SanType $type Type of SAN certificate.
      *
      * @return $this
      */
@@ -386,7 +386,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
     /**
      * Sets sslCertificateId
      *
-     * @param int $sslCertificateId sslCertificateId
+     * @param int $sslCertificateId Id of the certificate this SAN belongs to.
      *
      * @return $this
      */

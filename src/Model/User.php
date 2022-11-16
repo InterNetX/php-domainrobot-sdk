@@ -516,7 +516,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets password
      *
-     * @param string $password The password.
+     * @param string $password User password.
      *
      * @return $this
      */
@@ -564,7 +564,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param int $status The status.
+     * @param int $status User status.
      *
      * @return $this
      */
@@ -588,7 +588,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets substatus
      *
-     * @param int $substatus The substatus.
+     * @param int $substatus User substatus of the User.
      *
      * @return $this
      */
@@ -612,7 +612,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets authType
      *
-     * @param \Domainrobot\Model\AuthType $authType The users authorization method.
+     * @param \Domainrobot\Model\AuthType $authType Authentication type, e.g. password or TOTP.
      *
      * @return $this
      */
@@ -660,7 +660,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets lock
      *
-     * @param \Domainrobot\Model\UserLock $lock The lock status of the user.
+     * @param \Domainrobot\Model\UserLock $lock Defines the type of user lock.
      *
      * @return $this
      */
@@ -708,7 +708,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets acls
      *
-     * @param \Domainrobot\Model\UserAcls $acls Wrapper for the user acls.
+     * @param \Domainrobot\Model\UserAcls $acls User privileges.
      *
      * @return $this
      */
@@ -732,7 +732,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets profiles
      *
-     * @param \Domainrobot\Model\UserProfileViews $profiles Wrapper for the user profiles.
+     * @param \Domainrobot\Model\UserProfileViews $profiles User profile.
      *
      * @return $this
      */
@@ -804,7 +804,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \Domainrobot\Model\BasicCustomer $customer The customer belonging to the user.
+     * @param \Domainrobot\Model\BasicCustomer $customer Customer to which this user belongs.
      *
      * @return $this
      */
@@ -852,7 +852,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets subscriptions
      *
-     * @param \Domainrobot\Model\Subscription[] $subscriptions Wrapper for the subscriptions.
+     * @param \Domainrobot\Model\Subscription[] $subscriptions Different subscriptions of the users.
      *
      * @return $this
      */
@@ -876,7 +876,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets applications
      *
-     * @param \Domainrobot\Model\TrustedApplication[] $applications Holds the used applications.
+     * @param \Domainrobot\Model\TrustedApplication[] $applications Trusted applications of the user.
      *
      * @return $this
      */
@@ -900,7 +900,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets restrictions
      *
-     * @param \Domainrobot\Model\IpRestrictions $restrictions The wrapper of the ip restrictions for the user.
+     * @param \Domainrobot\Model\IpRestrictions $restrictions Grouping object for specifying the user's IP networks.
      *
      * @return $this
      */
@@ -977,7 +977,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets language
      *
-     * @param string $language The language.
+     * @param string $language The language for the user. The setting affects  the user interface language and system messages. Possible values: de en es.
      *
      * @return $this
      */
@@ -1001,7 +1001,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets parent
      *
-     * @param \Domainrobot\Model\User $parent The parent.
+     * @param \Domainrobot\Model\User $parent Parent user.
      *
      * @return $this
      */
@@ -1025,7 +1025,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets directCustomer
      *
-     * @param bool $directCustomer directCustomer
+     * @param bool $directCustomer Specifies whether the user is a direct customer of the user. false = No direct customer true = direct customer Default value = false For XML, 0 (false) and 1 (true) can also be used.
      *
      * @return $this
      */

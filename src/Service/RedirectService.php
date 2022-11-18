@@ -70,9 +70,9 @@ class RedirectService extends DomainrobotService
      * @param Query|null $body
      * @return Redirect[]
      */
-    public function list(Query $body = null)
+    public function list(Query $body = null, $keys = [])
     {
-        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotPromise = $this->listAsync($body, $keys);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -96,15 +96,21 @@ class RedirectService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function listAsync(Query $body = null)
+    public function listAsync(Query $body = null, $keys = [])
     {
         $data = null;
         if ($body != null) {
             $data = $body->toArray();
         }
 
+        $keyString = '';
+        if (count($keys) > 0) {
+          $keyString = "?keys[]=" . implode("&keys[]=", $keys);
+        }
+
+
         return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/redirect/_search",
+            $this->domainrobotConfig->getUrl() . "/redirect/_search". $keyString,
             'POST',
             ["json" => $data]
         ));

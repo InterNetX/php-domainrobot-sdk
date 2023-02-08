@@ -324,6 +324,14 @@ class OTPAuth implements ModelInterface, ArrayAccess
         if ($this->container['digits'] === null) {
             $invalidProperties[] = "'digits' can't be null";
         }
+        if (($this->container['digits'] > 8)) {
+            $invalidProperties[] = "invalid value for 'digits', must be smaller than or equal to 8.";
+        }
+
+        if (($this->container['digits'] < 6)) {
+            $invalidProperties[] = "invalid value for 'digits', must be bigger than or equal to 6.";
+        }
+
         return $invalidProperties;
     }
 
@@ -534,6 +542,14 @@ class OTPAuth implements ModelInterface, ArrayAccess
      */
     public function setDigits($digits)
     {
+
+        if (($digits > 8)) {
+            throw new \InvalidArgumentException('invalid value for $digits when calling OTPAuth., must be smaller than or equal to 8.');
+        }
+        if (($digits < 6)) {
+            throw new \InvalidArgumentException('invalid value for $digits when calling OTPAuth., must be bigger than or equal to 6.');
+        }
+
         $this->container['digits'] = $digits;
 
         return $this;

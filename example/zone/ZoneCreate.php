@@ -58,13 +58,13 @@ class ZoneController {
                 "value" => "198.51.100.1",
                 //"pref" => 1 // optional
             ]),
-             new ResourceRecord([
+            new ResourceRecord([
                 "name" => "mail",
                 "type" => "A",
                 "value" => "198.51.100.1",
                 //"pref" => 1 // optional
             ]),
-             new ResourceRecord([
+            new ResourceRecord([
                 "name" => "",
                 "type" => "MX",
                 "value" => "198.51.100.1",

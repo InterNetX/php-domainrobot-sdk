@@ -77,6 +77,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => '\Domainrobot\Model\CodeSigningType',
         'codeSigningProvisioningMethod' => '\Domainrobot\Model\CodeSigningProvisioningMethod',
         'codeSigningHardwarePlatform' => '\Domainrobot\Model\CodeSigningHardwarePlatform',
+        'hardwareInitToken' => 'string',
         'certificateType' => '\Domainrobot\Model\CertificateType',
         'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
         'expire' => '\DateTime',
@@ -131,6 +132,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => null,
         'codeSigningProvisioningMethod' => null,
         'codeSigningHardwarePlatform' => null,
+        'hardwareInitToken' => null,
         'certificateType' => null,
         'signatureHashAlgorithm' => null,
         'expire' => 'date-time',
@@ -206,6 +208,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => 'codeSigningType',
         'codeSigningProvisioningMethod' => 'codeSigningProvisioningMethod',
         'codeSigningHardwarePlatform' => 'codeSigningHardwarePlatform',
+        'hardwareInitToken' => 'hardwareInitToken',
         'certificateType' => 'certificateType',
         'signatureHashAlgorithm' => 'signatureHashAlgorithm',
         'expire' => 'expire',
@@ -260,6 +263,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => 'setCodeSigningType',
         'codeSigningProvisioningMethod' => 'setCodeSigningProvisioningMethod',
         'codeSigningHardwarePlatform' => 'setCodeSigningHardwarePlatform',
+        'hardwareInitToken' => 'setHardwareInitToken',
         'certificateType' => 'setCertificateType',
         'signatureHashAlgorithm' => 'setSignatureHashAlgorithm',
         'expire' => 'setExpire',
@@ -314,6 +318,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => 'getCodeSigningType',
         'codeSigningProvisioningMethod' => 'getCodeSigningProvisioningMethod',
         'codeSigningHardwarePlatform' => 'getCodeSigningHardwarePlatform',
+        'hardwareInitToken' => 'getHardwareInitToken',
         'certificateType' => 'getCertificateType',
         'signatureHashAlgorithm' => 'getSignatureHashAlgorithm',
         'expire' => 'getExpire',
@@ -422,6 +427,7 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['codeSigningType'] = isset($data['codeSigningType']) ? $this->createData($data['codeSigningType'], 'codeSigningType')  : null;
         $this->container['codeSigningProvisioningMethod'] = isset($data['codeSigningProvisioningMethod']) ? $this->createData($data['codeSigningProvisioningMethod'], 'codeSigningProvisioningMethod')  : null;
         $this->container['codeSigningHardwarePlatform'] = isset($data['codeSigningHardwarePlatform']) ? $this->createData($data['codeSigningHardwarePlatform'], 'codeSigningHardwarePlatform')  : null;
+        $this->container['hardwareInitToken'] = isset($data['hardwareInitToken']) ? $this->createData($data['hardwareInitToken'], 'hardwareInitToken')  : null;
         $this->container['certificateType'] = isset($data['certificateType']) ? $this->createData($data['certificateType'], 'certificateType')  : null;
         $this->container['signatureHashAlgorithm'] = isset($data['signatureHashAlgorithm']) ? $this->createData($data['signatureHashAlgorithm'], 'signatureHashAlgorithm')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
@@ -1015,6 +1021,30 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setCodeSigningHardwarePlatform($codeSigningHardwarePlatform)
     {
         $this->container['codeSigningHardwarePlatform'] = $codeSigningHardwarePlatform;
+
+        return $this;
+    }
+
+    /**
+     * Gets hardwareInitToken
+     *
+     * @return string
+     */
+    public function getHardwareInitToken()
+    {
+        return $this->container['hardwareInitToken'];
+    }
+
+    /**
+     * Sets hardwareInitToken
+     *
+     * @param string $hardwareInitToken The token for initializing a EV CodeSigning
+     *
+     * @return $this
+     */
+    public function setHardwareInitToken($hardwareInitToken)
+    {
+        $this->container['hardwareInitToken'] = $hardwareInitToken;
 
         return $this;
     }

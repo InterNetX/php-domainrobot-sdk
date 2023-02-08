@@ -96,7 +96,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'numeralDomains' => 'bool',
         'realtime' => 'bool',
         'idn' => '\Domainrobot\Model\Charset[]',
-        'transferComfirmation' => 'bool',
+        'transferConfirmation' => 'bool',
         'dnsCheck' => 'bool',
         'premiumDomains' => 'bool',
         'contactExtensions' => 'string[]',
@@ -185,7 +185,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'numeralDomains' => null,
         'realtime' => null,
         'idn' => null,
-        'transferComfirmation' => null,
+        'transferConfirmation' => null,
         'dnsCheck' => null,
         'premiumDomains' => null,
         'contactExtensions' => null,
@@ -295,7 +295,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'numeralDomains' => 'numeralDomains',
         'realtime' => 'realtime',
         'idn' => 'idn',
-        'transferComfirmation' => 'transferComfirmation',
+        'transferConfirmation' => 'transferConfirmation',
         'dnsCheck' => 'dnsCheck',
         'premiumDomains' => 'premiumDomains',
         'contactExtensions' => 'contactExtensions',
@@ -384,7 +384,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'numeralDomains' => 'setNumeralDomains',
         'realtime' => 'setRealtime',
         'idn' => 'setIdn',
-        'transferComfirmation' => 'setTransferComfirmation',
+        'transferConfirmation' => 'setTransferConfirmation',
         'dnsCheck' => 'setDnsCheck',
         'premiumDomains' => 'setPremiumDomains',
         'contactExtensions' => 'setContactExtensions',
@@ -473,7 +473,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'numeralDomains' => 'getNumeralDomains',
         'realtime' => 'getRealtime',
         'idn' => 'getIdn',
-        'transferComfirmation' => 'getTransferComfirmation',
+        'transferConfirmation' => 'getTransferConfirmation',
         'dnsCheck' => 'getDnsCheck',
         'premiumDomains' => 'getPremiumDomains',
         'contactExtensions' => 'getContactExtensions',
@@ -616,7 +616,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         $this->container['numeralDomains'] = isset($data['numeralDomains']) ? $this->createData($data['numeralDomains'], 'numeralDomains')  : null;
         $this->container['realtime'] = isset($data['realtime']) ? $this->createData($data['realtime'], 'realtime')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
-        $this->container['transferComfirmation'] = isset($data['transferComfirmation']) ? $this->createData($data['transferComfirmation'], 'transferComfirmation')  : null;
+        $this->container['transferConfirmation'] = isset($data['transferConfirmation']) ? $this->createData($data['transferConfirmation'], 'transferConfirmation')  : null;
         $this->container['dnsCheck'] = isset($data['dnsCheck']) ? $this->createData($data['dnsCheck'], 'dnsCheck')  : null;
         $this->container['premiumDomains'] = isset($data['premiumDomains']) ? $this->createData($data['premiumDomains'], 'premiumDomains')  : null;
         $this->container['contactExtensions'] = isset($data['contactExtensions']) ? $this->createData($data['contactExtensions'], 'contactExtensions')  : null;
@@ -1676,25 +1676,25 @@ class TldProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets transferComfirmation
+     * Gets transferConfirmation
      *
      * @return bool
      */
-    public function getTransferComfirmation()
+    public function getTransferConfirmation()
     {
-        return $this->container['transferComfirmation'];
+        return $this->container['transferConfirmation'];
     }
 
     /**
-     * Sets transferComfirmation
+     * Sets transferConfirmation
      *
-     * @param bool $transferComfirmation transferComfirmation
+     * @param bool $transferConfirmation transferConfirmation
      *
      * @return $this
      */
-    public function setTransferComfirmation($transferComfirmation)
+    public function setTransferConfirmation($transferConfirmation)
     {
-        $this->container['transferComfirmation'] = $transferComfirmation;
+        $this->container['transferConfirmation'] = $transferConfirmation;
 
         return $this;
     }

@@ -59,8 +59,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
         'name' => 'string',
         'idn' => 'string',
         'priceClass' => 'string',
@@ -70,6 +68,8 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'provider' => 'string',
         'configuration' => '\Domainrobot\Model\Configuration',
         'metric' => '\Domainrobot\Model\Metric',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'premiumStatus' => '\Domainrobot\Model\PremiumStatusConstants'
     ];
 
@@ -81,8 +81,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
-        'owner' => null,
-        'updater' => null,
         'name' => null,
         'idn' => null,
         'priceClass' => null,
@@ -92,6 +90,8 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'provider' => null,
         'configuration' => null,
         'metric' => null,
+        'owner' => null,
+        'updater' => null,
         'premiumStatus' => null
     ];
 
@@ -124,8 +124,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'owner' => 'owner',
-        'updater' => 'updater',
         'name' => 'name',
         'idn' => 'idn',
         'priceClass' => 'priceClass',
@@ -135,6 +133,8 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'provider' => 'provider',
         'configuration' => 'configuration',
         'metric' => 'metric',
+        'owner' => 'owner',
+        'updater' => 'updater',
         'premiumStatus' => 'premiumStatus'
     ];
 
@@ -146,8 +146,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'owner' => 'setOwner',
-        'updater' => 'setUpdater',
         'name' => 'setName',
         'idn' => 'setIdn',
         'priceClass' => 'setPriceClass',
@@ -157,6 +155,8 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'provider' => 'setProvider',
         'configuration' => 'setConfiguration',
         'metric' => 'setMetric',
+        'owner' => 'setOwner',
+        'updater' => 'setUpdater',
         'premiumStatus' => 'setPremiumStatus'
     ];
 
@@ -168,8 +168,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'owner' => 'getOwner',
-        'updater' => 'getUpdater',
         'name' => 'getName',
         'idn' => 'getIdn',
         'priceClass' => 'getPriceClass',
@@ -179,6 +177,8 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'provider' => 'getProvider',
         'configuration' => 'getConfiguration',
         'metric' => 'getMetric',
+        'owner' => 'getOwner',
+        'updater' => 'getUpdater',
         'premiumStatus' => 'getPremiumStatus'
     ];
 
@@ -244,8 +244,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
-        $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['name'] = isset($data['name']) ? $this->createData($data['name'], 'name')  : null;
         $this->container['idn'] = isset($data['idn']) ? $this->createData($data['idn'], 'idn')  : null;
         $this->container['priceClass'] = isset($data['priceClass']) ? $this->createData($data['priceClass'], 'priceClass')  : null;
@@ -255,6 +253,8 @@ class DomainPremium implements ModelInterface, ArrayAccess
         $this->container['provider'] = isset($data['provider']) ? $this->createData($data['provider'], 'provider')  : null;
         $this->container['configuration'] = isset($data['configuration']) ? $this->createData($data['configuration'], 'configuration')  : null;
         $this->container['metric'] = isset($data['metric']) ? $this->createData($data['metric'], 'metric')  : null;
+        $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
+        $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
         $this->container['premiumStatus'] = isset($data['premiumStatus']) ? $this->createData($data['premiumStatus'], 'premiumStatus')  : null;
     }
 
@@ -390,54 +390,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets owner
-     *
-     * @return \Domainrobot\Model\BasicUser
-     */
-    public function getOwner()
-    {
-        return $this->container['owner'];
-    }
-
-    /**
-     * Sets owner
-     *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
-     *
-     * @return $this
-     */
-    public function setOwner($owner)
-    {
-        $this->container['owner'] = $owner;
-
-        return $this;
-    }
-
-    /**
-     * Gets updater
-     *
-     * @return \Domainrobot\Model\BasicUser
-     */
-    public function getUpdater()
-    {
-        return $this->container['updater'];
-    }
-
-    /**
-     * Sets updater
-     *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
-     *
-     * @return $this
-     */
-    public function setUpdater($updater)
-    {
-        $this->container['updater'] = $updater;
 
         return $this;
     }
@@ -654,6 +606,54 @@ class DomainPremium implements ModelInterface, ArrayAccess
     public function setMetric($metric)
     {
         $this->container['metric'] = $metric;
+
+        return $this;
+    }
+
+    /**
+     * Gets owner
+     *
+     * @return \Domainrobot\Model\BasicUser
+     */
+    public function getOwner()
+    {
+        return $this->container['owner'];
+    }
+
+    /**
+     * Sets owner
+     *
+     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     *
+     * @return $this
+     */
+    public function setOwner($owner)
+    {
+        $this->container['owner'] = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Gets updater
+     *
+     * @return \Domainrobot\Model\BasicUser
+     */
+    public function getUpdater()
+    {
+        return $this->container['updater'];
+    }
+
+    /**
+     * Sets updater
+     *
+     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     *
+     * @return $this
+     */
+    public function setUpdater($updater)
+    {
+        $this->container['updater'] = $updater;
 
         return $this;
     }

@@ -10,6 +10,7 @@ use Domainrobot\Model\JsonNoData;
 use Domainrobot\Model\Zone;
 use Domainrobot\Model\ZoneStream;
 use Domainrobot\Model\Query;
+use Domainrobot\Model\ZoneBasePatchRequest;
 use Domainrobot\Service\DomainrobotService;
 
 class ZoneService extends DomainrobotService
@@ -164,6 +165,7 @@ class ZoneService extends DomainrobotService
             $z = new Zone($d);
             array_push($zones, $z);
         }
+        
         return $zones;
     }
 
@@ -201,6 +203,7 @@ class ZoneService extends DomainrobotService
         if ($body != null) {
             $data = $body->toArray();
         }
+
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone/_search",
             'POST',
@@ -301,14 +304,59 @@ class ZoneService extends DomainrobotService
         } else {
             $name = $body->getOrigin();
         }
+
         if ($body->getVirtualNameServer() === null) {
             throw new \InvalidArgumentException("Field Zone.virtualNameServer is missing.");
         } else {
             $systemNameServer = $body->getVirtualNameServer();
         }
+
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer",
             'PUT',
+            ["json" => $body->toArray()]
+        );
+    }
+
+    /**
+     * Sends a zone patch request.
+     *
+     * @param ZoneBasePatchRequest $body
+     * @return Zone
+     */
+    public function patch(ZoneBasePatchRequest $body)
+    {
+        $domainrobotPromise = $this->patchAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Zone(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Sends a zone update request.
+     *
+     * @param ZoneBasePatchRequest $body
+     * @return DomainrobotPromise
+     */
+    public function patchAsync(ZoneBasePatchRequest $body)
+    {
+        if ($body->getOrigin() === null) {
+            throw new \InvalidArgumentException("Field Zone.origin is missing.");
+        } else {
+            $name = $body->getOrigin();
+        }
+
+        if ($body->getVirtualNameServer() === null) {
+            throw new \InvalidArgumentException("Field Zone.virtualNameServer is missing.");
+        } else {
+            $systemNameServer = $body->getVirtualNameServer();
+        }
+        
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/zone/$name/$systemNameServer",
+            'PATCH',
             ["json" => $body->toArray()]
         );
     }

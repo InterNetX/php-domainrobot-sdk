@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -322,6 +322,12 @@ class Redirect implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['source'] === null) {
+            $invalidProperties[] = "'source' can't be null";
+        }
+        if ($this->container['target'] === null) {
+            $invalidProperties[] = "'target' can't be null";
+        }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
@@ -452,7 +458,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param string $source The domain to be redirected. Enter the domain with or without \"www\".
+     * @param string $source The domain/email to be redirected. Enter the domain with or without \"www\".
      *
      * @return $this
      */
@@ -476,7 +482,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets target
      *
-     * @param string $target The URL of the target domain. Enter the domain without \"http://\"
+     * @param string $target The URL of the target domain/email. Enter the domain without \"http://\"
      *
      * @return $this
      */
@@ -572,7 +578,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets title
      *
-     * @param string $title Name of the redirection
+     * @param string $title Only for the 'frame' mode. Page title to be displayed in the browser title bar.
      *
      * @return $this
      */

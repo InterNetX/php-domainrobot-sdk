@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -43,17 +43,23 @@ class VmcTrademarkCountryOrRegion
     /**
      * Possible values of this enum
      */
-    const US = 'US';
-    const CA = 'CA';
-    const EM = 'EM';
-    const GB = 'GB';
-    const DE = 'DE';
-    const JP = 'JP';
     const AU = 'AU';
-    const ES = 'ES';
-    const IN = 'IN';
-    const KR = 'KR';
     const BR = 'BR';
+    const BX = 'BX';
+    const CA = 'CA';
+    const CH = 'CH';
+    const DE = 'DE';
+    const DK = 'DK';
+    const EM = 'EM';
+    const ES = 'ES';
+    const FR = 'FR';
+    const GB = 'GB';
+    const IN = 'IN';
+    const JP = 'JP';
+    const KR = 'KR';
+    const NZ = 'NZ';
+    const SE = 'SE';
+    const US = 'US';
     
     /**
      * Gets allowable values of the enum
@@ -62,17 +68,23 @@ class VmcTrademarkCountryOrRegion
     public static function getAllowableEnumValues()
     {
         return [
-            self::US,
-            self::CA,
-            self::EM,
-            self::GB,
-            self::DE,
-            self::JP,
             self::AU,
-            self::ES,
-            self::IN,
-            self::KR,
             self::BR,
+            self::BX,
+            self::CA,
+            self::CH,
+            self::DE,
+            self::DK,
+            self::EM,
+            self::ES,
+            self::FR,
+            self::GB,
+            self::IN,
+            self::JP,
+            self::KR,
+            self::NZ,
+            self::SE,
+            self::US,
         ];
     }
 }

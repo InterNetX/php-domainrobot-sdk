@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -1004,7 +1004,7 @@ class Contact implements ModelInterface, ArrayAccess
     /**
      * Sets pcode
      *
-     * @param string $pcode The postal code (“zip-code”) of the contact.
+     * @param string $pcode The postal code (“zip-code”) of the contact. For countries Canada, Norway, Poland and Spain the format of the postal code is checked for validity.  Canada (ca): Six characters in the following format 'LNL NLN', where 'L' represents a letter and 'N' represents a number.  Norway (co): Four characters between 0001 and 9990.  Poland (pl): Consists of five digits, with a hyphen ('-') between the second and third digits.  Spain (es): Consisting of exactly five digits. No letters or special characters, only numbers. Each of the five positions can be any digit from 0 to 9.
      *
      * @return $this
      */

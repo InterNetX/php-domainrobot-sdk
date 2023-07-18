@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -75,27 +75,37 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => 'string',
         'emails' => 'string[]',
         'billingEmails' => 'string[]',
-        'contacts' => '\Domainrobot\Model\BasicCustomerContact[]',
         'payment' => '\Domainrobot\Model\PaymentConstants',
         'paymentMode' => 'string',
         'paymentCurrency' => 'string',
+        'paymentCurrencyExchangeFee' => 'float',
+        'discount' => 'int',
+        'discountNgtld' => 'int',
+        'discountCertificate' => 'int',
         'discountValid' => '\DateTime',
         'invoiceLanguage' => 'string',
-        'pin' => 'string',
         'taxable' => 'bool',
         'card' => '\Domainrobot\Model\Card',
         'contracts' => '\Domainrobot\Model\CustomerContract[]',
+        'billingUsers' => '\Domainrobot\Model\BasicUser[]',
+        'comments' => '\Domainrobot\Model\Comment[]',
+        'contacts' => '\Domainrobot\Model\BasicCustomerContact[]',
+        'account' => '\Domainrobot\Model\Account',
+        'priceListEntities' => '\Domainrobot\Model\CustomerPriceList[]',
+        'addPriceListEntities' => '\Domainrobot\Model\CustomerPriceList[]',
+        'remPriceListEntities' => '\Domainrobot\Model\CustomerPriceList[]',
+        'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
         'autodelete' => 'bool',
         'pending' => 'bool',
         'verifications' => '\Domainrobot\Model\BasicCustomerSpoolVerification[]',
-        'account' => '\Domainrobot\Model\Account',
-        'billingUsers' => '\Domainrobot\Model\BasicUser[]',
-        'comments' => '\Domainrobot\Model\Comment[]',
+        'tags' => '\Domainrobot\Model\CustomerTag[]',
+        'pin' => 'string',
         'persistent' => '\Domainrobot\Model\BasicCustomer',
-        'clearAccount' => '\Domainrobot\Model\ClearAccountPeriod',
+        'active' => 'bool',
         'fname' => 'string',
         'lname' => 'string',
         'pcode' => 'string',
+        'technical' => '\Domainrobot\Model\TechnicalCustomer',
         'sepa' => '\Domainrobot\Model\SEPAMandate'
     ];
 
@@ -123,27 +133,37 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => null,
         'emails' => null,
         'billingEmails' => null,
-        'contacts' => null,
         'payment' => null,
         'paymentMode' => null,
         'paymentCurrency' => null,
+        'paymentCurrencyExchangeFee' => 'float',
+        'discount' => 'int32',
+        'discountNgtld' => 'int32',
+        'discountCertificate' => 'int32',
         'discountValid' => 'date-time',
         'invoiceLanguage' => null,
-        'pin' => null,
         'taxable' => null,
         'card' => null,
         'contracts' => null,
+        'billingUsers' => null,
+        'comments' => null,
+        'contacts' => null,
+        'account' => null,
+        'priceListEntities' => null,
+        'addPriceListEntities' => null,
+        'remPriceListEntities' => null,
+        'clearAccount' => null,
         'autodelete' => null,
         'pending' => null,
         'verifications' => null,
-        'account' => null,
-        'billingUsers' => null,
-        'comments' => null,
+        'tags' => null,
+        'pin' => null,
         'persistent' => null,
-        'clearAccount' => null,
+        'active' => null,
         'fname' => null,
         'lname' => null,
         'pcode' => null,
+        'technical' => null,
         'sepa' => null
     ];
 
@@ -192,27 +212,37 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => 'fax',
         'emails' => 'emails',
         'billingEmails' => 'billingEmails',
-        'contacts' => 'contacts',
         'payment' => 'payment',
         'paymentMode' => 'paymentMode',
         'paymentCurrency' => 'paymentCurrency',
+        'paymentCurrencyExchangeFee' => 'paymentCurrencyExchangeFee',
+        'discount' => 'discount',
+        'discountNgtld' => 'discountNgtld',
+        'discountCertificate' => 'discountCertificate',
         'discountValid' => 'discountValid',
         'invoiceLanguage' => 'invoiceLanguage',
-        'pin' => 'pin',
         'taxable' => 'taxable',
         'card' => 'card',
         'contracts' => 'contracts',
+        'billingUsers' => 'billingUsers',
+        'comments' => 'comments',
+        'contacts' => 'contacts',
+        'account' => 'account',
+        'priceListEntities' => 'priceListEntities',
+        'addPriceListEntities' => 'addPriceListEntities',
+        'remPriceListEntities' => 'remPriceListEntities',
+        'clearAccount' => 'clearAccount',
         'autodelete' => 'autodelete',
         'pending' => 'pending',
         'verifications' => 'verifications',
-        'account' => 'account',
-        'billingUsers' => 'billingUsers',
-        'comments' => 'comments',
+        'tags' => 'tags',
+        'pin' => 'pin',
         'persistent' => 'persistent',
-        'clearAccount' => 'clearAccount',
+        'active' => 'active',
         'fname' => 'fname',
         'lname' => 'lname',
         'pcode' => 'pcode',
+        'technical' => 'technical',
         'sepa' => 'sepa'
     ];
 
@@ -240,27 +270,37 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => 'setFax',
         'emails' => 'setEmails',
         'billingEmails' => 'setBillingEmails',
-        'contacts' => 'setContacts',
         'payment' => 'setPayment',
         'paymentMode' => 'setPaymentMode',
         'paymentCurrency' => 'setPaymentCurrency',
+        'paymentCurrencyExchangeFee' => 'setPaymentCurrencyExchangeFee',
+        'discount' => 'setDiscount',
+        'discountNgtld' => 'setDiscountNgtld',
+        'discountCertificate' => 'setDiscountCertificate',
         'discountValid' => 'setDiscountValid',
         'invoiceLanguage' => 'setInvoiceLanguage',
-        'pin' => 'setPin',
         'taxable' => 'setTaxable',
         'card' => 'setCard',
         'contracts' => 'setContracts',
+        'billingUsers' => 'setBillingUsers',
+        'comments' => 'setComments',
+        'contacts' => 'setContacts',
+        'account' => 'setAccount',
+        'priceListEntities' => 'setPriceListEntities',
+        'addPriceListEntities' => 'setAddPriceListEntities',
+        'remPriceListEntities' => 'setRemPriceListEntities',
+        'clearAccount' => 'setClearAccount',
         'autodelete' => 'setAutodelete',
         'pending' => 'setPending',
         'verifications' => 'setVerifications',
-        'account' => 'setAccount',
-        'billingUsers' => 'setBillingUsers',
-        'comments' => 'setComments',
+        'tags' => 'setTags',
+        'pin' => 'setPin',
         'persistent' => 'setPersistent',
-        'clearAccount' => 'setClearAccount',
+        'active' => 'setActive',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'pcode' => 'setPcode',
+        'technical' => 'setTechnical',
         'sepa' => 'setSepa'
     ];
 
@@ -288,27 +328,37 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'fax' => 'getFax',
         'emails' => 'getEmails',
         'billingEmails' => 'getBillingEmails',
-        'contacts' => 'getContacts',
         'payment' => 'getPayment',
         'paymentMode' => 'getPaymentMode',
         'paymentCurrency' => 'getPaymentCurrency',
+        'paymentCurrencyExchangeFee' => 'getPaymentCurrencyExchangeFee',
+        'discount' => 'getDiscount',
+        'discountNgtld' => 'getDiscountNgtld',
+        'discountCertificate' => 'getDiscountCertificate',
         'discountValid' => 'getDiscountValid',
         'invoiceLanguage' => 'getInvoiceLanguage',
-        'pin' => 'getPin',
         'taxable' => 'getTaxable',
         'card' => 'getCard',
         'contracts' => 'getContracts',
+        'billingUsers' => 'getBillingUsers',
+        'comments' => 'getComments',
+        'contacts' => 'getContacts',
+        'account' => 'getAccount',
+        'priceListEntities' => 'getPriceListEntities',
+        'addPriceListEntities' => 'getAddPriceListEntities',
+        'remPriceListEntities' => 'getRemPriceListEntities',
+        'clearAccount' => 'getClearAccount',
         'autodelete' => 'getAutodelete',
         'pending' => 'getPending',
         'verifications' => 'getVerifications',
-        'account' => 'getAccount',
-        'billingUsers' => 'getBillingUsers',
-        'comments' => 'getComments',
+        'tags' => 'getTags',
+        'pin' => 'getPin',
         'persistent' => 'getPersistent',
-        'clearAccount' => 'getClearAccount',
+        'active' => 'getActive',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'pcode' => 'getPcode',
+        'technical' => 'getTechnical',
         'sepa' => 'getSepa'
     ];
 
@@ -390,27 +440,37 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         $this->container['fax'] = isset($data['fax']) ? $this->createData($data['fax'], 'fax')  : null;
         $this->container['emails'] = isset($data['emails']) ? $this->createData($data['emails'], 'emails')  : null;
         $this->container['billingEmails'] = isset($data['billingEmails']) ? $this->createData($data['billingEmails'], 'billingEmails')  : null;
-        $this->container['contacts'] = isset($data['contacts']) ? $this->createData($data['contacts'], 'contacts')  : null;
         $this->container['payment'] = isset($data['payment']) ? $this->createData($data['payment'], 'payment')  : null;
         $this->container['paymentMode'] = isset($data['paymentMode']) ? $this->createData($data['paymentMode'], 'paymentMode')  : null;
         $this->container['paymentCurrency'] = isset($data['paymentCurrency']) ? $this->createData($data['paymentCurrency'], 'paymentCurrency')  : null;
+        $this->container['paymentCurrencyExchangeFee'] = isset($data['paymentCurrencyExchangeFee']) ? $this->createData($data['paymentCurrencyExchangeFee'], 'paymentCurrencyExchangeFee')  : null;
+        $this->container['discount'] = isset($data['discount']) ? $this->createData($data['discount'], 'discount')  : null;
+        $this->container['discountNgtld'] = isset($data['discountNgtld']) ? $this->createData($data['discountNgtld'], 'discountNgtld')  : null;
+        $this->container['discountCertificate'] = isset($data['discountCertificate']) ? $this->createData($data['discountCertificate'], 'discountCertificate')  : null;
         $this->container['discountValid'] = isset($data['discountValid']) ? $this->createData($data['discountValid'], 'discountValid')  : null;
         $this->container['invoiceLanguage'] = isset($data['invoiceLanguage']) ? $this->createData($data['invoiceLanguage'], 'invoiceLanguage')  : null;
-        $this->container['pin'] = isset($data['pin']) ? $this->createData($data['pin'], 'pin')  : null;
         $this->container['taxable'] = isset($data['taxable']) ? $this->createData($data['taxable'], 'taxable')  : null;
         $this->container['card'] = isset($data['card']) ? $this->createData($data['card'], 'card')  : null;
         $this->container['contracts'] = isset($data['contracts']) ? $this->createData($data['contracts'], 'contracts')  : null;
+        $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
+        $this->container['comments'] = isset($data['comments']) ? $this->createData($data['comments'], 'comments')  : null;
+        $this->container['contacts'] = isset($data['contacts']) ? $this->createData($data['contacts'], 'contacts')  : null;
+        $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
+        $this->container['priceListEntities'] = isset($data['priceListEntities']) ? $this->createData($data['priceListEntities'], 'priceListEntities')  : null;
+        $this->container['addPriceListEntities'] = isset($data['addPriceListEntities']) ? $this->createData($data['addPriceListEntities'], 'addPriceListEntities')  : null;
+        $this->container['remPriceListEntities'] = isset($data['remPriceListEntities']) ? $this->createData($data['remPriceListEntities'], 'remPriceListEntities')  : null;
+        $this->container['clearAccount'] = isset($data['clearAccount']) ? $this->createData($data['clearAccount'], 'clearAccount')  : null;
         $this->container['autodelete'] = isset($data['autodelete']) ? $this->createData($data['autodelete'], 'autodelete')  : null;
         $this->container['pending'] = isset($data['pending']) ? $this->createData($data['pending'], 'pending')  : null;
         $this->container['verifications'] = isset($data['verifications']) ? $this->createData($data['verifications'], 'verifications')  : null;
-        $this->container['account'] = isset($data['account']) ? $this->createData($data['account'], 'account')  : null;
-        $this->container['billingUsers'] = isset($data['billingUsers']) ? $this->createData($data['billingUsers'], 'billingUsers')  : null;
-        $this->container['comments'] = isset($data['comments']) ? $this->createData($data['comments'], 'comments')  : null;
+        $this->container['tags'] = isset($data['tags']) ? $this->createData($data['tags'], 'tags')  : null;
+        $this->container['pin'] = isset($data['pin']) ? $this->createData($data['pin'], 'pin')  : null;
         $this->container['persistent'] = isset($data['persistent']) ? $this->createData($data['persistent'], 'persistent')  : null;
-        $this->container['clearAccount'] = isset($data['clearAccount']) ? $this->createData($data['clearAccount'], 'clearAccount')  : null;
+        $this->container['active'] = isset($data['active']) ? $this->createData($data['active'], 'active')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['pcode'] = isset($data['pcode']) ? $this->createData($data['pcode'], 'pcode')  : null;
+        $this->container['technical'] = isset($data['technical']) ? $this->createData($data['technical'], 'technical')  : null;
         $this->container['sepa'] = isset($data['sepa']) ? $this->createData($data['sepa'], 'sepa')  : null;
     }
 
@@ -492,27 +552,35 @@ class BasicCustomer implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'client', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 255)) {
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((mb_strlen($this->container['name']) > 255)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) < 0)) {
+        if ((mb_strlen($this->container['name']) < 0)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['organization']) && (mb_strlen($this->container['organization']) > 70)) {
-            $invalidProperties[] = "invalid value for 'organization', the character length must be smaller than or equal to 70.";
+        if (!is_null($this->container['organization']) && (mb_strlen($this->container['organization']) > 35)) {
+            $invalidProperties[] = "invalid value for 'organization', the character length must be smaller than or equal to 35.";
         }
 
         if (!is_null($this->container['organization']) && (mb_strlen($this->container['organization']) < 0)) {
             $invalidProperties[] = "invalid value for 'organization', the character length must be bigger than or equal to 0.";
         }
 
+        if (!is_null($this->container['organization2']) && (mb_strlen($this->container['organization2']) > 35)) {
+            $invalidProperties[] = "invalid value for 'organization2', the character length must be smaller than or equal to 35.";
+        }
+
+        if (!is_null($this->container['organization2']) && (mb_strlen($this->container['organization2']) < 0)) {
+            $invalidProperties[] = "invalid value for 'organization2', the character length must be bigger than or equal to 0.";
+        }
+
         if ($this->container['addressLines'] === null) {
             $invalidProperties[] = "'addressLines' can't be null";
-        }
-        if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
         }
         if ($this->container['payment'] === null) {
             $invalidProperties[] = "'payment' can't be null";
@@ -646,10 +714,10 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (mb_strlen($name) > 255)) {
+        if ((mb_strlen($name) > 255)) {
             throw new \InvalidArgumentException('invalid length for $name when calling BasicCustomer., must be smaller than or equal to 255.');
         }
-        if (!is_null($name) && (mb_strlen($name) < 0)) {
+        if ((mb_strlen($name) < 0)) {
             throw new \InvalidArgumentException('invalid length for $name when calling BasicCustomer., must be bigger than or equal to 0.');
         }
 
@@ -701,8 +769,8 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setOrganization($organization)
     {
-        if (!is_null($organization) && (mb_strlen($organization) > 70)) {
-            throw new \InvalidArgumentException('invalid length for $organization when calling BasicCustomer., must be smaller than or equal to 70.');
+        if (!is_null($organization) && (mb_strlen($organization) > 35)) {
+            throw new \InvalidArgumentException('invalid length for $organization when calling BasicCustomer., must be smaller than or equal to 35.');
         }
         if (!is_null($organization) && (mb_strlen($organization) < 0)) {
             throw new \InvalidArgumentException('invalid length for $organization when calling BasicCustomer., must be bigger than or equal to 0.');
@@ -726,12 +794,19 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets organization2
      *
-     * @param string $organization2 The second line for the organization name.
+     * @param string $organization2 The second line for the name of the organization.
      *
      * @return $this
      */
     public function setOrganization2($organization2)
     {
+        if (!is_null($organization2) && (mb_strlen($organization2) > 35)) {
+            throw new \InvalidArgumentException('invalid length for $organization2 when calling BasicCustomer., must be smaller than or equal to 35.');
+        }
+        if (!is_null($organization2) && (mb_strlen($organization2) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $organization2 when calling BasicCustomer., must be bigger than or equal to 0.');
+        }
+
         $this->container['organization2'] = $organization2;
 
         return $this;
@@ -1002,30 +1077,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets contacts
-     *
-     * @return \Domainrobot\Model\BasicCustomerContact[]
-     */
-    public function getContacts()
-    {
-        return $this->container['contacts'];
-    }
-
-    /**
-     * Sets contacts
-     *
-     * @param \Domainrobot\Model\BasicCustomerContact[] $contacts The contacts.
-     *
-     * @return $this
-     */
-    public function setContacts($contacts)
-    {
-        $this->container['contacts'] = $contacts;
-
-        return $this;
-    }
-
-    /**
      * Gets payment
      *
      * @return \Domainrobot\Model\PaymentConstants
@@ -1098,6 +1149,102 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets paymentCurrencyExchangeFee
+     *
+     * @return float
+     */
+    public function getPaymentCurrencyExchangeFee()
+    {
+        return $this->container['paymentCurrencyExchangeFee'];
+    }
+
+    /**
+     * Sets paymentCurrencyExchangeFee
+     *
+     * @param float $paymentCurrencyExchangeFee The payment currency exchange fee of the customer.
+     *
+     * @return $this
+     */
+    public function setPaymentCurrencyExchangeFee($paymentCurrencyExchangeFee)
+    {
+        $this->container['paymentCurrencyExchangeFee'] = $paymentCurrencyExchangeFee;
+
+        return $this;
+    }
+
+    /**
+     * Gets discount
+     *
+     * @return int
+     */
+    public function getDiscount()
+    {
+        return $this->container['discount'];
+    }
+
+    /**
+     * Sets discount
+     *
+     * @param int $discount The discount of the customer.
+     *
+     * @return $this
+     */
+    public function setDiscount($discount)
+    {
+        $this->container['discount'] = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountNgtld
+     *
+     * @return int
+     */
+    public function getDiscountNgtld()
+    {
+        return $this->container['discountNgtld'];
+    }
+
+    /**
+     * Sets discountNgtld
+     *
+     * @param int $discountNgtld The discount of the ngtld.
+     *
+     * @return $this
+     */
+    public function setDiscountNgtld($discountNgtld)
+    {
+        $this->container['discountNgtld'] = $discountNgtld;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountCertificate
+     *
+     * @return int
+     */
+    public function getDiscountCertificate()
+    {
+        return $this->container['discountCertificate'];
+    }
+
+    /**
+     * Sets discountCertificate
+     *
+     * @param int $discountCertificate The discount of the certificate.
+     *
+     * @return $this
+     */
+    public function setDiscountCertificate($discountCertificate)
+    {
+        $this->container['discountCertificate'] = $discountCertificate;
+
+        return $this;
+    }
+
+    /**
      * Gets discountValid
      *
      * @return \DateTime
@@ -1141,30 +1288,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     public function setInvoiceLanguage($invoiceLanguage)
     {
         $this->container['invoiceLanguage'] = $invoiceLanguage;
-
-        return $this;
-    }
-
-    /**
-     * Gets pin
-     *
-     * @return string
-     */
-    public function getPin()
-    {
-        return $this->container['pin'];
-    }
-
-    /**
-     * Sets pin
-     *
-     * @param string $pin The pin number.
-     *
-     * @return $this
-     */
-    public function setPin($pin)
-    {
-        $this->container['pin'] = $pin;
 
         return $this;
     }
@@ -1242,6 +1365,198 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets billingUsers
+     *
+     * @return \Domainrobot\Model\BasicUser[]
+     */
+    public function getBillingUsers()
+    {
+        return $this->container['billingUsers'];
+    }
+
+    /**
+     * Sets billingUsers
+     *
+     * @param \Domainrobot\Model\BasicUser[] $billingUsers The billing users.
+     *
+     * @return $this
+     */
+    public function setBillingUsers($billingUsers)
+    {
+        $this->container['billingUsers'] = $billingUsers;
+
+        return $this;
+    }
+
+    /**
+     * Gets comments
+     *
+     * @return \Domainrobot\Model\Comment[]
+     */
+    public function getComments()
+    {
+        return $this->container['comments'];
+    }
+
+    /**
+     * Sets comments
+     *
+     * @param \Domainrobot\Model\Comment[] $comments The comments of the customer
+     *
+     * @return $this
+     */
+    public function setComments($comments)
+    {
+        $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets contacts
+     *
+     * @return \Domainrobot\Model\BasicCustomerContact[]
+     */
+    public function getContacts()
+    {
+        return $this->container['contacts'];
+    }
+
+    /**
+     * Sets contacts
+     *
+     * @param \Domainrobot\Model\BasicCustomerContact[] $contacts The contacts of the customer
+     *
+     * @return $this
+     */
+    public function setContacts($contacts)
+    {
+        $this->container['contacts'] = $contacts;
+
+        return $this;
+    }
+
+    /**
+     * Gets account
+     *
+     * @return \Domainrobot\Model\Account
+     */
+    public function getAccount()
+    {
+        return $this->container['account'];
+    }
+
+    /**
+     * Sets account
+     *
+     * @param \Domainrobot\Model\Account $account The account of the customer in case of prepayment or if the customer has a credit limit
+     *
+     * @return $this
+     */
+    public function setAccount($account)
+    {
+        $this->container['account'] = $account;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceListEntities
+     *
+     * @return \Domainrobot\Model\CustomerPriceList[]
+     */
+    public function getPriceListEntities()
+    {
+        return $this->container['priceListEntities'];
+    }
+
+    /**
+     * Sets priceListEntities
+     *
+     * @param \Domainrobot\Model\CustomerPriceList[] $priceListEntities The attached price lists
+     *
+     * @return $this
+     */
+    public function setPriceListEntities($priceListEntities)
+    {
+        $this->container['priceListEntities'] = $priceListEntities;
+
+        return $this;
+    }
+
+    /**
+     * Gets addPriceListEntities
+     *
+     * @return \Domainrobot\Model\CustomerPriceList[]
+     */
+    public function getAddPriceListEntities()
+    {
+        return $this->container['addPriceListEntities'];
+    }
+
+    /**
+     * Sets addPriceListEntities
+     *
+     * @param \Domainrobot\Model\CustomerPriceList[] $addPriceListEntities Used by the update to task to attache new price lists
+     *
+     * @return $this
+     */
+    public function setAddPriceListEntities($addPriceListEntities)
+    {
+        $this->container['addPriceListEntities'] = $addPriceListEntities;
+
+        return $this;
+    }
+
+    /**
+     * Gets remPriceListEntities
+     *
+     * @return \Domainrobot\Model\CustomerPriceList[]
+     */
+    public function getRemPriceListEntities()
+    {
+        return $this->container['remPriceListEntities'];
+    }
+
+    /**
+     * Sets remPriceListEntities
+     *
+     * @param \Domainrobot\Model\CustomerPriceList[] $remPriceListEntities Used by the update to task to detache price lists
+     *
+     * @return $this
+     */
+    public function setRemPriceListEntities($remPriceListEntities)
+    {
+        $this->container['remPriceListEntities'] = $remPriceListEntities;
+
+        return $this;
+    }
+
+    /**
+     * Gets clearAccount
+     *
+     * @return \Domainrobot\Model\ClearAccountPeriod
+     */
+    public function getClearAccount()
+    {
+        return $this->container['clearAccount'];
+    }
+
+    /**
+     * Sets clearAccount
+     *
+     * @param \Domainrobot\Model\ClearAccountPeriod $clearAccount The period after the post payment account will be cleared to zero
+     *
+     * @return $this
+     */
+    public function setClearAccount($clearAccount)
+    {
+        $this->container['clearAccount'] = $clearAccount;
+
+        return $this;
+    }
+
+    /**
      * Gets autodelete
      *
      * @return bool
@@ -1314,73 +1629,49 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets account
+     * Gets tags
      *
-     * @return \Domainrobot\Model\Account
+     * @return \Domainrobot\Model\CustomerTag[]
      */
-    public function getAccount()
+    public function getTags()
     {
-        return $this->container['account'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets account
+     * Sets tags
      *
-     * @param \Domainrobot\Model\Account $account The account of the customer in case of prepayment or if the customer has a credit limit
+     * @param \Domainrobot\Model\CustomerTag[] $tags The customers tags.
      *
      * @return $this
      */
-    public function setAccount($account)
+    public function setTags($tags)
     {
-        $this->container['account'] = $account;
+        $this->container['tags'] = $tags;
 
         return $this;
     }
 
     /**
-     * Gets billingUsers
+     * Gets pin
      *
-     * @return \Domainrobot\Model\BasicUser[]
+     * @return string
      */
-    public function getBillingUsers()
+    public function getPin()
     {
-        return $this->container['billingUsers'];
+        return $this->container['pin'];
     }
 
     /**
-     * Sets billingUsers
+     * Sets pin
      *
-     * @param \Domainrobot\Model\BasicUser[] $billingUsers The billing users.
+     * @param string $pin The pin number.
      *
      * @return $this
      */
-    public function setBillingUsers($billingUsers)
+    public function setPin($pin)
     {
-        $this->container['billingUsers'] = $billingUsers;
-
-        return $this;
-    }
-
-    /**
-     * Gets comments
-     *
-     * @return \Domainrobot\Model\Comment[]
-     */
-    public function getComments()
-    {
-        return $this->container['comments'];
-    }
-
-    /**
-     * Sets comments
-     *
-     * @param \Domainrobot\Model\Comment[] $comments The comments of the customer
-     *
-     * @return $this
-     */
-    public function setComments($comments)
-    {
-        $this->container['comments'] = $comments;
+        $this->container['pin'] = $pin;
 
         return $this;
     }
@@ -1410,25 +1701,25 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets clearAccount
+     * Gets active
      *
-     * @return \Domainrobot\Model\ClearAccountPeriod
+     * @return bool
      */
-    public function getClearAccount()
+    public function getActive()
     {
-        return $this->container['clearAccount'];
+        return $this->container['active'];
     }
 
     /**
-     * Sets clearAccount
+     * Sets active
      *
-     * @param \Domainrobot\Model\ClearAccountPeriod $clearAccount The period after the post payment account will be cleared to zero
+     * @param bool $active Flag indication if the customer is active
      *
      * @return $this
      */
-    public function setClearAccount($clearAccount)
+    public function setActive($active)
     {
-        $this->container['clearAccount'] = $clearAccount;
+        $this->container['active'] = $active;
 
         return $this;
     }
@@ -1515,6 +1806,30 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     public function setPcode($pcode)
     {
         $this->container['pcode'] = $pcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets technical
+     *
+     * @return \Domainrobot\Model\TechnicalCustomer
+     */
+    public function getTechnical()
+    {
+        return $this->container['technical'];
+    }
+
+    /**
+     * Sets technical
+     *
+     * @param \Domainrobot\Model\TechnicalCustomer $technical technical Customer.
+     *
+     * @return $this
+     */
+    public function setTechnical($technical)
+    {
+        $this->container['technical'] = $technical;
 
         return $this;
     }

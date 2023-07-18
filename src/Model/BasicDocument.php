@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -407,7 +407,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param int $id The unique identifier of the document
      *
      * @return $this
      */
@@ -431,7 +431,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets comment
      *
-     * @param string $comment comment
+     * @param string $comment Document comment
      *
      * @return $this
      */
@@ -455,7 +455,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string $type Type of document, related to InternetX.
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets mimeType
      *
-     * @param string $mimeType mimeType
+     * @param string $mimeType MIME type (Multipurpose Internet Mail Extensions)   Which MimeType is valid depends on the type of document
      *
      * @return $this
      */
@@ -527,7 +527,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets size
      *
-     * @param int $size size
+     * @param int $size Document size (Maximum size for contact documents is 2MB)
      *
      * @return $this
      */
@@ -551,7 +551,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Name of the document. Can be freely chosen
      *
      * @return $this
      */
@@ -575,7 +575,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     /**
      * Sets link
      *
-     * @param string $link link
+     * @param string $link Link created by Internetx to download invoices.
      *
      * @return $this
      */

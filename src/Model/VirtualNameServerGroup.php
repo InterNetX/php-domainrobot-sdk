@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -292,8 +292,8 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['name']) && !preg_match("/(?i)\\b(?!default\\b)\\w+/", $this->container['name'])) {
-            $invalidProperties[] = "invalid value for 'name', must be conform to the pattern /(?i)\\b(?!default\\b)\\w+/.";
+        if (!is_null($this->container['name']) && !preg_match("/\\b(?!default\\b)\\w+/", $this->container['name'])) {
+            $invalidProperties[] = "invalid value for 'name', must be conform to the pattern /\\b(?!default\\b)\\w+/.";
         }
 
         if ($this->container['systemNameServerGroup'] === null) {
@@ -430,8 +430,8 @@ class VirtualNameServerGroup implements ModelInterface, ArrayAccess
     public function setName($name)
     {
 
-        if (!is_null($name) && (!preg_match("/(?i)\\b(?!default\\b)\\w+/", $name))) {
-            throw new \InvalidArgumentException("invalid value for $name when calling VirtualNameServerGroup., must conform to the pattern /(?i)\\b(?!default\\b)\\w+/.");
+        if (!is_null($name) && (!preg_match("/\\b(?!default\\b)\\w+/", $name))) {
+            throw new \InvalidArgumentException("invalid value for $name when calling VirtualNameServerGroup., must conform to the pattern /\\b(?!default\\b)\\w+/.");
         }
 
         $this->container['name'] = $name;

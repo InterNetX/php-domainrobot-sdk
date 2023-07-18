@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -59,6 +59,8 @@ class LoginData implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'context' => 'int',
         'password' => 'string',
+        'passwordChanged' => '\DateTime',
+        'passwordExpired' => 'bool',
         'token' => 'string',
         'user' => 'string'
     ];
@@ -71,6 +73,8 @@ class LoginData implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'context' => 'int32',
         'password' => null,
+        'passwordChanged' => 'date-time',
+        'passwordExpired' => null,
         'token' => null,
         'user' => null
     ];
@@ -104,6 +108,8 @@ class LoginData implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'context' => 'context',
         'password' => 'password',
+        'passwordChanged' => 'passwordChanged',
+        'passwordExpired' => 'passwordExpired',
         'token' => 'token',
         'user' => 'user'
     ];
@@ -116,6 +122,8 @@ class LoginData implements ModelInterface, ArrayAccess
     protected static $setters = [
         'context' => 'setContext',
         'password' => 'setPassword',
+        'passwordChanged' => 'setPasswordChanged',
+        'passwordExpired' => 'setPasswordExpired',
         'token' => 'setToken',
         'user' => 'setUser'
     ];
@@ -128,6 +136,8 @@ class LoginData implements ModelInterface, ArrayAccess
     protected static $getters = [
         'context' => 'getContext',
         'password' => 'getPassword',
+        'passwordChanged' => 'getPasswordChanged',
+        'passwordExpired' => 'getPasswordExpired',
         'token' => 'getToken',
         'user' => 'getUser'
     ];
@@ -194,6 +204,8 @@ class LoginData implements ModelInterface, ArrayAccess
     {
         $this->container['context'] = isset($data['context']) ? $this->createData($data['context'], 'context')  : null;
         $this->container['password'] = isset($data['password']) ? $this->createData($data['password'], 'password')  : null;
+        $this->container['passwordChanged'] = isset($data['passwordChanged']) ? $this->createData($data['passwordChanged'], 'passwordChanged')  : null;
+        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
         $this->container['token'] = isset($data['token']) ? $this->createData($data['token'], 'token')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
     }
@@ -331,6 +343,54 @@ class LoginData implements ModelInterface, ArrayAccess
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordChanged
+     *
+     * @return \DateTime
+     */
+    public function getPasswordChanged()
+    {
+        return $this->container['passwordChanged'];
+    }
+
+    /**
+     * Sets passwordChanged
+     *
+     * @param \DateTime $passwordChanged The date on which the password has changed
+     *
+     * @return $this
+     */
+    public function setPasswordChanged($passwordChanged)
+    {
+        $this->container['passwordChanged'] = $passwordChanged;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordExpired
+     *
+     * @return bool
+     */
+    public function getPasswordExpired()
+    {
+        return $this->container['passwordExpired'];
+    }
+
+    /**
+     * Sets passwordExpired
+     *
+     * @param bool $passwordExpired The passwordExpired boolean
+     *
+     * @return $this
+     */
+    public function setPasswordExpired($passwordExpired)
+    {
+        $this->container['passwordExpired'] = $passwordExpired;
 
         return $this;
     }

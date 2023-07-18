@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -77,6 +77,7 @@ class AuEligibilityTypeConstants
     const PUBLIC_PRIVATE_ANCILLARY_FUND = 'PUBLIC_PRIVATE_ANCILLARY_FUND';
     const PEAK_STATE_TERRITORY_BODY = 'PEAK_STATE_TERRITORY_BODY';
     const NOT_FOR_PROFIT_COMMUNITY_GROUP = 'NOT_FOR_PROFIT_COMMUNITY_GROUP';
+    const FOREIGN_EMBASSY_OR_CONSULATE = 'FOREIGN_EMBASSY_OR_CONSULATE';
     
     /**
      * Gets allowable values of the enum
@@ -119,6 +120,7 @@ class AuEligibilityTypeConstants
             self::PUBLIC_PRIVATE_ANCILLARY_FUND,
             self::PEAK_STATE_TERRITORY_BODY,
             self::NOT_FOR_PROFIT_COMMUNITY_GROUP,
+            self::FOREIGN_EMBASSY_OR_CONSULATE,
         ];
     }
 }

@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -83,7 +83,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcTrademarkCountryOrRegion' => '\Domainrobot\Model\VmcTrademarkCountryOrRegion',
         'scope' => '\Domainrobot\Model\DcvValidationScope',
         'hasMultiValueDN' => 'bool',
-        'validSignature' => 'bool'
+        'validSignature' => 'bool',
+        'includedSans' => 'string[]'
     ];
 
     /**
@@ -118,7 +119,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcTrademarkCountryOrRegion' => null,
         'scope' => null,
         'hasMultiValueDN' => null,
-        'validSignature' => null
+        'validSignature' => null,
+        'includedSans' => null
     ];
 
     /**
@@ -174,7 +176,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcTrademarkCountryOrRegion' => 'vmcTrademarkCountryOrRegion',
         'scope' => 'scope',
         'hasMultiValueDN' => 'hasMultiValueDN',
-        'validSignature' => 'validSignature'
+        'validSignature' => 'validSignature',
+        'includedSans' => 'includedSans'
     ];
 
     /**
@@ -209,7 +212,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcTrademarkCountryOrRegion' => 'setVmcTrademarkCountryOrRegion',
         'scope' => 'setScope',
         'hasMultiValueDN' => 'setHasMultiValueDN',
-        'validSignature' => 'setValidSignature'
+        'validSignature' => 'setValidSignature',
+        'includedSans' => 'setIncludedSans'
     ];
 
     /**
@@ -244,7 +248,8 @@ class CertificateData implements ModelInterface, ArrayAccess
         'vmcTrademarkCountryOrRegion' => 'getVmcTrademarkCountryOrRegion',
         'scope' => 'getScope',
         'hasMultiValueDN' => 'getHasMultiValueDN',
-        'validSignature' => 'getValidSignature'
+        'validSignature' => 'getValidSignature',
+        'includedSans' => 'getIncludedSans'
     ];
 
     /**
@@ -334,6 +339,7 @@ class CertificateData implements ModelInterface, ArrayAccess
         $this->container['scope'] = isset($data['scope']) ? $this->createData($data['scope'], 'scope')  : null;
         $this->container['hasMultiValueDN'] = isset($data['hasMultiValueDN']) ? $this->createData($data['hasMultiValueDN'], 'hasMultiValueDN')  : null;
         $this->container['validSignature'] = isset($data['validSignature']) ? $this->createData($data['validSignature'], 'validSignature')  : null;
+        $this->container['includedSans'] = isset($data['includedSans']) ? $this->createData($data['includedSans'], 'includedSans')  : null;
     }
 
     /**
@@ -1059,6 +1065,30 @@ class CertificateData implements ModelInterface, ArrayAccess
     public function setValidSignature($validSignature)
     {
         $this->container['validSignature'] = $validSignature;
+
+        return $this;
+    }
+
+    /**
+     * Gets includedSans
+     *
+     * @return string[]
+     */
+    public function getIncludedSans()
+    {
+        return $this->container['includedSans'];
+    }
+
+    /**
+     * Sets includedSans
+     *
+     * @param string[] $includedSans Included subject alternativ names for the current order
+     *
+     * @return $this
+     */
+    public function setIncludedSans($includedSans)
+    {
+        $this->container['includedSans'] = $includedSans;
 
         return $this;
     }

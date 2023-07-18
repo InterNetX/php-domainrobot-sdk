@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -72,7 +72,7 @@ class ParkingDomain implements ModelInterface, ArrayAccess
         'externalReference' => 'string',
         'lastSynchronized' => '\DateTime',
         'registrantAccountId' => 'string',
-        'status' => 'string',
+        'status' => '\Domainrobot\Model\ParkingDomainStatus',
         'message' => 'string'
     ];
 
@@ -512,7 +512,7 @@ class ParkingDomain implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency The currency of the sale
+     * @param string $currency The currency of the sale. Currently only EUR, USD, GBP supported.
      *
      * @return $this
      */
@@ -718,7 +718,7 @@ class ParkingDomain implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return string
+     * @return \Domainrobot\Model\ParkingDomainStatus
      */
     public function getStatus()
     {
@@ -728,7 +728,7 @@ class ParkingDomain implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status The status of the domain
+     * @param \Domainrobot\Model\ParkingDomainStatus $status The status of the domain
      *
      * @return $this
      */

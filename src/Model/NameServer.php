@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -287,7 +287,7 @@ class NameServer implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name Host name of the nameserver.
+     * @param string $name Host name of the nameserver written as a Fully-Qualified-Domain-Name (FQDN).
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class NameServer implements ModelInterface, ArrayAccess
     /**
      * Sets ttl
      *
-     * @param int $ttl The time to live.
+     * @param int $ttl Time-to-live value of the nameservers in seconds
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class NameServer implements ModelInterface, ArrayAccess
     /**
      * Sets ipAddresses
      *
-     * @param string[] $ipAddresses The ip addresses.
+     * @param string[] $ipAddresses IPv4 and IPv6 addresses of the name server. For GLUE records only;  optional. The values for the IP addresses are only relevant for domain operations and are only used there in the case of glue name servers.
      *
      * @return $this
      */

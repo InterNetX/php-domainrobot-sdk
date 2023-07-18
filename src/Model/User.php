@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -68,6 +68,8 @@ class User implements ModelInterface, ArrayAccess
         'details' => '\Domainrobot\Model\UserDetails',
         'lock' => '\Domainrobot\Model\UserLock',
         'oldPassword' => 'string',
+        'passwordChanged' => '\DateTime',
+        'passwordExpired' => 'bool',
         'acls' => '\Domainrobot\Model\UserAcls',
         'profiles' => '\Domainrobot\Model\UserProfileViews',
         'serviceProfiles' => '\Domainrobot\Model\ServiceProfiles',
@@ -104,6 +106,8 @@ class User implements ModelInterface, ArrayAccess
         'details' => null,
         'lock' => null,
         'oldPassword' => null,
+        'passwordChanged' => 'date-time',
+        'passwordExpired' => null,
         'acls' => null,
         'profiles' => null,
         'serviceProfiles' => null,
@@ -161,6 +165,8 @@ class User implements ModelInterface, ArrayAccess
         'details' => 'details',
         'lock' => 'lock',
         'oldPassword' => 'oldPassword',
+        'passwordChanged' => 'passwordChanged',
+        'passwordExpired' => 'passwordExpired',
         'acls' => 'acls',
         'profiles' => 'profiles',
         'serviceProfiles' => 'serviceProfiles',
@@ -197,6 +203,8 @@ class User implements ModelInterface, ArrayAccess
         'details' => 'setDetails',
         'lock' => 'setLock',
         'oldPassword' => 'setOldPassword',
+        'passwordChanged' => 'setPasswordChanged',
+        'passwordExpired' => 'setPasswordExpired',
         'acls' => 'setAcls',
         'profiles' => 'setProfiles',
         'serviceProfiles' => 'setServiceProfiles',
@@ -233,6 +241,8 @@ class User implements ModelInterface, ArrayAccess
         'details' => 'getDetails',
         'lock' => 'getLock',
         'oldPassword' => 'getOldPassword',
+        'passwordChanged' => 'getPasswordChanged',
+        'passwordExpired' => 'getPasswordExpired',
         'acls' => 'getAcls',
         'profiles' => 'getProfiles',
         'serviceProfiles' => 'getServiceProfiles',
@@ -323,6 +333,8 @@ class User implements ModelInterface, ArrayAccess
         $this->container['details'] = isset($data['details']) ? $this->createData($data['details'], 'details')  : null;
         $this->container['lock'] = isset($data['lock']) ? $this->createData($data['lock'], 'lock')  : null;
         $this->container['oldPassword'] = isset($data['oldPassword']) ? $this->createData($data['oldPassword'], 'oldPassword')  : null;
+        $this->container['passwordChanged'] = isset($data['passwordChanged']) ? $this->createData($data['passwordChanged'], 'passwordChanged')  : null;
+        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
         $this->container['acls'] = isset($data['acls']) ? $this->createData($data['acls'], 'acls')  : null;
         $this->container['profiles'] = isset($data['profiles']) ? $this->createData($data['profiles'], 'profiles')  : null;
         $this->container['serviceProfiles'] = isset($data['serviceProfiles']) ? $this->createData($data['serviceProfiles'], 'serviceProfiles')  : null;
@@ -691,6 +703,54 @@ class User implements ModelInterface, ArrayAccess
     public function setOldPassword($oldPassword)
     {
         $this->container['oldPassword'] = $oldPassword;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordChanged
+     *
+     * @return \DateTime
+     */
+    public function getPasswordChanged()
+    {
+        return $this->container['passwordChanged'];
+    }
+
+    /**
+     * Sets passwordChanged
+     *
+     * @param \DateTime $passwordChanged The date on which the password has changed
+     *
+     * @return $this
+     */
+    public function setPasswordChanged($passwordChanged)
+    {
+        $this->container['passwordChanged'] = $passwordChanged;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordExpired
+     *
+     * @return bool
+     */
+    public function getPasswordExpired()
+    {
+        return $this->container['passwordExpired'];
+    }
+
+    /**
+     * Sets passwordExpired
+     *
+     * @param bool $passwordExpired The passwordExpired boolean
+     *
+     * @return $this
+     */
+    public function setPasswordExpired($passwordExpired)
+    {
+        $this->container['passwordExpired'] = $passwordExpired;
 
         return $this;
     }

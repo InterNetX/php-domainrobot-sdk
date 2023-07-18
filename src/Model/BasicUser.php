@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -58,6 +58,8 @@ class BasicUser implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'context' => 'int',
+        'passwordChanged' => '\DateTime',
+        'passwordExpired' => 'bool',
         'user' => 'string'
     ];
 
@@ -68,6 +70,8 @@ class BasicUser implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'context' => 'int32',
+        'passwordChanged' => 'date-time',
+        'passwordExpired' => null,
         'user' => null
     ];
 
@@ -99,6 +103,8 @@ class BasicUser implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'context' => 'context',
+        'passwordChanged' => 'passwordChanged',
+        'passwordExpired' => 'passwordExpired',
         'user' => 'user'
     ];
 
@@ -109,6 +115,8 @@ class BasicUser implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'context' => 'setContext',
+        'passwordChanged' => 'setPasswordChanged',
+        'passwordExpired' => 'setPasswordExpired',
         'user' => 'setUser'
     ];
 
@@ -119,6 +127,8 @@ class BasicUser implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'context' => 'getContext',
+        'passwordChanged' => 'getPasswordChanged',
+        'passwordExpired' => 'getPasswordExpired',
         'user' => 'getUser'
     ];
 
@@ -183,6 +193,8 @@ class BasicUser implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['context'] = isset($data['context']) ? $this->createData($data['context'], 'context')  : null;
+        $this->container['passwordChanged'] = isset($data['passwordChanged']) ? $this->createData($data['passwordChanged'], 'passwordChanged')  : null;
+        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
     }
 
@@ -295,6 +307,54 @@ class BasicUser implements ModelInterface, ArrayAccess
     public function setContext($context)
     {
         $this->container['context'] = $context;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordChanged
+     *
+     * @return \DateTime
+     */
+    public function getPasswordChanged()
+    {
+        return $this->container['passwordChanged'];
+    }
+
+    /**
+     * Sets passwordChanged
+     *
+     * @param \DateTime $passwordChanged The date on which the password has changed
+     *
+     * @return $this
+     */
+    public function setPasswordChanged($passwordChanged)
+    {
+        $this->container['passwordChanged'] = $passwordChanged;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordExpired
+     *
+     * @return bool
+     */
+    public function getPasswordExpired()
+    {
+        return $this->container['passwordExpired'];
+    }
+
+    /**
+     * Sets passwordExpired
+     *
+     * @param bool $passwordExpired The passwordExpired boolean
+     *
+     * @return $this
+     */
+    public function setPasswordExpired($passwordExpired)
+    {
+        $this->container['passwordExpired'] = $passwordExpired;
 
         return $this;
     }

@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -65,6 +65,7 @@ class ParkingAccount implements ModelInterface, ArrayAccess
         'login' => 'string',
         'apiKey' => 'string',
         'status' => '\Domainrobot\Model\ParkingAccountStatus',
+        'master' => 'bool',
         'lastSynchronized' => '\DateTime'
     ];
 
@@ -82,6 +83,7 @@ class ParkingAccount implements ModelInterface, ArrayAccess
         'login' => null,
         'apiKey' => null,
         'status' => null,
+        'master' => null,
         'lastSynchronized' => 'date-time'
     ];
 
@@ -120,6 +122,7 @@ class ParkingAccount implements ModelInterface, ArrayAccess
         'login' => 'login',
         'apiKey' => 'apiKey',
         'status' => 'status',
+        'master' => 'master',
         'lastSynchronized' => 'lastSynchronized'
     ];
 
@@ -137,6 +140,7 @@ class ParkingAccount implements ModelInterface, ArrayAccess
         'login' => 'setLogin',
         'apiKey' => 'setApiKey',
         'status' => 'setStatus',
+        'master' => 'setMaster',
         'lastSynchronized' => 'setLastSynchronized'
     ];
 
@@ -154,6 +158,7 @@ class ParkingAccount implements ModelInterface, ArrayAccess
         'login' => 'getLogin',
         'apiKey' => 'getApiKey',
         'status' => 'getStatus',
+        'master' => 'getMaster',
         'lastSynchronized' => 'getLastSynchronized'
     ];
 
@@ -225,6 +230,7 @@ class ParkingAccount implements ModelInterface, ArrayAccess
         $this->container['login'] = isset($data['login']) ? $this->createData($data['login'], 'login')  : null;
         $this->container['apiKey'] = isset($data['apiKey']) ? $this->createData($data['apiKey'], 'apiKey')  : null;
         $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
+        $this->container['master'] = isset($data['master']) ? $this->createData($data['master'], 'master')  : null;
         $this->container['lastSynchronized'] = isset($data['lastSynchronized']) ? $this->createData($data['lastSynchronized'], 'lastSynchronized')  : null;
     }
 
@@ -495,6 +501,30 @@ class ParkingAccount implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets master
+     *
+     * @return bool
+     */
+    public function getMaster()
+    {
+        return $this->container['master'];
+    }
+
+    /**
+     * Sets master
+     *
+     * @param bool $master Defines whether the account is the master account or not
+     *
+     * @return $this
+     */
+    public function setMaster($master)
+    {
+        $this->container['master'] = $master;
 
         return $this;
     }

@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -75,8 +75,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'serialNumber' => 'string',
         'product' => 'string',
         'codeSigningType' => '\Domainrobot\Model\CodeSigningType',
-        'codeSigningProvisioningMethod' => '\Domainrobot\Model\CodeSigningProvisioningMethod',
-        'codeSigningHardwarePlatform' => '\Domainrobot\Model\CodeSigningHardwarePlatform',
+        'codeSigningProvisioningMethod' => '\Domainrobot\Model\DigiCertCodeSigningProvisioningMethod',
+        'codeSigningHardwarePlatform' => '\Domainrobot\Model\DigiCertCodeSigningHardwarePlatform',
+        'globalSignPickupMethod' => '\Domainrobot\Model\GlobalSignPickupMethod',
         'hardwareInitToken' => 'string',
         'certificateType' => '\Domainrobot\Model\CertificateType',
         'signatureHashAlgorithm' => '\Domainrobot\Model\SignatureHashAlgorithmConstants',
@@ -103,7 +104,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'reissueStatus' => 'string',
         'vmcLogo' => 'string',
         'vmcTrademarkRegistrationNumber' => 'string',
-        'vmcTrademarkCountryOrRegion' => '\Domainrobot\Model\VmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => '\Domainrobot\Model\VmcTrademarkCountryOrRegion',
+        'keyAttestation' => 'string',
+        'hsmType' => '\Domainrobot\Model\SectigoHsmType'
     ];
 
     /**
@@ -132,6 +135,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => null,
         'codeSigningProvisioningMethod' => null,
         'codeSigningHardwarePlatform' => null,
+        'globalSignPickupMethod' => null,
         'hardwareInitToken' => null,
         'certificateType' => null,
         'signatureHashAlgorithm' => null,
@@ -158,7 +162,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'reissueStatus' => null,
         'vmcLogo' => null,
         'vmcTrademarkRegistrationNumber' => null,
-        'vmcTrademarkCountryOrRegion' => null
+        'vmcTrademarkCountryOrRegion' => null,
+        'keyAttestation' => null,
+        'hsmType' => null
     ];
 
     /**
@@ -208,6 +214,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => 'codeSigningType',
         'codeSigningProvisioningMethod' => 'codeSigningProvisioningMethod',
         'codeSigningHardwarePlatform' => 'codeSigningHardwarePlatform',
+        'globalSignPickupMethod' => 'globalSignPickupMethod',
         'hardwareInitToken' => 'hardwareInitToken',
         'certificateType' => 'certificateType',
         'signatureHashAlgorithm' => 'signatureHashAlgorithm',
@@ -234,7 +241,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'reissueStatus' => 'reissueStatus',
         'vmcLogo' => 'vmcLogo',
         'vmcTrademarkRegistrationNumber' => 'vmcTrademarkRegistrationNumber',
-        'vmcTrademarkCountryOrRegion' => 'vmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => 'vmcTrademarkCountryOrRegion',
+        'keyAttestation' => 'keyAttestation',
+        'hsmType' => 'hsmType'
     ];
 
     /**
@@ -263,6 +272,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => 'setCodeSigningType',
         'codeSigningProvisioningMethod' => 'setCodeSigningProvisioningMethod',
         'codeSigningHardwarePlatform' => 'setCodeSigningHardwarePlatform',
+        'globalSignPickupMethod' => 'setGlobalSignPickupMethod',
         'hardwareInitToken' => 'setHardwareInitToken',
         'certificateType' => 'setCertificateType',
         'signatureHashAlgorithm' => 'setSignatureHashAlgorithm',
@@ -289,7 +299,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'reissueStatus' => 'setReissueStatus',
         'vmcLogo' => 'setVmcLogo',
         'vmcTrademarkRegistrationNumber' => 'setVmcTrademarkRegistrationNumber',
-        'vmcTrademarkCountryOrRegion' => 'setVmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => 'setVmcTrademarkCountryOrRegion',
+        'keyAttestation' => 'setKeyAttestation',
+        'hsmType' => 'setHsmType'
     ];
 
     /**
@@ -318,6 +330,7 @@ class Certificate implements ModelInterface, ArrayAccess
         'codeSigningType' => 'getCodeSigningType',
         'codeSigningProvisioningMethod' => 'getCodeSigningProvisioningMethod',
         'codeSigningHardwarePlatform' => 'getCodeSigningHardwarePlatform',
+        'globalSignPickupMethod' => 'getGlobalSignPickupMethod',
         'hardwareInitToken' => 'getHardwareInitToken',
         'certificateType' => 'getCertificateType',
         'signatureHashAlgorithm' => 'getSignatureHashAlgorithm',
@@ -344,7 +357,9 @@ class Certificate implements ModelInterface, ArrayAccess
         'reissueStatus' => 'getReissueStatus',
         'vmcLogo' => 'getVmcLogo',
         'vmcTrademarkRegistrationNumber' => 'getVmcTrademarkRegistrationNumber',
-        'vmcTrademarkCountryOrRegion' => 'getVmcTrademarkCountryOrRegion'
+        'vmcTrademarkCountryOrRegion' => 'getVmcTrademarkCountryOrRegion',
+        'keyAttestation' => 'getKeyAttestation',
+        'hsmType' => 'getHsmType'
     ];
 
     /**
@@ -427,6 +442,7 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['codeSigningType'] = isset($data['codeSigningType']) ? $this->createData($data['codeSigningType'], 'codeSigningType')  : null;
         $this->container['codeSigningProvisioningMethod'] = isset($data['codeSigningProvisioningMethod']) ? $this->createData($data['codeSigningProvisioningMethod'], 'codeSigningProvisioningMethod')  : null;
         $this->container['codeSigningHardwarePlatform'] = isset($data['codeSigningHardwarePlatform']) ? $this->createData($data['codeSigningHardwarePlatform'], 'codeSigningHardwarePlatform')  : null;
+        $this->container['globalSignPickupMethod'] = isset($data['globalSignPickupMethod']) ? $this->createData($data['globalSignPickupMethod'], 'globalSignPickupMethod')  : null;
         $this->container['hardwareInitToken'] = isset($data['hardwareInitToken']) ? $this->createData($data['hardwareInitToken'], 'hardwareInitToken')  : null;
         $this->container['certificateType'] = isset($data['certificateType']) ? $this->createData($data['certificateType'], 'certificateType')  : null;
         $this->container['signatureHashAlgorithm'] = isset($data['signatureHashAlgorithm']) ? $this->createData($data['signatureHashAlgorithm'], 'signatureHashAlgorithm')  : null;
@@ -454,6 +470,8 @@ class Certificate implements ModelInterface, ArrayAccess
         $this->container['vmcLogo'] = isset($data['vmcLogo']) ? $this->createData($data['vmcLogo'], 'vmcLogo')  : null;
         $this->container['vmcTrademarkRegistrationNumber'] = isset($data['vmcTrademarkRegistrationNumber']) ? $this->createData($data['vmcTrademarkRegistrationNumber'], 'vmcTrademarkRegistrationNumber')  : null;
         $this->container['vmcTrademarkCountryOrRegion'] = isset($data['vmcTrademarkCountryOrRegion']) ? $this->createData($data['vmcTrademarkCountryOrRegion'], 'vmcTrademarkCountryOrRegion')  : null;
+        $this->container['keyAttestation'] = isset($data['keyAttestation']) ? $this->createData($data['keyAttestation'], 'keyAttestation')  : null;
+        $this->container['hsmType'] = isset($data['hsmType']) ? $this->createData($data['hsmType'], 'hsmType')  : null;
     }
 
     /**
@@ -980,7 +998,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets codeSigningProvisioningMethod
      *
-     * @return \Domainrobot\Model\CodeSigningProvisioningMethod
+     * @return \Domainrobot\Model\DigiCertCodeSigningProvisioningMethod
      */
     public function getCodeSigningProvisioningMethod()
     {
@@ -990,7 +1008,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets codeSigningProvisioningMethod
      *
-     * @param \Domainrobot\Model\CodeSigningProvisioningMethod $codeSigningProvisioningMethod The provisioning method for the code signing token
+     * @param \Domainrobot\Model\DigiCertCodeSigningProvisioningMethod $codeSigningProvisioningMethod The provisioning method for the code signing token. Only for DigiCert products!
      *
      * @return $this
      */
@@ -1004,7 +1022,7 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Gets codeSigningHardwarePlatform
      *
-     * @return \Domainrobot\Model\CodeSigningHardwarePlatform
+     * @return \Domainrobot\Model\DigiCertCodeSigningHardwarePlatform
      */
     public function getCodeSigningHardwarePlatform()
     {
@@ -1014,13 +1032,37 @@ class Certificate implements ModelInterface, ArrayAccess
     /**
      * Sets codeSigningHardwarePlatform
      *
-     * @param \Domainrobot\Model\CodeSigningHardwarePlatform $codeSigningHardwarePlatform The hardware platform for the code signing token.
+     * @param \Domainrobot\Model\DigiCertCodeSigningHardwarePlatform $codeSigningHardwarePlatform The hardware platform for the code signing token for DigiCert codesigning products.
      *
      * @return $this
      */
     public function setCodeSigningHardwarePlatform($codeSigningHardwarePlatform)
     {
         $this->container['codeSigningHardwarePlatform'] = $codeSigningHardwarePlatform;
+
+        return $this;
+    }
+
+    /**
+     * Gets globalSignPickupMethod
+     *
+     * @return \Domainrobot\Model\GlobalSignPickupMethod
+     */
+    public function getGlobalSignPickupMethod()
+    {
+        return $this->container['globalSignPickupMethod'];
+    }
+
+    /**
+     * Sets globalSignPickupMethod
+     *
+     * @param \Domainrobot\Model\GlobalSignPickupMethod $globalSignPickupMethod The pickup method for globalsign products.
+     *
+     * @return $this
+     */
+    public function setGlobalSignPickupMethod($globalSignPickupMethod)
+    {
+        $this->container['globalSignPickupMethod'] = $globalSignPickupMethod;
 
         return $this;
     }
@@ -1674,6 +1716,54 @@ class Certificate implements ModelInterface, ArrayAccess
     public function setVmcTrademarkCountryOrRegion($vmcTrademarkCountryOrRegion)
     {
         $this->container['vmcTrademarkCountryOrRegion'] = $vmcTrademarkCountryOrRegion;
+
+        return $this;
+    }
+
+    /**
+     * Gets keyAttestation
+     *
+     * @return string
+     */
+    public function getKeyAttestation()
+    {
+        return $this->container['keyAttestation'];
+    }
+
+    /**
+     * Sets keyAttestation
+     *
+     * @param string $keyAttestation Base64 encoded Proof that the keypair has been generated. Only for Sectigo Codesigning products!
+     *
+     * @return $this
+     */
+    public function setKeyAttestation($keyAttestation)
+    {
+        $this->container['keyAttestation'] = $keyAttestation;
+
+        return $this;
+    }
+
+    /**
+     * Gets hsmType
+     *
+     * @return \Domainrobot\Model\SectigoHsmType
+     */
+    public function getHsmType()
+    {
+        return $this->container['hsmType'];
+    }
+
+    /**
+     * Sets hsmType
+     *
+     * @param \Domainrobot\Model\SectigoHsmType $hsmType Hardware type used to generate the keypair in a non-exportable format, CSR and key attestation. Only for Sectigo Codesigning products!
+     *
+     * @return $this
+     */
+    public function setHsmType($hsmType)
+    {
+        $this->container['hsmType'] = $hsmType;
 
         return $this;
     }

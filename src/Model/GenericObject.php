@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -278,7 +278,7 @@ class GenericObject implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type The type of the object.
+     * @param string $type Object type.  Possible values:  domain handle zone domainzone (domain and zone) domain_prereg (preregistration) server_redirect (redirect) backup_mx tmch_mark
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class GenericObject implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value The value of the object.
+     * @param string $value The value contained in the object.
      *
      * @return $this
      */

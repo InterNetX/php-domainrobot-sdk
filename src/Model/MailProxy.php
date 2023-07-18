@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -66,7 +66,7 @@ class MailProxy implements ModelInterface, ArrayAccess
         'target' => 'string',
         'admin' => 'string',
         'protection' => '\Domainrobot\Model\ProtectionConstants',
-        'greylisting' => 'bool',
+        'greylisting' => 'string',
         'virus' => 'string',
         'bannedFiles' => 'string',
         'header' => 'string',
@@ -238,6 +238,8 @@ class MailProxy implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const GREYLISTING_ENABLED = 'ENABLED';
+    const GREYLISTING_DISABLED = 'DISABLED';
     const VIRUS_DISABLED = 'DISABLED';
     const VIRUS_QUARANTINE = 'QUARANTINE';
     const VIRUS_DISCARD = 'DISCARD';
@@ -252,6 +254,19 @@ class MailProxy implements ModelInterface, ArrayAccess
     const HEADER_ACCEPT = 'ACCEPT';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getGreylistingAllowableValues()
+    {
+        return [
+            self::GREYLISTING_ENABLED,
+            self::GREYLISTING_DISABLED,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -403,6 +418,14 @@ class MailProxy implements ModelInterface, ArrayAccess
         if ($this->container['target'] === null) {
             $invalidProperties[] = "'target' can't be null";
         }
+        $allowedValues = $this->getGreylistingAllowableValues();
+        if (!is_null($this->container['greylisting']) && !in_array($this->container['greylisting'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'greylisting', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getVirusAllowableValues();
         if (!is_null($this->container['virus']) && !in_array($this->container['virus'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -661,7 +684,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets greylisting
      *
-     * @return bool
+     * @return string
      */
     public function getGreylisting()
     {
@@ -671,12 +694,21 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets greylisting
      *
-     * @param bool $greylisting The grey listing policy
+     * @param string $greylisting The grey listing policy
      *
      * @return $this
      */
     public function setGreylisting($greylisting)
     {
+        $allowedValues = $this->getGreylistingAllowableValues();
+        if (!is_null($greylisting) && !in_array($greylisting, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'greylisting', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['greylisting'] = $greylisting;
 
         return $this;

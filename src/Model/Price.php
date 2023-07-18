@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -78,7 +78,9 @@ class Price implements ModelInterface, ArrayAccess
         'from' => '\DateTime',
         'until' => '\DateTime',
         'normalPrice' => '\Domainrobot\Model\ExchangedPrice',
+        'newPrice' => '\Domainrobot\Model\ExchangedPrice',
         'valid' => '\DateTime',
+        'priceChange' => '\Domainrobot\Model\PriceChange',
         'product' => '\Domainrobot\Model\Product'
     ];
 
@@ -109,7 +111,9 @@ class Price implements ModelInterface, ArrayAccess
         'from' => 'date-time',
         'until' => 'date-time',
         'normalPrice' => null,
+        'newPrice' => null,
         'valid' => 'date-time',
+        'priceChange' => null,
         'product' => null
     ];
 
@@ -161,7 +165,9 @@ class Price implements ModelInterface, ArrayAccess
         'from' => 'from',
         'until' => 'until',
         'normalPrice' => 'normalPrice',
+        'newPrice' => 'newPrice',
         'valid' => 'valid',
+        'priceChange' => 'priceChange',
         'product' => 'product'
     ];
 
@@ -192,7 +198,9 @@ class Price implements ModelInterface, ArrayAccess
         'from' => 'setFrom',
         'until' => 'setUntil',
         'normalPrice' => 'setNormalPrice',
+        'newPrice' => 'setNewPrice',
         'valid' => 'setValid',
+        'priceChange' => 'setPriceChange',
         'product' => 'setProduct'
     ];
 
@@ -223,7 +231,9 @@ class Price implements ModelInterface, ArrayAccess
         'from' => 'getFrom',
         'until' => 'getUntil',
         'normalPrice' => 'getNormalPrice',
+        'newPrice' => 'getNewPrice',
         'valid' => 'getValid',
+        'priceChange' => 'getPriceChange',
         'product' => 'getProduct'
     ];
 
@@ -308,7 +318,9 @@ class Price implements ModelInterface, ArrayAccess
         $this->container['from'] = isset($data['from']) ? $this->createData($data['from'], 'from')  : null;
         $this->container['until'] = isset($data['until']) ? $this->createData($data['until'], 'until')  : null;
         $this->container['normalPrice'] = isset($data['normalPrice']) ? $this->createData($data['normalPrice'], 'normalPrice')  : null;
+        $this->container['newPrice'] = isset($data['newPrice']) ? $this->createData($data['newPrice'], 'newPrice')  : null;
         $this->container['valid'] = isset($data['valid']) ? $this->createData($data['valid'], 'valid')  : null;
+        $this->container['priceChange'] = isset($data['priceChange']) ? $this->createData($data['priceChange'], 'priceChange')  : null;
         $this->container['product'] = isset($data['product']) ? $this->createData($data['product'], 'product')  : null;
     }
 
@@ -905,6 +917,30 @@ class Price implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets newPrice
+     *
+     * @return \Domainrobot\Model\ExchangedPrice
+     */
+    public function getNewPrice()
+    {
+        return $this->container['newPrice'];
+    }
+
+    /**
+     * Sets newPrice
+     *
+     * @param \Domainrobot\Model\ExchangedPrice $newPrice new price
+     *
+     * @return $this
+     */
+    public function setNewPrice($newPrice)
+    {
+        $this->container['newPrice'] = $newPrice;
+
+        return $this;
+    }
+
+    /**
      * Gets valid
      *
      * @return \DateTime
@@ -924,6 +960,30 @@ class Price implements ModelInterface, ArrayAccess
     public function setValid($valid)
     {
         $this->container['valid'] = $valid;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceChange
+     *
+     * @return \Domainrobot\Model\PriceChange
+     */
+    public function getPriceChange()
+    {
+        return $this->container['priceChange'];
+    }
+
+    /**
+     * Sets priceChange
+     *
+     * @param \Domainrobot\Model\PriceChange $priceChange The price change
+     *
+     * @return $this
+     */
+    public function setPriceChange($priceChange)
+    {
+        $this->container['priceChange'] = $priceChange;
 
         return $this;
     }

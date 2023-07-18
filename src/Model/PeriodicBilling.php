@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -71,7 +71,9 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleLabel' => 'string',
         'item' => '\Domainrobot\Model\PeriodicBilling[]',
         'expire' => '\DateTime',
+        'cancelationTerm' => '\Domainrobot\Model\TimePeriod',
         'cancelation' => '\DateTime',
+        'canceled' => '\DateTime',
         'businessCase' => 'string',
         'extensions' => '\Domainrobot\Model\BillingEventExtensions'
     ];
@@ -96,7 +98,9 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleLabel' => null,
         'item' => null,
         'expire' => 'date-time',
+        'cancelationTerm' => null,
         'cancelation' => 'date-time',
+        'canceled' => 'date-time',
         'businessCase' => null,
         'extensions' => null
     ];
@@ -142,7 +146,9 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleLabel' => 'articleLabel',
         'item' => 'item',
         'expire' => 'expire',
+        'cancelationTerm' => 'cancelationTerm',
         'cancelation' => 'cancelation',
+        'canceled' => 'canceled',
         'businessCase' => 'businessCase',
         'extensions' => 'extensions'
     ];
@@ -167,7 +173,9 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleLabel' => 'setArticleLabel',
         'item' => 'setItem',
         'expire' => 'setExpire',
+        'cancelationTerm' => 'setCancelationTerm',
         'cancelation' => 'setCancelation',
+        'canceled' => 'setCanceled',
         'businessCase' => 'setBusinessCase',
         'extensions' => 'setExtensions'
     ];
@@ -192,7 +200,9 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         'articleLabel' => 'getArticleLabel',
         'item' => 'getItem',
         'expire' => 'getExpire',
+        'cancelationTerm' => 'getCancelationTerm',
         'cancelation' => 'getCancelation',
+        'canceled' => 'getCanceled',
         'businessCase' => 'getBusinessCase',
         'extensions' => 'getExtensions'
     ];
@@ -271,7 +281,9 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         $this->container['articleLabel'] = isset($data['articleLabel']) ? $this->createData($data['articleLabel'], 'articleLabel')  : null;
         $this->container['item'] = isset($data['item']) ? $this->createData($data['item'], 'item')  : null;
         $this->container['expire'] = isset($data['expire']) ? $this->createData($data['expire'], 'expire')  : null;
+        $this->container['cancelationTerm'] = isset($data['cancelationTerm']) ? $this->createData($data['cancelationTerm'], 'cancelationTerm')  : null;
         $this->container['cancelation'] = isset($data['cancelation']) ? $this->createData($data['cancelation'], 'cancelation')  : null;
+        $this->container['canceled'] = isset($data['canceled']) ? $this->createData($data['canceled'], 'canceled')  : null;
         $this->container['businessCase'] = isset($data['businessCase']) ? $this->createData($data['businessCase'], 'businessCase')  : null;
         $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
     }
@@ -695,6 +707,30 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets cancelationTerm
+     *
+     * @return \Domainrobot\Model\TimePeriod
+     */
+    public function getCancelationTerm()
+    {
+        return $this->container['cancelationTerm'];
+    }
+
+    /**
+     * Sets cancelationTerm
+     *
+     * @param \Domainrobot\Model\TimePeriod $cancelationTerm cancelationTerm of the subscription..
+     *
+     * @return $this
+     */
+    public function setCancelationTerm($cancelationTerm)
+    {
+        $this->container['cancelationTerm'] = $cancelationTerm;
+
+        return $this;
+    }
+
+    /**
      * Gets cancelation
      *
      * @return \DateTime
@@ -714,6 +750,30 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     public function setCancelation($cancelation)
     {
         $this->container['cancelation'] = $cancelation;
+
+        return $this;
+    }
+
+    /**
+     * Gets canceled
+     *
+     * @return \DateTime
+     */
+    public function getCanceled()
+    {
+        return $this->container['canceled'];
+    }
+
+    /**
+     * Sets canceled
+     *
+     * @param \DateTime $canceled The canceled date.
+     *
+     * @return $this
+     */
+    public function setCanceled($canceled)
+    {
+        $this->container['canceled'] = $canceled;
 
         return $this;
     }

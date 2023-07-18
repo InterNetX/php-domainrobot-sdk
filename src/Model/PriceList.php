@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -71,7 +71,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'inactive' => 'bool',
         'comment' => 'string',
         'customerPriceListsAdd' => '\Domainrobot\Model\CustomerPriceList[]',
-        'customerPriceListsRem' => '\Domainrobot\Model\CustomerPriceList[]'
+        'customerPriceListsRem' => '\Domainrobot\Model\CustomerPriceList[]',
+        'hasCustomerPriceList' => 'bool'
     ];
 
     /**
@@ -94,7 +95,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'inactive' => null,
         'comment' => null,
         'customerPriceListsAdd' => null,
-        'customerPriceListsRem' => null
+        'customerPriceListsRem' => null,
+        'hasCustomerPriceList' => null
     ];
 
     /**
@@ -138,7 +140,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'inactive' => 'inactive',
         'comment' => 'comment',
         'customerPriceListsAdd' => 'customerPriceListsAdd',
-        'customerPriceListsRem' => 'customerPriceListsRem'
+        'customerPriceListsRem' => 'customerPriceListsRem',
+        'hasCustomerPriceList' => 'hasCustomerPriceList'
     ];
 
     /**
@@ -161,7 +164,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'inactive' => 'setInactive',
         'comment' => 'setComment',
         'customerPriceListsAdd' => 'setCustomerPriceListsAdd',
-        'customerPriceListsRem' => 'setCustomerPriceListsRem'
+        'customerPriceListsRem' => 'setCustomerPriceListsRem',
+        'hasCustomerPriceList' => 'setHasCustomerPriceList'
     ];
 
     /**
@@ -184,7 +188,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'inactive' => 'getInactive',
         'comment' => 'getComment',
         'customerPriceListsAdd' => 'getCustomerPriceListsAdd',
-        'customerPriceListsRem' => 'getCustomerPriceListsRem'
+        'customerPriceListsRem' => 'getCustomerPriceListsRem',
+        'hasCustomerPriceList' => 'getHasCustomerPriceList'
     ];
 
     /**
@@ -262,6 +267,7 @@ class PriceList implements ModelInterface, ArrayAccess
         $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
         $this->container['customerPriceListsAdd'] = isset($data['customerPriceListsAdd']) ? $this->createData($data['customerPriceListsAdd'], 'customerPriceListsAdd')  : null;
         $this->container['customerPriceListsRem'] = isset($data['customerPriceListsRem']) ? $this->createData($data['customerPriceListsRem'], 'customerPriceListsRem')  : null;
+        $this->container['hasCustomerPriceList'] = isset($data['hasCustomerPriceList']) ? $this->createData($data['hasCustomerPriceList'], 'hasCustomerPriceList')  : null;
     }
 
     /**
@@ -699,6 +705,30 @@ class PriceList implements ModelInterface, ArrayAccess
     public function setCustomerPriceListsRem($customerPriceListsRem)
     {
         $this->container['customerPriceListsRem'] = $customerPriceListsRem;
+
+        return $this;
+    }
+
+    /**
+     * Gets hasCustomerPriceList
+     *
+     * @return bool
+     */
+    public function getHasCustomerPriceList()
+    {
+        return $this->container['hasCustomerPriceList'];
+    }
+
+    /**
+     * Sets hasCustomerPriceList
+     *
+     * @param bool $hasCustomerPriceList Flag indication if the priceList is inactive
+     *
+     * @return $this
+     */
+    public function setHasCustomerPriceList($hasCustomerPriceList)
+    {
+        $this->container['hasCustomerPriceList'] = $hasCustomerPriceList;
 
         return $this;
     }

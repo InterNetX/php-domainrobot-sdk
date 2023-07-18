@@ -13,7 +13,7 @@
 /**
  * Domainrobot JSON API
  *
- * Domainrobot JSON API for managing: Domains, SSL            Certificates, DNS and            much more.
+ * Domainrobot JSON API for managing: Domains, SSL                                             Certificates, DNS and                                             much more.
  *
  * OpenAPI spec version: v1
  * 
@@ -60,7 +60,9 @@ class DomainStudioClassifyRequest implements ModelInterface, ArrayAccess
         'searchToken' => 'string',
         'useTldSuggestions' => 'bool',
         'useTldScoring' => 'bool',
-        'tldSuggestionSize' => 'int'
+        'tldSuggestionSize' => 'int',
+        'language' => 'string',
+        'taxonomy' => 'string'
     ];
 
     /**
@@ -72,7 +74,9 @@ class DomainStudioClassifyRequest implements ModelInterface, ArrayAccess
         'searchToken' => null,
         'useTldSuggestions' => null,
         'useTldScoring' => null,
-        'tldSuggestionSize' => 'int32'
+        'tldSuggestionSize' => 'int32',
+        'language' => null,
+        'taxonomy' => null
     ];
 
     /**
@@ -105,7 +109,9 @@ class DomainStudioClassifyRequest implements ModelInterface, ArrayAccess
         'searchToken' => 'searchToken',
         'useTldSuggestions' => 'useTldSuggestions',
         'useTldScoring' => 'useTldScoring',
-        'tldSuggestionSize' => 'tldSuggestionSize'
+        'tldSuggestionSize' => 'tldSuggestionSize',
+        'language' => 'language',
+        'taxonomy' => 'taxonomy'
     ];
 
     /**
@@ -117,7 +123,9 @@ class DomainStudioClassifyRequest implements ModelInterface, ArrayAccess
         'searchToken' => 'setSearchToken',
         'useTldSuggestions' => 'setUseTldSuggestions',
         'useTldScoring' => 'setUseTldScoring',
-        'tldSuggestionSize' => 'setTldSuggestionSize'
+        'tldSuggestionSize' => 'setTldSuggestionSize',
+        'language' => 'setLanguage',
+        'taxonomy' => 'setTaxonomy'
     ];
 
     /**
@@ -129,7 +137,9 @@ class DomainStudioClassifyRequest implements ModelInterface, ArrayAccess
         'searchToken' => 'getSearchToken',
         'useTldSuggestions' => 'getUseTldSuggestions',
         'useTldScoring' => 'getUseTldScoring',
-        'tldSuggestionSize' => 'getTldSuggestionSize'
+        'tldSuggestionSize' => 'getTldSuggestionSize',
+        'language' => 'getLanguage',
+        'taxonomy' => 'getTaxonomy'
     ];
 
     /**
@@ -196,6 +206,8 @@ class DomainStudioClassifyRequest implements ModelInterface, ArrayAccess
         $this->container['useTldSuggestions'] = isset($data['useTldSuggestions']) ? $this->createData($data['useTldSuggestions'], 'useTldSuggestions')  : null;
         $this->container['useTldScoring'] = isset($data['useTldScoring']) ? $this->createData($data['useTldScoring'], 'useTldScoring')  : null;
         $this->container['tldSuggestionSize'] = isset($data['tldSuggestionSize']) ? $this->createData($data['tldSuggestionSize'], 'tldSuggestionSize')  : null;
+        $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
+        $this->container['taxonomy'] = isset($data['taxonomy']) ? $this->createData($data['taxonomy'], 'taxonomy')  : null;
     }
 
     /**
@@ -369,6 +381,54 @@ class DomainStudioClassifyRequest implements ModelInterface, ArrayAccess
     public function setTldSuggestionSize($tldSuggestionSize)
     {
         $this->container['tldSuggestionSize'] = $tldSuggestionSize;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string $language The language to be used. Allowed values : en, de, es, fr, it
+     *
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxonomy
+     *
+     * @return string
+     */
+    public function getTaxonomy()
+    {
+        return $this->container['taxonomy'];
+    }
+
+    /**
+     * Sets taxonomy
+     *
+     * @param string $taxonomy The taxonomy to be used for categorising. Allowed values : dit, internetx
+     *
+     * @return $this
+     */
+    public function setTaxonomy($taxonomy)
+    {
+        $this->container['taxonomy'] = $taxonomy;
 
         return $this;
     }

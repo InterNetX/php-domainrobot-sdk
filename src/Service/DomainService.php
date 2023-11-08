@@ -6,8 +6,11 @@ use Domainrobot\Domainrobot;
 use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
+use Domainrobot\Model\AutoDeleteDomain;
 use Domainrobot\Model\Domain;
+use Domainrobot\Model\Job;
 use Domainrobot\Model\DomainRestore;
+use Domainrobot\Model\DomainCancelation;
 use Domainrobot\Model\ObjectJob;
 use Domainrobot\Model\Query;
 use Domainrobot\Service\DomainrobotService;
@@ -834,12 +837,14 @@ class DomainService extends DomainrobotService
      * Update the registry status for an existing domain.
      *
      * @param Domain $body
-     * @return void
+     * @return Job
      */
     public function updateStatus(Domain $body)
     {
         $domainrobotPromise = $this->updateStatusAsync($body);
-        $domainrobotPromise->wait();
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        return new Job(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -865,7 +870,7 @@ class DomainService extends DomainrobotService
      * Inquiring the cancelation data for the specified domain.
      *
      * @param string $name
-     * @return JsonResponseDataDomainCancelation
+     * @return DomainCancelation
      */
     public function cancelationInfo($name)
     {
@@ -874,7 +879,7 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        // return new JsonResponseDataDomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -895,7 +900,7 @@ class DomainService extends DomainrobotService
      * Inquiring the cancelation data for the specified domain.
      *
      * @param Domain $body
-     * @return JsonResponseDataDomainCancelation
+     * @return DomainCancelation
      */
     public function cancelationCreate(Domain $body)
     {
@@ -904,7 +909,7 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        // return new JsonResponseDataDomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -930,7 +935,7 @@ class DomainService extends DomainrobotService
      * Updating an existing cancelation for the specified domain.
      *
      * @param Domain $body
-     * @return JsonResponseDataDomainCancelation
+     * @return DomainCancelation
      */
     public function cancelationUpdate(Domain $body)
     {
@@ -939,7 +944,7 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        // return new JsonResponseDataDomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -993,7 +998,7 @@ class DomainService extends DomainrobotService
      * Perform an Whois Request of an Domain
      *
      * @param string $name
-     * @return void
+     * @return Domain
      */
     public function whois($name)
     {
@@ -1001,6 +1006,8 @@ class DomainService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**

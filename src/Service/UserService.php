@@ -8,6 +8,7 @@ use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\BasicUser;
 use Domainrobot\Model\BillingObjectLimit;
+use Domainrobot\Model\BillingTerm;
 use Domainrobot\Model\JsonNoData;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\ServiceProfiles;
@@ -386,7 +387,7 @@ class UserService extends DomainrobotService
     /**
      * Inquiring the Billing Terms for the User
      * 
-     * @return void
+     * @return BillingTerm
      */
     public function billingObjectTermsInfo()
     {
@@ -394,6 +395,8 @@ class UserService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new BillingTerm(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -415,7 +418,7 @@ class UserService extends DomainrobotService
      * @param string $user
      * @param string $context
      * @param array $keys
-     * @return void
+     * @return User
      */
     public function updateLock($user, $context, array $keys = [])
     {
@@ -428,6 +431,8 @@ class UserService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new User(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -452,7 +457,7 @@ class UserService extends DomainrobotService
      * @param string $user
      * @param string $context
      * @param array $keys
-     * @return void
+     * @return User
      */
     public function updateUnlock($user, $context, array $keys = [])
     {
@@ -465,6 +470,8 @@ class UserService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new User(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -488,7 +495,7 @@ class UserService extends DomainrobotService
      *
      * @param string $user
      * @param string $context
-     * @return void
+     * @return User
      */
     public function aclInfo($user, $context)
     {
@@ -496,6 +503,8 @@ class UserService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new User(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -517,7 +526,7 @@ class UserService extends DomainrobotService
      * User ACL Update
      *
      * @param object $body
-     * @return void
+     * @return User
      */
     public function aclUpdate($body)
     {
@@ -525,6 +534,8 @@ class UserService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new User(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -710,7 +721,7 @@ class UserService extends DomainrobotService
      * @param string $user
      * @param string $context
      * @param ServiceProfiles $body
-     * @return DomainrobotPromise
+     * @return ServiceUsersProfile
      */
     public function serviceProfileUpdate($user, $context, ServiceProfiles $body)
     {
@@ -718,6 +729,8 @@ class UserService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ServiceUsersProfile(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**

@@ -180,7 +180,7 @@ class TrustedApplicationService extends DomainrobotService
      * Sends a TrustedApplication update request.
      *
      * @param TrustedApplication $body
-     * @return void
+     * @return TrustedApplication
      */
     public function update(TrustedApplication $body)
     {
@@ -188,6 +188,8 @@ class TrustedApplicationService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new TrustedApplication(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**

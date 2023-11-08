@@ -2,9 +2,11 @@
 
 namespace Domainrobot\Service;
 
+use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Domainrobot;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Model\JsonNoData;
+use Domainrobot\Model\OTPAuth;
 use Domainrobot\Service\DomainrobotService;
 
 class User2faService extends DomainrobotService
@@ -22,7 +24,7 @@ class User2faService extends DomainrobotService
     /**
      * Get Info about the 2FA Configuration
      * 
-     * @return 
+     * @return OTPAuth
      */
     public function tokenConfigInfo()
     {
@@ -30,6 +32,8 @@ class User2faService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+                
+        return new OTPAuth(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -48,7 +52,7 @@ class User2faService extends DomainrobotService
     /**
      * Generate 2FA Secret
      * 
-     * @return 
+     * @return OTPAuth
      */
     public function tokenConfigCreate()
     {
@@ -56,6 +60,8 @@ class User2faService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new OTPAuth(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**
@@ -74,7 +80,7 @@ class User2faService extends DomainrobotService
     /**
      * Activate the 2FA Authentication
      * 
-     * @return 
+     * @return OTPAuth
      */
     public function tokenConfigActivate()
     {
@@ -82,6 +88,8 @@ class User2faService extends DomainrobotService
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new OTPAuth(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
     }
 
     /**

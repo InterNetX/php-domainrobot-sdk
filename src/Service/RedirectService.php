@@ -58,7 +58,7 @@ class RedirectService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/redirect" . $keysString,
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -100,7 +100,7 @@ class RedirectService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray();
+            $data = $body;
         }
 
         $keyString = '';
@@ -177,7 +177,7 @@ class RedirectService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/redirect/" . $body->getSource(),
             'PUT',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 

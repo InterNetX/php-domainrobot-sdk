@@ -82,7 +82,7 @@ class JobService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray();
+            $data = $body;
         }
 
         return new DomainrobotPromise($this->sendRequest(
@@ -152,7 +152,7 @@ class JobService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray();
+            $data = $body;
         }
 
         return new DomainrobotPromise($this->sendRequest(

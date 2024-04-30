@@ -51,7 +51,7 @@ class TrustedApplicationService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/trustedapp",
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -207,7 +207,7 @@ class TrustedApplicationService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/trustedapp/".$body->getUuId(),
             'PUT',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 }

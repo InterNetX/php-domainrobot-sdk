@@ -114,7 +114,7 @@ class RestoreService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray();
+            $data = $body;
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/restore/_search",

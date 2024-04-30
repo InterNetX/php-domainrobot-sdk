@@ -101,7 +101,7 @@ class WhoisService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domainstudio",
             "POST",
-            ["json" => $domainEnvelopeSearchRequest->toArray()]
+            ["json" => $domainEnvelopeSearchRequest]
         );
     }
 }

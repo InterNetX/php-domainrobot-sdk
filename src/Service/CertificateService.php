@@ -9,6 +9,7 @@ use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Certificate;
 use Domainrobot\Model\CertificateData;
 use Domainrobot\Model\ObjectJob;
+use Domainrobot\Model\Job;
 use Domainrobot\Model\Query;
 use Domainrobot\Service\DomainrobotService;
 use Illuminate\Support\Facades\Log;
@@ -59,7 +60,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate",
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -100,7 +101,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/_realtime",
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -145,7 +146,7 @@ class CertificateService extends DomainrobotService
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/_prepareOrder",
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         ));
     }
 
@@ -215,7 +216,7 @@ class CertificateService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray();
+            $data = $body;
         }
         return new DomainrobotPromise($this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/_search",
@@ -328,7 +329,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/".$body->getId(),
             'PUT',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -371,7 +372,7 @@ class CertificateService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/certificate/".$body->getId()."/_renew",
             'PUT',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 

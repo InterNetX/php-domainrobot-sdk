@@ -22,7 +22,7 @@ class CertificateService extends atoum
             
             ->then // start main test
             ->given($certificate = new Certificate($this->loadMockDataAsArray("Certificate/PrepareOrderCertificateModel.json")))
-            
+
             ->then // test created certificate properties
                 ->string($certificate->getName())
                     ->isEqualTo("junkdragons.de")

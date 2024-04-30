@@ -71,7 +71,7 @@ class PcDomainsService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . '/v1/estimate',
             'POST',
-            ['json' => $estimation->toArray()]
+            ['json' => $estimation]
         );
     }
 
@@ -141,7 +141,7 @@ class PcDomainsService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . '/kwe',
             'POST',
-            ['json' => $keywords->toArray()]
+            ['json' => $keywords]
         );
     }
 
@@ -244,7 +244,7 @@ class PcDomainsService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . '/majestic',
             'POST',
-            ['json' => $domains->toArray()]
+            ['json' => $domains]
         );
     }
 
@@ -277,7 +277,7 @@ class PcDomainsService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . '/smu_check',
             'POST',
-            ['json' => $body->toArray()]
+            ['json' => $body]
         );
     }
 

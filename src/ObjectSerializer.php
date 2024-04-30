@@ -73,7 +73,7 @@ class ObjectSerializer
             return $data;
         } elseif (is_object($data)) {
             $values = array();
-            foreach (array_keys($data::swaggerTypes()) as $property) {
+            foreach (array_keys($data::openAPITypes()) as $property) {
                 $getter = $data::getters()[$property];
                 if ($data->$getter() !== null) {
                     $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($data->$getter());
@@ -292,7 +292,7 @@ class ObjectSerializer
                 }
             }
             $instance = new $class();
-            foreach ($instance::swaggerTypes() as $property => $type) {
+            foreach ($instance::openAPITypes() as $property => $type) {
                 $propertySetter = $instance::setters()[$property];
 
                 if (!isset($propertySetter) || !isset($data->{$instance::attributeMap()[$property]})) {

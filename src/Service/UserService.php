@@ -56,7 +56,7 @@ class UserService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/user",
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -119,7 +119,7 @@ class UserService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/user/" . $body->getUser() . "/" . $body->getContext(),
             'PUT',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -199,7 +199,7 @@ class UserService extends DomainrobotService
     {
         $data = null;
         if ($body != null) {
-            $data = $body->toArray();
+            $data = $body;
         }
 
         return new DomainrobotPromise($this->sendRequest(
@@ -549,7 +549,7 @@ class UserService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/user/" . $body->user . "/" . $body->context . "/acl",
             'PUT',
-            ['json' => $body->toArray()]
+            ['json' => $body]
         );
     }
 
@@ -582,7 +582,7 @@ class UserService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/user/" . $user . "/" . $context . "/copy",
             'POST',
-            ['json' => $body->toArray()]
+            ['json' => $body]
         );
     }
 
@@ -663,7 +663,7 @@ class UserService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/user/" . $user . "/" . $context . "/profile",
             'PUT',
-            ['json' => $body->toArray()]
+            ['json' => $body]
         );
     }
 
@@ -746,7 +746,7 @@ class UserService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/user/" . $user . "/" . $context . "/serviceProfile",
             'PUT',
-            ['json' => $body->toArray()]
+            ['json' => $body]
         );
     }
 }

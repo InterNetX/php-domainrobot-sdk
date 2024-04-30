@@ -60,7 +60,7 @@ class DomainBulkService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/bulk/domain",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 
@@ -98,7 +98,7 @@ class DomainBulkService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/bulk/domain",
             "PATCH",
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 }

@@ -46,7 +46,7 @@ class LoginService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/login" . $keysString,
             'POST',
-            ["json" => $body->toArray()]
+            ["json" => $body]
         );
     }
 }

@@ -2,18 +2,20 @@
 
 namespace Domainrobot\Service;
 
-use Domainrobot\Lib\DomainrobotConfig;
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Service\DomainrobotService;
 
 class DocumentService extends DomainrobotService
 {
-    public function info($id)
+    public function info($id, $fileURI)
     {
-        $domainrobotPromise = $this->infoAsync($id);
+        $domainrobotPromise = $this->infoAsync($id, $fileURI);
         $domainrobotResult = $domainrobotPromise->wait();
-        
-        return $domainrobotResult;
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return $domainrobotResult->getStatusCode();
     }
 
     /**
@@ -22,11 +24,12 @@ class DocumentService extends DomainrobotService
      * @param int $id
      * @return DomainrobotPromise
      */
-    public function infoAsync($id)
+    public function infoAsync($id, $fileURI)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/document/$id",
-            'GET'
+            'GET',
+            ['sink' => $fileURI]
         );
     }
 }

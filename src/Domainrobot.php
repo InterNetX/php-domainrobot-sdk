@@ -4,11 +4,12 @@ namespace Domainrobot;
 
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Service\CertificateService;
+use Domainrobot\Service\ContactService;
+use Domainrobot\Service\DocumentService;
 use Domainrobot\Service\DomainStudioService;
 use Domainrobot\Service\DomainService;
 use Domainrobot\Service\DomainBulkService;
 use Domainrobot\Service\SslContactService;
-use Domainrobot\Service\ContactService;
 use Domainrobot\Service\DomainCancelationService;
 use Domainrobot\Service\TransferOutService;
 use Domainrobot\Service\TrustedApplicationService;
@@ -24,6 +25,7 @@ use Domainrobot\Service\WhoisService;
 use Domainrobot\Service\LoginService;
 use Domainrobot\Service\DomainPremiumService;
 use Domainrobot\Service\RedirectService;
+
 class Domainrobot
 {
     // private static $instance = null;
@@ -49,6 +51,13 @@ class Domainrobot
      * @var ContactService
      */
     public $contact;
+
+    /**
+     * Interface for all document related requests
+     *
+     * @var DomainService
+     */
+    public $document;
 
     /**
      * Interface for all domain related requests
@@ -196,6 +205,7 @@ class Domainrobot
         $this->setDomainrobotConfig(new DomainrobotConfig($domainrobotConfig));
         $this->certificate = new CertificateService($this->domainrobotConfig);
         $this->contact = new ContactService($this->domainrobotConfig);
+        $this->document = new DocumentService($this->domainrobotConfig);
         $this->domain = new DomainService($this->domainrobotConfig);
         $this->domainBulk = new DomainBulkService($this->domainrobotConfig);
         $this->domainCancelation = new DomainCancelationService($this->domainrobotConfig);

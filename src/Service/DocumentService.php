@@ -18,12 +18,6 @@ class DocumentService extends DomainrobotService
         return $domainrobotResult->getStatusCode();
     }
 
-    /**
-     * Sends a contact info request.
-     *
-     * @param int $id
-     * @return DomainrobotPromise
-     */
     public function infoAsync($id, $fileURI)
     {
         return $this->sendRequest(

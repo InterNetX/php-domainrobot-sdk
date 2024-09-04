@@ -73,6 +73,7 @@ module.exports = {
 					children: [
 						"api_tasks/certificate",
 						"api_tasks/contact",
+						"api_tasks/document",
 						"api_tasks/domain",
 						"api_tasks/domain_cancelation",
 						"api_tasks/domainstudio",

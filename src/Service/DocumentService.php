@@ -8,9 +8,9 @@ use Domainrobot\Service\DomainrobotService;
 
 class DocumentService extends DomainrobotService
 {
-    public function info($id, $fileURI)
+    public function info($id, $targetFileURI)
     {
-        $domainrobotPromise = $this->infoAsync($id, $fileURI);
+        $domainrobotPromise = $this->infoAsync($id, $targetFileURI);
         $domainrobotResult = $domainrobotPromise->wait();
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
@@ -18,12 +18,12 @@ class DocumentService extends DomainrobotService
         return $domainrobotResult->getStatusCode();
     }
 
-    public function infoAsync($id, $fileURI)
+    public function infoAsync($id, $targetFileURI)
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/document/$id",
             'GET',
-            ['sink' => $fileURI]
+            ['sink' => $targetFileURI]
         );
     }
 }

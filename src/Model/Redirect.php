@@ -59,8 +59,8 @@ class Redirect implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'source' => 'string',
         'target' => 'string',
         'type' => '\Domainrobot\Model\RedirectTypeConstants',
@@ -400,7 +400,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -410,7 +410,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -424,7 +424,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -434,7 +434,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -458,7 +458,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param string $source The domain/email to be redirected. Enter the domain with or without \"www\".
+     * @param string $source Domain that is to be redirected, e.g. test.example.com.
      *
      * @return $this
      */
@@ -482,7 +482,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets target
      *
-     * @param string $target The URL of the target domain/email. Enter the domain without \"http://\"
+     * @param string $target The URL of the target domain. Enter the domain without \"https://\".
      *
      * @return $this
      */
@@ -506,7 +506,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Domainrobot\Model\RedirectTypeConstants $type Redirect type
+     * @param \Domainrobot\Model\RedirectTypeConstants $type The type of redirect.
      *
      * @return $this
      */
@@ -530,7 +530,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets mode
      *
-     * @param \Domainrobot\Model\RedirectModeConstants $mode Redirect mode
+     * @param \Domainrobot\Model\RedirectModeConstants $mode The redirect mode of domain and email forwarding.
      *
      * @return $this
      */
@@ -554,7 +554,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets domain
      *
-     * @param string $domain The domain, which the redirect belongs.
+     * @param string $domain Domain that is to be redirected, e.g. example.com.
      *
      * @return $this
      */
@@ -602,7 +602,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets backups
      *
-     * @param string[] $backups Alternative URLs for frame redirect
+     * @param string[] $backups Backup destinations for the redirects. If the first destination cannot be reached, the domain is automatically redirected to the substitute destination (domain redirection, frame redirect).
      *
      * @return $this
      */
@@ -626,7 +626,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets sourceIdn
      *
-     * @param string $sourceIdn The IDN version of the domain to be redirected. Enter the domain with or without \"www\".
+     * @param string $sourceIdn The IDN version of the domain name. Domains can be entered with or without \"www\".
      *
      * @return $this
      */
@@ -650,7 +650,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets targetIdn
      *
-     * @param string $targetIdn The IDN version of the URL of the target domain. Enter the domain without \"http://\"
+     * @param string $targetIdn The Punycode syntax (IDN) version of the target domain URL. Enter the domain without \"https://\".
      *
      * @return $this
      */
@@ -674,7 +674,7 @@ class Redirect implements ModelInterface, ArrayAccess
     /**
      * Sets lastSeen
      *
-     * @param \DateTime $lastSeen The last dns connection.
+     * @param \DateTime $lastSeen The last DNS connection. Used for analytics, to keep track of when the DNS has been used.
      *
      * @return $this
      */

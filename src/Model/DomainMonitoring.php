@@ -59,8 +59,8 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'name' => 'string',
         'idn' => 'string',
         'notificationMobiles' => '\Domainrobot\Model\Phone[]',
@@ -379,7 +379,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -389,7 +389,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -403,7 +403,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -413,7 +413,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -437,7 +437,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The name of the domain.
+     * @param string $name Domain to be monitored.
      *
      * @return $this
      */
@@ -461,7 +461,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets idn
      *
-     * @param string $idn The idn version of the domain.
+     * @param string $idn The IDN version of the domain written in Punycode syntax to be monitored.
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets notificationMobiles
      *
-     * @param \Domainrobot\Model\Phone[] $notificationMobiles The notification mobile phone numbers.
+     * @param \Domainrobot\Model\Phone[] $notificationMobiles Mobile phone number to which an SMS is sent when the status changes.
      *
      * @return $this
      */
@@ -509,7 +509,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets ocval
      *
-     * @param bool $ocval The ocval
+     * @param bool $ocval Monitoring setting for OwnerC validation. false = OwnerC validation should not be monitored. true = OwnerC validation should be monitored. Default value = false
      *
      * @return $this
      */
@@ -533,7 +533,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets cancelation
      *
-     * @param bool $cancelation The cancelation
+     * @param bool $cancelation Monitoring setting for domain cancelations. false = Domain cancelations should not be monitored. true = Domain cancelations should be monitored. Default value = false
      *
      * @return $this
      */
@@ -557,7 +557,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets removed
      *
-     * @param bool $removed The removed
+     * @param bool $removed Monitoring setting for domain deletions. false = Domain deletions should not be monitored. true = Domain deletions should be monitored. Default value = false
      *
      * @return $this
      */
@@ -581,7 +581,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets monitoringSetups
      *
-     * @param \Domainrobot\Model\DomainMonitoringSetup[] $monitoringSetups The monitoringSetups
+     * @param \Domainrobot\Model\DomainMonitoringSetup[] $monitoringSetups Contains the setup data for domain monitoring.
      *
      * @return $this
      */
@@ -605,7 +605,7 @@ class DomainMonitoring implements ModelInterface, ArrayAccess
     /**
      * Sets notificationEmails
      *
-     * @param string[] $notificationEmails The notification email-addresses.
+     * @param string[] $notificationEmails Email addresses to which an email is sent when the status changes.
      *
      * @return $this
      */

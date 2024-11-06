@@ -419,7 +419,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Name of the TLD and/or SubTLD.
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets phase
      *
-     * @param string $phase phase
+     * @param string $phase Name of the phase
      *
      * @return $this
      */
@@ -467,7 +467,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets confirmationStart
      *
-     * @param \DateTime $confirmationStart confirmationStart
+     * @param \DateTime $confirmationStart Date on which preregistrations for the specified TLD can be confirmed.
      *
      * @return $this
      */
@@ -491,7 +491,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets confirmationEnd
      *
-     * @param \DateTime $confirmationEnd confirmationEnd
+     * @param \DateTime $confirmationEnd Date on which preregistrations for the specified TLD can no longer be confirmed.
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets periodEnd
      *
-     * @param \DateTime $periodEnd periodEnd
+     * @param \DateTime $periodEnd Date on which the preregistration period begins
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets nicMemberLabel
      *
-     * @param string $nicMemberLabel nicMemberLabel
+     * @param string $nicMemberLabel Registrar identifier at the registries.
      *
      * @return $this
      */
@@ -587,7 +587,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets niccomStart
      *
-     * @param \DateTime $niccomStart niccomStart
+     * @param \DateTime $niccomStart Date on which the preregistrations for the specified TLD are processed.
      *
      * @return $this
      */
@@ -611,7 +611,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets niccomEnd
      *
-     * @param \DateTime $niccomEnd niccomEnd
+     * @param \DateTime $niccomEnd Date on which preregistrations for the specified TLD will no longer be processed.
      *
      * @return $this
      */
@@ -635,7 +635,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets autoupdateDns
      *
-     * @param bool $autoupdateDns autoupdateDns
+     * @param bool $autoupdateDns Domain status update after registration. false = Domain will not be updated after registration true = Domain will be updated after registration Default value = false
      *
      * @return $this
      */
@@ -659,7 +659,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param string $category category
+     * @param string $category TLD category example:  Business Travel Generic
      *
      * @return $this
      */
@@ -683,7 +683,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets uiFields
      *
-     * @param string $uiFields uiFields
+     * @param string $uiFields Comma-separated list for fields to be displayed in the frontend UI.
      *
      * @return $this
      */
@@ -707,7 +707,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets registrationType
      *
-     * @param \Domainrobot\Model\RegistrationTypeConstants $registrationType registrationType
+     * @param \Domainrobot\Model\RegistrationTypeConstants $registrationType Which type of registration has been used, FCFS, APPLICATION or OTHER.
      *
      * @return $this
      */
@@ -731,7 +731,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets messageType
      *
-     * @param \Domainrobot\Model\MessageTypeConstants $messageType messageType
+     * @param \Domainrobot\Model\MessageTypeConstants $messageType Type of notification in the course of the preregistration process.
      *
      * @return $this
      */
@@ -755,7 +755,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     /**
      * Sets minPeriod
      *
-     * @param \Domainrobot\Model\TimePeriod $minPeriod minPeriod
+     * @param \Domainrobot\Model\TimePeriod $minPeriod Default minimum registration term for a domain.
      *
      * @return $this
      */

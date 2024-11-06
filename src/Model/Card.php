@@ -404,7 +404,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\CardStatus $status The actual status of the credit card
+     * @param \Domainrobot\Model\CardStatus $status Credit card status
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets validFrom
      *
-     * @param \DateTime $validFrom The valid from date
+     * @param \DateTime $validFrom Start of the credit card validity period
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets validTo
      *
-     * @param \DateTime $validTo The valid to date
+     * @param \DateTime $validTo End of the credit card validity period
      *
      * @return $this
      */

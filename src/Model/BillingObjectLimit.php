@@ -356,7 +356,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets articleLabel
      *
-     * @param string $articleLabel articleLabel
+     * @param string $articleLabel Article name. e.g.
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets limitSelf
      *
-     * @param int $limitSelf limitSelf
+     * @param int $limitSelf Limits of the user, of the daily, hourly or monthly ordering amount in currency.
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets limitChildren
      *
-     * @param int $limitChildren limitChildren
+     * @param int $limitChildren Limits of the sub user, of the daily, hourly or monthly ordering amount in currency.
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets articleTypeLabel
      *
-     * @param string $articleTypeLabel articleTypeLabel
+     * @param string $articleTypeLabel Article Type designation e.g.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     /**
      * Sets count
      *
-     * @param int $count The current count if available
+     * @param int $count The current count if available of allowed api requests in a specific timeframe
      *
      * @return $this
      */

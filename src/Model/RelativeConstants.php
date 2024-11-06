@@ -47,6 +47,7 @@ class RelativeConstants
     const RELATIVE_PERCENT = 'RELATIVE_PERCENT';
     const RELATIVE_AMOUNT = 'RELATIVE_AMOUNT';
     const DELETE = 'DELETE';
+    const REPLACE = 'REPLACE';
     
     /**
      * Gets allowable values of the enum
@@ -59,6 +60,7 @@ class RelativeConstants
             self::RELATIVE_PERCENT,
             self::RELATIVE_AMOUNT,
             self::DELETE,
+            self::REPLACE,
         ];
     }
 }

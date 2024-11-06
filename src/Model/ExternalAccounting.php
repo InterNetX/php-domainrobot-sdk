@@ -59,8 +59,8 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'provider' => '\Domainrobot\Model\ProviderEntity',
         'label' => 'string',
         'reportTo' => 'string',
@@ -432,7 +432,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -442,7 +442,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -456,7 +456,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -466,7 +466,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */

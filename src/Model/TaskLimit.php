@@ -67,7 +67,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
         'inclusiveChildren' => 'int',
         'timeUnitChildren' => '\Domainrobot\Model\TimeUnitConstants',
         'count' => 'int',
-        'user' => '\Domainrobot\Model\BasicUser'
+        'user' => '\Domainrobot\Model\User'
     ];
 
     /**
@@ -562,7 +562,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUser()
     {
@@ -572,7 +572,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Domainrobot\Model\BasicUser $user The affected user
+     * @param \Domainrobot\Model\User $user The affected user
      *
      * @return $this
      */

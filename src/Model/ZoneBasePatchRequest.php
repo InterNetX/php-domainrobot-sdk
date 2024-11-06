@@ -65,8 +65,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'dnssec' => 'bool',
         'nameServerGroup' => 'string',
         'allowTransfer' => 'bool',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'logId' => 'int',
         'comment' => 'string',
         'domainsafe' => 'bool',
@@ -637,7 +637,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -647,7 +647,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner Owner of the zone object
+     * @param \Domainrobot\Model\User $owner Owner of the zone object
      *
      * @return $this
      */
@@ -661,7 +661,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -671,7 +671,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who last updated the zone.
+     * @param \Domainrobot\Model\User $updater User who last updated the zone.
      *
      * @return $this
      */

@@ -374,7 +374,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets irpAppDate
      *
-     * @param \DateTime $irpAppDate The Irp App Date.
+     * @param \DateTime $irpAppDate Date on which the trademark was applied for.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets irpCcLocality
      *
-     * @param string $irpCcLocality The Irp Cc Locality.
+     * @param string $irpCcLocality Country code of where the trademark is registered.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets irpName
      *
-     * @param string $irpName The Irp Name.
+     * @param string $irpName Name of the right or trademark.
      *
      * @return $this
      */
@@ -446,7 +446,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets irpNumber
      *
-     * @param string $irpNumber The Irp Number.
+     * @param string $irpNumber Number of the right or trademark.
      *
      * @return $this
      */
@@ -470,7 +470,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets irpPvrc
      *
-     * @param string $irpPvrc The Irp Pvrc.
+     * @param string $irpPvrc The pre-validation code.
      *
      * @return $this
      */
@@ -494,7 +494,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets irpRegDate
      *
-     * @param \DateTime $irpRegDate The Irp Reg Date.
+     * @param \DateTime $irpRegDate Date on which the mark was assigned.
      *
      * @return $this
      */
@@ -518,7 +518,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets mode
      *
-     * @param string $mode The addon update mode.
+     * @param string $mode The addon update mode, defining the procedure upon updating addons.
      *
      * @return $this
      */
@@ -542,7 +542,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets confirmOrder
      *
-     * @param bool $confirmOrder Confirm order.
+     * @param bool $confirmOrder Confirmation of the order  false = No confirmation true = Confirmation Default value = false
      *
      * @return $this
      */
@@ -566,7 +566,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets externalReference
      *
-     * @param string $externalReference The external reference.
+     * @param string $externalReference Reference of the trademark entry.
      *
      * @return $this
      */
@@ -590,7 +590,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets notAfter
      *
-     * @param \DateTime $notAfter The not after date.
+     * @param \DateTime $notAfter Date until which the trademark registration is valid.
      *
      * @return $this
      */
@@ -614,7 +614,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets confirmed
      *
-     * @param \DateTime $confirmed The confirmed date.
+     * @param \DateTime $confirmed Date on which the trademark registration was confirmed.
      *
      * @return $this
      */
@@ -638,7 +638,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets confirmIp
      *
-     * @param string $confirmIp The confirm ip.
+     * @param string $confirmIp IP from which the trademark registration was confirmed.
      *
      * @return $this
      */
@@ -662,7 +662,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     /**
      * Sets priceClass
      *
-     * @param string $priceClass The price class.
+     * @param string $priceClass Price class of the domain.
      *
      * @return $this
      */

@@ -59,8 +59,8 @@ class DomainRestore implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'name' => 'string',
         'idn' => 'string',
         'domainCreated' => '\DateTime',
@@ -72,6 +72,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
         'trustee' => 'bool',
         'privacy' => 'bool',
         'authinfo' => 'string',
+        'authinfoExpire' => '\DateTime',
         'domainsafe' => 'bool',
         'parking' => '\Domainrobot\Model\ParkingProviderConstants',
         'extensions' => '\Domainrobot\Model\DomainExtensions',
@@ -133,6 +134,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
         'trustee' => null,
         'privacy' => null,
         'authinfo' => null,
+        'authinfoExpire' => 'date-time',
         'domainsafe' => null,
         'parking' => null,
         'extensions' => null,
@@ -215,6 +217,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
         'trustee' => 'trustee',
         'privacy' => 'privacy',
         'authinfo' => 'authinfo',
+        'authinfoExpire' => 'authinfoExpire',
         'domainsafe' => 'domainsafe',
         'parking' => 'parking',
         'extensions' => 'extensions',
@@ -276,6 +279,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
         'trustee' => 'setTrustee',
         'privacy' => 'setPrivacy',
         'authinfo' => 'setAuthinfo',
+        'authinfoExpire' => 'setAuthinfoExpire',
         'domainsafe' => 'setDomainsafe',
         'parking' => 'setParking',
         'extensions' => 'setExtensions',
@@ -337,6 +341,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
         'trustee' => 'getTrustee',
         'privacy' => 'getPrivacy',
         'authinfo' => 'getAuthinfo',
+        'authinfoExpire' => 'getAuthinfoExpire',
         'domainsafe' => 'getDomainsafe',
         'parking' => 'getParking',
         'extensions' => 'getExtensions',
@@ -452,6 +457,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
         $this->container['trustee'] = isset($data['trustee']) ? $this->createData($data['trustee'], 'trustee')  : null;
         $this->container['privacy'] = isset($data['privacy']) ? $this->createData($data['privacy'], 'privacy')  : null;
         $this->container['authinfo'] = isset($data['authinfo']) ? $this->createData($data['authinfo'], 'authinfo')  : null;
+        $this->container['authinfoExpire'] = isset($data['authinfoExpire']) ? $this->createData($data['authinfoExpire'], 'authinfoExpire')  : null;
         $this->container['domainsafe'] = isset($data['domainsafe']) ? $this->createData($data['domainsafe'], 'domainsafe')  : null;
         $this->container['parking'] = isset($data['parking']) ? $this->createData($data['parking'], 'parking')  : null;
         $this->container['extensions'] = isset($data['extensions']) ? $this->createData($data['extensions'], 'extensions')  : null;
@@ -631,7 +637,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -641,7 +647,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -655,7 +661,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -665,7 +671,7 @@ class DomainRestore implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -936,6 +942,30 @@ class DomainRestore implements ModelInterface, ArrayAccess
     public function setAuthinfo($authinfo)
     {
         $this->container['authinfo'] = $authinfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets authinfoExpire
+     *
+     * @return \DateTime
+     */
+    public function getAuthinfoExpire()
+    {
+        return $this->container['authinfoExpire'];
+    }
+
+    /**
+     * Sets authinfoExpire
+     *
+     * @param \DateTime $authinfoExpire The expire date of the authinfo.
+     *
+     * @return $this
+     */
+    public function setAuthinfoExpire($authinfoExpire)
+    {
+        $this->container['authinfoExpire'] = $authinfoExpire;
 
         return $this;
     }

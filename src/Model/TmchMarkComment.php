@@ -61,7 +61,7 @@ class TmchMarkComment implements ModelInterface, ArrayAccess
         'updated' => '\DateTime',
         'status' => '\Domainrobot\Model\TmchMarkStatusConstants',
         'comment' => 'string',
-        'user' => '\Domainrobot\Model\BasicUser'
+        'user' => '\Domainrobot\Model\User'
     ];
 
     /**
@@ -382,7 +382,7 @@ class TmchMarkComment implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUser()
     {
@@ -392,7 +392,7 @@ class TmchMarkComment implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Domainrobot\Model\BasicUser $user user
+     * @param \Domainrobot\Model\User $user user
      *
      * @return $this
      */

@@ -65,6 +65,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'bool',
         'sources' => '\Domainrobot\Model\DomainStudioSources',
         'clientIp' => 'string',
+        'ctid' => 'string',
+        'stid' => 'string',
+        'agent' => 'string',
         'onlyAvailable' => 'bool',
         'whoisTimeout' => 'int',
         'ignorePremium' => 'bool',
@@ -85,6 +88,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => null,
         'sources' => null,
         'clientIp' => null,
+        'ctid' => null,
+        'stid' => null,
+        'agent' => null,
         'onlyAvailable' => null,
         'whoisTimeout' => 'int32',
         'ignorePremium' => null,
@@ -126,6 +132,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'allowDuplicates',
         'sources' => 'sources',
         'clientIp' => 'clientIp',
+        'ctid' => 'ctid',
+        'stid' => 'stid',
+        'agent' => 'agent',
         'onlyAvailable' => 'onlyAvailable',
         'whoisTimeout' => 'whoisTimeout',
         'ignorePremium' => 'ignorePremium',
@@ -146,6 +155,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'setAllowDuplicates',
         'sources' => 'setSources',
         'clientIp' => 'setClientIp',
+        'ctid' => 'setCtid',
+        'stid' => 'setStid',
+        'agent' => 'setAgent',
         'onlyAvailable' => 'setOnlyAvailable',
         'whoisTimeout' => 'setWhoisTimeout',
         'ignorePremium' => 'setIgnorePremium',
@@ -166,6 +178,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         'allowDuplicates' => 'getAllowDuplicates',
         'sources' => 'getSources',
         'clientIp' => 'getClientIp',
+        'ctid' => 'getCtid',
+        'stid' => 'getStid',
+        'agent' => 'getAgent',
         'onlyAvailable' => 'getOnlyAvailable',
         'whoisTimeout' => 'getWhoisTimeout',
         'ignorePremium' => 'getIgnorePremium',
@@ -240,6 +255,9 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         $this->container['allowDuplicates'] = isset($data['allowDuplicates']) ? $this->createData($data['allowDuplicates'], 'allowDuplicates')  : null;
         $this->container['sources'] = isset($data['sources']) ? $this->createData($data['sources'], 'sources')  : null;
         $this->container['clientIp'] = isset($data['clientIp']) ? $this->createData($data['clientIp'], 'clientIp')  : null;
+        $this->container['ctid'] = isset($data['ctid']) ? $this->createData($data['ctid'], 'ctid')  : null;
+        $this->container['stid'] = isset($data['stid']) ? $this->createData($data['stid'], 'stid')  : null;
+        $this->container['agent'] = isset($data['agent']) ? $this->createData($data['agent'], 'agent')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
         $this->container['whoisTimeout'] = isset($data['whoisTimeout']) ? $this->createData($data['whoisTimeout'], 'whoisTimeout')  : null;
         $this->container['ignorePremium'] = isset($data['ignorePremium']) ? $this->createData($data['ignorePremium'], 'ignorePremium')  : null;
@@ -513,6 +531,78 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     public function setClientIp($clientIp)
     {
         $this->container['clientIp'] = $clientIp;
+
+        return $this;
+    }
+
+    /**
+     * Gets ctid
+     *
+     * @return string
+     */
+    public function getCtid()
+    {
+        return $this->container['ctid'];
+    }
+
+    /**
+     * Sets ctid
+     *
+     * @param string $ctid The ctid of the request. Only readable!
+     *
+     * @return $this
+     */
+    public function setCtid($ctid)
+    {
+        $this->container['ctid'] = $ctid;
+
+        return $this;
+    }
+
+    /**
+     * Gets stid
+     *
+     * @return string
+     */
+    public function getStid()
+    {
+        return $this->container['stid'];
+    }
+
+    /**
+     * Sets stid
+     *
+     * @param string $stid The stid of the request. Only readable!
+     *
+     * @return $this
+     */
+    public function setStid($stid)
+    {
+        $this->container['stid'] = $stid;
+
+        return $this;
+    }
+
+    /**
+     * Gets agent
+     *
+     * @return string
+     */
+    public function getAgent()
+    {
+        return $this->container['agent'];
+    }
+
+    /**
+     * Sets agent
+     *
+     * @param string $agent The user agent of the request. Only readable!
+     *
+     * @return $this
+     */
+    public function setAgent($agent)
+    {
+        $this->container['agent'] = $agent;
 
         return $this;
     }

@@ -69,6 +69,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => '\Domainrobot\Model\DomainStudioSourcePersonalNames',
         'spinWord' => '\Domainrobot\Model\DomainStudioSourceSpinWord',
         'upcoming' => '\Domainrobot\Model\DomainStudioSourceUpcoming',
+        'domainsbot' => '\Domainrobot\Model\DomainStudioSourceDomainsBot',
+        'placementPlus' => '\Domainrobot\Model\DomainStudioSourcePlacementPlus',
         'prefixSuffix' => '\Domainrobot\Model\DomainStudioSourcePrefixSuffix',
         'semantic' => '\Domainrobot\Model\DomainStudioSourceSuggestion2'
     ];
@@ -91,6 +93,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => null,
         'spinWord' => null,
         'upcoming' => null,
+        'domainsbot' => null,
+        'placementPlus' => null,
         'prefixSuffix' => null,
         'semantic' => null
     ];
@@ -134,6 +138,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => 'personalNames',
         'spinWord' => 'spinWord',
         'upcoming' => 'upcoming',
+        'domainsbot' => 'domainsbot',
+        'placementPlus' => 'placementPlus',
         'prefixSuffix' => 'prefixSuffix',
         'semantic' => 'semantic'
     ];
@@ -156,6 +162,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => 'setPersonalNames',
         'spinWord' => 'setSpinWord',
         'upcoming' => 'setUpcoming',
+        'domainsbot' => 'setDomainsbot',
+        'placementPlus' => 'setPlacementPlus',
         'prefixSuffix' => 'setPrefixSuffix',
         'semantic' => 'setSemantic'
     ];
@@ -178,6 +186,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         'personalNames' => 'getPersonalNames',
         'spinWord' => 'getSpinWord',
         'upcoming' => 'getUpcoming',
+        'domainsbot' => 'getDomainsbot',
+        'placementPlus' => 'getPlacementPlus',
         'prefixSuffix' => 'getPrefixSuffix',
         'semantic' => 'getSemantic'
     ];
@@ -254,6 +264,8 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         $this->container['personalNames'] = isset($data['personalNames']) ? $this->createData($data['personalNames'], 'personalNames')  : null;
         $this->container['spinWord'] = isset($data['spinWord']) ? $this->createData($data['spinWord'], 'spinWord')  : null;
         $this->container['upcoming'] = isset($data['upcoming']) ? $this->createData($data['upcoming'], 'upcoming')  : null;
+        $this->container['domainsbot'] = isset($data['domainsbot']) ? $this->createData($data['domainsbot'], 'domainsbot')  : null;
+        $this->container['placementPlus'] = isset($data['placementPlus']) ? $this->createData($data['placementPlus'], 'placementPlus')  : null;
         $this->container['prefixSuffix'] = isset($data['prefixSuffix']) ? $this->createData($data['prefixSuffix'], 'prefixSuffix')  : null;
         $this->container['semantic'] = isset($data['semantic']) ? $this->createData($data['semantic'], 'semantic')  : null;
     }
@@ -621,6 +633,54 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     public function setUpcoming($upcoming)
     {
         $this->container['upcoming'] = $upcoming;
+
+        return $this;
+    }
+
+    /**
+     * Gets domainsbot
+     *
+     * @return \Domainrobot\Model\DomainStudioSourceDomainsBot
+     */
+    public function getDomainsbot()
+    {
+        return $this->container['domainsbot'];
+    }
+
+    /**
+     * Sets domainsbot
+     *
+     * @param \Domainrobot\Model\DomainStudioSourceDomainsBot $domainsbot The configuration for the domainsbot
+     *
+     * @return $this
+     */
+    public function setDomainsbot($domainsbot)
+    {
+        $this->container['domainsbot'] = $domainsbot;
+
+        return $this;
+    }
+
+    /**
+     * Gets placementPlus
+     *
+     * @return \Domainrobot\Model\DomainStudioSourcePlacementPlus
+     */
+    public function getPlacementPlus()
+    {
+        return $this->container['placementPlus'];
+    }
+
+    /**
+     * Sets placementPlus
+     *
+     * @param \Domainrobot\Model\DomainStudioSourcePlacementPlus $placementPlus The configuration for the PlacementPlus source
+     *
+     * @return $this
+     */
+    public function setPlacementPlus($placementPlus)
+    {
+        $this->container['placementPlus'] = $placementPlus;
 
         return $this;
     }

@@ -434,7 +434,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets plain
      *
-     * @param string $plain The plain csr.
+     * @param string $plain The CSR key as a string.
      *
      * @return $this
      */
@@ -458,7 +458,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The common name.
+     * @param string $name The name of the certificate which is contained within the CSR key.
      *
      * @return $this
      */
@@ -482,7 +482,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets subjectAlternativeNames
      *
-     * @param \Domainrobot\Model\SubjectAlternativeName[] $subjectAlternativeNames The subject alternative names, listed in the csr.
+     * @param \Domainrobot\Model\SubjectAlternativeName[] $subjectAlternativeNames The SubjectAlternativeNames contained within the CSR key.
      *
      * @return $this
      */
@@ -506,7 +506,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets histories
      *
-     * @param \Domainrobot\Model\CertificateHistory[] $histories The certificate history.
+     * @param \Domainrobot\Model\CertificateHistory[] $histories The certificate history (old version).
      *
      * @return $this
      */
@@ -530,7 +530,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets keySize
      *
-     * @param int $keySize The size of the csr key.
+     * @param int $keySize The key length of the CSR key.
      *
      * @return $this
      */
@@ -554,7 +554,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets countryCode
      *
-     * @param string $countryCode The country code defined in the csr.
+     * @param string $countryCode The country code which is contained within the CSR key.
      *
      * @return $this
      */
@@ -626,7 +626,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets city
      *
-     * @param string $city The city defined in the csr.
+     * @param string $city The city contained within the CSR key.
      *
      * @return $this
      */
@@ -650,7 +650,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param string $organization The organization defined in the csr.
+     * @param string $organization The organisation contained within the CSR key.
      *
      * @return $this
      */
@@ -674,7 +674,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets organizationUnit
      *
-     * @param string $organizationUnit The organization unit defined in the csr.
+     * @param string $organizationUnit The organisation contained within the CSR key.
      *
      * @return $this
      */
@@ -698,7 +698,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email The email defined in the csr.
+     * @param string $email The email address contained within the CSR key.
      *
      * @return $this
      */
@@ -722,7 +722,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets product
      *
-     * @param string $product The ssl product.
+     * @param string $product The SSL product.
      *
      * @return $this
      */
@@ -746,7 +746,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets authentication
      *
-     * @param \Domainrobot\Model\CertAuthentication[] $authentication The authentication data.
+     * @param \Domainrobot\Model\CertAuthentication[] $authentication The generated authentication data.
      *
      * @return $this
      */
@@ -770,7 +770,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets algorithm
      *
-     * @param \Domainrobot\Model\CsrHashAlgorithmConstants $algorithm The csr algorithm.
+     * @param \Domainrobot\Model\CsrHashAlgorithmConstants $algorithm The algorithm used in the CSR key.
      *
      * @return $this
      */
@@ -794,7 +794,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets signatureHashAlgorithm
      *
-     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The signature hash algorithm.
+     * @param \Domainrobot\Model\SignatureHashAlgorithmConstants $signatureHashAlgorithm The hash algorithm which was used for the CSR.
      *
      * @return $this
      */
@@ -818,7 +818,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets certificate
      *
-     * @param \Domainrobot\Model\Certificate $certificate The certificat. Only necessary if used before reissue, renew and delete.
+     * @param \Domainrobot\Model\Certificate $certificate The certificate.
      *
      * @return $this
      */
@@ -842,7 +842,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets idn
      *
-     * @param string $idn The idn version of the common name.
+     * @param string $idn The common name written in punycode format.
      *
      * @return $this
      */
@@ -866,7 +866,7 @@ class CertificateData implements ModelInterface, ArrayAccess
     /**
      * Sets checkCaa
      *
-     * @param bool $checkCaa Activates the caa record check.
+     * @param bool $checkCaa Activates the CAA record check. false = off true = on Default value = false
      *
      * @return $this
      */

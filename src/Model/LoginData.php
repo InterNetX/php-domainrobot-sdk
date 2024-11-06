@@ -312,7 +312,7 @@ class LoginData implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param int $context The context.
+     * @param int $context The context. A separated section.
      *
      * @return $this
      */

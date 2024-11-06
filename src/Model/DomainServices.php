@@ -290,7 +290,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets backupMx
      *
-     * @param \Domainrobot\Model\BackupMx[] $backupMx Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\BackupMx[] $backupMx This object contains possible domain services that can be configured during a DomainCreate or DomainUpdate.
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets mailProxy
      *
-     * @param \Domainrobot\Model\MailProxy[] $mailProxy Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\MailProxy[] $mailProxy This object contains possible domain services that can be configured during a DomainCreate or DomainUpdate.
      *
      * @return $this
      */
@@ -338,7 +338,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets redirect
      *
-     * @param \Domainrobot\Model\Redirect[] $redirect Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\Redirect[] $redirect This object contains possible domain services that can be configured during a DomainCreate or DomainUpdate.
      *
      * @return $this
      */
@@ -362,7 +362,7 @@ class DomainServices implements ModelInterface, ArrayAccess
     /**
      * Sets domainMonitoring
      *
-     * @param \Domainrobot\Model\DomainMonitoring[] $domainMonitoring Removes pending services like BackupMX and MailProxy.
+     * @param \Domainrobot\Model\DomainMonitoring[] $domainMonitoring This object contains possible domain services that can be configured during a DomainCreate or DomainUpdate.
      *
      * @return $this
      */

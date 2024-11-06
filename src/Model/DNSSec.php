@@ -338,7 +338,7 @@ class DNSSec implements ModelInterface, ArrayAccess
     /**
      * Sets flags
      *
-     * @param int $flags The flags.
+     * @param int $flags DNSSEC type Supported values: 256 (zone signing key) 257 (key signing key)
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class DNSSec implements ModelInterface, ArrayAccess
     /**
      * Sets publicKey
      *
-     * @param string $publicKey The public key.
+     * @param string $publicKey The public key. With the pattern ^[\\sA-Za-z0-9+/]+[=]*$
      *
      * @return $this
      */

@@ -59,8 +59,8 @@ class PriceChange implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'id' => 'int',
         'primary' => '\Domainrobot\Model\PriceChange',
         'name' => 'string',
@@ -82,6 +82,9 @@ class PriceChange implements ModelInterface, ArrayAccess
         'worker' => 'string',
         'ticketNumber' => 'string',
         'priceClassPrefix' => 'string',
+        'errorProductPriceTemplate' => '\Domainrobot\Model\ProductPriceTemplate',
+        'errorPriceClassTemplate' => '\Domainrobot\Model\PriceClassTemplate',
+        'errorMessage' => 'string',
         'priceClassType' => 'string'
     ];
 
@@ -116,6 +119,9 @@ class PriceChange implements ModelInterface, ArrayAccess
         'worker' => null,
         'ticketNumber' => null,
         'priceClassPrefix' => null,
+        'errorProductPriceTemplate' => null,
+        'errorPriceClassTemplate' => null,
+        'errorMessage' => null,
         'priceClassType' => null
     ];
 
@@ -171,6 +177,9 @@ class PriceChange implements ModelInterface, ArrayAccess
         'worker' => 'worker',
         'ticketNumber' => 'ticketNumber',
         'priceClassPrefix' => 'priceClassPrefix',
+        'errorProductPriceTemplate' => 'errorProductPriceTemplate',
+        'errorPriceClassTemplate' => 'errorPriceClassTemplate',
+        'errorMessage' => 'errorMessage',
         'priceClassType' => 'priceClassType'
     ];
 
@@ -205,6 +214,9 @@ class PriceChange implements ModelInterface, ArrayAccess
         'worker' => 'setWorker',
         'ticketNumber' => 'setTicketNumber',
         'priceClassPrefix' => 'setPriceClassPrefix',
+        'errorProductPriceTemplate' => 'setErrorProductPriceTemplate',
+        'errorPriceClassTemplate' => 'setErrorPriceClassTemplate',
+        'errorMessage' => 'setErrorMessage',
         'priceClassType' => 'setPriceClassType'
     ];
 
@@ -239,6 +251,9 @@ class PriceChange implements ModelInterface, ArrayAccess
         'worker' => 'getWorker',
         'ticketNumber' => 'getTicketNumber',
         'priceClassPrefix' => 'getPriceClassPrefix',
+        'errorProductPriceTemplate' => 'getErrorProductPriceTemplate',
+        'errorPriceClassTemplate' => 'getErrorPriceClassTemplate',
+        'errorMessage' => 'getErrorMessage',
         'priceClassType' => 'getPriceClassType'
     ];
 
@@ -327,6 +342,9 @@ class PriceChange implements ModelInterface, ArrayAccess
         $this->container['worker'] = isset($data['worker']) ? $this->createData($data['worker'], 'worker')  : null;
         $this->container['ticketNumber'] = isset($data['ticketNumber']) ? $this->createData($data['ticketNumber'], 'ticketNumber')  : null;
         $this->container['priceClassPrefix'] = isset($data['priceClassPrefix']) ? $this->createData($data['priceClassPrefix'], 'priceClassPrefix')  : null;
+        $this->container['errorProductPriceTemplate'] = isset($data['errorProductPriceTemplate']) ? $this->createData($data['errorProductPriceTemplate'], 'errorProductPriceTemplate')  : null;
+        $this->container['errorPriceClassTemplate'] = isset($data['errorPriceClassTemplate']) ? $this->createData($data['errorPriceClassTemplate'], 'errorPriceClassTemplate')  : null;
+        $this->container['errorMessage'] = isset($data['errorMessage']) ? $this->createData($data['errorMessage'], 'errorMessage')  : null;
         $this->container['priceClassType'] = isset($data['priceClassType']) ? $this->createData($data['priceClassType'], 'priceClassType')  : null;
     }
 
@@ -463,7 +481,7 @@ class PriceChange implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -473,7 +491,7 @@ class PriceChange implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -487,7 +505,7 @@ class PriceChange implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -497,7 +515,7 @@ class PriceChange implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -1008,6 +1026,78 @@ class PriceChange implements ModelInterface, ArrayAccess
     public function setPriceClassPrefix($priceClassPrefix)
     {
         $this->container['priceClassPrefix'] = $priceClassPrefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets errorProductPriceTemplate
+     *
+     * @return \Domainrobot\Model\ProductPriceTemplate
+     */
+    public function getErrorProductPriceTemplate()
+    {
+        return $this->container['errorProductPriceTemplate'];
+    }
+
+    /**
+     * Sets errorProductPriceTemplate
+     *
+     * @param \Domainrobot\Model\ProductPriceTemplate $errorProductPriceTemplate ProductPriceTemplate
+     *
+     * @return $this
+     */
+    public function setErrorProductPriceTemplate($errorProductPriceTemplate)
+    {
+        $this->container['errorProductPriceTemplate'] = $errorProductPriceTemplate;
+
+        return $this;
+    }
+
+    /**
+     * Gets errorPriceClassTemplate
+     *
+     * @return \Domainrobot\Model\PriceClassTemplate
+     */
+    public function getErrorPriceClassTemplate()
+    {
+        return $this->container['errorPriceClassTemplate'];
+    }
+
+    /**
+     * Sets errorPriceClassTemplate
+     *
+     * @param \Domainrobot\Model\PriceClassTemplate $errorPriceClassTemplate PriceClassTemplate
+     *
+     * @return $this
+     */
+    public function setErrorPriceClassTemplate($errorPriceClassTemplate)
+    {
+        $this->container['errorPriceClassTemplate'] = $errorPriceClassTemplate;
+
+        return $this;
+    }
+
+    /**
+     * Gets errorMessage
+     *
+     * @return string
+     */
+    public function getErrorMessage()
+    {
+        return $this->container['errorMessage'];
+    }
+
+    /**
+     * Sets errorMessage
+     *
+     * @param string $errorMessage the error message from job
+     *
+     * @return $this
+     */
+    public function setErrorMessage($errorMessage)
+    {
+        $this->container['errorMessage'] = $errorMessage;
 
         return $this;
     }

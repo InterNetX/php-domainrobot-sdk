@@ -62,7 +62,7 @@ class Comment implements ModelInterface, ArrayAccess
         'id' => 'int',
         'customer' => '\Domainrobot\Model\GenericCustomer',
         'text' => 'string',
-        'user' => '\Domainrobot\Model\BasicUser'
+        'user' => '\Domainrobot\Model\User'
     ];
 
     /**
@@ -412,7 +412,7 @@ class Comment implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUser()
     {
@@ -422,7 +422,7 @@ class Comment implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Domainrobot\Model\BasicUser $user user
+     * @param \Domainrobot\Model\User $user user
      *
      * @return $this
      */

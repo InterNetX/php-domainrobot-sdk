@@ -68,8 +68,9 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'provider' => 'string',
         'configuration' => '\Domainrobot\Model\Configuration',
         'metric' => '\Domainrobot\Model\Metric',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
+        'minPrice' => 'double',
         'premiumStatus' => '\Domainrobot\Model\PremiumStatusConstants'
     ];
 
@@ -92,6 +93,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'metric' => null,
         'owner' => null,
         'updater' => null,
+        'minPrice' => 'double',
         'premiumStatus' => null
     ];
 
@@ -135,6 +137,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'metric' => 'metric',
         'owner' => 'owner',
         'updater' => 'updater',
+        'minPrice' => 'minPrice',
         'premiumStatus' => 'premiumStatus'
     ];
 
@@ -157,6 +160,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'metric' => 'setMetric',
         'owner' => 'setOwner',
         'updater' => 'setUpdater',
+        'minPrice' => 'setMinPrice',
         'premiumStatus' => 'setPremiumStatus'
     ];
 
@@ -179,6 +183,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
         'metric' => 'getMetric',
         'owner' => 'getOwner',
         'updater' => 'getUpdater',
+        'minPrice' => 'getMinPrice',
         'premiumStatus' => 'getPremiumStatus'
     ];
 
@@ -255,6 +260,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
         $this->container['metric'] = isset($data['metric']) ? $this->createData($data['metric'], 'metric')  : null;
         $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
         $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
+        $this->container['minPrice'] = isset($data['minPrice']) ? $this->createData($data['minPrice'], 'minPrice')  : null;
         $this->container['premiumStatus'] = isset($data['premiumStatus']) ? $this->createData($data['premiumStatus'], 'premiumStatus')  : null;
     }
 
@@ -407,7 +413,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The domain name
+     * @param string $name Domain name.
      *
      * @return $this
      */
@@ -431,7 +437,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets idn
      *
-     * @param string $idn The unicode domain name
+     * @param string $idn The domain name written in Punycode syntax(IDN).
      *
      * @return $this
      */
@@ -455,7 +461,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets priceClass
      *
-     * @param string $priceClass The related price class
+     * @param string $priceClass The price class of the domain when registering.
      *
      * @return $this
      */
@@ -479,7 +485,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets priceClassRenew
      *
-     * @param string $priceClassRenew The related price class for the domain renew
+     * @param string $priceClassRenew The price class of the domain at renew.
      *
      * @return $this
      */
@@ -503,7 +509,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param double $price The current price amount
+     * @param double $price The current domain price.
      *
      * @return $this
      */
@@ -527,7 +533,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency The current currency
+     * @param string $currency A system of money in common use within a specific environment over time. Currency codes are used in the ISO 4217 format.
      *
      * @return $this
      */
@@ -551,7 +557,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets provider
      *
-     * @param string $provider provider
+     * @param string $provider Name of the provider who provides this domain.
      *
      * @return $this
      */
@@ -575,7 +581,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets configuration
      *
-     * @param \Domainrobot\Model\Configuration $configuration Additional information
+     * @param \Domainrobot\Model\Configuration $configuration Additional information.
      *
      * @return $this
      */
@@ -599,7 +605,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets metric
      *
-     * @param \Domainrobot\Model\Metric $metric Some domain metrics
+     * @param \Domainrobot\Model\Metric $metric Metrics of the domain, e.g.
      *
      * @return $this
      */
@@ -613,7 +619,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -623,7 +629,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -637,7 +643,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -647,13 +653,37 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
     public function setUpdater($updater)
     {
         $this->container['updater'] = $updater;
+
+        return $this;
+    }
+
+    /**
+     * Gets minPrice
+     *
+     * @return double
+     */
+    public function getMinPrice()
+    {
+        return $this->container['minPrice'];
+    }
+
+    /**
+     * Sets minPrice
+     *
+     * @param double $minPrice Sedo Make-Offer minimum price.
+     *
+     * @return $this
+     */
+    public function setMinPrice($minPrice)
+    {
+        $this->container['minPrice'] = $minPrice;
 
         return $this;
     }
@@ -671,7 +701,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     /**
      * Sets premiumStatus
      *
-     * @param \Domainrobot\Model\PremiumStatusConstants $premiumStatus The actual domain premium status
+     * @param \Domainrobot\Model\PremiumStatusConstants $premiumStatus The domain status.
      *
      * @return $this
      */

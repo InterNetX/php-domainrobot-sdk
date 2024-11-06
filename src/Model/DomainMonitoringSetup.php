@@ -58,8 +58,7 @@ class DomainMonitoringSetup implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'created' => '\DateTime',
-        'updated' => '\DateTime',
-        'data' => 'string'
+        'updated' => '\DateTime'
     ];
 
     /**
@@ -69,8 +68,7 @@ class DomainMonitoringSetup implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'created' => 'date-time',
-        'updated' => 'date-time',
-        'data' => null
+        'updated' => 'date-time'
     ];
 
     /**
@@ -101,8 +99,7 @@ class DomainMonitoringSetup implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'created' => 'created',
-        'updated' => 'updated',
-        'data' => 'data'
+        'updated' => 'updated'
     ];
 
     /**
@@ -112,8 +109,7 @@ class DomainMonitoringSetup implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'created' => 'setCreated',
-        'updated' => 'setUpdated',
-        'data' => 'setData'
+        'updated' => 'setUpdated'
     ];
 
     /**
@@ -123,8 +119,7 @@ class DomainMonitoringSetup implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'created' => 'getCreated',
-        'updated' => 'getUpdated',
-        'data' => 'getData'
+        'updated' => 'getUpdated'
     ];
 
     /**
@@ -189,7 +184,6 @@ class DomainMonitoringSetup implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['data'] = isset($data['data']) ? $this->createData($data['data'], 'data')  : null;
     }
 
     /**
@@ -315,30 +309,6 @@ class DomainMonitoringSetup implements ModelInterface, ArrayAccess
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return string
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param string $data The data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
 
         return $this;
     }

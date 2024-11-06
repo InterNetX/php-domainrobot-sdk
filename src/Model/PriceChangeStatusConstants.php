@@ -49,6 +49,7 @@ class PriceChangeStatusConstants
     const NOT_SET = 'NOT_SET';
     const CONFIRMED = 'CONFIRMED';
     const FINISHED = 'FINISHED';
+    const PREPARE = 'PREPARE';
     
     /**
      * Gets allowable values of the enum
@@ -63,6 +64,7 @@ class PriceChangeStatusConstants
             self::NOT_SET,
             self::CONFIRMED,
             self::FINISHED,
+            self::PREPARE,
         ];
     }
 }

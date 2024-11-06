@@ -61,8 +61,8 @@ class MailProxy implements ModelInterface, ArrayAccess
         'idn' => 'string',
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'target' => 'string',
         'admin' => 'string',
         'protection' => '\Domainrobot\Model\ProtectionConstants',
@@ -564,7 +564,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -574,7 +574,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -588,7 +588,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -598,7 +598,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -622,7 +622,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets target
      *
-     * @param string $target The hostname of the target mailserver
+     * @param string $target Mail server to which the MailProxy should forward the emails. Note that the MX record of your mail server must be removed from the zone.
      *
      * @return $this
      */
@@ -646,7 +646,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets admin
      *
-     * @param string $admin email address of the administrator
+     * @param string $admin Email address of the administrator to whom notifications are sent to.
      *
      * @return $this
      */
@@ -670,7 +670,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets protection
      *
-     * @param \Domainrobot\Model\ProtectionConstants $protection The protection level
+     * @param \Domainrobot\Model\ProtectionConstants $protection Security settings for handling infected mails.
      *
      * @return $this
      */
@@ -694,7 +694,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets greylisting
      *
-     * @param string $greylisting The grey listing policy
+     * @param string $greylisting If greylisting is activated, the first email from an unknown sender is rejected at first. Mails from this sender will only be accepted after a further delayed delivery attempt.
      *
      * @return $this
      */
@@ -727,7 +727,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets virus
      *
-     * @param string $virus The virus options to use
+     * @param string $virus Defines whether to check for viruses and how to deal with detected viruses.
      *
      * @return $this
      */
@@ -760,7 +760,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets bannedFiles
      *
-     * @param string $bannedFiles The banned files options to use
+     * @param string $bannedFiles Defines whether files should be checked and how banned files should be avoided.
      *
      * @return $this
      */
@@ -793,7 +793,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets header
      *
-     * @param string $header The mail header options to use
+     * @param string $header Defines whether headers are to be checked and how banned headers are to be handled.
      *
      * @return $this
      */
@@ -826,7 +826,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets spam
      *
-     * @param \Domainrobot\Model\SpamPolicy $spam The spam policy options
+     * @param \Domainrobot\Model\SpamPolicy $spam The spam policy options.
      *
      * @return $this
      */
@@ -850,7 +850,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets whitelist
      *
-     * @param \Domainrobot\Model\MailList $whitelist The white listed email addresses
+     * @param \Domainrobot\Model\MailList $whitelist Define email addresses whose mails should be trusted and never marked as spam.
      *
      * @return $this
      */
@@ -874,7 +874,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets blacklist
      *
-     * @param \Domainrobot\Model\MailList $blacklist The black listed email addresses
+     * @param \Domainrobot\Model\MailList $blacklist Specification of email addresses whose mails are always to be marked as spam.
      *
      * @return $this
      */
@@ -898,7 +898,7 @@ class MailProxy implements ModelInterface, ArrayAccess
     /**
      * Sets excludelist
      *
-     * @param \Domainrobot\Model\MailList $excludelist The exculded listed email addresses
+     * @param \Domainrobot\Model\MailList $excludelist Definition of administrative addresses that should never be ignored by spam filters. An example of this is the \"Hostmaster\" addresses, e.g. hostmaster@example.com.
      *
      * @return $this
      */

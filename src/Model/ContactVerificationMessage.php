@@ -344,7 +344,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets mail
      *
-     * @param \Domainrobot\Model\MailServiceMessage $mail the email of the VerificationMessage
+     * @param \Domainrobot\Model\MailServiceMessage $mail The notification that was sent for verification
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\GenericStatusConstants $status the status of the VerificationMessage
+     * @param \Domainrobot\Model\GenericStatusConstants $status The status of the verification mail
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class ContactVerificationMessage implements ModelInterface, ArrayAccess
     /**
      * Sets lastResponse
      *
-     * @param string $lastResponse The last response of the mailserver
+     * @param string $lastResponse The last response of the mail server
      *
      * @return $this
      */

@@ -71,6 +71,7 @@ class ProductPriceTemplate implements ModelInterface, ArrayAccess
         'relative' => '\Domainrobot\Model\RelativeConstants',
         'priceConditions' => '\Domainrobot\Model\PriceServiceEntity[]',
         'actualAmount' => 'double',
+        'actualCurrency' => 'string',
         'purchaseAmount' => 'double',
         'margin' => 'float'
     ];
@@ -95,6 +96,7 @@ class ProductPriceTemplate implements ModelInterface, ArrayAccess
         'relative' => null,
         'priceConditions' => null,
         'actualAmount' => 'double',
+        'actualCurrency' => null,
         'purchaseAmount' => 'double',
         'margin' => 'float'
     ];
@@ -140,6 +142,7 @@ class ProductPriceTemplate implements ModelInterface, ArrayAccess
         'relative' => 'relative',
         'priceConditions' => 'priceConditions',
         'actualAmount' => 'actualAmount',
+        'actualCurrency' => 'actualCurrency',
         'purchaseAmount' => 'purchaseAmount',
         'margin' => 'margin'
     ];
@@ -164,6 +167,7 @@ class ProductPriceTemplate implements ModelInterface, ArrayAccess
         'relative' => 'setRelative',
         'priceConditions' => 'setPriceConditions',
         'actualAmount' => 'setActualAmount',
+        'actualCurrency' => 'setActualCurrency',
         'purchaseAmount' => 'setPurchaseAmount',
         'margin' => 'setMargin'
     ];
@@ -188,6 +192,7 @@ class ProductPriceTemplate implements ModelInterface, ArrayAccess
         'relative' => 'getRelative',
         'priceConditions' => 'getPriceConditions',
         'actualAmount' => 'getActualAmount',
+        'actualCurrency' => 'getActualCurrency',
         'purchaseAmount' => 'getPurchaseAmount',
         'margin' => 'getMargin'
     ];
@@ -266,6 +271,7 @@ class ProductPriceTemplate implements ModelInterface, ArrayAccess
         $this->container['relative'] = isset($data['relative']) ? $this->createData($data['relative'], 'relative')  : null;
         $this->container['priceConditions'] = isset($data['priceConditions']) ? $this->createData($data['priceConditions'], 'priceConditions')  : null;
         $this->container['actualAmount'] = isset($data['actualAmount']) ? $this->createData($data['actualAmount'], 'actualAmount')  : null;
+        $this->container['actualCurrency'] = isset($data['actualCurrency']) ? $this->createData($data['actualCurrency'], 'actualCurrency')  : null;
         $this->container['purchaseAmount'] = isset($data['purchaseAmount']) ? $this->createData($data['purchaseAmount'], 'purchaseAmount')  : null;
         $this->container['margin'] = isset($data['margin']) ? $this->createData($data['margin'], 'margin')  : null;
     }
@@ -696,6 +702,30 @@ class ProductPriceTemplate implements ModelInterface, ArrayAccess
     public function setActualAmount($actualAmount)
     {
         $this->container['actualAmount'] = $actualAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets actualCurrency
+     *
+     * @return string
+     */
+    public function getActualCurrency()
+    {
+        return $this->container['actualCurrency'];
+    }
+
+    /**
+     * Sets actualCurrency
+     *
+     * @param string $actualCurrency Actual currency
+     *
+     * @return $this
+     */
+    public function setActualCurrency($actualCurrency)
+    {
+        $this->container['actualCurrency'] = $actualCurrency;
 
         return $this;
     }

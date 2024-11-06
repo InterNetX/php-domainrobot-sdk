@@ -344,7 +344,7 @@ class BasicCustomerSpoolVerification implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email The email address to verify
+     * @param string $email The email address that will be verified.
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class BasicCustomerSpoolVerification implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\GenericStatusConstants $status The status of the verification
+     * @param \Domainrobot\Model\GenericStatusConstants $status Status of the verification process.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class BasicCustomerSpoolVerification implements ModelInterface, ArrayAccess
     /**
      * Sets customer
      *
-     * @param \Domainrobot\Model\GenericCustomer $customer The related customer
+     * @param \Domainrobot\Model\GenericCustomer $customer The customer whose email address is being verified.
      *
      * @return $this
      */

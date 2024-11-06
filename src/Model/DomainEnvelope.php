@@ -68,7 +68,8 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'forceDnsCheck' => 'bool',
         'whoisTimeout' => 'int',
         'onlyAvailable' => 'bool',
-        'isPrereg' => 'bool'
+        'isPrereg' => 'bool',
+        'notification' => '\Domainrobot\Model\Notification'
     ];
 
     /**
@@ -88,7 +89,8 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'forceDnsCheck' => null,
         'whoisTimeout' => 'int32',
         'onlyAvailable' => null,
-        'isPrereg' => null
+        'isPrereg' => null,
+        'notification' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'forceDnsCheck' => 'forceDnsCheck',
         'whoisTimeout' => 'whoisTimeout',
         'onlyAvailable' => 'onlyAvailable',
-        'isPrereg' => 'isPrereg'
+        'isPrereg' => 'isPrereg',
+        'notification' => 'notification'
     ];
 
     /**
@@ -149,7 +152,8 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'forceDnsCheck' => 'setForceDnsCheck',
         'whoisTimeout' => 'setWhoisTimeout',
         'onlyAvailable' => 'setOnlyAvailable',
-        'isPrereg' => 'setIsPrereg'
+        'isPrereg' => 'setIsPrereg',
+        'notification' => 'setNotification'
     ];
 
     /**
@@ -169,7 +173,8 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         'forceDnsCheck' => 'getForceDnsCheck',
         'whoisTimeout' => 'getWhoisTimeout',
         'onlyAvailable' => 'getOnlyAvailable',
-        'isPrereg' => 'getIsPrereg'
+        'isPrereg' => 'getIsPrereg',
+        'notification' => 'getNotification'
     ];
 
     /**
@@ -244,6 +249,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         $this->container['whoisTimeout'] = isset($data['whoisTimeout']) ? $this->createData($data['whoisTimeout'], 'whoisTimeout')  : null;
         $this->container['onlyAvailable'] = isset($data['onlyAvailable']) ? $this->createData($data['onlyAvailable'], 'onlyAvailable')  : null;
         $this->container['isPrereg'] = isset($data['isPrereg']) ? $this->createData($data['isPrereg'], 'isPrereg')  : null;
+        $this->container['notification'] = isset($data['notification']) ? $this->createData($data['notification'], 'notification')  : null;
     }
 
     /**
@@ -609,6 +615,30 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     public function setIsPrereg($isPrereg)
     {
         $this->container['isPrereg'] = $isPrereg;
+
+        return $this;
+    }
+
+    /**
+     * Gets notification
+     *
+     * @return \Domainrobot\Model\Notification
+     */
+    public function getNotification()
+    {
+        return $this->container['notification'];
+    }
+
+    /**
+     * Sets notification
+     *
+     * @param \Domainrobot\Model\Notification $notification Notification
+     *
+     * @return $this
+     */
+    public function setNotification($notification)
+    {
+        $this->container['notification'] = $notification;
 
         return $this;
     }

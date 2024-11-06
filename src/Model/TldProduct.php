@@ -130,6 +130,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'isManual' => 'bool',
         'requiredFields' => 'string[]',
         'transferImportedContacts' => '\Domainrobot\Model\ContactReferenceType[]',
+        'allowedOcCases' => 'string[]',
         'registrars' => '\Domainrobot\Model\Registrar[]',
         'autoDelete' => 'bool',
         'documents' => '\Domainrobot\Model\Document[]',
@@ -137,7 +138,8 @@ class TldProduct implements ModelInterface, ArrayAccess
         'trusteeTypes' => '\Domainrobot\Model\ContactReferenceType[]',
         'sldMin' => 'int',
         'sldMax' => 'int',
-        'numeric' => 'bool'
+        'numeric' => 'bool',
+        'sedoMls' => 'bool'
     ];
 
     /**
@@ -219,6 +221,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'isManual' => null,
         'requiredFields' => null,
         'transferImportedContacts' => null,
+        'allowedOcCases' => null,
         'registrars' => null,
         'autoDelete' => null,
         'documents' => null,
@@ -226,7 +229,8 @@ class TldProduct implements ModelInterface, ArrayAccess
         'trusteeTypes' => null,
         'sldMin' => 'int32',
         'sldMax' => 'int32',
-        'numeric' => null
+        'numeric' => null,
+        'sedoMls' => null
     ];
 
     /**
@@ -329,6 +333,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'isManual' => 'isManual',
         'requiredFields' => 'requiredFields',
         'transferImportedContacts' => 'transferImportedContacts',
+        'allowedOcCases' => 'allowedOcCases',
         'registrars' => 'registrars',
         'autoDelete' => 'autoDelete',
         'documents' => 'documents',
@@ -336,7 +341,8 @@ class TldProduct implements ModelInterface, ArrayAccess
         'trusteeTypes' => 'trusteeTypes',
         'sldMin' => 'sldMin',
         'sldMax' => 'sldMax',
-        'numeric' => 'numeric'
+        'numeric' => 'numeric',
+        'sedoMls' => 'sedo_mls'
     ];
 
     /**
@@ -418,6 +424,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'isManual' => 'setIsManual',
         'requiredFields' => 'setRequiredFields',
         'transferImportedContacts' => 'setTransferImportedContacts',
+        'allowedOcCases' => 'setAllowedOcCases',
         'registrars' => 'setRegistrars',
         'autoDelete' => 'setAutoDelete',
         'documents' => 'setDocuments',
@@ -425,7 +432,8 @@ class TldProduct implements ModelInterface, ArrayAccess
         'trusteeTypes' => 'setTrusteeTypes',
         'sldMin' => 'setSldMin',
         'sldMax' => 'setSldMax',
-        'numeric' => 'setNumeric'
+        'numeric' => 'setNumeric',
+        'sedoMls' => 'setSedoMls'
     ];
 
     /**
@@ -507,6 +515,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         'isManual' => 'getIsManual',
         'requiredFields' => 'getRequiredFields',
         'transferImportedContacts' => 'getTransferImportedContacts',
+        'allowedOcCases' => 'getAllowedOcCases',
         'registrars' => 'getRegistrars',
         'autoDelete' => 'getAutoDelete',
         'documents' => 'getDocuments',
@@ -514,7 +523,8 @@ class TldProduct implements ModelInterface, ArrayAccess
         'trusteeTypes' => 'getTrusteeTypes',
         'sldMin' => 'getSldMin',
         'sldMax' => 'getSldMax',
-        'numeric' => 'getNumeric'
+        'numeric' => 'getNumeric',
+        'sedoMls' => 'getSedoMls'
     ];
 
     /**
@@ -650,6 +660,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         $this->container['isManual'] = isset($data['isManual']) ? $this->createData($data['isManual'], 'isManual')  : null;
         $this->container['requiredFields'] = isset($data['requiredFields']) ? $this->createData($data['requiredFields'], 'requiredFields')  : null;
         $this->container['transferImportedContacts'] = isset($data['transferImportedContacts']) ? $this->createData($data['transferImportedContacts'], 'transferImportedContacts')  : null;
+        $this->container['allowedOcCases'] = isset($data['allowedOcCases']) ? $this->createData($data['allowedOcCases'], 'allowedOcCases')  : null;
         $this->container['registrars'] = isset($data['registrars']) ? $this->createData($data['registrars'], 'registrars')  : null;
         $this->container['autoDelete'] = isset($data['autoDelete']) ? $this->createData($data['autoDelete'], 'autoDelete')  : null;
         $this->container['documents'] = isset($data['documents']) ? $this->createData($data['documents'], 'documents')  : null;
@@ -658,6 +669,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         $this->container['sldMin'] = isset($data['sldMin']) ? $this->createData($data['sldMin'], 'sldMin')  : null;
         $this->container['sldMax'] = isset($data['sldMax']) ? $this->createData($data['sldMax'], 'sldMax')  : null;
         $this->container['numeric'] = isset($data['numeric']) ? $this->createData($data['numeric'], 'numeric')  : null;
+        $this->container['sedoMls'] = isset($data['sedoMls']) ? $this->createData($data['sedoMls'], 'sedoMls')  : null;
     }
 
     /**
@@ -2492,6 +2504,30 @@ class TldProduct implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets allowedOcCases
+     *
+     * @return string[]
+     */
+    public function getAllowedOcCases()
+    {
+        return $this->container['allowedOcCases'];
+    }
+
+    /**
+     * Sets allowedOcCases
+     *
+     * @param string[] $allowedOcCases allowedOcCases
+     *
+     * @return $this
+     */
+    public function setAllowedOcCases($allowedOcCases)
+    {
+        $this->container['allowedOcCases'] = $allowedOcCases;
+
+        return $this;
+    }
+
+    /**
      * Gets registrars
      *
      * @return \Domainrobot\Model\Registrar[]
@@ -2679,6 +2715,30 @@ class TldProduct implements ModelInterface, ArrayAccess
     public function setNumeric($numeric)
     {
         $this->container['numeric'] = $numeric;
+
+        return $this;
+    }
+
+    /**
+     * Gets sedoMls
+     *
+     * @return bool
+     */
+    public function getSedoMls()
+    {
+        return $this->container['sedoMls'];
+    }
+
+    /**
+     * Sets sedoMls
+     *
+     * @param bool $sedoMls sedoMls
+     *
+     * @return $this
+     */
+    public function setSedoMls($sedoMls)
+    {
+        $this->container['sedoMls'] = $sedoMls;
 
         return $this;
     }

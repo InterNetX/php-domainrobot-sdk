@@ -302,7 +302,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets text
      *
-     * @param string $text The text.
+     * @param string $text Message text.
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets messages
      *
-     * @param \Domainrobot\Model\Message[] $messages The messages.
+     * @param \Domainrobot\Model\Message[] $messages Referred child messages.
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets objects
      *
-     * @param \Domainrobot\Model\GenericObject[] $objects The objects.
+     * @param \Domainrobot\Model\GenericObject[] $objects The object to which the notification refers. type - specifies the type of the object value - value of the object
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets code
      *
-     * @param string $code The message code.
+     * @param string $code The task code of the order to which the notification belongs to.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\StatusType $status The status of the message code.
+     * @param \Domainrobot\Model\StatusType $status The status type of the response.
      *
      * @return $this
      */

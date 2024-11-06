@@ -64,7 +64,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'classification' => 'string',
         'invoiceNotice' => 'string',
         'notice' => 'string',
-        'ticketNumber' => 'string'
+        'ticketNumber' => 'string',
+        'noSap' => 'bool'
     ];
 
     /**
@@ -80,7 +81,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'classification' => null,
         'invoiceNotice' => null,
         'notice' => null,
-        'ticketNumber' => null
+        'ticketNumber' => null,
+        'noSap' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'classification' => 'classification',
         'invoiceNotice' => 'invoiceNotice',
         'notice' => 'notice',
-        'ticketNumber' => 'ticketNumber'
+        'ticketNumber' => 'ticketNumber',
+        'noSap' => 'noSap'
     ];
 
     /**
@@ -133,7 +136,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'classification' => 'setClassification',
         'invoiceNotice' => 'setInvoiceNotice',
         'notice' => 'setNotice',
-        'ticketNumber' => 'setTicketNumber'
+        'ticketNumber' => 'setTicketNumber',
+        'noSap' => 'setNoSap'
     ];
 
     /**
@@ -149,7 +153,8 @@ class CustomerContract implements ModelInterface, ArrayAccess
         'classification' => 'getClassification',
         'invoiceNotice' => 'getInvoiceNotice',
         'notice' => 'getNotice',
-        'ticketNumber' => 'getTicketNumber'
+        'ticketNumber' => 'getTicketNumber',
+        'noSap' => 'getNoSap'
     ];
 
     /**
@@ -220,6 +225,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         $this->container['invoiceNotice'] = isset($data['invoiceNotice']) ? $this->createData($data['invoiceNotice'], 'invoiceNotice')  : null;
         $this->container['notice'] = isset($data['notice']) ? $this->createData($data['notice'], 'notice')  : null;
         $this->container['ticketNumber'] = isset($data['ticketNumber']) ? $this->createData($data['ticketNumber'], 'ticketNumber')  : null;
+        $this->container['noSap'] = isset($data['noSap']) ? $this->createData($data['noSap'], 'noSap')  : null;
     }
 
     /**
@@ -492,6 +498,30 @@ class CustomerContract implements ModelInterface, ArrayAccess
     public function setTicketNumber($ticketNumber)
     {
         $this->container['ticketNumber'] = $ticketNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets noSap
+     *
+     * @return bool
+     */
+    public function getNoSap()
+    {
+        return $this->container['noSap'];
+    }
+
+    /**
+     * Sets noSap
+     *
+     * @param bool $noSap If sap is set or not
+     *
+     * @return $this
+     */
+    public function setNoSap($noSap)
+    {
+        $this->container['noSap'] = $noSap;
 
         return $this;
     }

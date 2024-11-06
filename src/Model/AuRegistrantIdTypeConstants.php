@@ -54,6 +54,9 @@ class AuRegistrantIdTypeConstants
     const NT = 'NT';
     const WA = 'WA';
     const SA = 'SA';
+    const TM = 'TM';
+    const ARBN = 'ARBN';
+    const ICN = 'ICN';
     
     /**
      * Gets allowable values of the enum
@@ -73,6 +76,9 @@ class AuRegistrantIdTypeConstants
             self::NT,
             self::WA,
             self::SA,
+            self::TM,
+            self::ARBN,
+            self::ICN,
         ];
     }
 }

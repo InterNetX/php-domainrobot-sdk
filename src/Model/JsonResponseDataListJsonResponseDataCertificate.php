@@ -302,7 +302,7 @@ class JsonResponseDataListJsonResponseDataCertificate implements ModelInterface,
     /**
      * Sets stid
      *
-     * @param string $stid The server transaction id for the response.
+     * @param string $stid The server transaction ID for the response.
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class JsonResponseDataListJsonResponseDataCertificate implements ModelInterface,
     /**
      * Sets object
      *
-     * @param \Domainrobot\Model\ResponseObject $object The object of the response.
+     * @param \Domainrobot\Model\ResponseObject $object The response object.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class JsonResponseDataListJsonResponseDataCertificate implements ModelInterface,
     /**
      * Sets data
      *
-     * @param \Domainrobot\Model\JsonResponseDataCertificate[][] $data The data for the response. The type of the objects are depending on the request and are also specified in the responseObject value of the response.
+     * @param \Domainrobot\Model\JsonResponseDataCertificate[][] $data The data for the response. The type of the objects are depending on the request and are also specified in the ResponseObject value of the response.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class JsonResponseDataListJsonResponseDataCertificate implements ModelInterface,
     /**
      * Sets ctid
      *
-     * @param string $ctid The client transaction id for the response.
+     * @param string $ctid The CTID (Client Transaction ID) of the response.
      *
      * @return $this
      */

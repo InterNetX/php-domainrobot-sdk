@@ -58,11 +58,11 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'owner' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
         'name' => 'string',
         'cancelation' => '\Domainrobot\Model\ObjectAssignmentMode',
-        'source' => '\Domainrobot\Model\BasicUser',
-        'target' => '\Domainrobot\Model\BasicUser'
+        'source' => '\Domainrobot\Model\User',
+        'target' => '\Domainrobot\Model\User'
     ];
 
     /**
@@ -319,7 +319,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type The type of the object.
+     * @param string $type Type of object, e.g. domain.
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -343,7 +343,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -367,7 +367,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The object name.
+     * @param string $name Name of the object to be reassigned.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets cancelation
      *
-     * @param \Domainrobot\Model\ObjectAssignmentMode $cancelation The cancelation mode.
+     * @param \Domainrobot\Model\ObjectAssignmentMode $cancelation Mode when assigning domains with an active cancelation.
      *
      * @return $this
      */
@@ -412,7 +412,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getSource()
     {
@@ -422,7 +422,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \Domainrobot\Model\BasicUser $source The source owner.
+     * @param \Domainrobot\Model\User $source The user that currently has the object
      *
      * @return $this
      */
@@ -436,7 +436,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets target
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getTarget()
     {
@@ -446,7 +446,7 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets target
      *
-     * @param \Domainrobot\Model\BasicUser $target The target owner.
+     * @param \Domainrobot\Model\User $target The user that should receive the object
      *
      * @return $this
      */

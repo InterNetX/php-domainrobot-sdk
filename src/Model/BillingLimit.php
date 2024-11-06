@@ -57,7 +57,7 @@ class BillingLimit implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user' => '\Domainrobot\Model\BasicUser',
+        'user' => '\Domainrobot\Model\User',
         'entries' => '\Domainrobot\Model\BillingObjectLimit[]'
     ];
 
@@ -271,7 +271,7 @@ class BillingLimit implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUser()
     {
@@ -281,7 +281,7 @@ class BillingLimit implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Domainrobot\Model\BasicUser $user user
+     * @param \Domainrobot\Model\User $user user
      *
      * @return $this
      */

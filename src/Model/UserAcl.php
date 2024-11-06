@@ -58,12 +58,12 @@ class UserAcl implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'functionCode' => 'string',
-        'children' => '\Domainrobot\Model\BasicUser[]',
+        'children' => '\Domainrobot\Model\User[]',
         'childrenLocked' => 'bool',
         'userLocked' => 'bool',
         'effective' => 'bool',
-        'childrenRem' => '\Domainrobot\Model\BasicUser[]',
-        'childrenAdd' => '\Domainrobot\Model\BasicUser[]',
+        'childrenRem' => '\Domainrobot\Model\User[]',
+        'childrenAdd' => '\Domainrobot\Model\User[]',
         'restriction' => '\Domainrobot\Model\ACLRestriction'
     ];
 
@@ -328,7 +328,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Gets children
      *
-     * @return \Domainrobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\User[]
      */
     public function getChildren()
     {
@@ -338,7 +338,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets children
      *
-     * @param \Domainrobot\Model\BasicUser[] $children The none locked children
+     * @param \Domainrobot\Model\User[] $children The none locked children
      *
      * @return $this
      */
@@ -424,7 +424,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Gets childrenRem
      *
-     * @return \Domainrobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\User[]
      */
     public function getChildrenRem()
     {
@@ -434,7 +434,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets childrenRem
      *
-     * @param \Domainrobot\Model\BasicUser[] $childrenRem Children to remove from the exception list
+     * @param \Domainrobot\Model\User[] $childrenRem Children to remove from the exception list
      *
      * @return $this
      */
@@ -448,7 +448,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Gets childrenAdd
      *
-     * @return \Domainrobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\User[]
      */
     public function getChildrenAdd()
     {
@@ -458,7 +458,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     /**
      * Sets childrenAdd
      *
-     * @param \Domainrobot\Model\BasicUser[] $childrenAdd Children to add to the exception list
+     * @param \Domainrobot\Model\User[] $childrenAdd Children to add to the exception list
      *
      * @return $this
      */

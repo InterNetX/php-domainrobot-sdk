@@ -64,7 +64,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
         'nicTransactionId' => 'string',
         'source' => '\Domainrobot\Model\NiccomSourceConstants',
         'text' => 'string',
-        'created' => '\DateTime'
+        'created' => 'int'
     ];
 
     /**
@@ -80,7 +80,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
         'nicTransactionId' => null,
         'source' => null,
         'text' => null,
-        'created' => 'date-time'
+        'created' => 'int64'
     ];
 
     /**
@@ -487,7 +487,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
     /**
      * Gets created
      *
-     * @return \DateTime
+     * @return int
      */
     public function getCreated()
     {
@@ -497,7 +497,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \DateTime $created The created date of the niccom log.
+     * @param int $created The created date of the niccom log.
      *
      * @return $this
      */

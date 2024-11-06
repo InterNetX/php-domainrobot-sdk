@@ -53,6 +53,7 @@ class DomainStudioDomainStatus
     const RESERVED = 'RESERVED';
     const PREMIUM_CLAIM = 'PREMIUM_CLAIM';
     const CLAIM = 'CLAIM';
+    const OFFER = 'OFFER';
     
     /**
      * Gets allowable values of the enum
@@ -71,6 +72,7 @@ class DomainStudioDomainStatus
             self::RESERVED,
             self::PREMIUM_CLAIM,
             self::CLAIM,
+            self::OFFER,
         ];
     }
 }

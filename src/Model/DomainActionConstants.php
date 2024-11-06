@@ -82,6 +82,7 @@ class DomainActionConstants
     const AUTOUPDATE_DEFERRED = 'AUTOUPDATE_DEFERRED';
     const DOMAIN_BUY = 'DOMAIN_BUY';
     const CONTACT_CREATE = 'CONTACT_CREATE';
+    const DELETE_EXPIRE = 'DELETE_EXPIRE';
     
     /**
      * Gets allowable values of the enum
@@ -129,6 +130,7 @@ class DomainActionConstants
             self::AUTOUPDATE_DEFERRED,
             self::DOMAIN_BUY,
             self::CONTACT_CREATE,
+            self::DELETE_EXPIRE,
         ];
     }
 }

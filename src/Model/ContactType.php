@@ -50,6 +50,7 @@ class ContactType
     const DOMAIN = 'DOMAIN';
     const SSL = 'SSL';
     const SERVER = 'SERVER';
+    const ABUSE = 'ABUSE';
     
     /**
      * Gets allowable values of the enum
@@ -65,6 +66,7 @@ class ContactType
             self::DOMAIN,
             self::SSL,
             self::SERVER,
+            self::ABUSE,
         ];
     }
 }

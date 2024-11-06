@@ -356,7 +356,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The custom label for the group
+     * @param string $name Custom name of the name server group.
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets articleLabel
      *
-     * @param string $articleLabel The article label of the name server group, will be used for each created zone using these group
+     * @param string $articleLabel The article name that will be used when creating zones for this group.
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets dnssec
      *
-     * @param bool $dnssec If the group supports dnssec
+     * @param bool $dnssec Support for DNSSEC by the namserver group. Possible values: false = DNSSEC is not supported true = DNSSEC is supported Default value = false
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
     /**
      * Sets statistic
      *
-     * @param bool $statistic If the group contains statistical data for a zone
+     * @param bool $statistic Support of zone statistics by the namserver group. Possible values: false = Statistics are not supported true = Statistics are supported Default value = false
      *
      * @return $this
      */

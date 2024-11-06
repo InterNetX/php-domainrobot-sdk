@@ -58,6 +58,8 @@ class TaskGroup
     const ZONE_UPDATE = 'ZONE_UPDATE';
     const ZONE_DELETE = 'ZONE_DELETE';
     const ZONE_AXFR = 'ZONE_AXFR';
+    const DOMAINSTUDIO_DOMAINSBOT = 'DOMAINSTUDIO_DOMAINSBOT';
+    const DOMAINSTUDIO_PLACEMENTPLUS = 'DOMAINSTUDIO_PLACEMENTPLUS';
     
     /**
      * Gets allowable values of the enum
@@ -81,6 +83,8 @@ class TaskGroup
             self::ZONE_UPDATE,
             self::ZONE_DELETE,
             self::ZONE_AXFR,
+            self::DOMAINSTUDIO_DOMAINSBOT,
+            self::DOMAINSTUDIO_PLACEMENTPLUS,
         ];
     }
 }

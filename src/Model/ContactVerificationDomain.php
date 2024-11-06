@@ -350,7 +350,7 @@ class ContactVerificationDomain implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name the domain of the Verification
+     * @param string $name The domain name associated with the contact verification
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class ContactVerificationDomain implements ModelInterface, ArrayAccess
     /**
      * Sets idn
      *
-     * @param string $idn the idn domain
+     * @param string $idn The domain name written in Punycode syntax(IDN)
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class ContactVerificationDomain implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Domainrobot\Model\GenericStatusConstants $status the status of the domain Verification
+     * @param \Domainrobot\Model\GenericStatusConstants $status The status of the domain Verification
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class ContactVerificationDomain implements ModelInterface, ArrayAccess
     /**
      * Sets deactivation
      *
-     * @param \DateTime $deactivation the deactivation of the domain Verification
+     * @param \DateTime $deactivation The date on which the associated domain is deactivated if the contact verification is not completed
      *
      * @return $this
      */

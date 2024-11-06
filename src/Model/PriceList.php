@@ -59,8 +59,8 @@ class PriceList implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'id' => 'int',
         'label' => 'string',
         'client' => 'string',
@@ -72,7 +72,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'comment' => 'string',
         'customerPriceListsAdd' => '\Domainrobot\Model\CustomerPriceList[]',
         'customerPriceListsRem' => '\Domainrobot\Model\CustomerPriceList[]',
-        'hasCustomerPriceList' => 'bool'
+        'hasCustomerPriceList' => 'bool',
+        'excludeFromPricechange' => 'bool'
     ];
 
     /**
@@ -96,7 +97,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'comment' => null,
         'customerPriceListsAdd' => null,
         'customerPriceListsRem' => null,
-        'hasCustomerPriceList' => null
+        'hasCustomerPriceList' => null,
+        'excludeFromPricechange' => null
     ];
 
     /**
@@ -141,7 +143,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'comment' => 'comment',
         'customerPriceListsAdd' => 'customerPriceListsAdd',
         'customerPriceListsRem' => 'customerPriceListsRem',
-        'hasCustomerPriceList' => 'hasCustomerPriceList'
+        'hasCustomerPriceList' => 'hasCustomerPriceList',
+        'excludeFromPricechange' => 'excludeFromPricechange'
     ];
 
     /**
@@ -165,7 +168,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'comment' => 'setComment',
         'customerPriceListsAdd' => 'setCustomerPriceListsAdd',
         'customerPriceListsRem' => 'setCustomerPriceListsRem',
-        'hasCustomerPriceList' => 'setHasCustomerPriceList'
+        'hasCustomerPriceList' => 'setHasCustomerPriceList',
+        'excludeFromPricechange' => 'setExcludeFromPricechange'
     ];
 
     /**
@@ -189,7 +193,8 @@ class PriceList implements ModelInterface, ArrayAccess
         'comment' => 'getComment',
         'customerPriceListsAdd' => 'getCustomerPriceListsAdd',
         'customerPriceListsRem' => 'getCustomerPriceListsRem',
-        'hasCustomerPriceList' => 'getHasCustomerPriceList'
+        'hasCustomerPriceList' => 'getHasCustomerPriceList',
+        'excludeFromPricechange' => 'getExcludeFromPricechange'
     ];
 
     /**
@@ -268,6 +273,7 @@ class PriceList implements ModelInterface, ArrayAccess
         $this->container['customerPriceListsAdd'] = isset($data['customerPriceListsAdd']) ? $this->createData($data['customerPriceListsAdd'], 'customerPriceListsAdd')  : null;
         $this->container['customerPriceListsRem'] = isset($data['customerPriceListsRem']) ? $this->createData($data['customerPriceListsRem'], 'customerPriceListsRem')  : null;
         $this->container['hasCustomerPriceList'] = isset($data['hasCustomerPriceList']) ? $this->createData($data['hasCustomerPriceList'], 'hasCustomerPriceList')  : null;
+        $this->container['excludeFromPricechange'] = isset($data['excludeFromPricechange']) ? $this->createData($data['excludeFromPricechange'], 'excludeFromPricechange')  : null;
     }
 
     /**
@@ -400,7 +406,7 @@ class PriceList implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -410,7 +416,7 @@ class PriceList implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -424,7 +430,7 @@ class PriceList implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -434,7 +440,7 @@ class PriceList implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -729,6 +735,30 @@ class PriceList implements ModelInterface, ArrayAccess
     public function setHasCustomerPriceList($hasCustomerPriceList)
     {
         $this->container['hasCustomerPriceList'] = $hasCustomerPriceList;
+
+        return $this;
+    }
+
+    /**
+     * Gets excludeFromPricechange
+     *
+     * @return bool
+     */
+    public function getExcludeFromPricechange()
+    {
+        return $this->container['excludeFromPricechange'];
+    }
+
+    /**
+     * Sets excludeFromPricechange
+     *
+     * @param bool $excludeFromPricechange excludeFromPricechange
+     *
+     * @return $this
+     */
+    public function setExcludeFromPricechange($excludeFromPricechange)
+    {
+        $this->container['excludeFromPricechange'] = $excludeFromPricechange;
 
         return $this;
     }

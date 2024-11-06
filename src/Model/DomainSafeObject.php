@@ -60,8 +60,8 @@ class DomainSafeObject implements ModelInterface, ArrayAccess
         'type' => 'string',
         'name' => 'string',
         'idn' => 'string',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'updated' => '\DateTime'
     ];
 
@@ -370,7 +370,7 @@ class DomainSafeObject implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -380,7 +380,7 @@ class DomainSafeObject implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object
+     * @param \Domainrobot\Model\User $owner The owner of the object
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class DomainSafeObject implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -404,7 +404,7 @@ class DomainSafeObject implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating user of the object
+     * @param \Domainrobot\Model\User $updater The updating user of the object
      *
      * @return $this
      */

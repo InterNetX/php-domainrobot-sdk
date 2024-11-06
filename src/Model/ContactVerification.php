@@ -59,8 +59,8 @@ class ContactVerification implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'reference' => 'string',
         'messageSend' => '\DateTime',
         'confirmed' => '\DateTime',
@@ -394,7 +394,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -404,7 +404,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -428,7 +428,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets reference
      *
-     * @param string $reference the unique reference of the Verification
+     * @param string $reference The unique reference of the Verification
      *
      * @return $this
      */
@@ -476,7 +476,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets messageSend
      *
-     * @param \DateTime $messageSend the messageSend date of the Verification
+     * @param \DateTime $messageSend The date when the last verification email was sent.
      *
      * @return $this
      */
@@ -500,7 +500,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets confirmed
      *
-     * @param \DateTime $confirmed the confirmed date of the Verification
+     * @param \DateTime $confirmed The date when the last verification email was confirmed.
      *
      * @return $this
      */
@@ -524,7 +524,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets confirmIp
      *
-     * @param \Domainrobot\Model\InetAddress $confirmIp the confirmIp of the Verification
+     * @param \Domainrobot\Model\InetAddress $confirmIp The IP address from which the verification was confirmed.
      *
      * @return $this
      */
@@ -548,7 +548,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets failed
      *
-     * @param \DateTime $failed the failed date of the Verification
+     * @param \DateTime $failed The date on which the verification failed.
      *
      * @return $this
      */
@@ -572,7 +572,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets domains
      *
-     * @param \Domainrobot\Model\ContactVerificationDomain[] $domains the domains of the Verification
+     * @param \Domainrobot\Model\ContactVerificationDomain[] $domains Domain for which verification was/is required.
      *
      * @return $this
      */
@@ -596,7 +596,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets verificationMails
      *
-     * @param \Domainrobot\Model\ContactVerificationMessage[] $verificationMails the messages of the Verification
+     * @param \Domainrobot\Model\ContactVerificationMessage[] $verificationMails The verification mails. For each mail sent, it is recorded here whether the verification was successful or not.
      *
      * @return $this
      */
@@ -620,7 +620,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets comment
      *
-     * @param string $comment the comment of the Verification
+     * @param string $comment The verification comment. Can be included in the confirmation.
      *
      * @return $this
      */
@@ -644,7 +644,7 @@ class ContactVerification implements ModelInterface, ArrayAccess
     /**
      * Sets action
      *
-     * @param string $action the action of the Verification, e.g. domain update or contact task
+     * @param string $action Action for which the verification was triggered or updated.
      *
      * @return $this
      */

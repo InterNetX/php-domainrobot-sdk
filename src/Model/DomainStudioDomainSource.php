@@ -55,6 +55,8 @@ class DomainStudioDomainSource
     const PERSONAL_NAMES = 'PERSONAL_NAMES';
     const UPCOMING = 'UPCOMING';
     const MARKET = 'MARKET';
+    const DOMAINSBOT = 'DOMAINSBOT';
+    const PLACEMENT_PLUS = 'PLACEMENT_PLUS';
     
     /**
      * Gets allowable values of the enum
@@ -75,6 +77,8 @@ class DomainStudioDomainSource
             self::PERSONAL_NAMES,
             self::UPCOMING,
             self::MARKET,
+            self::DOMAINSBOT,
+            self::PLACEMENT_PLUS,
         ];
     }
 }

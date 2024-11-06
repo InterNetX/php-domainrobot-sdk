@@ -79,7 +79,8 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'madrid' => '\Domainrobot\Model\ContactMadridExtensions',
         'scot' => '\Domainrobot\Model\ContactScotExtensions',
         'ie' => '\Domainrobot\Model\ContactIeExtensions',
-        'zuerich' => '\Domainrobot\Model\ContactZuerichExtensions'
+        'zuerich' => '\Domainrobot\Model\ContactZuerichExtensions',
+        'es' => '\Domainrobot\Model\ContactEsExtensions'
     ];
 
     /**
@@ -110,7 +111,8 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'madrid' => null,
         'scot' => null,
         'ie' => null,
-        'zuerich' => null
+        'zuerich' => null,
+        'es' => null
     ];
 
     /**
@@ -162,7 +164,8 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'madrid' => 'madrid',
         'scot' => 'scot',
         'ie' => 'ie',
-        'zuerich' => 'zuerich'
+        'zuerich' => 'zuerich',
+        'es' => 'es'
     ];
 
     /**
@@ -193,7 +196,8 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'madrid' => 'setMadrid',
         'scot' => 'setScot',
         'ie' => 'setIe',
-        'zuerich' => 'setZuerich'
+        'zuerich' => 'setZuerich',
+        'es' => 'setEs'
     ];
 
     /**
@@ -224,7 +228,8 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         'madrid' => 'getMadrid',
         'scot' => 'getScot',
         'ie' => 'getIe',
-        'zuerich' => 'getZuerich'
+        'zuerich' => 'getZuerich',
+        'es' => 'getEs'
     ];
 
     /**
@@ -310,6 +315,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         $this->container['scot'] = isset($data['scot']) ? $this->createData($data['scot'], 'scot')  : null;
         $this->container['ie'] = isset($data['ie']) ? $this->createData($data['ie'], 'ie')  : null;
         $this->container['zuerich'] = isset($data['zuerich']) ? $this->createData($data['zuerich'], 'zuerich')  : null;
+        $this->container['es'] = isset($data['es']) ? $this->createData($data['es'], 'es')  : null;
     }
 
     /**
@@ -939,6 +945,30 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     public function setZuerich($zuerich)
     {
         $this->container['zuerich'] = $zuerich;
+
+        return $this;
+    }
+
+    /**
+     * Gets es
+     *
+     * @return \Domainrobot\Model\ContactEsExtensions
+     */
+    public function getEs()
+    {
+        return $this->container['es'];
+    }
+
+    /**
+     * Sets es
+     *
+     * @param \Domainrobot\Model\ContactEsExtensions $es The .es contact extensions.
+     *
+     * @return $this
+     */
+    public function setEs($es)
+    {
+        $this->container['es'] = $es;
 
         return $this;
     }

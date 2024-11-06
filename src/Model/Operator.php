@@ -59,6 +59,7 @@ class Operator
     const NOT_LESS_EQUAL = 'NOT_LESS_EQUAL';
     const NOT_GREATER_EQUAL = 'NOT_GREATER_EQUAL';
     const IN = 'IN';
+    const NOT_IN = 'NOT_IN';
     
     /**
      * Gets allowable values of the enum
@@ -83,6 +84,7 @@ class Operator
             self::NOT_LESS_EQUAL,
             self::NOT_GREATER_EQUAL,
             self::IN,
+            self::NOT_IN,
         ];
     }
 }

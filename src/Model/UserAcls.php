@@ -57,7 +57,7 @@ class UserAcls implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user' => '\Domainrobot\Model\BasicUser',
+        'user' => '\Domainrobot\Model\User',
         'acls' => '\Domainrobot\Model\UserAcl[]'
     ];
 
@@ -271,7 +271,7 @@ class UserAcls implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUser()
     {
@@ -281,7 +281,7 @@ class UserAcls implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Domainrobot\Model\BasicUser $user The user which has been effected
+     * @param \Domainrobot\Model\User $user The user which has been effected
      *
      * @return $this
      */

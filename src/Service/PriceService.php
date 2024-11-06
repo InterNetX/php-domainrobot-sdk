@@ -31,4 +31,37 @@ class PriceService extends DomainrobotService
         ));
     }
     
+    public function list(Query $body = null)
+    {
+        $domainrobotPromise = $this->listAsync($body);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        $data = $domainrobotResult->getResult()['data'];
+
+        return $data;
+
+        // $priceArticles = array();
+        // foreach ($data as $d) {
+        //     $p = new PriceArticle($d);
+        //     array_push($priceArticles, $p);
+        // }
+
+        // return $priceArticles;
+    }
+
+    public function listAsync(Query $body = null)
+    {
+        $data = null;
+        if ($body != null) {
+            $data = $body->toArray();
+        }
+
+        return new DomainrobotPromise($this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/price/article/_search",
+            'POST',
+            ["json" => $data]
+        ));
+    }
 }

@@ -330,7 +330,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
     /**
      * Sets mode
      *
-     * @param \Domainrobot\Model\PolicyMode $mode mode
+     * @param \Domainrobot\Model\PolicyMode $mode Allows to enable checking by policy and choose how it should be handled if it does not comply with policy.
      *
      * @return $this
      */

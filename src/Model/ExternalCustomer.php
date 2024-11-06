@@ -60,7 +60,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
         'number' => 'int',
         'client' => 'string',
         'group' => 'int',
-        'billing' => '\Domainrobot\Model\BasicUser',
+        'billing' => '\Domainrobot\Model\User',
         'externalReference' => 'string',
         'creditLimit' => 'double',
         'created' => '\DateTime',
@@ -340,7 +340,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param int $number number
+     * @param int $number Customer number
      *
      * @return $this
      */
@@ -364,7 +364,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets client
      *
-     * @param string $client client
+     * @param string $client Account Label.
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets group
      *
-     * @param int $group group
+     * @param int $group Customer group, first 5 numbers of the account number. e.g.
      *
      * @return $this
      */
@@ -409,7 +409,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
     /**
      * Gets billing
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getBilling()
     {
@@ -419,7 +419,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets billing
      *
-     * @param \Domainrobot\Model\BasicUser $billing The billing user.
+     * @param \Domainrobot\Model\User $billing The billing user.
      *
      * @return $this
      */

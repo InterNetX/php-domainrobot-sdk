@@ -298,7 +298,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param int $number number
+     * @param int $number Customer number
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets client
      *
-     * @param string $client client
+     * @param string $client Account Label.
      *
      * @return $this
      */
@@ -353,7 +353,7 @@ class GenericCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets group
      *
-     * @param int $group group
+     * @param int $group Customer group, first 5 numbers of the account number. e.g.
      *
      * @return $this
      */

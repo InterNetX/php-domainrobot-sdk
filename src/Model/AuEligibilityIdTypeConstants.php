@@ -55,6 +55,11 @@ class AuEligibilityIdTypeConstants
     const QLD = 'QLD';
     const TM = 'TM';
     const OTHER = 'OTHER';
+    const ASL = 'ASL';
+    const ACECQA = 'ACECQA';
+    const CRICOS = 'CRICOS';
+    const RTO = 'RTO';
+    const TEQSA = 'TEQSA';
     
     /**
      * Gets allowable values of the enum
@@ -75,6 +80,11 @@ class AuEligibilityIdTypeConstants
             self::QLD,
             self::TM,
             self::OTHER,
+            self::ASL,
+            self::ACECQA,
+            self::CRICOS,
+            self::RTO,
+            self::TEQSA,
         ];
     }
 }

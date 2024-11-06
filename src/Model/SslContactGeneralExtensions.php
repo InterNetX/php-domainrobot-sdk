@@ -61,7 +61,8 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
         'joiLocality' => 'string',
         'joiStateOrProvince' => 'string',
         'companyNumber' => 'string',
-        'businessCategory' => '\Domainrobot\Model\BusinessCategory'
+        'businessCategory' => '\Domainrobot\Model\BusinessCategory',
+        'organisationalIdentifier' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
         'joiLocality' => null,
         'joiStateOrProvince' => null,
         'companyNumber' => null,
-        'businessCategory' => null
+        'businessCategory' => null,
+        'organisationalIdentifier' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
         'joiLocality' => 'joiLocality',
         'joiStateOrProvince' => 'joiStateOrProvince',
         'companyNumber' => 'companyNumber',
-        'businessCategory' => 'businessCategory'
+        'businessCategory' => 'businessCategory',
+        'organisationalIdentifier' => 'organisationalIdentifier'
     ];
 
     /**
@@ -121,7 +124,8 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
         'joiLocality' => 'setJoiLocality',
         'joiStateOrProvince' => 'setJoiStateOrProvince',
         'companyNumber' => 'setCompanyNumber',
-        'businessCategory' => 'setBusinessCategory'
+        'businessCategory' => 'setBusinessCategory',
+        'organisationalIdentifier' => 'setOrganisationalIdentifier'
     ];
 
     /**
@@ -134,7 +138,8 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
         'joiLocality' => 'getJoiLocality',
         'joiStateOrProvince' => 'getJoiStateOrProvince',
         'companyNumber' => 'getCompanyNumber',
-        'businessCategory' => 'getBusinessCategory'
+        'businessCategory' => 'getBusinessCategory',
+        'organisationalIdentifier' => 'getOrganisationalIdentifier'
     ];
 
     /**
@@ -202,6 +207,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
         $this->container['joiStateOrProvince'] = isset($data['joiStateOrProvince']) ? $this->createData($data['joiStateOrProvince'], 'joiStateOrProvince')  : null;
         $this->container['companyNumber'] = isset($data['companyNumber']) ? $this->createData($data['companyNumber'], 'companyNumber')  : null;
         $this->container['businessCategory'] = isset($data['businessCategory']) ? $this->createData($data['businessCategory'], 'businessCategory')  : null;
+        $this->container['organisationalIdentifier'] = isset($data['organisationalIdentifier']) ? $this->createData($data['organisationalIdentifier'], 'organisationalIdentifier')  : null;
     }
 
     /**
@@ -399,6 +405,30 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
     public function setBusinessCategory($businessCategory)
     {
         $this->container['businessCategory'] = $businessCategory;
+
+        return $this;
+    }
+
+    /**
+     * Gets organisationalIdentifier
+     *
+     * @return string
+     */
+    public function getOrganisationalIdentifier()
+    {
+        return $this->container['organisationalIdentifier'];
+    }
+
+    /**
+     * Sets organisationalIdentifier
+     *
+     * @param string $organisationalIdentifier The Organisational Identifier is the company/organization's registration number. It can either be a VAT, NTR, LEI number. You can provide GOV-identifier ( GOV + Country Code ) if it is a governmental organisation. INTXG if none matches.
+     *
+     * @return $this
+     */
+    public function setOrganisationalIdentifier($organisationalIdentifier)
+    {
+        $this->container['organisationalIdentifier'] = $organisationalIdentifier;
 
         return $this;
     }

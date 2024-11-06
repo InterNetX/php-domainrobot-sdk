@@ -59,8 +59,8 @@ class UserProfileView implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'key' => 'string',
         'value' => 'string',
         'flag' => '\Domainrobot\Model\UserProfileFlag',
@@ -367,7 +367,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -377,7 +377,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */
@@ -391,7 +391,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -401,7 +401,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\User $updater User who performed the last update.
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Sets key
      *
-     * @param string $key The  user profile key
+     * @param string $key The user profile key.
      *
      * @return $this
      */
@@ -449,7 +449,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value The value of the key
+     * @param string $value The value of the key.
      *
      * @return $this
      */
@@ -473,7 +473,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Sets flag
      *
-     * @param \Domainrobot\Model\UserProfileFlag $flag The mode of the entry
+     * @param \Domainrobot\Model\UserProfileFlag $flag Defines to what extent the settings of a user are adopted by its subusers.
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Sets inherited
      *
-     * @param bool $inherited Is true if the value was inherited
+     * @param bool $inherited Indicates whether the value is inherited.  false = value is not inherited true = value is inherited Default value = false
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class UserProfileView implements ModelInterface, ArrayAccess
     /**
      * Sets readonly
      *
-     * @param bool $readonly The read only entry
+     * @param bool $readonly Flag whether the value is changeable by the current user.  Possible values:  false = Not changeable true = Changeable Default value = false
      *
      * @return $this
      */

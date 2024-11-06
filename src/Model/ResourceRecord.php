@@ -309,7 +309,7 @@ class ResourceRecord implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The name of the record.
+     * @param string $name The name of the resource record.
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class ResourceRecord implements ModelInterface, ArrayAccess
     /**
      * Sets ttl
      *
-     * @param int $ttl TTL of the record (Optionally if not set then Default SOA TTL is used)
+     * @param int $ttl Time-to-live value in seconds. Will be set to the default SOA value if not explicitly set.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class ResourceRecord implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type The type of the record, e.g. A
+     * @param string $type Resource record type Further information about resource records: https://de.wikipedia.org/wiki/Resource_Record
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class ResourceRecord implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value The value of the record.
+     * @param string $value The value of the resource record.
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class ResourceRecord implements ModelInterface, ArrayAccess
     /**
      * Sets pref
      *
-     * @param int $pref Preference of the record, need for some record types e.g. MX
+     * @param int $pref The resource record priority which may be needed by certain record types such as MX.
      *
      * @return $this
      */

@@ -87,7 +87,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         'taxable' => 'bool',
         'card' => '\Domainrobot\Model\Card',
         'contracts' => '\Domainrobot\Model\CustomerContract[]',
-        'billingUsers' => '\Domainrobot\Model\BasicUser[]',
+        'billingUsers' => '\Domainrobot\Model\User[]',
         'comments' => '\Domainrobot\Model\Comment[]',
         'contacts' => '\Domainrobot\Model\BasicCustomerContact[]',
         'account' => '\Domainrobot\Model\Account',
@@ -629,7 +629,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param int $number number
+     * @param int $number Customer number
      *
      * @return $this
      */
@@ -653,7 +653,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets client
      *
-     * @param string $client client
+     * @param string $client Account Label.
      *
      * @return $this
      */
@@ -684,7 +684,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets group
      *
-     * @param int $group group
+     * @param int $group Customer group, first 5 numbers of the account number. e.g.
      *
      * @return $this
      */
@@ -1367,7 +1367,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Gets billingUsers
      *
-     * @return \Domainrobot\Model\BasicUser[]
+     * @return \Domainrobot\Model\User[]
      */
     public function getBillingUsers()
     {
@@ -1377,7 +1377,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     /**
      * Sets billingUsers
      *
-     * @param \Domainrobot\Model\BasicUser[] $billingUsers The billing users.
+     * @param \Domainrobot\Model\User[] $billingUsers The billing users.
      *
      * @return $this
      */

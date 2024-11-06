@@ -58,7 +58,7 @@ class PollMessage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-        'owner' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
         'job' => '\Domainrobot\Model\Job',
         'notify' => '\Domainrobot\Model\NotifyMessage',
         'stid' => 'string',
@@ -346,7 +346,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -356,7 +356,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\User $owner The object owner.
      *
      * @return $this
      */

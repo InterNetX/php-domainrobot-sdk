@@ -73,8 +73,8 @@ class SslContact implements ModelInterface, ArrayAccess
         'city' => 'string',
         'country' => 'string',
         'state' => 'string',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
+        'owner' => '\Domainrobot\Model\User',
+        'updater' => '\Domainrobot\Model\User',
         'id' => 'int'
     ];
 
@@ -787,7 +787,7 @@ class SslContact implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getOwner()
     {
@@ -797,7 +797,7 @@ class SslContact implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\BasicUser $owner The owner of the object
+     * @param \Domainrobot\Model\User $owner The owner of the object
      *
      * @return $this
      */
@@ -811,7 +811,7 @@ class SslContact implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\User
      */
     public function getUpdater()
     {
@@ -821,7 +821,7 @@ class SslContact implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\BasicUser $updater The updating using of the object
+     * @param \Domainrobot\Model\User $updater The updating using of the object
      *
      * @return $this
      */

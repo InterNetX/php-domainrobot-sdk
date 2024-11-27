@@ -31,6 +31,7 @@ class SDKController
         ]);
 
         try {
+
             $query = new Query([
                 'filters' => [ new QueryFilter([
                     'key' => 'name',
@@ -42,10 +43,30 @@ class SDKController
                     'limit' => 10
                 ])
             ]);
+
+            /**
+             * List of additional fields which 
+             * can be shown in the list result 
+             */
+            $keys = array(
+                'cancelationStatus', 
+                'expire', 
+                'autorenew', 
+                'authinfo', 
+                'certificate', 
+                'ownerc', 
+                'zonec', 
+                'nserver', 
+                'techc', 
+                'adminc'
+            );
+
+
             $domainList = $domainrobot->domain->addHeaders([
                 DomainrobotHeaders::DOMAINROBOT_HEADER_OWNER => "ownername",
                 DomainrobotHeaders::DOMAINROBOT_HEADER_OWNER_CONTEXT => 797095
-            ])->list($query);
+            ])->list($query, $keys);
+
         } catch (DomainrobotException $exception) {
             return $exception;
         }

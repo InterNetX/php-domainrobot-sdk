@@ -40,27 +40,30 @@ class SDKController
                 ])],
                 'view' => new QueryView([
                     'children' => 1,
-                    'limit' => 10
+                    'limit' => 10,
+                    'offset' => 0
                 ])
             ]);
 
             /**
              * List of additional fields which 
              * can be shown in the list result 
+             * possible key values are:
+             * - cancelationStatus
+             * - expire
+             * - autorenew
+             * - authinfo
+             * - certificate
+             * - ownerc
+             * - zonec
+             * - nserver
+             * - techc
+             * - adminc
              */
             $keys = array(
-                'cancelationStatus', 
-                'expire', 
-                'autorenew', 
-                'authinfo', 
-                'certificate', 
+                'cancelationStatus',
                 'ownerc', 
-                'zonec', 
-                'nserver', 
-                'techc', 
-                'adminc'
             );
-
 
             $domainList = $domainrobot->domain->addHeaders([
                 DomainrobotHeaders::DOMAINROBOT_HEADER_OWNER => "ownername",

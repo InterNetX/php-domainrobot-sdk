@@ -135,7 +135,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return Domain[]
      */
-    public function list(Query $body = null, $keys = [])
+    public function list(?Query $body = null, $keys = [])
     {
         $domainrobotPromise = $this->listAsync($body, $keys);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -162,7 +162,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function listAsync(Query $body = null, $keys = [])
+    public function listAsync(?Query $body = null, $keys = [])
     {
         $data = null;
         if ($body != null) {
@@ -288,7 +288,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return AutoDeleteDomain[]
      */
-    public function autodeleteList(Query $body = null)
+    public function autodeleteList(?Query $body = null)
     {
         $domainrobotPromise = $this->autodeleteListAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -312,7 +312,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function autodeleteListAsync(Query $body = null)
+    public function autodeleteListAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -334,7 +334,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return DomainCancelation[]
      */
-    public function cancelationList(Query $body = null)
+    public function cancelationList(?Query $body = null)
     {
         $domainrobotPromise = $this->cancelationListAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -360,7 +360,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function cancelationListAsync(Query $body = null)
+    public function cancelationListAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -383,7 +383,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return DomainRestore[]
      */
-    public function restoreList(Query $body = null)
+    public function restoreList(?Query $body = null)
     {
         $domainrobotPromise = $this->restoreListAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -410,7 +410,7 @@ class DomainService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function restoreListAsync(Query $body = null)
+    public function restoreListAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -1024,3 +1024,4 @@ class DomainService extends DomainrobotService
         );
     }
 }
+

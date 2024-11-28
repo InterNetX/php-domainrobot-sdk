@@ -41,7 +41,7 @@ class JobService extends DomainrobotService
      * @param Query|null $body
      * @return Job[]
      */
-    public function list(Query $body = null)
+    public function list(?Query $body = null)
     {
         $domainrobotPromise = $this->listAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -78,7 +78,7 @@ class JobService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function listAsync(Query $body = null)
+    public function listAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -111,7 +111,7 @@ class JobService extends DomainrobotService
      * @param Query|null $body
      * @return Job[]
      */
-    public function historyList(Query $body = null)
+    public function historyList(?Query $body = null)
     {
         $domainrobotPromise = $this->listAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -148,7 +148,7 @@ class JobService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function historyListAsync(Query $body = null)
+    public function historyListAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -225,3 +225,4 @@ class JobService extends DomainrobotService
 
     
 }
+

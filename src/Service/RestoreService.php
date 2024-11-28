@@ -58,7 +58,7 @@ class RestoreService extends DomainrobotService
      * @param Query|null $body
      * @return TransferOut[]
      */
-    public function list(Query $body = null)
+    public function list(?Query $body = null)
     {
         $domainrobotPromise = $this->listAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -110,7 +110,7 @@ class RestoreService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function listAsync(Query $body = null)
+    public function listAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -123,3 +123,4 @@ class RestoreService extends DomainrobotService
         ));
     }
 }
+

@@ -17,7 +17,7 @@ class PriceClassService extends DomainrobotService
         parent::__construct($domainrobotConfig);
     }
 
-    public function list(Query $body = null)
+    public function list(?Query $body = null)
     {
         $domainrobotPromise = $this->listAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -37,7 +37,7 @@ class PriceClassService extends DomainrobotService
         // return $priceClassArticles;
     }
 
-    public function listAsync(Query $body = null)
+    public function listAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -51,3 +51,4 @@ class PriceClassService extends DomainrobotService
         ));
     }
 }
+

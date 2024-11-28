@@ -1,6 +1,6 @@
 {
     "name": "internetx/php-domainrobot-sdk",
-    "version": "0.9.25",
+    "version": "0.9.26",
     "description": "A php package for easy integration of the domainrobot API powered by InterNetX GmbH.",
     "type": "library",
     "license": "MIT",
@@ -13,7 +13,8 @@
     "require-dev": {
         "internetx/internetx-swagger-files": "dev-master",
         "atoum/atoum": "^4.0",
-        "atoum/stubs": "^2.6"
+        "atoum/stubs": "^2.6",
+        "friendsofphp/php-cs-fixer": "^3.65"
     },
     "require": {
         "guzzlehttp/guzzle": "^7.2.0"

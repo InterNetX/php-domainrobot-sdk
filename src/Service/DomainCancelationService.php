@@ -174,7 +174,7 @@ class DomainCancelationService extends DomainrobotService
      * @param Query|null $query
      * @return DomainCancelation[]
      */
-    public function list(Query $query = null)
+    public function list(?Query $query = null)
     {
         $domainrobotPromise = $this->listAsync($query);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -213,7 +213,7 @@ class DomainCancelationService extends DomainrobotService
      * @return DomainrobotPromise
      */
 
-    public function listAsync(Query $query = null)
+    public function listAsync(?Query $query = null)
     {
         $data = null;
         if ($query != null) {
@@ -227,3 +227,4 @@ class DomainCancelationService extends DomainrobotService
         ));
     }
 }
+

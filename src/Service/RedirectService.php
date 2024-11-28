@@ -70,7 +70,7 @@ class RedirectService extends DomainrobotService
      * @param Query|null $body
      * @return Redirect[]
      */
-    public function list(Query $body = null, $keys = [])
+    public function list(?Query $body = null, $keys = [])
     {
         $domainrobotPromise = $this->listAsync($body, $keys);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -96,7 +96,7 @@ class RedirectService extends DomainrobotService
      * @param Query|null $body
      * @return DomainrobotPromise
      */
-    public function listAsync(Query $body = null, $keys = [])
+    public function listAsync(?Query $body = null, $keys = [])
     {
         $data = null;
         if ($body != null) {
@@ -218,3 +218,4 @@ class RedirectService extends DomainrobotService
         );
     }
 }
+

@@ -50,3 +50,4 @@ class LoginService extends DomainrobotService
         );
     }
 }
+

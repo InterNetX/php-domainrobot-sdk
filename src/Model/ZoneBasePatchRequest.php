@@ -65,8 +65,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'dnssec' => 'bool',
         'nameServerGroup' => 'string',
         'allowTransfer' => 'bool',
-        'owner' => '\Domainrobot\Model\User',
-        'updater' => '\Domainrobot\Model\User',
+        'owner' => '\Domainrobot\Model\BasicUser',
+        'updater' => '\Domainrobot\Model\BasicUser',
         'logId' => 'int',
         'comment' => 'string',
         'domainsafe' => 'bool',
@@ -74,6 +74,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'string',
         'purgeDate' => '\DateTime',
         'purgeType' => '\Domainrobot\Model\PurgeTypes',
+        'date' => '\DateTime',
         'zoneGrantsAdd' => 'string[]',
         'zoneGrantsRem' => 'string[]',
         'modifiers' => '\Domainrobot\Model\Modifier[]',
@@ -113,6 +114,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => null,
         'purgeDate' => 'date-time',
         'purgeType' => null,
+        'date' => 'date-time',
         'zoneGrantsAdd' => null,
         'zoneGrantsRem' => null,
         'modifiers' => null,
@@ -134,7 +136,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerTypes()
+    public static function swaggerTypes(): array
     {
         return self::$swaggerTypes;
     }
@@ -144,7 +146,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
+    public static function swaggerFormats(): array
     {
         return self::$swaggerFormats;
     }
@@ -173,6 +175,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'sourceVirtualHostname',
         'purgeDate' => 'purgeDate',
         'purgeType' => 'purgeType',
+        'date' => 'date',
         'zoneGrantsAdd' => 'zoneGrantsAdd',
         'zoneGrantsRem' => 'zoneGrantsRem',
         'modifiers' => 'modifiers',
@@ -212,6 +215,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'setSourceVirtualHostname',
         'purgeDate' => 'setPurgeDate',
         'purgeType' => 'setPurgeType',
+        'date' => 'setDate',
         'zoneGrantsAdd' => 'setZoneGrantsAdd',
         'zoneGrantsRem' => 'setZoneGrantsRem',
         'modifiers' => 'setModifiers',
@@ -251,6 +255,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'sourceVirtualHostname' => 'getSourceVirtualHostname',
         'purgeDate' => 'getPurgeDate',
         'purgeType' => 'getPurgeType',
+        'date' => 'getDate',
         'zoneGrantsAdd' => 'getZoneGrantsAdd',
         'zoneGrantsRem' => 'getZoneGrantsRem',
         'modifiers' => 'getModifiers',
@@ -273,7 +278,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
+    public static function attributeMap(): array
     {
         return self::$attributeMap;
     }
@@ -283,7 +288,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
+    public static function setters(): array
     {
         return self::$setters;
     }
@@ -293,7 +298,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
+    public static function getters(): array
     {
         return self::$getters;
     }
@@ -303,7 +308,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
+    public function getModelName(): string
     {
         return self::$swaggerModelName;
     }
@@ -325,7 +330,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
@@ -344,6 +349,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         $this->container['sourceVirtualHostname'] = isset($data['sourceVirtualHostname']) ? $this->createData($data['sourceVirtualHostname'], 'sourceVirtualHostname')  : null;
         $this->container['purgeDate'] = isset($data['purgeDate']) ? $this->createData($data['purgeDate'], 'purgeDate')  : null;
         $this->container['purgeType'] = isset($data['purgeType']) ? $this->createData($data['purgeType'], 'purgeType')  : null;
+        $this->container['date'] = isset($data['date']) ? $this->createData($data['date'], 'date')  : null;
         $this->container['zoneGrantsAdd'] = isset($data['zoneGrantsAdd']) ? $this->createData($data['zoneGrantsAdd'], 'zoneGrantsAdd')  : null;
         $this->container['zoneGrantsRem'] = isset($data['zoneGrantsRem']) ? $this->createData($data['zoneGrantsRem'], 'zoneGrantsRem')  : null;
         $this->container['modifiers'] = isset($data['modifiers']) ? $this->createData($data['modifiers'], 'modifiers')  : null;
@@ -369,11 +375,12 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      * @param string $property
      * @return mixed
      */
-    public function createData($data = null, $property = '')
+    public function createData($data = null, $property = null): mixed
     {
-        if ($data === null || $property === '') {
+        if ($data === null || $property === null) {
             return '';
         }
+        
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -420,7 +427,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
+    public function listInvalidProperties(): array
     {
         $invalidProperties = [];
 
@@ -436,7 +443,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
+    public function valid(): bool
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -637,7 +644,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets owner
      *
-     * @return \Domainrobot\Model\User
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getOwner()
     {
@@ -647,7 +654,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets owner
      *
-     * @param \Domainrobot\Model\User $owner Owner of the zone object
+     * @param \Domainrobot\Model\BasicUser $owner Owner of the zone object
      *
      * @return $this
      */
@@ -661,7 +668,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Gets updater
      *
-     * @return \Domainrobot\Model\User
+     * @return \Domainrobot\Model\BasicUser
      */
     public function getUpdater()
     {
@@ -671,7 +678,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     /**
      * Sets updater
      *
-     * @param \Domainrobot\Model\User $updater User who last updated the zone.
+     * @param \Domainrobot\Model\BasicUser $updater User who last updated the zone.
      *
      * @return $this
      */
@@ -846,6 +853,30 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     public function setPurgeType($purgeType)
     {
         $this->container['purgeType'] = $purgeType;
+
+        return $this;
+    }
+
+    /**
+     * Gets date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     *
+     * @param \DateTime $date Date of search.
+     *
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
 
         return $this;
     }
@@ -1192,7 +1223,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -1204,7 +1235,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -1217,7 +1248,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -1233,7 +1264,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -1243,7 +1274,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
@@ -1263,7 +1294,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false){
+    public function toArray($retrieveAllValues = false): array
+    {
         $container = $this->container;
 
         $cleanContainer = [];
@@ -1291,6 +1323,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
                     }
                 }
             }
+
             if (is_array($value)) {
                 foreach ($value as &$v) {
                     if (gettype($v) === "object") {
@@ -1298,8 +1331,10 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
                     }
                 }
             }
+
             $cleanContainer[self::$attributeMap[$key]] = $value;
         };
+
         return $cleanContainer;
     }
 }

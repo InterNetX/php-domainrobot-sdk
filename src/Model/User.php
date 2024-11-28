@@ -57,10 +57,36 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'created' => '\DateTime',
+        'updated' => '\DateTime',
         'context' => 'int',
+        'password' => 'string',
+        'defaultEmail' => 'string',
+        'status' => 'int',
+        'substatus' => 'int',
+        'authType' => '\Domainrobot\Model\AuthType',
+        'details' => '\Domainrobot\Model\UserDetails',
+        'lock' => '\Domainrobot\Model\UserLock',
+        'oldPassword' => 'string',
         'passwordChanged' => '\DateTime',
         'passwordExpired' => 'bool',
-        'user' => 'string'
+        'acls' => '\Domainrobot\Model\UserAcls',
+        'profiles' => '\Domainrobot\Model\UserProfileViews',
+        'serviceProfiles' => '\Domainrobot\Model\ServiceProfiles',
+        'ancestors' => '\Domainrobot\Model\BasicUser[]',
+        'customer' => '\Domainrobot\Model\BasicCustomer',
+        'nameServerGroups' => '\Domainrobot\Model\VirtualNameServerGroup[]',
+        'subscriptions' => '\Domainrobot\Model\Subscription[]',
+        'applications' => '\Domainrobot\Model\TrustedApplication[]',
+        'restrictions' => '\Domainrobot\Model\IpRestrictions',
+        'customerLevel' => 'int',
+        'user' => 'string',
+        'language' => 'string',
+        'parent' => '\Domainrobot\Model\User',
+        'directCustomer' => 'bool',
+        'clientAccounts' => '\Domainrobot\Model\ExternalAccounting[]',
+        'tasklimits' => '\Domainrobot\Model\TaskLimit[]',
+        'trusteeContacts' => '\Domainrobot\Model\TrusteeContact[]'
     ];
 
     /**
@@ -69,10 +95,36 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'created' => 'date-time',
+        'updated' => 'date-time',
         'context' => 'int32',
+        'password' => null,
+        'defaultEmail' => null,
+        'status' => 'int32',
+        'substatus' => 'int32',
+        'authType' => null,
+        'details' => null,
+        'lock' => null,
+        'oldPassword' => null,
         'passwordChanged' => 'date-time',
         'passwordExpired' => null,
-        'user' => null
+        'acls' => null,
+        'profiles' => null,
+        'serviceProfiles' => null,
+        'ancestors' => null,
+        'customer' => null,
+        'nameServerGroups' => null,
+        'subscriptions' => null,
+        'applications' => null,
+        'restrictions' => null,
+        'customerLevel' => 'int32',
+        'user' => null,
+        'language' => null,
+        'parent' => null,
+        'directCustomer' => null,
+        'clientAccounts' => null,
+        'tasklimits' => null,
+        'trusteeContacts' => null
     ];
 
     /**
@@ -80,7 +132,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerTypes()
+    public static function swaggerTypes(): array
     {
         return self::$swaggerTypes;
     }
@@ -90,7 +142,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
+    public static function swaggerFormats(): array
     {
         return self::$swaggerFormats;
     }
@@ -102,10 +154,36 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'created' => 'created',
+        'updated' => 'updated',
         'context' => 'context',
+        'password' => 'password',
+        'defaultEmail' => 'defaultEmail',
+        'status' => 'status',
+        'substatus' => 'substatus',
+        'authType' => 'authType',
+        'details' => 'details',
+        'lock' => 'lock',
+        'oldPassword' => 'oldPassword',
         'passwordChanged' => 'passwordChanged',
         'passwordExpired' => 'passwordExpired',
-        'user' => 'user'
+        'acls' => 'acls',
+        'profiles' => 'profiles',
+        'serviceProfiles' => 'serviceProfiles',
+        'ancestors' => 'ancestors',
+        'customer' => 'customer',
+        'nameServerGroups' => 'nameServerGroups',
+        'subscriptions' => 'subscriptions',
+        'applications' => 'applications',
+        'restrictions' => 'restrictions',
+        'customerLevel' => 'customerLevel',
+        'user' => 'user',
+        'language' => 'language',
+        'parent' => 'parent',
+        'directCustomer' => 'directCustomer',
+        'clientAccounts' => 'clientAccounts',
+        'tasklimits' => 'tasklimits',
+        'trusteeContacts' => 'trusteeContacts'
     ];
 
     /**
@@ -114,10 +192,36 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'created' => 'setCreated',
+        'updated' => 'setUpdated',
         'context' => 'setContext',
+        'password' => 'setPassword',
+        'defaultEmail' => 'setDefaultEmail',
+        'status' => 'setStatus',
+        'substatus' => 'setSubstatus',
+        'authType' => 'setAuthType',
+        'details' => 'setDetails',
+        'lock' => 'setLock',
+        'oldPassword' => 'setOldPassword',
         'passwordChanged' => 'setPasswordChanged',
         'passwordExpired' => 'setPasswordExpired',
-        'user' => 'setUser'
+        'acls' => 'setAcls',
+        'profiles' => 'setProfiles',
+        'serviceProfiles' => 'setServiceProfiles',
+        'ancestors' => 'setAncestors',
+        'customer' => 'setCustomer',
+        'nameServerGroups' => 'setNameServerGroups',
+        'subscriptions' => 'setSubscriptions',
+        'applications' => 'setApplications',
+        'restrictions' => 'setRestrictions',
+        'customerLevel' => 'setCustomerLevel',
+        'user' => 'setUser',
+        'language' => 'setLanguage',
+        'parent' => 'setParent',
+        'directCustomer' => 'setDirectCustomer',
+        'clientAccounts' => 'setClientAccounts',
+        'tasklimits' => 'setTasklimits',
+        'trusteeContacts' => 'setTrusteeContacts'
     ];
 
     /**
@@ -126,10 +230,36 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'created' => 'getCreated',
+        'updated' => 'getUpdated',
         'context' => 'getContext',
+        'password' => 'getPassword',
+        'defaultEmail' => 'getDefaultEmail',
+        'status' => 'getStatus',
+        'substatus' => 'getSubstatus',
+        'authType' => 'getAuthType',
+        'details' => 'getDetails',
+        'lock' => 'getLock',
+        'oldPassword' => 'getOldPassword',
         'passwordChanged' => 'getPasswordChanged',
         'passwordExpired' => 'getPasswordExpired',
-        'user' => 'getUser'
+        'acls' => 'getAcls',
+        'profiles' => 'getProfiles',
+        'serviceProfiles' => 'getServiceProfiles',
+        'ancestors' => 'getAncestors',
+        'customer' => 'getCustomer',
+        'nameServerGroups' => 'getNameServerGroups',
+        'subscriptions' => 'getSubscriptions',
+        'applications' => 'getApplications',
+        'restrictions' => 'getRestrictions',
+        'customerLevel' => 'getCustomerLevel',
+        'user' => 'getUser',
+        'language' => 'getLanguage',
+        'parent' => 'getParent',
+        'directCustomer' => 'getDirectCustomer',
+        'clientAccounts' => 'getClientAccounts',
+        'tasklimits' => 'getTasklimits',
+        'trusteeContacts' => 'getTrusteeContacts'
     ];
 
     /**
@@ -138,7 +268,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
+    public static function attributeMap(): array
     {
         return self::$attributeMap;
     }
@@ -148,7 +278,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
+    public static function setters(): array
     {
         return self::$setters;
     }
@@ -158,7 +288,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
+    public static function getters(): array
     {
         return self::$getters;
     }
@@ -168,7 +298,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
+    public function getModelName(): string
     {
         return self::$swaggerModelName;
     }
@@ -190,12 +320,38 @@ class User implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
+        $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
+        $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
         $this->container['context'] = isset($data['context']) ? $this->createData($data['context'], 'context')  : null;
+        $this->container['password'] = isset($data['password']) ? $this->createData($data['password'], 'password')  : null;
+        $this->container['defaultEmail'] = isset($data['defaultEmail']) ? $this->createData($data['defaultEmail'], 'defaultEmail')  : null;
+        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
+        $this->container['substatus'] = isset($data['substatus']) ? $this->createData($data['substatus'], 'substatus')  : null;
+        $this->container['authType'] = isset($data['authType']) ? $this->createData($data['authType'], 'authType')  : null;
+        $this->container['details'] = isset($data['details']) ? $this->createData($data['details'], 'details')  : null;
+        $this->container['lock'] = isset($data['lock']) ? $this->createData($data['lock'], 'lock')  : null;
+        $this->container['oldPassword'] = isset($data['oldPassword']) ? $this->createData($data['oldPassword'], 'oldPassword')  : null;
         $this->container['passwordChanged'] = isset($data['passwordChanged']) ? $this->createData($data['passwordChanged'], 'passwordChanged')  : null;
         $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
+        $this->container['acls'] = isset($data['acls']) ? $this->createData($data['acls'], 'acls')  : null;
+        $this->container['profiles'] = isset($data['profiles']) ? $this->createData($data['profiles'], 'profiles')  : null;
+        $this->container['serviceProfiles'] = isset($data['serviceProfiles']) ? $this->createData($data['serviceProfiles'], 'serviceProfiles')  : null;
+        $this->container['ancestors'] = isset($data['ancestors']) ? $this->createData($data['ancestors'], 'ancestors')  : null;
+        $this->container['customer'] = isset($data['customer']) ? $this->createData($data['customer'], 'customer')  : null;
+        $this->container['nameServerGroups'] = isset($data['nameServerGroups']) ? $this->createData($data['nameServerGroups'], 'nameServerGroups')  : null;
+        $this->container['subscriptions'] = isset($data['subscriptions']) ? $this->createData($data['subscriptions'], 'subscriptions')  : null;
+        $this->container['applications'] = isset($data['applications']) ? $this->createData($data['applications'], 'applications')  : null;
+        $this->container['restrictions'] = isset($data['restrictions']) ? $this->createData($data['restrictions'], 'restrictions')  : null;
+        $this->container['customerLevel'] = isset($data['customerLevel']) ? $this->createData($data['customerLevel'], 'customerLevel')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
+        $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
+        $this->container['parent'] = isset($data['parent']) ? $this->createData($data['parent'], 'parent')  : null;
+        $this->container['directCustomer'] = isset($data['directCustomer']) ? $this->createData($data['directCustomer'], 'directCustomer')  : null;
+        $this->container['clientAccounts'] = isset($data['clientAccounts']) ? $this->createData($data['clientAccounts'], 'clientAccounts')  : null;
+        $this->container['tasklimits'] = isset($data['tasklimits']) ? $this->createData($data['tasklimits'], 'tasklimits')  : null;
+        $this->container['trusteeContacts'] = isset($data['trusteeContacts']) ? $this->createData($data['trusteeContacts'], 'trusteeContacts')  : null;
     }
 
     /**
@@ -207,11 +363,12 @@ class User implements ModelInterface, ArrayAccess
      * @param string $property
      * @return mixed
      */
-    public function createData($data = null, $property = '')
+    public function createData($data = null, $property = null): mixed
     {
-        if ($data === null || $property === '') {
+        if ($data === null || $property === null) {
             return '';
         }
+        
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -258,7 +415,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
+    public function listInvalidProperties(): array
     {
         $invalidProperties = [];
 
@@ -281,11 +438,59 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
+    public function valid(): bool
     {
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->container['created'];
+    }
+
+    /**
+     * Sets created
+     *
+     * @param \DateTime $created The user created date.
+     *
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     *
+     * @param \DateTime $updated The user updated date.
+     *
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
+
+        return $this;
+    }
 
     /**
      * Gets context
@@ -307,6 +512,198 @@ class User implements ModelInterface, ArrayAccess
     public function setContext($context)
     {
         $this->container['context'] = $context;
+
+        return $this;
+    }
+
+    /**
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     *
+     * @param string $password User password.
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultEmail
+     *
+     * @return string
+     */
+    public function getDefaultEmail()
+    {
+        return $this->container['defaultEmail'];
+    }
+
+    /**
+     * Sets defaultEmail
+     *
+     * @param string $defaultEmail The default email.
+     *
+     * @return $this
+     */
+    public function setDefaultEmail($defaultEmail)
+    {
+        $this->container['defaultEmail'] = $defaultEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param int $status User status.
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets substatus
+     *
+     * @return int
+     */
+    public function getSubstatus()
+    {
+        return $this->container['substatus'];
+    }
+
+    /**
+     * Sets substatus
+     *
+     * @param int $substatus User substatus of the User.
+     *
+     * @return $this
+     */
+    public function setSubstatus($substatus)
+    {
+        $this->container['substatus'] = $substatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets authType
+     *
+     * @return \Domainrobot\Model\AuthType
+     */
+    public function getAuthType()
+    {
+        return $this->container['authType'];
+    }
+
+    /**
+     * Sets authType
+     *
+     * @param \Domainrobot\Model\AuthType $authType Authentication type, e.g. password or TOTP.
+     *
+     * @return $this
+     */
+    public function setAuthType($authType)
+    {
+        $this->container['authType'] = $authType;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     *
+     * @return \Domainrobot\Model\UserDetails
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     *
+     * @param \Domainrobot\Model\UserDetails $details The user details.
+     *
+     * @return $this
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets lock
+     *
+     * @return \Domainrobot\Model\UserLock
+     */
+    public function getLock()
+    {
+        return $this->container['lock'];
+    }
+
+    /**
+     * Sets lock
+     *
+     * @param \Domainrobot\Model\UserLock $lock Defines the type of user lock.
+     *
+     * @return $this
+     */
+    public function setLock($lock)
+    {
+        $this->container['lock'] = $lock;
+
+        return $this;
+    }
+
+    /**
+     * Gets oldPassword
+     *
+     * @return string
+     */
+    public function getOldPassword()
+    {
+        return $this->container['oldPassword'];
+    }
+
+    /**
+     * Sets oldPassword
+     *
+     * @param string $oldPassword The old password.
+     *
+     * @return $this
+     */
+    public function setOldPassword($oldPassword)
+    {
+        $this->container['oldPassword'] = $oldPassword;
 
         return $this;
     }
@@ -360,6 +757,246 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets acls
+     *
+     * @return \Domainrobot\Model\UserAcls
+     */
+    public function getAcls()
+    {
+        return $this->container['acls'];
+    }
+
+    /**
+     * Sets acls
+     *
+     * @param \Domainrobot\Model\UserAcls $acls User privileges.
+     *
+     * @return $this
+     */
+    public function setAcls($acls)
+    {
+        $this->container['acls'] = $acls;
+
+        return $this;
+    }
+
+    /**
+     * Gets profiles
+     *
+     * @return \Domainrobot\Model\UserProfileViews
+     */
+    public function getProfiles()
+    {
+        return $this->container['profiles'];
+    }
+
+    /**
+     * Sets profiles
+     *
+     * @param \Domainrobot\Model\UserProfileViews $profiles User profile.
+     *
+     * @return $this
+     */
+    public function setProfiles($profiles)
+    {
+        $this->container['profiles'] = $profiles;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceProfiles
+     *
+     * @return \Domainrobot\Model\ServiceProfiles
+     */
+    public function getServiceProfiles()
+    {
+        return $this->container['serviceProfiles'];
+    }
+
+    /**
+     * Sets serviceProfiles
+     *
+     * @param \Domainrobot\Model\ServiceProfiles $serviceProfiles Wrapper for the service user profiles.
+     *
+     * @return $this
+     */
+    public function setServiceProfiles($serviceProfiles)
+    {
+        $this->container['serviceProfiles'] = $serviceProfiles;
+
+        return $this;
+    }
+
+    /**
+     * Gets ancestors
+     *
+     * @return \Domainrobot\Model\BasicUser[]
+     */
+    public function getAncestors()
+    {
+        return $this->container['ancestors'];
+    }
+
+    /**
+     * Sets ancestors
+     *
+     * @param \Domainrobot\Model\BasicUser[] $ancestors The ancestors of the user.
+     *
+     * @return $this
+     */
+    public function setAncestors($ancestors)
+    {
+        $this->container['ancestors'] = $ancestors;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     *
+     * @return \Domainrobot\Model\BasicCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     *
+     * @param \Domainrobot\Model\BasicCustomer $customer Customer to which this user belongs.
+     *
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets nameServerGroups
+     *
+     * @return \Domainrobot\Model\VirtualNameServerGroup[]
+     */
+    public function getNameServerGroups()
+    {
+        return $this->container['nameServerGroups'];
+    }
+
+    /**
+     * Sets nameServerGroups
+     *
+     * @param \Domainrobot\Model\VirtualNameServerGroup[] $nameServerGroups The available name server groups
+     *
+     * @return $this
+     */
+    public function setNameServerGroups($nameServerGroups)
+    {
+        $this->container['nameServerGroups'] = $nameServerGroups;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptions
+     *
+     * @return \Domainrobot\Model\Subscription[]
+     */
+    public function getSubscriptions()
+    {
+        return $this->container['subscriptions'];
+    }
+
+    /**
+     * Sets subscriptions
+     *
+     * @param \Domainrobot\Model\Subscription[] $subscriptions Different subscriptions of the users.
+     *
+     * @return $this
+     */
+    public function setSubscriptions($subscriptions)
+    {
+        $this->container['subscriptions'] = $subscriptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets applications
+     *
+     * @return \Domainrobot\Model\TrustedApplication[]
+     */
+    public function getApplications()
+    {
+        return $this->container['applications'];
+    }
+
+    /**
+     * Sets applications
+     *
+     * @param \Domainrobot\Model\TrustedApplication[] $applications Trusted applications of the user.
+     *
+     * @return $this
+     */
+    public function setApplications($applications)
+    {
+        $this->container['applications'] = $applications;
+
+        return $this;
+    }
+
+    /**
+     * Gets restrictions
+     *
+     * @return \Domainrobot\Model\IpRestrictions
+     */
+    public function getRestrictions()
+    {
+        return $this->container['restrictions'];
+    }
+
+    /**
+     * Sets restrictions
+     *
+     * @param \Domainrobot\Model\IpRestrictions $restrictions Grouping object for specifying the user's IP networks.
+     *
+     * @return $this
+     */
+    public function setRestrictions($restrictions)
+    {
+        $this->container['restrictions'] = $restrictions;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerLevel
+     *
+     * @return int
+     */
+    public function getCustomerLevel()
+    {
+        return $this->container['customerLevel'];
+    }
+
+    /**
+     * Sets customerLevel
+     *
+     * @param int $customerLevel The actual customer level for the user.
+     *
+     * @return $this
+     */
+    public function setCustomerLevel($customerLevel)
+    {
+        $this->container['customerLevel'] = $customerLevel;
+
+        return $this;
+    }
+
+    /**
      * Gets user
      *
      * @return string
@@ -387,6 +1024,150 @@ class User implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string $language The language for the user. The setting affects  the user interface language and system messages. Possible values: de en es.
+     *
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent
+     *
+     * @return \Domainrobot\Model\User
+     */
+    public function getParent()
+    {
+        return $this->container['parent'];
+    }
+
+    /**
+     * Sets parent
+     *
+     * @param \Domainrobot\Model\User $parent Parent user.
+     *
+     * @return $this
+     */
+    public function setParent($parent)
+    {
+        $this->container['parent'] = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Gets directCustomer
+     *
+     * @return bool
+     */
+    public function getDirectCustomer()
+    {
+        return $this->container['directCustomer'];
+    }
+
+    /**
+     * Sets directCustomer
+     *
+     * @param bool $directCustomer Specifies whether the user is a direct customer of the user. false = No direct customer true = direct customer Default value = false For XML, 0 (false) and 1 (true) can also be used.
+     *
+     * @return $this
+     */
+    public function setDirectCustomer($directCustomer)
+    {
+        $this->container['directCustomer'] = $directCustomer;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientAccounts
+     *
+     * @return \Domainrobot\Model\ExternalAccounting[]
+     */
+    public function getClientAccounts()
+    {
+        return $this->container['clientAccounts'];
+    }
+
+    /**
+     * Sets clientAccounts
+     *
+     * @param \Domainrobot\Model\ExternalAccounting[] $clientAccounts The client accounting datas for the user.
+     *
+     * @return $this
+     */
+    public function setClientAccounts($clientAccounts)
+    {
+        $this->container['clientAccounts'] = $clientAccounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets tasklimits
+     *
+     * @return \Domainrobot\Model\TaskLimit[]
+     */
+    public function getTasklimits()
+    {
+        return $this->container['tasklimits'];
+    }
+
+    /**
+     * Sets tasklimits
+     *
+     * @param \Domainrobot\Model\TaskLimit[] $tasklimits The task limits of the user.
+     *
+     * @return $this
+     */
+    public function setTasklimits($tasklimits)
+    {
+        $this->container['tasklimits'] = $tasklimits;
+
+        return $this;
+    }
+
+    /**
+     * Gets trusteeContacts
+     *
+     * @return \Domainrobot\Model\TrusteeContact[]
+     */
+    public function getTrusteeContacts()
+    {
+        return $this->container['trusteeContacts'];
+    }
+
+    /**
+     * Sets trusteeContacts
+     *
+     * @param \Domainrobot\Model\TrusteeContact[] $trusteeContacts The trustee Contacts of the user.
+     *
+     * @return $this
+     */
+    public function setTrusteeContacts($trusteeContacts)
+    {
+        $this->container['trusteeContacts'] = $trusteeContacts;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -394,7 +1175,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -406,7 +1187,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -419,7 +1200,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -435,7 +1216,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -445,7 +1226,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
@@ -465,7 +1246,8 @@ class User implements ModelInterface, ArrayAccess
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false){
+    public function toArray($retrieveAllValues = false): array
+    {
         $container = $this->container;
 
         $cleanContainer = [];
@@ -493,6 +1275,7 @@ class User implements ModelInterface, ArrayAccess
                     }
                 }
             }
+
             if (is_array($value)) {
                 foreach ($value as &$v) {
                     if (gettype($v) === "object") {
@@ -500,8 +1283,10 @@ class User implements ModelInterface, ArrayAccess
                     }
                 }
             }
+
             $cleanContainer[self::$attributeMap[$key]] = $value;
         };
+
         return $cleanContainer;
     }
 }

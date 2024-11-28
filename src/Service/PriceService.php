@@ -31,7 +31,7 @@ class PriceService extends DomainrobotService
         ));
     }
     
-    public function list(Query $body = null)
+    public function list(?Query $body = null)
     {
         $domainrobotPromise = $this->listAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -51,7 +51,7 @@ class PriceService extends DomainrobotService
         // return $priceArticles;
     }
 
-    public function listAsync(Query $body = null)
+    public function listAsync(?Query $body = null)
     {
         $data = null;
         if ($body != null) {
@@ -65,3 +65,4 @@ class PriceService extends DomainrobotService
         ));
     }
 }
+

@@ -2,9 +2,10 @@
 
 namespace Domainrobot\Service;
 
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
-use Domainrobot\Service\DomainrobotService;
+use Domainrobot\Model\Query;
 
 class PriceService extends DomainrobotService
 {

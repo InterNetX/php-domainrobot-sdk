@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.27] - 2026-03-03
+
+* Added `verificationCreate` & `verificationResendEmail` to `ContactService`
+* Added examples for contact verification
+* Fixed bugs in `PriceService` & `PriceClassService`
+* Updated SDK models based on current domainrobot swagger definitions
+
 ## [0.8.4] - 2021-02-15
 
 * Fixed error in property parameter of Model::createData() Method

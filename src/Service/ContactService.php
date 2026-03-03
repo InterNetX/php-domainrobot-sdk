@@ -8,6 +8,7 @@ use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\Query;
 use Domainrobot\Model\Contact;
+use Domainrobot\Model\ContactVerification;
 use Domainrobot\Model\JsonNoData;
 use Domainrobot\Service\DomainrobotService;
 
@@ -32,7 +33,7 @@ class ContactService extends DomainrobotService
     public function create(Contact $body, array $keys = [])
     {
         $keysString = '';
-        if ( count($keys) > 0 ) {
+        if (count($keys) > 0) {
             $keysString = '?keys[]=' . implode('&keys[]=', $keys);
         }
 
@@ -242,10 +243,72 @@ class ContactService extends DomainrobotService
             throw new \InvalidArgumentException("Field Contact.id is missing.");
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/contact/".$body->getId(),
+            $this->domainrobotConfig->getUrl() . "/contact/" . $body->getId(),
             'PUT',
             ["json" => $body->toArray()]
         );
     }
-}
 
+    /**
+     * Sends a contact verification create request.
+     * Creates a verification job for the given contact ID.
+     * If a job already exists for that contact it will be updated and restarted.
+     *
+     * @param int $id
+     * @return ContactVerification
+     */
+    public function verificationCreate($id)
+    {
+        $domainrobotPromise = $this->verificationCreateAsync($id);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new ContactVerification(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+    }
+
+    /**
+     * Sends a contact verification create request.
+     *
+     * @param int $id
+     * @return DomainrobotPromise
+     */
+    public function verificationCreateAsync($id)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/contact/$id/verification",
+            'POST'
+        );
+    }
+
+    /**
+     * Sends a contact verification resend email request.
+     * Resends the verification e-mail for the given contact ID.
+     *
+     * @param int $id
+     * @return JsonNoData
+     */
+    public function verificationResendEmail($id)
+    {
+        $domainrobotPromise = $this->verificationResendEmailAsync($id);
+        $domainrobotResult = $domainrobotPromise->wait();
+
+        Domainrobot::setLastDomainrobotResult($domainrobotResult);
+
+        return new JsonNoData();
+    }
+
+    /**
+     * Sends a contact verification resend email request.
+     *
+     * @param int $id
+     * @return DomainrobotPromise
+     */
+    public function verificationResendEmailAsync($id)
+    {
+        return $this->sendRequest(
+            $this->domainrobotConfig->getUrl() . "/contact/$id/verification/_resendEmail",
+            'PUT'
+        );
+    }
+}

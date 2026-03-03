@@ -2,9 +2,11 @@
 
 namespace Domainrobot\Service;
 
+use Domainrobot\Domainrobot;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Service\DomainrobotService;
+use Domainrobot\Model\Query;
 
 class PriceService extends DomainrobotService
 {
@@ -30,7 +32,7 @@ class PriceService extends DomainrobotService
             ["json" => $query]
         ));
     }
-    
+
     public function list(?Query $body = null)
     {
         $domainrobotPromise = $this->listAsync($body);
@@ -41,14 +43,6 @@ class PriceService extends DomainrobotService
         $data = $domainrobotResult->getResult()['data'];
 
         return $data;
-
-        // $priceArticles = array();
-        // foreach ($data as $d) {
-        //     $p = new PriceArticle($d);
-        //     array_push($priceArticles, $p);
-        // }
-
-        // return $priceArticles;
     }
 
     public function listAsync(?Query $body = null)
@@ -65,4 +59,3 @@ class PriceService extends DomainrobotService
         ));
     }
 }
-

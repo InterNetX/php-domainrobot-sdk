@@ -389,12 +389,6 @@ class SubjectProduct implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['product'] === null) {
-            $invalidProperties[] = "'product' can't be null";
-        }
-        if ($this->container['subject'] === null) {
-            $invalidProperties[] = "'subject' can't be null";
-        }
         return $invalidProperties;
     }
 

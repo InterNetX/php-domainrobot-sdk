@@ -59,8 +59,9 @@ class BasicUser implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'context' => 'int',
         'passwordChanged' => '\DateTime',
-        'passwordExpired' => 'bool',
-        'user' => 'string'
+        'passwordExpires' => '\DateTime',
+        'user' => 'string',
+        'passwordExpired' => 'bool'
     ];
 
     /**
@@ -71,8 +72,9 @@ class BasicUser implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'context' => 'int32',
         'passwordChanged' => 'date-time',
-        'passwordExpired' => null,
-        'user' => null
+        'passwordExpires' => 'date-time',
+        'user' => null,
+        'passwordExpired' => null
     ];
 
     /**
@@ -104,8 +106,9 @@ class BasicUser implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'context' => 'context',
         'passwordChanged' => 'passwordChanged',
-        'passwordExpired' => 'passwordExpired',
-        'user' => 'user'
+        'passwordExpires' => 'passwordExpires',
+        'user' => 'user',
+        'passwordExpired' => 'passwordExpired'
     ];
 
     /**
@@ -116,8 +119,9 @@ class BasicUser implements ModelInterface, ArrayAccess
     protected static $setters = [
         'context' => 'setContext',
         'passwordChanged' => 'setPasswordChanged',
-        'passwordExpired' => 'setPasswordExpired',
-        'user' => 'setUser'
+        'passwordExpires' => 'setPasswordExpires',
+        'user' => 'setUser',
+        'passwordExpired' => 'setPasswordExpired'
     ];
 
     /**
@@ -128,8 +132,9 @@ class BasicUser implements ModelInterface, ArrayAccess
     protected static $getters = [
         'context' => 'getContext',
         'passwordChanged' => 'getPasswordChanged',
-        'passwordExpired' => 'getPasswordExpired',
-        'user' => 'getUser'
+        'passwordExpires' => 'getPasswordExpires',
+        'user' => 'getUser',
+        'passwordExpired' => 'getPasswordExpired'
     ];
 
     /**
@@ -194,8 +199,9 @@ class BasicUser implements ModelInterface, ArrayAccess
     {
         $this->container['context'] = isset($data['context']) ? $this->createData($data['context'], 'context')  : null;
         $this->container['passwordChanged'] = isset($data['passwordChanged']) ? $this->createData($data['passwordChanged'], 'passwordChanged')  : null;
-        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
+        $this->container['passwordExpires'] = isset($data['passwordExpires']) ? $this->createData($data['passwordExpires'], 'passwordExpires')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
+        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
     }
 
     /**
@@ -263,16 +269,6 @@ class BasicUser implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['context'] === null) {
-            $invalidProperties[] = "'context' can't be null";
-        }
-        if ($this->container['user'] === null) {
-            $invalidProperties[] = "'user' can't be null";
-        }
-        if (!preg_match("/^[^_].*/", $this->container['user'])) {
-            $invalidProperties[] = "invalid value for 'user', must be conform to the pattern /^[^_].*/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -337,25 +333,25 @@ class BasicUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets passwordExpired
+     * Gets passwordExpires
      *
-     * @return bool
+     * @return \DateTime
      */
-    public function getPasswordExpired()
+    public function getPasswordExpires()
     {
-        return $this->container['passwordExpired'];
+        return $this->container['passwordExpires'];
     }
 
     /**
-     * Sets passwordExpired
+     * Sets passwordExpires
      *
-     * @param bool $passwordExpired The passwordExpired boolean
+     * @param \DateTime $passwordExpires The date on which the password will expire
      *
      * @return $this
      */
-    public function setPasswordExpired($passwordExpired)
+    public function setPasswordExpires($passwordExpires)
     {
-        $this->container['passwordExpired'] = $passwordExpired;
+        $this->container['passwordExpires'] = $passwordExpires;
 
         return $this;
     }
@@ -379,12 +375,31 @@ class BasicUser implements ModelInterface, ArrayAccess
      */
     public function setUser($user)
     {
-
-        if ((!preg_match("/^[^_].*/", $user))) {
-            throw new \InvalidArgumentException("invalid value for $user when calling BasicUser., must conform to the pattern /^[^_].*/.");
-        }
-
         $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordExpired
+     *
+     * @return bool
+     */
+    public function getPasswordExpired()
+    {
+        return $this->container['passwordExpired'];
+    }
+
+    /**
+     * Sets passwordExpired
+     *
+     * @param bool $passwordExpired Is the current password expired
+     *
+     * @return $this
+     */
+    public function setPasswordExpired($passwordExpired)
+    {
+        $this->container['passwordExpired'] = $passwordExpired;
 
         return $this;
     }

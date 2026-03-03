@@ -269,9 +269,6 @@ class PriceChangeExclude implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['priceChange'] === null) {
-            $invalidProperties[] = "'priceChange' can't be null";
-        }
         return $invalidProperties;
     }
 

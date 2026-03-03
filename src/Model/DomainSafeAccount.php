@@ -293,12 +293,6 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['mobile'] === null) {
-            $invalidProperties[] = "'mobile' can't be null";
-        }
-        if ($this->container['pin'] === null) {
-            $invalidProperties[] = "'pin' can't be null";
-        }
         return $invalidProperties;
     }
 

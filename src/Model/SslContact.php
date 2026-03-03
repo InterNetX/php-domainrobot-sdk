@@ -353,32 +353,6 @@ class SslContact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['organization'] === null) {
-            $invalidProperties[] = "'organization' can't be null";
-        }
-        if ((mb_strlen($this->container['organization']) > 64)) {
-            $invalidProperties[] = "invalid value for 'organization', the character length must be smaller than or equal to 64.";
-        }
-
-        if ((mb_strlen($this->container['organization']) < 0)) {
-            $invalidProperties[] = "invalid value for 'organization', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -653,13 +627,6 @@ class SslContact implements ModelInterface, ArrayAccess
      */
     public function setOrganization($organization)
     {
-        if ((mb_strlen($organization) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $organization when calling SslContact., must be smaller than or equal to 64.');
-        }
-        if ((mb_strlen($organization) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $organization when calling SslContact., must be bigger than or equal to 0.');
-        }
-
         $this->container['organization'] = $organization;
 
         return $this;

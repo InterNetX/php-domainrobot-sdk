@@ -59,6 +59,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
+        'id' => 'int',
         'contract' => '\Domainrobot\Model\GenericLabelEntity',
         'accountManager' => '\Domainrobot\Model\AccountManager',
         'classification' => 'string',
@@ -76,6 +77,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
+        'id' => 'int32',
         'contract' => null,
         'accountManager' => null,
         'classification' => null,
@@ -114,6 +116,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
+        'id' => 'id',
         'contract' => 'contract',
         'accountManager' => 'accountManager',
         'classification' => 'classification',
@@ -131,6 +134,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
+        'id' => 'setId',
         'contract' => 'setContract',
         'accountManager' => 'setAccountManager',
         'classification' => 'setClassification',
@@ -148,6 +152,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
+        'id' => 'getId',
         'contract' => 'getContract',
         'accountManager' => 'getAccountManager',
         'classification' => 'getClassification',
@@ -219,6 +224,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
+        $this->container['id'] = isset($data['id']) ? $this->createData($data['id'], 'id')  : null;
         $this->container['contract'] = isset($data['contract']) ? $this->createData($data['contract'], 'contract')  : null;
         $this->container['accountManager'] = isset($data['accountManager']) ? $this->createData($data['accountManager'], 'accountManager')  : null;
         $this->container['classification'] = isset($data['classification']) ? $this->createData($data['classification'], 'classification')  : null;
@@ -293,9 +299,6 @@ class CustomerContract implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['contract'] === null) {
-            $invalidProperties[] = "'contract' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -355,6 +358,30 @@ class CustomerContract implements ModelInterface, ArrayAccess
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id The unique identifier of the customerContract
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

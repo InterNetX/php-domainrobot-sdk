@@ -263,30 +263,6 @@ class DNSSec implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['algorithm'] === null) {
-            $invalidProperties[] = "'algorithm' can't be null";
-        }
-        if ($this->container['flags'] === null) {
-            $invalidProperties[] = "'flags' can't be null";
-        }
-        if (($this->container['flags'] > 257)) {
-            $invalidProperties[] = "invalid value for 'flags', must be smaller than or equal to 257.";
-        }
-
-        if (($this->container['flags'] < 256)) {
-            $invalidProperties[] = "invalid value for 'flags', must be bigger than or equal to 256.";
-        }
-
-        if ($this->container['protocol'] === null) {
-            $invalidProperties[] = "'protocol' can't be null";
-        }
-        if ($this->container['publicKey'] === null) {
-            $invalidProperties[] = "'publicKey' can't be null";
-        }
-        if (!preg_match("/^[\\sa-zA-Z0-9+\/\\n=]{8,}$/", $this->container['publicKey'])) {
-            $invalidProperties[] = "invalid value for 'publicKey', must be conform to the pattern /^[\\sa-zA-Z0-9+\/\\n=]{8,}$/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -345,14 +321,6 @@ class DNSSec implements ModelInterface, ArrayAccess
      */
     public function setFlags($flags)
     {
-
-        if (($flags > 257)) {
-            throw new \InvalidArgumentException('invalid value for $flags when calling DNSSec., must be smaller than or equal to 257.');
-        }
-        if (($flags < 256)) {
-            throw new \InvalidArgumentException('invalid value for $flags when calling DNSSec., must be bigger than or equal to 256.');
-        }
-
         $this->container['flags'] = $flags;
 
         return $this;
@@ -401,11 +369,6 @@ class DNSSec implements ModelInterface, ArrayAccess
      */
     public function setPublicKey($publicKey)
     {
-
-        if ((!preg_match("/^[\\sa-zA-Z0-9+\/\\n=]{8,}$/", $publicKey))) {
-            throw new \InvalidArgumentException("invalid value for $publicKey when calling DNSSec., must conform to the pattern /^[\\sa-zA-Z0-9+\/\\n=]{8,}$/.");
-        }
-
         $this->container['publicKey'] = $publicKey;
 
         return $this;

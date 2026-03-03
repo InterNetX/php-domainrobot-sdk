@@ -61,6 +61,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetMobile' => 'string',
         'passwordResetVerifyEmail' => 'string',
         'passwordResetEmail' => 'string',
+        'lastPasswordReminderEmail' => '\DateTime',
         'fname' => 'string',
         'lname' => 'string',
         'phone' => 'string'
@@ -76,6 +77,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetMobile' => null,
         'passwordResetVerifyEmail' => null,
         'passwordResetEmail' => null,
+        'lastPasswordReminderEmail' => 'date-time',
         'fname' => null,
         'lname' => null,
         'phone' => null
@@ -112,6 +114,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetMobile' => 'passwordResetMobile',
         'passwordResetVerifyEmail' => 'passwordResetVerifyEmail',
         'passwordResetEmail' => 'passwordResetEmail',
+        'lastPasswordReminderEmail' => 'lastPasswordReminderEmail',
         'fname' => 'fname',
         'lname' => 'lname',
         'phone' => 'phone'
@@ -127,6 +130,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetMobile' => 'setPasswordResetMobile',
         'passwordResetVerifyEmail' => 'setPasswordResetVerifyEmail',
         'passwordResetEmail' => 'setPasswordResetEmail',
+        'lastPasswordReminderEmail' => 'setLastPasswordReminderEmail',
         'fname' => 'setFname',
         'lname' => 'setLname',
         'phone' => 'setPhone'
@@ -142,6 +146,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         'passwordResetMobile' => 'getPasswordResetMobile',
         'passwordResetVerifyEmail' => 'getPasswordResetVerifyEmail',
         'passwordResetEmail' => 'getPasswordResetEmail',
+        'lastPasswordReminderEmail' => 'getLastPasswordReminderEmail',
         'fname' => 'getFname',
         'lname' => 'getLname',
         'phone' => 'getPhone'
@@ -211,6 +216,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         $this->container['passwordResetMobile'] = isset($data['passwordResetMobile']) ? $this->createData($data['passwordResetMobile'], 'passwordResetMobile')  : null;
         $this->container['passwordResetVerifyEmail'] = isset($data['passwordResetVerifyEmail']) ? $this->createData($data['passwordResetVerifyEmail'], 'passwordResetVerifyEmail')  : null;
         $this->container['passwordResetEmail'] = isset($data['passwordResetEmail']) ? $this->createData($data['passwordResetEmail'], 'passwordResetEmail')  : null;
+        $this->container['lastPasswordReminderEmail'] = isset($data['lastPasswordReminderEmail']) ? $this->createData($data['lastPasswordReminderEmail'], 'lastPasswordReminderEmail')  : null;
         $this->container['fname'] = isset($data['fname']) ? $this->createData($data['fname'], 'fname')  : null;
         $this->container['lname'] = isset($data['lname']) ? $this->createData($data['lname'], 'lname')  : null;
         $this->container['phone'] = isset($data['phone']) ? $this->createData($data['phone'], 'phone')  : null;
@@ -388,6 +394,30 @@ class UserDetails implements ModelInterface, ArrayAccess
     public function setPasswordResetEmail($passwordResetEmail)
     {
         $this->container['passwordResetEmail'] = $passwordResetEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastPasswordReminderEmail
+     *
+     * @return \DateTime
+     */
+    public function getLastPasswordReminderEmail()
+    {
+        return $this->container['lastPasswordReminderEmail'];
+    }
+
+    /**
+     * Sets lastPasswordReminderEmail
+     *
+     * @param \DateTime $lastPasswordReminderEmail Date of the last password reminder email
+     *
+     * @return $this
+     */
+    public function setLastPasswordReminderEmail($lastPasswordReminderEmail)
+    {
+        $this->container['lastPasswordReminderEmail'] = $lastPasswordReminderEmail;
 
         return $this;
     }

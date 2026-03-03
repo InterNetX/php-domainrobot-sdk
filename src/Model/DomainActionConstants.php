@@ -83,6 +83,9 @@ class DomainActionConstants
     const DOMAIN_BUY = 'DOMAIN_BUY';
     const CONTACT_CREATE = 'CONTACT_CREATE';
     const DELETE_EXPIRE = 'DELETE_EXPIRE';
+    const VERIFICATION_DOMAIN = 'VERIFICATION_DOMAIN';
+    const VERIFICATION_CONTACT = 'VERIFICATION_CONTACT';
+    const DELETE_NICREF = 'DELETE_NICREF';
     
     /**
      * Gets allowable values of the enum
@@ -131,6 +134,9 @@ class DomainActionConstants
             self::DOMAIN_BUY,
             self::CONTACT_CREATE,
             self::DELETE_EXPIRE,
+            self::VERIFICATION_DOMAIN,
+            self::VERIFICATION_CONTACT,
+            self::DELETE_NICREF,
         ];
     }
 }

@@ -413,12 +413,6 @@ class MailProxy implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['domain'] === null) {
-            $invalidProperties[] = "'domain' can't be null";
-        }
-        if ($this->container['target'] === null) {
-            $invalidProperties[] = "'target' can't be null";
-        }
         $allowedValues = $this->getGreylistingAllowableValues();
         if (!is_null($this->container['greylisting']) && !in_array($this->container['greylisting'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(

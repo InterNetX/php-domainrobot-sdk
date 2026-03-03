@@ -323,15 +323,6 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['confirmSignature'] === null) {
-            $invalidProperties[] = "'confirmSignature' can't be null";
-        }
-        if ($this->container['confirmIp'] === null) {
-            $invalidProperties[] = "'confirmIp' can't be null";
-        }
-        if ($this->container['confirmChecked'] === null) {
-            $invalidProperties[] = "'confirmChecked' can't be null";
-        }
         return $invalidProperties;
     }
 

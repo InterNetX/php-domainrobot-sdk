@@ -383,30 +383,6 @@ class TmchMark implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['reference'] === null) {
-            $invalidProperties[] = "'reference' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ($this->container['period'] === null) {
-            $invalidProperties[] = "'period' can't be null";
-        }
-        if ($this->container['payable'] === null) {
-            $invalidProperties[] = "'payable' can't be null";
-        }
-        if ($this->container['smdInclusion'] === null) {
-            $invalidProperties[] = "'smdInclusion' can't be null";
-        }
-        if ($this->container['claimsNotify'] === null) {
-            $invalidProperties[] = "'claimsNotify' can't be null";
-        }
         return $invalidProperties;
     }
 

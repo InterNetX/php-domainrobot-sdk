@@ -245,9 +245,6 @@ class Custom implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['key'] === null) {
-            $invalidProperties[] = "'key' can't be null";
-        }
         return $invalidProperties;
     }
 

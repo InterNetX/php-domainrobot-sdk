@@ -551,15 +551,6 @@ class Domain implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['removeCancelation'] === null) {
-            $invalidProperties[] = "'removeCancelation' can't be null";
-        }
-        if ($this->container['payable'] === null) {
-            $invalidProperties[] = "'payable' can't be null";
-        }
         return $invalidProperties;
     }
 

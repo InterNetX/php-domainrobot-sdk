@@ -353,9 +353,6 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['payable'] === null) {
-            $invalidProperties[] = "'payable' can't be null";
-        }
         return $invalidProperties;
     }
 

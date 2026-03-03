@@ -275,13 +275,6 @@ class ResourceRecord implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if (!is_null($this->container['pref']) && ($this->container['pref'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pref', must be smaller than or equal to 65535.";
-        }
-
         return $invalidProperties;
     }
 
@@ -412,11 +405,6 @@ class ResourceRecord implements ModelInterface, ArrayAccess
      */
     public function setPref($pref)
     {
-
-        if (!is_null($pref) && ($pref > 65535)) {
-            throw new \InvalidArgumentException('invalid value for $pref when calling ResourceRecord., must be smaller than or equal to 65535.');
-        }
-
         $this->container['pref'] = $pref;
 
         return $this;

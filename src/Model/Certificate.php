@@ -539,16 +539,6 @@ class Certificate implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['lifetime'] === null) {
-            $invalidProperties[] = "'lifetime' can't be null";
-        }
-        if ($this->container['product'] === null) {
-            $invalidProperties[] = "'product' can't be null";
-        }
-        if (!is_null($this->container['password']) && !preg_match("/^[a-zA-Z0-9]{8,32}$/", $this->container['password'])) {
-            $invalidProperties[] = "invalid value for 'password', must be conform to the pattern /^[a-zA-Z0-9]{8,32}$/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -1303,11 +1293,6 @@ class Certificate implements ModelInterface, ArrayAccess
      */
     public function setPassword($password)
     {
-
-        if (!is_null($password) && (!preg_match("/^[a-zA-Z0-9]{8,32}$/", $password))) {
-            throw new \InvalidArgumentException("invalid value for $password when calling Certificate., must conform to the pattern /^[a-zA-Z0-9]{8,32}$/.");
-        }
-
         $this->container['password'] = $password;
 
         return $this;

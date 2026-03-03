@@ -359,14 +359,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['priceMarkup']) && ($this->container['priceMarkup'] > 10000)) {
-            $invalidProperties[] = "invalid value for 'priceMarkup', must be smaller than or equal to 10000.";
-        }
-
-        if (!is_null($this->container['priceMarkup']) && ($this->container['priceMarkup'] < 0)) {
-            $invalidProperties[] = "invalid value for 'priceMarkup', must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -617,14 +609,6 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      */
     public function setPriceMarkup($priceMarkup)
     {
-
-        if (!is_null($priceMarkup) && ($priceMarkup > 10000)) {
-            throw new \InvalidArgumentException('invalid value for $priceMarkup when calling ExternalAccounting., must be smaller than or equal to 10000.');
-        }
-        if (!is_null($priceMarkup) && ($priceMarkup < 0)) {
-            throw new \InvalidArgumentException('invalid value for $priceMarkup when calling ExternalAccounting., must be bigger than or equal to 0.');
-        }
-
         $this->container['priceMarkup'] = $priceMarkup;
 
         return $this;

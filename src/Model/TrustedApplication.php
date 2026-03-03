@@ -311,12 +311,6 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['uuid'] === null) {
-            $invalidProperties[] = "'uuid' can't be null";
-        }
-        if ($this->container['application'] === null) {
-            $invalidProperties[] = "'application' can't be null";
-        }
         return $invalidProperties;
     }
 

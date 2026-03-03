@@ -293,12 +293,6 @@ class Product implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['article'] === null) {
-            $invalidProperties[] = "'article' can't be null";
-        }
-        if ($this->container['businessCase'] === null) {
-            $invalidProperties[] = "'businessCase' can't be null";
-        }
         return $invalidProperties;
     }
 

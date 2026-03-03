@@ -257,9 +257,6 @@ class CustomerTag implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['tag'] === null) {
-            $invalidProperties[] = "'tag' can't be null";
-        }
         return $invalidProperties;
     }
 

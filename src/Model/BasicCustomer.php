@@ -539,69 +539,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
-        }
-        if ($this->container['client'] === null) {
-            $invalidProperties[] = "'client' can't be null";
-        }
-        if ((mb_strlen($this->container['client']) > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'client', the character length must be smaller than or equal to 2147483647.";
-        }
-
-        if ((mb_strlen($this->container['client']) < 1)) {
-            $invalidProperties[] = "invalid value for 'client', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) > 255)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
-        }
-
-        if ((mb_strlen($this->container['name']) < 0)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['organization']) && (mb_strlen($this->container['organization']) > 35)) {
-            $invalidProperties[] = "invalid value for 'organization', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['organization']) && (mb_strlen($this->container['organization']) < 0)) {
-            $invalidProperties[] = "invalid value for 'organization', the character length must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['organization2']) && (mb_strlen($this->container['organization2']) > 35)) {
-            $invalidProperties[] = "invalid value for 'organization2', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['organization2']) && (mb_strlen($this->container['organization2']) < 0)) {
-            $invalidProperties[] = "invalid value for 'organization2', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['addressLines'] === null) {
-            $invalidProperties[] = "'addressLines' can't be null";
-        }
-        if ($this->container['payment'] === null) {
-            $invalidProperties[] = "'payment' can't be null";
-        }
-        if (!is_null($this->container['fname']) && (mb_strlen($this->container['fname']) > 35)) {
-            $invalidProperties[] = "invalid value for 'fname', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['fname']) && (mb_strlen($this->container['fname']) < 0)) {
-            $invalidProperties[] = "invalid value for 'fname', the character length must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['lname']) && (mb_strlen($this->container['lname']) > 35)) {
-            $invalidProperties[] = "invalid value for 'lname', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['lname']) && (mb_strlen($this->container['lname']) < 0)) {
-            $invalidProperties[] = "invalid value for 'lname', the character length must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -660,13 +597,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setClient($client)
     {
-        if ((mb_strlen($client) > 2147483647)) {
-            throw new \InvalidArgumentException('invalid length for $client when calling BasicCustomer., must be smaller than or equal to 2147483647.');
-        }
-        if ((mb_strlen($client) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $client when calling BasicCustomer., must be bigger than or equal to 1.');
-        }
-
         $this->container['client'] = $client;
 
         return $this;
@@ -715,13 +645,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setName($name)
     {
-        if ((mb_strlen($name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling BasicCustomer., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($name) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling BasicCustomer., must be bigger than or equal to 0.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -770,13 +693,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setOrganization($organization)
     {
-        if (!is_null($organization) && (mb_strlen($organization) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $organization when calling BasicCustomer., must be smaller than or equal to 35.');
-        }
-        if (!is_null($organization) && (mb_strlen($organization) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $organization when calling BasicCustomer., must be bigger than or equal to 0.');
-        }
-
         $this->container['organization'] = $organization;
 
         return $this;
@@ -801,13 +717,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setOrganization2($organization2)
     {
-        if (!is_null($organization2) && (mb_strlen($organization2) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $organization2 when calling BasicCustomer., must be smaller than or equal to 35.');
-        }
-        if (!is_null($organization2) && (mb_strlen($organization2) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $organization2 when calling BasicCustomer., must be bigger than or equal to 0.');
-        }
-
         $this->container['organization2'] = $organization2;
 
         return $this;
@@ -1744,13 +1653,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setFname($fname)
     {
-        if (!is_null($fname) && (mb_strlen($fname) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $fname when calling BasicCustomer., must be smaller than or equal to 35.');
-        }
-        if (!is_null($fname) && (mb_strlen($fname) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $fname when calling BasicCustomer., must be bigger than or equal to 0.');
-        }
-
         $this->container['fname'] = $fname;
 
         return $this;
@@ -1775,13 +1677,6 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      */
     public function setLname($lname)
     {
-        if (!is_null($lname) && (mb_strlen($lname) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $lname when calling BasicCustomer., must be smaller than or equal to 35.');
-        }
-        if (!is_null($lname) && (mb_strlen($lname) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $lname when calling BasicCustomer., must be bigger than or equal to 0.');
-        }
-
         $this->container['lname'] = $lname;
 
         return $this;

@@ -60,9 +60,10 @@ class LoginData implements ModelInterface, ArrayAccess
         'context' => 'int',
         'password' => 'string',
         'passwordChanged' => '\DateTime',
-        'passwordExpired' => 'bool',
+        'passwordExpires' => '\DateTime',
         'token' => 'string',
-        'user' => 'string'
+        'user' => 'string',
+        'passwordExpired' => 'bool'
     ];
 
     /**
@@ -74,9 +75,10 @@ class LoginData implements ModelInterface, ArrayAccess
         'context' => 'int32',
         'password' => null,
         'passwordChanged' => 'date-time',
-        'passwordExpired' => null,
+        'passwordExpires' => 'date-time',
         'token' => null,
-        'user' => null
+        'user' => null,
+        'passwordExpired' => null
     ];
 
     /**
@@ -109,9 +111,10 @@ class LoginData implements ModelInterface, ArrayAccess
         'context' => 'context',
         'password' => 'password',
         'passwordChanged' => 'passwordChanged',
-        'passwordExpired' => 'passwordExpired',
+        'passwordExpires' => 'passwordExpires',
         'token' => 'token',
-        'user' => 'user'
+        'user' => 'user',
+        'passwordExpired' => 'passwordExpired'
     ];
 
     /**
@@ -123,9 +126,10 @@ class LoginData implements ModelInterface, ArrayAccess
         'context' => 'setContext',
         'password' => 'setPassword',
         'passwordChanged' => 'setPasswordChanged',
-        'passwordExpired' => 'setPasswordExpired',
+        'passwordExpires' => 'setPasswordExpires',
         'token' => 'setToken',
-        'user' => 'setUser'
+        'user' => 'setUser',
+        'passwordExpired' => 'setPasswordExpired'
     ];
 
     /**
@@ -137,9 +141,10 @@ class LoginData implements ModelInterface, ArrayAccess
         'context' => 'getContext',
         'password' => 'getPassword',
         'passwordChanged' => 'getPasswordChanged',
-        'passwordExpired' => 'getPasswordExpired',
+        'passwordExpires' => 'getPasswordExpires',
         'token' => 'getToken',
-        'user' => 'getUser'
+        'user' => 'getUser',
+        'passwordExpired' => 'getPasswordExpired'
     ];
 
     /**
@@ -205,9 +210,10 @@ class LoginData implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $this->createData($data['context'], 'context')  : null;
         $this->container['password'] = isset($data['password']) ? $this->createData($data['password'], 'password')  : null;
         $this->container['passwordChanged'] = isset($data['passwordChanged']) ? $this->createData($data['passwordChanged'], 'passwordChanged')  : null;
-        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
+        $this->container['passwordExpires'] = isset($data['passwordExpires']) ? $this->createData($data['passwordExpires'], 'passwordExpires')  : null;
         $this->container['token'] = isset($data['token']) ? $this->createData($data['token'], 'token')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
+        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
     }
 
     /**
@@ -274,16 +280,6 @@ class LoginData implements ModelInterface, ArrayAccess
     public function listInvalidProperties(): array
     {
         $invalidProperties = [];
-
-        if ($this->container['context'] === null) {
-            $invalidProperties[] = "'context' can't be null";
-        }
-        if ($this->container['user'] === null) {
-            $invalidProperties[] = "'user' can't be null";
-        }
-        if (!preg_match("/^[^_].*/", $this->container['user'])) {
-            $invalidProperties[] = "invalid value for 'user', must be conform to the pattern /^[^_].*/.";
-        }
 
         return $invalidProperties;
     }
@@ -373,25 +369,25 @@ class LoginData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets passwordExpired
+     * Gets passwordExpires
      *
-     * @return bool
+     * @return \DateTime
      */
-    public function getPasswordExpired()
+    public function getPasswordExpires()
     {
-        return $this->container['passwordExpired'];
+        return $this->container['passwordExpires'];
     }
 
     /**
-     * Sets passwordExpired
+     * Sets passwordExpires
      *
-     * @param bool $passwordExpired The passwordExpired boolean
+     * @param \DateTime $passwordExpires The date on which the password will expire
      *
      * @return $this
      */
-    public function setPasswordExpired($passwordExpired)
+    public function setPasswordExpires($passwordExpires)
     {
-        $this->container['passwordExpired'] = $passwordExpired;
+        $this->container['passwordExpires'] = $passwordExpires;
 
         return $this;
     }
@@ -439,12 +435,31 @@ class LoginData implements ModelInterface, ArrayAccess
      */
     public function setUser($user)
     {
-
-        if ((!preg_match("/^[^_].*/", $user))) {
-            throw new \InvalidArgumentException("invalid value for $user when calling LoginData., must conform to the pattern /^[^_].*/.");
-        }
-
         $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordExpired
+     *
+     * @return bool
+     */
+    public function getPasswordExpired()
+    {
+        return $this->container['passwordExpired'];
+    }
+
+    /**
+     * Sets passwordExpired
+     *
+     * @param bool $passwordExpired Is the current password expired
+     *
+     * @return $this
+     */
+    public function setPasswordExpired($passwordExpired)
+    {
+        $this->container['passwordExpired'] = $passwordExpired;
 
         return $this;
     }

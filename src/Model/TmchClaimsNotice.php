@@ -341,9 +341,6 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['confirmIP'] === null) {
-            $invalidProperties[] = "'confirmIP' can't be null";
-        }
         return $invalidProperties;
     }
 

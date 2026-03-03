@@ -275,23 +275,6 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['owner'] === null) {
-            $invalidProperties[] = "'owner' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 2147483647.";
-        }
-
-        if ((mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -374,13 +357,6 @@ class ObjectUserAssignment implements ModelInterface, ArrayAccess
      */
     public function setName($name)
     {
-        if ((mb_strlen($name) > 2147483647)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ObjectUserAssignment., must be smaller than or equal to 2147483647.');
-        }
-        if ((mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ObjectUserAssignment., must be bigger than or equal to 1.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;

@@ -329,15 +329,6 @@ class DomainPremium implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['priceClass'] === null) {
-            $invalidProperties[] = "'priceClass' can't be null";
-        }
-        if ($this->container['provider'] === null) {
-            $invalidProperties[] = "'provider' can't be null";
-        }
         return $invalidProperties;
     }
 

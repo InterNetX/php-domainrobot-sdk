@@ -323,18 +323,6 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['cancelation'] === null) {
-            $invalidProperties[] = "'cancelation' can't be null";
-        }
-        if ($this->container['initial'] === null) {
-            $invalidProperties[] = "'initial' can't be null";
-        }
-        if ($this->container['renew'] === null) {
-            $invalidProperties[] = "'renew' can't be null";
-        }
-        if ($this->container['customer'] === null) {
-            $invalidProperties[] = "'customer' can't be null";
-        }
         return $invalidProperties;
     }
 

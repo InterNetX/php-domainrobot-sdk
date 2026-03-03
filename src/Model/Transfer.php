@@ -329,9 +329,6 @@ class Transfer implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['domain'] === null) {
-            $invalidProperties[] = "'domain' can't be null";
-        }
         return $invalidProperties;
     }
 

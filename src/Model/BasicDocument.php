@@ -329,9 +329,6 @@ class BasicDocument implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['uuid'] === null) {
-            $invalidProperties[] = "'uuid' can't be null";
-        }
         return $invalidProperties;
     }
 

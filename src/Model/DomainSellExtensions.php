@@ -58,8 +58,9 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'currency' => 'string',
-        'fixedPrice' => 'bool',
+        'price' => 'double',
         'keywords' => 'string[]',
+        'fixedPrice' => 'bool',
         'minPrice' => 'double',
         'mode' => '\Domainrobot\Model\SellMode'
     ];
@@ -71,8 +72,9 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'currency' => null,
-        'fixedPrice' => null,
+        'price' => 'double',
         'keywords' => null,
+        'fixedPrice' => null,
         'minPrice' => 'double',
         'mode' => null
     ];
@@ -105,8 +107,9 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'currency' => 'currency',
-        'fixedPrice' => 'fixedPrice',
+        'price' => 'price',
         'keywords' => 'keywords',
+        'fixedPrice' => 'fixedPrice',
         'minPrice' => 'minPrice',
         'mode' => 'mode'
     ];
@@ -118,8 +121,9 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'currency' => 'setCurrency',
-        'fixedPrice' => 'setFixedPrice',
+        'price' => 'setPrice',
         'keywords' => 'setKeywords',
+        'fixedPrice' => 'setFixedPrice',
         'minPrice' => 'setMinPrice',
         'mode' => 'setMode'
     ];
@@ -131,8 +135,9 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'currency' => 'getCurrency',
-        'fixedPrice' => 'getFixedPrice',
+        'price' => 'getPrice',
         'keywords' => 'getKeywords',
+        'fixedPrice' => 'getFixedPrice',
         'minPrice' => 'getMinPrice',
         'mode' => 'getMode'
     ];
@@ -198,8 +203,9 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
     public function __construct(?array $data = null)
     {
         $this->container['currency'] = isset($data['currency']) ? $this->createData($data['currency'], 'currency')  : null;
-        $this->container['fixedPrice'] = isset($data['fixedPrice']) ? $this->createData($data['fixedPrice'], 'fixedPrice')  : null;
+        $this->container['price'] = isset($data['price']) ? $this->createData($data['price'], 'price')  : null;
         $this->container['keywords'] = isset($data['keywords']) ? $this->createData($data['keywords'], 'keywords')  : null;
+        $this->container['fixedPrice'] = isset($data['fixedPrice']) ? $this->createData($data['fixedPrice'], 'fixedPrice')  : null;
         $this->container['minPrice'] = isset($data['minPrice']) ? $this->createData($data['minPrice'], 'minPrice')  : null;
         $this->container['mode'] = isset($data['mode']) ? $this->createData($data['mode'], 'mode')  : null;
     }
@@ -269,6 +275,9 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['price'] === null) {
+            $invalidProperties[] = "'price' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -309,25 +318,25 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets fixedPrice
+     * Gets price
      *
-     * @return bool
+     * @return double
      */
-    public function getFixedPrice()
+    public function getPrice()
     {
-        return $this->container['fixedPrice'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets fixedPrice
+     * Sets price
      *
-     * @param bool $fixedPrice Is the price fix
+     * @param double $price The fixed selling price for the domain. Has to be between 0 and 16777215.
      *
      * @return $this
      */
-    public function setFixedPrice($fixedPrice)
+    public function setPrice($price)
     {
-        $this->container['fixedPrice'] = $fixedPrice;
+        $this->container['price'] = $price;
 
         return $this;
     }
@@ -352,6 +361,30 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
     public function setKeywords($keywords)
     {
         $this->container['keywords'] = $keywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixedPrice
+     *
+     * @return bool
+     */
+    public function getFixedPrice()
+    {
+        return $this->container['fixedPrice'];
+    }
+
+    /**
+     * Sets fixedPrice
+     *
+     * @param bool $fixedPrice Is the price fix
+     *
+     * @return $this
+     */
+    public function setFixedPrice($fixedPrice)
+    {
+        $this->container['fixedPrice'] = $fixedPrice;
 
         return $this;
     }

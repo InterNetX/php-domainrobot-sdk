@@ -263,12 +263,6 @@ class DomainSafeUser implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['context'] === null) {
-            $invalidProperties[] = "'context' can't be null";
-        }
-        if ($this->container['user'] === null) {
-            $invalidProperties[] = "'user' can't be null";
-        }
         return $invalidProperties;
     }
 

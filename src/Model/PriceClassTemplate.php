@@ -353,27 +353,6 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['businessCase'] === null) {
-            $invalidProperties[] = "'businessCase' can't be null";
-        }
-        if ($this->container['priceChange'] === null) {
-            $invalidProperties[] = "'priceChange' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['relative'] === null) {
-            $invalidProperties[] = "'relative' can't be null";
-        }
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
         return $invalidProperties;
     }
 

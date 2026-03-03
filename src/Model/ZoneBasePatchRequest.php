@@ -75,6 +75,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'purgeDate' => '\DateTime',
         'purgeType' => '\Domainrobot\Model\PurgeTypes',
         'date' => '\DateTime',
+        'external' => 'bool',
+        'inUse' => 'bool',
         'zoneGrantsAdd' => 'string[]',
         'zoneGrantsRem' => 'string[]',
         'modifiers' => '\Domainrobot\Model\Modifier[]',
@@ -115,6 +117,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'purgeDate' => 'date-time',
         'purgeType' => null,
         'date' => 'date-time',
+        'external' => null,
+        'inUse' => null,
         'zoneGrantsAdd' => null,
         'zoneGrantsRem' => null,
         'modifiers' => null,
@@ -176,6 +180,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'purgeDate' => 'purgeDate',
         'purgeType' => 'purgeType',
         'date' => 'date',
+        'external' => 'external',
+        'inUse' => 'inUse',
         'zoneGrantsAdd' => 'zoneGrantsAdd',
         'zoneGrantsRem' => 'zoneGrantsRem',
         'modifiers' => 'modifiers',
@@ -216,6 +222,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'purgeDate' => 'setPurgeDate',
         'purgeType' => 'setPurgeType',
         'date' => 'setDate',
+        'external' => 'setExternal',
+        'inUse' => 'setInUse',
         'zoneGrantsAdd' => 'setZoneGrantsAdd',
         'zoneGrantsRem' => 'setZoneGrantsRem',
         'modifiers' => 'setModifiers',
@@ -256,6 +264,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         'purgeDate' => 'getPurgeDate',
         'purgeType' => 'getPurgeType',
         'date' => 'getDate',
+        'external' => 'getExternal',
+        'inUse' => 'getInUse',
         'zoneGrantsAdd' => 'getZoneGrantsAdd',
         'zoneGrantsRem' => 'getZoneGrantsRem',
         'modifiers' => 'getModifiers',
@@ -350,6 +360,8 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         $this->container['purgeDate'] = isset($data['purgeDate']) ? $this->createData($data['purgeDate'], 'purgeDate')  : null;
         $this->container['purgeType'] = isset($data['purgeType']) ? $this->createData($data['purgeType'], 'purgeType')  : null;
         $this->container['date'] = isset($data['date']) ? $this->createData($data['date'], 'date')  : null;
+        $this->container['external'] = isset($data['external']) ? $this->createData($data['external'], 'external')  : null;
+        $this->container['inUse'] = isset($data['inUse']) ? $this->createData($data['inUse'], 'inUse')  : null;
         $this->container['zoneGrantsAdd'] = isset($data['zoneGrantsAdd']) ? $this->createData($data['zoneGrantsAdd'], 'zoneGrantsAdd')  : null;
         $this->container['zoneGrantsRem'] = isset($data['zoneGrantsRem']) ? $this->createData($data['zoneGrantsRem'], 'zoneGrantsRem')  : null;
         $this->container['modifiers'] = isset($data['modifiers']) ? $this->createData($data['modifiers'], 'modifiers')  : null;
@@ -431,9 +443,6 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -877,6 +886,54 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets external
+     *
+     * @return bool
+     */
+    public function getExternal()
+    {
+        return $this->container['external'];
+    }
+
+    /**
+     * Sets external
+     *
+     * @param bool $external external
+     *
+     * @return $this
+     */
+    public function setExternal($external)
+    {
+        $this->container['external'] = $external;
+
+        return $this;
+    }
+
+    /**
+     * Gets inUse
+     *
+     * @return bool
+     */
+    public function getInUse()
+    {
+        return $this->container['inUse'];
+    }
+
+    /**
+     * Sets inUse
+     *
+     * @param bool $inUse inUse
+     *
+     * @return $this
+     */
+    public function setInUse($inUse)
+    {
+        $this->container['inUse'] = $inUse;
 
         return $this;
     }

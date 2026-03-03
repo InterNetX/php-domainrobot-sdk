@@ -281,15 +281,6 @@ class ContactDocument implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['contact'] === null) {
-            $invalidProperties[] = "'contact' can't be null";
-        }
-        if ($this->container['document'] === null) {
-            $invalidProperties[] = "'document' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
         return $invalidProperties;
     }
 

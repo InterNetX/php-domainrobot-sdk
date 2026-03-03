@@ -323,18 +323,6 @@ class Redirect implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['source'] === null) {
-            $invalidProperties[] = "'source' can't be null";
-        }
-        if ($this->container['target'] === null) {
-            $invalidProperties[] = "'target' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['mode'] === null) {
-            $invalidProperties[] = "'mode' can't be null";
-        }
         return $invalidProperties;
     }
 

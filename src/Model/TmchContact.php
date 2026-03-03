@@ -305,12 +305,6 @@ class TmchContact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['entitlement'] === null) {
-            $invalidProperties[] = "'entitlement' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
         return $invalidProperties;
     }
 

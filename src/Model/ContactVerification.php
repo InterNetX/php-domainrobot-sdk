@@ -59,18 +59,10 @@ class ContactVerification implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'created' => '\DateTime',
         'updated' => '\DateTime',
-        'owner' => '\Domainrobot\Model\BasicUser',
-        'updater' => '\Domainrobot\Model\BasicUser',
-        'reference' => 'string',
-        'messageSend' => '\DateTime',
-        'confirmed' => '\DateTime',
-        'confirmIp' => '\Domainrobot\Model\InetAddress',
-        'failed' => '\DateTime',
-        'domains' => '\Domainrobot\Model\ContactVerificationDomain[]',
-        'verificationMails' => '\Domainrobot\Model\ContactVerificationMessage[]',
-        'comment' => 'string',
-        'action' => 'string',
-        'contact' => '\Domainrobot\Model\Contact'
+        'status' => '\Domainrobot\Model\CaseStatus',
+        'references' => '\Domainrobot\Model\VerifyReference[]',
+        'contacts' => '\Domainrobot\Model\ContactVerificationContact[]',
+        'claims' => '\Domainrobot\Model\Claim[]'
     ];
 
     /**
@@ -81,18 +73,10 @@ class ContactVerification implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'created' => 'date-time',
         'updated' => 'date-time',
-        'owner' => null,
-        'updater' => null,
-        'reference' => null,
-        'messageSend' => 'date-time',
-        'confirmed' => 'date-time',
-        'confirmIp' => null,
-        'failed' => 'date-time',
-        'domains' => null,
-        'verificationMails' => null,
-        'comment' => null,
-        'action' => null,
-        'contact' => null
+        'status' => null,
+        'references' => null,
+        'contacts' => null,
+        'claims' => null
     ];
 
     /**
@@ -124,18 +108,10 @@ class ContactVerification implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'created' => 'created',
         'updated' => 'updated',
-        'owner' => 'owner',
-        'updater' => 'updater',
-        'reference' => 'reference',
-        'messageSend' => 'messageSend',
-        'confirmed' => 'confirmed',
-        'confirmIp' => 'confirmIp',
-        'failed' => 'failed',
-        'domains' => 'domains',
-        'verificationMails' => 'verificationMails',
-        'comment' => 'comment',
-        'action' => 'action',
-        'contact' => 'contact'
+        'status' => 'status',
+        'references' => 'references',
+        'contacts' => 'contacts',
+        'claims' => 'claims'
     ];
 
     /**
@@ -146,18 +122,10 @@ class ContactVerification implements ModelInterface, ArrayAccess
     protected static $setters = [
         'created' => 'setCreated',
         'updated' => 'setUpdated',
-        'owner' => 'setOwner',
-        'updater' => 'setUpdater',
-        'reference' => 'setReference',
-        'messageSend' => 'setMessageSend',
-        'confirmed' => 'setConfirmed',
-        'confirmIp' => 'setConfirmIp',
-        'failed' => 'setFailed',
-        'domains' => 'setDomains',
-        'verificationMails' => 'setVerificationMails',
-        'comment' => 'setComment',
-        'action' => 'setAction',
-        'contact' => 'setContact'
+        'status' => 'setStatus',
+        'references' => 'setReferences',
+        'contacts' => 'setContacts',
+        'claims' => 'setClaims'
     ];
 
     /**
@@ -168,18 +136,10 @@ class ContactVerification implements ModelInterface, ArrayAccess
     protected static $getters = [
         'created' => 'getCreated',
         'updated' => 'getUpdated',
-        'owner' => 'getOwner',
-        'updater' => 'getUpdater',
-        'reference' => 'getReference',
-        'messageSend' => 'getMessageSend',
-        'confirmed' => 'getConfirmed',
-        'confirmIp' => 'getConfirmIp',
-        'failed' => 'getFailed',
-        'domains' => 'getDomains',
-        'verificationMails' => 'getVerificationMails',
-        'comment' => 'getComment',
-        'action' => 'getAction',
-        'contact' => 'getContact'
+        'status' => 'getStatus',
+        'references' => 'getReferences',
+        'contacts' => 'getContacts',
+        'claims' => 'getClaims'
     ];
 
     /**
@@ -244,18 +204,10 @@ class ContactVerification implements ModelInterface, ArrayAccess
     {
         $this->container['created'] = isset($data['created']) ? $this->createData($data['created'], 'created')  : null;
         $this->container['updated'] = isset($data['updated']) ? $this->createData($data['updated'], 'updated')  : null;
-        $this->container['owner'] = isset($data['owner']) ? $this->createData($data['owner'], 'owner')  : null;
-        $this->container['updater'] = isset($data['updater']) ? $this->createData($data['updater'], 'updater')  : null;
-        $this->container['reference'] = isset($data['reference']) ? $this->createData($data['reference'], 'reference')  : null;
-        $this->container['messageSend'] = isset($data['messageSend']) ? $this->createData($data['messageSend'], 'messageSend')  : null;
-        $this->container['confirmed'] = isset($data['confirmed']) ? $this->createData($data['confirmed'], 'confirmed')  : null;
-        $this->container['confirmIp'] = isset($data['confirmIp']) ? $this->createData($data['confirmIp'], 'confirmIp')  : null;
-        $this->container['failed'] = isset($data['failed']) ? $this->createData($data['failed'], 'failed')  : null;
-        $this->container['domains'] = isset($data['domains']) ? $this->createData($data['domains'], 'domains')  : null;
-        $this->container['verificationMails'] = isset($data['verificationMails']) ? $this->createData($data['verificationMails'], 'verificationMails')  : null;
-        $this->container['comment'] = isset($data['comment']) ? $this->createData($data['comment'], 'comment')  : null;
-        $this->container['action'] = isset($data['action']) ? $this->createData($data['action'], 'action')  : null;
-        $this->container['contact'] = isset($data['contact']) ? $this->createData($data['contact'], 'contact')  : null;
+        $this->container['status'] = isset($data['status']) ? $this->createData($data['status'], 'status')  : null;
+        $this->container['references'] = isset($data['references']) ? $this->createData($data['references'], 'references')  : null;
+        $this->container['contacts'] = isset($data['contacts']) ? $this->createData($data['contacts'], 'contacts')  : null;
+        $this->container['claims'] = isset($data['claims']) ? $this->createData($data['claims'], 'claims')  : null;
     }
 
     /**
@@ -323,12 +275,6 @@ class ContactVerification implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['confirmIp'] === null) {
-            $invalidProperties[] = "'confirmIp' can't be null";
-        }
-        if ($this->container['contact'] === null) {
-            $invalidProperties[] = "'contact' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -393,289 +339,97 @@ class ContactVerification implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets owner
+     * Gets status
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\CaseStatus
      */
-    public function getOwner()
+    public function getStatus()
     {
-        return $this->container['owner'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets owner
+     * Sets status
      *
-     * @param \Domainrobot\Model\BasicUser $owner The object owner.
+     * @param \Domainrobot\Model\CaseStatus $status The status of the CaseVerification
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setStatus($status)
     {
-        $this->container['owner'] = $owner;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets updater
+     * Gets references
      *
-     * @return \Domainrobot\Model\BasicUser
+     * @return \Domainrobot\Model\VerifyReference[]
      */
-    public function getUpdater()
+    public function getReferences()
     {
-        return $this->container['updater'];
+        return $this->container['references'];
     }
 
     /**
-     * Sets updater
+     * Sets references
      *
-     * @param \Domainrobot\Model\BasicUser $updater User who performed the last update.
+     * @param \Domainrobot\Model\VerifyReference[] $references contactReference for which case verification was/is required.
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setReferences($references)
     {
-        $this->container['updater'] = $updater;
+        $this->container['references'] = $references;
 
         return $this;
     }
 
     /**
-     * Gets reference
+     * Gets contacts
      *
-     * @return string
+     * @return \Domainrobot\Model\ContactVerificationContact[]
      */
-    public function getReference()
+    public function getContacts()
     {
-        return $this->container['reference'];
+        return $this->container['contacts'];
     }
 
     /**
-     * Sets reference
+     * Sets contacts
      *
-     * @param string $reference The unique reference of the Verification
+     * @param \Domainrobot\Model\ContactVerificationContact[] $contacts contact for which verification was/is required.
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setContacts($contacts)
     {
-        $this->container['reference'] = $reference;
+        $this->container['contacts'] = $contacts;
 
         return $this;
     }
 
     /**
-     * Gets messageSend
+     * Gets claims
      *
-     * @return \DateTime
+     * @return \Domainrobot\Model\Claim[]
      */
-    public function getMessageSend()
+    public function getClaims()
     {
-        return $this->container['messageSend'];
+        return $this->container['claims'];
     }
 
     /**
-     * Sets messageSend
+     * Sets claims
      *
-     * @param \DateTime $messageSend The date when the last verification email was sent.
+     * @param \Domainrobot\Model\Claim[] $claims claims for which verification was/is required.
      *
      * @return $this
      */
-    public function setMessageSend($messageSend)
+    public function setClaims($claims)
     {
-        $this->container['messageSend'] = $messageSend;
-
-        return $this;
-    }
-
-    /**
-     * Gets confirmed
-     *
-     * @return \DateTime
-     */
-    public function getConfirmed()
-    {
-        return $this->container['confirmed'];
-    }
-
-    /**
-     * Sets confirmed
-     *
-     * @param \DateTime $confirmed The date when the last verification email was confirmed.
-     *
-     * @return $this
-     */
-    public function setConfirmed($confirmed)
-    {
-        $this->container['confirmed'] = $confirmed;
-
-        return $this;
-    }
-
-    /**
-     * Gets confirmIp
-     *
-     * @return \Domainrobot\Model\InetAddress
-     */
-    public function getConfirmIp()
-    {
-        return $this->container['confirmIp'];
-    }
-
-    /**
-     * Sets confirmIp
-     *
-     * @param \Domainrobot\Model\InetAddress $confirmIp The IP address from which the verification was confirmed.
-     *
-     * @return $this
-     */
-    public function setConfirmIp($confirmIp)
-    {
-        $this->container['confirmIp'] = $confirmIp;
-
-        return $this;
-    }
-
-    /**
-     * Gets failed
-     *
-     * @return \DateTime
-     */
-    public function getFailed()
-    {
-        return $this->container['failed'];
-    }
-
-    /**
-     * Sets failed
-     *
-     * @param \DateTime $failed The date on which the verification failed.
-     *
-     * @return $this
-     */
-    public function setFailed($failed)
-    {
-        $this->container['failed'] = $failed;
-
-        return $this;
-    }
-
-    /**
-     * Gets domains
-     *
-     * @return \Domainrobot\Model\ContactVerificationDomain[]
-     */
-    public function getDomains()
-    {
-        return $this->container['domains'];
-    }
-
-    /**
-     * Sets domains
-     *
-     * @param \Domainrobot\Model\ContactVerificationDomain[] $domains Domain for which verification was/is required.
-     *
-     * @return $this
-     */
-    public function setDomains($domains)
-    {
-        $this->container['domains'] = $domains;
-
-        return $this;
-    }
-
-    /**
-     * Gets verificationMails
-     *
-     * @return \Domainrobot\Model\ContactVerificationMessage[]
-     */
-    public function getVerificationMails()
-    {
-        return $this->container['verificationMails'];
-    }
-
-    /**
-     * Sets verificationMails
-     *
-     * @param \Domainrobot\Model\ContactVerificationMessage[] $verificationMails The verification mails. For each mail sent, it is recorded here whether the verification was successful or not.
-     *
-     * @return $this
-     */
-    public function setVerificationMails($verificationMails)
-    {
-        $this->container['verificationMails'] = $verificationMails;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment The verification comment. Can be included in the confirmation.
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets action
-     *
-     * @return string
-     */
-    public function getAction()
-    {
-        return $this->container['action'];
-    }
-
-    /**
-     * Sets action
-     *
-     * @param string $action Action for which the verification was triggered or updated.
-     *
-     * @return $this
-     */
-    public function setAction($action)
-    {
-        $this->container['action'] = $action;
-
-        return $this;
-    }
-
-    /**
-     * Gets contact
-     *
-     * @return \Domainrobot\Model\Contact
-     */
-    public function getContact()
-    {
-        return $this->container['contact'];
-    }
-
-    /**
-     * Sets contact
-     *
-     * @param \Domainrobot\Model\Contact $contact the contact of the Verification
-     *
-     * @return $this
-     */
-    public function setContact($contact)
-    {
-        $this->container['contact'] = $contact;
+        $this->container['claims'] = $claims;
 
         return $this;
     }

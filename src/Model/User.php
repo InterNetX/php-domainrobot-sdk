@@ -69,7 +69,7 @@ class User implements ModelInterface, ArrayAccess
         'lock' => '\Domainrobot\Model\UserLock',
         'oldPassword' => 'string',
         'passwordChanged' => '\DateTime',
-        'passwordExpired' => 'bool',
+        'passwordExpires' => '\DateTime',
         'acls' => '\Domainrobot\Model\UserAcls',
         'profiles' => '\Domainrobot\Model\UserProfileViews',
         'serviceProfiles' => '\Domainrobot\Model\ServiceProfiles',
@@ -82,6 +82,7 @@ class User implements ModelInterface, ArrayAccess
         'customerLevel' => 'int',
         'user' => 'string',
         'language' => 'string',
+        'passwordExpired' => 'bool',
         'parent' => '\Domainrobot\Model\User',
         'directCustomer' => 'bool',
         'clientAccounts' => '\Domainrobot\Model\ExternalAccounting[]',
@@ -107,7 +108,7 @@ class User implements ModelInterface, ArrayAccess
         'lock' => null,
         'oldPassword' => null,
         'passwordChanged' => 'date-time',
-        'passwordExpired' => null,
+        'passwordExpires' => 'date-time',
         'acls' => null,
         'profiles' => null,
         'serviceProfiles' => null,
@@ -120,6 +121,7 @@ class User implements ModelInterface, ArrayAccess
         'customerLevel' => 'int32',
         'user' => null,
         'language' => null,
+        'passwordExpired' => null,
         'parent' => null,
         'directCustomer' => null,
         'clientAccounts' => null,
@@ -166,7 +168,7 @@ class User implements ModelInterface, ArrayAccess
         'lock' => 'lock',
         'oldPassword' => 'oldPassword',
         'passwordChanged' => 'passwordChanged',
-        'passwordExpired' => 'passwordExpired',
+        'passwordExpires' => 'passwordExpires',
         'acls' => 'acls',
         'profiles' => 'profiles',
         'serviceProfiles' => 'serviceProfiles',
@@ -179,6 +181,7 @@ class User implements ModelInterface, ArrayAccess
         'customerLevel' => 'customerLevel',
         'user' => 'user',
         'language' => 'language',
+        'passwordExpired' => 'passwordExpired',
         'parent' => 'parent',
         'directCustomer' => 'directCustomer',
         'clientAccounts' => 'clientAccounts',
@@ -204,7 +207,7 @@ class User implements ModelInterface, ArrayAccess
         'lock' => 'setLock',
         'oldPassword' => 'setOldPassword',
         'passwordChanged' => 'setPasswordChanged',
-        'passwordExpired' => 'setPasswordExpired',
+        'passwordExpires' => 'setPasswordExpires',
         'acls' => 'setAcls',
         'profiles' => 'setProfiles',
         'serviceProfiles' => 'setServiceProfiles',
@@ -217,6 +220,7 @@ class User implements ModelInterface, ArrayAccess
         'customerLevel' => 'setCustomerLevel',
         'user' => 'setUser',
         'language' => 'setLanguage',
+        'passwordExpired' => 'setPasswordExpired',
         'parent' => 'setParent',
         'directCustomer' => 'setDirectCustomer',
         'clientAccounts' => 'setClientAccounts',
@@ -242,7 +246,7 @@ class User implements ModelInterface, ArrayAccess
         'lock' => 'getLock',
         'oldPassword' => 'getOldPassword',
         'passwordChanged' => 'getPasswordChanged',
-        'passwordExpired' => 'getPasswordExpired',
+        'passwordExpires' => 'getPasswordExpires',
         'acls' => 'getAcls',
         'profiles' => 'getProfiles',
         'serviceProfiles' => 'getServiceProfiles',
@@ -255,6 +259,7 @@ class User implements ModelInterface, ArrayAccess
         'customerLevel' => 'getCustomerLevel',
         'user' => 'getUser',
         'language' => 'getLanguage',
+        'passwordExpired' => 'getPasswordExpired',
         'parent' => 'getParent',
         'directCustomer' => 'getDirectCustomer',
         'clientAccounts' => 'getClientAccounts',
@@ -334,7 +339,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['lock'] = isset($data['lock']) ? $this->createData($data['lock'], 'lock')  : null;
         $this->container['oldPassword'] = isset($data['oldPassword']) ? $this->createData($data['oldPassword'], 'oldPassword')  : null;
         $this->container['passwordChanged'] = isset($data['passwordChanged']) ? $this->createData($data['passwordChanged'], 'passwordChanged')  : null;
-        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
+        $this->container['passwordExpires'] = isset($data['passwordExpires']) ? $this->createData($data['passwordExpires'], 'passwordExpires')  : null;
         $this->container['acls'] = isset($data['acls']) ? $this->createData($data['acls'], 'acls')  : null;
         $this->container['profiles'] = isset($data['profiles']) ? $this->createData($data['profiles'], 'profiles')  : null;
         $this->container['serviceProfiles'] = isset($data['serviceProfiles']) ? $this->createData($data['serviceProfiles'], 'serviceProfiles')  : null;
@@ -347,6 +352,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['customerLevel'] = isset($data['customerLevel']) ? $this->createData($data['customerLevel'], 'customerLevel')  : null;
         $this->container['user'] = isset($data['user']) ? $this->createData($data['user'], 'user')  : null;
         $this->container['language'] = isset($data['language']) ? $this->createData($data['language'], 'language')  : null;
+        $this->container['passwordExpired'] = isset($data['passwordExpired']) ? $this->createData($data['passwordExpired'], 'passwordExpired')  : null;
         $this->container['parent'] = isset($data['parent']) ? $this->createData($data['parent'], 'parent')  : null;
         $this->container['directCustomer'] = isset($data['directCustomer']) ? $this->createData($data['directCustomer'], 'directCustomer')  : null;
         $this->container['clientAccounts'] = isset($data['clientAccounts']) ? $this->createData($data['clientAccounts'], 'clientAccounts')  : null;
@@ -418,16 +424,6 @@ class User implements ModelInterface, ArrayAccess
     public function listInvalidProperties(): array
     {
         $invalidProperties = [];
-
-        if ($this->container['context'] === null) {
-            $invalidProperties[] = "'context' can't be null";
-        }
-        if ($this->container['user'] === null) {
-            $invalidProperties[] = "'user' can't be null";
-        }
-        if (!preg_match("/^[^_].*/", $this->container['user'])) {
-            $invalidProperties[] = "invalid value for 'user', must be conform to the pattern /^[^_].*/.";
-        }
 
         return $invalidProperties;
     }
@@ -733,25 +729,25 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets passwordExpired
+     * Gets passwordExpires
      *
-     * @return bool
+     * @return \DateTime
      */
-    public function getPasswordExpired()
+    public function getPasswordExpires()
     {
-        return $this->container['passwordExpired'];
+        return $this->container['passwordExpires'];
     }
 
     /**
-     * Sets passwordExpired
+     * Sets passwordExpires
      *
-     * @param bool $passwordExpired The passwordExpired boolean
+     * @param \DateTime $passwordExpires The date on which the password will expire
      *
      * @return $this
      */
-    public function setPasswordExpired($passwordExpired)
+    public function setPasswordExpires($passwordExpires)
     {
-        $this->container['passwordExpired'] = $passwordExpired;
+        $this->container['passwordExpires'] = $passwordExpires;
 
         return $this;
     }
@@ -1015,11 +1011,6 @@ class User implements ModelInterface, ArrayAccess
      */
     public function setUser($user)
     {
-
-        if ((!preg_match("/^[^_].*/", $user))) {
-            throw new \InvalidArgumentException("invalid value for $user when calling User., must conform to the pattern /^[^_].*/.");
-        }
-
         $this->container['user'] = $user;
 
         return $this;
@@ -1045,6 +1036,30 @@ class User implements ModelInterface, ArrayAccess
     public function setLanguage($language)
     {
         $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordExpired
+     *
+     * @return bool
+     */
+    public function getPasswordExpired()
+    {
+        return $this->container['passwordExpired'];
+    }
+
+    /**
+     * Sets passwordExpired
+     *
+     * @param bool $passwordExpired Is the current password expired
+     *
+     * @return $this
+     */
+    public function setPasswordExpired($passwordExpired)
+    {
+        $this->container['passwordExpired'] = $passwordExpired;
 
         return $this;
     }

@@ -251,9 +251,6 @@ class TaskUserLimit implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['user'] === null) {
-            $invalidProperties[] = "'user' can't be null";
-        }
         return $invalidProperties;
     }
 

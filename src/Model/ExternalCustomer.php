@@ -299,20 +299,6 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
-        }
-        if ($this->container['client'] === null) {
-            $invalidProperties[] = "'client' can't be null";
-        }
-        if ((mb_strlen($this->container['client']) > 2147483647)) {
-            $invalidProperties[] = "invalid value for 'client', the character length must be smaller than or equal to 2147483647.";
-        }
-
-        if ((mb_strlen($this->container['client']) < 1)) {
-            $invalidProperties[] = "invalid value for 'client', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -371,13 +357,6 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      */
     public function setClient($client)
     {
-        if ((mb_strlen($client) > 2147483647)) {
-            throw new \InvalidArgumentException('invalid length for $client when calling ExternalCustomer., must be smaller than or equal to 2147483647.');
-        }
-        if ((mb_strlen($client) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $client when calling ExternalCustomer., must be bigger than or equal to 1.');
-        }
-
         $this->container['client'] = $client;
 
         return $this;

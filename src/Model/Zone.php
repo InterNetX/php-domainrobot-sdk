@@ -75,6 +75,8 @@ class Zone implements ModelInterface, ArrayAccess
         'purgeDate' => '\DateTime',
         'purgeType' => '\Domainrobot\Model\PurgeTypes',
         'date' => '\DateTime',
+        'external' => 'bool',
+        'inUse' => 'bool',
         'nameServers' => '\Domainrobot\Model\NameServer[]',
         'main' => '\Domainrobot\Model\MainIp',
         'wwwInclude' => 'bool',
@@ -110,6 +112,8 @@ class Zone implements ModelInterface, ArrayAccess
         'purgeDate' => 'date-time',
         'purgeType' => null,
         'date' => 'date-time',
+        'external' => null,
+        'inUse' => null,
         'nameServers' => null,
         'main' => null,
         'wwwInclude' => null,
@@ -166,6 +170,8 @@ class Zone implements ModelInterface, ArrayAccess
         'purgeDate' => 'purgeDate',
         'purgeType' => 'purgeType',
         'date' => 'date',
+        'external' => 'external',
+        'inUse' => 'inUse',
         'nameServers' => 'nameServers',
         'main' => 'main',
         'wwwInclude' => 'wwwInclude',
@@ -201,6 +207,8 @@ class Zone implements ModelInterface, ArrayAccess
         'purgeDate' => 'setPurgeDate',
         'purgeType' => 'setPurgeType',
         'date' => 'setDate',
+        'external' => 'setExternal',
+        'inUse' => 'setInUse',
         'nameServers' => 'setNameServers',
         'main' => 'setMain',
         'wwwInclude' => 'setWwwInclude',
@@ -236,6 +244,8 @@ class Zone implements ModelInterface, ArrayAccess
         'purgeDate' => 'getPurgeDate',
         'purgeType' => 'getPurgeType',
         'date' => 'getDate',
+        'external' => 'getExternal',
+        'inUse' => 'getInUse',
         'nameServers' => 'getNameServers',
         'main' => 'getMain',
         'wwwInclude' => 'getWwwInclude',
@@ -325,6 +335,8 @@ class Zone implements ModelInterface, ArrayAccess
         $this->container['purgeDate'] = isset($data['purgeDate']) ? $this->createData($data['purgeDate'], 'purgeDate')  : null;
         $this->container['purgeType'] = isset($data['purgeType']) ? $this->createData($data['purgeType'], 'purgeType')  : null;
         $this->container['date'] = isset($data['date']) ? $this->createData($data['date'], 'date')  : null;
+        $this->container['external'] = isset($data['external']) ? $this->createData($data['external'], 'external')  : null;
+        $this->container['inUse'] = isset($data['inUse']) ? $this->createData($data['inUse'], 'inUse')  : null;
         $this->container['nameServers'] = isset($data['nameServers']) ? $this->createData($data['nameServers'], 'nameServers')  : null;
         $this->container['main'] = isset($data['main']) ? $this->createData($data['main'], 'main')  : null;
         $this->container['wwwInclude'] = isset($data['wwwInclude']) ? $this->createData($data['wwwInclude'], 'wwwInclude')  : null;
@@ -401,9 +413,6 @@ class Zone implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['origin'] === null) {
-            $invalidProperties[] = "'origin' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -847,6 +856,54 @@ class Zone implements ModelInterface, ArrayAccess
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets external
+     *
+     * @return bool
+     */
+    public function getExternal()
+    {
+        return $this->container['external'];
+    }
+
+    /**
+     * Sets external
+     *
+     * @param bool $external external
+     *
+     * @return $this
+     */
+    public function setExternal($external)
+    {
+        $this->container['external'] = $external;
+
+        return $this;
+    }
+
+    /**
+     * Gets inUse
+     *
+     * @return bool
+     */
+    public function getInUse()
+    {
+        return $this->container['inUse'];
+    }
+
+    /**
+     * Sets inUse
+     *
+     * @param bool $inUse inUse
+     *
+     * @return $this
+     */
+    public function setInUse($inUse)
+    {
+        $this->container['inUse'] = $inUse;
 
         return $this;
     }

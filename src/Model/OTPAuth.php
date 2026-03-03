@@ -305,34 +305,6 @@ class OTPAuth implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['protocolType'] === null) {
-            $invalidProperties[] = "'protocolType' can't be null";
-        }
-        if ($this->container['algorithm'] === null) {
-            $invalidProperties[] = "'algorithm' can't be null";
-        }
-        if ($this->container['timeout'] === null) {
-            $invalidProperties[] = "'timeout' can't be null";
-        }
-        if (($this->container['timeout'] > 90)) {
-            $invalidProperties[] = "invalid value for 'timeout', must be smaller than or equal to 90.";
-        }
-
-        if (($this->container['timeout'] < 5)) {
-            $invalidProperties[] = "invalid value for 'timeout', must be bigger than or equal to 5.";
-        }
-
-        if ($this->container['digits'] === null) {
-            $invalidProperties[] = "'digits' can't be null";
-        }
-        if (($this->container['digits'] > 8)) {
-            $invalidProperties[] = "invalid value for 'digits', must be smaller than or equal to 8.";
-        }
-
-        if (($this->container['digits'] < 6)) {
-            $invalidProperties[] = "invalid value for 'digits', must be bigger than or equal to 6.";
-        }
-
         return $invalidProperties;
     }
 
@@ -511,14 +483,6 @@ class OTPAuth implements ModelInterface, ArrayAccess
      */
     public function setTimeout($timeout)
     {
-
-        if (($timeout > 90)) {
-            throw new \InvalidArgumentException('invalid value for $timeout when calling OTPAuth., must be smaller than or equal to 90.');
-        }
-        if (($timeout < 5)) {
-            throw new \InvalidArgumentException('invalid value for $timeout when calling OTPAuth., must be bigger than or equal to 5.');
-        }
-
         $this->container['timeout'] = $timeout;
 
         return $this;
@@ -543,14 +507,6 @@ class OTPAuth implements ModelInterface, ArrayAccess
      */
     public function setDigits($digits)
     {
-
-        if (($digits > 8)) {
-            throw new \InvalidArgumentException('invalid value for $digits when calling OTPAuth., must be smaller than or equal to 8.');
-        }
-        if (($digits < 6)) {
-            throw new \InvalidArgumentException('invalid value for $digits when calling OTPAuth., must be bigger than or equal to 6.');
-        }
-
         $this->container['digits'] = $digits;
 
         return $this;

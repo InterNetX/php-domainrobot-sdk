@@ -257,9 +257,6 @@ class GenericLabelEntity implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['label'] === null) {
-            $invalidProperties[] = "'label' can't be null";
-        }
         return $invalidProperties;
     }
 

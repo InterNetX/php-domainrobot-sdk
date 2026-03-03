@@ -389,15 +389,6 @@ class Price implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['product'] === null) {
-            $invalidProperties[] = "'product' can't be null";
-        }
         return $invalidProperties;
     }
 

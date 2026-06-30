@@ -11,8 +11,6 @@ use Domainrobot\Lib\DomainrobotHeaders;
 use Domainrobot\Lib\DomainrobotException;
 use Domainrobot\Lib\DomainrobotResult;
 use Domainrobot\Lib\DomainrobotPromise;
-use Domainrobot\Model\Certificate;
-use Illuminate\Support\Facades\Log;
 use Psr\Http\Message\ResponseInterface;
 
 class DomainrobotService
@@ -37,46 +35,72 @@ class DomainrobotService
         $this->domainrobotConfig = $domainrobotConfig;
 
         // get current version of the SDK
-        $handle = fopen(__DIR__."/../../composer.json", "r");
-        $contents = fread($handle, filesize(__DIR__."/../../composer.json"));
+        $handle = fopen(__DIR__ . "/../../composer.json", "r");
+        $contents = fread($handle, filesize(__DIR__ . "/../../composer.json"));
         fclose($handle);
         preg_match("/version.+(\d+\.\d+\.\d+)/", $contents, $matches);
 
         $this->guzzleClientConfig = [
-            'headers' => [
-                DomainrobotHeaders::DOMAINROBOT_CONTENT_TYPE => "application/json",
+            "headers" => [
+                DomainrobotHeaders::DOMAINROBOT_CONTENT_TYPE =>
+                    "application/json",
                 DomainrobotHeaders::DOMAINROBOT_USER_AGENT => "PHPDomainrobotSdk/$matches[1]",
-                DomainrobotHeaders::DOMAINROBOT_HEADER_CONTEXT => $this->domainrobotConfig->getAuth()->getContext()
+                DomainrobotHeaders::DOMAINROBOT_HEADER_CONTEXT => $this->domainrobotConfig
+                    ->getAuth()
+                    ->getContext(),
             ],
-            'auth' => [
+            "auth" => [
                 $this->domainrobotConfig->getAuth()->getUser(),
-                $this->domainrobotConfig->getAuth()->getPassword()
-            ]
+                $this->domainrobotConfig->getAuth()->getPassword(),
+            ],
         ];
 
         $this->addHeaders($this->domainrobotConfig->getHeaders());
     }
 
-    public function logRequest($callback)
+    /**
+     * @param \Closure $callback
+     * @return DomainrobotService
+     */
+    public function logRequest(\Closure $callback): DomainrobotService
     {
         $this->logRequestCallback = $callback;
         return $this;
     }
 
-    public function logResponse($callback)
+    /**
+     * @param \Closure $callback
+     * @return DomainrobotService
+     */
+    public function logResponse(\Closure $callback): DomainrobotService
     {
         $this->logResponseCallback = $callback;
         return $this;
     }
 
-    public function addHeaders($headers = [])
+    /**
+     * @param array $headers
+     * @return DomainrobotService
+     */
+    public function addHeaders(array $headers = []): DomainrobotService
     {
-        $this->guzzleClientConfig['headers'] = array_unique(array_merge($this->guzzleClientConfig['headers'], $headers));
+        $this->guzzleClientConfig["headers"] = array_merge(
+            $this->guzzleClientConfig["headers"],
+            $headers,
+        );
         return $this;
     }
 
-    public function addGuzzleClientConfig($additionalConfig){
-        $this->guzzleClientConfig = array_merge($this->guzzleClientConfig, $additionalConfig);
+    /**
+     * @param array $additionalConfig
+     * @return void
+     */
+    public function addGuzzleClientConfig(array $additionalConfig): void
+    {
+        $this->guzzleClientConfig = array_merge(
+            $this->guzzleClientConfig,
+            $additionalConfig,
+        );
     }
 
     /**
@@ -92,14 +116,15 @@ class DomainrobotService
     {
         $guzzleClient = new Client($this->guzzleClientConfig);
 
-        $this->logRequestIfCallbackSet($method, $url, $options, $this->guzzleClientConfig['headers']);
-        $startTime = microtime(true);
-
-        $promise = $guzzleClient->requestAsync(
+        $this->logRequestIfCallbackSet(
             $method,
             $url,
-            $options
-        )->then(
+            $options,
+            $this->guzzleClientConfig["headers"],
+        );
+        $startTime = microtime(true);
+
+        $promise = $guzzleClient->requestAsync($method, $url, $options)->then(
             /**
              *
              * @return DomainrobotResult
@@ -108,74 +133,111 @@ class DomainrobotService
                 $rawResponse = $response->getBody()->getContents();
                 $decodedResponse = json_decode($rawResponse, true);
 
-               $this->logResponseIfCallbackSet(    
+                $this->logResponseIfCallbackSet(
                     $url,
                     $rawResponse,
                     $response->getStatusCode(),
-                    microtime(true) - $startTime
+                    microtime(true) - $startTime,
                 );
 
-                return new DomainrobotResult($decodedResponse, $response->getStatusCode(), $response->getHeaders());
+                return new DomainrobotResult(
+                    $decodedResponse,
+                    $response->getStatusCode(),
+                    $response->getHeaders(),
+                );
             },
             /**
              *
              * @throws DomainrobotException
              */
             function (\Exception $exception) {
-                if ($exception instanceof ClientException || $exception instanceof ServerException) {
-                    $contents = json_decode($exception->getResponse()->getBody()->getContents(), true);
+                if (
+                    $exception instanceof ClientException ||
+                    $exception instanceof ServerException
+                ) {
+                    $contents = json_decode(
+                        $exception->getResponse()->getBody()->getContents(),
+                        true,
+                    );
 
-                    throw new DomainrobotException($contents, $exception->getResponse()->getStatusCode(), $exception->getMessage());
+                    throw new DomainrobotException(
+                        $contents,
+                        $exception->getResponse()->getStatusCode(),
+                        $exception->getMessage(),
+                    );
                 }
                 // RequestException | ClientException
                 $msg = $exception->getMessage();
 
-                throw new DomainrobotException($msg, $exception->getCode(), $exception->getMessage());
-            }
+                throw new DomainrobotException(
+                    $msg,
+                    $exception->getCode(),
+                    $exception->getMessage(),
+                );
+            },
         );
         return new DomainrobotPromise($promise);
     }
 
-    private function logRequestIfCallbackSet($method, $url, $requestOptions, $headers)
-    {
-        if ($this->logRequestCallback!==null) {
+    /**
+     * @param string $method
+     * @param string $url
+     * @param array $requestOptions
+     * @param array $headers
+     * @return void
+     */
+    private function logRequestIfCallbackSet(
+        string $method,
+        string $url,
+        array $requestOptions,
+        array $headers,
+    ): void {
+        if ($this->logRequestCallback !== null) {
             $this->logRequestCallback->call(
                 $this,
                 $method,
                 $url,
                 $requestOptions,
-                $headers
+                $headers,
             );
         }
 
         if ($this->domainrobotConfig->hasLogRequestCallback()) {
-            $this->domainrobotConfig->logRequest()->call(
-                $this,
-                $method,
-                $url,
-                $requestOptions,
-                $headers
-            );
+            $this->domainrobotConfig
+                ->logRequest()
+                ->call($this, $method, $url, $requestOptions, $headers);
         }
     }
 
-    private function logResponseIfCallbackSet($url, $rawResponse, $statusCode, $execTime){
-        if ($this->logResponseCallback!==null) {
+    /**
+     * @param string $url
+     * @param string $rawResponse
+     * @param int $statusCode
+     * @param float $execTime
+     * @return void
+     */
+    private function logResponseIfCallbackSet(
+        string $url,
+        string $rawResponse,
+        int $statusCode,
+        float $execTime,
+    ): void {
+        if ($this->logResponseCallback !== null) {
             $this->logResponseCallback->call(
                 $this,
-                $url, $rawResponse, $statusCode, $execTime
+                $url,
+                $rawResponse,
+                $statusCode,
+                $execTime,
             );
             return;
         }
 
         if ($this->domainrobotConfig->hasLogResponseCallback()) {
-            $this->domainrobotConfig->logResponse()->call(
-                $this,
-                $url, $rawResponse, $statusCode, $execTime
-            );
+            $this->domainrobotConfig
+                ->logResponse()
+                ->call($this, $url, $rawResponse, $statusCode, $execTime);
             return;
         }
-
     }
 }
-

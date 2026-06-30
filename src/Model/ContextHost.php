@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContextHost Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class ContextHost implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class ContextHost implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class ContextHost implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class ContextHost implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -337,7 +340,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ContextHost
     {
         $this->container['created'] = $created;
 
@@ -349,7 +352,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -361,7 +364,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ContextHost
     {
         $this->container['updated'] = $updated;
 
@@ -373,7 +376,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getMaster()
+    public function getMaster(): mixed
     {
         return $this->container['master'];
     }
@@ -385,7 +388,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMaster($master)
+    public function setMaster($master): ContextHost
     {
         $this->container['master'] = $master;
 
@@ -397,7 +400,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCsr()
+    public function getCsr(): mixed
     {
         return $this->container['csr'];
     }
@@ -409,7 +412,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCsr($csr)
+    public function setCsr($csr): ContextHost
     {
         $this->container['csr'] = $csr;
 
@@ -421,7 +424,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getServerCert()
+    public function getServerCert(): mixed
     {
         return $this->container['serverCert'];
     }
@@ -433,7 +436,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServerCert($serverCert)
+    public function setServerCert($serverCert): ContextHost
     {
         $this->container['serverCert'] = $serverCert;
 
@@ -445,7 +448,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCaCert()
+    public function getCaCert(): mixed
     {
         return $this->container['caCert'];
     }
@@ -457,7 +460,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCaCert($caCert)
+    public function setCaCert($caCert): ContextHost
     {
         $this->container['caCert'] = $caCert;
 
@@ -469,7 +472,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\JobStatusConstants
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -481,7 +484,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): ContextHost
     {
         $this->container['status'] = $status;
 
@@ -493,7 +496,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubStatus()
+    public function getSubStatus(): mixed
     {
         return $this->container['subStatus'];
     }
@@ -505,7 +508,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubStatus($subStatus)
+    public function setSubStatus($subStatus): ContextHost
     {
         $this->container['subStatus'] = $subStatus;
 
@@ -517,7 +520,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContextHostZone
      */
-    public function getZone()
+    public function getZone(): mixed
     {
         return $this->container['zone'];
     }
@@ -529,7 +532,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZone($zone)
+    public function setZone($zone): ContextHost
     {
         $this->container['zone'] = $zone;
 
@@ -541,7 +544,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicCertificate
      */
-    public function getCertificate()
+    public function getCertificate(): mixed
     {
         return $this->container['certificate'];
     }
@@ -553,7 +556,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificate($certificate)
+    public function setCertificate($certificate): ContextHost
     {
         $this->container['certificate'] = $certificate;
 
@@ -565,7 +568,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -577,7 +580,7 @@ class ContextHost implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): ContextHost
     {
         $this->container['name'] = $name;
 
@@ -652,23 +655,22 @@ class ContextHost implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class ContextHost implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

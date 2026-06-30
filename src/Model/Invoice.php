@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Invoice Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -332,7 +335,7 @@ class Invoice implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -343,7 +346,7 @@ class Invoice implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -362,7 +365,7 @@ class Invoice implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -387,7 +390,7 @@ class Invoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -403,7 +406,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -415,7 +418,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Invoice
     {
         $this->container['created'] = $created;
 
@@ -427,7 +430,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -439,7 +442,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Invoice
     {
         $this->container['updated'] = $updated;
 
@@ -451,7 +454,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -463,7 +466,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Invoice
     {
         $this->container['owner'] = $owner;
 
@@ -475,7 +478,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -487,7 +490,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Invoice
     {
         $this->container['updater'] = $updater;
 
@@ -499,7 +502,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -511,7 +514,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): Invoice
     {
         $this->container['id'] = $id;
 
@@ -523,7 +526,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNumber()
+    public function getNumber(): mixed
     {
         return $this->container['number'];
     }
@@ -535,7 +538,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setNumber($number): Invoice
     {
         $this->container['number'] = $number;
 
@@ -547,7 +550,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -559,7 +562,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): Invoice
     {
         $this->container['customer'] = $customer;
 
@@ -571,7 +574,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PaymentConstants
      */
-    public function getPayment()
+    public function getPayment(): mixed
     {
         return $this->container['payment'];
     }
@@ -583,7 +586,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayment($payment)
+    public function setPayment($payment): Invoice
     {
         $this->container['payment'] = $payment;
 
@@ -595,7 +598,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPaymentMode()
+    public function getPaymentMode(): mixed
     {
         return $this->container['paymentMode'];
     }
@@ -607,7 +610,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaymentMode($paymentMode)
+    public function setPaymentMode($paymentMode): Invoice
     {
         $this->container['paymentMode'] = $paymentMode;
 
@@ -619,7 +622,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPaymentTransaction()
+    public function getPaymentTransaction(): mixed
     {
         return $this->container['paymentTransaction'];
     }
@@ -631,7 +634,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaymentTransaction($paymentTransaction)
+    public function setPaymentTransaction($paymentTransaction): Invoice
     {
         $this->container['paymentTransaction'] = $paymentTransaction;
 
@@ -643,7 +646,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubType()
+    public function getSubType(): mixed
     {
         return $this->container['subType'];
     }
@@ -655,7 +658,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubType($subType)
+    public function setSubType($subType): Invoice
     {
         $this->container['subType'] = $subType;
 
@@ -667,7 +670,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSepaMandateReference()
+    public function getSepaMandateReference(): mixed
     {
         return $this->container['sepaMandateReference'];
     }
@@ -679,7 +682,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSepaMandateReference($sepaMandateReference)
+    public function setSepaMandateReference($sepaMandateReference): Invoice
     {
         $this->container['sepaMandateReference'] = $sepaMandateReference;
 
@@ -691,7 +694,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getSepaMandateCollection()
+    public function getSepaMandateCollection(): mixed
     {
         return $this->container['sepaMandateCollection'];
     }
@@ -703,7 +706,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSepaMandateCollection($sepaMandateCollection)
+    public function setSepaMandateCollection($sepaMandateCollection): Invoice
     {
         $this->container['sepaMandateCollection'] = $sepaMandateCollection;
 
@@ -715,7 +718,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getAmount()
+    public function getAmount(): mixed
     {
         return $this->container['amount'];
     }
@@ -727,7 +730,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setAmount($amount): Invoice
     {
         $this->container['amount'] = $amount;
 
@@ -739,7 +742,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getVatAmount()
+    public function getVatAmount(): mixed
     {
         return $this->container['vatAmount'];
     }
@@ -751,7 +754,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatAmount($vatAmount)
+    public function setVatAmount($vatAmount): Invoice
     {
         $this->container['vatAmount'] = $vatAmount;
 
@@ -763,7 +766,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\InvoiceStatusConstants
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -775,7 +778,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): Invoice
     {
         $this->container['status'] = $status;
 
@@ -787,7 +790,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AccountingDocumentTypeConstants
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -799,7 +802,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): Invoice
     {
         $this->container['type'] = $type;
 
@@ -811,7 +814,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getFailed()
+    public function getFailed(): mixed
     {
         return $this->container['failed'];
     }
@@ -823,7 +826,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFailed($failed)
+    public function setFailed($failed): Invoice
     {
         $this->container['failed'] = $failed;
 
@@ -835,7 +838,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -847,7 +850,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): Invoice
     {
         $this->container['currency'] = $currency;
 
@@ -859,7 +862,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPaid()
+    public function getPaid(): mixed
     {
         return $this->container['paid'];
     }
@@ -871,7 +874,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaid($paid)
+    public function setPaid($paid): Invoice
     {
         $this->container['paid'] = $paid;
 
@@ -883,7 +886,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Document
      */
-    public function getDocument()
+    public function getDocument(): mixed
     {
         return $this->container['document'];
     }
@@ -895,7 +898,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDocument($document)
+    public function setDocument($document): Invoice
     {
         $this->container['document'] = $document;
 
@@ -907,7 +910,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -919,7 +922,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): Invoice
     {
         $this->container['comment'] = $comment;
 
@@ -931,7 +934,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Configuration
      */
-    public function getExtension()
+    public function getExtension(): mixed
     {
         return $this->container['extension'];
     }
@@ -943,7 +946,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtension($extension)
+    public function setExtension($extension): Invoice
     {
         $this->container['extension'] = $extension;
 
@@ -955,7 +958,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getMessages()
+    public function getMessages(): mixed
     {
         return $this->container['messages'];
     }
@@ -967,7 +970,7 @@ class Invoice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setMessages($messages): Invoice
     {
         $this->container['messages'] = $messages;
 
@@ -1042,23 +1045,22 @@ class Invoice implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1068,7 +1070,7 @@ class Invoice implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

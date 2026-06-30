@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0] - 2026-06-30
+
+* Regenerated `src/Model` classes from updated Swagger Codegen templates.
+* Removed generated model-package artifact files from `src/Model` (README/composer/CI/helper files).
+* Updated service/lib classes with explicit method signatures and docblocks to resolve phpactor warnings.
+* Fixed generation workflow (`build.sh`) for current Swagger Codegen CLI usage.
+
 ## [0.9.27] - 2026-03-03
 
 * Added `verificationCreate` & `verificationResendEmail` to `ContactService`

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SimplePrice Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -242,7 +245,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -253,7 +256,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -272,7 +275,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -297,7 +300,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -313,7 +316,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getAmount()
+    public function getAmount(): mixed
     {
         return $this->container['amount'];
     }
@@ -325,7 +328,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setAmount($amount): SimplePrice
     {
         $this->container['amount'] = $amount;
 
@@ -337,7 +340,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getNetAmount()
+    public function getNetAmount(): mixed
     {
         return $this->container['netAmount'];
     }
@@ -349,7 +352,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNetAmount($netAmount)
+    public function setNetAmount($netAmount): SimplePrice
     {
         $this->container['netAmount'] = $netAmount;
 
@@ -361,7 +364,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getVatAmount()
+    public function getVatAmount(): mixed
     {
         return $this->container['vatAmount'];
     }
@@ -373,7 +376,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatAmount($vatAmount)
+    public function setVatAmount($vatAmount): SimplePrice
     {
         $this->container['vatAmount'] = $vatAmount;
 
@@ -385,7 +388,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -397,7 +400,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): SimplePrice
     {
         $this->container['currency'] = $currency;
 
@@ -409,7 +412,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ExchangedPrice
      */
-    public function getPrice()
+    public function getPrice(): mixed
     {
         return $this->container['price'];
     }
@@ -421,7 +424,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrice($price)
+    public function setPrice($price): SimplePrice
     {
         $this->container['price'] = $price;
 
@@ -433,7 +436,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBusinessCase()
+    public function getBusinessCase(): mixed
     {
         return $this->container['businessCase'];
     }
@@ -445,7 +448,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessCase($businessCase)
+    public function setBusinessCase($businessCase): SimplePrice
     {
         $this->container['businessCase'] = $businessCase;
 
@@ -457,7 +460,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -469,7 +472,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): SimplePrice
     {
         $this->container['period'] = $period;
 
@@ -481,7 +484,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Custom[]
      */
-    public function getCustoms()
+    public function getCustoms(): mixed
     {
         return $this->container['customs'];
     }
@@ -493,7 +496,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustoms($customs)
+    public function setCustoms($customs): SimplePrice
     {
         $this->container['customs'] = $customs;
 
@@ -505,7 +508,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CurrencyRate
      */
-    public function getView()
+    public function getView(): mixed
     {
         return $this->container['view'];
     }
@@ -517,7 +520,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setView($view)
+    public function setView($view): SimplePrice
     {
         $this->container['view'] = $view;
 
@@ -592,23 +595,22 @@ class SimplePrice implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -618,7 +620,7 @@ class SimplePrice implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

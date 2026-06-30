@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * UserEstimationStatistics Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -212,7 +215,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -223,7 +226,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -242,7 +245,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -267,7 +270,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -283,7 +286,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\StatisticsParameters
      */
-    public function getQueriesLast24Hours()
+    public function getQueriesLast24Hours(): mixed
     {
         return $this->container['queriesLast24Hours'];
     }
@@ -295,7 +298,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQueriesLast24Hours($queriesLast24Hours)
+    public function setQueriesLast24Hours($queriesLast24Hours): UserEstimationStatistics
     {
         $this->container['queriesLast24Hours'] = $queriesLast24Hours;
 
@@ -307,7 +310,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\StatisticsParameters
      */
-    public function getQueriesThisMonth()
+    public function getQueriesThisMonth(): mixed
     {
         return $this->container['queriesThisMonth'];
     }
@@ -319,7 +322,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQueriesThisMonth($queriesThisMonth)
+    public function setQueriesThisMonth($queriesThisMonth): UserEstimationStatistics
     {
         $this->container['queriesThisMonth'] = $queriesThisMonth;
 
@@ -331,7 +334,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\StatisticsParameters
      */
-    public function getQueriesThisYear()
+    public function getQueriesThisYear(): mixed
     {
         return $this->container['queriesThisYear'];
     }
@@ -343,7 +346,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQueriesThisYear($queriesThisYear)
+    public function setQueriesThisYear($queriesThisYear): UserEstimationStatistics
     {
         $this->container['queriesThisYear'] = $queriesThisYear;
 
@@ -355,7 +358,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\UserEstimationStatisticsLast12MonthsDevelopment
      */
-    public function getLast12MonthsDevelopment()
+    public function getLast12MonthsDevelopment(): mixed
     {
         return $this->container['last12MonthsDevelopment'];
     }
@@ -367,7 +370,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLast12MonthsDevelopment($last12MonthsDevelopment)
+    public function setLast12MonthsDevelopment($last12MonthsDevelopment): UserEstimationStatistics
     {
         $this->container['last12MonthsDevelopment'] = $last12MonthsDevelopment;
 
@@ -442,23 +445,22 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -468,7 +470,7 @@ class UserEstimationStatistics implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

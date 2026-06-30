@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Article Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -230,7 +233,7 @@ class Article implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -241,7 +244,7 @@ class Article implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -260,7 +263,7 @@ class Article implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -285,7 +288,7 @@ class Article implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -301,7 +304,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -313,7 +316,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Article
     {
         $this->container['created'] = $created;
 
@@ -325,7 +328,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -337,7 +340,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Article
     {
         $this->container['updated'] = $updated;
 
@@ -349,7 +352,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -361,7 +364,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Article
     {
         $this->container['owner'] = $owner;
 
@@ -373,7 +376,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -385,7 +388,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Article
     {
         $this->container['updater'] = $updater;
 
@@ -397,7 +400,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -409,7 +412,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): Article
     {
         $this->container['type'] = $type;
 
@@ -421,7 +424,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCategory()
+    public function getCategory(): mixed
     {
         return $this->container['category'];
     }
@@ -433,7 +436,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCategory($category)
+    public function setCategory($category): Article
     {
         $this->container['category'] = $category;
 
@@ -445,7 +448,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): mixed
     {
         return $this->container['label'];
     }
@@ -457,7 +460,7 @@ class Article implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabel($label): Article
     {
         $this->container['label'] = $label;
 
@@ -532,23 +535,22 @@ class Article implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -558,7 +560,7 @@ class Article implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

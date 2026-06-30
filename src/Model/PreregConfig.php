@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * PreregConfig Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -290,7 +293,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -301,7 +304,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -320,7 +323,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -345,7 +348,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -361,7 +364,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -373,7 +376,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): PreregConfig
     {
         $this->container['created'] = $created;
 
@@ -385,7 +388,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -397,7 +400,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): PreregConfig
     {
         $this->container['updated'] = $updated;
 
@@ -409,7 +412,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -421,7 +424,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): PreregConfig
     {
         $this->container['name'] = $name;
 
@@ -433,7 +436,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhase()
+    public function getPhase(): mixed
     {
         return $this->container['phase'];
     }
@@ -445,7 +448,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhase($phase)
+    public function setPhase($phase): PreregConfig
     {
         $this->container['phase'] = $phase;
 
@@ -457,7 +460,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmationStart()
+    public function getConfirmationStart(): mixed
     {
         return $this->container['confirmationStart'];
     }
@@ -469,7 +472,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmationStart($confirmationStart)
+    public function setConfirmationStart($confirmationStart): PreregConfig
     {
         $this->container['confirmationStart'] = $confirmationStart;
 
@@ -481,7 +484,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmationEnd()
+    public function getConfirmationEnd(): mixed
     {
         return $this->container['confirmationEnd'];
     }
@@ -493,7 +496,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmationEnd($confirmationEnd)
+    public function setConfirmationEnd($confirmationEnd): PreregConfig
     {
         $this->container['confirmationEnd'] = $confirmationEnd;
 
@@ -505,7 +508,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPeriodStart()
+    public function getPeriodStart(): mixed
     {
         return $this->container['periodStart'];
     }
@@ -517,7 +520,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriodStart($periodStart)
+    public function setPeriodStart($periodStart): PreregConfig
     {
         $this->container['periodStart'] = $periodStart;
 
@@ -529,7 +532,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPeriodEnd()
+    public function getPeriodEnd(): mixed
     {
         return $this->container['periodEnd'];
     }
@@ -541,7 +544,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriodEnd($periodEnd)
+    public function setPeriodEnd($periodEnd): PreregConfig
     {
         $this->container['periodEnd'] = $periodEnd;
 
@@ -553,7 +556,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNicMemberLabel()
+    public function getNicMemberLabel(): mixed
     {
         return $this->container['nicMemberLabel'];
     }
@@ -565,7 +568,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNicMemberLabel($nicMemberLabel)
+    public function setNicMemberLabel($nicMemberLabel): PreregConfig
     {
         $this->container['nicMemberLabel'] = $nicMemberLabel;
 
@@ -577,7 +580,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getNiccomStart()
+    public function getNiccomStart(): mixed
     {
         return $this->container['niccomStart'];
     }
@@ -589,7 +592,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNiccomStart($niccomStart)
+    public function setNiccomStart($niccomStart): PreregConfig
     {
         $this->container['niccomStart'] = $niccomStart;
 
@@ -601,7 +604,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getNiccomEnd()
+    public function getNiccomEnd(): mixed
     {
         return $this->container['niccomEnd'];
     }
@@ -613,7 +616,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNiccomEnd($niccomEnd)
+    public function setNiccomEnd($niccomEnd): PreregConfig
     {
         $this->container['niccomEnd'] = $niccomEnd;
 
@@ -625,7 +628,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAutoupdateDns()
+    public function getAutoupdateDns(): mixed
     {
         return $this->container['autoupdateDns'];
     }
@@ -637,7 +640,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoupdateDns($autoupdateDns)
+    public function setAutoupdateDns($autoupdateDns): PreregConfig
     {
         $this->container['autoupdateDns'] = $autoupdateDns;
 
@@ -649,7 +652,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCategory()
+    public function getCategory(): mixed
     {
         return $this->container['category'];
     }
@@ -661,7 +664,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCategory($category)
+    public function setCategory($category): PreregConfig
     {
         $this->container['category'] = $category;
 
@@ -673,7 +676,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUiFields()
+    public function getUiFields(): mixed
     {
         return $this->container['uiFields'];
     }
@@ -685,7 +688,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUiFields($uiFields)
+    public function setUiFields($uiFields): PreregConfig
     {
         $this->container['uiFields'] = $uiFields;
 
@@ -697,7 +700,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RegistrationTypeConstants
      */
-    public function getRegistrationType()
+    public function getRegistrationType(): mixed
     {
         return $this->container['registrationType'];
     }
@@ -709,7 +712,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrationType($registrationType)
+    public function setRegistrationType($registrationType): PreregConfig
     {
         $this->container['registrationType'] = $registrationType;
 
@@ -721,7 +724,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\MessageTypeConstants
      */
-    public function getMessageType()
+    public function getMessageType(): mixed
     {
         return $this->container['messageType'];
     }
@@ -733,7 +736,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMessageType($messageType)
+    public function setMessageType($messageType): PreregConfig
     {
         $this->container['messageType'] = $messageType;
 
@@ -745,7 +748,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getMinPeriod()
+    public function getMinPeriod(): mixed
     {
         return $this->container['minPeriod'];
     }
@@ -757,7 +760,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinPeriod($minPeriod)
+    public function setMinPeriod($minPeriod): PreregConfig
     {
         $this->container['minPeriod'] = $minPeriod;
 
@@ -832,23 +835,22 @@ class PreregConfig implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -858,7 +860,7 @@ class PreregConfig implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

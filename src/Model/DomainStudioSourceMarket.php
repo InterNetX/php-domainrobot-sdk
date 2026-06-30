@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainStudioSourceMarket Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
      */
-    public function getServices()
+    public function getServices(): mixed
     {
         return $this->container['services'];
     }
@@ -319,7 +322,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setServices($services): DomainStudioSourceMarket
     {
         $this->container['services'] = $services;
 
@@ -331,7 +334,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -343,7 +346,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainStudioSourceMarket
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -355,7 +358,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -367,7 +370,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): DomainStudioSourceMarket
     {
         $this->container['domains'] = $domains;
 
@@ -379,7 +382,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getPromoTlds()
+    public function getPromoTlds(): mixed
     {
         return $this->container['promoTlds'];
     }
@@ -391,7 +394,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPromoTlds($promoTlds)
+    public function setPromoTlds($promoTlds): DomainStudioSourceMarket
     {
         $this->container['promoTlds'] = $promoTlds;
 
@@ -403,7 +406,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTopTlds()
+    public function getTopTlds(): mixed
     {
         return $this->container['topTlds'];
     }
@@ -415,7 +418,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTopTlds($topTlds)
+    public function setTopTlds($topTlds): DomainStudioSourceMarket
     {
         $this->container['topTlds'] = $topTlds;
 
@@ -427,7 +430,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMax()
+    public function getMax(): mixed
     {
         return $this->container['max'];
     }
@@ -439,7 +442,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setMax($max): DomainStudioSourceMarket
     {
         $this->container['max'] = $max;
 
@@ -451,7 +454,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPriceMin()
+    public function getPriceMin(): mixed
     {
         return $this->container['priceMin'];
     }
@@ -463,7 +466,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceMin($priceMin)
+    public function setPriceMin($priceMin): DomainStudioSourceMarket
     {
         $this->container['priceMin'] = $priceMin;
 
@@ -475,7 +478,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPriceMax()
+    public function getPriceMax(): mixed
     {
         return $this->container['priceMax'];
     }
@@ -487,7 +490,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceMax($priceMax)
+    public function setPriceMax($priceMax): DomainStudioSourceMarket
     {
         $this->container['priceMax'] = $priceMax;
 
@@ -562,23 +565,22 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class DomainStudioSourceMarket implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

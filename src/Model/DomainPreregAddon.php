@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainPreregAddon Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -272,7 +275,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -283,7 +286,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -302,7 +305,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -327,7 +330,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -343,7 +346,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIrpAppCapacit()
+    public function getIrpAppCapacit(): mixed
     {
         return $this->container['irpAppCapacit'];
     }
@@ -355,7 +358,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIrpAppCapacit($irpAppCapacit)
+    public function setIrpAppCapacit($irpAppCapacit): DomainPreregAddon
     {
         $this->container['irpAppCapacit'] = $irpAppCapacit;
 
@@ -367,7 +370,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getIrpAppDate()
+    public function getIrpAppDate(): mixed
     {
         return $this->container['irpAppDate'];
     }
@@ -379,7 +382,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIrpAppDate($irpAppDate)
+    public function setIrpAppDate($irpAppDate): DomainPreregAddon
     {
         $this->container['irpAppDate'] = $irpAppDate;
 
@@ -391,7 +394,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIrpCcLocality()
+    public function getIrpCcLocality(): mixed
     {
         return $this->container['irpCcLocality'];
     }
@@ -403,7 +406,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIrpCcLocality($irpCcLocality)
+    public function setIrpCcLocality($irpCcLocality): DomainPreregAddon
     {
         $this->container['irpCcLocality'] = $irpCcLocality;
 
@@ -415,7 +418,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIrpName()
+    public function getIrpName(): mixed
     {
         return $this->container['irpName'];
     }
@@ -427,7 +430,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIrpName($irpName)
+    public function setIrpName($irpName): DomainPreregAddon
     {
         $this->container['irpName'] = $irpName;
 
@@ -439,7 +442,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIrpNumber()
+    public function getIrpNumber(): mixed
     {
         return $this->container['irpNumber'];
     }
@@ -451,7 +454,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIrpNumber($irpNumber)
+    public function setIrpNumber($irpNumber): DomainPreregAddon
     {
         $this->container['irpNumber'] = $irpNumber;
 
@@ -463,7 +466,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIrpPvrc()
+    public function getIrpPvrc(): mixed
     {
         return $this->container['irpPvrc'];
     }
@@ -475,7 +478,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIrpPvrc($irpPvrc)
+    public function setIrpPvrc($irpPvrc): DomainPreregAddon
     {
         $this->container['irpPvrc'] = $irpPvrc;
 
@@ -487,7 +490,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getIrpRegDate()
+    public function getIrpRegDate(): mixed
     {
         return $this->container['irpRegDate'];
     }
@@ -499,7 +502,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIrpRegDate($irpRegDate)
+    public function setIrpRegDate($irpRegDate): DomainPreregAddon
     {
         $this->container['irpRegDate'] = $irpRegDate;
 
@@ -511,7 +514,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMode()
+    public function getMode(): mixed
     {
         return $this->container['mode'];
     }
@@ -523,7 +526,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMode($mode)
+    public function setMode($mode): DomainPreregAddon
     {
         $this->container['mode'] = $mode;
 
@@ -535,7 +538,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getConfirmOrder()
+    public function getConfirmOrder(): mixed
     {
         return $this->container['confirmOrder'];
     }
@@ -547,7 +550,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmOrder($confirmOrder)
+    public function setConfirmOrder($confirmOrder): DomainPreregAddon
     {
         $this->container['confirmOrder'] = $confirmOrder;
 
@@ -559,7 +562,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExternalReference()
+    public function getExternalReference(): mixed
     {
         return $this->container['externalReference'];
     }
@@ -571,7 +574,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExternalReference($externalReference)
+    public function setExternalReference($externalReference): DomainPreregAddon
     {
         $this->container['externalReference'] = $externalReference;
 
@@ -583,7 +586,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getNotAfter()
+    public function getNotAfter(): mixed
     {
         return $this->container['notAfter'];
     }
@@ -595,7 +598,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNotAfter($notAfter)
+    public function setNotAfter($notAfter): DomainPreregAddon
     {
         $this->container['notAfter'] = $notAfter;
 
@@ -607,7 +610,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmed()
+    public function getConfirmed(): mixed
     {
         return $this->container['confirmed'];
     }
@@ -619,7 +622,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmed($confirmed)
+    public function setConfirmed($confirmed): DomainPreregAddon
     {
         $this->container['confirmed'] = $confirmed;
 
@@ -631,7 +634,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getConfirmIp()
+    public function getConfirmIp(): mixed
     {
         return $this->container['confirmIp'];
     }
@@ -643,7 +646,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmIp($confirmIp)
+    public function setConfirmIp($confirmIp): DomainPreregAddon
     {
         $this->container['confirmIp'] = $confirmIp;
 
@@ -655,7 +658,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPriceClass()
+    public function getPriceClass(): mixed
     {
         return $this->container['priceClass'];
     }
@@ -667,7 +670,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceClass($priceClass)
+    public function setPriceClass($priceClass): DomainPreregAddon
     {
         $this->container['priceClass'] = $priceClass;
 
@@ -742,23 +745,22 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -768,7 +770,7 @@ class DomainPreregAddon implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

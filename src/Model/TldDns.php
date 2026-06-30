@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TldDns Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class TldDns implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class TldDns implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class TldDns implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class TldDns implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDnssecMin()
+    public function getDnssecMin(): mixed
     {
         return $this->container['dnssecMin'];
     }
@@ -337,7 +340,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecMin($dnssecMin)
+    public function setDnssecMin($dnssecMin): TldDns
     {
         $this->container['dnssecMin'] = $dnssecMin;
 
@@ -349,7 +352,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDnssecMax()
+    public function getDnssecMax(): mixed
     {
         return $this->container['dnssecMax'];
     }
@@ -361,7 +364,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecMax($dnssecMax)
+    public function setDnssecMax($dnssecMax): TldDns
     {
         $this->container['dnssecMax'] = $dnssecMax;
 
@@ -373,7 +376,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int[]
      */
-    public function getDnssecAlgorithms()
+    public function getDnssecAlgorithms(): mixed
     {
         return $this->container['dnssecAlgorithms'];
     }
@@ -385,7 +388,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecAlgorithms($dnssecAlgorithms)
+    public function setDnssecAlgorithms($dnssecAlgorithms): TldDns
     {
         $this->container['dnssecAlgorithms'] = $dnssecAlgorithms;
 
@@ -397,7 +400,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNserverMin()
+    public function getNserverMin(): mixed
     {
         return $this->container['nserverMin'];
     }
@@ -409,7 +412,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNserverMin($nserverMin)
+    public function setNserverMin($nserverMin): TldDns
     {
         $this->container['nserverMin'] = $nserverMin;
 
@@ -421,7 +424,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNserverMax()
+    public function getNserverMax(): mixed
     {
         return $this->container['nserverMax'];
     }
@@ -433,7 +436,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNserverMax($nserverMax)
+    public function setNserverMax($nserverMax): TldDns
     {
         $this->container['nserverMax'] = $nserverMax;
 
@@ -445,7 +448,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv4Min()
+    public function getIpv4Min(): mixed
     {
         return $this->container['ipv4Min'];
     }
@@ -457,7 +460,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv4Min($ipv4Min)
+    public function setIpv4Min($ipv4Min): TldDns
     {
         $this->container['ipv4Min'] = $ipv4Min;
 
@@ -469,7 +472,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv4Max()
+    public function getIpv4Max(): mixed
     {
         return $this->container['ipv4Max'];
     }
@@ -481,7 +484,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv4Max($ipv4Max)
+    public function setIpv4Max($ipv4Max): TldDns
     {
         $this->container['ipv4Max'] = $ipv4Max;
 
@@ -493,7 +496,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv6Min()
+    public function getIpv6Min(): mixed
     {
         return $this->container['ipv6Min'];
     }
@@ -505,7 +508,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv6Min($ipv6Min)
+    public function setIpv6Min($ipv6Min): TldDns
     {
         $this->container['ipv6Min'] = $ipv6Min;
 
@@ -517,7 +520,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv6Max()
+    public function getIpv6Max(): mixed
     {
         return $this->container['ipv6Max'];
     }
@@ -529,7 +532,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv6Max($ipv6Max)
+    public function setIpv6Max($ipv6Max): TldDns
     {
         $this->container['ipv6Max'] = $ipv6Max;
 
@@ -541,7 +544,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNsentryMin()
+    public function getNsentryMin(): mixed
     {
         return $this->container['nsentryMin'];
     }
@@ -553,7 +556,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNsentryMin($nsentryMin)
+    public function setNsentryMin($nsentryMin): TldDns
     {
         $this->container['nsentryMin'] = $nsentryMin;
 
@@ -565,7 +568,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNsentryMax()
+    public function getNsentryMax(): mixed
     {
         return $this->container['nsentryMax'];
     }
@@ -577,7 +580,7 @@ class TldDns implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNsentryMax($nsentryMax)
+    public function setNsentryMax($nsentryMax): TldDns
     {
         $this->container['nsentryMax'] = $nsentryMax;
 
@@ -652,23 +655,22 @@ class TldDns implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class TldDns implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

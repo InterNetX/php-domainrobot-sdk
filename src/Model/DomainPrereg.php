@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainPrereg Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -338,7 +341,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -349,7 +352,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -368,7 +371,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -393,7 +396,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -409,7 +412,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -421,7 +424,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): DomainPrereg
     {
         $this->container['created'] = $created;
 
@@ -433,7 +436,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -445,7 +448,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): DomainPrereg
     {
         $this->container['updated'] = $updated;
 
@@ -457,7 +460,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -469,7 +472,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): DomainPrereg
     {
         $this->container['owner'] = $owner;
 
@@ -481,7 +484,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -493,7 +496,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): DomainPrereg
     {
         $this->container['updater'] = $updater;
 
@@ -505,7 +508,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getOwnerc()
+    public function getOwnerc(): mixed
     {
         return $this->container['ownerc'];
     }
@@ -517,7 +520,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwnerc($ownerc)
+    public function setOwnerc($ownerc): DomainPrereg
     {
         $this->container['ownerc'] = $ownerc;
 
@@ -529,7 +532,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getAdminc()
+    public function getAdminc(): mixed
     {
         return $this->container['adminc'];
     }
@@ -541,7 +544,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdminc($adminc)
+    public function setAdminc($adminc): DomainPrereg
     {
         $this->container['adminc'] = $adminc;
 
@@ -553,7 +556,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getTechc()
+    public function getTechc(): mixed
     {
         return $this->container['techc'];
     }
@@ -565,7 +568,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTechc($techc)
+    public function setTechc($techc): DomainPrereg
     {
         $this->container['techc'] = $techc;
 
@@ -577,7 +580,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getZonec()
+    public function getZonec(): mixed
     {
         return $this->container['zonec'];
     }
@@ -589,7 +592,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZonec($zonec)
+    public function setZonec($zonec): DomainPrereg
     {
         $this->container['zonec'] = $zonec;
 
@@ -601,7 +604,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -613,7 +616,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): DomainPrereg
     {
         $this->container['name'] = $name;
 
@@ -625,7 +628,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAuthinfo()
+    public function getAuthinfo(): mixed
     {
         return $this->container['authinfo'];
     }
@@ -637,7 +640,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthinfo($authinfo)
+    public function setAuthinfo($authinfo): DomainPrereg
     {
         $this->container['authinfo'] = $authinfo;
 
@@ -649,7 +652,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NameServer[]
      */
-    public function getNameServers()
+    public function getNameServers(): mixed
     {
         return $this->container['nameServers'];
     }
@@ -661,7 +664,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServers($nameServers)
+    public function setNameServers($nameServers): DomainPrereg
     {
         $this->container['nameServers'] = $nameServers;
 
@@ -673,7 +676,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getNameServerEntries()
+    public function getNameServerEntries(): mixed
     {
         return $this->container['nameServerEntries'];
     }
@@ -685,7 +688,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServerEntries($nameServerEntries)
+    public function setNameServerEntries($nameServerEntries): DomainPrereg
     {
         $this->container['nameServerEntries'] = $nameServerEntries;
 
@@ -697,7 +700,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainPreregStatusConstants
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -709,7 +712,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): DomainPrereg
     {
         $this->container['status'] = $status;
 
@@ -721,7 +724,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhase()
+    public function getPhase(): mixed
     {
         return $this->container['phase'];
     }
@@ -733,7 +736,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhase($phase)
+    public function setPhase($phase): DomainPrereg
     {
         $this->container['phase'] = $phase;
 
@@ -745,7 +748,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainPreregAddon
      */
-    public function getExtension()
+    public function getExtension(): mixed
     {
         return $this->container['extension'];
     }
@@ -757,7 +760,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtension($extension)
+    public function setExtension($extension): DomainPrereg
     {
         $this->container['extension'] = $extension;
 
@@ -769,7 +772,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrderReference()
+    public function getOrderReference(): mixed
     {
         return $this->container['orderReference'];
     }
@@ -781,7 +784,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderReference($orderReference)
+    public function setOrderReference($orderReference): DomainPrereg
     {
         $this->container['orderReference'] = $orderReference;
 
@@ -793,7 +796,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchMark
      */
-    public function getTmchMark()
+    public function getTmchMark(): mixed
     {
         return $this->container['tmchMark'];
     }
@@ -805,7 +808,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTmchMark($tmchMark)
+    public function setTmchMark($tmchMark): DomainPrereg
     {
         $this->container['tmchMark'] = $tmchMark;
 
@@ -817,7 +820,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PreregConfig
      */
-    public function getPreregConfig()
+    public function getPreregConfig(): mixed
     {
         return $this->container['preregConfig'];
     }
@@ -829,7 +832,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPreregConfig($preregConfig)
+    public function setPreregConfig($preregConfig): DomainPrereg
     {
         $this->container['preregConfig'] = $preregConfig;
 
@@ -841,7 +844,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -853,7 +856,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): DomainPrereg
     {
         $this->container['idn'] = $idn;
 
@@ -865,7 +868,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmed()
+    public function getConfirmed(): mixed
     {
         return $this->container['confirmed'];
     }
@@ -877,7 +880,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmed($confirmed)
+    public function setConfirmed($confirmed): DomainPrereg
     {
         $this->container['confirmed'] = $confirmed;
 
@@ -889,7 +892,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTrustee()
+    public function getTrustee(): mixed
     {
         return $this->container['trustee'];
     }
@@ -901,7 +904,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrustee($trustee)
+    public function setTrustee($trustee): DomainPrereg
     {
         $this->container['trustee'] = $trustee;
 
@@ -913,7 +916,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDomainCreated()
+    public function getDomainCreated(): mixed
     {
         return $this->container['domainCreated'];
     }
@@ -925,7 +928,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainCreated($domainCreated)
+    public function setDomainCreated($domainCreated): DomainPrereg
     {
         $this->container['domainCreated'] = $domainCreated;
 
@@ -937,7 +940,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDomainExpire()
+    public function getDomainExpire(): mixed
     {
         return $this->container['domainExpire'];
     }
@@ -949,7 +952,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainExpire($domainExpire)
+    public function setDomainExpire($domainExpire): DomainPrereg
     {
         $this->container['domainExpire'] = $domainExpire;
 
@@ -961,7 +964,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RegistryStatusConstants
      */
-    public function getRegistryStatus()
+    public function getRegistryStatus(): mixed
     {
         return $this->container['registryStatus'];
     }
@@ -973,7 +976,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistryStatus($registryStatus)
+    public function setRegistryStatus($registryStatus): DomainPrereg
     {
         $this->container['registryStatus'] = $registryStatus;
 
@@ -985,7 +988,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRecommended()
+    public function getRecommended(): mixed
     {
         return $this->container['recommended'];
     }
@@ -997,7 +1000,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRecommended($recommended)
+    public function setRecommended($recommended): DomainPrereg
     {
         $this->container['recommended'] = $recommended;
 
@@ -1072,23 +1075,22 @@ class DomainPrereg implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1098,7 +1100,7 @@ class DomainPrereg implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

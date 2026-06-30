@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SpamPolicy Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -307,7 +310,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -323,7 +326,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PolicyMode
      */
-    public function getMode()
+    public function getMode(): mixed
     {
         return $this->container['mode'];
     }
@@ -335,7 +338,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMode($mode)
+    public function setMode($mode): SpamPolicy
     {
         $this->container['mode'] = $mode;
 
@@ -347,7 +350,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getModifySubject()
+    public function getModifySubject(): mixed
     {
         return $this->container['modifySubject'];
     }
@@ -359,7 +362,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setModifySubject($modifySubject)
+    public function setModifySubject($modifySubject): SpamPolicy
     {
         $this->container['modifySubject'] = $modifySubject;
 
@@ -371,7 +374,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getTagHeader()
+    public function getTagHeader(): mixed
     {
         return $this->container['tagHeader'];
     }
@@ -383,7 +386,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTagHeader($tagHeader)
+    public function setTagHeader($tagHeader): SpamPolicy
     {
 
         if (!is_null($tagHeader) && ($tagHeader > 999.9)) {
@@ -403,7 +406,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getSpam()
+    public function getSpam(): mixed
     {
         return $this->container['spam'];
     }
@@ -415,7 +418,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSpam($spam)
+    public function setSpam($spam): SpamPolicy
     {
 
         if (!is_null($spam) && ($spam > 999.9)) {
@@ -435,7 +438,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getKill()
+    public function getKill(): mixed
     {
         return $this->container['kill'];
     }
@@ -447,7 +450,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKill($kill)
+    public function setKill($kill): SpamPolicy
     {
 
         if (!is_null($kill) && ($kill > 999.9)) {
@@ -467,7 +470,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getQuarantineDigestInterval()
+    public function getQuarantineDigestInterval(): mixed
     {
         return $this->container['quarantineDigestInterval'];
     }
@@ -479,7 +482,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQuarantineDigestInterval($quarantineDigestInterval)
+    public function setQuarantineDigestInterval($quarantineDigestInterval): SpamPolicy
     {
 
         if (!is_null($quarantineDigestInterval) && ($quarantineDigestInterval < 1440)) {
@@ -559,23 +562,22 @@ class SpamPolicy implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -585,7 +587,7 @@ class SpamPolicy implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

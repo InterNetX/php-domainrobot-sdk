@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * PriceList Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -290,7 +293,7 @@ class PriceList implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -301,7 +304,7 @@ class PriceList implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -320,7 +323,7 @@ class PriceList implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -345,7 +348,7 @@ class PriceList implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -361,7 +364,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -373,7 +376,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): PriceList
     {
         $this->container['created'] = $created;
 
@@ -385,7 +388,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -397,7 +400,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): PriceList
     {
         $this->container['updated'] = $updated;
 
@@ -409,7 +412,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -421,7 +424,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): PriceList
     {
         $this->container['owner'] = $owner;
 
@@ -433,7 +436,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -445,7 +448,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): PriceList
     {
         $this->container['updater'] = $updater;
 
@@ -457,7 +460,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -469,7 +472,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): PriceList
     {
         $this->container['id'] = $id;
 
@@ -481,7 +484,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): mixed
     {
         return $this->container['label'];
     }
@@ -493,7 +496,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabel($label): PriceList
     {
         $this->container['label'] = $label;
 
@@ -505,7 +508,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getClient()
+    public function getClient(): mixed
     {
         return $this->container['client'];
     }
@@ -517,7 +520,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClient($client)
+    public function setClient($client): PriceList
     {
         $this->container['client'] = $client;
 
@@ -529,7 +532,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGroup()
+    public function getGroup(): mixed
     {
         return $this->container['group'];
     }
@@ -541,7 +544,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGroup($group)
+    public function setGroup($group): PriceList
     {
         $this->container['group'] = $group;
 
@@ -553,7 +556,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Type
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -565,7 +568,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): PriceList
     {
         $this->container['type'] = $type;
 
@@ -577,7 +580,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getFrom()
+    public function getFrom(): mixed
     {
         return $this->container['from'];
     }
@@ -589,7 +592,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFrom($from)
+    public function setFrom($from): PriceList
     {
         $this->container['from'] = $from;
 
@@ -601,7 +604,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getTo()
+    public function getTo(): mixed
     {
         return $this->container['to'];
     }
@@ -613,7 +616,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTo($to)
+    public function setTo($to): PriceList
     {
         $this->container['to'] = $to;
 
@@ -625,7 +628,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getInactive()
+    public function getInactive(): mixed
     {
         return $this->container['inactive'];
     }
@@ -637,7 +640,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInactive($inactive)
+    public function setInactive($inactive): PriceList
     {
         $this->container['inactive'] = $inactive;
 
@@ -649,7 +652,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -661,7 +664,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): PriceList
     {
         $this->container['comment'] = $comment;
 
@@ -673,7 +676,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerPriceList[]
      */
-    public function getCustomerPriceListsAdd()
+    public function getCustomerPriceListsAdd(): mixed
     {
         return $this->container['customerPriceListsAdd'];
     }
@@ -685,7 +688,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomerPriceListsAdd($customerPriceListsAdd)
+    public function setCustomerPriceListsAdd($customerPriceListsAdd): PriceList
     {
         $this->container['customerPriceListsAdd'] = $customerPriceListsAdd;
 
@@ -697,7 +700,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerPriceList[]
      */
-    public function getCustomerPriceListsRem()
+    public function getCustomerPriceListsRem(): mixed
     {
         return $this->container['customerPriceListsRem'];
     }
@@ -709,7 +712,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomerPriceListsRem($customerPriceListsRem)
+    public function setCustomerPriceListsRem($customerPriceListsRem): PriceList
     {
         $this->container['customerPriceListsRem'] = $customerPriceListsRem;
 
@@ -721,7 +724,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getHasCustomerPriceList()
+    public function getHasCustomerPriceList(): mixed
     {
         return $this->container['hasCustomerPriceList'];
     }
@@ -733,7 +736,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHasCustomerPriceList($hasCustomerPriceList)
+    public function setHasCustomerPriceList($hasCustomerPriceList): PriceList
     {
         $this->container['hasCustomerPriceList'] = $hasCustomerPriceList;
 
@@ -745,7 +748,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getExcludeFromPricechange()
+    public function getExcludeFromPricechange(): mixed
     {
         return $this->container['excludeFromPricechange'];
     }
@@ -757,7 +760,7 @@ class PriceList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExcludeFromPricechange($excludeFromPricechange)
+    public function setExcludeFromPricechange($excludeFromPricechange): PriceList
     {
         $this->container['excludeFromPricechange'] = $excludeFromPricechange;
 
@@ -832,23 +835,22 @@ class PriceList implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -858,7 +860,7 @@ class PriceList implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

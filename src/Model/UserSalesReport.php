@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * UserSalesReport Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -331,7 +334,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): UserSalesReport
     {
         $this->container['created'] = $created;
 
@@ -343,7 +346,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -355,7 +358,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): UserSalesReport
     {
         $this->container['updated'] = $updated;
 
@@ -367,7 +370,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -379,7 +382,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): UserSalesReport
     {
         $this->container['owner'] = $owner;
 
@@ -391,7 +394,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -403,7 +406,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): UserSalesReport
     {
         $this->container['updater'] = $updater;
 
@@ -415,7 +418,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDate()
+    public function getDate(): mixed
     {
         return $this->container['date'];
     }
@@ -427,7 +430,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDate($date)
+    public function setDate($date): UserSalesReport
     {
         $this->container['date'] = $date;
 
@@ -439,7 +442,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getDomainSales()
+    public function getDomainSales(): mixed
     {
         return $this->container['domainSales'];
     }
@@ -451,7 +454,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainSales($domainSales)
+    public function setDomainSales($domainSales): UserSalesReport
     {
         $this->container['domainSales'] = $domainSales;
 
@@ -463,7 +466,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getDomainAddonSales()
+    public function getDomainAddonSales(): mixed
     {
         return $this->container['domainAddonSales'];
     }
@@ -475,7 +478,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainAddonSales($domainAddonSales)
+    public function setDomainAddonSales($domainAddonSales): UserSalesReport
     {
         $this->container['domainAddonSales'] = $domainAddonSales;
 
@@ -487,7 +490,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getCertificateSales()
+    public function getCertificateSales(): mixed
     {
         return $this->container['certificateSales'];
     }
@@ -499,7 +502,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificateSales($certificateSales)
+    public function setCertificateSales($certificateSales): UserSalesReport
     {
         $this->container['certificateSales'] = $certificateSales;
 
@@ -511,7 +514,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getServerSales()
+    public function getServerSales(): mixed
     {
         return $this->container['serverSales'];
     }
@@ -523,7 +526,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServerSales($serverSales)
+    public function setServerSales($serverSales): UserSalesReport
     {
         $this->container['serverSales'] = $serverSales;
 
@@ -535,7 +538,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getPackageSales()
+    public function getPackageSales(): mixed
     {
         return $this->container['packageSales'];
     }
@@ -547,7 +550,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPackageSales($packageSales)
+    public function setPackageSales($packageSales): UserSalesReport
     {
         $this->container['packageSales'] = $packageSales;
 
@@ -622,23 +625,22 @@ class UserSalesReport implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class UserSalesReport implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

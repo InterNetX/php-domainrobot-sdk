@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SiteSealInformation Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -218,7 +221,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -229,7 +232,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -248,7 +251,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -273,7 +276,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -289,7 +292,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getHash()
+    public function getHash(): mixed
     {
         return $this->container['hash'];
     }
@@ -301,7 +304,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHash($hash)
+    public function setHash($hash): SiteSealInformation
     {
         $this->container['hash'] = $hash;
 
@@ -313,7 +316,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSize()
+    public function getSize(): mixed
     {
         return $this->container['size'];
     }
@@ -325,7 +328,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSize($size)
+    public function setSize($size): SiteSealInformation
     {
         $this->container['size'] = $size;
 
@@ -337,7 +340,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getHtml()
+    public function getHtml(): mixed
     {
         return $this->container['html'];
     }
@@ -349,7 +352,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHtml($html)
+    public function setHtml($html): SiteSealInformation
     {
         $this->container['html'] = $html;
 
@@ -361,7 +364,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIcon()
+    public function getIcon(): mixed
     {
         return $this->container['icon'];
     }
@@ -373,7 +376,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIcon($icon)
+    public function setIcon($icon): SiteSealInformation
     {
         $this->container['icon'] = $icon;
 
@@ -385,7 +388,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPreview()
+    public function getPreview(): mixed
     {
         return $this->container['preview'];
     }
@@ -397,7 +400,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPreview($preview)
+    public function setPreview($preview): SiteSealInformation
     {
         $this->container['preview'] = $preview;
 
@@ -472,23 +475,22 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -498,7 +500,7 @@ class SiteSealInformation implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

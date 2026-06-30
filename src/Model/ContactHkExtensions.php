@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactHkExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\HkDocumentTypeConstants
      */
-    public function getDocumentType()
+    public function getDocumentType(): mixed
     {
         return $this->container['documentType'];
     }
@@ -307,7 +310,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDocumentType($documentType)
+    public function setDocumentType($documentType): ContactHkExtensions
     {
         $this->container['documentType'] = $documentType;
 
@@ -319,7 +322,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOthers()
+    public function getOthers(): mixed
     {
         return $this->container['others'];
     }
@@ -331,7 +334,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOthers($others)
+    public function setOthers($others): ContactHkExtensions
     {
         $this->container['others'] = $others;
 
@@ -343,7 +346,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDocumentNumber()
+    public function getDocumentNumber(): mixed
     {
         return $this->container['documentNumber'];
     }
@@ -355,7 +358,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDocumentNumber($documentNumber)
+    public function setDocumentNumber($documentNumber): ContactHkExtensions
     {
         $this->container['documentNumber'] = $documentNumber;
 
@@ -367,7 +370,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDocumentOrigin()
+    public function getDocumentOrigin(): mixed
     {
         return $this->container['documentOrigin'];
     }
@@ -379,7 +382,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDocumentOrigin($documentOrigin)
+    public function setDocumentOrigin($documentOrigin): ContactHkExtensions
     {
         $this->container['documentOrigin'] = $documentOrigin;
 
@@ -391,7 +394,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAbove18()
+    public function getAbove18(): mixed
     {
         return $this->container['above18'];
     }
@@ -403,7 +406,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAbove18($above18)
+    public function setAbove18($above18): ContactHkExtensions
     {
         $this->container['above18'] = $above18;
 
@@ -415,7 +418,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\HkIndustryTypeConstants
      */
-    public function getIndustryType()
+    public function getIndustryType(): mixed
     {
         return $this->container['industryType'];
     }
@@ -427,7 +430,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIndustryType($industryType)
+    public function setIndustryType($industryType): ContactHkExtensions
     {
         $this->container['industryType'] = $industryType;
 
@@ -502,23 +505,22 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class ContactHkExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

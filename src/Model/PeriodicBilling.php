@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * PeriodicBilling Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -302,7 +305,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -313,7 +316,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -332,7 +335,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -357,7 +360,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -373,7 +376,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -385,7 +388,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): PeriodicBilling
     {
         $this->container['created'] = $created;
 
@@ -397,7 +400,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -409,7 +412,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): PeriodicBilling
     {
         $this->container['updated'] = $updated;
 
@@ -421,7 +424,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -433,7 +436,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): PeriodicBilling
     {
         $this->container['id'] = $id;
 
@@ -445,7 +448,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -457,7 +460,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): PeriodicBilling
     {
         $this->container['owner'] = $owner;
 
@@ -469,7 +472,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -481,7 +484,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): PeriodicBilling
     {
         $this->container['updater'] = $updater;
 
@@ -493,7 +496,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BillingStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -505,7 +508,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): PeriodicBilling
     {
         $this->container['status'] = $status;
 
@@ -517,7 +520,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getObject()
+    public function getObject(): mixed
     {
         return $this->container['object'];
     }
@@ -529,7 +532,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setObject($object): PeriodicBilling
     {
         $this->container['object'] = $object;
 
@@ -541,7 +544,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): mixed
     {
         return $this->container['description'];
     }
@@ -553,7 +556,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setDescription($description): PeriodicBilling
     {
         $this->container['description'] = $description;
 
@@ -565,7 +568,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -577,7 +580,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): PeriodicBilling
     {
         $this->container['period'] = $period;
 
@@ -589,7 +592,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleTypeLabel()
+    public function getArticleTypeLabel(): mixed
     {
         return $this->container['articleTypeLabel'];
     }
@@ -601,7 +604,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleTypeLabel($articleTypeLabel)
+    public function setArticleTypeLabel($articleTypeLabel): PeriodicBilling
     {
         $this->container['articleTypeLabel'] = $articleTypeLabel;
 
@@ -613,7 +616,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPayable()
+    public function getPayable(): mixed
     {
         return $this->container['payable'];
     }
@@ -625,7 +628,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayable($payable)
+    public function setPayable($payable): PeriodicBilling
     {
         $this->container['payable'] = $payable;
 
@@ -637,7 +640,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleLabel()
+    public function getArticleLabel(): mixed
     {
         return $this->container['articleLabel'];
     }
@@ -649,7 +652,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleLabel($articleLabel)
+    public function setArticleLabel($articleLabel): PeriodicBilling
     {
         $this->container['articleLabel'] = $articleLabel;
 
@@ -661,7 +664,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PeriodicBilling[]
      */
-    public function getItem()
+    public function getItem(): mixed
     {
         return $this->container['item'];
     }
@@ -673,7 +676,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItem($item)
+    public function setItem($item): PeriodicBilling
     {
         $this->container['item'] = $item;
 
@@ -685,7 +688,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getExpire()
+    public function getExpire(): mixed
     {
         return $this->container['expire'];
     }
@@ -697,7 +700,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExpire($expire)
+    public function setExpire($expire): PeriodicBilling
     {
         $this->container['expire'] = $expire;
 
@@ -709,7 +712,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getCancelationTerm()
+    public function getCancelationTerm(): mixed
     {
         return $this->container['cancelationTerm'];
     }
@@ -721,7 +724,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationTerm($cancelationTerm)
+    public function setCancelationTerm($cancelationTerm): PeriodicBilling
     {
         $this->container['cancelationTerm'] = $cancelationTerm;
 
@@ -733,7 +736,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCancelation()
+    public function getCancelation(): mixed
     {
         return $this->container['cancelation'];
     }
@@ -745,7 +748,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelation($cancelation)
+    public function setCancelation($cancelation): PeriodicBilling
     {
         $this->container['cancelation'] = $cancelation;
 
@@ -757,7 +760,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCanceled()
+    public function getCanceled(): mixed
     {
         return $this->container['canceled'];
     }
@@ -769,7 +772,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCanceled($canceled)
+    public function setCanceled($canceled): PeriodicBilling
     {
         $this->container['canceled'] = $canceled;
 
@@ -781,7 +784,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBusinessCase()
+    public function getBusinessCase(): mixed
     {
         return $this->container['businessCase'];
     }
@@ -793,7 +796,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessCase($businessCase)
+    public function setBusinessCase($businessCase): PeriodicBilling
     {
         $this->container['businessCase'] = $businessCase;
 
@@ -805,7 +808,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BillingEventExtensions
      */
-    public function getExtensions()
+    public function getExtensions(): mixed
     {
         return $this->container['extensions'];
     }
@@ -817,7 +820,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtensions($extensions)
+    public function setExtensions($extensions): PeriodicBilling
     {
         $this->container['extensions'] = $extensions;
 
@@ -892,23 +895,22 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -918,7 +920,7 @@ class PeriodicBilling implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

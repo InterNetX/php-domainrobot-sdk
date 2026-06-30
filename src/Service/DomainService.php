@@ -17,7 +17,6 @@ use Domainrobot\Service\DomainrobotService;
 
 class DomainService extends DomainrobotService
 {
-
     /**
      *
      * @param DomainrobotConfig $domainrobotConfig
@@ -41,7 +40,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -56,7 +59,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -74,7 +77,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -89,7 +96,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_buy",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -107,7 +114,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -122,7 +133,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_import",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -133,6 +144,7 @@ class DomainService extends DomainrobotService
      * sld, subtld, tld, status, authinfo, expire, comment, ownerc, updated, zonec, nserver, techc, adminc, certificate, created, autorenew
      *
      * @param Query|null $body
+     * @param array $keys
      * @return Domain[]
      */
     public function list(?Query $body = null, $keys = [])
@@ -142,9 +154,9 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        $data = $domainrobotResult->getResult()['data'];
+        $data = $domainrobotResult->getResult()["data"];
 
-        $domains = array();
+        $domains = [];
         foreach ($data as $d) {
             $do = new Domain($d);
             array_push($domains, $do);
@@ -160,6 +172,7 @@ class DomainService extends DomainrobotService
      * sld, subtld, tld, status, authinfo, expire, comment, ownerc, updated, zonec, nserver, techc, adminc, certificate, created, autorenew
      *
      * @param Query|null $body
+     * @param array $keys
      * @return DomainrobotPromise
      */
     public function listAsync(?Query $body = null, $keys = [])
@@ -169,16 +182,20 @@ class DomainService extends DomainrobotService
             $data = $body->toArray();
         }
 
-        $keyString = '';
+        $keyString = "";
         if (count($keys) > 0) {
             $keyString = "?keys[]=" . implode("&keys[]=", $keys);
         }
 
-        return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/_search". $keyString,
-            "POST",
-            ["json" => $data]
-        ));
+        return new DomainrobotPromise(
+            $this->sendRequest(
+                $this->domainrobotConfig->getUrl() .
+                    "/domain/_search" .
+                    $keyString,
+                "POST",
+                ["json" => $data],
+            ),
+        );
     }
 
     /**
@@ -187,7 +204,7 @@ class DomainService extends DomainrobotService
      * @param Domain $body
      * @return void
      */
-    public function updateServices(Domain $body)
+    public function updateServices(Domain $body): void
     {
         $domainrobotPromise = $this->updateServicesAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -204,13 +221,15 @@ class DomainService extends DomainrobotService
     public function updateServicesAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
 
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_services",
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -229,7 +248,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -245,7 +268,7 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_trade",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -263,7 +286,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -278,10 +305,10 @@ class DomainService extends DomainrobotService
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/_transfer",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
-    
+
     /**
      * Inquiring a autodelete list.
      *
@@ -295,9 +322,9 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        $data = $domainrobotResult->getResult()['data'];
+        $data = $domainrobotResult->getResult()["data"];
 
-        $autoDeleteDomains = array();
+        $autoDeleteDomains = [];
         foreach ($data as $d) {
             $a = new AutoDeleteDomain($d);
             array_push($autoDeleteDomains, $a);
@@ -319,11 +346,14 @@ class DomainService extends DomainrobotService
             $data = $body->toArray();
         }
 
-        return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/autodelete/_search",
-            "POST",
-            ["json" => $data]
-        ));
+        return new DomainrobotPromise(
+            $this->sendRequest(
+                $this->domainrobotConfig->getUrl() .
+                    "/domain/autodelete/_search",
+                "POST",
+                ["json" => $data],
+            ),
+        );
     }
 
     /**
@@ -341,9 +371,9 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        $data = $domainrobotResult->getResult()['data'];
+        $data = $domainrobotResult->getResult()["data"];
 
-        $domainCancelations = array();
+        $domainCancelations = [];
         foreach ($data as $d) {
             $dc = new DomainCancelation($d);
             array_push($domainCancelations, $dc);
@@ -367,11 +397,14 @@ class DomainService extends DomainrobotService
             $data = $body->toArray();
         }
 
-        return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/cancelation/_search",
-            "POST",
-            ["json" => $data]
-        ));
+        return new DomainrobotPromise(
+            $this->sendRequest(
+                $this->domainrobotConfig->getUrl() .
+                    "/domain/cancelation/_search",
+                "POST",
+                ["json" => $data],
+            ),
+        );
     }
 
     /**
@@ -390,9 +423,9 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        $data = $domainrobotResult->getResult()['data'];
+        $data = $domainrobotResult->getResult()["data"];
 
-        $domainRestores = array();
+        $domainRestores = [];
         foreach ($data as $d) {
             $dr = new DomainRestore($d);
             array_push($domainRestores, $dr);
@@ -417,11 +450,13 @@ class DomainService extends DomainrobotService
             $data = $body->toArray();
         }
 
-        return new DomainrobotPromise($this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/restore/_search",
-            "POST",
-            ["json" => $data]
-        ));
+        return new DomainrobotPromise(
+            $this->sendRequest(
+                $this->domainrobotConfig->getUrl() . "/domain/restore/_search",
+                "POST",
+                ["json" => $data],
+            ),
+        );
     }
 
     /**
@@ -437,7 +472,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new Domain(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -450,7 +491,7 @@ class DomainService extends DomainrobotService
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/" . $name,
-            "GET"
+            "GET",
         );
     }
 
@@ -468,7 +509,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -481,13 +526,15 @@ class DomainService extends DomainrobotService
     public function updateAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
 
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName(),
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -504,7 +551,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new Domain(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -516,8 +569,11 @@ class DomainService extends DomainrobotService
     public function createAuthinfo1Async($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
-            "POST"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/_authinfo1",
+            "POST",
         );
     }
 
@@ -527,7 +583,7 @@ class DomainService extends DomainrobotService
      * @param string $name
      * @return void
      */
-    public function deleteAuthinfo1($name)
+    public function deleteAuthinfo1($name): void
     {
         $domainrobotPromise = $this->deleteAuthinfo1Async($name);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -544,8 +600,11 @@ class DomainService extends DomainrobotService
     public function deleteAuthinfo1Async($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo1",
-            "DELETE"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/_authinfo1",
+            "DELETE",
         );
     }
 
@@ -562,7 +621,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new Domain(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -574,8 +639,11 @@ class DomainService extends DomainrobotService
     public function createAuthinfo2Async($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_authinfo2",
-            "POST"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/_authinfo2",
+            "POST",
         );
     }
 
@@ -585,7 +653,7 @@ class DomainService extends DomainrobotService
      * @param string $name
      * @return void
      */
-    public function autodnsSecKeyRollover($name)
+    public function autodnsSecKeyRollover($name): void
     {
         $domainrobotPromise = $this->autodnsSecKeyRolloverAsync($name);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -602,8 +670,11 @@ class DomainService extends DomainrobotService
     public function autodnsSecKeyRolloverAsync($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_autoDnssecKeyRollover",
-            "PUT"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/_autoDnssecKeyRollover",
+            "PUT",
         );
     }
 
@@ -613,7 +684,7 @@ class DomainService extends DomainrobotService
      * @param Domain $body
      * @return void
      */
-    public function updateComment(Domain $body)
+    public function updateComment(Domain $body): void
     {
         $domainrobotPromise = $this->updateCommentAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -630,13 +701,18 @@ class DomainService extends DomainrobotService
     public function updateCommentAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_comment",
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $body->getName() .
+                "/_comment",
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -646,7 +722,7 @@ class DomainService extends DomainrobotService
      * @param string $name
      * @return void
      */
-    public function createDomainSafe($name)
+    public function createDomainSafe($name): void
     {
         $domainrobotPromise = $this->createDomainSafeAsync($name);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -663,8 +739,11 @@ class DomainService extends DomainrobotService
     public function createDomainSafeAsync($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_domainSafe",
-            "PUT"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/_domainSafe",
+            "PUT",
         );
     }
 
@@ -674,7 +753,7 @@ class DomainService extends DomainrobotService
      * @param string $name
      * @return void
      */
-    public function deleteDomainSafe($name)
+    public function deleteDomainSafe($name): void
     {
         $domainrobotPromise = $this->deleteDomainSafeAsync($name);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -691,8 +770,11 @@ class DomainService extends DomainrobotService
     public function deleteDomainSafeAsync($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_domainSafe",
-            "DELETE"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/_domainSafe",
+            "DELETE",
         );
     }
 
@@ -710,7 +792,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -723,13 +809,18 @@ class DomainService extends DomainrobotService
     public function ownerChangeAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_ownerChange",
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $body->getName() .
+                "/_ownerChange",
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -747,7 +838,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -760,12 +855,17 @@ class DomainService extends DomainrobotService
     public function renewAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_renew",
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $body->getName() .
+                "/_renew",
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -783,7 +883,11 @@ class DomainService extends DomainrobotService
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
         return new ObjectJob([
-            "job" => ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', '')
+            "job" => ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                "",
+            ),
         ]);
     }
 
@@ -796,12 +900,17 @@ class DomainService extends DomainrobotService
     public function restoreAsync(DomainRestore $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field DomainRestore.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field DomainRestore.name is missing.",
+            );
         }
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_restore",
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $body->getName() .
+                "/_restore",
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -811,7 +920,7 @@ class DomainService extends DomainrobotService
      * @param string $name
      * @return void
      */
-    public function sendAuthinfoToOwnerc($name)
+    public function sendAuthinfoToOwnerc($name): void
     {
         $domainrobotPromise = $this->sendAuthinfoToOwnercAsync($name);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -828,8 +937,11 @@ class DomainService extends DomainrobotService
     public function sendAuthinfoToOwnercAsync($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_sendAuthinfoToOwnerc",
-            "PUT"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/_sendAuthinfoToOwnerc",
+            "PUT",
         );
     }
 
@@ -844,7 +956,13 @@ class DomainService extends DomainrobotService
         $domainrobotPromise = $this->updateStatusAsync($body);
         $domainrobotResult = $domainrobotPromise->wait();
 
-        return new Job(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new Job(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -856,16 +974,21 @@ class DomainService extends DomainrobotService
     public function updateStatusAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $body->getName() . "/_statusUpdate",
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $body->getName() .
+                "/_statusUpdate",
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
-    
+
     /**
      * Inquiring the cancelation data for the specified domain.
      *
@@ -879,7 +1002,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -891,8 +1020,11 @@ class DomainService extends DomainrobotService
     public function cancelationInfoAsync($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/cancelation",
-            "GET"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/cancelation",
+            "GET",
         );
     }
 
@@ -909,7 +1041,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -921,13 +1059,18 @@ class DomainService extends DomainrobotService
     public function cancelationCreateAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain" . $body->getName() . "/cancelation",
+            $this->domainrobotConfig->getUrl() .
+                "/domain" .
+                $body->getName() .
+                "/cancelation",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -944,7 +1087,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new DomainCancelation(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new DomainCancelation(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -956,13 +1105,18 @@ class DomainService extends DomainrobotService
     public function cancelationUpdateAsync(Domain $body)
     {
         if ($body->getName() === null) {
-            throw new \InvalidArgumentException("Field Domain.name is missing.");
+            throw new \InvalidArgumentException(
+                "Field Domain.name is missing.",
+            );
         }
 
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain" . $body->getName() . "/cancelation",
+            $this->domainrobotConfig->getUrl() .
+                "/domain" .
+                $body->getName() .
+                "/cancelation",
             "PUT",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 
@@ -972,7 +1126,7 @@ class DomainService extends DomainrobotService
      * @param string $name
      * @return void
      */
-    public function cancelationDelete($name)
+    public function cancelationDelete($name): void
     {
         $domainrobotPromise = $this->cancelationDeleteAsync($name);
         $domainrobotResult = $domainrobotPromise->wait();
@@ -989,8 +1143,11 @@ class DomainService extends DomainrobotService
     public function cancelationDeleteAsync($name)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/cancelation",
-            "DELETE"
+            $this->domainrobotConfig->getUrl() .
+                "/domain/" .
+                $name .
+                "/cancelation",
+            "DELETE",
         );
     }
 
@@ -1007,7 +1164,13 @@ class DomainService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        return new Domain(ArrayHelper::getValueFromArray($domainrobotResult->getResult(), 'data.0', []));
+        return new Domain(
+            ArrayHelper::getValueFromArray(
+                $domainrobotResult->getResult(),
+                "data.0",
+                [],
+            ),
+        );
     }
 
     /**
@@ -1020,8 +1183,7 @@ class DomainService extends DomainrobotService
     {
         return $this->sendRequest(
             $this->domainrobotConfig->getUrl() . "/domain/" . $name . "/_whois",
-            "GET"
+            "GET",
         );
     }
 }
-

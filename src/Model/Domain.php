@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Domain Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -500,7 +503,7 @@ class Domain implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -511,7 +514,7 @@ class Domain implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -530,7 +533,7 @@ class Domain implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -555,7 +558,7 @@ class Domain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -571,7 +574,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -583,7 +586,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Domain
     {
         $this->container['created'] = $created;
 
@@ -595,7 +598,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -607,7 +610,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Domain
     {
         $this->container['updated'] = $updated;
 
@@ -619,7 +622,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -631,7 +634,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Domain
     {
         $this->container['owner'] = $owner;
 
@@ -643,7 +646,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -655,7 +658,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Domain
     {
         $this->container['updater'] = $updater;
 
@@ -667,7 +670,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -679,7 +682,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): Domain
     {
         $this->container['name'] = $name;
 
@@ -691,7 +694,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -703,7 +706,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): Domain
     {
         $this->container['idn'] = $idn;
 
@@ -715,7 +718,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDomainCreated()
+    public function getDomainCreated(): mixed
     {
         return $this->container['domainCreated'];
     }
@@ -727,7 +730,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainCreated($domainCreated)
+    public function setDomainCreated($domainCreated): Domain
     {
         $this->container['domainCreated'] = $domainCreated;
 
@@ -739,7 +742,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNicMemberLabel()
+    public function getNicMemberLabel(): mixed
     {
         return $this->container['nicMemberLabel'];
     }
@@ -751,7 +754,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNicMemberLabel($nicMemberLabel)
+    public function setNicMemberLabel($nicMemberLabel): Domain
     {
         $this->container['nicMemberLabel'] = $nicMemberLabel;
 
@@ -763,7 +766,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RegistryStatusConstants
      */
-    public function getRegistryStatus()
+    public function getRegistryStatus(): mixed
     {
         return $this->container['registryStatus'];
     }
@@ -775,7 +778,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistryStatus($registryStatus)
+    public function setRegistryStatus($registryStatus): Domain
     {
         $this->container['registryStatus'] = $registryStatus;
 
@@ -787,7 +790,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NameServer[]
      */
-    public function getNameServers()
+    public function getNameServers(): mixed
     {
         return $this->container['nameServers'];
     }
@@ -799,7 +802,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServers($nameServers)
+    public function setNameServers($nameServers): Domain
     {
         $this->container['nameServers'] = $nameServers;
 
@@ -811,7 +814,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getNameServerEntries()
+    public function getNameServerEntries(): mixed
     {
         return $this->container['nameServerEntries'];
     }
@@ -823,7 +826,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServerEntries($nameServerEntries)
+    public function setNameServerEntries($nameServerEntries): Domain
     {
         $this->container['nameServerEntries'] = $nameServerEntries;
 
@@ -835,7 +838,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -847,7 +850,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): Domain
     {
         $this->container['period'] = $period;
 
@@ -859,7 +862,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTrustee()
+    public function getTrustee(): mixed
     {
         return $this->container['trustee'];
     }
@@ -871,7 +874,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrustee($trustee)
+    public function setTrustee($trustee): Domain
     {
         $this->container['trustee'] = $trustee;
 
@@ -883,7 +886,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPrivacy()
+    public function getPrivacy(): mixed
     {
         return $this->container['privacy'];
     }
@@ -895,7 +898,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrivacy($privacy)
+    public function setPrivacy($privacy): Domain
     {
         $this->container['privacy'] = $privacy;
 
@@ -907,7 +910,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAuthinfo()
+    public function getAuthinfo(): mixed
     {
         return $this->container['authinfo'];
     }
@@ -919,7 +922,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthinfo($authinfo)
+    public function setAuthinfo($authinfo): Domain
     {
         $this->container['authinfo'] = $authinfo;
 
@@ -931,7 +934,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getAuthinfoExpire()
+    public function getAuthinfoExpire(): mixed
     {
         return $this->container['authinfoExpire'];
     }
@@ -943,7 +946,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthinfoExpire($authinfoExpire)
+    public function setAuthinfoExpire($authinfoExpire): Domain
     {
         $this->container['authinfoExpire'] = $authinfoExpire;
 
@@ -955,7 +958,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDomainsafe()
+    public function getDomainsafe(): mixed
     {
         return $this->container['domainsafe'];
     }
@@ -967,7 +970,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainsafe($domainsafe)
+    public function setDomainsafe($domainsafe): Domain
     {
         $this->container['domainsafe'] = $domainsafe;
 
@@ -979,7 +982,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ParkingProviderConstants
      */
-    public function getParking()
+    public function getParking(): mixed
     {
         return $this->container['parking'];
     }
@@ -991,7 +994,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setParking($parking)
+    public function setParking($parking): Domain
     {
         $this->container['parking'] = $parking;
 
@@ -1003,7 +1006,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainExtensions
      */
-    public function getExtensions()
+    public function getExtensions(): mixed
     {
         return $this->container['extensions'];
     }
@@ -1015,7 +1018,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtensions($extensions)
+    public function setExtensions($extensions): Domain
     {
         $this->container['extensions'] = $extensions;
 
@@ -1027,7 +1030,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLogId()
+    public function getLogId(): mixed
     {
         return $this->container['logId'];
     }
@@ -1039,7 +1042,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLogId($logId)
+    public function setLogId($logId): Domain
     {
         $this->container['logId'] = $logId;
 
@@ -1051,7 +1054,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getConfirmOrder()
+    public function getConfirmOrder(): mixed
     {
         return $this->container['confirmOrder'];
     }
@@ -1063,7 +1066,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmOrder($confirmOrder)
+    public function setConfirmOrder($confirmOrder): Domain
     {
         $this->container['confirmOrder'] = $confirmOrder;
 
@@ -1075,7 +1078,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getConfirmOwnerConsent()
+    public function getConfirmOwnerConsent(): mixed
     {
         return $this->container['confirmOwnerConsent'];
     }
@@ -1087,7 +1090,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmOwnerConsent($confirmOwnerConsent)
+    public function setConfirmOwnerConsent($confirmOwnerConsent): Domain
     {
         $this->container['confirmOwnerConsent'] = $confirmOwnerConsent;
 
@@ -1099,7 +1102,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIgnoreWhois()
+    public function getIgnoreWhois(): mixed
     {
         return $this->container['ignoreWhois'];
     }
@@ -1111,7 +1114,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIgnoreWhois($ignoreWhois)
+    public function setIgnoreWhois($ignoreWhois): Domain
     {
         $this->container['ignoreWhois'] = $ignoreWhois;
 
@@ -1123,7 +1126,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -1135,7 +1138,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): Domain
     {
         $this->container['comment'] = $comment;
 
@@ -1147,7 +1150,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RegistryStatusConstants
      */
-    public function getRegistrarStatus()
+    public function getRegistrarStatus(): mixed
     {
         return $this->container['registrarStatus'];
     }
@@ -1159,7 +1162,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrarStatus($registrarStatus)
+    public function setRegistrarStatus($registrarStatus): Domain
     {
         $this->container['registrarStatus'] = $registrarStatus;
 
@@ -1171,7 +1174,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRegistrarStatusReason()
+    public function getRegistrarStatusReason(): mixed
     {
         return $this->container['registrarStatusReason'];
     }
@@ -1183,7 +1186,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrarStatusReason($registrarStatusReason)
+    public function setRegistrarStatusReason($registrarStatusReason): Domain
     {
         $this->container['registrarStatusReason'] = $registrarStatusReason;
 
@@ -1195,7 +1198,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRemoveCancelation()
+    public function getRemoveCancelation(): mixed
     {
         return $this->container['removeCancelation'];
     }
@@ -1207,7 +1210,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRemoveCancelation($removeCancelation)
+    public function setRemoveCancelation($removeCancelation): Domain
     {
         $this->container['removeCancelation'] = $removeCancelation;
 
@@ -1219,7 +1222,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DNSSecJob
      */
-    public function getAutodnsSecJob()
+    public function getAutodnsSecJob(): mixed
     {
         return $this->container['autodnsSecJob'];
     }
@@ -1231,7 +1234,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutodnsSecJob($autodnsSecJob)
+    public function setAutodnsSecJob($autodnsSecJob): Domain
     {
         $this->container['autodnsSecJob'] = $autodnsSecJob;
 
@@ -1243,7 +1246,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPriceClass()
+    public function getPriceClass(): mixed
     {
         return $this->container['priceClass'];
     }
@@ -1255,7 +1258,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceClass($priceClass)
+    public function setPriceClass($priceClass): Domain
     {
         $this->container['priceClass'] = $priceClass;
 
@@ -1267,7 +1270,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPriceClassRenew()
+    public function getPriceClassRenew(): mixed
     {
         return $this->container['priceClassRenew'];
     }
@@ -1279,7 +1282,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceClassRenew($priceClassRenew)
+    public function setPriceClassRenew($priceClassRenew): Domain
     {
         $this->container['priceClassRenew'] = $priceClassRenew;
 
@@ -1291,7 +1294,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAbuseEmail()
+    public function getAbuseEmail(): mixed
     {
         return $this->container['abuseEmail'];
     }
@@ -1303,7 +1306,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAbuseEmail($abuseEmail)
+    public function setAbuseEmail($abuseEmail): Domain
     {
         $this->container['abuseEmail'] = $abuseEmail;
 
@@ -1315,7 +1318,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGeneralRequestEmail()
+    public function getGeneralRequestEmail(): mixed
     {
         return $this->container['generalRequestEmail'];
     }
@@ -1327,7 +1330,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGeneralRequestEmail($generalRequestEmail)
+    public function setGeneralRequestEmail($generalRequestEmail): Domain
     {
         $this->container['generalRequestEmail'] = $generalRequestEmail;
 
@@ -1339,7 +1342,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPrivacyPlusMail()
+    public function getPrivacyPlusMail(): mixed
     {
         return $this->container['privacyPlusMail'];
     }
@@ -1351,7 +1354,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrivacyPlusMail($privacyPlusMail)
+    public function setPrivacyPlusMail($privacyPlusMail): Domain
     {
         $this->container['privacyPlusMail'] = $privacyPlusMail;
 
@@ -1363,7 +1366,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPrivacyPlus()
+    public function getPrivacyPlus(): mixed
     {
         return $this->container['privacyPlus'];
     }
@@ -1375,7 +1378,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrivacyPlus($privacyPlus)
+    public function setPrivacyPlus($privacyPlus): Domain
     {
         $this->container['privacyPlus'] = $privacyPlus;
 
@@ -1387,7 +1390,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNameServerGroup()
+    public function getNameServerGroup(): mixed
     {
         return $this->container['nameServerGroup'];
     }
@@ -1399,7 +1402,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServerGroup($nameServerGroup)
+    public function setNameServerGroup($nameServerGroup): Domain
     {
         $this->container['nameServerGroup'] = $nameServerGroup;
 
@@ -1411,7 +1414,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RddsOptInConstants
      */
-    public function getRddsOptIn()
+    public function getRddsOptIn(): mixed
     {
         return $this->container['rddsOptIn'];
     }
@@ -1423,7 +1426,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRddsOptIn($rddsOptIn)
+    public function setRddsOptIn($rddsOptIn): Domain
     {
         $this->container['rddsOptIn'] = $rddsOptIn;
 
@@ -1435,7 +1438,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainServices
      */
-    public function getServicesAdd()
+    public function getServicesAdd(): mixed
     {
         return $this->container['servicesAdd'];
     }
@@ -1447,7 +1450,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServicesAdd($servicesAdd)
+    public function setServicesAdd($servicesAdd): Domain
     {
         $this->container['servicesAdd'] = $servicesAdd;
 
@@ -1459,7 +1462,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainServices
      */
-    public function getServicesRem()
+    public function getServicesRem(): mixed
     {
         return $this->container['servicesRem'];
     }
@@ -1471,7 +1474,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServicesRem($servicesRem)
+    public function setServicesRem($servicesRem): Domain
     {
         $this->container['servicesRem'] = $servicesRem;
 
@@ -1483,7 +1486,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getOwnerc()
+    public function getOwnerc(): mixed
     {
         return $this->container['ownerc'];
     }
@@ -1495,7 +1498,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwnerc($ownerc)
+    public function setOwnerc($ownerc): Domain
     {
         $this->container['ownerc'] = $ownerc;
 
@@ -1507,7 +1510,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getAdminc()
+    public function getAdminc(): mixed
     {
         return $this->container['adminc'];
     }
@@ -1519,7 +1522,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdminc($adminc)
+    public function setAdminc($adminc): Domain
     {
         $this->container['adminc'] = $adminc;
 
@@ -1531,7 +1534,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getTechc()
+    public function getTechc(): mixed
     {
         return $this->container['techc'];
     }
@@ -1543,7 +1546,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTechc($techc)
+    public function setTechc($techc): Domain
     {
         $this->container['techc'] = $techc;
 
@@ -1555,7 +1558,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getZonec()
+    public function getZonec(): mixed
     {
         return $this->container['zonec'];
     }
@@ -1567,7 +1570,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZonec($zonec)
+    public function setZonec($zonec): Domain
     {
         $this->container['zonec'] = $zonec;
 
@@ -1579,7 +1582,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getExpire()
+    public function getExpire(): mixed
     {
         return $this->container['expire'];
     }
@@ -1591,7 +1594,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExpire($expire)
+    public function setExpire($expire): Domain
     {
         $this->container['expire'] = $expire;
 
@@ -1603,7 +1606,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPayable()
+    public function getPayable(): mixed
     {
         return $this->container['payable'];
     }
@@ -1615,7 +1618,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayable($payable)
+    public function setPayable($payable): Domain
     {
         $this->container['payable'] = $payable;
 
@@ -1627,7 +1630,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainActionConstants
      */
-    public function getAction()
+    public function getAction(): mixed
     {
         return $this->container['action'];
     }
@@ -1639,7 +1642,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAction($action)
+    public function setAction($action): Domain
     {
         $this->container['action'] = $action;
 
@@ -1651,7 +1654,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAutoDnssec()
+    public function getAutoDnssec(): mixed
     {
         return $this->container['autoDnssec'];
     }
@@ -1663,7 +1666,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoDnssec($autoDnssec)
+    public function setAutoDnssec($autoDnssec): Domain
     {
         $this->container['autoDnssec'] = $autoDnssec;
 
@@ -1675,7 +1678,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDnssec()
+    public function getDnssec(): mixed
     {
         return $this->container['dnssec'];
     }
@@ -1687,7 +1690,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssec($dnssec)
+    public function setDnssec($dnssec): Domain
     {
         $this->container['dnssec'] = $dnssec;
 
@@ -1699,7 +1702,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getValidCertificate()
+    public function getValidCertificate(): mixed
     {
         return $this->container['validCertificate'];
     }
@@ -1711,7 +1714,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValidCertificate($validCertificate)
+    public function setValidCertificate($validCertificate): Domain
     {
         $this->container['validCertificate'] = $validCertificate;
 
@@ -1723,7 +1726,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CancelationStatusConstants
      */
-    public function getCancelationStatus()
+    public function getCancelationStatus(): mixed
     {
         return $this->container['cancelationStatus'];
     }
@@ -1735,7 +1738,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationStatus($cancelationStatus)
+    public function setCancelationStatus($cancelationStatus): Domain
     {
         $this->container['cancelationStatus'] = $cancelationStatus;
 
@@ -1747,7 +1750,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AutoRenewStatusConstants
      */
-    public function getAutoRenewStatus()
+    public function getAutoRenewStatus(): mixed
     {
         return $this->container['autoRenewStatus'];
     }
@@ -1759,7 +1762,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoRenewStatus($autoRenewStatus)
+    public function setAutoRenewStatus($autoRenewStatus): Domain
     {
         $this->container['autoRenewStatus'] = $autoRenewStatus;
 
@@ -1771,7 +1774,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DNSSec[]
      */
-    public function getDnssecData()
+    public function getDnssecData(): mixed
     {
         return $this->container['dnssecData'];
     }
@@ -1783,7 +1786,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecData($dnssecData)
+    public function setDnssecData($dnssecData): Domain
     {
         $this->container['dnssecData'] = $dnssecData;
 
@@ -1795,7 +1798,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Zone
      */
-    public function getZone()
+    public function getZone(): mixed
     {
         return $this->container['zone'];
     }
@@ -1807,7 +1810,7 @@ class Domain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZone($zone)
+    public function setZone($zone): Domain
     {
         $this->container['zone'] = $zone;
 
@@ -1882,23 +1885,22 @@ class Domain implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1908,7 +1910,7 @@ class Domain implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

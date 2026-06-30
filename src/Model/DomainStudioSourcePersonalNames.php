@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainStudioSourcePersonalNames Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -260,7 +263,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -271,7 +274,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -290,7 +293,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -315,7 +318,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -331,7 +334,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
      */
-    public function getServices()
+    public function getServices(): mixed
     {
         return $this->container['services'];
     }
@@ -343,7 +346,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setServices($services): DomainStudioSourcePersonalNames
     {
         $this->container['services'] = $services;
 
@@ -355,7 +358,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -367,7 +370,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainStudioSourcePersonalNames
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -379,7 +382,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -391,7 +394,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): DomainStudioSourcePersonalNames
     {
         $this->container['domains'] = $domains;
 
@@ -403,7 +406,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMax()
+    public function getMax(): mixed
     {
         return $this->container['max'];
     }
@@ -415,7 +418,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setMax($max): DomainStudioSourcePersonalNames
     {
         $this->container['max'] = $max;
 
@@ -427,7 +430,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMaxSldLength()
+    public function getMaxSldLength(): mixed
     {
         return $this->container['maxSldLength'];
     }
@@ -439,7 +442,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMaxSldLength($maxSldLength)
+    public function setMaxSldLength($maxSldLength): DomainStudioSourcePersonalNames
     {
         $this->container['maxSldLength'] = $maxSldLength;
 
@@ -451,7 +454,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseDash()
+    public function getUseDash(): mixed
     {
         return $this->container['useDash'];
     }
@@ -463,7 +466,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseDash($useDash)
+    public function setUseDash($useDash): DomainStudioSourcePersonalNames
     {
         $this->container['useDash'] = $useDash;
 
@@ -475,7 +478,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getSpinFirstName()
+    public function getSpinFirstName(): mixed
     {
         return $this->container['spinFirstName'];
     }
@@ -487,7 +490,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSpinFirstName($spinFirstName)
+    public function setSpinFirstName($spinFirstName): DomainStudioSourcePersonalNames
     {
         $this->container['spinFirstName'] = $spinFirstName;
 
@@ -499,7 +502,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTlds()
+    public function getTlds(): mixed
     {
         return $this->container['tlds'];
     }
@@ -511,7 +514,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTlds($tlds)
+    public function setTlds($tlds): DomainStudioSourcePersonalNames
     {
         $this->container['tlds'] = $tlds;
 
@@ -523,7 +526,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): mixed
     {
         return $this->container['firstName'];
     }
@@ -535,7 +538,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($firstName): DomainStudioSourcePersonalNames
     {
         $this->container['firstName'] = $firstName;
 
@@ -547,7 +550,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getMiddleNames()
+    public function getMiddleNames(): mixed
     {
         return $this->container['middleNames'];
     }
@@ -559,7 +562,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMiddleNames($middleNames)
+    public function setMiddleNames($middleNames): DomainStudioSourcePersonalNames
     {
         $this->container['middleNames'] = $middleNames;
 
@@ -571,7 +574,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastName()
+    public function getLastName(): mixed
     {
         return $this->container['lastName'];
     }
@@ -583,7 +586,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($lastName): DomainStudioSourcePersonalNames
     {
         $this->container['lastName'] = $lastName;
 
@@ -595,7 +598,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseIdn()
+    public function getUseIdn(): mixed
     {
         return $this->container['useIdn'];
     }
@@ -607,7 +610,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseIdn($useIdn)
+    public function setUseIdn($useIdn): DomainStudioSourcePersonalNames
     {
         $this->container['useIdn'] = $useIdn;
 
@@ -682,23 +685,22 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -708,7 +710,7 @@ class DomainStudioSourcePersonalNames implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SEPAMandate Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -272,7 +275,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -283,7 +286,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -302,7 +305,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -327,7 +330,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -343,7 +346,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -355,7 +358,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): SEPAMandate
     {
         $this->container['created'] = $created;
 
@@ -367,7 +370,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -379,7 +382,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): SEPAMandate
     {
         $this->container['updated'] = $updated;
 
@@ -391,7 +394,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Document
      */
-    public function getDocument()
+    public function getDocument(): mixed
     {
         return $this->container['document'];
     }
@@ -403,7 +406,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDocument($document)
+    public function setDocument($document): SEPAMandate
     {
         $this->container['document'] = $document;
 
@@ -415,7 +418,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReference()
+    public function getReference(): mixed
     {
         return $this->container['reference'];
     }
@@ -427,7 +430,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setReference($reference): SEPAMandate
     {
         $this->container['reference'] = $reference;
 
@@ -439,7 +442,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmSignature()
+    public function getConfirmSignature(): mixed
     {
         return $this->container['confirmSignature'];
     }
@@ -451,7 +454,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmSignature($confirmSignature)
+    public function setConfirmSignature($confirmSignature): SEPAMandate
     {
         $this->container['confirmSignature'] = $confirmSignature;
 
@@ -463,7 +466,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getConfirmIp()
+    public function getConfirmIp(): mixed
     {
         return $this->container['confirmIp'];
     }
@@ -475,7 +478,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmIp($confirmIp)
+    public function setConfirmIp($confirmIp): SEPAMandate
     {
         $this->container['confirmIp'] = $confirmIp;
 
@@ -487,7 +490,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getConfirmUseragent()
+    public function getConfirmUseragent(): mixed
     {
         return $this->container['confirmUseragent'];
     }
@@ -499,7 +502,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmUseragent($confirmUseragent)
+    public function setConfirmUseragent($confirmUseragent): SEPAMandate
     {
         $this->container['confirmUseragent'] = $confirmUseragent;
 
@@ -511,7 +514,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getConfirmChecked()
+    public function getConfirmChecked(): mixed
     {
         return $this->container['confirmChecked'];
     }
@@ -523,7 +526,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmChecked($confirmChecked)
+    public function setConfirmChecked($confirmChecked): SEPAMandate
     {
         $this->container['confirmChecked'] = $confirmChecked;
 
@@ -535,7 +538,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getExpire()
+    public function getExpire(): mixed
     {
         return $this->container['expire'];
     }
@@ -547,7 +550,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExpire($expire)
+    public function setExpire($expire): SEPAMandate
     {
         $this->container['expire'] = $expire;
 
@@ -559,7 +562,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SEPAMandate[]
      */
-    public function getHistories()
+    public function getHistories(): mixed
     {
         return $this->container['histories'];
     }
@@ -571,7 +574,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHistories($histories)
+    public function setHistories($histories): SEPAMandate
     {
         $this->container['histories'] = $histories;
 
@@ -583,7 +586,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SepaStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -595,7 +598,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): SEPAMandate
     {
         $this->container['status'] = $status;
 
@@ -607,7 +610,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAccountHolder()
+    public function getAccountHolder(): mixed
     {
         return $this->container['accountHolder'];
     }
@@ -619,7 +622,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAccountHolder($accountHolder)
+    public function setAccountHolder($accountHolder): SEPAMandate
     {
         $this->container['accountHolder'] = $accountHolder;
 
@@ -631,7 +634,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIban()
+    public function getIban(): mixed
     {
         return $this->container['iban'];
     }
@@ -643,7 +646,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIban($iban)
+    public function setIban($iban): SEPAMandate
     {
         $this->container['iban'] = $iban;
 
@@ -655,7 +658,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBic()
+    public function getBic(): mixed
     {
         return $this->container['bic'];
     }
@@ -667,7 +670,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBic($bic)
+    public function setBic($bic): SEPAMandate
     {
         $this->container['bic'] = $bic;
 
@@ -742,23 +745,22 @@ class SEPAMandate implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -768,7 +770,7 @@ class SEPAMandate implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

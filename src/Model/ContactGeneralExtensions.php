@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactGeneralExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactBirthExtensions
      */
-    public function getBirth()
+    public function getBirth(): mixed
     {
         return $this->container['birth'];
     }
@@ -331,7 +334,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBirth($birth)
+    public function setBirth($birth): ContactGeneralExtensions
     {
         $this->container['birth'] = $birth;
 
@@ -343,7 +346,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactTrademarkExtensions
      */
-    public function getTrademark()
+    public function getTrademark(): mixed
     {
         return $this->container['trademark'];
     }
@@ -355,7 +358,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrademark($trademark)
+    public function setTrademark($trademark): ContactGeneralExtensions
     {
         $this->container['trademark'] = $trademark;
 
@@ -367,7 +370,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactIdentificationExtensions
      */
-    public function getIdentification()
+    public function getIdentification(): mixed
     {
         return $this->container['identification'];
     }
@@ -379,7 +382,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdentification($identification)
+    public function setIdentification($identification): ContactGeneralExtensions
     {
         $this->container['identification'] = $identification;
 
@@ -391,7 +394,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -403,7 +406,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): ContactGeneralExtensions
     {
         $this->container['language'] = $language;
 
@@ -415,7 +418,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCompanyNumber()
+    public function getCompanyNumber(): mixed
     {
         return $this->container['companyNumber'];
     }
@@ -427,7 +430,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCompanyNumber($companyNumber)
+    public function setCompanyNumber($companyNumber): ContactGeneralExtensions
     {
         $this->container['companyNumber'] = $companyNumber;
 
@@ -439,7 +442,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenderConstants
      */
-    public function getGender()
+    public function getGender(): mixed
     {
         return $this->container['gender'];
     }
@@ -451,7 +454,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGender($gender)
+    public function setGender($gender): ContactGeneralExtensions
     {
         $this->container['gender'] = $gender;
 
@@ -463,7 +466,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVatNumber()
+    public function getVatNumber(): mixed
     {
         return $this->container['vatNumber'];
     }
@@ -475,7 +478,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatNumber($vatNumber)
+    public function setVatNumber($vatNumber): ContactGeneralExtensions
     {
         $this->container['vatNumber'] = $vatNumber;
 
@@ -487,7 +490,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCitizenship()
+    public function getCitizenship(): mixed
     {
         return $this->container['citizenship'];
     }
@@ -499,7 +502,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCitizenship($citizenship)
+    public function setCitizenship($citizenship): ContactGeneralExtensions
     {
         $this->container['citizenship'] = $citizenship;
 
@@ -511,7 +514,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getStrict()
+    public function getStrict(): mixed
     {
         return $this->container['strict'];
     }
@@ -523,7 +526,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStrict($strict)
+    public function setStrict($strict): ContactGeneralExtensions
     {
         $this->container['strict'] = $strict;
 
@@ -535,7 +538,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMobilePhone()
+    public function getMobilePhone(): mixed
     {
         return $this->container['mobilePhone'];
     }
@@ -547,7 +550,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMobilePhone($mobilePhone)
+    public function setMobilePhone($mobilePhone): ContactGeneralExtensions
     {
         $this->container['mobilePhone'] = $mobilePhone;
 
@@ -622,23 +625,22 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class ContactGeneralExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

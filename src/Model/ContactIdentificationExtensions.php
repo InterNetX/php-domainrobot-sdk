@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactIdentificationExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -212,7 +215,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -223,7 +226,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -242,7 +245,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -267,7 +270,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -283,7 +286,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNumber()
+    public function getNumber(): mixed
     {
         return $this->container['number'];
     }
@@ -295,7 +298,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setNumber($number): ContactIdentificationExtensions
     {
         $this->container['number'] = $number;
 
@@ -307,7 +310,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAuthority()
+    public function getAuthority(): mixed
     {
         return $this->container['authority'];
     }
@@ -319,7 +322,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthority($authority)
+    public function setAuthority($authority): ContactIdentificationExtensions
     {
         $this->container['authority'] = $authority;
 
@@ -331,7 +334,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDateOfIssue()
+    public function getDateOfIssue(): mixed
     {
         return $this->container['dateOfIssue'];
     }
@@ -343,7 +346,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDateOfIssue($dateOfIssue)
+    public function setDateOfIssue($dateOfIssue): ContactIdentificationExtensions
     {
         $this->container['dateOfIssue'] = $dateOfIssue;
 
@@ -355,7 +358,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getValidTill()
+    public function getValidTill(): mixed
     {
         return $this->container['validTill'];
     }
@@ -367,7 +370,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValidTill($validTill)
+    public function setValidTill($validTill): ContactIdentificationExtensions
     {
         $this->container['validTill'] = $validTill;
 
@@ -442,23 +445,22 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -468,7 +470,7 @@ class ContactIdentificationExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

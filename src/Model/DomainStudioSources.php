@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainStudioSources Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -284,7 +287,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -295,7 +298,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -314,7 +317,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -339,7 +342,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -355,7 +358,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceInitial
      */
-    public function getInitial()
+    public function getInitial(): mixed
     {
         return $this->container['initial'];
     }
@@ -367,7 +370,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInitial($initial)
+    public function setInitial($initial): DomainStudioSources
     {
         $this->container['initial'] = $initial;
 
@@ -379,7 +382,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceSuggestion
      */
-    public function getSuggestion()
+    public function getSuggestion(): mixed
     {
         return $this->container['suggestion'];
     }
@@ -391,7 +394,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSuggestion($suggestion)
+    public function setSuggestion($suggestion): DomainStudioSources
     {
         $this->container['suggestion'] = $suggestion;
 
@@ -403,7 +406,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourcePremium
      */
-    public function getPremium()
+    public function getPremium(): mixed
     {
         return $this->container['premium'];
     }
@@ -415,7 +418,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPremium($premium)
+    public function setPremium($premium): DomainStudioSources
     {
         $this->container['premium'] = $premium;
 
@@ -427,7 +430,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceMarket
      */
-    public function getMarket()
+    public function getMarket(): mixed
     {
         return $this->container['market'];
     }
@@ -439,7 +442,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarket($market)
+    public function setMarket($market): DomainStudioSources
     {
         $this->container['market'] = $market;
 
@@ -451,7 +454,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceGeo
      */
-    public function getGeo()
+    public function getGeo(): mixed
     {
         return $this->container['geo'];
     }
@@ -463,7 +466,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGeo($geo)
+    public function setGeo($geo): DomainStudioSources
     {
         $this->container['geo'] = $geo;
 
@@ -475,7 +478,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceSimilar
      */
-    public function getSimilar()
+    public function getSimilar(): mixed
     {
         return $this->container['similar'];
     }
@@ -487,7 +490,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSimilar($similar)
+    public function setSimilar($similar): DomainStudioSources
     {
         $this->container['similar'] = $similar;
 
@@ -499,7 +502,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceRecommended
      */
-    public function getRecommended()
+    public function getRecommended(): mixed
     {
         return $this->container['recommended'];
     }
@@ -511,7 +514,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRecommended($recommended)
+    public function setRecommended($recommended): DomainStudioSources
     {
         $this->container['recommended'] = $recommended;
 
@@ -523,7 +526,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceCustom
      */
-    public function getCustom()
+    public function getCustom(): mixed
     {
         return $this->container['custom'];
     }
@@ -535,7 +538,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustom($custom)
+    public function setCustom($custom): DomainStudioSources
     {
         $this->container['custom'] = $custom;
 
@@ -547,7 +550,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceOnlinePresence
      */
-    public function getOnlinePresence()
+    public function getOnlinePresence(): mixed
     {
         return $this->container['onlinePresence'];
     }
@@ -559,7 +562,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlinePresence($onlinePresence)
+    public function setOnlinePresence($onlinePresence): DomainStudioSources
     {
         $this->container['onlinePresence'] = $onlinePresence;
 
@@ -571,7 +574,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourcePersonalNames
      */
-    public function getPersonalNames()
+    public function getPersonalNames(): mixed
     {
         return $this->container['personalNames'];
     }
@@ -583,7 +586,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPersonalNames($personalNames)
+    public function setPersonalNames($personalNames): DomainStudioSources
     {
         $this->container['personalNames'] = $personalNames;
 
@@ -595,7 +598,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceSpinWord
      */
-    public function getSpinWord()
+    public function getSpinWord(): mixed
     {
         return $this->container['spinWord'];
     }
@@ -607,7 +610,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSpinWord($spinWord)
+    public function setSpinWord($spinWord): DomainStudioSources
     {
         $this->container['spinWord'] = $spinWord;
 
@@ -619,7 +622,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceUpcoming
      */
-    public function getUpcoming()
+    public function getUpcoming(): mixed
     {
         return $this->container['upcoming'];
     }
@@ -631,7 +634,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpcoming($upcoming)
+    public function setUpcoming($upcoming): DomainStudioSources
     {
         $this->container['upcoming'] = $upcoming;
 
@@ -643,7 +646,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceDomainsBot
      */
-    public function getDomainsbot()
+    public function getDomainsbot(): mixed
     {
         return $this->container['domainsbot'];
     }
@@ -655,7 +658,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainsbot($domainsbot)
+    public function setDomainsbot($domainsbot): DomainStudioSources
     {
         $this->container['domainsbot'] = $domainsbot;
 
@@ -667,7 +670,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourcePlacementPlus
      */
-    public function getPlacementPlus()
+    public function getPlacementPlus(): mixed
     {
         return $this->container['placementPlus'];
     }
@@ -679,7 +682,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPlacementPlus($placementPlus)
+    public function setPlacementPlus($placementPlus): DomainStudioSources
     {
         $this->container['placementPlus'] = $placementPlus;
 
@@ -691,7 +694,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourcePrefixSuffix
      */
-    public function getPrefixSuffix()
+    public function getPrefixSuffix(): mixed
     {
         return $this->container['prefixSuffix'];
     }
@@ -703,7 +706,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrefixSuffix($prefixSuffix)
+    public function setPrefixSuffix($prefixSuffix): DomainStudioSources
     {
         $this->container['prefixSuffix'] = $prefixSuffix;
 
@@ -715,7 +718,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSourceSuggestion2
      */
-    public function getSemantic()
+    public function getSemantic(): mixed
     {
         return $this->container['semantic'];
     }
@@ -727,7 +730,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSemantic($semantic)
+    public function setSemantic($semantic): DomainStudioSources
     {
         $this->container['semantic'] = $semantic;
 
@@ -802,23 +805,22 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -828,7 +830,7 @@ class DomainStudioSources implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

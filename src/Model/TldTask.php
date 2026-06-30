@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TldTask Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class TldTask implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class TldTask implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class TldTask implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class TldTask implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): mixed
     {
         return $this->container['label'];
     }
@@ -319,7 +322,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabel($label): TldTask
     {
         $this->container['label'] = $label;
 
@@ -331,7 +334,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAvailable()
+    public function getAvailable(): mixed
     {
         return $this->container['available'];
     }
@@ -343,7 +346,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAvailable($available)
+    public function setAvailable($available): TldTask
     {
         $this->container['available'] = $available;
 
@@ -355,7 +358,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getChargeable()
+    public function getChargeable(): mixed
     {
         return $this->container['chargeable'];
     }
@@ -367,7 +370,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChargeable($chargeable)
+    public function setChargeable($chargeable): TldTask
     {
         $this->container['chargeable'] = $chargeable;
 
@@ -379,7 +382,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getMin()
+    public function getMin(): mixed
     {
         return $this->container['min'];
     }
@@ -391,7 +394,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMin($min)
+    public function setMin($min): TldTask
     {
         $this->container['min'] = $min;
 
@@ -403,7 +406,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getMax()
+    public function getMax(): mixed
     {
         return $this->container['max'];
     }
@@ -415,7 +418,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setMax($max): TldTask
     {
         $this->container['max'] = $max;
 
@@ -427,7 +430,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TldTaskProcessing
      */
-    public function getProcessing()
+    public function getProcessing(): mixed
     {
         return $this->container['processing'];
     }
@@ -439,7 +442,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProcessing($processing)
+    public function setProcessing($processing): TldTask
     {
         $this->container['processing'] = $processing;
 
@@ -451,7 +454,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuthInfo
      */
-    public function getAuthinfo()
+    public function getAuthinfo(): mixed
     {
         return $this->container['authinfo'];
     }
@@ -463,7 +466,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthinfo($authinfo)
+    public function setAuthinfo($authinfo): TldTask
     {
         $this->container['authinfo'] = $authinfo;
 
@@ -475,7 +478,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRequiredAuthinfo()
+    public function getRequiredAuthinfo(): mixed
     {
         return $this->container['requiredAuthinfo'];
     }
@@ -487,7 +490,7 @@ class TldTask implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRequiredAuthinfo($requiredAuthinfo)
+    public function setRequiredAuthinfo($requiredAuthinfo): TldTask
     {
         $this->container['requiredAuthinfo'] = $requiredAuthinfo;
 
@@ -562,23 +565,22 @@ class TldTask implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class TldTask implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

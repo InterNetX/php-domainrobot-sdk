@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactVerificationContact Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -260,7 +263,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -271,7 +274,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -290,7 +293,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -315,7 +318,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -331,7 +334,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -343,7 +346,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ContactVerificationContact
     {
         $this->container['created'] = $created;
 
@@ -355,7 +358,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -367,7 +370,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ContactVerificationContact
     {
         $this->container['updated'] = $updated;
 
@@ -379,7 +382,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -391,7 +394,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): ContactVerificationContact
     {
         $this->container['owner'] = $owner;
 
@@ -403,7 +406,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -415,7 +418,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): ContactVerificationContact
     {
         $this->container['updater'] = $updater;
 
@@ -427,7 +430,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReference()
+    public function getReference(): mixed
     {
         return $this->container['reference'];
     }
@@ -439,7 +442,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setReference($reference): ContactVerificationContact
     {
         $this->container['reference'] = $reference;
 
@@ -451,7 +454,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\VerifyStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -463,7 +466,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): ContactVerificationContact
     {
         $this->container['status'] = $status;
 
@@ -475,7 +478,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmed()
+    public function getConfirmed(): mixed
     {
         return $this->container['confirmed'];
     }
@@ -487,7 +490,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmed($confirmed)
+    public function setConfirmed($confirmed): ContactVerificationContact
     {
         $this->container['confirmed'] = $confirmed;
 
@@ -499,7 +502,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\InetAddress
      */
-    public function getConfirmIp()
+    public function getConfirmIp(): mixed
     {
         return $this->container['confirmIp'];
     }
@@ -511,7 +514,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmIp($confirmIp)
+    public function setConfirmIp($confirmIp): ContactVerificationContact
     {
         $this->container['confirmIp'] = $confirmIp;
 
@@ -523,7 +526,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactVerificationContactDomain[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -535,7 +538,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): ContactVerificationContact
     {
         $this->container['domains'] = $domains;
 
@@ -547,7 +550,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -559,7 +562,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): ContactVerificationContact
     {
         $this->container['comment'] = $comment;
 
@@ -571,7 +574,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAction()
+    public function getAction(): mixed
     {
         return $this->container['action'];
     }
@@ -583,7 +586,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAction($action)
+    public function setAction($action): ContactVerificationContact
     {
         $this->container['action'] = $action;
 
@@ -595,7 +598,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getContact()
+    public function getContact(): mixed
     {
         return $this->container['contact'];
     }
@@ -607,7 +610,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContact($contact)
+    public function setContact($contact): ContactVerificationContact
     {
         $this->container['contact'] = $contact;
 
@@ -682,23 +685,22 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -708,7 +710,7 @@ class ContactVerificationContact implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

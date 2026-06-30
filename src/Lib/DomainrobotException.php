@@ -2,33 +2,47 @@
 
 namespace Domainrobot\Lib;
 
-class DomainrobotException extends \Exception {
-
+class DomainrobotException extends \Exception
+{
     private $error;
     private $statusCode;
 
-     public function __construct($error, $statusCode, $message = "Domainrobot Exception", $code = 0, ?\Exception $previous = null) {
+    public function __construct(
+        $error,
+        $statusCode,
+        $message = "Domainrobot Exception",
+        $code = 0,
+        ?\Exception $previous = null,
+    ) {
         $this->error = $error;
         $this->statusCode = $statusCode;
         parent::__construct($message, $code, $previous);
     }
 
-    public function getError()
+    public function getError(): mixed
     {
         return $this->error;
     }
 
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
         return $this->statusCode;
     }
 
-    public function setError($error)
+    /**
+     * @param mixed $error
+     * @return void
+     */
+    public function setError($error): void
     {
         $this->error = $error;
     }
 
-    public function setStatusCode($statusCode)
+    /**
+     * @param int $statusCode
+     * @return int
+     */
+    public function setStatusCode(int $statusCode): int
     {
         return $this->statusCode = $statusCode;
     }

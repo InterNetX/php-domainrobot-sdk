@@ -34,6 +34,7 @@ use \Domainrobot\ObjectSerializer;
  * DomainPreregStatusConstants Class Doc Comment
  *
  * @category Class
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -71,7 +72,7 @@ class DomainPreregStatusConstants
      * Gets allowable values of the enum
      * @return string[]
      */
-    public static function getAllowableEnumValues()
+    public static function getAllowableEnumValues(): array
     {
         return [
             self::PENDING,

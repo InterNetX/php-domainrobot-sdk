@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Transfer Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -278,7 +281,7 @@ class Transfer implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -289,7 +292,7 @@ class Transfer implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -308,7 +311,7 @@ class Transfer implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -333,7 +336,7 @@ class Transfer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -349,7 +352,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -361,7 +364,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Transfer
     {
         $this->container['created'] = $created;
 
@@ -373,7 +376,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -385,7 +388,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Transfer
     {
         $this->container['updated'] = $updated;
 
@@ -397,7 +400,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -409,7 +412,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Transfer
     {
         $this->container['owner'] = $owner;
 
@@ -421,7 +424,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -433,7 +436,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Transfer
     {
         $this->container['updater'] = $updater;
 
@@ -445,7 +448,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): mixed
     {
         return $this->container['domain'];
     }
@@ -457,7 +460,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setDomain($domain): Transfer
     {
         $this->container['domain'] = $domain;
 
@@ -469,7 +472,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGainingRegistrar()
+    public function getGainingRegistrar(): mixed
     {
         return $this->container['gainingRegistrar'];
     }
@@ -481,7 +484,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGainingRegistrar($gainingRegistrar)
+    public function setGainingRegistrar($gainingRegistrar): Transfer
     {
         $this->container['gainingRegistrar'] = $gainingRegistrar;
 
@@ -493,7 +496,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLoosingRegistrar()
+    public function getLoosingRegistrar(): mixed
     {
         return $this->container['loosingRegistrar'];
     }
@@ -505,7 +508,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLoosingRegistrar($loosingRegistrar)
+    public function setLoosingRegistrar($loosingRegistrar): Transfer
     {
         $this->container['loosingRegistrar'] = $loosingRegistrar;
 
@@ -517,7 +520,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getStart()
+    public function getStart(): mixed
     {
         return $this->container['start'];
     }
@@ -529,7 +532,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStart($start)
+    public function setStart($start): Transfer
     {
         $this->container['start'] = $start;
 
@@ -541,7 +544,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getReminder()
+    public function getReminder(): mixed
     {
         return $this->container['reminder'];
     }
@@ -553,7 +556,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReminder($reminder)
+    public function setReminder($reminder): Transfer
     {
         $this->container['reminder'] = $reminder;
 
@@ -565,7 +568,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getAutoAck()
+    public function getAutoAck(): mixed
     {
         return $this->container['autoAck'];
     }
@@ -577,7 +580,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoAck($autoAck)
+    public function setAutoAck($autoAck): Transfer
     {
         $this->container['autoAck'] = $autoAck;
 
@@ -589,7 +592,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getAutoNack()
+    public function getAutoNack(): mixed
     {
         return $this->container['autoNack'];
     }
@@ -601,7 +604,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoNack($autoNack)
+    public function setAutoNack($autoNack): Transfer
     {
         $this->container['autoNack'] = $autoNack;
 
@@ -613,7 +616,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getEnd()
+    public function getEnd(): mixed
     {
         return $this->container['end'];
     }
@@ -625,7 +628,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEnd($end)
+    public function setEnd($end): Transfer
     {
         $this->container['end'] = $end;
 
@@ -637,7 +640,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAutoAnswer()
+    public function getAutoAnswer(): mixed
     {
         return $this->container['autoAnswer'];
     }
@@ -649,7 +652,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoAnswer($autoAnswer)
+    public function setAutoAnswer($autoAnswer): Transfer
     {
         $this->container['autoAnswer'] = $autoAnswer;
 
@@ -661,7 +664,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRecipient()
+    public function getRecipient(): mixed
     {
         return $this->container['recipient'];
     }
@@ -673,7 +676,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRecipient($recipient)
+    public function setRecipient($recipient): Transfer
     {
         $this->container['recipient'] = $recipient;
 
@@ -685,7 +688,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TransferStatusConstants
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -697,7 +700,7 @@ class Transfer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): Transfer
     {
         $this->container['status'] = $status;
 
@@ -772,23 +775,22 @@ class Transfer implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -798,7 +800,7 @@ class Transfer implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

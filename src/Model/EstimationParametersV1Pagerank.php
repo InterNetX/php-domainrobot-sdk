@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * EstimationParametersV1Pagerank Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getGlobalRank()
+    public function getGlobalRank(): mixed
     {
         return $this->container['globalRank'];
     }
@@ -319,7 +322,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGlobalRank($globalRank)
+    public function setGlobalRank($globalRank): EstimationParametersV1Pagerank
     {
         $this->container['globalRank'] = $globalRank;
 
@@ -331,7 +334,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getTldRank()
+    public function getTldRank(): mixed
     {
         return $this->container['tldRank'];
     }
@@ -343,7 +346,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldRank($tldRank)
+    public function setTldRank($tldRank): EstimationParametersV1Pagerank
     {
         $this->container['tldRank'] = $tldRank;
 
@@ -355,7 +358,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getRefSubNets()
+    public function getRefSubNets(): mixed
     {
         return $this->container['refSubNets'];
     }
@@ -367,7 +370,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefSubNets($refSubNets)
+    public function setRefSubNets($refSubNets): EstimationParametersV1Pagerank
     {
         $this->container['refSubNets'] = $refSubNets;
 
@@ -379,7 +382,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getRefIPs()
+    public function getRefIPs(): mixed
     {
         return $this->container['refIPs'];
     }
@@ -391,7 +394,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefIPs($refIPs)
+    public function setRefIPs($refIPs): EstimationParametersV1Pagerank
     {
         $this->container['refIPs'] = $refIPs;
 
@@ -403,7 +406,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getPrevGlobalRank()
+    public function getPrevGlobalRank(): mixed
     {
         return $this->container['prevGlobalRank'];
     }
@@ -415,7 +418,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrevGlobalRank($prevGlobalRank)
+    public function setPrevGlobalRank($prevGlobalRank): EstimationParametersV1Pagerank
     {
         $this->container['prevGlobalRank'] = $prevGlobalRank;
 
@@ -427,7 +430,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getPrevTldRank()
+    public function getPrevTldRank(): mixed
     {
         return $this->container['prevTldRank'];
     }
@@ -439,7 +442,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrevTldRank($prevTldRank)
+    public function setPrevTldRank($prevTldRank): EstimationParametersV1Pagerank
     {
         $this->container['prevTldRank'] = $prevTldRank;
 
@@ -451,7 +454,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getPPrevRefSubNets()
+    public function getPPrevRefSubNets(): mixed
     {
         return $this->container['pPrevRefSubNets'];
     }
@@ -463,7 +466,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPPrevRefSubNets($pPrevRefSubNets)
+    public function setPPrevRefSubNets($pPrevRefSubNets): EstimationParametersV1Pagerank
     {
         $this->container['pPrevRefSubNets'] = $pPrevRefSubNets;
 
@@ -475,7 +478,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPrevRefIPs()
+    public function getPrevRefIPs(): mixed
     {
         return $this->container['prevRefIPs'];
     }
@@ -487,7 +490,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrevRefIPs($prevRefIPs)
+    public function setPrevRefIPs($prevRefIPs): EstimationParametersV1Pagerank
     {
         $this->container['prevRefIPs'] = $prevRefIPs;
 
@@ -562,23 +565,22 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class EstimationParametersV1Pagerank implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

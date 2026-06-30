@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Redirect Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -272,7 +275,7 @@ class Redirect implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -283,7 +286,7 @@ class Redirect implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -302,7 +305,7 @@ class Redirect implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -327,7 +330,7 @@ class Redirect implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -343,7 +346,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -355,7 +358,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Redirect
     {
         $this->container['created'] = $created;
 
@@ -367,7 +370,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -379,7 +382,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Redirect
     {
         $this->container['updated'] = $updated;
 
@@ -391,7 +394,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -403,7 +406,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Redirect
     {
         $this->container['owner'] = $owner;
 
@@ -415,7 +418,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -427,7 +430,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Redirect
     {
         $this->container['updater'] = $updater;
 
@@ -439,7 +442,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSource()
+    public function getSource(): mixed
     {
         return $this->container['source'];
     }
@@ -451,7 +454,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource($source): Redirect
     {
         $this->container['source'] = $source;
 
@@ -463,7 +466,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTarget()
+    public function getTarget(): mixed
     {
         return $this->container['target'];
     }
@@ -475,7 +478,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTarget($target)
+    public function setTarget($target): Redirect
     {
         $this->container['target'] = $target;
 
@@ -487,7 +490,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RedirectTypeConstants
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -499,7 +502,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): Redirect
     {
         $this->container['type'] = $type;
 
@@ -511,7 +514,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RedirectModeConstants
      */
-    public function getMode()
+    public function getMode(): mixed
     {
         return $this->container['mode'];
     }
@@ -523,7 +526,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMode($mode)
+    public function setMode($mode): Redirect
     {
         $this->container['mode'] = $mode;
 
@@ -535,7 +538,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): mixed
     {
         return $this->container['domain'];
     }
@@ -547,7 +550,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setDomain($domain): Redirect
     {
         $this->container['domain'] = $domain;
 
@@ -559,7 +562,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): mixed
     {
         return $this->container['title'];
     }
@@ -571,7 +574,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): Redirect
     {
         $this->container['title'] = $title;
 
@@ -583,7 +586,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getBackups()
+    public function getBackups(): mixed
     {
         return $this->container['backups'];
     }
@@ -595,7 +598,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBackups($backups)
+    public function setBackups($backups): Redirect
     {
         $this->container['backups'] = $backups;
 
@@ -607,7 +610,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSourceIdn()
+    public function getSourceIdn(): mixed
     {
         return $this->container['sourceIdn'];
     }
@@ -619,7 +622,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSourceIdn($sourceIdn)
+    public function setSourceIdn($sourceIdn): Redirect
     {
         $this->container['sourceIdn'] = $sourceIdn;
 
@@ -631,7 +634,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTargetIdn()
+    public function getTargetIdn(): mixed
     {
         return $this->container['targetIdn'];
     }
@@ -643,7 +646,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTargetIdn($targetIdn)
+    public function setTargetIdn($targetIdn): Redirect
     {
         $this->container['targetIdn'] = $targetIdn;
 
@@ -655,7 +658,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getLastSeen()
+    public function getLastSeen(): mixed
     {
         return $this->container['lastSeen'];
     }
@@ -667,7 +670,7 @@ class Redirect implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastSeen($lastSeen)
+    public function setLastSeen($lastSeen): Redirect
     {
         $this->container['lastSeen'] = $lastSeen;
 
@@ -742,23 +745,22 @@ class Redirect implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -768,7 +770,7 @@ class Redirect implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -34,6 +34,7 @@ use \Domainrobot\ObjectSerializer;
  * ContactType Class Doc Comment
  *
  * @category Class
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -56,7 +57,7 @@ class ContactType
      * Gets allowable values of the enum
      * @return string[]
      */
-    public static function getAllowableEnumValues()
+    public static function getAllowableEnumValues(): array
     {
         return [
             self::BILLING,

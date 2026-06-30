@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TmchClaimsNotice Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -290,7 +293,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -301,7 +304,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -320,7 +323,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -345,7 +348,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -361,7 +364,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -373,7 +376,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): TmchClaimsNotice
     {
         $this->container['created'] = $created;
 
@@ -385,7 +388,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -397,7 +400,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): TmchClaimsNotice
     {
         $this->container['updated'] = $updated;
 
@@ -409,7 +412,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -421,7 +424,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): TmchClaimsNotice
     {
         $this->container['owner'] = $owner;
 
@@ -433,7 +436,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -445,7 +448,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): TmchClaimsNotice
     {
         $this->container['updater'] = $updater;
 
@@ -457,7 +460,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReference()
+    public function getReference(): mixed
     {
         return $this->container['reference'];
     }
@@ -469,7 +472,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setReference($reference): TmchClaimsNotice
     {
         $this->container['reference'] = $reference;
 
@@ -481,7 +484,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Domain
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -493,7 +496,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): TmchClaimsNotice
     {
         $this->container['name'] = $name;
 
@@ -505,7 +508,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -517,7 +520,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): TmchClaimsNotice
     {
         $this->container['idn'] = $idn;
 
@@ -529,7 +532,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Contact
      */
-    public function getOwnerc()
+    public function getOwnerc(): mixed
     {
         return $this->container['ownerc'];
     }
@@ -541,7 +544,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwnerc($ownerc)
+    public function setOwnerc($ownerc): TmchClaimsNotice
     {
         $this->container['ownerc'] = $ownerc;
 
@@ -553,7 +556,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getMessageSent()
+    public function getMessageSent(): mixed
     {
         return $this->container['messageSent'];
     }
@@ -565,7 +568,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMessageSent($messageSent)
+    public function setMessageSent($messageSent): TmchClaimsNotice
     {
         $this->container['messageSent'] = $messageSent;
 
@@ -577,7 +580,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): mixed
     {
         return $this->container['email'];
     }
@@ -589,7 +592,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setEmail($email): TmchClaimsNotice
     {
         $this->container['email'] = $email;
 
@@ -601,7 +604,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmed()
+    public function getConfirmed(): mixed
     {
         return $this->container['confirmed'];
     }
@@ -613,7 +616,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmed($confirmed)
+    public function setConfirmed($confirmed): TmchClaimsNotice
     {
         $this->container['confirmed'] = $confirmed;
 
@@ -625,7 +628,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\InetAddress
      */
-    public function getConfirmIP()
+    public function getConfirmIP(): mixed
     {
         return $this->container['confirmIP'];
     }
@@ -637,7 +640,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmIP($confirmIP)
+    public function setConfirmIP($confirmIP): TmchClaimsNotice
     {
         $this->container['confirmIP'] = $confirmIP;
 
@@ -649,7 +652,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericStatusConstants
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -661,7 +664,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): TmchClaimsNotice
     {
         $this->container['status'] = $status;
 
@@ -673,7 +676,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getData()
+    public function getData(): mixed
     {
         return $this->container['data'];
     }
@@ -685,7 +688,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setData($data)
+    public function setData($data): TmchClaimsNotice
     {
         $this->container['data'] = $data;
 
@@ -697,7 +700,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -709,7 +712,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): TmchClaimsNotice
     {
         $this->container['comment'] = $comment;
 
@@ -721,7 +724,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchClaimsNoticeMessage[]
      */
-    public function getTmchClaimsNoticeMails()
+    public function getTmchClaimsNoticeMails(): mixed
     {
         return $this->container['tmchClaimsNoticeMails'];
     }
@@ -733,7 +736,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTmchClaimsNoticeMails($tmchClaimsNoticeMails)
+    public function setTmchClaimsNoticeMails($tmchClaimsNoticeMails): TmchClaimsNotice
     {
         $this->container['tmchClaimsNoticeMails'] = $tmchClaimsNoticeMails;
 
@@ -745,7 +748,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getExpire()
+    public function getExpire(): mixed
     {
         return $this->container['expire'];
     }
@@ -757,7 +760,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExpire($expire)
+    public function setExpire($expire): TmchClaimsNotice
     {
         $this->container['expire'] = $expire;
 
@@ -832,23 +835,22 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -858,7 +860,7 @@ class TmchClaimsNotice implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

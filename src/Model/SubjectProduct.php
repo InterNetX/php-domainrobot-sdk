@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SubjectProduct Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -338,7 +341,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -349,7 +352,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -368,7 +371,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -393,7 +396,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -409,7 +412,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -421,7 +424,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): SubjectProduct
     {
         $this->container['created'] = $created;
 
@@ -433,7 +436,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -445,7 +448,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): SubjectProduct
     {
         $this->container['updated'] = $updated;
 
@@ -457,7 +460,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -469,7 +472,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): SubjectProduct
     {
         $this->container['owner'] = $owner;
 
@@ -481,7 +484,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -493,7 +496,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): SubjectProduct
     {
         $this->container['updater'] = $updater;
 
@@ -505,7 +508,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -517,7 +520,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): SubjectProduct
     {
         $this->container['id'] = $id;
 
@@ -529,7 +532,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -541,7 +544,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): SubjectProduct
     {
         $this->container['period'] = $period;
 
@@ -553,7 +556,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -565,7 +568,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): SubjectProduct
     {
         $this->container['customer'] = $customer;
 
@@ -577,7 +580,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getBilling()
+    public function getBilling(): mixed
     {
         return $this->container['billing'];
     }
@@ -589,7 +592,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBilling($billing)
+    public function setBilling($billing): SubjectProduct
     {
         $this->container['billing'] = $billing;
 
@@ -601,7 +604,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Product
      */
-    public function getProduct()
+    public function getProduct(): mixed
     {
         return $this->container['product'];
     }
@@ -613,7 +616,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProduct($product)
+    public function setProduct($product): SubjectProduct
     {
         $this->container['product'] = $product;
 
@@ -625,7 +628,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Subject
      */
-    public function getSubject()
+    public function getSubject(): mixed
     {
         return $this->container['subject'];
     }
@@ -637,7 +640,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubject($subject)
+    public function setSubject($subject): SubjectProduct
     {
         $this->container['subject'] = $subject;
 
@@ -649,7 +652,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getCount()
+    public function getCount(): mixed
     {
         return $this->container['count'];
     }
@@ -661,7 +664,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCount($count)
+    public function setCount($count): SubjectProduct
     {
         $this->container['count'] = $count;
 
@@ -673,7 +676,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getEffectiveCount()
+    public function getEffectiveCount(): mixed
     {
         return $this->container['effectiveCount'];
     }
@@ -685,7 +688,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEffectiveCount($effectiveCount)
+    public function setEffectiveCount($effectiveCount): SubjectProduct
     {
         $this->container['effectiveCount'] = $effectiveCount;
 
@@ -697,7 +700,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getAmount()
+    public function getAmount(): mixed
     {
         return $this->container['amount'];
     }
@@ -709,7 +712,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setAmount($amount): SubjectProduct
     {
         $this->container['amount'] = $amount;
 
@@ -721,7 +724,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getVatAmount()
+    public function getVatAmount(): mixed
     {
         return $this->container['vatAmount'];
     }
@@ -733,7 +736,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatAmount($vatAmount)
+    public function setVatAmount($vatAmount): SubjectProduct
     {
         $this->container['vatAmount'] = $vatAmount;
 
@@ -745,7 +748,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -757,7 +760,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): SubjectProduct
     {
         $this->container['currency'] = $currency;
 
@@ -769,7 +772,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AccountingDocumentTypeConstants
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -781,7 +784,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): SubjectProduct
     {
         $this->container['type'] = $type;
 
@@ -793,7 +796,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ExchangedPrice
      */
-    public function getPrice()
+    public function getPrice(): mixed
     {
         return $this->container['price'];
     }
@@ -805,7 +808,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrice($price)
+    public function setPrice($price): SubjectProduct
     {
         $this->container['price'] = $price;
 
@@ -817,7 +820,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): mixed
     {
         return $this->container['label'];
     }
@@ -829,7 +832,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabel($label): SubjectProduct
     {
         $this->container['label'] = $label;
 
@@ -841,7 +844,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNumber()
+    public function getNumber(): mixed
     {
         return $this->container['number'];
     }
@@ -853,7 +856,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setNumber($number): SubjectProduct
     {
         $this->container['number'] = $number;
 
@@ -865,7 +868,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -877,7 +880,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): SubjectProduct
     {
         $this->container['comment'] = $comment;
 
@@ -889,7 +892,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPayable()
+    public function getPayable(): mixed
     {
         return $this->container['payable'];
     }
@@ -901,7 +904,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayable($payable)
+    public function setPayable($payable): SubjectProduct
     {
         $this->container['payable'] = $payable;
 
@@ -913,7 +916,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericStatusConstants
      */
-    public function getProvisioning()
+    public function getProvisioning(): mixed
     {
         return $this->container['provisioning'];
     }
@@ -925,7 +928,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProvisioning($provisioning)
+    public function setProvisioning($provisioning): SubjectProduct
     {
         $this->container['provisioning'] = $provisioning;
 
@@ -937,7 +940,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getNetAmount()
+    public function getNetAmount(): mixed
     {
         return $this->container['netAmount'];
     }
@@ -949,7 +952,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNetAmount($netAmount)
+    public function setNetAmount($netAmount): SubjectProduct
     {
         $this->container['netAmount'] = $netAmount;
 
@@ -961,7 +964,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExternalAccountingStatus()
+    public function getExternalAccountingStatus(): mixed
     {
         return $this->container['externalAccountingStatus'];
     }
@@ -973,7 +976,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExternalAccountingStatus($externalAccountingStatus)
+    public function setExternalAccountingStatus($externalAccountingStatus): SubjectProduct
     {
         $this->container['externalAccountingStatus'] = $externalAccountingStatus;
 
@@ -985,7 +988,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CurrencyRate
      */
-    public function getView()
+    public function getView(): mixed
     {
         return $this->container['view'];
     }
@@ -997,7 +1000,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setView($view)
+    public function setView($view): SubjectProduct
     {
         $this->container['view'] = $view;
 
@@ -1072,23 +1075,22 @@ class SubjectProduct implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1098,7 +1100,7 @@ class SubjectProduct implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

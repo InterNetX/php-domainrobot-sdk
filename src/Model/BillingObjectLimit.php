@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BillingObjectLimit Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -230,7 +233,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -241,7 +244,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -260,7 +263,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -285,7 +288,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -301,7 +304,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -313,7 +316,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): BillingObjectLimit
     {
         $this->container['created'] = $created;
 
@@ -325,7 +328,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -337,7 +340,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): BillingObjectLimit
     {
         $this->container['updated'] = $updated;
 
@@ -349,7 +352,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleLabel()
+    public function getArticleLabel(): mixed
     {
         return $this->container['articleLabel'];
     }
@@ -361,7 +364,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleLabel($articleLabel)
+    public function setArticleLabel($articleLabel): BillingObjectLimit
     {
         $this->container['articleLabel'] = $articleLabel;
 
@@ -373,7 +376,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLimitSelf()
+    public function getLimitSelf(): mixed
     {
         return $this->container['limitSelf'];
     }
@@ -385,7 +388,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLimitSelf($limitSelf)
+    public function setLimitSelf($limitSelf): BillingObjectLimit
     {
         $this->container['limitSelf'] = $limitSelf;
 
@@ -397,7 +400,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLimitChildren()
+    public function getLimitChildren(): mixed
     {
         return $this->container['limitChildren'];
     }
@@ -409,7 +412,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLimitChildren($limitChildren)
+    public function setLimitChildren($limitChildren): BillingObjectLimit
     {
         $this->container['limitChildren'] = $limitChildren;
 
@@ -421,7 +424,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleTypeLabel()
+    public function getArticleTypeLabel(): mixed
     {
         return $this->container['articleTypeLabel'];
     }
@@ -433,7 +436,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleTypeLabel($articleTypeLabel)
+    public function setArticleTypeLabel($articleTypeLabel): BillingObjectLimit
     {
         $this->container['articleTypeLabel'] = $articleTypeLabel;
 
@@ -445,7 +448,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCount()
+    public function getCount(): mixed
     {
         return $this->container['count'];
     }
@@ -457,7 +460,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCount($count)
+    public function setCount($count): BillingObjectLimit
     {
         $this->container['count'] = $count;
 
@@ -532,23 +535,22 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -558,7 +560,7 @@ class BillingObjectLimit implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

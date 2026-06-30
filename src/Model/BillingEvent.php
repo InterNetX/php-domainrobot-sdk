@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BillingEvent Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -272,7 +275,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -283,7 +286,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -302,7 +305,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -327,7 +330,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -343,7 +346,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -355,7 +358,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): BillingEvent
     {
         $this->container['created'] = $created;
 
@@ -367,7 +370,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -379,7 +382,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): BillingEvent
     {
         $this->container['updated'] = $updated;
 
@@ -391,7 +394,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -403,7 +406,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): BillingEvent
     {
         $this->container['id'] = $id;
 
@@ -415,7 +418,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -427,7 +430,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): BillingEvent
     {
         $this->container['owner'] = $owner;
 
@@ -439,7 +442,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -451,7 +454,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): BillingEvent
     {
         $this->container['updater'] = $updater;
 
@@ -463,7 +466,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BillingStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -475,7 +478,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): BillingEvent
     {
         $this->container['status'] = $status;
 
@@ -487,7 +490,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getObject()
+    public function getObject(): mixed
     {
         return $this->container['object'];
     }
@@ -499,7 +502,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setObject($object): BillingEvent
     {
         $this->container['object'] = $object;
 
@@ -511,7 +514,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): mixed
     {
         return $this->container['description'];
     }
@@ -523,7 +526,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setDescription($description): BillingEvent
     {
         $this->container['description'] = $description;
 
@@ -535,7 +538,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -547,7 +550,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): BillingEvent
     {
         $this->container['period'] = $period;
 
@@ -559,7 +562,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleTypeLabel()
+    public function getArticleTypeLabel(): mixed
     {
         return $this->container['articleTypeLabel'];
     }
@@ -571,7 +574,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleTypeLabel($articleTypeLabel)
+    public function setArticleTypeLabel($articleTypeLabel): BillingEvent
     {
         $this->container['articleTypeLabel'] = $articleTypeLabel;
 
@@ -583,7 +586,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPayable()
+    public function getPayable(): mixed
     {
         return $this->container['payable'];
     }
@@ -595,7 +598,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayable($payable)
+    public function setPayable($payable): BillingEvent
     {
         $this->container['payable'] = $payable;
 
@@ -607,7 +610,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleLabel()
+    public function getArticleLabel(): mixed
     {
         return $this->container['articleLabel'];
     }
@@ -619,7 +622,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleLabel($articleLabel)
+    public function setArticleLabel($articleLabel): BillingEvent
     {
         $this->container['articleLabel'] = $articleLabel;
 
@@ -631,7 +634,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBusinessCase()
+    public function getBusinessCase(): mixed
     {
         return $this->container['businessCase'];
     }
@@ -643,7 +646,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessCase($businessCase)
+    public function setBusinessCase($businessCase): BillingEvent
     {
         $this->container['businessCase'] = $businessCase;
 
@@ -655,7 +658,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BillingEventExtensions
      */
-    public function getExtensions()
+    public function getExtensions(): mixed
     {
         return $this->container['extensions'];
     }
@@ -667,7 +670,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtensions($extensions)
+    public function setExtensions($extensions): BillingEvent
     {
         $this->container['extensions'] = $extensions;
 
@@ -742,23 +745,22 @@ class BillingEvent implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -768,7 +770,7 @@ class BillingEvent implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

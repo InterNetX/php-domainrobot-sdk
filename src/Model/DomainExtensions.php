@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -230,7 +233,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -241,7 +244,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -260,7 +263,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -285,7 +288,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -301,7 +304,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainBuyExtensions
      */
-    public function getDomainBuyExtensions()
+    public function getDomainBuyExtensions(): mixed
     {
         return $this->container['domainBuyExtensions'];
     }
@@ -313,7 +316,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainBuyExtensions($domainBuyExtensions)
+    public function setDomainBuyExtensions($domainBuyExtensions): DomainExtensions
     {
         $this->container['domainBuyExtensions'] = $domainBuyExtensions;
 
@@ -325,7 +328,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainAutodeleteExtensions
      */
-    public function getDomainAutodeleteExtensions()
+    public function getDomainAutodeleteExtensions(): mixed
     {
         return $this->container['domainAutodeleteExtensions'];
     }
@@ -337,7 +340,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainAutodeleteExtensions($domainAutodeleteExtensions)
+    public function setDomainAutodeleteExtensions($domainAutodeleteExtensions): DomainExtensions
     {
         $this->container['domainAutodeleteExtensions'] = $domainAutodeleteExtensions;
 
@@ -349,7 +352,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainParkingExtensions
      */
-    public function getParkingExtensions()
+    public function getParkingExtensions(): mixed
     {
         return $this->container['parkingExtensions'];
     }
@@ -361,7 +364,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setParkingExtensions($parkingExtensions)
+    public function setParkingExtensions($parkingExtensions): DomainExtensions
     {
         $this->container['parkingExtensions'] = $parkingExtensions;
 
@@ -373,7 +376,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainTmchClaimNoticeExtensions
      */
-    public function getTmchClaimsNoticeExtensions()
+    public function getTmchClaimsNoticeExtensions(): mixed
     {
         return $this->container['tmchClaimsNoticeExtensions'];
     }
@@ -385,7 +388,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTmchClaimsNoticeExtensions($tmchClaimsNoticeExtensions)
+    public function setTmchClaimsNoticeExtensions($tmchClaimsNoticeExtensions): DomainExtensions
     {
         $this->container['tmchClaimsNoticeExtensions'] = $tmchClaimsNoticeExtensions;
 
@@ -397,7 +400,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactVerificationDomain
      */
-    public function getVerificationExtensions()
+    public function getVerificationExtensions(): mixed
     {
         return $this->container['verificationExtensions'];
     }
@@ -409,7 +412,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVerificationExtensions($verificationExtensions)
+    public function setVerificationExtensions($verificationExtensions): DomainExtensions
     {
         $this->container['verificationExtensions'] = $verificationExtensions;
 
@@ -421,7 +424,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainCancelationExtensions
      */
-    public function getCancelationExtensions()
+    public function getCancelationExtensions(): mixed
     {
         return $this->container['cancelationExtensions'];
     }
@@ -433,7 +436,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationExtensions($cancelationExtensions)
+    public function setCancelationExtensions($cancelationExtensions): DomainExtensions
     {
         $this->container['cancelationExtensions'] = $cancelationExtensions;
 
@@ -445,7 +448,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainSellExtensions
      */
-    public function getSellExtensions()
+    public function getSellExtensions(): mixed
     {
         return $this->container['sellExtensions'];
     }
@@ -457,7 +460,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellExtensions($sellExtensions)
+    public function setSellExtensions($sellExtensions): DomainExtensions
     {
         $this->container['sellExtensions'] = $sellExtensions;
 
@@ -532,23 +535,22 @@ class DomainExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -558,7 +560,7 @@ class DomainExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

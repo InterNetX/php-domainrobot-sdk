@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Account Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class Account implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class Account implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class Account implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -337,7 +340,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): Account
     {
         $this->container['customer'] = $customer;
 
@@ -349,7 +352,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getCurrentAccountBalance()
+    public function getCurrentAccountBalance(): mixed
     {
         return $this->container['currentAccountBalance'];
     }
@@ -361,7 +364,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrentAccountBalance($currentAccountBalance)
+    public function setCurrentAccountBalance($currentAccountBalance): Account
     {
         $this->container['currentAccountBalance'] = $currentAccountBalance;
 
@@ -373,7 +376,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getRunningTotal()
+    public function getRunningTotal(): mixed
     {
         return $this->container['runningTotal'];
     }
@@ -385,7 +388,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRunningTotal($runningTotal)
+    public function setRunningTotal($runningTotal): Account
     {
         $this->container['runningTotal'] = $runningTotal;
 
@@ -397,7 +400,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getCreditLimit()
+    public function getCreditLimit(): mixed
     {
         return $this->container['creditLimit'];
     }
@@ -409,7 +412,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreditLimit($creditLimit)
+    public function setCreditLimit($creditLimit): Account
     {
         $this->container['creditLimit'] = $creditLimit;
 
@@ -421,7 +424,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -433,7 +436,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): Account
     {
         $this->container['currency'] = $currency;
 
@@ -445,7 +448,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getMinRunningTotalNotification()
+    public function getMinRunningTotalNotification(): mixed
     {
         return $this->container['minRunningTotalNotification'];
     }
@@ -457,7 +460,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinRunningTotalNotification($minRunningTotalNotification)
+    public function setMinRunningTotalNotification($minRunningTotalNotification): Account
     {
         $this->container['minRunningTotalNotification'] = $minRunningTotalNotification;
 
@@ -469,7 +472,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMinRunningTotalNotificationEmail()
+    public function getMinRunningTotalNotificationEmail(): mixed
     {
         return $this->container['minRunningTotalNotificationEmail'];
     }
@@ -481,7 +484,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinRunningTotalNotificationEmail($minRunningTotalNotificationEmail)
+    public function setMinRunningTotalNotificationEmail($minRunningTotalNotificationEmail): Account
     {
         $this->container['minRunningTotalNotificationEmail'] = $minRunningTotalNotificationEmail;
 
@@ -493,7 +496,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -505,7 +508,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Account
     {
         $this->container['created'] = $created;
 
@@ -517,7 +520,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -529,7 +532,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Account
     {
         $this->container['updated'] = $updated;
 
@@ -541,7 +544,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CurrencyRate
      */
-    public function getView()
+    public function getView(): mixed
     {
         return $this->container['view'];
     }
@@ -553,7 +556,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setView($view)
+    public function setView($view): Account
     {
         $this->container['view'] = $view;
 
@@ -565,7 +568,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getReserved()
+    public function getReserved(): mixed
     {
         return $this->container['reserved'];
     }
@@ -577,7 +580,7 @@ class Account implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReserved($reserved)
+    public function setReserved($reserved): Account
     {
         $this->container['reserved'] = $reserved;
 
@@ -652,23 +655,22 @@ class Account implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class Account implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

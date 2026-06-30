@@ -4,7 +4,6 @@ namespace Domainrobot\Service;
 
 use Domainrobot\Domainrobot;
 
-use Domainrobot\Lib\ArrayHelper;
 use Domainrobot\Lib\DomainrobotConfig;
 use Domainrobot\Lib\DomainrobotPromise;
 use Domainrobot\Model\DomainEnvelope;
@@ -50,8 +49,8 @@ class DomainStudioService extends DomainrobotService
 
         Domainrobot::setLastDomainrobotResult($domainrobotResult);
 
-        $data = $domainrobotResult->getResult()['data'];
-        $envelopes = array();
+        $data = $domainrobotResult->getResult()["data"];
+        $envelopes = [];
         foreach ($data as $d) {
             $c = new DomainEnvelope($d);
             array_push($envelopes, $c);
@@ -78,10 +77,9 @@ class DomainStudioService extends DomainrobotService
     public function searchAsync(DomainEnvelopeSearchRequest $body)
     {
         return $this->sendRequest(
-            $this->domainrobotConfig->getUrl()."/domainstudio",
+            $this->domainrobotConfig->getUrl() . "/domainstudio",
             "POST",
-            ["json" => $body->toArray()]
+            ["json" => $body->toArray()],
         );
     }
 }
-

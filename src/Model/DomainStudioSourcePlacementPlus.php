@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainStudioSourcePlacementPlus Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -278,7 +281,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -289,7 +292,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -308,7 +311,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -333,7 +336,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -349,7 +352,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
      */
-    public function getServices()
+    public function getServices(): mixed
     {
         return $this->container['services'];
     }
@@ -361,7 +364,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setServices($services): DomainStudioSourcePlacementPlus
     {
         $this->container['services'] = $services;
 
@@ -373,7 +376,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -385,7 +388,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainStudioSourcePlacementPlus
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -397,7 +400,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -409,7 +412,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): DomainStudioSourcePlacementPlus
     {
         $this->container['domains'] = $domains;
 
@@ -421,7 +424,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -433,7 +436,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): DomainStudioSourcePlacementPlus
     {
         $this->container['language'] = $language;
 
@@ -445,7 +448,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMax()
+    public function getMax(): mixed
     {
         return $this->container['max'];
     }
@@ -457,7 +460,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setMax($max): DomainStudioSourcePlacementPlus
     {
         $this->container['max'] = $max;
 
@@ -469,7 +472,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseDash()
+    public function getUseDash(): mixed
     {
         return $this->container['useDash'];
     }
@@ -481,7 +484,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseDash($useDash)
+    public function setUseDash($useDash): DomainStudioSourcePlacementPlus
     {
         $this->container['useDash'] = $useDash;
 
@@ -493,7 +496,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseIdn()
+    public function getUseIdn(): mixed
     {
         return $this->container['useIdn'];
     }
@@ -505,7 +508,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseIdn($useIdn)
+    public function setUseIdn($useIdn): DomainStudioSourcePlacementPlus
     {
         $this->container['useIdn'] = $useIdn;
 
@@ -517,7 +520,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTlds()
+    public function getTlds(): mixed
     {
         return $this->container['tlds'];
     }
@@ -529,7 +532,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTlds($tlds)
+    public function setTlds($tlds): DomainStudioSourcePlacementPlus
     {
         $this->container['tlds'] = $tlds;
 
@@ -541,7 +544,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFunc()
+    public function getFunc(): mixed
     {
         return $this->container['func'];
     }
@@ -553,7 +556,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFunc($func)
+    public function setFunc($func): DomainStudioSourcePlacementPlus
     {
         $this->container['func'] = $func;
 
@@ -565,7 +568,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAdult()
+    public function getAdult(): mixed
     {
         return $this->container['adult'];
     }
@@ -577,7 +580,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdult($adult)
+    public function setAdult($adult): DomainStudioSourcePlacementPlus
     {
         $this->container['adult'] = $adult;
 
@@ -589,7 +592,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getMinConfidence()
+    public function getMinConfidence(): mixed
     {
         return $this->container['minConfidence'];
     }
@@ -601,7 +604,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinConfidence($minConfidence)
+    public function setMinConfidence($minConfidence): DomainStudioSourcePlacementPlus
     {
         $this->container['minConfidence'] = $minConfidence;
 
@@ -613,7 +616,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getDefScore()
+    public function getDefScore(): mixed
     {
         return $this->container['defScore'];
     }
@@ -625,7 +628,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDefScore($defScore)
+    public function setDefScore($defScore): DomainStudioSourcePlacementPlus
     {
         $this->container['defScore'] = $defScore;
 
@@ -637,7 +640,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSid()
+    public function getSid(): mixed
     {
         return $this->container['sid'];
     }
@@ -649,7 +652,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSid($sid)
+    public function setSid($sid): DomainStudioSourcePlacementPlus
     {
         $this->container['sid'] = $sid;
 
@@ -661,7 +664,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAid()
+    public function getAid(): mixed
     {
         return $this->container['aid'];
     }
@@ -673,7 +676,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAid($aid)
+    public function setAid($aid): DomainStudioSourcePlacementPlus
     {
         $this->container['aid'] = $aid;
 
@@ -685,7 +688,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRid()
+    public function getRid(): mixed
     {
         return $this->container['rid'];
     }
@@ -697,7 +700,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRid($rid)
+    public function setRid($rid): DomainStudioSourcePlacementPlus
     {
         $this->container['rid'] = $rid;
 
@@ -772,23 +775,22 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -798,7 +800,7 @@ class DomainStudioSourcePlacementPlus implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

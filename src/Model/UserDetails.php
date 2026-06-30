@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * UserDetails Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class UserDetails implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class UserDetails implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class UserDetails implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class UserDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganization()
+    public function getOrganization(): mixed
     {
         return $this->container['organization'];
     }
@@ -319,7 +322,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setOrganization($organization): UserDetails
     {
         $this->container['organization'] = $organization;
 
@@ -331,7 +334,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPasswordResetMobile()
+    public function getPasswordResetMobile(): mixed
     {
         return $this->container['passwordResetMobile'];
     }
@@ -343,7 +346,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordResetMobile($passwordResetMobile)
+    public function setPasswordResetMobile($passwordResetMobile): UserDetails
     {
         $this->container['passwordResetMobile'] = $passwordResetMobile;
 
@@ -355,7 +358,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPasswordResetVerifyEmail()
+    public function getPasswordResetVerifyEmail(): mixed
     {
         return $this->container['passwordResetVerifyEmail'];
     }
@@ -367,7 +370,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordResetVerifyEmail($passwordResetVerifyEmail)
+    public function setPasswordResetVerifyEmail($passwordResetVerifyEmail): UserDetails
     {
         $this->container['passwordResetVerifyEmail'] = $passwordResetVerifyEmail;
 
@@ -379,7 +382,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPasswordResetEmail()
+    public function getPasswordResetEmail(): mixed
     {
         return $this->container['passwordResetEmail'];
     }
@@ -391,7 +394,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordResetEmail($passwordResetEmail)
+    public function setPasswordResetEmail($passwordResetEmail): UserDetails
     {
         $this->container['passwordResetEmail'] = $passwordResetEmail;
 
@@ -403,7 +406,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getLastPasswordReminderEmail()
+    public function getLastPasswordReminderEmail(): mixed
     {
         return $this->container['lastPasswordReminderEmail'];
     }
@@ -415,7 +418,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastPasswordReminderEmail($lastPasswordReminderEmail)
+    public function setLastPasswordReminderEmail($lastPasswordReminderEmail): UserDetails
     {
         $this->container['lastPasswordReminderEmail'] = $lastPasswordReminderEmail;
 
@@ -427,7 +430,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFname()
+    public function getFname(): mixed
     {
         return $this->container['fname'];
     }
@@ -439,7 +442,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFname($fname)
+    public function setFname($fname): UserDetails
     {
         $this->container['fname'] = $fname;
 
@@ -451,7 +454,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLname()
+    public function getLname(): mixed
     {
         return $this->container['lname'];
     }
@@ -463,7 +466,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLname($lname)
+    public function setLname($lname): UserDetails
     {
         $this->container['lname'] = $lname;
 
@@ -475,7 +478,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhone()
+    public function getPhone(): mixed
     {
         return $this->container['phone'];
     }
@@ -487,7 +490,7 @@ class UserDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setPhone($phone): UserDetails
     {
         $this->container['phone'] = $phone;
 
@@ -562,23 +565,22 @@ class UserDetails implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class UserDetails implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

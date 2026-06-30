@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SubjectAlternativeName Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -319,7 +322,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): SubjectAlternativeName
     {
         $this->container['created'] = $created;
 
@@ -331,7 +334,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -343,7 +346,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): SubjectAlternativeName
     {
         $this->container['updated'] = $updated;
 
@@ -355,7 +358,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SanType
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -367,7 +370,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): SubjectAlternativeName
     {
         $this->container['type'] = $type;
 
@@ -379,7 +382,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getSslCertificateId()
+    public function getSslCertificateId(): mixed
     {
         return $this->container['sslCertificateId'];
     }
@@ -391,7 +394,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSslCertificateId($sslCertificateId)
+    public function setSslCertificateId($sslCertificateId): SubjectAlternativeName
     {
         $this->container['sslCertificateId'] = $sslCertificateId;
 
@@ -403,7 +406,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -415,7 +418,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): SubjectAlternativeName
     {
         $this->container['name'] = $name;
 
@@ -427,7 +430,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getApproverEmail()
+    public function getApproverEmail(): mixed
     {
         return $this->container['approverEmail'];
     }
@@ -439,7 +442,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setApproverEmail($approverEmail)
+    public function setApproverEmail($approverEmail): SubjectAlternativeName
     {
         $this->container['approverEmail'] = $approverEmail;
 
@@ -451,7 +454,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrderId()
+    public function getOrderId(): mixed
     {
         return $this->container['orderId'];
     }
@@ -463,7 +466,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderId($orderId)
+    public function setOrderId($orderId): SubjectAlternativeName
     {
         $this->container['orderId'] = $orderId;
 
@@ -475,7 +478,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getFree()
+    public function getFree(): mixed
     {
         return $this->container['free'];
     }
@@ -487,7 +490,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFree($free)
+    public function setFree($free): SubjectAlternativeName
     {
         $this->container['free'] = $free;
 
@@ -562,23 +565,22 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class SubjectAlternativeName implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

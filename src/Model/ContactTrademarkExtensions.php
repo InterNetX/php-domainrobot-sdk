@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactTrademarkExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -307,7 +310,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): ContactTrademarkExtensions
     {
         $this->container['name'] = $name;
 
@@ -319,7 +322,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNumber()
+    public function getNumber(): mixed
     {
         return $this->container['number'];
     }
@@ -331,7 +334,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setNumber($number): ContactTrademarkExtensions
     {
         $this->container['number'] = $number;
 
@@ -343,7 +346,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -355,7 +358,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): ContactTrademarkExtensions
     {
         $this->container['country'] = $country;
 
@@ -367,7 +370,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getRegdate()
+    public function getRegdate(): mixed
     {
         return $this->container['regdate'];
     }
@@ -379,7 +382,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegdate($regdate)
+    public function setRegdate($regdate): ContactTrademarkExtensions
     {
         $this->container['regdate'] = $regdate;
 
@@ -391,7 +394,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getAppdate()
+    public function getAppdate(): mixed
     {
         return $this->container['appdate'];
     }
@@ -403,7 +406,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAppdate($appdate)
+    public function setAppdate($appdate): ContactTrademarkExtensions
     {
         $this->container['appdate'] = $appdate;
 
@@ -415,7 +418,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOffice()
+    public function getOffice(): mixed
     {
         return $this->container['office'];
     }
@@ -427,7 +430,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOffice($office)
+    public function setOffice($office): ContactTrademarkExtensions
     {
         $this->container['office'] = $office;
 
@@ -502,23 +505,22 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class ContactTrademarkExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

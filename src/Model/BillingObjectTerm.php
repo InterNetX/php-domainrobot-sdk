@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BillingObjectTerm Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -272,7 +275,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -283,7 +286,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -302,7 +305,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -327,7 +330,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -343,7 +346,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -355,7 +358,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): BillingObjectTerm
     {
         $this->container['created'] = $created;
 
@@ -367,7 +370,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -379,7 +382,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): BillingObjectTerm
     {
         $this->container['updated'] = $updated;
 
@@ -391,7 +394,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -403,7 +406,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): BillingObjectTerm
     {
         $this->container['owner'] = $owner;
 
@@ -415,7 +418,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -427,7 +430,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): BillingObjectTerm
     {
         $this->container['updater'] = $updater;
 
@@ -439,7 +442,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getCancelation()
+    public function getCancelation(): mixed
     {
         return $this->container['cancelation'];
     }
@@ -451,7 +454,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelation($cancelation)
+    public function setCancelation($cancelation): BillingObjectTerm
     {
         $this->container['cancelation'] = $cancelation;
 
@@ -463,7 +466,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getCancelationExpireOnly()
+    public function getCancelationExpireOnly(): mixed
     {
         return $this->container['cancelationExpireOnly'];
     }
@@ -475,7 +478,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationExpireOnly($cancelationExpireOnly)
+    public function setCancelationExpireOnly($cancelationExpireOnly): BillingObjectTerm
     {
         $this->container['cancelationExpireOnly'] = $cancelationExpireOnly;
 
@@ -487,7 +490,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getInitial()
+    public function getInitial(): mixed
     {
         return $this->container['initial'];
     }
@@ -499,7 +502,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInitial($initial)
+    public function setInitial($initial): BillingObjectTerm
     {
         $this->container['initial'] = $initial;
 
@@ -511,7 +514,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getRenew()
+    public function getRenew(): mixed
     {
         return $this->container['renew'];
     }
@@ -523,7 +526,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRenew($renew)
+    public function setRenew($renew): BillingObjectTerm
     {
         $this->container['renew'] = $renew;
 
@@ -535,7 +538,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getRenewTerm()
+    public function getRenewTerm(): mixed
     {
         return $this->container['renewTerm'];
     }
@@ -547,7 +550,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRenewTerm($renewTerm)
+    public function setRenewTerm($renewTerm): BillingObjectTerm
     {
         $this->container['renewTerm'] = $renewTerm;
 
@@ -559,7 +562,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -571,7 +574,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): BillingObjectTerm
     {
         $this->container['customer'] = $customer;
 
@@ -583,7 +586,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleTypeLabel()
+    public function getArticleTypeLabel(): mixed
     {
         return $this->container['articleTypeLabel'];
     }
@@ -595,7 +598,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleTypeLabel($articleTypeLabel)
+    public function setArticleTypeLabel($articleTypeLabel): BillingObjectTerm
     {
         $this->container['articleTypeLabel'] = $articleTypeLabel;
 
@@ -607,7 +610,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleLabel()
+    public function getArticleLabel(): mixed
     {
         return $this->container['articleLabel'];
     }
@@ -619,7 +622,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleLabel($articleLabel)
+    public function setArticleLabel($articleLabel): BillingObjectTerm
     {
         $this->container['articleLabel'] = $articleLabel;
 
@@ -631,7 +634,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAutodeleteable()
+    public function getAutodeleteable(): mixed
     {
         return $this->container['autodeleteable'];
     }
@@ -643,7 +646,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutodeleteable($autodeleteable)
+    public function setAutodeleteable($autodeleteable): BillingObjectTerm
     {
         $this->container['autodeleteable'] = $autodeleteable;
 
@@ -655,7 +658,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRestoreable()
+    public function getRestoreable(): mixed
     {
         return $this->container['restoreable'];
     }
@@ -667,7 +670,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRestoreable($restoreable)
+    public function setRestoreable($restoreable): BillingObjectTerm
     {
         $this->container['restoreable'] = $restoreable;
 
@@ -742,23 +745,22 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -768,7 +770,7 @@ class BillingObjectTerm implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

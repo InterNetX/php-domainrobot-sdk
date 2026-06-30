@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ZoneBasePatchRequest Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -392,7 +395,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -403,7 +406,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -422,7 +425,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -447,7 +450,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -463,7 +466,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -475,7 +478,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ZoneBasePatchRequest
     {
         $this->container['created'] = $created;
 
@@ -487,7 +490,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -499,7 +502,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ZoneBasePatchRequest
     {
         $this->container['updated'] = $updated;
 
@@ -511,7 +514,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrigin()
+    public function getOrigin(): mixed
     {
         return $this->container['origin'];
     }
@@ -523,7 +526,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrigin($origin)
+    public function setOrigin($origin): ZoneBasePatchRequest
     {
         $this->container['origin'] = $origin;
 
@@ -535,7 +538,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -547,7 +550,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): ZoneBasePatchRequest
     {
         $this->container['idn'] = $idn;
 
@@ -559,7 +562,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Soa
      */
-    public function getSoa()
+    public function getSoa(): mixed
     {
         return $this->container['soa'];
     }
@@ -571,7 +574,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSoa($soa)
+    public function setSoa($soa): ZoneBasePatchRequest
     {
         $this->container['soa'] = $soa;
 
@@ -583,7 +586,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDnssec()
+    public function getDnssec(): mixed
     {
         return $this->container['dnssec'];
     }
@@ -595,7 +598,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssec($dnssec)
+    public function setDnssec($dnssec): ZoneBasePatchRequest
     {
         $this->container['dnssec'] = $dnssec;
 
@@ -607,7 +610,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNameServerGroup()
+    public function getNameServerGroup(): mixed
     {
         return $this->container['nameServerGroup'];
     }
@@ -619,7 +622,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServerGroup($nameServerGroup)
+    public function setNameServerGroup($nameServerGroup): ZoneBasePatchRequest
     {
         $this->container['nameServerGroup'] = $nameServerGroup;
 
@@ -631,7 +634,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAllowTransfer()
+    public function getAllowTransfer(): mixed
     {
         return $this->container['allowTransfer'];
     }
@@ -643,7 +646,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAllowTransfer($allowTransfer)
+    public function setAllowTransfer($allowTransfer): ZoneBasePatchRequest
     {
         $this->container['allowTransfer'] = $allowTransfer;
 
@@ -655,7 +658,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -667,7 +670,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): ZoneBasePatchRequest
     {
         $this->container['owner'] = $owner;
 
@@ -679,7 +682,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -691,7 +694,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): ZoneBasePatchRequest
     {
         $this->container['updater'] = $updater;
 
@@ -703,7 +706,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLogId()
+    public function getLogId(): mixed
     {
         return $this->container['logId'];
     }
@@ -715,7 +718,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLogId($logId)
+    public function setLogId($logId): ZoneBasePatchRequest
     {
         $this->container['logId'] = $logId;
 
@@ -727,7 +730,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -739,7 +742,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): ZoneBasePatchRequest
     {
         $this->container['comment'] = $comment;
 
@@ -751,7 +754,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDomainsafe()
+    public function getDomainsafe(): mixed
     {
         return $this->container['domainsafe'];
     }
@@ -763,7 +766,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainsafe($domainsafe)
+    public function setDomainsafe($domainsafe): ZoneBasePatchRequest
     {
         $this->container['domainsafe'] = $domainsafe;
 
@@ -775,7 +778,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSource()
+    public function getSource(): mixed
     {
         return $this->container['source'];
     }
@@ -787,7 +790,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource($source): ZoneBasePatchRequest
     {
         $this->container['source'] = $source;
 
@@ -799,7 +802,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSourceVirtualHostname()
+    public function getSourceVirtualHostname(): mixed
     {
         return $this->container['sourceVirtualHostname'];
     }
@@ -811,7 +814,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSourceVirtualHostname($sourceVirtualHostname)
+    public function setSourceVirtualHostname($sourceVirtualHostname): ZoneBasePatchRequest
     {
         $this->container['sourceVirtualHostname'] = $sourceVirtualHostname;
 
@@ -823,7 +826,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPurgeDate()
+    public function getPurgeDate(): mixed
     {
         return $this->container['purgeDate'];
     }
@@ -835,7 +838,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPurgeDate($purgeDate)
+    public function setPurgeDate($purgeDate): ZoneBasePatchRequest
     {
         $this->container['purgeDate'] = $purgeDate;
 
@@ -847,7 +850,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PurgeTypes
      */
-    public function getPurgeType()
+    public function getPurgeType(): mixed
     {
         return $this->container['purgeType'];
     }
@@ -859,7 +862,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPurgeType($purgeType)
+    public function setPurgeType($purgeType): ZoneBasePatchRequest
     {
         $this->container['purgeType'] = $purgeType;
 
@@ -871,7 +874,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDate()
+    public function getDate(): mixed
     {
         return $this->container['date'];
     }
@@ -883,7 +886,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDate($date)
+    public function setDate($date): ZoneBasePatchRequest
     {
         $this->container['date'] = $date;
 
@@ -895,7 +898,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getExternal()
+    public function getExternal(): mixed
     {
         return $this->container['external'];
     }
@@ -907,7 +910,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExternal($external)
+    public function setExternal($external): ZoneBasePatchRequest
     {
         $this->container['external'] = $external;
 
@@ -919,7 +922,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getInUse()
+    public function getInUse(): mixed
     {
         return $this->container['inUse'];
     }
@@ -931,7 +934,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInUse($inUse)
+    public function setInUse($inUse): ZoneBasePatchRequest
     {
         $this->container['inUse'] = $inUse;
 
@@ -943,7 +946,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getZoneGrantsAdd()
+    public function getZoneGrantsAdd(): mixed
     {
         return $this->container['zoneGrantsAdd'];
     }
@@ -955,7 +958,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZoneGrantsAdd($zoneGrantsAdd)
+    public function setZoneGrantsAdd($zoneGrantsAdd): ZoneBasePatchRequest
     {
         $this->container['zoneGrantsAdd'] = $zoneGrantsAdd;
 
@@ -967,7 +970,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getZoneGrantsRem()
+    public function getZoneGrantsRem(): mixed
     {
         return $this->container['zoneGrantsRem'];
     }
@@ -979,7 +982,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZoneGrantsRem($zoneGrantsRem)
+    public function setZoneGrantsRem($zoneGrantsRem): ZoneBasePatchRequest
     {
         $this->container['zoneGrantsRem'] = $zoneGrantsRem;
 
@@ -991,7 +994,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Modifier[]
      */
-    public function getModifiers()
+    public function getModifiers(): mixed
     {
         return $this->container['modifiers'];
     }
@@ -1003,7 +1006,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setModifiers($modifiers)
+    public function setModifiers($modifiers): ZoneBasePatchRequest
     {
         $this->container['modifiers'] = $modifiers;
 
@@ -1015,7 +1018,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NameServer[]
      */
-    public function getNameServers()
+    public function getNameServers(): mixed
     {
         return $this->container['nameServers'];
     }
@@ -1027,7 +1030,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServers($nameServers)
+    public function setNameServers($nameServers): ZoneBasePatchRequest
     {
         $this->container['nameServers'] = $nameServers;
 
@@ -1039,7 +1042,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\MainIp
      */
-    public function getMain()
+    public function getMain(): mixed
     {
         return $this->container['main'];
     }
@@ -1051,7 +1054,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMain($main)
+    public function setMain($main): ZoneBasePatchRequest
     {
         $this->container['main'] = $main;
 
@@ -1063,7 +1066,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getWwwInclude()
+    public function getWwwInclude(): mixed
     {
         return $this->container['wwwInclude'];
     }
@@ -1075,7 +1078,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setWwwInclude($wwwInclude)
+    public function setWwwInclude($wwwInclude): ZoneBasePatchRequest
     {
         $this->container['wwwInclude'] = $wwwInclude;
 
@@ -1087,7 +1090,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVirtualNameServer()
+    public function getVirtualNameServer(): mixed
     {
         return $this->container['virtualNameServer'];
     }
@@ -1099,7 +1102,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVirtualNameServer($virtualNameServer)
+    public function setVirtualNameServer($virtualNameServer): ZoneBasePatchRequest
     {
         $this->container['virtualNameServer'] = $virtualNameServer;
 
@@ -1111,7 +1114,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getFreeText()
+    public function getFreeText(): mixed
     {
         return $this->container['freeText'];
     }
@@ -1123,7 +1126,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFreeText($freeText)
+    public function setFreeText($freeText): ZoneBasePatchRequest
     {
         $this->container['freeText'] = $freeText;
 
@@ -1135,7 +1138,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NameserverActionConstants
      */
-    public function getAction()
+    public function getAction(): mixed
     {
         return $this->container['action'];
     }
@@ -1147,7 +1150,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAction($action)
+    public function setAction($action): ZoneBasePatchRequest
     {
         $this->container['action'] = $action;
 
@@ -1159,7 +1162,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getGrants()
+    public function getGrants(): mixed
     {
         return $this->container['grants'];
     }
@@ -1171,7 +1174,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGrants($grants)
+    public function setGrants($grants): ZoneBasePatchRequest
     {
         $this->container['grants'] = $grants;
 
@@ -1183,7 +1186,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ResourceRecord[]
      */
-    public function getResourceRecords()
+    public function getResourceRecords(): mixed
     {
         return $this->container['resourceRecords'];
     }
@@ -1195,7 +1198,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setResourceRecords($resourceRecords)
+    public function setResourceRecords($resourceRecords): ZoneBasePatchRequest
     {
         $this->container['resourceRecords'] = $resourceRecords;
 
@@ -1207,7 +1210,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getRoid()
+    public function getRoid(): mixed
     {
         return $this->container['roid'];
     }
@@ -1219,7 +1222,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRoid($roid)
+    public function setRoid($roid): ZoneBasePatchRequest
     {
         $this->container['roid'] = $roid;
 
@@ -1231,7 +1234,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ResourceRecord[]
      */
-    public function getResourceRecordsAdd()
+    public function getResourceRecordsAdd(): mixed
     {
         return $this->container['resourceRecordsAdd'];
     }
@@ -1243,7 +1246,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setResourceRecordsAdd($resourceRecordsAdd)
+    public function setResourceRecordsAdd($resourceRecordsAdd): ZoneBasePatchRequest
     {
         $this->container['resourceRecordsAdd'] = $resourceRecordsAdd;
 
@@ -1255,7 +1258,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ResourceRecord[]
      */
-    public function getResourceRecordsRem()
+    public function getResourceRecordsRem(): mixed
     {
         return $this->container['resourceRecordsRem'];
     }
@@ -1267,7 +1270,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setResourceRecordsRem($resourceRecordsRem)
+    public function setResourceRecordsRem($resourceRecordsRem): ZoneBasePatchRequest
     {
         $this->container['resourceRecordsRem'] = $resourceRecordsRem;
 
@@ -1342,23 +1345,22 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1368,7 +1370,7 @@ class ZoneBasePatchRequest implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -2,11 +2,15 @@
 
 namespace Domainrobot\Lib;
 
-class DomainrobotPromise {
-
+class DomainrobotPromise
+{
     private $promise;
 
-    public function __construct($promise){
+    /**
+     * @param mixed $promise
+     */
+    public function __construct($promise)
+    {
         $this->promise = $promise;
     }
 
@@ -15,7 +19,8 @@ class DomainrobotPromise {
      *
      * @return DomainrobotResult
      */
-    public function wait(){
+    public function wait(): DomainrobotResult
+    {
         return $this->promise->wait();
     }
 }

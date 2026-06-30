@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Zone Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -362,7 +365,7 @@ class Zone implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -373,7 +376,7 @@ class Zone implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -392,7 +395,7 @@ class Zone implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -417,7 +420,7 @@ class Zone implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -433,7 +436,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -445,7 +448,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Zone
     {
         $this->container['created'] = $created;
 
@@ -457,7 +460,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -469,7 +472,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Zone
     {
         $this->container['updated'] = $updated;
 
@@ -481,7 +484,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrigin()
+    public function getOrigin(): mixed
     {
         return $this->container['origin'];
     }
@@ -493,7 +496,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrigin($origin)
+    public function setOrigin($origin): Zone
     {
         $this->container['origin'] = $origin;
 
@@ -505,7 +508,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -517,7 +520,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): Zone
     {
         $this->container['idn'] = $idn;
 
@@ -529,7 +532,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Soa
      */
-    public function getSoa()
+    public function getSoa(): mixed
     {
         return $this->container['soa'];
     }
@@ -541,7 +544,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSoa($soa)
+    public function setSoa($soa): Zone
     {
         $this->container['soa'] = $soa;
 
@@ -553,7 +556,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDnssec()
+    public function getDnssec(): mixed
     {
         return $this->container['dnssec'];
     }
@@ -565,7 +568,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssec($dnssec)
+    public function setDnssec($dnssec): Zone
     {
         $this->container['dnssec'] = $dnssec;
 
@@ -577,7 +580,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNameServerGroup()
+    public function getNameServerGroup(): mixed
     {
         return $this->container['nameServerGroup'];
     }
@@ -589,7 +592,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServerGroup($nameServerGroup)
+    public function setNameServerGroup($nameServerGroup): Zone
     {
         $this->container['nameServerGroup'] = $nameServerGroup;
 
@@ -601,7 +604,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAllowTransfer()
+    public function getAllowTransfer(): mixed
     {
         return $this->container['allowTransfer'];
     }
@@ -613,7 +616,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAllowTransfer($allowTransfer)
+    public function setAllowTransfer($allowTransfer): Zone
     {
         $this->container['allowTransfer'] = $allowTransfer;
 
@@ -625,7 +628,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -637,7 +640,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Zone
     {
         $this->container['owner'] = $owner;
 
@@ -649,7 +652,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -661,7 +664,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Zone
     {
         $this->container['updater'] = $updater;
 
@@ -673,7 +676,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLogId()
+    public function getLogId(): mixed
     {
         return $this->container['logId'];
     }
@@ -685,7 +688,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLogId($logId)
+    public function setLogId($logId): Zone
     {
         $this->container['logId'] = $logId;
 
@@ -697,7 +700,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -709,7 +712,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): Zone
     {
         $this->container['comment'] = $comment;
 
@@ -721,7 +724,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDomainsafe()
+    public function getDomainsafe(): mixed
     {
         return $this->container['domainsafe'];
     }
@@ -733,7 +736,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainsafe($domainsafe)
+    public function setDomainsafe($domainsafe): Zone
     {
         $this->container['domainsafe'] = $domainsafe;
 
@@ -745,7 +748,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSource()
+    public function getSource(): mixed
     {
         return $this->container['source'];
     }
@@ -757,7 +760,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource($source): Zone
     {
         $this->container['source'] = $source;
 
@@ -769,7 +772,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSourceVirtualHostname()
+    public function getSourceVirtualHostname(): mixed
     {
         return $this->container['sourceVirtualHostname'];
     }
@@ -781,7 +784,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSourceVirtualHostname($sourceVirtualHostname)
+    public function setSourceVirtualHostname($sourceVirtualHostname): Zone
     {
         $this->container['sourceVirtualHostname'] = $sourceVirtualHostname;
 
@@ -793,7 +796,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPurgeDate()
+    public function getPurgeDate(): mixed
     {
         return $this->container['purgeDate'];
     }
@@ -805,7 +808,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPurgeDate($purgeDate)
+    public function setPurgeDate($purgeDate): Zone
     {
         $this->container['purgeDate'] = $purgeDate;
 
@@ -817,7 +820,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PurgeTypes
      */
-    public function getPurgeType()
+    public function getPurgeType(): mixed
     {
         return $this->container['purgeType'];
     }
@@ -829,7 +832,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPurgeType($purgeType)
+    public function setPurgeType($purgeType): Zone
     {
         $this->container['purgeType'] = $purgeType;
 
@@ -841,7 +844,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDate()
+    public function getDate(): mixed
     {
         return $this->container['date'];
     }
@@ -853,7 +856,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDate($date)
+    public function setDate($date): Zone
     {
         $this->container['date'] = $date;
 
@@ -865,7 +868,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getExternal()
+    public function getExternal(): mixed
     {
         return $this->container['external'];
     }
@@ -877,7 +880,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExternal($external)
+    public function setExternal($external): Zone
     {
         $this->container['external'] = $external;
 
@@ -889,7 +892,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getInUse()
+    public function getInUse(): mixed
     {
         return $this->container['inUse'];
     }
@@ -901,7 +904,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInUse($inUse)
+    public function setInUse($inUse): Zone
     {
         $this->container['inUse'] = $inUse;
 
@@ -913,7 +916,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NameServer[]
      */
-    public function getNameServers()
+    public function getNameServers(): mixed
     {
         return $this->container['nameServers'];
     }
@@ -925,7 +928,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServers($nameServers)
+    public function setNameServers($nameServers): Zone
     {
         $this->container['nameServers'] = $nameServers;
 
@@ -937,7 +940,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\MainIp
      */
-    public function getMain()
+    public function getMain(): mixed
     {
         return $this->container['main'];
     }
@@ -949,7 +952,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMain($main)
+    public function setMain($main): Zone
     {
         $this->container['main'] = $main;
 
@@ -961,7 +964,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getWwwInclude()
+    public function getWwwInclude(): mixed
     {
         return $this->container['wwwInclude'];
     }
@@ -973,7 +976,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setWwwInclude($wwwInclude)
+    public function setWwwInclude($wwwInclude): Zone
     {
         $this->container['wwwInclude'] = $wwwInclude;
 
@@ -985,7 +988,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVirtualNameServer()
+    public function getVirtualNameServer(): mixed
     {
         return $this->container['virtualNameServer'];
     }
@@ -997,7 +1000,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVirtualNameServer($virtualNameServer)
+    public function setVirtualNameServer($virtualNameServer): Zone
     {
         $this->container['virtualNameServer'] = $virtualNameServer;
 
@@ -1009,7 +1012,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getFreeText()
+    public function getFreeText(): mixed
     {
         return $this->container['freeText'];
     }
@@ -1021,7 +1024,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFreeText($freeText)
+    public function setFreeText($freeText): Zone
     {
         $this->container['freeText'] = $freeText;
 
@@ -1033,7 +1036,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NameserverActionConstants
      */
-    public function getAction()
+    public function getAction(): mixed
     {
         return $this->container['action'];
     }
@@ -1045,7 +1048,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAction($action)
+    public function setAction($action): Zone
     {
         $this->container['action'] = $action;
 
@@ -1057,7 +1060,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getGrants()
+    public function getGrants(): mixed
     {
         return $this->container['grants'];
     }
@@ -1069,7 +1072,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGrants($grants)
+    public function setGrants($grants): Zone
     {
         $this->container['grants'] = $grants;
 
@@ -1081,7 +1084,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ResourceRecord[]
      */
-    public function getResourceRecords()
+    public function getResourceRecords(): mixed
     {
         return $this->container['resourceRecords'];
     }
@@ -1093,7 +1096,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setResourceRecords($resourceRecords)
+    public function setResourceRecords($resourceRecords): Zone
     {
         $this->container['resourceRecords'] = $resourceRecords;
 
@@ -1105,7 +1108,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getRoid()
+    public function getRoid(): mixed
     {
         return $this->container['roid'];
     }
@@ -1117,7 +1120,7 @@ class Zone implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRoid($roid)
+    public function setRoid($roid): Zone
     {
         $this->container['roid'] = $roid;
 
@@ -1192,23 +1195,22 @@ class Zone implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1218,7 +1220,7 @@ class Zone implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

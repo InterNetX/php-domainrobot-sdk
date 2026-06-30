@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * EstimationParametersV1TldBased Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTld()
+    public function getTld(): mixed
     {
         return $this->container['tld'];
     }
@@ -337,7 +340,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTld($tld)
+    public function setTld($tld): EstimationParametersV1TldBased
     {
         $this->container['tld'] = $tld;
 
@@ -349,7 +352,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubtld()
+    public function getSubtld(): mixed
     {
         return $this->container['subtld'];
     }
@@ -361,7 +364,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubtld($subtld)
+    public function setSubtld($subtld): EstimationParametersV1TldBased
     {
         $this->container['subtld'] = $subtld;
 
@@ -373,7 +376,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAverageTldFrequency()
+    public function getAverageTldFrequency(): mixed
     {
         return $this->container['averageTldFrequency'];
     }
@@ -385,7 +388,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageTldFrequency($averageTldFrequency)
+    public function setAverageTldFrequency($averageTldFrequency): EstimationParametersV1TldBased
     {
         $this->container['averageTldFrequency'] = $averageTldFrequency;
 
@@ -397,7 +400,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAverageTldPrice()
+    public function getAverageTldPrice(): mixed
     {
         return $this->container['averageTldPrice'];
     }
@@ -409,7 +412,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageTldPrice($averageTldPrice)
+    public function setAverageTldPrice($averageTldPrice): EstimationParametersV1TldBased
     {
         $this->container['averageTldPrice'] = $averageTldPrice;
 
@@ -421,7 +424,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAveragSubtTldFrequency()
+    public function getAveragSubtTldFrequency(): mixed
     {
         return $this->container['averagSubtTldFrequency'];
     }
@@ -433,7 +436,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAveragSubtTldFrequency($averagSubtTldFrequency)
+    public function setAveragSubtTldFrequency($averagSubtTldFrequency): EstimationParametersV1TldBased
     {
         $this->container['averagSubtTldFrequency'] = $averagSubtTldFrequency;
 
@@ -445,7 +448,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAverageSubtldPrice()
+    public function getAverageSubtldPrice(): mixed
     {
         return $this->container['averageSubtldPrice'];
     }
@@ -457,7 +460,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageSubtldPrice($averageSubtldPrice)
+    public function setAverageSubtldPrice($averageSubtldPrice): EstimationParametersV1TldBased
     {
         $this->container['averageSubtldPrice'] = $averageSubtldPrice;
 
@@ -469,7 +472,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getTldNumDomains()
+    public function getTldNumDomains(): mixed
     {
         return $this->container['tldNumDomains'];
     }
@@ -481,7 +484,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldNumDomains($tldNumDomains)
+    public function setTldNumDomains($tldNumDomains): EstimationParametersV1TldBased
     {
         $this->container['tldNumDomains'] = $tldNumDomains;
 
@@ -493,7 +496,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getTldGlobaleRank()
+    public function getTldGlobaleRank(): mixed
     {
         return $this->container['tldGlobaleRank'];
     }
@@ -505,7 +508,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldGlobaleRank($tldGlobaleRank)
+    public function setTldGlobaleRank($tldGlobaleRank): EstimationParametersV1TldBased
     {
         $this->container['tldGlobaleRank'] = $tldGlobaleRank;
 
@@ -517,7 +520,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getSubtldNumDomains()
+    public function getSubtldNumDomains(): mixed
     {
         return $this->container['subtldNumDomains'];
     }
@@ -529,7 +532,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubtldNumDomains($subtldNumDomains)
+    public function setSubtldNumDomains($subtldNumDomains): EstimationParametersV1TldBased
     {
         $this->container['subtldNumDomains'] = $subtldNumDomains;
 
@@ -541,7 +544,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getSubtldGlobaleRank()
+    public function getSubtldGlobaleRank(): mixed
     {
         return $this->container['subtldGlobaleRank'];
     }
@@ -553,7 +556,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubtldGlobaleRank($subtldGlobaleRank)
+    public function setSubtldGlobaleRank($subtldGlobaleRank): EstimationParametersV1TldBased
     {
         $this->container['subtldGlobaleRank'] = $subtldGlobaleRank;
 
@@ -565,7 +568,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getLanguageTldMatch()
+    public function getLanguageTldMatch(): mixed
     {
         return $this->container['languageTldMatch'];
     }
@@ -577,7 +580,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguageTldMatch($languageTldMatch)
+    public function setLanguageTldMatch($languageTldMatch): EstimationParametersV1TldBased
     {
         $this->container['languageTldMatch'] = $languageTldMatch;
 
@@ -652,23 +655,22 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class EstimationParametersV1TldBased implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

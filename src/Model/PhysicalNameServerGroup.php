@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * PhysicalNameServerGroup Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -230,7 +233,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -241,7 +244,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -260,7 +263,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -285,7 +288,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -301,7 +304,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -313,7 +316,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): PhysicalNameServerGroup
     {
         $this->container['created'] = $created;
 
@@ -325,7 +328,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -337,7 +340,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): PhysicalNameServerGroup
     {
         $this->container['updated'] = $updated;
 
@@ -349,7 +352,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -361,7 +364,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): PhysicalNameServerGroup
     {
         $this->container['name'] = $name;
 
@@ -373,7 +376,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleLabel()
+    public function getArticleLabel(): mixed
     {
         return $this->container['articleLabel'];
     }
@@ -385,7 +388,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleLabel($articleLabel)
+    public function setArticleLabel($articleLabel): PhysicalNameServerGroup
     {
         $this->container['articleLabel'] = $articleLabel;
 
@@ -397,7 +400,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NameServerMode
      */
-    public function getSupported()
+    public function getSupported(): mixed
     {
         return $this->container['supported'];
     }
@@ -409,7 +412,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSupported($supported)
+    public function setSupported($supported): PhysicalNameServerGroup
     {
         $this->container['supported'] = $supported;
 
@@ -421,7 +424,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDnssec()
+    public function getDnssec(): mixed
     {
         return $this->container['dnssec'];
     }
@@ -433,7 +436,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssec($dnssec)
+    public function setDnssec($dnssec): PhysicalNameServerGroup
     {
         $this->container['dnssec'] = $dnssec;
 
@@ -445,7 +448,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getStatistic()
+    public function getStatistic(): mixed
     {
         return $this->container['statistic'];
     }
@@ -457,7 +460,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatistic($statistic)
+    public function setStatistic($statistic): PhysicalNameServerGroup
     {
         $this->container['statistic'] = $statistic;
 
@@ -532,23 +535,22 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -558,7 +560,7 @@ class PhysicalNameServerGroup implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

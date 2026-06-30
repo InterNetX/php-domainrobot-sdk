@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Meta Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class Meta implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class Meta implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class Meta implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class Meta implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnline()
+    public function getOnline(): mixed
     {
         return $this->container['online'];
     }
@@ -331,7 +334,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnline($online)
+    public function setOnline($online): Meta
     {
         $this->container['online'] = $online;
 
@@ -343,7 +346,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDnssec()
+    public function getDnssec(): mixed
     {
         return $this->container['dnssec'];
     }
@@ -355,7 +358,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssec($dnssec)
+    public function setDnssec($dnssec): Meta
     {
         $this->container['dnssec'] = $dnssec;
 
@@ -367,7 +370,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): mixed
     {
         return $this->container['description'];
     }
@@ -379,7 +382,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setDescription($description): Meta
     {
         $this->container['description'] = $description;
 
@@ -391,7 +394,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): mixed
     {
         return $this->container['title'];
     }
@@ -403,7 +406,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): Meta
     {
         $this->container['title'] = $title;
 
@@ -415,7 +418,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCertificateIssure()
+    public function getCertificateIssure(): mixed
     {
         return $this->container['certificateIssure'];
     }
@@ -427,7 +430,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificateIssure($certificateIssure)
+    public function setCertificateIssure($certificateIssure): Meta
     {
         $this->container['certificateIssure'] = $certificateIssure;
 
@@ -439,7 +442,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getCertificateValid()
+    public function getCertificateValid(): mixed
     {
         return $this->container['certificateValid'];
     }
@@ -451,7 +454,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificateValid($certificateValid)
+    public function setCertificateValid($certificateValid): Meta
     {
         $this->container['certificateValid'] = $certificateValid;
 
@@ -463,7 +466,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getIpv4()
+    public function getIpv4(): mixed
     {
         return $this->container['ipv4'];
     }
@@ -475,7 +478,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv4($ipv4)
+    public function setIpv4($ipv4): Meta
     {
         $this->container['ipv4'] = $ipv4;
 
@@ -487,7 +490,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getIpv6()
+    public function getIpv6(): mixed
     {
         return $this->container['ipv6'];
     }
@@ -499,7 +502,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv6($ipv6)
+    public function setIpv6($ipv6): Meta
     {
         $this->container['ipv6'] = $ipv6;
 
@@ -511,7 +514,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getMx()
+    public function getMx(): mixed
     {
         return $this->container['mx'];
     }
@@ -523,7 +526,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMx($mx)
+    public function setMx($mx): Meta
     {
         $this->container['mx'] = $mx;
 
@@ -535,7 +538,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getNs()
+    public function getNs(): mixed
     {
         return $this->container['ns'];
     }
@@ -547,7 +550,7 @@ class Meta implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNs($ns)
+    public function setNs($ns): Meta
     {
         $this->container['ns'] = $ns;
 
@@ -622,23 +625,22 @@ class Meta implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class Meta implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

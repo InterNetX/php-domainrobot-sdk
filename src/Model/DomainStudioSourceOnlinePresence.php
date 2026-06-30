@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainStudioSourceOnlinePresence Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -326,7 +329,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -337,7 +340,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -356,7 +359,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -381,7 +384,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -397,7 +400,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
      */
-    public function getServices()
+    public function getServices(): mixed
     {
         return $this->container['services'];
     }
@@ -409,7 +412,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setServices($services): DomainStudioSourceOnlinePresence
     {
         $this->container['services'] = $services;
 
@@ -421,7 +424,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -433,7 +436,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainStudioSourceOnlinePresence
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -445,7 +448,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -457,7 +460,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): DomainStudioSourceOnlinePresence
     {
         $this->container['domains'] = $domains;
 
@@ -469,7 +472,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMax()
+    public function getMax(): mixed
     {
         return $this->container['max'];
     }
@@ -481,7 +484,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setMax($max): DomainStudioSourceOnlinePresence
     {
         $this->container['max'] = $max;
 
@@ -493,7 +496,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMaxSldLength()
+    public function getMaxSldLength(): mixed
     {
         return $this->container['maxSldLength'];
     }
@@ -505,7 +508,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMaxSldLength($maxSldLength)
+    public function setMaxSldLength($maxSldLength): DomainStudioSourceOnlinePresence
     {
         $this->container['maxSldLength'] = $maxSldLength;
 
@@ -517,7 +520,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseDash()
+    public function getUseDash(): mixed
     {
         return $this->container['useDash'];
     }
@@ -529,7 +532,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseDash($useDash)
+    public function setUseDash($useDash): DomainStudioSourceOnlinePresence
     {
         $this->container['useDash'] = $useDash;
 
@@ -541,7 +544,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTlds()
+    public function getTlds(): mixed
     {
         return $this->container['tlds'];
     }
@@ -553,7 +556,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTlds($tlds)
+    public function setTlds($tlds): DomainStudioSourceOnlinePresence
     {
         $this->container['tlds'] = $tlds;
 
@@ -565,7 +568,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOnlinePresenceUrl()
+    public function getOnlinePresenceUrl(): mixed
     {
         return $this->container['onlinePresenceUrl'];
     }
@@ -577,7 +580,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlinePresenceUrl($onlinePresenceUrl)
+    public function setOnlinePresenceUrl($onlinePresenceUrl): DomainStudioSourceOnlinePresence
     {
         $this->container['onlinePresenceUrl'] = $onlinePresenceUrl;
 
@@ -589,7 +592,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOnlinePresenceTitle()
+    public function getOnlinePresenceTitle(): mixed
     {
         return $this->container['onlinePresenceTitle'];
     }
@@ -601,7 +604,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlinePresenceTitle($onlinePresenceTitle)
+    public function setOnlinePresenceTitle($onlinePresenceTitle): DomainStudioSourceOnlinePresence
     {
         $this->container['onlinePresenceTitle'] = $onlinePresenceTitle;
 
@@ -613,7 +616,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getRelatedUrls()
+    public function getRelatedUrls(): mixed
     {
         return $this->container['relatedUrls'];
     }
@@ -625,7 +628,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRelatedUrls($relatedUrls)
+    public function setRelatedUrls($relatedUrls): DomainStudioSourceOnlinePresence
     {
         $this->container['relatedUrls'] = $relatedUrls;
 
@@ -637,7 +640,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCategory()
+    public function getCategory(): mixed
     {
         return $this->container['category'];
     }
@@ -649,7 +652,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCategory($category)
+    public function setCategory($category): DomainStudioSourceOnlinePresence
     {
         $this->container['category'] = $category;
 
@@ -661,7 +664,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOnlinePresenceDescription()
+    public function getOnlinePresenceDescription(): mixed
     {
         return $this->container['onlinePresenceDescription'];
     }
@@ -673,7 +676,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlinePresenceDescription($onlinePresenceDescription)
+    public function setOnlinePresenceDescription($onlinePresenceDescription): DomainStudioSourceOnlinePresence
     {
         $this->container['onlinePresenceDescription'] = $onlinePresenceDescription;
 
@@ -685,7 +688,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPreferredName()
+    public function getPreferredName(): mixed
     {
         return $this->container['preferredName'];
     }
@@ -697,7 +700,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPreferredName($preferredName)
+    public function setPreferredName($preferredName): DomainStudioSourceOnlinePresence
     {
         $this->container['preferredName'] = $preferredName;
 
@@ -709,7 +712,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLocation()
+    public function getLocation(): mixed
     {
         return $this->container['location'];
     }
@@ -721,7 +724,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLocation($location)
+    public function setLocation($location): DomainStudioSourceOnlinePresence
     {
         $this->container['location'] = $location;
 
@@ -733,7 +736,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getBusiness()
+    public function getBusiness(): mixed
     {
         return $this->container['business'];
     }
@@ -745,7 +748,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusiness($business)
+    public function setBusiness($business): DomainStudioSourceOnlinePresence
     {
         $this->container['business'] = $business;
 
@@ -757,7 +760,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShortName()
+    public function getShortName(): mixed
     {
         return $this->container['shortName'];
     }
@@ -769,7 +772,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShortName($shortName)
+    public function setShortName($shortName): DomainStudioSourceOnlinePresence
     {
         $this->container['shortName'] = $shortName;
 
@@ -781,7 +784,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFullName()
+    public function getFullName(): mixed
     {
         return $this->container['fullName'];
     }
@@ -793,7 +796,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFullName($fullName)
+    public function setFullName($fullName): DomainStudioSourceOnlinePresence
     {
         $this->container['fullName'] = $fullName;
 
@@ -805,7 +808,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): mixed
     {
         return $this->container['firstName'];
     }
@@ -817,7 +820,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($firstName): DomainStudioSourceOnlinePresence
     {
         $this->container['firstName'] = $firstName;
 
@@ -829,7 +832,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getMiddleNames()
+    public function getMiddleNames(): mixed
     {
         return $this->container['middleNames'];
     }
@@ -841,7 +844,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMiddleNames($middleNames)
+    public function setMiddleNames($middleNames): DomainStudioSourceOnlinePresence
     {
         $this->container['middleNames'] = $middleNames;
 
@@ -853,7 +856,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastName()
+    public function getLastName(): mixed
     {
         return $this->container['lastName'];
     }
@@ -865,7 +868,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($lastName): DomainStudioSourceOnlinePresence
     {
         $this->container['lastName'] = $lastName;
 
@@ -877,7 +880,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): mixed
     {
         return $this->container['email'];
     }
@@ -889,7 +892,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setEmail($email): DomainStudioSourceOnlinePresence
     {
         $this->container['email'] = $email;
 
@@ -901,7 +904,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getHometown()
+    public function getHometown(): mixed
     {
         return $this->container['hometown'];
     }
@@ -913,7 +916,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHometown($hometown)
+    public function setHometown($hometown): DomainStudioSourceOnlinePresence
     {
         $this->container['hometown'] = $hometown;
 
@@ -925,7 +928,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getSkills()
+    public function getSkills(): mixed
     {
         return $this->container['skills'];
     }
@@ -937,7 +940,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSkills($skills)
+    public function setSkills($skills): DomainStudioSourceOnlinePresence
     {
         $this->container['skills'] = $skills;
 
@@ -1012,23 +1015,22 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1038,7 +1040,7 @@ class DomainStudioSourceOnlinePresence implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

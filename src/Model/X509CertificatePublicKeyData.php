@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * X509CertificatePublicKeyData Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -218,7 +221,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -229,7 +232,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -248,7 +251,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -273,7 +276,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -289,7 +292,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAlgorithm()
+    public function getAlgorithm(): mixed
     {
         return $this->container['algorithm'];
     }
@@ -301,7 +304,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAlgorithm($algorithm)
+    public function setAlgorithm($algorithm): X509CertificatePublicKeyData
     {
         $this->container['algorithm'] = $algorithm;
 
@@ -313,7 +316,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLength()
+    public function getLength(): mixed
     {
         return $this->container['length'];
     }
@@ -325,7 +328,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLength($length)
+    public function setLength($length): X509CertificatePublicKeyData
     {
         $this->container['length'] = $length;
 
@@ -337,7 +340,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSha1Thumbprint()
+    public function getSha1Thumbprint(): mixed
     {
         return $this->container['sha1Thumbprint'];
     }
@@ -349,7 +352,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSha1Thumbprint($sha1Thumbprint)
+    public function setSha1Thumbprint($sha1Thumbprint): X509CertificatePublicKeyData
     {
         $this->container['sha1Thumbprint'] = $sha1Thumbprint;
 
@@ -361,7 +364,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSha256Thumbprint()
+    public function getSha256Thumbprint(): mixed
     {
         return $this->container['sha256Thumbprint'];
     }
@@ -373,7 +376,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSha256Thumbprint($sha256Thumbprint)
+    public function setSha256Thumbprint($sha256Thumbprint): X509CertificatePublicKeyData
     {
         $this->container['sha256Thumbprint'] = $sha256Thumbprint;
 
@@ -385,7 +388,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBytes()
+    public function getBytes(): mixed
     {
         return $this->container['bytes'];
     }
@@ -397,7 +400,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBytes($bytes)
+    public function setBytes($bytes): X509CertificatePublicKeyData
     {
         $this->container['bytes'] = $bytes;
 
@@ -472,23 +475,22 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -498,7 +500,7 @@ class X509CertificatePublicKeyData implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

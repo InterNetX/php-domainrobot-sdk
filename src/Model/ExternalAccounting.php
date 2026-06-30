@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ExternalAccounting Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -308,7 +311,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -319,7 +322,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -338,7 +341,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -363,7 +366,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -379,7 +382,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -391,7 +394,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ExternalAccounting
     {
         $this->container['created'] = $created;
 
@@ -403,7 +406,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -415,7 +418,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ExternalAccounting
     {
         $this->container['updated'] = $updated;
 
@@ -427,7 +430,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -439,7 +442,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): ExternalAccounting
     {
         $this->container['owner'] = $owner;
 
@@ -451,7 +454,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -463,7 +466,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): ExternalAccounting
     {
         $this->container['updater'] = $updater;
 
@@ -475,7 +478,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ProviderEntity
      */
-    public function getProvider()
+    public function getProvider(): mixed
     {
         return $this->container['provider'];
     }
@@ -487,7 +490,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProvider($provider)
+    public function setProvider($provider): ExternalAccounting
     {
         $this->container['provider'] = $provider;
 
@@ -499,7 +502,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): mixed
     {
         return $this->container['label'];
     }
@@ -511,7 +514,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabel($label): ExternalAccounting
     {
         $this->container['label'] = $label;
 
@@ -523,7 +526,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReportTo()
+    public function getReportTo(): mixed
     {
         return $this->container['reportTo'];
     }
@@ -535,7 +538,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReportTo($reportTo)
+    public function setReportTo($reportTo): ExternalAccounting
     {
         $this->container['reportTo'] = $reportTo;
 
@@ -547,7 +550,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceTypeConstants
      */
-    public function getPriceType()
+    public function getPriceType(): mixed
     {
         return $this->container['priceType'];
     }
@@ -559,7 +562,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceType($priceType)
+    public function setPriceType($priceType): ExternalAccounting
     {
         $this->container['priceType'] = $priceType;
 
@@ -571,7 +574,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceMarkupType
      */
-    public function getPriceMarkupType()
+    public function getPriceMarkupType(): mixed
     {
         return $this->container['priceMarkupType'];
     }
@@ -583,7 +586,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceMarkupType($priceMarkupType)
+    public function setPriceMarkupType($priceMarkupType): ExternalAccounting
     {
         $this->container['priceMarkupType'] = $priceMarkupType;
 
@@ -595,7 +598,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getPriceMarkup()
+    public function getPriceMarkup(): mixed
     {
         return $this->container['priceMarkup'];
     }
@@ -607,7 +610,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceMarkup($priceMarkup)
+    public function setPriceMarkup($priceMarkup): ExternalAccounting
     {
         $this->container['priceMarkup'] = $priceMarkup;
 
@@ -619,7 +622,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceRoundingConstants
      */
-    public function getPriceRounding()
+    public function getPriceRounding(): mixed
     {
         return $this->container['priceRounding'];
     }
@@ -631,7 +634,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceRounding($priceRounding)
+    public function setPriceRounding($priceRounding): ExternalAccounting
     {
         $this->container['priceRounding'] = $priceRounding;
 
@@ -643,7 +646,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getEnablePromoPrice()
+    public function getEnablePromoPrice(): mixed
     {
         return $this->container['enablePromoPrice'];
     }
@@ -655,7 +658,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEnablePromoPrice($enablePromoPrice)
+    public function setEnablePromoPrice($enablePromoPrice): ExternalAccounting
     {
         $this->container['enablePromoPrice'] = $enablePromoPrice;
 
@@ -667,7 +670,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -679,7 +682,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): ExternalAccounting
     {
         $this->container['currency'] = $currency;
 
@@ -691,7 +694,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -703,7 +706,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): ExternalAccounting
     {
         $this->container['country'] = $country;
 
@@ -715,7 +718,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCreditorIdentifier()
+    public function getCreditorIdentifier(): mixed
     {
         return $this->container['creditorIdentifier'];
     }
@@ -727,7 +730,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreditorIdentifier($creditorIdentifier)
+    public function setCreditorIdentifier($creditorIdentifier): ExternalAccounting
     {
         $this->container['creditorIdentifier'] = $creditorIdentifier;
 
@@ -739,7 +742,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCustomerNumberMin()
+    public function getCustomerNumberMin(): mixed
     {
         return $this->container['customerNumberMin'];
     }
@@ -751,7 +754,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomerNumberMin($customerNumberMin)
+    public function setCustomerNumberMin($customerNumberMin): ExternalAccounting
     {
         $this->container['customerNumberMin'] = $customerNumberMin;
 
@@ -763,7 +766,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCustomerNumberMax()
+    public function getCustomerNumberMax(): mixed
     {
         return $this->container['customerNumberMax'];
     }
@@ -775,7 +778,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomerNumberMax($customerNumberMax)
+    public function setCustomerNumberMax($customerNumberMax): ExternalAccounting
     {
         $this->container['customerNumberMax'] = $customerNumberMax;
 
@@ -787,7 +790,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getCreditLimit()
+    public function getCreditLimit(): mixed
     {
         return $this->container['creditLimit'];
     }
@@ -799,7 +802,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreditLimit($creditLimit)
+    public function setCreditLimit($creditLimit): ExternalAccounting
     {
         $this->container['creditLimit'] = $creditLimit;
 
@@ -811,7 +814,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericStatusConstants
      */
-    public function getPriceListSyncStatus()
+    public function getPriceListSyncStatus(): mixed
     {
         return $this->container['priceListSyncStatus'];
     }
@@ -823,7 +826,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceListSyncStatus($priceListSyncStatus)
+    public function setPriceListSyncStatus($priceListSyncStatus): ExternalAccounting
     {
         $this->container['priceListSyncStatus'] = $priceListSyncStatus;
 
@@ -835,7 +838,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPriceListSync()
+    public function getPriceListSync(): mixed
     {
         return $this->container['priceListSync'];
     }
@@ -847,7 +850,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceListSync($priceListSync)
+    public function setPriceListSync($priceListSync): ExternalAccounting
     {
         $this->container['priceListSync'] = $priceListSync;
 
@@ -922,23 +925,22 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -948,7 +950,7 @@ class ExternalAccounting implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

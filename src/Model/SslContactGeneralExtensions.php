@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SslContactGeneralExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getJoiCountryName()
+    public function getJoiCountryName(): mixed
     {
         return $this->container['joiCountryName'];
     }
@@ -307,7 +310,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setJoiCountryName($joiCountryName)
+    public function setJoiCountryName($joiCountryName): SslContactGeneralExtensions
     {
         $this->container['joiCountryName'] = $joiCountryName;
 
@@ -319,7 +322,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getJoiLocality()
+    public function getJoiLocality(): mixed
     {
         return $this->container['joiLocality'];
     }
@@ -331,7 +334,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setJoiLocality($joiLocality)
+    public function setJoiLocality($joiLocality): SslContactGeneralExtensions
     {
         $this->container['joiLocality'] = $joiLocality;
 
@@ -343,7 +346,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getJoiStateOrProvince()
+    public function getJoiStateOrProvince(): mixed
     {
         return $this->container['joiStateOrProvince'];
     }
@@ -355,7 +358,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setJoiStateOrProvince($joiStateOrProvince)
+    public function setJoiStateOrProvince($joiStateOrProvince): SslContactGeneralExtensions
     {
         $this->container['joiStateOrProvince'] = $joiStateOrProvince;
 
@@ -367,7 +370,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCompanyNumber()
+    public function getCompanyNumber(): mixed
     {
         return $this->container['companyNumber'];
     }
@@ -379,7 +382,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCompanyNumber($companyNumber)
+    public function setCompanyNumber($companyNumber): SslContactGeneralExtensions
     {
         $this->container['companyNumber'] = $companyNumber;
 
@@ -391,7 +394,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BusinessCategory
      */
-    public function getBusinessCategory()
+    public function getBusinessCategory(): mixed
     {
         return $this->container['businessCategory'];
     }
@@ -403,7 +406,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessCategory($businessCategory)
+    public function setBusinessCategory($businessCategory): SslContactGeneralExtensions
     {
         $this->container['businessCategory'] = $businessCategory;
 
@@ -415,7 +418,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganisationalIdentifier()
+    public function getOrganisationalIdentifier(): mixed
     {
         return $this->container['organisationalIdentifier'];
     }
@@ -427,7 +430,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganisationalIdentifier($organisationalIdentifier)
+    public function setOrganisationalIdentifier($organisationalIdentifier): SslContactGeneralExtensions
     {
         $this->container['organisationalIdentifier'] = $organisationalIdentifier;
 
@@ -502,23 +505,22 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class SslContactGeneralExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

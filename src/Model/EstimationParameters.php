@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * EstimationParameters Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -356,7 +359,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -367,7 +370,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -386,7 +389,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -411,7 +414,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -427,7 +430,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAverageKeywordFrequency()
+    public function getAverageKeywordFrequency(): mixed
     {
         return $this->container['averageKeywordFrequency'];
     }
@@ -439,7 +442,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageKeywordFrequency($averageKeywordFrequency)
+    public function setAverageKeywordFrequency($averageKeywordFrequency): EstimationParameters
     {
         $this->container['averageKeywordFrequency'] = $averageKeywordFrequency;
 
@@ -451,7 +454,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAverageKeywordPrice()
+    public function getAverageKeywordPrice(): mixed
     {
         return $this->container['averageKeywordPrice'];
     }
@@ -463,7 +466,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageKeywordPrice($averageKeywordPrice)
+    public function setAverageKeywordPrice($averageKeywordPrice): EstimationParameters
     {
         $this->container['averageKeywordPrice'] = $averageKeywordPrice;
 
@@ -475,7 +478,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAverageLengthFrequency()
+    public function getAverageLengthFrequency(): mixed
     {
         return $this->container['averageLengthFrequency'];
     }
@@ -487,7 +490,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageLengthFrequency($averageLengthFrequency)
+    public function setAverageLengthFrequency($averageLengthFrequency): EstimationParameters
     {
         $this->container['averageLengthFrequency'] = $averageLengthFrequency;
 
@@ -499,7 +502,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAverageLengthPrice()
+    public function getAverageLengthPrice(): mixed
     {
         return $this->container['averageLengthPrice'];
     }
@@ -511,7 +514,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageLengthPrice($averageLengthPrice)
+    public function setAverageLengthPrice($averageLengthPrice): EstimationParameters
     {
         $this->container['averageLengthPrice'] = $averageLengthPrice;
 
@@ -523,7 +526,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAverageTldFrequency()
+    public function getAverageTldFrequency(): mixed
     {
         return $this->container['averageTldFrequency'];
     }
@@ -535,7 +538,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageTldFrequency($averageTldFrequency)
+    public function setAverageTldFrequency($averageTldFrequency): EstimationParameters
     {
         $this->container['averageTldFrequency'] = $averageTldFrequency;
 
@@ -547,7 +550,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAverageTldPrice()
+    public function getAverageTldPrice(): mixed
     {
         return $this->container['averageTldPrice'];
     }
@@ -559,7 +562,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageTldPrice($averageTldPrice)
+    public function setAverageTldPrice($averageTldPrice): EstimationParameters
     {
         $this->container['averageTldPrice'] = $averageTldPrice;
 
@@ -571,7 +574,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getChar()
+    public function getChar(): mixed
     {
         return $this->container['char'];
     }
@@ -583,7 +586,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChar($char)
+    public function setChar($char): EstimationParameters
     {
         $this->container['char'] = $char;
 
@@ -595,7 +598,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComDomain()
+    public function getComDomain(): mixed
     {
         return $this->container['comDomain'];
     }
@@ -607,7 +610,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComDomain($comDomain)
+    public function setComDomain($comDomain): EstimationParameters
     {
         $this->container['comDomain'] = $comDomain;
 
@@ -619,7 +622,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCompletelyNum()
+    public function getCompletelyNum(): mixed
     {
         return $this->container['completelyNum'];
     }
@@ -631,7 +634,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCompletelyNum($completelyNum)
+    public function setCompletelyNum($completelyNum): EstimationParameters
     {
         $this->container['completelyNum'] = $completelyNum;
 
@@ -643,7 +646,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFoundKeywords()
+    public function getFoundKeywords(): mixed
     {
         return $this->container['foundKeywords'];
     }
@@ -655,7 +658,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFoundKeywords($foundKeywords)
+    public function setFoundKeywords($foundKeywords): EstimationParameters
     {
         $this->container['foundKeywords'] = $foundKeywords;
 
@@ -667,7 +670,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFoundPrefix()
+    public function getFoundPrefix(): mixed
     {
         return $this->container['foundPrefix'];
     }
@@ -679,7 +682,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFoundPrefix($foundPrefix)
+    public function setFoundPrefix($foundPrefix): EstimationParameters
     {
         $this->container['foundPrefix'] = $foundPrefix;
 
@@ -691,7 +694,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFoundSuffix()
+    public function getFoundSuffix(): mixed
     {
         return $this->container['foundSuffix'];
     }
@@ -703,7 +706,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFoundSuffix($foundSuffix)
+    public function setFoundSuffix($foundSuffix): EstimationParameters
     {
         $this->container['foundSuffix'] = $foundSuffix;
 
@@ -715,7 +718,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getHyph()
+    public function getHyph(): mixed
     {
         return $this->container['hyph'];
     }
@@ -727,7 +730,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHyph($hyph)
+    public function setHyph($hyph): EstimationParameters
     {
         $this->container['hyph'] = $hyph;
 
@@ -739,7 +742,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdnEncoding()
+    public function getIdnEncoding(): mixed
     {
         return $this->container['idnEncoding'];
     }
@@ -751,7 +754,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdnEncoding($idnEncoding)
+    public function setIdnEncoding($idnEncoding): EstimationParameters
     {
         $this->container['idnEncoding'] = $idnEncoding;
 
@@ -763,7 +766,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getKeywordCount()
+    public function getKeywordCount(): mixed
     {
         return $this->container['keywordCount'];
     }
@@ -775,7 +778,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKeywordCount($keywordCount)
+    public function setKeywordCount($keywordCount): EstimationParameters
     {
         $this->container['keywordCount'] = $keywordCount;
 
@@ -787,7 +790,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsGlobalRank()
+    public function getMajesticsGlobalRank(): mixed
     {
         return $this->container['majesticsGlobalRank'];
     }
@@ -799,7 +802,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsGlobalRank($majesticsGlobalRank)
+    public function setMajesticsGlobalRank($majesticsGlobalRank): EstimationParameters
     {
         $this->container['majesticsGlobalRank'] = $majesticsGlobalRank;
 
@@ -811,7 +814,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsPrevGlobalRank()
+    public function getMajesticsPrevGlobalRank(): mixed
     {
         return $this->container['majesticsPrevGlobalRank'];
     }
@@ -823,7 +826,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsPrevGlobalRank($majesticsPrevGlobalRank)
+    public function setMajesticsPrevGlobalRank($majesticsPrevGlobalRank): EstimationParameters
     {
         $this->container['majesticsPrevGlobalRank'] = $majesticsPrevGlobalRank;
 
@@ -835,7 +838,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsPrevRefIPs()
+    public function getMajesticsPrevRefIPs(): mixed
     {
         return $this->container['majesticsPrevRefIPs'];
     }
@@ -847,7 +850,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsPrevRefIPs($majesticsPrevRefIPs)
+    public function setMajesticsPrevRefIPs($majesticsPrevRefIPs): EstimationParameters
     {
         $this->container['majesticsPrevRefIPs'] = $majesticsPrevRefIPs;
 
@@ -859,7 +862,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsPrevRefSubNets()
+    public function getMajesticsPrevRefSubNets(): mixed
     {
         return $this->container['majesticsPrevRefSubNets'];
     }
@@ -871,7 +874,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsPrevRefSubNets($majesticsPrevRefSubNets)
+    public function setMajesticsPrevRefSubNets($majesticsPrevRefSubNets): EstimationParameters
     {
         $this->container['majesticsPrevRefSubNets'] = $majesticsPrevRefSubNets;
 
@@ -883,7 +886,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsPrevTldRank()
+    public function getMajesticsPrevTldRank(): mixed
     {
         return $this->container['majesticsPrevTldRank'];
     }
@@ -895,7 +898,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsPrevTldRank($majesticsPrevTldRank)
+    public function setMajesticsPrevTldRank($majesticsPrevTldRank): EstimationParameters
     {
         $this->container['majesticsPrevTldRank'] = $majesticsPrevTldRank;
 
@@ -907,7 +910,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsRefIPs()
+    public function getMajesticsRefIPs(): mixed
     {
         return $this->container['majesticsRefIPs'];
     }
@@ -919,7 +922,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsRefIPs($majesticsRefIPs)
+    public function setMajesticsRefIPs($majesticsRefIPs): EstimationParameters
     {
         $this->container['majesticsRefIPs'] = $majesticsRefIPs;
 
@@ -931,7 +934,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsRefSubNets()
+    public function getMajesticsRefSubNets(): mixed
     {
         return $this->container['majesticsRefSubNets'];
     }
@@ -943,7 +946,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsRefSubNets($majesticsRefSubNets)
+    public function setMajesticsRefSubNets($majesticsRefSubNets): EstimationParameters
     {
         $this->container['majesticsRefSubNets'] = $majesticsRefSubNets;
 
@@ -955,7 +958,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMajesticsTldRank()
+    public function getMajesticsTldRank(): mixed
     {
         return $this->container['majesticsTldRank'];
     }
@@ -967,7 +970,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMajesticsTldRank($majesticsTldRank)
+    public function setMajesticsTldRank($majesticsTldRank): EstimationParameters
     {
         $this->container['majesticsTldRank'] = $majesticsTldRank;
 
@@ -979,7 +982,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNameSeg()
+    public function getNameSeg(): mixed
     {
         return $this->container['nameSeg'];
     }
@@ -991,7 +994,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameSeg($nameSeg)
+    public function setNameSeg($nameSeg): EstimationParameters
     {
         $this->container['nameSeg'] = $nameSeg;
 
@@ -1003,7 +1006,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNum()
+    public function getNum(): mixed
     {
         return $this->container['num'];
     }
@@ -1015,7 +1018,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNum($num)
+    public function setNum($num): EstimationParameters
     {
         $this->container['num'] = $num;
 
@@ -1027,7 +1030,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNumWords()
+    public function getNumWords(): mixed
     {
         return $this->container['numWords'];
     }
@@ -1039,7 +1042,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumWords($numWords)
+    public function setNumWords($numWords): EstimationParameters
     {
         $this->container['numWords'] = $numWords;
 
@@ -1051,7 +1054,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTld()
+    public function getTld(): mixed
     {
         return $this->container['tld'];
     }
@@ -1063,7 +1066,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTld($tld)
+    public function setTld($tld): EstimationParameters
     {
         $this->container['tld'] = $tld;
 
@@ -1075,7 +1078,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTldNumDomains()
+    public function getTldNumDomains(): mixed
     {
         return $this->container['tldNumDomains'];
     }
@@ -1087,7 +1090,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldNumDomains($tldNumDomains)
+    public function setTldNumDomains($tldNumDomains): EstimationParameters
     {
         $this->container['tldNumDomains'] = $tldNumDomains;
 
@@ -1162,23 +1165,22 @@ class EstimationParameters implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1188,7 +1190,7 @@ class EstimationParameters implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

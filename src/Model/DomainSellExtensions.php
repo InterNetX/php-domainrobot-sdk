@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainSellExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -282,7 +285,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -298,7 +301,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -310,7 +313,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): DomainSellExtensions
     {
         $this->container['currency'] = $currency;
 
@@ -322,7 +325,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getPrice()
+    public function getPrice(): mixed
     {
         return $this->container['price'];
     }
@@ -334,7 +337,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrice($price)
+    public function setPrice($price): DomainSellExtensions
     {
         $this->container['price'] = $price;
 
@@ -346,7 +349,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getKeywords()
+    public function getKeywords(): mixed
     {
         return $this->container['keywords'];
     }
@@ -358,7 +361,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKeywords($keywords)
+    public function setKeywords($keywords): DomainSellExtensions
     {
         $this->container['keywords'] = $keywords;
 
@@ -370,7 +373,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getFixedPrice()
+    public function getFixedPrice(): mixed
     {
         return $this->container['fixedPrice'];
     }
@@ -382,7 +385,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFixedPrice($fixedPrice)
+    public function setFixedPrice($fixedPrice): DomainSellExtensions
     {
         $this->container['fixedPrice'] = $fixedPrice;
 
@@ -394,7 +397,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getMinPrice()
+    public function getMinPrice(): mixed
     {
         return $this->container['minPrice'];
     }
@@ -406,7 +409,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinPrice($minPrice)
+    public function setMinPrice($minPrice): DomainSellExtensions
     {
         $this->container['minPrice'] = $minPrice;
 
@@ -418,7 +421,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SellMode
      */
-    public function getMode()
+    public function getMode(): mixed
     {
         return $this->container['mode'];
     }
@@ -430,7 +433,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMode($mode)
+    public function setMode($mode): DomainSellExtensions
     {
         $this->container['mode'] = $mode;
 
@@ -505,23 +508,22 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -531,7 +533,7 @@ class DomainSellExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

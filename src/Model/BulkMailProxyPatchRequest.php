@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BulkMailProxyPatchRequest Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -206,7 +209,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -217,7 +220,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -236,7 +239,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -261,7 +264,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -277,7 +280,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\MailProxy[]
      */
-    public function getObjects()
+    public function getObjects(): mixed
     {
         return $this->container['objects'];
     }
@@ -289,7 +292,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setObjects($objects)
+    public function setObjects($objects): BulkMailProxyPatchRequest
     {
         $this->container['objects'] = $objects;
 
@@ -301,7 +304,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\MailProxy
      */
-    public function getTemplate()
+    public function getTemplate(): mixed
     {
         return $this->container['template'];
     }
@@ -313,7 +316,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTemplate($template)
+    public function setTemplate($template): BulkMailProxyPatchRequest
     {
         $this->container['template'] = $template;
 
@@ -325,7 +328,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Query
      */
-    public function getQuery()
+    public function getQuery(): mixed
     {
         return $this->container['query'];
     }
@@ -337,7 +340,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQuery($query)
+    public function setQuery($query): BulkMailProxyPatchRequest
     {
         $this->container['query'] = $query;
 
@@ -412,23 +415,22 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -438,7 +440,7 @@ class BulkMailProxyPatchRequest implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainEnvelope Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -266,7 +269,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -277,7 +280,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -296,7 +299,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -321,7 +324,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -337,7 +340,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): mixed
     {
         return $this->container['domain'];
     }
@@ -349,7 +352,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setDomain($domain): DomainEnvelope
     {
         $this->container['domain'] = $domain;
 
@@ -361,7 +364,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -373,7 +376,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): DomainEnvelope
     {
         $this->container['idn'] = $idn;
 
@@ -385,7 +388,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTld()
+    public function getTld(): mixed
     {
         return $this->container['tld'];
     }
@@ -397,7 +400,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTld($tld)
+    public function setTld($tld): DomainEnvelope
     {
         $this->container['tld'] = $tld;
 
@@ -409,7 +412,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubTld()
+    public function getSubTld(): mixed
     {
         return $this->container['subTld'];
     }
@@ -421,7 +424,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubTld($subTld)
+    public function setSubTld($subTld): DomainEnvelope
     {
         $this->container['subTld'] = $subTld;
 
@@ -433,7 +436,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioDomainSource
      */
-    public function getSource()
+    public function getSource(): mixed
     {
         return $this->container['source'];
     }
@@ -445,7 +448,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource($source): DomainEnvelope
     {
         $this->container['source'] = $source;
 
@@ -457,7 +460,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioService
      */
-    public function getServices()
+    public function getServices(): mixed
     {
         return $this->container['services'];
     }
@@ -469,7 +472,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setServices($services): DomainEnvelope
     {
         $this->container['services'] = $services;
 
@@ -481,7 +484,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDebugTime()
+    public function getDebugTime(): mixed
     {
         return $this->container['debugTime'];
     }
@@ -493,7 +496,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDebugTime($debugTime)
+    public function setDebugTime($debugTime): DomainEnvelope
     {
         $this->container['debugTime'] = $debugTime;
 
@@ -505,7 +508,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPortfolio()
+    public function getPortfolio(): mixed
     {
         return $this->container['portfolio'];
     }
@@ -517,7 +520,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPortfolio($portfolio)
+    public function setPortfolio($portfolio): DomainEnvelope
     {
         $this->container['portfolio'] = $portfolio;
 
@@ -529,7 +532,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getForceDnsCheck()
+    public function getForceDnsCheck(): mixed
     {
         return $this->container['forceDnsCheck'];
     }
@@ -541,7 +544,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setForceDnsCheck($forceDnsCheck)
+    public function setForceDnsCheck($forceDnsCheck): DomainEnvelope
     {
         $this->container['forceDnsCheck'] = $forceDnsCheck;
 
@@ -553,7 +556,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getWhoisTimeout()
+    public function getWhoisTimeout(): mixed
     {
         return $this->container['whoisTimeout'];
     }
@@ -565,7 +568,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setWhoisTimeout($whoisTimeout)
+    public function setWhoisTimeout($whoisTimeout): DomainEnvelope
     {
         $this->container['whoisTimeout'] = $whoisTimeout;
 
@@ -577,7 +580,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -589,7 +592,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainEnvelope
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -601,7 +604,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsPrereg()
+    public function getIsPrereg(): mixed
     {
         return $this->container['isPrereg'];
     }
@@ -613,7 +616,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsPrereg($isPrereg)
+    public function setIsPrereg($isPrereg): DomainEnvelope
     {
         $this->container['isPrereg'] = $isPrereg;
 
@@ -625,7 +628,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Notification
      */
-    public function getNotification()
+    public function getNotification(): mixed
     {
         return $this->container['notification'];
     }
@@ -637,7 +640,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNotification($notification)
+    public function setNotification($notification): DomainEnvelope
     {
         $this->container['notification'] = $notification;
 
@@ -712,23 +715,22 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -738,7 +740,7 @@ class DomainEnvelope implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

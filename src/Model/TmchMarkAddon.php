@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TmchMarkAddon Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -260,7 +263,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -271,7 +274,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -290,7 +293,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -315,7 +318,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -331,7 +334,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCourtName()
+    public function getCourtName(): mixed
     {
         return $this->container['courtName'];
     }
@@ -343,7 +346,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCourtName($courtName)
+    public function setCourtName($courtName): TmchMarkAddon
     {
         $this->container['courtName'] = $courtName;
 
@@ -355,7 +358,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getProtection()
+    public function getProtection(): mixed
     {
         return $this->container['protection'];
     }
@@ -367,7 +370,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProtection($protection)
+    public function setProtection($protection): TmchMarkAddon
     {
         $this->container['protection'] = $protection;
 
@@ -379,7 +382,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCourtProtectionCountry()
+    public function getCourtProtectionCountry(): mixed
     {
         return $this->container['courtProtectionCountry'];
     }
@@ -391,7 +394,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCourtProtectionCountry($courtProtectionCountry)
+    public function setCourtProtectionCountry($courtProtectionCountry): TmchMarkAddon
     {
         $this->container['courtProtectionCountry'] = $courtProtectionCountry;
 
@@ -403,7 +406,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCourtReference()
+    public function getCourtReference(): mixed
     {
         return $this->container['courtReference'];
     }
@@ -415,7 +418,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCourtReference($courtReference)
+    public function setCourtReference($courtReference): TmchMarkAddon
     {
         $this->container['courtReference'] = $courtReference;
 
@@ -427,7 +430,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTreatyTitle()
+    public function getTreatyTitle(): mixed
     {
         return $this->container['treatyTitle'];
     }
@@ -439,7 +442,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTreatyTitle($treatyTitle)
+    public function setTreatyTitle($treatyTitle): TmchMarkAddon
     {
         $this->container['treatyTitle'] = $treatyTitle;
 
@@ -451,7 +454,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getTreatyExecution()
+    public function getTreatyExecution(): mixed
     {
         return $this->container['treatyExecution'];
     }
@@ -463,7 +466,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTreatyExecution($treatyExecution)
+    public function setTreatyExecution($treatyExecution): TmchMarkAddon
     {
         $this->container['treatyExecution'] = $treatyExecution;
 
@@ -475,7 +478,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getTrademarkRegistration()
+    public function getTrademarkRegistration(): mixed
     {
         return $this->container['trademarkRegistration'];
     }
@@ -487,7 +490,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrademarkRegistration($trademarkRegistration)
+    public function setTrademarkRegistration($trademarkRegistration): TmchMarkAddon
     {
         $this->container['trademarkRegistration'] = $trademarkRegistration;
 
@@ -499,7 +502,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrademarkClassification()
+    public function getTrademarkClassification(): mixed
     {
         return $this->container['trademarkClassification'];
     }
@@ -511,7 +514,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrademarkClassification($trademarkClassification)
+    public function setTrademarkClassification($trademarkClassification): TmchMarkAddon
     {
         $this->container['trademarkClassification'] = $trademarkClassification;
 
@@ -523,7 +526,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getTrademarkExpire()
+    public function getTrademarkExpire(): mixed
     {
         return $this->container['trademarkExpire'];
     }
@@ -535,7 +538,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrademarkExpire($trademarkExpire)
+    public function setTrademarkExpire($trademarkExpire): TmchMarkAddon
     {
         $this->container['trademarkExpire'] = $trademarkExpire;
 
@@ -547,7 +550,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrademarkNumber()
+    public function getTrademarkNumber(): mixed
     {
         return $this->container['trademarkNumber'];
     }
@@ -559,7 +562,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrademarkNumber($trademarkNumber)
+    public function setTrademarkNumber($trademarkNumber): TmchMarkAddon
     {
         $this->container['trademarkNumber'] = $trademarkNumber;
 
@@ -571,7 +574,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrademarkJurisdiction()
+    public function getTrademarkJurisdiction(): mixed
     {
         return $this->container['trademarkJurisdiction'];
     }
@@ -583,7 +586,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrademarkJurisdiction($trademarkJurisdiction)
+    public function setTrademarkJurisdiction($trademarkJurisdiction): TmchMarkAddon
     {
         $this->container['trademarkJurisdiction'] = $trademarkJurisdiction;
 
@@ -595,7 +598,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getParentReference()
+    public function getParentReference(): mixed
     {
         return $this->container['parentReference'];
     }
@@ -607,7 +610,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setParentReference($parentReference)
+    public function setParentReference($parentReference): TmchMarkAddon
     {
         $this->container['parentReference'] = $parentReference;
 
@@ -682,23 +685,22 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -708,7 +710,7 @@ class TmchMarkAddon implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

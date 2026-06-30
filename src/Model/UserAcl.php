@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * UserAcl Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class UserAcl implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class UserAcl implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class UserAcl implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class UserAcl implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFunctionCode()
+    public function getFunctionCode(): mixed
     {
         return $this->container['functionCode'];
     }
@@ -319,7 +322,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFunctionCode($functionCode)
+    public function setFunctionCode($functionCode): UserAcl
     {
         $this->container['functionCode'] = $functionCode;
 
@@ -331,7 +334,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
-    public function getChildren()
+    public function getChildren(): mixed
     {
         return $this->container['children'];
     }
@@ -343,7 +346,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChildren($children)
+    public function setChildren($children): UserAcl
     {
         $this->container['children'] = $children;
 
@@ -355,7 +358,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getChildrenLocked()
+    public function getChildrenLocked(): mixed
     {
         return $this->container['childrenLocked'];
     }
@@ -367,7 +370,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChildrenLocked($childrenLocked)
+    public function setChildrenLocked($childrenLocked): UserAcl
     {
         $this->container['childrenLocked'] = $childrenLocked;
 
@@ -379,7 +382,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUserLocked()
+    public function getUserLocked(): mixed
     {
         return $this->container['userLocked'];
     }
@@ -391,7 +394,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUserLocked($userLocked)
+    public function setUserLocked($userLocked): UserAcl
     {
         $this->container['userLocked'] = $userLocked;
 
@@ -403,7 +406,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getEffective()
+    public function getEffective(): mixed
     {
         return $this->container['effective'];
     }
@@ -415,7 +418,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEffective($effective)
+    public function setEffective($effective): UserAcl
     {
         $this->container['effective'] = $effective;
 
@@ -427,7 +430,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
-    public function getChildrenRem()
+    public function getChildrenRem(): mixed
     {
         return $this->container['childrenRem'];
     }
@@ -439,7 +442,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChildrenRem($childrenRem)
+    public function setChildrenRem($childrenRem): UserAcl
     {
         $this->container['childrenRem'] = $childrenRem;
 
@@ -451,7 +454,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
-    public function getChildrenAdd()
+    public function getChildrenAdd(): mixed
     {
         return $this->container['childrenAdd'];
     }
@@ -463,7 +466,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChildrenAdd($childrenAdd)
+    public function setChildrenAdd($childrenAdd): UserAcl
     {
         $this->container['childrenAdd'] = $childrenAdd;
 
@@ -475,7 +478,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ACLRestriction
      */
-    public function getRestriction()
+    public function getRestriction(): mixed
     {
         return $this->container['restriction'];
     }
@@ -487,7 +490,7 @@ class UserAcl implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRestriction($restriction)
+    public function setRestriction($restriction): UserAcl
     {
         $this->container['restriction'] = $restriction;
 
@@ -562,23 +565,22 @@ class UserAcl implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class UserAcl implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

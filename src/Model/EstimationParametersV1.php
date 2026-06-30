@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * EstimationParametersV1 Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\EstimationParametersV1NameBased
      */
-    public function getNameBased()
+    public function getNameBased(): mixed
     {
         return $this->container['nameBased'];
     }
@@ -307,7 +310,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameBased($nameBased)
+    public function setNameBased($nameBased): EstimationParametersV1
     {
         $this->container['nameBased'] = $nameBased;
 
@@ -319,7 +322,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\EstimationParametersV1KeywordBased
      */
-    public function getKeywordBased()
+    public function getKeywordBased(): mixed
     {
         return $this->container['keywordBased'];
     }
@@ -331,7 +334,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKeywordBased($keywordBased)
+    public function setKeywordBased($keywordBased): EstimationParametersV1
     {
         $this->container['keywordBased'] = $keywordBased;
 
@@ -343,7 +346,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\EstimationParametersV1TldBased
      */
-    public function getTldBased()
+    public function getTldBased(): mixed
     {
         return $this->container['tldBased'];
     }
@@ -355,7 +358,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldBased($tldBased)
+    public function setTldBased($tldBased): EstimationParametersV1
     {
         $this->container['tldBased'] = $tldBased;
 
@@ -367,7 +370,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\EstimationParametersV1Pagerank
      */
-    public function getPagerank()
+    public function getPagerank(): mixed
     {
         return $this->container['pagerank'];
     }
@@ -379,7 +382,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPagerank($pagerank)
+    public function setPagerank($pagerank): EstimationParametersV1
     {
         $this->container['pagerank'] = $pagerank;
 
@@ -391,7 +394,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\EstimationParametersV1Language
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -403,7 +406,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): EstimationParametersV1
     {
         $this->container['language'] = $language;
 
@@ -415,7 +418,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\EstimationParametersV1WikipediaPageview
      */
-    public function getWikipediaPageview()
+    public function getWikipediaPageview(): mixed
     {
         return $this->container['wikipediaPageview'];
     }
@@ -427,7 +430,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setWikipediaPageview($wikipediaPageview)
+    public function setWikipediaPageview($wikipediaPageview): EstimationParametersV1
     {
         $this->container['wikipediaPageview'] = $wikipediaPageview;
 
@@ -502,23 +505,22 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class EstimationParametersV1 implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

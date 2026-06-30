@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Document Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class Document implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class Document implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class Document implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class Document implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -331,7 +334,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Document
     {
         $this->container['created'] = $created;
 
@@ -343,7 +346,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -355,7 +358,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Document
     {
         $this->container['updated'] = $updated;
 
@@ -367,7 +370,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -379,7 +382,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): Document
     {
         $this->container['id'] = $id;
 
@@ -391,7 +394,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -403,7 +406,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): Document
     {
         $this->container['comment'] = $comment;
 
@@ -415,7 +418,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -427,7 +430,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): Document
     {
         $this->container['type'] = $type;
 
@@ -439,7 +442,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMimeType()
+    public function getMimeType(): mixed
     {
         return $this->container['mimeType'];
     }
@@ -451,7 +454,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMimeType($mimeType)
+    public function setMimeType($mimeType): Document
     {
         $this->container['mimeType'] = $mimeType;
 
@@ -463,7 +466,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getData()
+    public function getData(): mixed
     {
         return $this->container['data'];
     }
@@ -475,7 +478,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setData($data)
+    public function setData($data): Document
     {
         $this->container['data'] = $data;
 
@@ -487,7 +490,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getSize()
+    public function getSize(): mixed
     {
         return $this->container['size'];
     }
@@ -499,7 +502,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSize($size)
+    public function setSize($size): Document
     {
         $this->container['size'] = $size;
 
@@ -511,7 +514,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -523,7 +526,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): Document
     {
         $this->container['name'] = $name;
 
@@ -535,7 +538,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLink()
+    public function getLink(): mixed
     {
         return $this->container['link'];
     }
@@ -547,7 +550,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLink($link)
+    public function setLink($link): Document
     {
         $this->container['link'] = $link;
 
@@ -622,23 +625,22 @@ class Document implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class Document implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactJpExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFirst()
+    public function getFirst(): mixed
     {
         return $this->container['first'];
     }
@@ -307,7 +310,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFirst($first)
+    public function setFirst($first): ContactJpExtensions
     {
         $this->container['first'] = $first;
 
@@ -319,7 +322,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLast()
+    public function getLast(): mixed
     {
         return $this->container['last'];
     }
@@ -331,7 +334,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLast($last)
+    public function setLast($last): ContactJpExtensions
     {
         $this->container['last'] = $last;
 
@@ -343,7 +346,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganization()
+    public function getOrganization(): mixed
     {
         return $this->container['organization'];
     }
@@ -355,7 +358,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setOrganization($organization): ContactJpExtensions
     {
         $this->container['organization'] = $organization;
 
@@ -367,7 +370,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAdressLine1()
+    public function getAdressLine1(): mixed
     {
         return $this->container['adressLine1'];
     }
@@ -379,7 +382,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdressLine1($adressLine1)
+    public function setAdressLine1($adressLine1): ContactJpExtensions
     {
         $this->container['adressLine1'] = $adressLine1;
 
@@ -391,7 +394,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAdressLine2()
+    public function getAdressLine2(): mixed
     {
         return $this->container['adressLine2'];
     }
@@ -403,7 +406,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdressLine2($adressLine2)
+    public function setAdressLine2($adressLine2): ContactJpExtensions
     {
         $this->container['adressLine2'] = $adressLine2;
 
@@ -415,7 +418,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAdressLine3()
+    public function getAdressLine3(): mixed
     {
         return $this->container['adressLine3'];
     }
@@ -427,7 +430,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdressLine3($adressLine3)
+    public function setAdressLine3($adressLine3): ContactJpExtensions
     {
         $this->container['adressLine3'] = $adressLine3;
 
@@ -502,23 +505,22 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class ContactJpExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

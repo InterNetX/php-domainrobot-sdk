@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainSafeAccount Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -242,7 +245,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -253,7 +256,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -272,7 +275,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -297,7 +300,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -313,7 +316,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -325,7 +328,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): DomainSafeAccount
     {
         $this->container['created'] = $created;
 
@@ -337,7 +340,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -349,7 +352,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): DomainSafeAccount
     {
         $this->container['updated'] = $updated;
 
@@ -361,7 +364,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -373,7 +376,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): DomainSafeAccount
     {
         $this->container['owner'] = $owner;
 
@@ -385,7 +388,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -397,7 +400,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): DomainSafeAccount
     {
         $this->container['updater'] = $updater;
 
@@ -409,7 +412,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -421,7 +424,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): DomainSafeAccount
     {
         $this->container['name'] = $name;
 
@@ -433,7 +436,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Phone
      */
-    public function getMobile()
+    public function getMobile(): mixed
     {
         return $this->container['mobile'];
     }
@@ -445,7 +448,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMobile($mobile)
+    public function setMobile($mobile): DomainSafeAccount
     {
         $this->container['mobile'] = $mobile;
 
@@ -457,7 +460,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPin()
+    public function getPin(): mixed
     {
         return $this->container['pin'];
     }
@@ -469,7 +472,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPin($pin)
+    public function setPin($pin): DomainSafeAccount
     {
         $this->container['pin'] = $pin;
 
@@ -481,7 +484,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Phone
      */
-    public function getRevalidationNumber()
+    public function getRevalidationNumber(): mixed
     {
         return $this->container['revalidationNumber'];
     }
@@ -493,7 +496,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRevalidationNumber($revalidationNumber)
+    public function setRevalidationNumber($revalidationNumber): DomainSafeAccount
     {
         $this->container['revalidationNumber'] = $revalidationNumber;
 
@@ -505,7 +508,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainSafeUser[]
      */
-    public function getSafeuser()
+    public function getSafeuser(): mixed
     {
         return $this->container['safeuser'];
     }
@@ -517,7 +520,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSafeuser($safeuser)
+    public function setSafeuser($safeuser): DomainSafeAccount
     {
         $this->container['safeuser'] = $safeuser;
 
@@ -592,23 +595,22 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -618,7 +620,7 @@ class DomainSafeAccount implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

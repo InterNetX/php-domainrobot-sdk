@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainStudioSourceSuggestion2 Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
      */
-    public function getServices()
+    public function getServices(): mixed
     {
         return $this->container['services'];
     }
@@ -337,7 +340,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setServices($services): DomainStudioSourceSuggestion2
     {
         $this->container['services'] = $services;
 
@@ -349,7 +352,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -361,7 +364,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainStudioSourceSuggestion2
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -373,7 +376,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -385,7 +388,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): DomainStudioSourceSuggestion2
     {
         $this->container['domains'] = $domains;
 
@@ -397,7 +400,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -409,7 +412,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): DomainStudioSourceSuggestion2
     {
         $this->container['language'] = $language;
 
@@ -421,7 +424,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMax()
+    public function getMax(): mixed
     {
         return $this->container['max'];
     }
@@ -433,7 +436,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setMax($max): DomainStudioSourceSuggestion2
     {
         $this->container['max'] = $max;
 
@@ -445,7 +448,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMaxSimilarWords()
+    public function getMaxSimilarWords(): mixed
     {
         return $this->container['maxSimilarWords'];
     }
@@ -457,7 +460,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMaxSimilarWords($maxSimilarWords)
+    public function setMaxSimilarWords($maxSimilarWords): DomainStudioSourceSuggestion2
     {
         $this->container['maxSimilarWords'] = $maxSimilarWords;
 
@@ -469,7 +472,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMaxPrefixSuffix()
+    public function getMaxPrefixSuffix(): mixed
     {
         return $this->container['maxPrefixSuffix'];
     }
@@ -481,7 +484,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMaxPrefixSuffix($maxPrefixSuffix)
+    public function setMaxPrefixSuffix($maxPrefixSuffix): DomainStudioSourceSuggestion2
     {
         $this->container['maxPrefixSuffix'] = $maxPrefixSuffix;
 
@@ -493,7 +496,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseDash()
+    public function getUseDash(): mixed
     {
         return $this->container['useDash'];
     }
@@ -505,7 +508,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseDash($useDash)
+    public function setUseDash($useDash): DomainStudioSourceSuggestion2
     {
         $this->container['useDash'] = $useDash;
 
@@ -517,7 +520,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseWordSegmentation()
+    public function getUseWordSegmentation(): mixed
     {
         return $this->container['useWordSegmentation'];
     }
@@ -529,7 +532,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseWordSegmentation($useWordSegmentation)
+    public function setUseWordSegmentation($useWordSegmentation): DomainStudioSourceSuggestion2
     {
         $this->container['useWordSegmentation'] = $useWordSegmentation;
 
@@ -541,7 +544,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTlds()
+    public function getTlds(): mixed
     {
         return $this->container['tlds'];
     }
@@ -553,7 +556,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTlds($tlds)
+    public function setTlds($tlds): DomainStudioSourceSuggestion2
     {
         $this->container['tlds'] = $tlds;
 
@@ -565,7 +568,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDebugTime()
+    public function getDebugTime(): mixed
     {
         return $this->container['debugTime'];
     }
@@ -577,7 +580,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDebugTime($debugTime)
+    public function setDebugTime($debugTime): DomainStudioSourceSuggestion2
     {
         $this->container['debugTime'] = $debugTime;
 
@@ -652,23 +655,22 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class DomainStudioSourceSuggestion2 implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

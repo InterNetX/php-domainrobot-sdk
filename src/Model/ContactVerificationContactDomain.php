@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactVerificationContactDomain Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -307,7 +310,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ContactVerificationContactDomain
     {
         $this->container['created'] = $created;
 
@@ -319,7 +322,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -331,7 +334,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ContactVerificationContactDomain
     {
         $this->container['updated'] = $updated;
 
@@ -343,7 +346,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -355,7 +358,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): ContactVerificationContactDomain
     {
         $this->container['name'] = $name;
 
@@ -367,7 +370,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -379,7 +382,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): ContactVerificationContactDomain
     {
         $this->container['idn'] = $idn;
 
@@ -391,7 +394,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\VerifyStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -403,7 +406,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): ContactVerificationContactDomain
     {
         $this->container['status'] = $status;
 
@@ -415,7 +418,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDeactivation()
+    public function getDeactivation(): mixed
     {
         return $this->container['deactivation'];
     }
@@ -427,7 +430,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDeactivation($deactivation)
+    public function setDeactivation($deactivation): ContactVerificationContactDomain
     {
         $this->container['deactivation'] = $deactivation;
 
@@ -502,23 +505,22 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class ContactVerificationContactDomain implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ZoneQuery Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -319,7 +322,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ZoneQuery
     {
         $this->container['created'] = $created;
 
@@ -331,7 +334,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -343,7 +346,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ZoneQuery
     {
         $this->container['updated'] = $updated;
 
@@ -355,7 +358,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDate()
+    public function getDate(): mixed
     {
         return $this->container['date'];
     }
@@ -367,7 +370,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDate($date)
+    public function setDate($date): ZoneQuery
     {
         $this->container['date'] = $date;
 
@@ -379,7 +382,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCount()
+    public function getCount(): mixed
     {
         return $this->container['count'];
     }
@@ -391,7 +394,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCount($count)
+    public function setCount($count): ZoneQuery
     {
         $this->container['count'] = $count;
 
@@ -403,7 +406,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimeUnitConstants
      */
-    public function getUnit()
+    public function getUnit(): mixed
     {
         return $this->container['unit'];
     }
@@ -415,7 +418,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUnit($unit)
+    public function setUnit($unit): ZoneQuery
     {
         $this->container['unit'] = $unit;
 
@@ -427,7 +430,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Zone
      */
-    public function getZone()
+    public function getZone(): mixed
     {
         return $this->container['zone'];
     }
@@ -439,7 +442,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZone($zone)
+    public function setZone($zone): ZoneQuery
     {
         $this->container['zone'] = $zone;
 
@@ -451,7 +454,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhysicalHostname()
+    public function getPhysicalHostname(): mixed
     {
         return $this->container['physicalHostname'];
     }
@@ -463,7 +466,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhysicalHostname($physicalHostname)
+    public function setPhysicalHostname($physicalHostname): ZoneQuery
     {
         $this->container['physicalHostname'] = $physicalHostname;
 
@@ -475,7 +478,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVirtualNameServer()
+    public function getVirtualNameServer(): mixed
     {
         return $this->container['virtualNameServer'];
     }
@@ -487,7 +490,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVirtualNameServer($virtualNameServer)
+    public function setVirtualNameServer($virtualNameServer): ZoneQuery
     {
         $this->container['virtualNameServer'] = $virtualNameServer;
 
@@ -562,23 +565,22 @@ class ZoneQuery implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class ZoneQuery implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

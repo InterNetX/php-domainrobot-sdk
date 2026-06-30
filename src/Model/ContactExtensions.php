@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -332,7 +335,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -343,7 +346,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -362,7 +365,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -387,7 +390,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -403,7 +406,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactAeroExtensions
      */
-    public function getAero()
+    public function getAero(): mixed
     {
         return $this->container['aero'];
     }
@@ -415,7 +418,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAero($aero)
+    public function setAero($aero): ContactExtensions
     {
         $this->container['aero'] = $aero;
 
@@ -427,7 +430,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactAuExtensions
      */
-    public function getAu()
+    public function getAu(): mixed
     {
         return $this->container['au'];
     }
@@ -439,7 +442,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAu($au)
+    public function setAu($au): ContactExtensions
     {
         $this->container['au'] = $au;
 
@@ -451,7 +454,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactCatExtensions
      */
-    public function getCat()
+    public function getCat(): mixed
     {
         return $this->container['cat'];
     }
@@ -463,7 +466,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCat($cat)
+    public function setCat($cat): ContactExtensions
     {
         $this->container['cat'] = $cat;
 
@@ -475,7 +478,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactJobsExtensions
      */
-    public function getJobs()
+    public function getJobs(): mixed
     {
         return $this->container['jobs'];
     }
@@ -487,7 +490,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setJobs($jobs)
+    public function setJobs($jobs): ContactExtensions
     {
         $this->container['jobs'] = $jobs;
 
@@ -499,7 +502,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactItExtensions
      */
-    public function getIt()
+    public function getIt(): mixed
     {
         return $this->container['it'];
     }
@@ -511,7 +514,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIt($it)
+    public function setIt($it): ContactExtensions
     {
         $this->container['it'] = $it;
 
@@ -523,7 +526,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactJpExtensions
      */
-    public function getJp()
+    public function getJp(): mixed
     {
         return $this->container['jp'];
     }
@@ -535,7 +538,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setJp($jp)
+    public function setJp($jp): ContactExtensions
     {
         $this->container['jp'] = $jp;
 
@@ -547,7 +550,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactXxxExtensions
      */
-    public function getXxx()
+    public function getXxx(): mixed
     {
         return $this->container['xxx'];
     }
@@ -559,7 +562,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setXxx($xxx)
+    public function setXxx($xxx): ContactExtensions
     {
         $this->container['xxx'] = $xxx;
 
@@ -571,7 +574,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactHkExtensions
      */
-    public function getHk()
+    public function getHk(): mixed
     {
         return $this->container['hk'];
     }
@@ -583,7 +586,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHk($hk)
+    public function setHk($hk): ContactExtensions
     {
         $this->container['hk'] = $hk;
 
@@ -595,7 +598,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactBankExtensions
      */
-    public function getBank()
+    public function getBank(): mixed
     {
         return $this->container['bank'];
     }
@@ -607,7 +610,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBank($bank)
+    public function setBank($bank): ContactExtensions
     {
         $this->container['bank'] = $bank;
 
@@ -619,7 +622,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactSwissExtensions
      */
-    public function getSwiss()
+    public function getSwiss(): mixed
     {
         return $this->container['swiss'];
     }
@@ -631,7 +634,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSwiss($swiss)
+    public function setSwiss($swiss): ContactExtensions
     {
         $this->container['swiss'] = $swiss;
 
@@ -643,7 +646,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactRuExtensions
      */
-    public function getRu()
+    public function getRu(): mixed
     {
         return $this->container['ru'];
     }
@@ -655,7 +658,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRu($ru)
+    public function setRu($ru): ContactExtensions
     {
         $this->container['ru'] = $ru;
 
@@ -667,7 +670,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactUkExtensions
      */
-    public function getUk()
+    public function getUk(): mixed
     {
         return $this->container['uk'];
     }
@@ -679,7 +682,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUk($uk)
+    public function setUk($uk): ContactExtensions
     {
         $this->container['uk'] = $uk;
 
@@ -691,7 +694,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactCaExtensions
      */
-    public function getCa()
+    public function getCa(): mixed
     {
         return $this->container['ca'];
     }
@@ -703,7 +706,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCa($ca)
+    public function setCa($ca): ContactExtensions
     {
         $this->container['ca'] = $ca;
 
@@ -715,7 +718,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactRoExtensions
      */
-    public function getRo()
+    public function getRo(): mixed
     {
         return $this->container['ro'];
     }
@@ -727,7 +730,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRo($ro)
+    public function setRo($ro): ContactExtensions
     {
         $this->container['ro'] = $ro;
 
@@ -739,7 +742,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactBarcelonaExtensions
      */
-    public function getBarcelona()
+    public function getBarcelona(): mixed
     {
         return $this->container['barcelona'];
     }
@@ -751,7 +754,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBarcelona($barcelona)
+    public function setBarcelona($barcelona): ContactExtensions
     {
         $this->container['barcelona'] = $barcelona;
 
@@ -763,7 +766,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactGeneralExtensions
      */
-    public function getGeneral()
+    public function getGeneral(): mixed
     {
         return $this->container['general'];
     }
@@ -775,7 +778,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGeneral($general)
+    public function setGeneral($general): ContactExtensions
     {
         $this->container['general'] = $general;
 
@@ -787,7 +790,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactNzExtensions
      */
-    public function getNz()
+    public function getNz(): mixed
     {
         return $this->container['nz'];
     }
@@ -799,7 +802,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNz($nz)
+    public function setNz($nz): ContactExtensions
     {
         $this->container['nz'] = $nz;
 
@@ -811,7 +814,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactSportExtensions
      */
-    public function getSport()
+    public function getSport(): mixed
     {
         return $this->container['sport'];
     }
@@ -823,7 +826,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSport($sport)
+    public function setSport($sport): ContactExtensions
     {
         $this->container['sport'] = $sport;
 
@@ -835,7 +838,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactLuxeExtensions
      */
-    public function getLuxe()
+    public function getLuxe(): mixed
     {
         return $this->container['luxe'];
     }
@@ -847,7 +850,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLuxe($luxe)
+    public function setLuxe($luxe): ContactExtensions
     {
         $this->container['luxe'] = $luxe;
 
@@ -859,7 +862,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactMadridExtensions
      */
-    public function getMadrid()
+    public function getMadrid(): mixed
     {
         return $this->container['madrid'];
     }
@@ -871,7 +874,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMadrid($madrid)
+    public function setMadrid($madrid): ContactExtensions
     {
         $this->container['madrid'] = $madrid;
 
@@ -883,7 +886,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactScotExtensions
      */
-    public function getScot()
+    public function getScot(): mixed
     {
         return $this->container['scot'];
     }
@@ -895,7 +898,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setScot($scot)
+    public function setScot($scot): ContactExtensions
     {
         $this->container['scot'] = $scot;
 
@@ -907,7 +910,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactIeExtensions
      */
-    public function getIe()
+    public function getIe(): mixed
     {
         return $this->container['ie'];
     }
@@ -919,7 +922,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIe($ie)
+    public function setIe($ie): ContactExtensions
     {
         $this->container['ie'] = $ie;
 
@@ -931,7 +934,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactZuerichExtensions
      */
-    public function getZuerich()
+    public function getZuerich(): mixed
     {
         return $this->container['zuerich'];
     }
@@ -943,7 +946,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setZuerich($zuerich)
+    public function setZuerich($zuerich): ContactExtensions
     {
         $this->container['zuerich'] = $zuerich;
 
@@ -955,7 +958,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactEsExtensions
      */
-    public function getEs()
+    public function getEs(): mixed
     {
         return $this->container['es'];
     }
@@ -967,7 +970,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEs($es)
+    public function setEs($es): ContactExtensions
     {
         $this->container['es'] = $es;
 
@@ -1042,23 +1045,22 @@ class ContactExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1068,7 +1070,7 @@ class ContactExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

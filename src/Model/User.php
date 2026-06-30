@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * User Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -374,7 +377,7 @@ class User implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -385,7 +388,7 @@ class User implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -404,7 +407,7 @@ class User implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -429,7 +432,7 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -445,7 +448,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -457,7 +460,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): User
     {
         $this->container['created'] = $created;
 
@@ -469,7 +472,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -481,7 +484,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): User
     {
         $this->container['updated'] = $updated;
 
@@ -493,7 +496,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getContext()
+    public function getContext(): mixed
     {
         return $this->container['context'];
     }
@@ -505,7 +508,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContext($context)
+    public function setContext($context): User
     {
         $this->container['context'] = $context;
 
@@ -517,7 +520,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPassword()
+    public function getPassword(): mixed
     {
         return $this->container['password'];
     }
@@ -529,7 +532,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setPassword($password): User
     {
         $this->container['password'] = $password;
 
@@ -541,7 +544,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDefaultEmail()
+    public function getDefaultEmail(): mixed
     {
         return $this->container['defaultEmail'];
     }
@@ -553,7 +556,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDefaultEmail($defaultEmail)
+    public function setDefaultEmail($defaultEmail): User
     {
         $this->container['defaultEmail'] = $defaultEmail;
 
@@ -565,7 +568,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -577,7 +580,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): User
     {
         $this->container['status'] = $status;
 
@@ -589,7 +592,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getSubstatus()
+    public function getSubstatus(): mixed
     {
         return $this->container['substatus'];
     }
@@ -601,7 +604,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubstatus($substatus)
+    public function setSubstatus($substatus): User
     {
         $this->container['substatus'] = $substatus;
 
@@ -613,7 +616,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuthType
      */
-    public function getAuthType()
+    public function getAuthType(): mixed
     {
         return $this->container['authType'];
     }
@@ -625,7 +628,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthType($authType)
+    public function setAuthType($authType): User
     {
         $this->container['authType'] = $authType;
 
@@ -637,7 +640,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\UserDetails
      */
-    public function getDetails()
+    public function getDetails(): mixed
     {
         return $this->container['details'];
     }
@@ -649,7 +652,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDetails($details)
+    public function setDetails($details): User
     {
         $this->container['details'] = $details;
 
@@ -661,7 +664,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\UserLock
      */
-    public function getLock()
+    public function getLock(): mixed
     {
         return $this->container['lock'];
     }
@@ -673,7 +676,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLock($lock)
+    public function setLock($lock): User
     {
         $this->container['lock'] = $lock;
 
@@ -685,7 +688,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOldPassword()
+    public function getOldPassword(): mixed
     {
         return $this->container['oldPassword'];
     }
@@ -697,7 +700,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOldPassword($oldPassword)
+    public function setOldPassword($oldPassword): User
     {
         $this->container['oldPassword'] = $oldPassword;
 
@@ -709,7 +712,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPasswordChanged()
+    public function getPasswordChanged(): mixed
     {
         return $this->container['passwordChanged'];
     }
@@ -721,7 +724,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordChanged($passwordChanged)
+    public function setPasswordChanged($passwordChanged): User
     {
         $this->container['passwordChanged'] = $passwordChanged;
 
@@ -733,7 +736,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPasswordExpires()
+    public function getPasswordExpires(): mixed
     {
         return $this->container['passwordExpires'];
     }
@@ -745,7 +748,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordExpires($passwordExpires)
+    public function setPasswordExpires($passwordExpires): User
     {
         $this->container['passwordExpires'] = $passwordExpires;
 
@@ -757,7 +760,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\UserAcls
      */
-    public function getAcls()
+    public function getAcls(): mixed
     {
         return $this->container['acls'];
     }
@@ -769,7 +772,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAcls($acls)
+    public function setAcls($acls): User
     {
         $this->container['acls'] = $acls;
 
@@ -781,7 +784,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\UserProfileViews
      */
-    public function getProfiles()
+    public function getProfiles(): mixed
     {
         return $this->container['profiles'];
     }
@@ -793,7 +796,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProfiles($profiles)
+    public function setProfiles($profiles): User
     {
         $this->container['profiles'] = $profiles;
 
@@ -805,7 +808,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ServiceProfiles
      */
-    public function getServiceProfiles()
+    public function getServiceProfiles(): mixed
     {
         return $this->container['serviceProfiles'];
     }
@@ -817,7 +820,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServiceProfiles($serviceProfiles)
+    public function setServiceProfiles($serviceProfiles): User
     {
         $this->container['serviceProfiles'] = $serviceProfiles;
 
@@ -829,7 +832,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
-    public function getAncestors()
+    public function getAncestors(): mixed
     {
         return $this->container['ancestors'];
     }
@@ -841,7 +844,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAncestors($ancestors)
+    public function setAncestors($ancestors): User
     {
         $this->container['ancestors'] = $ancestors;
 
@@ -853,7 +856,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -865,7 +868,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): User
     {
         $this->container['customer'] = $customer;
 
@@ -877,7 +880,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\VirtualNameServerGroup[]
      */
-    public function getNameServerGroups()
+    public function getNameServerGroups(): mixed
     {
         return $this->container['nameServerGroups'];
     }
@@ -889,7 +892,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNameServerGroups($nameServerGroups)
+    public function setNameServerGroups($nameServerGroups): User
     {
         $this->container['nameServerGroups'] = $nameServerGroups;
 
@@ -901,7 +904,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Subscription[]
      */
-    public function getSubscriptions()
+    public function getSubscriptions(): mixed
     {
         return $this->container['subscriptions'];
     }
@@ -913,7 +916,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubscriptions($subscriptions)
+    public function setSubscriptions($subscriptions): User
     {
         $this->container['subscriptions'] = $subscriptions;
 
@@ -925,7 +928,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TrustedApplication[]
      */
-    public function getApplications()
+    public function getApplications(): mixed
     {
         return $this->container['applications'];
     }
@@ -937,7 +940,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setApplications($applications)
+    public function setApplications($applications): User
     {
         $this->container['applications'] = $applications;
 
@@ -949,7 +952,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\IpRestrictions
      */
-    public function getRestrictions()
+    public function getRestrictions(): mixed
     {
         return $this->container['restrictions'];
     }
@@ -961,7 +964,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRestrictions($restrictions)
+    public function setRestrictions($restrictions): User
     {
         $this->container['restrictions'] = $restrictions;
 
@@ -973,7 +976,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCustomerLevel()
+    public function getCustomerLevel(): mixed
     {
         return $this->container['customerLevel'];
     }
@@ -985,7 +988,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomerLevel($customerLevel)
+    public function setCustomerLevel($customerLevel): User
     {
         $this->container['customerLevel'] = $customerLevel;
 
@@ -997,7 +1000,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUser()
+    public function getUser(): mixed
     {
         return $this->container['user'];
     }
@@ -1009,7 +1012,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setUser($user): User
     {
         $this->container['user'] = $user;
 
@@ -1021,7 +1024,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -1033,7 +1036,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): User
     {
         $this->container['language'] = $language;
 
@@ -1045,7 +1048,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPasswordExpired()
+    public function getPasswordExpired(): mixed
     {
         return $this->container['passwordExpired'];
     }
@@ -1057,7 +1060,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordExpired($passwordExpired)
+    public function setPasswordExpired($passwordExpired): User
     {
         $this->container['passwordExpired'] = $passwordExpired;
 
@@ -1069,7 +1072,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\User
      */
-    public function getParent()
+    public function getParent(): mixed
     {
         return $this->container['parent'];
     }
@@ -1081,7 +1084,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setParent($parent)
+    public function setParent($parent): User
     {
         $this->container['parent'] = $parent;
 
@@ -1093,7 +1096,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDirectCustomer()
+    public function getDirectCustomer(): mixed
     {
         return $this->container['directCustomer'];
     }
@@ -1105,7 +1108,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDirectCustomer($directCustomer)
+    public function setDirectCustomer($directCustomer): User
     {
         $this->container['directCustomer'] = $directCustomer;
 
@@ -1117,7 +1120,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ExternalAccounting[]
      */
-    public function getClientAccounts()
+    public function getClientAccounts(): mixed
     {
         return $this->container['clientAccounts'];
     }
@@ -1129,7 +1132,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClientAccounts($clientAccounts)
+    public function setClientAccounts($clientAccounts): User
     {
         $this->container['clientAccounts'] = $clientAccounts;
 
@@ -1141,7 +1144,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TaskLimit[]
      */
-    public function getTasklimits()
+    public function getTasklimits(): mixed
     {
         return $this->container['tasklimits'];
     }
@@ -1153,7 +1156,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTasklimits($tasklimits)
+    public function setTasklimits($tasklimits): User
     {
         $this->container['tasklimits'] = $tasklimits;
 
@@ -1165,7 +1168,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TrusteeContact[]
      */
-    public function getTrusteeContacts()
+    public function getTrusteeContacts(): mixed
     {
         return $this->container['trusteeContacts'];
     }
@@ -1177,7 +1180,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrusteeContacts($trusteeContacts)
+    public function setTrusteeContacts($trusteeContacts): User
     {
         $this->container['trusteeContacts'] = $trusteeContacts;
 
@@ -1252,23 +1255,22 @@ class User implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1278,7 +1280,7 @@ class User implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

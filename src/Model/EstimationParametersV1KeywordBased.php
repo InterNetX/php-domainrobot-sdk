@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * EstimationParametersV1KeywordBased Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -272,7 +275,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -283,7 +286,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -302,7 +305,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -327,7 +330,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -343,7 +346,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getWord()
+    public function getWord(): mixed
     {
         return $this->container['word'];
     }
@@ -355,7 +358,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setWord($word)
+    public function setWord($word): EstimationParametersV1KeywordBased
     {
         $this->container['word'] = $word;
 
@@ -367,7 +370,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVersion()
+    public function getVersion(): mixed
     {
         return $this->container['version'];
     }
@@ -379,7 +382,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVersion($version)
+    public function setVersion($version): EstimationParametersV1KeywordBased
     {
         $this->container['version'] = $version;
 
@@ -391,7 +394,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getSegments()
+    public function getSegments(): mixed
     {
         return $this->container['segments'];
     }
@@ -403,7 +406,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSegments($segments)
+    public function setSegments($segments): EstimationParametersV1KeywordBased
     {
         $this->container['segments'] = $segments;
 
@@ -415,7 +418,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getNumWords()
+    public function getNumWords(): mixed
     {
         return $this->container['numWords'];
     }
@@ -427,7 +430,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumWords($numWords)
+    public function setNumWords($numWords): EstimationParametersV1KeywordBased
     {
         $this->container['numWords'] = $numWords;
 
@@ -439,7 +442,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getKeywords()
+    public function getKeywords(): mixed
     {
         return $this->container['keywords'];
     }
@@ -451,7 +454,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKeywords($keywords)
+    public function setKeywords($keywords): EstimationParametersV1KeywordBased
     {
         $this->container['keywords'] = $keywords;
 
@@ -463,7 +466,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getNumKeywords()
+    public function getNumKeywords(): mixed
     {
         return $this->container['numKeywords'];
     }
@@ -475,7 +478,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumKeywords($numKeywords)
+    public function setNumKeywords($numKeywords): EstimationParametersV1KeywordBased
     {
         $this->container['numKeywords'] = $numKeywords;
 
@@ -487,7 +490,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAverageKeywordFrequency()
+    public function getAverageKeywordFrequency(): mixed
     {
         return $this->container['averageKeywordFrequency'];
     }
@@ -499,7 +502,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageKeywordFrequency($averageKeywordFrequency)
+    public function setAverageKeywordFrequency($averageKeywordFrequency): EstimationParametersV1KeywordBased
     {
         $this->container['averageKeywordFrequency'] = $averageKeywordFrequency;
 
@@ -511,7 +514,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAverageKeywordPrice()
+    public function getAverageKeywordPrice(): mixed
     {
         return $this->container['averageKeywordPrice'];
     }
@@ -523,7 +526,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageKeywordPrice($averageKeywordPrice)
+    public function setAverageKeywordPrice($averageKeywordPrice): EstimationParametersV1KeywordBased
     {
         $this->container['averageKeywordPrice'] = $averageKeywordPrice;
 
@@ -535,7 +538,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPrefix()
+    public function getPrefix(): mixed
     {
         return $this->container['prefix'];
     }
@@ -547,7 +550,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrefix($prefix)
+    public function setPrefix($prefix): EstimationParametersV1KeywordBased
     {
         $this->container['prefix'] = $prefix;
 
@@ -559,7 +562,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAveragePrefixFrequency()
+    public function getAveragePrefixFrequency(): mixed
     {
         return $this->container['averagePrefixFrequency'];
     }
@@ -571,7 +574,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAveragePrefixFrequency($averagePrefixFrequency)
+    public function setAveragePrefixFrequency($averagePrefixFrequency): EstimationParametersV1KeywordBased
     {
         $this->container['averagePrefixFrequency'] = $averagePrefixFrequency;
 
@@ -583,7 +586,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAveragePrefixPrice()
+    public function getAveragePrefixPrice(): mixed
     {
         return $this->container['averagePrefixPrice'];
     }
@@ -595,7 +598,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAveragePrefixPrice($averagePrefixPrice)
+    public function setAveragePrefixPrice($averagePrefixPrice): EstimationParametersV1KeywordBased
     {
         $this->container['averagePrefixPrice'] = $averagePrefixPrice;
 
@@ -607,7 +610,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSuffix()
+    public function getSuffix(): mixed
     {
         return $this->container['suffix'];
     }
@@ -619,7 +622,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSuffix($suffix)
+    public function setSuffix($suffix): EstimationParametersV1KeywordBased
     {
         $this->container['suffix'] = $suffix;
 
@@ -631,7 +634,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAverageSuffixFrequency()
+    public function getAverageSuffixFrequency(): mixed
     {
         return $this->container['averageSuffixFrequency'];
     }
@@ -643,7 +646,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageSuffixFrequency($averageSuffixFrequency)
+    public function setAverageSuffixFrequency($averageSuffixFrequency): EstimationParametersV1KeywordBased
     {
         $this->container['averageSuffixFrequency'] = $averageSuffixFrequency;
 
@@ -655,7 +658,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAverageSuffixPrice()
+    public function getAverageSuffixPrice(): mixed
     {
         return $this->container['averageSuffixPrice'];
     }
@@ -667,7 +670,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAverageSuffixPrice($averageSuffixPrice)
+    public function setAverageSuffixPrice($averageSuffixPrice): EstimationParametersV1KeywordBased
     {
         $this->container['averageSuffixPrice'] = $averageSuffixPrice;
 
@@ -742,23 +745,22 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -768,7 +770,7 @@ class EstimationParametersV1KeywordBased implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

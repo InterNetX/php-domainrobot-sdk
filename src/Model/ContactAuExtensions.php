@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ContactAuExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEligibilityId()
+    public function getEligibilityId(): mixed
     {
         return $this->container['eligibilityId'];
     }
@@ -319,7 +322,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEligibilityId($eligibilityId)
+    public function setEligibilityId($eligibilityId): ContactAuExtensions
     {
         $this->container['eligibilityId'] = $eligibilityId;
 
@@ -331,7 +334,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuEligibilityIdTypeConstants
      */
-    public function getEligibilityIdType()
+    public function getEligibilityIdType(): mixed
     {
         return $this->container['eligibilityIdType'];
     }
@@ -343,7 +346,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEligibilityIdType($eligibilityIdType)
+    public function setEligibilityIdType($eligibilityIdType): ContactAuExtensions
     {
         $this->container['eligibilityIdType'] = $eligibilityIdType;
 
@@ -355,7 +358,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEligibilityName()
+    public function getEligibilityName(): mixed
     {
         return $this->container['eligibilityName'];
     }
@@ -367,7 +370,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEligibilityName($eligibilityName)
+    public function setEligibilityName($eligibilityName): ContactAuExtensions
     {
         $this->container['eligibilityName'] = $eligibilityName;
 
@@ -379,7 +382,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuEligibilityTypeConstants
      */
-    public function getEligibilityType()
+    public function getEligibilityType(): mixed
     {
         return $this->container['eligibilityType'];
     }
@@ -391,7 +394,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEligibilityType($eligibilityType)
+    public function setEligibilityType($eligibilityType): ContactAuExtensions
     {
         $this->container['eligibilityType'] = $eligibilityType;
 
@@ -403,7 +406,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPolicyReason()
+    public function getPolicyReason(): mixed
     {
         return $this->container['policyReason'];
     }
@@ -415,7 +418,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPolicyReason($policyReason)
+    public function setPolicyReason($policyReason): ContactAuExtensions
     {
         $this->container['policyReason'] = $policyReason;
 
@@ -427,7 +430,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRegistrantId()
+    public function getRegistrantId(): mixed
     {
         return $this->container['registrantId'];
     }
@@ -439,7 +442,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrantId($registrantId)
+    public function setRegistrantId($registrantId): ContactAuExtensions
     {
         $this->container['registrantId'] = $registrantId;
 
@@ -451,7 +454,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuRegistrantIdTypeConstants
      */
-    public function getRegistrantIdType()
+    public function getRegistrantIdType(): mixed
     {
         return $this->container['registrantIdType'];
     }
@@ -463,7 +466,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrantIdType($registrantIdType)
+    public function setRegistrantIdType($registrantIdType): ContactAuExtensions
     {
         $this->container['registrantIdType'] = $registrantIdType;
 
@@ -475,7 +478,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRegistrantName()
+    public function getRegistrantName(): mixed
     {
         return $this->container['registrantName'];
     }
@@ -487,7 +490,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrantName($registrantName)
+    public function setRegistrantName($registrantName): ContactAuExtensions
     {
         $this->container['registrantName'] = $registrantName;
 
@@ -562,23 +565,22 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class ContactAuExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

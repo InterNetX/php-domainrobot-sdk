@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * PriceClassTemplate Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -302,7 +305,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -313,7 +316,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -332,7 +335,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -357,7 +360,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -373,7 +376,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -385,7 +388,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): PriceClassTemplate
     {
         $this->container['created'] = $created;
 
@@ -397,7 +400,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -409,7 +412,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): PriceClassTemplate
     {
         $this->container['updated'] = $updated;
 
@@ -421,7 +424,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -433,7 +436,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): PriceClassTemplate
     {
         $this->container['id'] = $id;
 
@@ -445,7 +448,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -457,7 +460,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): PriceClassTemplate
     {
         $this->container['name'] = $name;
 
@@ -469,7 +472,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BusinessCase
      */
-    public function getBusinessCase()
+    public function getBusinessCase(): mixed
     {
         return $this->container['businessCase'];
     }
@@ -481,7 +484,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessCase($businessCase)
+    public function setBusinessCase($businessCase): PriceClassTemplate
     {
         $this->container['businessCase'] = $businessCase;
 
@@ -493,7 +496,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceChange
      */
-    public function getPriceChange()
+    public function getPriceChange(): mixed
     {
         return $this->container['priceChange'];
     }
@@ -505,7 +508,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceChange($priceChange)
+    public function setPriceChange($priceChange): PriceClassTemplate
     {
         $this->container['priceChange'] = $priceChange;
 
@@ -517,7 +520,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -529,7 +532,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): PriceClassTemplate
     {
         $this->container['customer'] = $customer;
 
@@ -541,7 +544,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriorityConstants
      */
-    public function getPriority()
+    public function getPriority(): mixed
     {
         return $this->container['priority'];
     }
@@ -553,7 +556,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriority($priority)
+    public function setPriority($priority): PriceClassTemplate
     {
         $this->container['priority'] = $priority;
 
@@ -565,7 +568,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDiscountable()
+    public function getDiscountable(): mixed
     {
         return $this->container['discountable'];
     }
@@ -577,7 +580,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDiscountable($discountable)
+    public function setDiscountable($discountable): PriceClassTemplate
     {
         $this->container['discountable'] = $discountable;
 
@@ -589,7 +592,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -601,7 +604,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): PriceClassTemplate
     {
         $this->container['currency'] = $currency;
 
@@ -613,7 +616,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -625,7 +628,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): PriceClassTemplate
     {
         $this->container['period'] = $period;
 
@@ -637,7 +640,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RelativeConstants
      */
-    public function getRelative()
+    public function getRelative(): mixed
     {
         return $this->container['relative'];
     }
@@ -649,7 +652,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRelative($relative)
+    public function setRelative($relative): PriceClassTemplate
     {
         $this->container['relative'] = $relative;
 
@@ -661,7 +664,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getAmount()
+    public function getAmount(): mixed
     {
         return $this->container['amount'];
     }
@@ -673,7 +676,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setAmount($amount): PriceClassTemplate
     {
         $this->container['amount'] = $amount;
 
@@ -685,7 +688,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getActualAmount()
+    public function getActualAmount(): mixed
     {
         return $this->container['actualAmount'];
     }
@@ -697,7 +700,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setActualAmount($actualAmount)
+    public function setActualAmount($actualAmount): PriceClassTemplate
     {
         $this->container['actualAmount'] = $actualAmount;
 
@@ -709,7 +712,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getActualCurrency()
+    public function getActualCurrency(): mixed
     {
         return $this->container['actualCurrency'];
     }
@@ -721,7 +724,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setActualCurrency($actualCurrency)
+    public function setActualCurrency($actualCurrency): PriceClassTemplate
     {
         $this->container['actualCurrency'] = $actualCurrency;
 
@@ -733,7 +736,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getPurchaseAmount()
+    public function getPurchaseAmount(): mixed
     {
         return $this->container['purchaseAmount'];
     }
@@ -745,7 +748,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPurchaseAmount($purchaseAmount)
+    public function setPurchaseAmount($purchaseAmount): PriceClassTemplate
     {
         $this->container['purchaseAmount'] = $purchaseAmount;
 
@@ -757,7 +760,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getMargin()
+    public function getMargin(): mixed
     {
         return $this->container['margin'];
     }
@@ -769,7 +772,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMargin($margin)
+    public function setMargin($margin): PriceClassTemplate
     {
         $this->container['margin'] = $margin;
 
@@ -781,7 +784,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceServiceEntity[]
      */
-    public function getPriceConditions()
+    public function getPriceConditions(): mixed
     {
         return $this->container['priceConditions'];
     }
@@ -793,7 +796,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceConditions($priceConditions)
+    public function setPriceConditions($priceConditions): PriceClassTemplate
     {
         $this->container['priceConditions'] = $priceConditions;
 
@@ -805,7 +808,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -817,7 +820,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): PriceClassTemplate
     {
         $this->container['type'] = $type;
 
@@ -892,23 +895,22 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -918,7 +920,7 @@ class PriceClassTemplate implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

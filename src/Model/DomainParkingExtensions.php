@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainParkingExtensions Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getParkingCategory()
+    public function getParkingCategory(): mixed
     {
         return $this->container['parkingCategory'];
     }
@@ -319,7 +322,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setParkingCategory($parkingCategory)
+    public function setParkingCategory($parkingCategory): DomainParkingExtensions
     {
         $this->container['parkingCategory'] = $parkingCategory;
 
@@ -331,7 +334,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -343,7 +346,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): DomainParkingExtensions
     {
         $this->container['currency'] = $currency;
 
@@ -355,7 +358,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomainLanguage()
+    public function getDomainLanguage(): mixed
     {
         return $this->container['domainLanguage'];
     }
@@ -367,7 +370,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainLanguage($domainLanguage)
+    public function setDomainLanguage($domainLanguage): DomainParkingExtensions
     {
         $this->container['domainLanguage'] = $domainLanguage;
 
@@ -379,7 +382,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getForSale()
+    public function getForSale(): mixed
     {
         return $this->container['forSale'];
     }
@@ -391,7 +394,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setForSale($forSale)
+    public function setForSale($forSale): DomainParkingExtensions
     {
         $this->container['forSale'] = $forSale;
 
@@ -403,7 +406,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getKeyword()
+    public function getKeyword(): mixed
     {
         return $this->container['keyword'];
     }
@@ -415,7 +418,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKeyword($keyword)
+    public function setKeyword($keyword): DomainParkingExtensions
     {
         $this->container['keyword'] = $keyword;
 
@@ -427,7 +430,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getPrice()
+    public function getPrice(): mixed
     {
         return $this->container['price'];
     }
@@ -439,7 +442,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrice($price)
+    public function setPrice($price): DomainParkingExtensions
     {
         $this->container['price'] = $price;
 
@@ -451,7 +454,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getFixedPrice()
+    public function getFixedPrice(): mixed
     {
         return $this->container['fixedPrice'];
     }
@@ -463,7 +466,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFixedPrice($fixedPrice)
+    public function setFixedPrice($fixedPrice): DomainParkingExtensions
     {
         $this->container['fixedPrice'] = $fixedPrice;
 
@@ -475,7 +478,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getMinPrice()
+    public function getMinPrice(): mixed
     {
         return $this->container['minPrice'];
     }
@@ -487,7 +490,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinPrice($minPrice)
+    public function setMinPrice($minPrice): DomainParkingExtensions
     {
         $this->container['minPrice'] = $minPrice;
 
@@ -562,23 +565,22 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class DomainParkingExtensions implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

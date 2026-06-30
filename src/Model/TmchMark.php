@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TmchMark Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -332,7 +335,7 @@ class TmchMark implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -343,7 +346,7 @@ class TmchMark implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -362,7 +365,7 @@ class TmchMark implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -387,7 +390,7 @@ class TmchMark implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -403,7 +406,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -415,7 +418,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): TmchMark
     {
         $this->container['created'] = $created;
 
@@ -427,7 +430,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -439,7 +442,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): TmchMark
     {
         $this->container['updated'] = $updated;
 
@@ -451,7 +454,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -463,7 +466,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): TmchMark
     {
         $this->container['owner'] = $owner;
 
@@ -475,7 +478,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -487,7 +490,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): TmchMark
     {
         $this->container['updater'] = $updater;
 
@@ -499,7 +502,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -511,7 +514,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): TmchMark
     {
         $this->container['id'] = $id;
 
@@ -523,7 +526,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchMarkTypeConstants
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -535,7 +538,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): TmchMark
     {
         $this->container['type'] = $type;
 
@@ -547,7 +550,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -559,7 +562,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): TmchMark
     {
         $this->container['name'] = $name;
 
@@ -571,7 +574,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReference()
+    public function getReference(): mixed
     {
         return $this->container['reference'];
     }
@@ -583,7 +586,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setReference($reference): TmchMark
     {
         $this->container['reference'] = $reference;
 
@@ -595,7 +598,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchContact
      */
-    public function getHolder()
+    public function getHolder(): mixed
     {
         return $this->container['holder'];
     }
@@ -607,7 +610,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHolder($holder)
+    public function setHolder($holder): TmchMark
     {
         $this->container['holder'] = $holder;
 
@@ -619,7 +622,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): mixed
     {
         return $this->container['description'];
     }
@@ -631,7 +634,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setDescription($description): TmchMark
     {
         $this->container['description'] = $description;
 
@@ -643,7 +646,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -655,7 +658,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): TmchMark
     {
         $this->container['period'] = $period;
 
@@ -667,7 +670,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchMarkDocument[]
      */
-    public function getDocuments()
+    public function getDocuments(): mixed
     {
         return $this->container['documents'];
     }
@@ -679,7 +682,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDocuments($documents)
+    public function setDocuments($documents): TmchMark
     {
         $this->container['documents'] = $documents;
 
@@ -691,7 +694,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getLabels()
+    public function getLabels(): mixed
     {
         return $this->container['labels'];
     }
@@ -703,7 +706,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabels($labels)
+    public function setLabels($labels): TmchMark
     {
         $this->container['labels'] = $labels;
 
@@ -715,7 +718,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchMarkComment[]
      */
-    public function getComments()
+    public function getComments(): mixed
     {
         return $this->container['comments'];
     }
@@ -727,7 +730,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComments($comments)
+    public function setComments($comments): TmchMark
     {
         $this->container['comments'] = $comments;
 
@@ -739,7 +742,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\RenewStatusConstants
      */
-    public function getRenew()
+    public function getRenew(): mixed
     {
         return $this->container['renew'];
     }
@@ -751,7 +754,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRenew($renew)
+    public function setRenew($renew): TmchMark
     {
         $this->container['renew'] = $renew;
 
@@ -763,7 +766,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchMarkStatusConstants
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -775,7 +778,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): TmchMark
     {
         $this->container['status'] = $status;
 
@@ -787,7 +790,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPayable()
+    public function getPayable(): mixed
     {
         return $this->container['payable'];
     }
@@ -799,7 +802,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayable($payable)
+    public function setPayable($payable): TmchMark
     {
         $this->container['payable'] = $payable;
 
@@ -811,7 +814,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getSent()
+    public function getSent(): mixed
     {
         return $this->container['sent'];
     }
@@ -823,7 +826,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSent($sent)
+    public function setSent($sent): TmchMark
     {
         $this->container['sent'] = $sent;
 
@@ -835,7 +838,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getSmdInclusion()
+    public function getSmdInclusion(): mixed
     {
         return $this->container['smdInclusion'];
     }
@@ -847,7 +850,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSmdInclusion($smdInclusion)
+    public function setSmdInclusion($smdInclusion): TmchMark
     {
         $this->container['smdInclusion'] = $smdInclusion;
 
@@ -859,7 +862,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getClaimsNotify()
+    public function getClaimsNotify(): mixed
     {
         return $this->container['claimsNotify'];
     }
@@ -871,7 +874,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClaimsNotify($claimsNotify)
+    public function setClaimsNotify($claimsNotify): TmchMark
     {
         $this->container['claimsNotify'] = $claimsNotify;
 
@@ -883,7 +886,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOrderComplete()
+    public function getOrderComplete(): mixed
     {
         return $this->container['orderComplete'];
     }
@@ -895,7 +898,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderComplete($orderComplete)
+    public function setOrderComplete($orderComplete): TmchMark
     {
         $this->container['orderComplete'] = $orderComplete;
 
@@ -907,7 +910,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getClaimsNotifyExtended()
+    public function getClaimsNotifyExtended(): mixed
     {
         return $this->container['claimsNotifyExtended'];
     }
@@ -919,7 +922,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClaimsNotifyExtended($claimsNotifyExtended)
+    public function setClaimsNotifyExtended($claimsNotifyExtended): TmchMark
     {
         $this->container['claimsNotifyExtended'] = $claimsNotifyExtended;
 
@@ -931,7 +934,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchMarkAddon
      */
-    public function getExtension()
+    public function getExtension(): mixed
     {
         return $this->container['extension'];
     }
@@ -943,7 +946,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtension($extension)
+    public function setExtension($extension): TmchMark
     {
         $this->container['extension'] = $extension;
 
@@ -955,7 +958,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSmdFile()
+    public function getSmdFile(): mixed
     {
         return $this->container['smdFile'];
     }
@@ -967,7 +970,7 @@ class TmchMark implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSmdFile($smdFile)
+    public function setSmdFile($smdFile): TmchMark
     {
         $this->container['smdFile'] = $smdFile;
 
@@ -1042,23 +1045,22 @@ class TmchMark implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1068,7 +1070,7 @@ class TmchMark implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

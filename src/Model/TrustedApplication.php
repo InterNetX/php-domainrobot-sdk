@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TrustedApplication Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -260,7 +263,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -271,7 +274,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -290,7 +293,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -315,7 +318,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -331,7 +334,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -343,7 +346,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): TrustedApplication
     {
         $this->container['created'] = $created;
 
@@ -355,7 +358,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -367,7 +370,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): TrustedApplication
     {
         $this->container['updated'] = $updated;
 
@@ -379,7 +382,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -391,7 +394,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): TrustedApplication
     {
         $this->container['owner'] = $owner;
 
@@ -403,7 +406,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -415,7 +418,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): TrustedApplication
     {
         $this->container['updater'] = $updater;
 
@@ -427,7 +430,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUser()
+    public function getUser(): mixed
     {
         return $this->container['user'];
     }
@@ -439,7 +442,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setUser($user): TrustedApplication
     {
         $this->container['user'] = $user;
 
@@ -451,7 +454,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUuid()
+    public function getUuid(): mixed
     {
         return $this->container['uuid'];
     }
@@ -463,7 +466,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUuid($uuid)
+    public function setUuid($uuid): TrustedApplication
     {
         $this->container['uuid'] = $uuid;
 
@@ -475,7 +478,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPassword()
+    public function getPassword(): mixed
     {
         return $this->container['password'];
     }
@@ -487,7 +490,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setPassword($password): TrustedApplication
     {
         $this->container['password'] = $password;
 
@@ -499,7 +502,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Application
      */
-    public function getApplication()
+    public function getApplication(): mixed
     {
         return $this->container['application'];
     }
@@ -511,7 +514,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setApplication($application)
+    public function setApplication($application): TrustedApplication
     {
         $this->container['application'] = $application;
 
@@ -523,7 +526,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TrustedApplicationFunctions
      */
-    public function getFunctions()
+    public function getFunctions(): mixed
     {
         return $this->container['functions'];
     }
@@ -535,7 +538,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFunctions($functions)
+    public function setFunctions($functions): TrustedApplication
     {
         $this->container['functions'] = $functions;
 
@@ -547,7 +550,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\IpRestrictions
      */
-    public function getRestrictions()
+    public function getRestrictions(): mixed
     {
         return $this->container['restrictions'];
     }
@@ -559,7 +562,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRestrictions($restrictions)
+    public function setRestrictions($restrictions): TrustedApplication
     {
         $this->container['restrictions'] = $restrictions;
 
@@ -571,7 +574,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDevice()
+    public function getDevice(): mixed
     {
         return $this->container['device'];
     }
@@ -583,7 +586,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDevice($device)
+    public function setDevice($device): TrustedApplication
     {
         $this->container['device'] = $device;
 
@@ -595,7 +598,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -607,7 +610,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): TrustedApplication
     {
         $this->container['comment'] = $comment;
 
@@ -682,23 +685,22 @@ class TrustedApplication implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -708,7 +710,7 @@ class TrustedApplication implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

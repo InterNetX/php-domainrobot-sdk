@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * HistoryUser Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -331,7 +334,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): HistoryUser
     {
         $this->container['id'] = $id;
 
@@ -343,7 +346,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): mixed
     {
         return $this->container['domain'];
     }
@@ -355,7 +358,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setDomain($domain): HistoryUser
     {
         $this->container['domain'] = $domain;
 
@@ -367,7 +370,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExecutionTime()
+    public function getExecutionTime(): mixed
     {
         return $this->container['executionTime'];
     }
@@ -379,7 +382,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExecutionTime($executionTime)
+    public function setExecutionTime($executionTime): HistoryUser
     {
         $this->container['executionTime'] = $executionTime;
 
@@ -391,7 +394,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPrice()
+    public function getPrice(): mixed
     {
         return $this->container['price'];
     }
@@ -403,7 +406,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrice($price)
+    public function setPrice($price): HistoryUser
     {
         $this->container['price'] = $price;
 
@@ -415,7 +418,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getData()
+    public function getData(): mixed
     {
         return $this->container['data'];
     }
@@ -427,7 +430,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setData($data)
+    public function setData($data): HistoryUser
     {
         $this->container['data'] = $data;
 
@@ -439,7 +442,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIp()
+    public function getIp(): mixed
     {
         return $this->container['ip'];
     }
@@ -451,7 +454,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIp($ip)
+    public function setIp($ip): HistoryUser
     {
         $this->container['ip'] = $ip;
 
@@ -463,7 +466,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUser()
+    public function getUser(): mixed
     {
         return $this->container['user'];
     }
@@ -475,7 +478,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setUser($user): HistoryUser
     {
         $this->container['user'] = $user;
 
@@ -487,7 +490,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRequestType()
+    public function getRequestType(): mixed
     {
         return $this->container['requestType'];
     }
@@ -499,7 +502,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRequestType($requestType)
+    public function setRequestType($requestType): HistoryUser
     {
         $this->container['requestType'] = $requestType;
 
@@ -511,7 +514,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCreatedAt()
+    public function getCreatedAt(): mixed
     {
         return $this->container['createdAt'];
     }
@@ -523,7 +526,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($createdAt): HistoryUser
     {
         $this->container['createdAt'] = $createdAt;
 
@@ -535,7 +538,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUpdatedAt()
+    public function getUpdatedAt(): mixed
     {
         return $this->container['updatedAt'];
     }
@@ -547,7 +550,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updatedAt): HistoryUser
     {
         $this->container['updatedAt'] = $updatedAt;
 
@@ -622,23 +625,22 @@ class HistoryUser implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class HistoryUser implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

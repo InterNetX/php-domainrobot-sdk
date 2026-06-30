@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BasicCustomer Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -488,7 +491,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -499,7 +502,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -518,7 +521,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -543,7 +546,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -559,7 +562,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNumber()
+    public function getNumber(): mixed
     {
         return $this->container['number'];
     }
@@ -571,7 +574,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setNumber($number): BasicCustomer
     {
         $this->container['number'] = $number;
 
@@ -583,7 +586,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getClient()
+    public function getClient(): mixed
     {
         return $this->container['client'];
     }
@@ -595,7 +598,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClient($client)
+    public function setClient($client): BasicCustomer
     {
         $this->container['client'] = $client;
 
@@ -607,7 +610,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getGroup()
+    public function getGroup(): mixed
     {
         return $this->container['group'];
     }
@@ -619,7 +622,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGroup($group)
+    public function setGroup($group): BasicCustomer
     {
         $this->container['group'] = $group;
 
@@ -631,7 +634,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -643,7 +646,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): BasicCustomer
     {
         $this->container['name'] = $name;
 
@@ -655,7 +658,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerType
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -667,7 +670,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): BasicCustomer
     {
         $this->container['type'] = $type;
 
@@ -679,7 +682,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganization()
+    public function getOrganization(): mixed
     {
         return $this->container['organization'];
     }
@@ -691,7 +694,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setOrganization($organization): BasicCustomer
     {
         $this->container['organization'] = $organization;
 
@@ -703,7 +706,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganization2()
+    public function getOrganization2(): mixed
     {
         return $this->container['organization2'];
     }
@@ -715,7 +718,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganization2($organization2)
+    public function setOrganization2($organization2): BasicCustomer
     {
         $this->container['organization2'] = $organization2;
 
@@ -727,7 +730,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVatNumber()
+    public function getVatNumber(): mixed
     {
         return $this->container['vatNumber'];
     }
@@ -739,7 +742,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatNumber($vatNumber)
+    public function setVatNumber($vatNumber): BasicCustomer
     {
         $this->container['vatNumber'] = $vatNumber;
 
@@ -751,7 +754,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenderConstants
      */
-    public function getGender()
+    public function getGender(): mixed
     {
         return $this->container['gender'];
     }
@@ -763,7 +766,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGender($gender)
+    public function setGender($gender): BasicCustomer
     {
         $this->container['gender'] = $gender;
 
@@ -775,7 +778,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): mixed
     {
         return $this->container['title'];
     }
@@ -787,7 +790,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): BasicCustomer
     {
         $this->container['title'] = $title;
 
@@ -799,7 +802,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getAddressLines()
+    public function getAddressLines(): mixed
     {
         return $this->container['addressLines'];
     }
@@ -811,7 +814,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAddressLines($addressLines)
+    public function setAddressLines($addressLines): BasicCustomer
     {
         $this->container['addressLines'] = $addressLines;
 
@@ -823,7 +826,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCity()
+    public function getCity(): mixed
     {
         return $this->container['city'];
     }
@@ -835,7 +838,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCity($city)
+    public function setCity($city): BasicCustomer
     {
         $this->container['city'] = $city;
 
@@ -847,7 +850,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getState()
+    public function getState(): mixed
     {
         return $this->container['state'];
     }
@@ -859,7 +862,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setState($state)
+    public function setState($state): BasicCustomer
     {
         $this->container['state'] = $state;
 
@@ -871,7 +874,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -883,7 +886,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): BasicCustomer
     {
         $this->container['country'] = $country;
 
@@ -895,7 +898,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhone()
+    public function getPhone(): mixed
     {
         return $this->container['phone'];
     }
@@ -907,7 +910,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setPhone($phone): BasicCustomer
     {
         $this->container['phone'] = $phone;
 
@@ -919,7 +922,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFax()
+    public function getFax(): mixed
     {
         return $this->container['fax'];
     }
@@ -931,7 +934,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFax($fax)
+    public function setFax($fax): BasicCustomer
     {
         $this->container['fax'] = $fax;
 
@@ -943,7 +946,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getEmails()
+    public function getEmails(): mixed
     {
         return $this->container['emails'];
     }
@@ -955,7 +958,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmails($emails)
+    public function setEmails($emails): BasicCustomer
     {
         $this->container['emails'] = $emails;
 
@@ -967,7 +970,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getBillingEmails()
+    public function getBillingEmails(): mixed
     {
         return $this->container['billingEmails'];
     }
@@ -979,7 +982,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBillingEmails($billingEmails)
+    public function setBillingEmails($billingEmails): BasicCustomer
     {
         $this->container['billingEmails'] = $billingEmails;
 
@@ -991,7 +994,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PaymentConstants
      */
-    public function getPayment()
+    public function getPayment(): mixed
     {
         return $this->container['payment'];
     }
@@ -1003,7 +1006,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayment($payment)
+    public function setPayment($payment): BasicCustomer
     {
         $this->container['payment'] = $payment;
 
@@ -1015,7 +1018,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPaymentMode()
+    public function getPaymentMode(): mixed
     {
         return $this->container['paymentMode'];
     }
@@ -1027,7 +1030,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaymentMode($paymentMode)
+    public function setPaymentMode($paymentMode): BasicCustomer
     {
         $this->container['paymentMode'] = $paymentMode;
 
@@ -1039,7 +1042,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPaymentCurrency()
+    public function getPaymentCurrency(): mixed
     {
         return $this->container['paymentCurrency'];
     }
@@ -1051,7 +1054,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaymentCurrency($paymentCurrency)
+    public function setPaymentCurrency($paymentCurrency): BasicCustomer
     {
         $this->container['paymentCurrency'] = $paymentCurrency;
 
@@ -1063,7 +1066,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getPaymentCurrencyExchangeFee()
+    public function getPaymentCurrencyExchangeFee(): mixed
     {
         return $this->container['paymentCurrencyExchangeFee'];
     }
@@ -1075,7 +1078,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaymentCurrencyExchangeFee($paymentCurrencyExchangeFee)
+    public function setPaymentCurrencyExchangeFee($paymentCurrencyExchangeFee): BasicCustomer
     {
         $this->container['paymentCurrencyExchangeFee'] = $paymentCurrencyExchangeFee;
 
@@ -1087,7 +1090,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDiscount()
+    public function getDiscount(): mixed
     {
         return $this->container['discount'];
     }
@@ -1099,7 +1102,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDiscount($discount)
+    public function setDiscount($discount): BasicCustomer
     {
         $this->container['discount'] = $discount;
 
@@ -1111,7 +1114,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDiscountNgtld()
+    public function getDiscountNgtld(): mixed
     {
         return $this->container['discountNgtld'];
     }
@@ -1123,7 +1126,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDiscountNgtld($discountNgtld)
+    public function setDiscountNgtld($discountNgtld): BasicCustomer
     {
         $this->container['discountNgtld'] = $discountNgtld;
 
@@ -1135,7 +1138,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDiscountCertificate()
+    public function getDiscountCertificate(): mixed
     {
         return $this->container['discountCertificate'];
     }
@@ -1147,7 +1150,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDiscountCertificate($discountCertificate)
+    public function setDiscountCertificate($discountCertificate): BasicCustomer
     {
         $this->container['discountCertificate'] = $discountCertificate;
 
@@ -1159,7 +1162,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getDiscountValid()
+    public function getDiscountValid(): mixed
     {
         return $this->container['discountValid'];
     }
@@ -1171,7 +1174,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDiscountValid($discountValid)
+    public function setDiscountValid($discountValid): BasicCustomer
     {
         $this->container['discountValid'] = $discountValid;
 
@@ -1183,7 +1186,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getInvoiceLanguage()
+    public function getInvoiceLanguage(): mixed
     {
         return $this->container['invoiceLanguage'];
     }
@@ -1195,7 +1198,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInvoiceLanguage($invoiceLanguage)
+    public function setInvoiceLanguage($invoiceLanguage): BasicCustomer
     {
         $this->container['invoiceLanguage'] = $invoiceLanguage;
 
@@ -1207,7 +1210,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaxable()
+    public function getTaxable(): mixed
     {
         return $this->container['taxable'];
     }
@@ -1219,7 +1222,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaxable($taxable)
+    public function setTaxable($taxable): BasicCustomer
     {
         $this->container['taxable'] = $taxable;
 
@@ -1231,7 +1234,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Card
      */
-    public function getCard()
+    public function getCard(): mixed
     {
         return $this->container['card'];
     }
@@ -1243,7 +1246,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCard($card)
+    public function setCard($card): BasicCustomer
     {
         $this->container['card'] = $card;
 
@@ -1255,7 +1258,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerContract[]
      */
-    public function getContracts()
+    public function getContracts(): mixed
     {
         return $this->container['contracts'];
     }
@@ -1267,7 +1270,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContracts($contracts)
+    public function setContracts($contracts): BasicCustomer
     {
         $this->container['contracts'] = $contracts;
 
@@ -1279,7 +1282,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser[]
      */
-    public function getBillingUsers()
+    public function getBillingUsers(): mixed
     {
         return $this->container['billingUsers'];
     }
@@ -1291,7 +1294,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBillingUsers($billingUsers)
+    public function setBillingUsers($billingUsers): BasicCustomer
     {
         $this->container['billingUsers'] = $billingUsers;
 
@@ -1303,7 +1306,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Comment[]
      */
-    public function getComments()
+    public function getComments(): mixed
     {
         return $this->container['comments'];
     }
@@ -1315,7 +1318,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComments($comments)
+    public function setComments($comments): BasicCustomer
     {
         $this->container['comments'] = $comments;
 
@@ -1327,7 +1330,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicCustomerContact[]
      */
-    public function getContacts()
+    public function getContacts(): mixed
     {
         return $this->container['contacts'];
     }
@@ -1339,7 +1342,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContacts($contacts)
+    public function setContacts($contacts): BasicCustomer
     {
         $this->container['contacts'] = $contacts;
 
@@ -1351,7 +1354,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Account
      */
-    public function getAccount()
+    public function getAccount(): mixed
     {
         return $this->container['account'];
     }
@@ -1363,7 +1366,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAccount($account)
+    public function setAccount($account): BasicCustomer
     {
         $this->container['account'] = $account;
 
@@ -1375,7 +1378,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerPriceList[]
      */
-    public function getPriceListEntities()
+    public function getPriceListEntities(): mixed
     {
         return $this->container['priceListEntities'];
     }
@@ -1387,7 +1390,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceListEntities($priceListEntities)
+    public function setPriceListEntities($priceListEntities): BasicCustomer
     {
         $this->container['priceListEntities'] = $priceListEntities;
 
@@ -1399,7 +1402,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerPriceList[]
      */
-    public function getAddPriceListEntities()
+    public function getAddPriceListEntities(): mixed
     {
         return $this->container['addPriceListEntities'];
     }
@@ -1411,7 +1414,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAddPriceListEntities($addPriceListEntities)
+    public function setAddPriceListEntities($addPriceListEntities): BasicCustomer
     {
         $this->container['addPriceListEntities'] = $addPriceListEntities;
 
@@ -1423,7 +1426,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerPriceList[]
      */
-    public function getRemPriceListEntities()
+    public function getRemPriceListEntities(): mixed
     {
         return $this->container['remPriceListEntities'];
     }
@@ -1435,7 +1438,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRemPriceListEntities($remPriceListEntities)
+    public function setRemPriceListEntities($remPriceListEntities): BasicCustomer
     {
         $this->container['remPriceListEntities'] = $remPriceListEntities;
 
@@ -1447,7 +1450,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ClearAccountPeriod
      */
-    public function getClearAccount()
+    public function getClearAccount(): mixed
     {
         return $this->container['clearAccount'];
     }
@@ -1459,7 +1462,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClearAccount($clearAccount)
+    public function setClearAccount($clearAccount): BasicCustomer
     {
         $this->container['clearAccount'] = $clearAccount;
 
@@ -1471,7 +1474,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAutodelete()
+    public function getAutodelete(): mixed
     {
         return $this->container['autodelete'];
     }
@@ -1483,7 +1486,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutodelete($autodelete)
+    public function setAutodelete($autodelete): BasicCustomer
     {
         $this->container['autodelete'] = $autodelete;
 
@@ -1495,7 +1498,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPending()
+    public function getPending(): mixed
     {
         return $this->container['pending'];
     }
@@ -1507,7 +1510,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPending($pending)
+    public function setPending($pending): BasicCustomer
     {
         $this->container['pending'] = $pending;
 
@@ -1519,7 +1522,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicCustomerSpoolVerification[]
      */
-    public function getVerifications()
+    public function getVerifications(): mixed
     {
         return $this->container['verifications'];
     }
@@ -1531,7 +1534,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVerifications($verifications)
+    public function setVerifications($verifications): BasicCustomer
     {
         $this->container['verifications'] = $verifications;
 
@@ -1543,7 +1546,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CustomerTag[]
      */
-    public function getTags()
+    public function getTags(): mixed
     {
         return $this->container['tags'];
     }
@@ -1555,7 +1558,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTags($tags)
+    public function setTags($tags): BasicCustomer
     {
         $this->container['tags'] = $tags;
 
@@ -1567,7 +1570,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPin()
+    public function getPin(): mixed
     {
         return $this->container['pin'];
     }
@@ -1579,7 +1582,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPin($pin)
+    public function setPin($pin): BasicCustomer
     {
         $this->container['pin'] = $pin;
 
@@ -1591,7 +1594,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicCustomer
      */
-    public function getPersistent()
+    public function getPersistent(): mixed
     {
         return $this->container['persistent'];
     }
@@ -1603,7 +1606,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPersistent($persistent)
+    public function setPersistent($persistent): BasicCustomer
     {
         $this->container['persistent'] = $persistent;
 
@@ -1615,7 +1618,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getActive()
+    public function getActive(): mixed
     {
         return $this->container['active'];
     }
@@ -1627,7 +1630,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setActive($active)
+    public function setActive($active): BasicCustomer
     {
         $this->container['active'] = $active;
 
@@ -1639,7 +1642,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFname()
+    public function getFname(): mixed
     {
         return $this->container['fname'];
     }
@@ -1651,7 +1654,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFname($fname)
+    public function setFname($fname): BasicCustomer
     {
         $this->container['fname'] = $fname;
 
@@ -1663,7 +1666,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLname()
+    public function getLname(): mixed
     {
         return $this->container['lname'];
     }
@@ -1675,7 +1678,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLname($lname)
+    public function setLname($lname): BasicCustomer
     {
         $this->container['lname'] = $lname;
 
@@ -1687,7 +1690,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPcode()
+    public function getPcode(): mixed
     {
         return $this->container['pcode'];
     }
@@ -1699,7 +1702,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPcode($pcode)
+    public function setPcode($pcode): BasicCustomer
     {
         $this->container['pcode'] = $pcode;
 
@@ -1711,7 +1714,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TechnicalCustomer
      */
-    public function getTechnical()
+    public function getTechnical(): mixed
     {
         return $this->container['technical'];
     }
@@ -1723,7 +1726,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTechnical($technical)
+    public function setTechnical($technical): BasicCustomer
     {
         $this->container['technical'] = $technical;
 
@@ -1735,7 +1738,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SEPAMandate
      */
-    public function getSepa()
+    public function getSepa(): mixed
     {
         return $this->container['sepa'];
     }
@@ -1747,7 +1750,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSepa($sepa)
+    public function setSepa($sepa): BasicCustomer
     {
         $this->container['sepa'] = $sepa;
 
@@ -1822,23 +1825,22 @@ class BasicCustomer implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1848,7 +1850,7 @@ class BasicCustomer implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

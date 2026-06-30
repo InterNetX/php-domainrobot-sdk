@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Card Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -230,7 +233,7 @@ class Card implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -241,7 +244,7 @@ class Card implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -260,7 +263,7 @@ class Card implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -285,7 +288,7 @@ class Card implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -301,7 +304,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -313,7 +316,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Card
     {
         $this->container['created'] = $created;
 
@@ -325,7 +328,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -337,7 +340,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Card
     {
         $this->container['updated'] = $updated;
 
@@ -349,7 +352,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Provider
      */
-    public function getProvider()
+    public function getProvider(): mixed
     {
         return $this->container['provider'];
     }
@@ -361,7 +364,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProvider($provider)
+    public function setProvider($provider): Card
     {
         $this->container['provider'] = $provider;
 
@@ -373,7 +376,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CreditCardVendor
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -385,7 +388,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): Card
     {
         $this->container['type'] = $type;
 
@@ -397,7 +400,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CardStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -409,7 +412,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): Card
     {
         $this->container['status'] = $status;
 
@@ -421,7 +424,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getValidFrom()
+    public function getValidFrom(): mixed
     {
         return $this->container['validFrom'];
     }
@@ -433,7 +436,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValidFrom($validFrom)
+    public function setValidFrom($validFrom): Card
     {
         $this->container['validFrom'] = $validFrom;
 
@@ -445,7 +448,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getValidTo()
+    public function getValidTo(): mixed
     {
         return $this->container['validTo'];
     }
@@ -457,7 +460,7 @@ class Card implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValidTo($validTo)
+    public function setValidTo($validTo): Card
     {
         $this->container['validTo'] = $validTo;
 
@@ -532,23 +535,22 @@ class Card implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -558,7 +560,7 @@ class Card implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

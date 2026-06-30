@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * UserEstimationStatisticsLast12MonthsDevelopment Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -206,7 +209,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -217,7 +220,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -236,7 +239,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -261,7 +264,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -277,7 +280,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      *
      * @return object
      */
-    public function getTotalQueries()
+    public function getTotalQueries(): mixed
     {
         return $this->container['totalQueries'];
     }
@@ -289,7 +292,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      *
      * @return $this
      */
-    public function setTotalQueries($totalQueries)
+    public function setTotalQueries($totalQueries): UserEstimationStatisticsLast12MonthsDevelopment
     {
         $this->container['totalQueries'] = $totalQueries;
 
@@ -301,7 +304,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      *
      * @return object
      */
-    public function getWebQueries()
+    public function getWebQueries(): mixed
     {
         return $this->container['webQueries'];
     }
@@ -313,7 +316,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      *
      * @return $this
      */
-    public function setWebQueries($webQueries)
+    public function setWebQueries($webQueries): UserEstimationStatisticsLast12MonthsDevelopment
     {
         $this->container['webQueries'] = $webQueries;
 
@@ -325,7 +328,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      *
      * @return object
      */
-    public function getApiQueries()
+    public function getApiQueries(): mixed
     {
         return $this->container['apiQueries'];
     }
@@ -337,7 +340,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
      *
      * @return $this
      */
-    public function setApiQueries($apiQueries)
+    public function setApiQueries($apiQueries): UserEstimationStatisticsLast12MonthsDevelopment
     {
         $this->container['apiQueries'] = $apiQueries;
 
@@ -412,23 +415,22 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -438,7 +440,7 @@ class UserEstimationStatisticsLast12MonthsDevelopment implements ModelInterface,
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

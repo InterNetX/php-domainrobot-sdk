@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * JsonResponseDataMailProxy Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStid()
+    public function getStid(): mixed
     {
         return $this->container['stid'];
     }
@@ -307,7 +310,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStid($stid)
+    public function setStid($stid): JsonResponseDataMailProxy
     {
         $this->container['stid'] = $stid;
 
@@ -319,7 +322,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Message[]
      */
-    public function getMessages()
+    public function getMessages(): mixed
     {
         return $this->container['messages'];
     }
@@ -331,7 +334,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setMessages($messages): JsonResponseDataMailProxy
     {
         $this->container['messages'] = $messages;
 
@@ -343,7 +346,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ResponseStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -355,7 +358,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): JsonResponseDataMailProxy
     {
         $this->container['status'] = $status;
 
@@ -367,7 +370,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ResponseObject
      */
-    public function getObject()
+    public function getObject(): mixed
     {
         return $this->container['object'];
     }
@@ -379,7 +382,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setObject($object): JsonResponseDataMailProxy
     {
         $this->container['object'] = $object;
 
@@ -391,7 +394,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\MailProxy[]
      */
-    public function getData()
+    public function getData(): mixed
     {
         return $this->container['data'];
     }
@@ -403,7 +406,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setData($data)
+    public function setData($data): JsonResponseDataMailProxy
     {
         $this->container['data'] = $data;
 
@@ -415,7 +418,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCtid()
+    public function getCtid(): mixed
     {
         return $this->container['ctid'];
     }
@@ -427,7 +430,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCtid($ctid)
+    public function setCtid($ctid): JsonResponseDataMailProxy
     {
         $this->container['ctid'] = $ctid;
 
@@ -502,23 +505,22 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class JsonResponseDataMailProxy implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

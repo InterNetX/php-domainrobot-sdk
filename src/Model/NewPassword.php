@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * NewPassword Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -242,7 +245,7 @@ class NewPassword implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -253,7 +256,7 @@ class NewPassword implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -272,7 +275,7 @@ class NewPassword implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -297,7 +300,7 @@ class NewPassword implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -313,7 +316,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUser()
+    public function getUser(): mixed
     {
         return $this->container['user'];
     }
@@ -325,7 +328,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setUser($user): NewPassword
     {
         $this->container['user'] = $user;
 
@@ -337,7 +340,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getContext()
+    public function getContext(): mixed
     {
         return $this->container['context'];
     }
@@ -349,7 +352,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContext($context)
+    public function setContext($context): NewPassword
     {
         $this->container['context'] = $context;
 
@@ -361,7 +364,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTan()
+    public function getTan(): mixed
     {
         return $this->container['tan'];
     }
@@ -373,7 +376,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTan($tan)
+    public function setTan($tan): NewPassword
     {
         $this->container['tan'] = $tan;
 
@@ -385,7 +388,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPassword()
+    public function getPassword(): mixed
     {
         return $this->container['password'];
     }
@@ -397,7 +400,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setPassword($password): NewPassword
     {
         $this->container['password'] = $password;
 
@@ -409,7 +412,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): mixed
     {
         return $this->container['email'];
     }
@@ -421,7 +424,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setEmail($email): NewPassword
     {
         $this->container['email'] = $email;
 
@@ -433,7 +436,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMobile()
+    public function getMobile(): mixed
     {
         return $this->container['mobile'];
     }
@@ -445,7 +448,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMobile($mobile)
+    public function setMobile($mobile): NewPassword
     {
         $this->container['mobile'] = $mobile;
 
@@ -457,7 +460,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTanMethods()
+    public function getTanMethods(): mixed
     {
         return $this->container['tanMethods'];
     }
@@ -469,7 +472,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTanMethods($tanMethods)
+    public function setTanMethods($tanMethods): NewPassword
     {
         $this->container['tanMethods'] = $tanMethods;
 
@@ -481,7 +484,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getToken()
+    public function getToken(): mixed
     {
         return $this->container['token'];
     }
@@ -493,7 +496,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setToken($token)
+    public function setToken($token): NewPassword
     {
         $this->container['token'] = $token;
 
@@ -505,7 +508,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMethod()
+    public function getMethod(): mixed
     {
         return $this->container['method'];
     }
@@ -517,7 +520,7 @@ class NewPassword implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMethod($method)
+    public function setMethod($method): NewPassword
     {
         $this->container['method'] = $method;
 
@@ -592,23 +595,22 @@ class NewPassword implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -618,7 +620,7 @@ class NewPassword implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

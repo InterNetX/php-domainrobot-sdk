@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BasicCustomerContact Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -314,7 +317,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -325,7 +328,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -344,7 +347,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -369,7 +372,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -385,7 +388,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -397,7 +400,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): BasicCustomerContact
     {
         $this->container['created'] = $created;
 
@@ -409,7 +412,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -421,7 +424,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): BasicCustomerContact
     {
         $this->container['updated'] = $updated;
 
@@ -433,7 +436,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -445,7 +448,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): BasicCustomerContact
     {
         $this->container['owner'] = $owner;
 
@@ -457,7 +460,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -469,7 +472,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): BasicCustomerContact
     {
         $this->container['updater'] = $updater;
 
@@ -481,7 +484,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -493,7 +496,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): BasicCustomerContact
     {
         $this->container['id'] = $id;
 
@@ -505,7 +508,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -517,7 +520,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): BasicCustomerContact
     {
         $this->container['customer'] = $customer;
 
@@ -529,7 +532,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactType
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -541,7 +544,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): BasicCustomerContact
     {
         $this->container['type'] = $type;
 
@@ -553,7 +556,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): mixed
     {
         return $this->container['firstName'];
     }
@@ -565,7 +568,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($firstName): BasicCustomerContact
     {
         $this->container['firstName'] = $firstName;
 
@@ -577,7 +580,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastName()
+    public function getLastName(): mixed
     {
         return $this->container['lastName'];
     }
@@ -589,7 +592,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($lastName): BasicCustomerContact
     {
         $this->container['lastName'] = $lastName;
 
@@ -601,7 +604,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): mixed
     {
         return $this->container['title'];
     }
@@ -613,7 +616,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): BasicCustomerContact
     {
         $this->container['title'] = $title;
 
@@ -625,7 +628,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): mixed
     {
         return $this->container['label'];
     }
@@ -637,7 +640,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabel($label): BasicCustomerContact
     {
         $this->container['label'] = $label;
 
@@ -649,7 +652,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -661,7 +664,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): BasicCustomerContact
     {
         $this->container['language'] = $language;
 
@@ -673,7 +676,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenderConstants
      */
-    public function getGender()
+    public function getGender(): mixed
     {
         return $this->container['gender'];
     }
@@ -685,7 +688,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGender($gender)
+    public function setGender($gender): BasicCustomerContact
     {
         $this->container['gender'] = $gender;
 
@@ -697,7 +700,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPostalCode()
+    public function getPostalCode(): mixed
     {
         return $this->container['postalCode'];
     }
@@ -709,7 +712,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postalCode): BasicCustomerContact
     {
         $this->container['postalCode'] = $postalCode;
 
@@ -721,7 +724,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCity()
+    public function getCity(): mixed
     {
         return $this->container['city'];
     }
@@ -733,7 +736,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCity($city)
+    public function setCity($city): BasicCustomerContact
     {
         $this->container['city'] = $city;
 
@@ -745,7 +748,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -757,7 +760,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): BasicCustomerContact
     {
         $this->container['country'] = $country;
 
@@ -769,7 +772,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getState()
+    public function getState(): mixed
     {
         return $this->container['state'];
     }
@@ -781,7 +784,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setState($state)
+    public function setState($state): BasicCustomerContact
     {
         $this->container['state'] = $state;
 
@@ -793,7 +796,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhone()
+    public function getPhone(): mixed
     {
         return $this->container['phone'];
     }
@@ -805,7 +808,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setPhone($phone): BasicCustomerContact
     {
         $this->container['phone'] = $phone;
 
@@ -817,7 +820,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFax()
+    public function getFax(): mixed
     {
         return $this->container['fax'];
     }
@@ -829,7 +832,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFax($fax)
+    public function setFax($fax): BasicCustomerContact
     {
         $this->container['fax'] = $fax;
 
@@ -841,7 +844,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): mixed
     {
         return $this->container['email'];
     }
@@ -853,7 +856,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setEmail($email): BasicCustomerContact
     {
         $this->container['email'] = $email;
 
@@ -865,7 +868,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getAddress()
+    public function getAddress(): mixed
     {
         return $this->container['address'];
     }
@@ -877,7 +880,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAddress($address)
+    public function setAddress($address): BasicCustomerContact
     {
         $this->container['address'] = $address;
 
@@ -952,23 +955,22 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -978,7 +980,7 @@ class BasicCustomerContact implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

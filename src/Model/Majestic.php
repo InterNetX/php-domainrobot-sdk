@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Majestic Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -620,7 +623,7 @@ class Majestic implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -631,7 +634,7 @@ class Majestic implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -650,7 +653,7 @@ class Majestic implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -675,7 +678,7 @@ class Majestic implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -691,7 +694,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getItemNu()
+    public function getItemNu(): mixed
     {
         return $this->container['itemNu'];
     }
@@ -703,7 +706,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItemNu($itemNu)
+    public function setItemNu($itemNu): Majestic
     {
         $this->container['itemNu'] = $itemNu;
 
@@ -715,7 +718,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getItem()
+    public function getItem(): mixed
     {
         return $this->container['item'];
     }
@@ -727,7 +730,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItem($item)
+    public function setItem($item): Majestic
     {
         $this->container['item'] = $item;
 
@@ -739,7 +742,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getResultCode()
+    public function getResultCode(): mixed
     {
         return $this->container['resultCode'];
     }
@@ -751,7 +754,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setResultCode($resultCode)
+    public function setResultCode($resultCode): Majestic
     {
         $this->container['resultCode'] = $resultCode;
 
@@ -763,7 +766,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -775,7 +778,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): Majestic
     {
         $this->container['status'] = $status;
 
@@ -787,7 +790,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExtBackLinks()
+    public function getExtBackLinks(): mixed
     {
         return $this->container['extBackLinks'];
     }
@@ -799,7 +802,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtBackLinks($extBackLinks)
+    public function setExtBackLinks($extBackLinks): Majestic
     {
         $this->container['extBackLinks'] = $extBackLinks;
 
@@ -811,7 +814,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomains()
+    public function getRefDomains(): mixed
     {
         return $this->container['refDomains'];
     }
@@ -823,7 +826,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomains($refDomains)
+    public function setRefDomains($refDomains): Majestic
     {
         $this->container['refDomains'] = $refDomains;
 
@@ -835,7 +838,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAnalysisResUnitsCost()
+    public function getAnalysisResUnitsCost(): mixed
     {
         return $this->container['analysisResUnitsCost'];
     }
@@ -847,7 +850,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAnalysisResUnitsCost($analysisResUnitsCost)
+    public function setAnalysisResUnitsCost($analysisResUnitsCost): Majestic
     {
         $this->container['analysisResUnitsCost'] = $analysisResUnitsCost;
 
@@ -859,7 +862,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getACRank()
+    public function getACRank(): mixed
     {
         return $this->container['aCRank'];
     }
@@ -871,7 +874,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setACRank($aCRank)
+    public function setACRank($aCRank): Majestic
     {
         $this->container['aCRank'] = $aCRank;
 
@@ -883,7 +886,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getItemType()
+    public function getItemType(): mixed
     {
         return $this->container['itemType'];
     }
@@ -895,7 +898,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItemType($itemType)
+    public function setItemType($itemType): Majestic
     {
         $this->container['itemType'] = $itemType;
 
@@ -907,7 +910,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIndexedURLs()
+    public function getIndexedURLs(): mixed
     {
         return $this->container['indexedURLs'];
     }
@@ -919,7 +922,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIndexedURLs($indexedURLs)
+    public function setIndexedURLs($indexedURLs): Majestic
     {
         $this->container['indexedURLs'] = $indexedURLs;
 
@@ -931,7 +934,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGetTopBackLinksAnalysisResUnitsCost()
+    public function getGetTopBackLinksAnalysisResUnitsCost(): mixed
     {
         return $this->container['getTopBackLinksAnalysisResUnitsCost'];
     }
@@ -943,7 +946,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGetTopBackLinksAnalysisResUnitsCost($getTopBackLinksAnalysisResUnitsCost)
+    public function setGetTopBackLinksAnalysisResUnitsCost($getTopBackLinksAnalysisResUnitsCost): Majestic
     {
         $this->container['getTopBackLinksAnalysisResUnitsCost'] = $getTopBackLinksAnalysisResUnitsCost;
 
@@ -955,7 +958,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDownloadBacklinksAnalysisResUnitsCost()
+    public function getDownloadBacklinksAnalysisResUnitsCost(): mixed
     {
         return $this->container['downloadBacklinksAnalysisResUnitsCost'];
     }
@@ -967,7 +970,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDownloadBacklinksAnalysisResUnitsCost($downloadBacklinksAnalysisResUnitsCost)
+    public function setDownloadBacklinksAnalysisResUnitsCost($downloadBacklinksAnalysisResUnitsCost): Majestic
     {
         $this->container['downloadBacklinksAnalysisResUnitsCost'] = $downloadBacklinksAnalysisResUnitsCost;
 
@@ -979,7 +982,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDownloadRefDomainBacklinksAnalysisResUnitsCost()
+    public function getDownloadRefDomainBacklinksAnalysisResUnitsCost(): mixed
     {
         return $this->container['downloadRefDomainBacklinksAnalysisResUnitsCost'];
     }
@@ -991,7 +994,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDownloadRefDomainBacklinksAnalysisResUnitsCost($downloadRefDomainBacklinksAnalysisResUnitsCost)
+    public function setDownloadRefDomainBacklinksAnalysisResUnitsCost($downloadRefDomainBacklinksAnalysisResUnitsCost): Majestic
     {
         $this->container['downloadRefDomainBacklinksAnalysisResUnitsCost'] = $downloadRefDomainBacklinksAnalysisResUnitsCost;
 
@@ -1003,7 +1006,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefIPs()
+    public function getRefIPs(): mixed
     {
         return $this->container['refIPs'];
     }
@@ -1015,7 +1018,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefIPs($refIPs)
+    public function setRefIPs($refIPs): Majestic
     {
         $this->container['refIPs'] = $refIPs;
 
@@ -1027,7 +1030,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefSubNets()
+    public function getRefSubNets(): mixed
     {
         return $this->container['refSubNets'];
     }
@@ -1039,7 +1042,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefSubNets($refSubNets)
+    public function setRefSubNets($refSubNets): Majestic
     {
         $this->container['refSubNets'] = $refSubNets;
 
@@ -1051,7 +1054,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainsEDU()
+    public function getRefDomainsEDU(): mixed
     {
         return $this->container['refDomainsEDU'];
     }
@@ -1063,7 +1066,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainsEDU($refDomainsEDU)
+    public function setRefDomainsEDU($refDomainsEDU): Majestic
     {
         $this->container['refDomainsEDU'] = $refDomainsEDU;
 
@@ -1075,7 +1078,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExtBackLinksEDU()
+    public function getExtBackLinksEDU(): mixed
     {
         return $this->container['extBackLinksEDU'];
     }
@@ -1087,7 +1090,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtBackLinksEDU($extBackLinksEDU)
+    public function setExtBackLinksEDU($extBackLinksEDU): Majestic
     {
         $this->container['extBackLinksEDU'] = $extBackLinksEDU;
 
@@ -1099,7 +1102,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainsGOV()
+    public function getRefDomainsGOV(): mixed
     {
         return $this->container['refDomainsGOV'];
     }
@@ -1111,7 +1114,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainsGOV($refDomainsGOV)
+    public function setRefDomainsGOV($refDomainsGOV): Majestic
     {
         $this->container['refDomainsGOV'] = $refDomainsGOV;
 
@@ -1123,7 +1126,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExtBackLinksGOV()
+    public function getExtBackLinksGOV(): mixed
     {
         return $this->container['extBackLinksGOV'];
     }
@@ -1135,7 +1138,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtBackLinksGOV($extBackLinksGOV)
+    public function setExtBackLinksGOV($extBackLinksGOV): Majestic
     {
         $this->container['extBackLinksGOV'] = $extBackLinksGOV;
 
@@ -1147,7 +1150,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainsEDUExact()
+    public function getRefDomainsEDUExact(): mixed
     {
         return $this->container['refDomainsEDUExact'];
     }
@@ -1159,7 +1162,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainsEDUExact($refDomainsEDUExact)
+    public function setRefDomainsEDUExact($refDomainsEDUExact): Majestic
     {
         $this->container['refDomainsEDUExact'] = $refDomainsEDUExact;
 
@@ -1171,7 +1174,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExtBackLinksEDUExact()
+    public function getExtBackLinksEDUExact(): mixed
     {
         return $this->container['extBackLinksEDUExact'];
     }
@@ -1183,7 +1186,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtBackLinksEDUExact($extBackLinksEDUExact)
+    public function setExtBackLinksEDUExact($extBackLinksEDUExact): Majestic
     {
         $this->container['extBackLinksEDUExact'] = $extBackLinksEDUExact;
 
@@ -1195,7 +1198,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainsGOVExact()
+    public function getRefDomainsGOVExact(): mixed
     {
         return $this->container['refDomainsGOVExact'];
     }
@@ -1207,7 +1210,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainsGOVExact($refDomainsGOVExact)
+    public function setRefDomainsGOVExact($refDomainsGOVExact): Majestic
     {
         $this->container['refDomainsGOVExact'] = $refDomainsGOVExact;
 
@@ -1219,7 +1222,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExtBackLinksGOVExact()
+    public function getExtBackLinksGOVExact(): mixed
     {
         return $this->container['extBackLinksGOVExact'];
     }
@@ -1231,7 +1234,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtBackLinksGOVExact($extBackLinksGOVExact)
+    public function setExtBackLinksGOVExact($extBackLinksGOVExact): Majestic
     {
         $this->container['extBackLinksGOVExact'] = $extBackLinksGOVExact;
 
@@ -1243,7 +1246,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCrawledFlag()
+    public function getCrawledFlag(): mixed
     {
         return $this->container['crawledFlag'];
     }
@@ -1255,7 +1258,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCrawledFlag($crawledFlag)
+    public function setCrawledFlag($crawledFlag): Majestic
     {
         $this->container['crawledFlag'] = $crawledFlag;
 
@@ -1267,7 +1270,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastCrawlDate()
+    public function getLastCrawlDate(): mixed
     {
         return $this->container['lastCrawlDate'];
     }
@@ -1279,7 +1282,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastCrawlDate($lastCrawlDate)
+    public function setLastCrawlDate($lastCrawlDate): Majestic
     {
         $this->container['lastCrawlDate'] = $lastCrawlDate;
 
@@ -1291,7 +1294,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastCrawlResult()
+    public function getLastCrawlResult(): mixed
     {
         return $this->container['lastCrawlResult'];
     }
@@ -1303,7 +1306,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastCrawlResult($lastCrawlResult)
+    public function setLastCrawlResult($lastCrawlResult): Majestic
     {
         $this->container['lastCrawlResult'] = $lastCrawlResult;
 
@@ -1315,7 +1318,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRedirectFlag()
+    public function getRedirectFlag(): mixed
     {
         return $this->container['redirectFlag'];
     }
@@ -1327,7 +1330,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRedirectFlag($redirectFlag)
+    public function setRedirectFlag($redirectFlag): Majestic
     {
         $this->container['redirectFlag'] = $redirectFlag;
 
@@ -1339,7 +1342,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFinalRedirectResult()
+    public function getFinalRedirectResult(): mixed
     {
         return $this->container['finalRedirectResult'];
     }
@@ -1351,7 +1354,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFinalRedirectResult($finalRedirectResult)
+    public function setFinalRedirectResult($finalRedirectResult): Majestic
     {
         $this->container['finalRedirectResult'] = $finalRedirectResult;
 
@@ -1363,7 +1366,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOutDomainsExternal()
+    public function getOutDomainsExternal(): mixed
     {
         return $this->container['outDomainsExternal'];
     }
@@ -1375,7 +1378,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOutDomainsExternal($outDomainsExternal)
+    public function setOutDomainsExternal($outDomainsExternal): Majestic
     {
         $this->container['outDomainsExternal'] = $outDomainsExternal;
 
@@ -1387,7 +1390,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOutLinksExternal()
+    public function getOutLinksExternal(): mixed
     {
         return $this->container['outLinksExternal'];
     }
@@ -1399,7 +1402,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOutLinksExternal($outLinksExternal)
+    public function setOutLinksExternal($outLinksExternal): Majestic
     {
         $this->container['outLinksExternal'] = $outLinksExternal;
 
@@ -1411,7 +1414,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOutLinksInternal()
+    public function getOutLinksInternal(): mixed
     {
         return $this->container['outLinksInternal'];
     }
@@ -1423,7 +1426,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOutLinksInternal($outLinksInternal)
+    public function setOutLinksInternal($outLinksInternal): Majestic
     {
         $this->container['outLinksInternal'] = $outLinksInternal;
 
@@ -1435,7 +1438,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOutLinksPages()
+    public function getOutLinksPages(): mixed
     {
         return $this->container['outLinksPages'];
     }
@@ -1447,7 +1450,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOutLinksPages($outLinksPages)
+    public function setOutLinksPages($outLinksPages): Majestic
     {
         $this->container['outLinksPages'] = $outLinksPages;
 
@@ -1459,7 +1462,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastSeen()
+    public function getLastSeen(): mixed
     {
         return $this->container['lastSeen'];
     }
@@ -1471,7 +1474,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastSeen($lastSeen)
+    public function setLastSeen($lastSeen): Majestic
     {
         $this->container['lastSeen'] = $lastSeen;
 
@@ -1483,7 +1486,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): mixed
     {
         return $this->container['title'];
     }
@@ -1495,7 +1498,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): Majestic
     {
         $this->container['title'] = $title;
 
@@ -1507,7 +1510,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRedirectTo()
+    public function getRedirectTo(): mixed
     {
         return $this->container['redirectTo'];
     }
@@ -1519,7 +1522,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRedirectTo($redirectTo)
+    public function setRedirectTo($redirectTo): Majestic
     {
         $this->container['redirectTo'] = $redirectTo;
 
@@ -1531,7 +1534,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -1543,7 +1546,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): Majestic
     {
         $this->container['language'] = $language;
 
@@ -1555,7 +1558,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguageDesc()
+    public function getLanguageDesc(): mixed
     {
         return $this->container['languageDesc'];
     }
@@ -1567,7 +1570,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguageDesc($languageDesc)
+    public function setLanguageDesc($languageDesc): Majestic
     {
         $this->container['languageDesc'] = $languageDesc;
 
@@ -1579,7 +1582,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguageConfidence()
+    public function getLanguageConfidence(): mixed
     {
         return $this->container['languageConfidence'];
     }
@@ -1591,7 +1594,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguageConfidence($languageConfidence)
+    public function setLanguageConfidence($languageConfidence): Majestic
     {
         $this->container['languageConfidence'] = $languageConfidence;
 
@@ -1603,7 +1606,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguagePageRatios()
+    public function getLanguagePageRatios(): mixed
     {
         return $this->container['languagePageRatios'];
     }
@@ -1615,7 +1618,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguagePageRatios($languagePageRatios)
+    public function setLanguagePageRatios($languagePageRatios): Majestic
     {
         $this->container['languagePageRatios'] = $languagePageRatios;
 
@@ -1627,7 +1630,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguageTotalPages()
+    public function getLanguageTotalPages(): mixed
     {
         return $this->container['languageTotalPages'];
     }
@@ -1639,7 +1642,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguageTotalPages($languageTotalPages)
+    public function setLanguageTotalPages($languageTotalPages): Majestic
     {
         $this->container['languageTotalPages'] = $languageTotalPages;
 
@@ -1651,7 +1654,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefLanguage()
+    public function getRefLanguage(): mixed
     {
         return $this->container['refLanguage'];
     }
@@ -1663,7 +1666,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefLanguage($refLanguage)
+    public function setRefLanguage($refLanguage): Majestic
     {
         $this->container['refLanguage'] = $refLanguage;
 
@@ -1675,7 +1678,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefLanguageDesc()
+    public function getRefLanguageDesc(): mixed
     {
         return $this->container['refLanguageDesc'];
     }
@@ -1687,7 +1690,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefLanguageDesc($refLanguageDesc)
+    public function setRefLanguageDesc($refLanguageDesc): Majestic
     {
         $this->container['refLanguageDesc'] = $refLanguageDesc;
 
@@ -1699,7 +1702,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefLanguageConfidence()
+    public function getRefLanguageConfidence(): mixed
     {
         return $this->container['refLanguageConfidence'];
     }
@@ -1711,7 +1714,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefLanguageConfidence($refLanguageConfidence)
+    public function setRefLanguageConfidence($refLanguageConfidence): Majestic
     {
         $this->container['refLanguageConfidence'] = $refLanguageConfidence;
 
@@ -1723,7 +1726,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefLanguagePageRatios()
+    public function getRefLanguagePageRatios(): mixed
     {
         return $this->container['refLanguagePageRatios'];
     }
@@ -1735,7 +1738,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefLanguagePageRatios($refLanguagePageRatios)
+    public function setRefLanguagePageRatios($refLanguagePageRatios): Majestic
     {
         $this->container['refLanguagePageRatios'] = $refLanguagePageRatios;
 
@@ -1747,7 +1750,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefLanguageTotalPages()
+    public function getRefLanguageTotalPages(): mixed
     {
         return $this->container['refLanguageTotalPages'];
     }
@@ -1759,7 +1762,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefLanguageTotalPages($refLanguageTotalPages)
+    public function setRefLanguageTotalPages($refLanguageTotalPages): Majestic
     {
         $this->container['refLanguageTotalPages'] = $refLanguageTotalPages;
 
@@ -1771,7 +1774,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCrawledURLs()
+    public function getCrawledURLs(): mixed
     {
         return $this->container['crawledURLs'];
     }
@@ -1783,7 +1786,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCrawledURLs($crawledURLs)
+    public function setCrawledURLs($crawledURLs): Majestic
     {
         $this->container['crawledURLs'] = $crawledURLs;
 
@@ -1795,7 +1798,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRootDomainIPAddress()
+    public function getRootDomainIPAddress(): mixed
     {
         return $this->container['rootDomainIPAddress'];
     }
@@ -1807,7 +1810,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRootDomainIPAddress($rootDomainIPAddress)
+    public function setRootDomainIPAddress($rootDomainIPAddress): Majestic
     {
         $this->container['rootDomainIPAddress'] = $rootDomainIPAddress;
 
@@ -1819,7 +1822,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTotalNonUniqueLinks()
+    public function getTotalNonUniqueLinks(): mixed
     {
         return $this->container['totalNonUniqueLinks'];
     }
@@ -1831,7 +1834,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTotalNonUniqueLinks($totalNonUniqueLinks)
+    public function setTotalNonUniqueLinks($totalNonUniqueLinks): Majestic
     {
         $this->container['totalNonUniqueLinks'] = $totalNonUniqueLinks;
 
@@ -1843,7 +1846,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeHomepages()
+    public function getNonUniqueLinkTypeHomepages(): mixed
     {
         return $this->container['nonUniqueLinkTypeHomepages'];
     }
@@ -1855,7 +1858,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeHomepages($nonUniqueLinkTypeHomepages)
+    public function setNonUniqueLinkTypeHomepages($nonUniqueLinkTypeHomepages): Majestic
     {
         $this->container['nonUniqueLinkTypeHomepages'] = $nonUniqueLinkTypeHomepages;
 
@@ -1867,7 +1870,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeIndirect()
+    public function getNonUniqueLinkTypeIndirect(): mixed
     {
         return $this->container['nonUniqueLinkTypeIndirect'];
     }
@@ -1879,7 +1882,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeIndirect($nonUniqueLinkTypeIndirect)
+    public function setNonUniqueLinkTypeIndirect($nonUniqueLinkTypeIndirect): Majestic
     {
         $this->container['nonUniqueLinkTypeIndirect'] = $nonUniqueLinkTypeIndirect;
 
@@ -1891,7 +1894,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeDeleted()
+    public function getNonUniqueLinkTypeDeleted(): mixed
     {
         return $this->container['nonUniqueLinkTypeDeleted'];
     }
@@ -1903,7 +1906,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeDeleted($nonUniqueLinkTypeDeleted)
+    public function setNonUniqueLinkTypeDeleted($nonUniqueLinkTypeDeleted): Majestic
     {
         $this->container['nonUniqueLinkTypeDeleted'] = $nonUniqueLinkTypeDeleted;
 
@@ -1915,7 +1918,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeNoFollow()
+    public function getNonUniqueLinkTypeNoFollow(): mixed
     {
         return $this->container['nonUniqueLinkTypeNoFollow'];
     }
@@ -1927,7 +1930,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeNoFollow($nonUniqueLinkTypeNoFollow)
+    public function setNonUniqueLinkTypeNoFollow($nonUniqueLinkTypeNoFollow): Majestic
     {
         $this->container['nonUniqueLinkTypeNoFollow'] = $nonUniqueLinkTypeNoFollow;
 
@@ -1939,7 +1942,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeProtocolHTTPS()
+    public function getNonUniqueLinkTypeProtocolHTTPS(): mixed
     {
         return $this->container['nonUniqueLinkTypeProtocolHTTPS'];
     }
@@ -1951,7 +1954,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeProtocolHTTPS($nonUniqueLinkTypeProtocolHTTPS)
+    public function setNonUniqueLinkTypeProtocolHTTPS($nonUniqueLinkTypeProtocolHTTPS): Majestic
     {
         $this->container['nonUniqueLinkTypeProtocolHTTPS'] = $nonUniqueLinkTypeProtocolHTTPS;
 
@@ -1963,7 +1966,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeFrame()
+    public function getNonUniqueLinkTypeFrame(): mixed
     {
         return $this->container['nonUniqueLinkTypeFrame'];
     }
@@ -1975,7 +1978,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeFrame($nonUniqueLinkTypeFrame)
+    public function setNonUniqueLinkTypeFrame($nonUniqueLinkTypeFrame): Majestic
     {
         $this->container['nonUniqueLinkTypeFrame'] = $nonUniqueLinkTypeFrame;
 
@@ -1987,7 +1990,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeImageLink()
+    public function getNonUniqueLinkTypeImageLink(): mixed
     {
         return $this->container['nonUniqueLinkTypeImageLink'];
     }
@@ -1999,7 +2002,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeImageLink($nonUniqueLinkTypeImageLink)
+    public function setNonUniqueLinkTypeImageLink($nonUniqueLinkTypeImageLink): Majestic
     {
         $this->container['nonUniqueLinkTypeImageLink'] = $nonUniqueLinkTypeImageLink;
 
@@ -2011,7 +2014,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeRedirect()
+    public function getNonUniqueLinkTypeRedirect(): mixed
     {
         return $this->container['nonUniqueLinkTypeRedirect'];
     }
@@ -2023,7 +2026,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeRedirect($nonUniqueLinkTypeRedirect)
+    public function setNonUniqueLinkTypeRedirect($nonUniqueLinkTypeRedirect): Majestic
     {
         $this->container['nonUniqueLinkTypeRedirect'] = $nonUniqueLinkTypeRedirect;
 
@@ -2035,7 +2038,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNonUniqueLinkTypeTextLink()
+    public function getNonUniqueLinkTypeTextLink(): mixed
     {
         return $this->container['nonUniqueLinkTypeTextLink'];
     }
@@ -2047,7 +2050,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNonUniqueLinkTypeTextLink($nonUniqueLinkTypeTextLink)
+    public function setNonUniqueLinkTypeTextLink($nonUniqueLinkTypeTextLink): Majestic
     {
         $this->container['nonUniqueLinkTypeTextLink'] = $nonUniqueLinkTypeTextLink;
 
@@ -2059,7 +2062,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainTypeLive()
+    public function getRefDomainTypeLive(): mixed
     {
         return $this->container['refDomainTypeLive'];
     }
@@ -2071,7 +2074,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainTypeLive($refDomainTypeLive)
+    public function setRefDomainTypeLive($refDomainTypeLive): Majestic
     {
         $this->container['refDomainTypeLive'] = $refDomainTypeLive;
 
@@ -2083,7 +2086,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainTypeFollow()
+    public function getRefDomainTypeFollow(): mixed
     {
         return $this->container['refDomainTypeFollow'];
     }
@@ -2095,7 +2098,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainTypeFollow($refDomainTypeFollow)
+    public function setRefDomainTypeFollow($refDomainTypeFollow): Majestic
     {
         $this->container['refDomainTypeFollow'] = $refDomainTypeFollow;
 
@@ -2107,7 +2110,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainTypeHomepageLink()
+    public function getRefDomainTypeHomepageLink(): mixed
     {
         return $this->container['refDomainTypeHomepageLink'];
     }
@@ -2119,7 +2122,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainTypeHomepageLink($refDomainTypeHomepageLink)
+    public function setRefDomainTypeHomepageLink($refDomainTypeHomepageLink): Majestic
     {
         $this->container['refDomainTypeHomepageLink'] = $refDomainTypeHomepageLink;
 
@@ -2131,7 +2134,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainTypeDirect()
+    public function getRefDomainTypeDirect(): mixed
     {
         return $this->container['refDomainTypeDirect'];
     }
@@ -2143,7 +2146,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainTypeDirect($refDomainTypeDirect)
+    public function setRefDomainTypeDirect($refDomainTypeDirect): Majestic
     {
         $this->container['refDomainTypeDirect'] = $refDomainTypeDirect;
 
@@ -2155,7 +2158,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRefDomainTypeProtocolHTTPS()
+    public function getRefDomainTypeProtocolHTTPS(): mixed
     {
         return $this->container['refDomainTypeProtocolHTTPS'];
     }
@@ -2167,7 +2170,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefDomainTypeProtocolHTTPS($refDomainTypeProtocolHTTPS)
+    public function setRefDomainTypeProtocolHTTPS($refDomainTypeProtocolHTTPS): Majestic
     {
         $this->container['refDomainTypeProtocolHTTPS'] = $refDomainTypeProtocolHTTPS;
 
@@ -2179,7 +2182,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCanonicalURL()
+    public function getCanonicalURL(): mixed
     {
         return $this->container['canonicalURL'];
     }
@@ -2191,7 +2194,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCanonicalURL($canonicalURL)
+    public function setCanonicalURL($canonicalURL): Majestic
     {
         $this->container['canonicalURL'] = $canonicalURL;
 
@@ -2203,7 +2206,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCitationFlow()
+    public function getCitationFlow(): mixed
     {
         return $this->container['citationFlow'];
     }
@@ -2215,7 +2218,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCitationFlow($citationFlow)
+    public function setCitationFlow($citationFlow): Majestic
     {
         $this->container['citationFlow'] = $citationFlow;
 
@@ -2227,7 +2230,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrustFlow()
+    public function getTrustFlow(): mixed
     {
         return $this->container['trustFlow'];
     }
@@ -2239,7 +2242,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrustFlow($trustFlow)
+    public function setTrustFlow($trustFlow): Majestic
     {
         $this->container['trustFlow'] = $trustFlow;
 
@@ -2251,7 +2254,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrustMetric()
+    public function getTrustMetric(): mixed
     {
         return $this->container['trustMetric'];
     }
@@ -2263,7 +2266,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrustMetric($trustMetric)
+    public function setTrustMetric($trustMetric): Majestic
     {
         $this->container['trustMetric'] = $trustMetric;
 
@@ -2275,7 +2278,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTopicalTrustFlowTopic0()
+    public function getTopicalTrustFlowTopic0(): mixed
     {
         return $this->container['topicalTrustFlowTopic0'];
     }
@@ -2287,7 +2290,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTopicalTrustFlowTopic0($topicalTrustFlowTopic0)
+    public function setTopicalTrustFlowTopic0($topicalTrustFlowTopic0): Majestic
     {
         $this->container['topicalTrustFlowTopic0'] = $topicalTrustFlowTopic0;
 
@@ -2299,7 +2302,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTopicalTrustFlowValue0()
+    public function getTopicalTrustFlowValue0(): mixed
     {
         return $this->container['topicalTrustFlowValue0'];
     }
@@ -2311,7 +2314,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTopicalTrustFlowValue0($topicalTrustFlowValue0)
+    public function setTopicalTrustFlowValue0($topicalTrustFlowValue0): Majestic
     {
         $this->container['topicalTrustFlowValue0'] = $topicalTrustFlowValue0;
 
@@ -2323,7 +2326,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTopicalTrustFlowTopic1()
+    public function getTopicalTrustFlowTopic1(): mixed
     {
         return $this->container['topicalTrustFlowTopic1'];
     }
@@ -2335,7 +2338,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTopicalTrustFlowTopic1($topicalTrustFlowTopic1)
+    public function setTopicalTrustFlowTopic1($topicalTrustFlowTopic1): Majestic
     {
         $this->container['topicalTrustFlowTopic1'] = $topicalTrustFlowTopic1;
 
@@ -2347,7 +2350,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTopicalTrustFlowValue1()
+    public function getTopicalTrustFlowValue1(): mixed
     {
         return $this->container['topicalTrustFlowValue1'];
     }
@@ -2359,7 +2362,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTopicalTrustFlowValue1($topicalTrustFlowValue1)
+    public function setTopicalTrustFlowValue1($topicalTrustFlowValue1): Majestic
     {
         $this->container['topicalTrustFlowValue1'] = $topicalTrustFlowValue1;
 
@@ -2371,7 +2374,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTopicalTrustFlowTopic2()
+    public function getTopicalTrustFlowTopic2(): mixed
     {
         return $this->container['topicalTrustFlowTopic2'];
     }
@@ -2383,7 +2386,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTopicalTrustFlowTopic2($topicalTrustFlowTopic2)
+    public function setTopicalTrustFlowTopic2($topicalTrustFlowTopic2): Majestic
     {
         $this->container['topicalTrustFlowTopic2'] = $topicalTrustFlowTopic2;
 
@@ -2395,7 +2398,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTopicalTrustFlowValue2()
+    public function getTopicalTrustFlowValue2(): mixed
     {
         return $this->container['topicalTrustFlowValue2'];
     }
@@ -2407,7 +2410,7 @@ class Majestic implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTopicalTrustFlowValue2($topicalTrustFlowValue2)
+    public function setTopicalTrustFlowValue2($topicalTrustFlowValue2): Majestic
     {
         $this->container['topicalTrustFlowValue2'] = $topicalTrustFlowValue2;
 
@@ -2482,23 +2485,22 @@ class Majestic implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -2508,7 +2510,7 @@ class Majestic implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

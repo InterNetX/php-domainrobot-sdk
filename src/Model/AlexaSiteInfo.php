@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * AlexaSiteInfo Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getSitesLinkingIn()
+    public function getSitesLinkingIn(): mixed
     {
         return $this->container['sitesLinkingIn'];
     }
@@ -319,7 +322,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSitesLinkingIn($sitesLinkingIn)
+    public function setSitesLinkingIn($sitesLinkingIn): AlexaSiteInfo
     {
         $this->container['sitesLinkingIn'] = $sitesLinkingIn;
 
@@ -331,7 +334,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getRank()
+    public function getRank(): mixed
     {
         return $this->container['rank'];
     }
@@ -343,7 +346,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRank($rank)
+    public function setRank($rank): AlexaSiteInfo
     {
         $this->container['rank'] = $rank;
 
@@ -355,7 +358,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLoadingTime()
+    public function getLoadingTime(): mixed
     {
         return $this->container['loadingTime'];
     }
@@ -367,7 +370,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLoadingTime($loadingTime)
+    public function setLoadingTime($loadingTime): AlexaSiteInfo
     {
         $this->container['loadingTime'] = $loadingTime;
 
@@ -379,7 +382,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAdultContent()
+    public function getAdultContent(): mixed
     {
         return $this->container['adultContent'];
     }
@@ -391,7 +394,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdultContent($adultContent)
+    public function setAdultContent($adultContent): AlexaSiteInfo
     {
         $this->container['adultContent'] = $adultContent;
 
@@ -403,7 +406,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSiteLanguage()
+    public function getSiteLanguage(): mixed
     {
         return $this->container['siteLanguage'];
     }
@@ -415,7 +418,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSiteLanguage($siteLanguage)
+    public function setSiteLanguage($siteLanguage): AlexaSiteInfo
     {
         $this->container['siteLanguage'] = $siteLanguage;
 
@@ -427,7 +430,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AlexaSiteInfoSiteData
      */
-    public function getSiteData()
+    public function getSiteData(): mixed
     {
         return $this->container['siteData'];
     }
@@ -439,7 +442,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSiteData($siteData)
+    public function setSiteData($siteData): AlexaSiteInfo
     {
         $this->container['siteData'] = $siteData;
 
@@ -451,7 +454,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AlexaSiteInfoHighestRankedIncountry
      */
-    public function getHighestRankedIncountry()
+    public function getHighestRankedIncountry(): mixed
     {
         return $this->container['highestRankedIncountry'];
     }
@@ -463,7 +466,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHighestRankedIncountry($highestRankedIncountry)
+    public function setHighestRankedIncountry($highestRankedIncountry): AlexaSiteInfo
     {
         $this->container['highestRankedIncountry'] = $highestRankedIncountry;
 
@@ -475,7 +478,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AlexaSiteInfoPageViewsPerDay
      */
-    public function getPageViewsPerDay()
+    public function getPageViewsPerDay(): mixed
     {
         return $this->container['pageViewsPerDay'];
     }
@@ -487,7 +490,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPageViewsPerDay($pageViewsPerDay)
+    public function setPageViewsPerDay($pageViewsPerDay): AlexaSiteInfo
     {
         $this->container['pageViewsPerDay'] = $pageViewsPerDay;
 
@@ -562,23 +565,22 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class AlexaSiteInfo implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

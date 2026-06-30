@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * MailServiceMessage Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -242,7 +245,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -253,7 +256,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -272,7 +275,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -297,7 +300,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -313,7 +316,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -325,7 +328,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): MailServiceMessage
     {
         $this->container['created'] = $created;
 
@@ -337,7 +340,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -349,7 +352,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): MailServiceMessage
     {
         $this->container['updated'] = $updated;
 
@@ -361,7 +364,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -373,7 +376,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): MailServiceMessage
     {
         $this->container['id'] = $id;
 
@@ -385,7 +388,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReference()
+    public function getReference(): mixed
     {
         return $this->container['reference'];
     }
@@ -397,7 +400,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReference($reference)
+    public function setReference($reference): MailServiceMessage
     {
         $this->container['reference'] = $reference;
 
@@ -409,7 +412,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFrom()
+    public function getFrom(): mixed
     {
         return $this->container['from'];
     }
@@ -421,7 +424,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFrom($from)
+    public function setFrom($from): MailServiceMessage
     {
         $this->container['from'] = $from;
 
@@ -433,7 +436,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubject()
+    public function getSubject(): mixed
     {
         return $this->container['subject'];
     }
@@ -445,7 +448,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubject($subject)
+    public function setSubject($subject): MailServiceMessage
     {
         $this->container['subject'] = $subject;
 
@@ -457,7 +460,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DeliveryStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -469,7 +472,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): MailServiceMessage
     {
         $this->container['status'] = $status;
 
@@ -481,7 +484,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Recipient[]
      */
-    public function getRecipients()
+    public function getRecipients(): mixed
     {
         return $this->container['recipients'];
     }
@@ -493,7 +496,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRecipients($recipients)
+    public function setRecipients($recipients): MailServiceMessage
     {
         $this->container['recipients'] = $recipients;
 
@@ -505,7 +508,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExternalReference()
+    public function getExternalReference(): mixed
     {
         return $this->container['externalReference'];
     }
@@ -517,7 +520,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExternalReference($externalReference)
+    public function setExternalReference($externalReference): MailServiceMessage
     {
         $this->container['externalReference'] = $externalReference;
 
@@ -592,23 +595,22 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -618,7 +620,7 @@ class MailServiceMessage implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

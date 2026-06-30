@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Product Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -242,7 +245,7 @@ class Product implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -253,7 +256,7 @@ class Product implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -272,7 +275,7 @@ class Product implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -297,7 +300,7 @@ class Product implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -313,7 +316,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -325,7 +328,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Product
     {
         $this->container['created'] = $created;
 
@@ -337,7 +340,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -349,7 +352,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Product
     {
         $this->container['updated'] = $updated;
 
@@ -361,7 +364,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -373,7 +376,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Product
     {
         $this->container['owner'] = $owner;
 
@@ -385,7 +388,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -397,7 +400,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Product
     {
         $this->container['updater'] = $updater;
 
@@ -409,7 +412,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Article
      */
-    public function getArticle()
+    public function getArticle(): mixed
     {
         return $this->container['article'];
     }
@@ -421,7 +424,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticle($article)
+    public function setArticle($article): Product
     {
         $this->container['article'] = $article;
 
@@ -433,7 +436,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVatType()
+    public function getVatType(): mixed
     {
         return $this->container['vatType'];
     }
@@ -445,7 +448,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatType($vatType)
+    public function setVatType($vatType): Product
     {
         $this->container['vatType'] = $vatType;
 
@@ -457,7 +460,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPriceRequired()
+    public function getPriceRequired(): mixed
     {
         return $this->container['priceRequired'];
     }
@@ -469,7 +472,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceRequired($priceRequired)
+    public function setPriceRequired($priceRequired): Product
     {
         $this->container['priceRequired'] = $priceRequired;
 
@@ -481,7 +484,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -493,7 +496,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): Product
     {
         $this->container['id'] = $id;
 
@@ -505,7 +508,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBusinessCase()
+    public function getBusinessCase(): mixed
     {
         return $this->container['businessCase'];
     }
@@ -517,7 +520,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessCase($businessCase)
+    public function setBusinessCase($businessCase): Product
     {
         $this->container['businessCase'] = $businessCase;
 
@@ -592,23 +595,22 @@ class Product implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -618,7 +620,7 @@ class Product implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TaskLimit Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -337,7 +340,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): TaskLimit
     {
         $this->container['created'] = $created;
 
@@ -349,7 +352,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -361,7 +364,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): TaskLimit
     {
         $this->container['updated'] = $updated;
 
@@ -373,7 +376,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TaskGroup
      */
-    public function getTaskGroup()
+    public function getTaskGroup(): mixed
     {
         return $this->container['taskGroup'];
     }
@@ -385,7 +388,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskGroup($taskGroup)
+    public function setTaskGroup($taskGroup): TaskLimit
     {
         $this->container['taskGroup'] = $taskGroup;
 
@@ -397,7 +400,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLimitSelf()
+    public function getLimitSelf(): mixed
     {
         return $this->container['limitSelf'];
     }
@@ -409,7 +412,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLimitSelf($limitSelf)
+    public function setLimitSelf($limitSelf): TaskLimit
     {
         $this->container['limitSelf'] = $limitSelf;
 
@@ -421,7 +424,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getInclusiveSelf()
+    public function getInclusiveSelf(): mixed
     {
         return $this->container['inclusiveSelf'];
     }
@@ -433,7 +436,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInclusiveSelf($inclusiveSelf)
+    public function setInclusiveSelf($inclusiveSelf): TaskLimit
     {
         $this->container['inclusiveSelf'] = $inclusiveSelf;
 
@@ -445,7 +448,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimeUnitConstants
      */
-    public function getTimeUnitSelf()
+    public function getTimeUnitSelf(): mixed
     {
         return $this->container['timeUnitSelf'];
     }
@@ -457,7 +460,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTimeUnitSelf($timeUnitSelf)
+    public function setTimeUnitSelf($timeUnitSelf): TaskLimit
     {
         $this->container['timeUnitSelf'] = $timeUnitSelf;
 
@@ -469,7 +472,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLimitChildren()
+    public function getLimitChildren(): mixed
     {
         return $this->container['limitChildren'];
     }
@@ -481,7 +484,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLimitChildren($limitChildren)
+    public function setLimitChildren($limitChildren): TaskLimit
     {
         $this->container['limitChildren'] = $limitChildren;
 
@@ -493,7 +496,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getInclusiveChildren()
+    public function getInclusiveChildren(): mixed
     {
         return $this->container['inclusiveChildren'];
     }
@@ -505,7 +508,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInclusiveChildren($inclusiveChildren)
+    public function setInclusiveChildren($inclusiveChildren): TaskLimit
     {
         $this->container['inclusiveChildren'] = $inclusiveChildren;
 
@@ -517,7 +520,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimeUnitConstants
      */
-    public function getTimeUnitChildren()
+    public function getTimeUnitChildren(): mixed
     {
         return $this->container['timeUnitChildren'];
     }
@@ -529,7 +532,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTimeUnitChildren($timeUnitChildren)
+    public function setTimeUnitChildren($timeUnitChildren): TaskLimit
     {
         $this->container['timeUnitChildren'] = $timeUnitChildren;
 
@@ -541,7 +544,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCount()
+    public function getCount(): mixed
     {
         return $this->container['count'];
     }
@@ -553,7 +556,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCount($count)
+    public function setCount($count): TaskLimit
     {
         $this->container['count'] = $count;
 
@@ -565,7 +568,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUser()
+    public function getUser(): mixed
     {
         return $this->container['user'];
     }
@@ -577,7 +580,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setUser($user): TaskLimit
     {
         $this->container['user'] = $user;
 
@@ -652,23 +655,22 @@ class TaskLimit implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class TaskLimit implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

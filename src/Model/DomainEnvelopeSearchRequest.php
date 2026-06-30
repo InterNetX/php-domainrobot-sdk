@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainEnvelopeSearchRequest Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -278,7 +281,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -289,7 +292,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -308,7 +311,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -333,7 +336,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -349,7 +352,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSearchToken()
+    public function getSearchToken(): mixed
     {
         return $this->container['searchToken'];
     }
@@ -361,7 +364,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSearchToken($searchToken)
+    public function setSearchToken($searchToken): DomainEnvelopeSearchRequest
     {
         $this->container['searchToken'] = $searchToken;
 
@@ -373,7 +376,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -385,7 +388,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): DomainEnvelopeSearchRequest
     {
         $this->container['currency'] = $currency;
 
@@ -397,7 +400,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDebug()
+    public function getDebug(): mixed
     {
         return $this->container['debug'];
     }
@@ -409,7 +412,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDebug($debug)
+    public function setDebug($debug): DomainEnvelopeSearchRequest
     {
         $this->container['debug'] = $debug;
 
@@ -421,7 +424,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getCheckPortfolio()
+    public function getCheckPortfolio(): mixed
     {
         return $this->container['checkPortfolio'];
     }
@@ -433,7 +436,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCheckPortfolio($checkPortfolio)
+    public function setCheckPortfolio($checkPortfolio): DomainEnvelopeSearchRequest
     {
         $this->container['checkPortfolio'] = $checkPortfolio;
 
@@ -445,7 +448,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getForceDnsCheck()
+    public function getForceDnsCheck(): mixed
     {
         return $this->container['forceDnsCheck'];
     }
@@ -457,7 +460,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setForceDnsCheck($forceDnsCheck)
+    public function setForceDnsCheck($forceDnsCheck): DomainEnvelopeSearchRequest
     {
         $this->container['forceDnsCheck'] = $forceDnsCheck;
 
@@ -469,7 +472,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAllowDuplicates()
+    public function getAllowDuplicates(): mixed
     {
         return $this->container['allowDuplicates'];
     }
@@ -481,7 +484,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAllowDuplicates($allowDuplicates)
+    public function setAllowDuplicates($allowDuplicates): DomainEnvelopeSearchRequest
     {
         $this->container['allowDuplicates'] = $allowDuplicates;
 
@@ -493,7 +496,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainStudioSources
      */
-    public function getSources()
+    public function getSources(): mixed
     {
         return $this->container['sources'];
     }
@@ -505,7 +508,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSources($sources)
+    public function setSources($sources): DomainEnvelopeSearchRequest
     {
         $this->container['sources'] = $sources;
 
@@ -517,7 +520,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getClientIp()
+    public function getClientIp(): mixed
     {
         return $this->container['clientIp'];
     }
@@ -529,7 +532,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClientIp($clientIp)
+    public function setClientIp($clientIp): DomainEnvelopeSearchRequest
     {
         $this->container['clientIp'] = $clientIp;
 
@@ -541,7 +544,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCtid()
+    public function getCtid(): mixed
     {
         return $this->container['ctid'];
     }
@@ -553,7 +556,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCtid($ctid)
+    public function setCtid($ctid): DomainEnvelopeSearchRequest
     {
         $this->container['ctid'] = $ctid;
 
@@ -565,7 +568,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStid()
+    public function getStid(): mixed
     {
         return $this->container['stid'];
     }
@@ -577,7 +580,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStid($stid)
+    public function setStid($stid): DomainEnvelopeSearchRequest
     {
         $this->container['stid'] = $stid;
 
@@ -589,7 +592,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAgent()
+    public function getAgent(): mixed
     {
         return $this->container['agent'];
     }
@@ -601,7 +604,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAgent($agent)
+    public function setAgent($agent): DomainEnvelopeSearchRequest
     {
         $this->container['agent'] = $agent;
 
@@ -613,7 +616,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -625,7 +628,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainEnvelopeSearchRequest
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -637,7 +640,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getWhoisTimeout()
+    public function getWhoisTimeout(): mixed
     {
         return $this->container['whoisTimeout'];
     }
@@ -649,7 +652,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setWhoisTimeout($whoisTimeout)
+    public function setWhoisTimeout($whoisTimeout): DomainEnvelopeSearchRequest
     {
         $this->container['whoisTimeout'] = $whoisTimeout;
 
@@ -661,7 +664,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIgnorePremium()
+    public function getIgnorePremium(): mixed
     {
         return $this->container['ignorePremium'];
     }
@@ -673,7 +676,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIgnorePremium($ignorePremium)
+    public function setIgnorePremium($ignorePremium): DomainEnvelopeSearchRequest
     {
         $this->container['ignorePremium'] = $ignorePremium;
 
@@ -685,7 +688,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIgnoreMarket()
+    public function getIgnoreMarket(): mixed
     {
         return $this->container['ignoreMarket'];
     }
@@ -697,7 +700,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIgnoreMarket($ignoreMarket)
+    public function setIgnoreMarket($ignoreMarket): DomainEnvelopeSearchRequest
     {
         $this->container['ignoreMarket'] = $ignoreMarket;
 
@@ -772,23 +775,22 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -798,7 +800,7 @@ class DomainEnvelopeSearchRequest implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * QueryFilter Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getKey()
+    public function getKey(): mixed
     {
         return $this->container['key'];
     }
@@ -307,7 +310,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKey($key)
+    public function setKey($key): QueryFilter
     {
         $this->container['key'] = $key;
 
@@ -319,7 +322,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getValue()
+    public function getValue(): mixed
     {
         return $this->container['value'];
     }
@@ -331,7 +334,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setValue($value): QueryFilter
     {
         $this->container['value'] = $value;
 
@@ -343,7 +346,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getValues()
+    public function getValues(): mixed
     {
         return $this->container['values'];
     }
@@ -355,7 +358,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValues($values)
+    public function setValues($values): QueryFilter
     {
         $this->container['values'] = $values;
 
@@ -367,7 +370,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Operator
      */
-    public function getOperator()
+    public function getOperator(): mixed
     {
         return $this->container['operator'];
     }
@@ -379,7 +382,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOperator($operator)
+    public function setOperator($operator): QueryFilter
     {
         $this->container['operator'] = $operator;
 
@@ -391,7 +394,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ConditionType
      */
-    public function getLink()
+    public function getLink(): mixed
     {
         return $this->container['link'];
     }
@@ -403,7 +406,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLink($link)
+    public function setLink($link): QueryFilter
     {
         $this->container['link'] = $link;
 
@@ -415,7 +418,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\QueryFilter[]
      */
-    public function getFilters()
+    public function getFilters(): mixed
     {
         return $this->container['filters'];
     }
@@ -427,7 +430,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFilters($filters)
+    public function setFilters($filters): QueryFilter
     {
         $this->container['filters'] = $filters;
 
@@ -502,23 +505,22 @@ class QueryFilter implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class QueryFilter implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

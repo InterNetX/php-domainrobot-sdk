@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Certificate Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -488,7 +491,7 @@ class Certificate implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -499,7 +502,7 @@ class Certificate implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -518,7 +521,7 @@ class Certificate implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -543,7 +546,7 @@ class Certificate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -559,7 +562,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -571,7 +574,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Certificate
     {
         $this->container['created'] = $created;
 
@@ -583,7 +586,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -595,7 +598,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Certificate
     {
         $this->container['updated'] = $updated;
 
@@ -607,7 +610,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -619,7 +622,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Certificate
     {
         $this->container['owner'] = $owner;
 
@@ -631,7 +634,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -643,7 +646,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Certificate
     {
         $this->container['updater'] = $updater;
 
@@ -655,7 +658,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -667,7 +670,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): Certificate
     {
         $this->container['id'] = $id;
 
@@ -679,7 +682,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPartnerOrderId()
+    public function getPartnerOrderId(): mixed
     {
         return $this->container['partnerOrderId'];
     }
@@ -691,7 +694,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPartnerOrderId($partnerOrderId)
+    public function setPartnerOrderId($partnerOrderId): Certificate
     {
         $this->container['partnerOrderId'] = $partnerOrderId;
 
@@ -703,7 +706,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrderId()
+    public function getOrderId(): mixed
     {
         return $this->container['orderId'];
     }
@@ -715,7 +718,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderId($orderId)
+    public function setOrderId($orderId): Certificate
     {
         $this->container['orderId'] = $orderId;
 
@@ -727,7 +730,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SslContact
      */
-    public function getAdminContact()
+    public function getAdminContact(): mixed
     {
         return $this->container['adminContact'];
     }
@@ -739,7 +742,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdminContact($adminContact)
+    public function setAdminContact($adminContact): Certificate
     {
         $this->container['adminContact'] = $adminContact;
 
@@ -751,7 +754,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SslContact
      */
-    public function getTechnicalContact()
+    public function getTechnicalContact(): mixed
     {
         return $this->container['technicalContact'];
     }
@@ -763,7 +766,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTechnicalContact($technicalContact)
+    public function setTechnicalContact($technicalContact): Certificate
     {
         $this->container['technicalContact'] = $technicalContact;
 
@@ -775,7 +778,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -787,7 +790,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): Certificate
     {
         $this->container['name'] = $name;
 
@@ -799,7 +802,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getLifetime()
+    public function getLifetime(): mixed
     {
         return $this->container['lifetime'];
     }
@@ -811,7 +814,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLifetime($lifetime)
+    public function setLifetime($lifetime): Certificate
     {
         $this->container['lifetime'] = $lifetime;
 
@@ -823,7 +826,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ServerSoftwareTypeConstants
      */
-    public function getSoftware()
+    public function getSoftware(): mixed
     {
         return $this->container['software'];
     }
@@ -835,7 +838,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSoftware($software)
+    public function setSoftware($software): Certificate
     {
         $this->container['software'] = $software;
 
@@ -847,7 +850,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -859,7 +862,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): Certificate
     {
         $this->container['comment'] = $comment;
 
@@ -871,7 +874,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCsr()
+    public function getCsr(): mixed
     {
         return $this->container['csr'];
     }
@@ -883,7 +886,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCsr($csr)
+    public function setCsr($csr): Certificate
     {
         $this->container['csr'] = $csr;
 
@@ -895,7 +898,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getServer()
+    public function getServer(): mixed
     {
         return $this->container['server'];
     }
@@ -907,7 +910,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServer($server)
+    public function setServer($server): Certificate
     {
         $this->container['server'] = $server;
 
@@ -919,7 +922,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSerialNumber()
+    public function getSerialNumber(): mixed
     {
         return $this->container['serialNumber'];
     }
@@ -931,7 +934,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSerialNumber($serialNumber)
+    public function setSerialNumber($serialNumber): Certificate
     {
         $this->container['serialNumber'] = $serialNumber;
 
@@ -943,7 +946,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProduct()
+    public function getProduct(): mixed
     {
         return $this->container['product'];
     }
@@ -955,7 +958,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProduct($product)
+    public function setProduct($product): Certificate
     {
         $this->container['product'] = $product;
 
@@ -967,7 +970,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CodeSigningType
      */
-    public function getCodeSigningType()
+    public function getCodeSigningType(): mixed
     {
         return $this->container['codeSigningType'];
     }
@@ -979,7 +982,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCodeSigningType($codeSigningType)
+    public function setCodeSigningType($codeSigningType): Certificate
     {
         $this->container['codeSigningType'] = $codeSigningType;
 
@@ -991,7 +994,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DigiCertCodeSigningProvisioningMethod
      */
-    public function getCodeSigningProvisioningMethod()
+    public function getCodeSigningProvisioningMethod(): mixed
     {
         return $this->container['codeSigningProvisioningMethod'];
     }
@@ -1003,7 +1006,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCodeSigningProvisioningMethod($codeSigningProvisioningMethod)
+    public function setCodeSigningProvisioningMethod($codeSigningProvisioningMethod): Certificate
     {
         $this->container['codeSigningProvisioningMethod'] = $codeSigningProvisioningMethod;
 
@@ -1015,7 +1018,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DigiCertCodeSigningHardwarePlatform
      */
-    public function getCodeSigningHardwarePlatform()
+    public function getCodeSigningHardwarePlatform(): mixed
     {
         return $this->container['codeSigningHardwarePlatform'];
     }
@@ -1027,7 +1030,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCodeSigningHardwarePlatform($codeSigningHardwarePlatform)
+    public function setCodeSigningHardwarePlatform($codeSigningHardwarePlatform): Certificate
     {
         $this->container['codeSigningHardwarePlatform'] = $codeSigningHardwarePlatform;
 
@@ -1039,7 +1042,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GlobalSignPickupMethod
      */
-    public function getGlobalSignPickupMethod()
+    public function getGlobalSignPickupMethod(): mixed
     {
         return $this->container['globalSignPickupMethod'];
     }
@@ -1051,7 +1054,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGlobalSignPickupMethod($globalSignPickupMethod)
+    public function setGlobalSignPickupMethod($globalSignPickupMethod): Certificate
     {
         $this->container['globalSignPickupMethod'] = $globalSignPickupMethod;
 
@@ -1063,7 +1066,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getHardwareInitToken()
+    public function getHardwareInitToken(): mixed
     {
         return $this->container['hardwareInitToken'];
     }
@@ -1075,7 +1078,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHardwareInitToken($hardwareInitToken)
+    public function setHardwareInitToken($hardwareInitToken): Certificate
     {
         $this->container['hardwareInitToken'] = $hardwareInitToken;
 
@@ -1087,7 +1090,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CertificateType
      */
-    public function getCertificateType()
+    public function getCertificateType(): mixed
     {
         return $this->container['certificateType'];
     }
@@ -1099,7 +1102,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificateType($certificateType)
+    public function setCertificateType($certificateType): Certificate
     {
         $this->container['certificateType'] = $certificateType;
 
@@ -1111,7 +1114,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SignatureHashAlgorithmConstants
      */
-    public function getSignatureHashAlgorithm()
+    public function getSignatureHashAlgorithm(): mixed
     {
         return $this->container['signatureHashAlgorithm'];
     }
@@ -1123,7 +1126,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSignatureHashAlgorithm($signatureHashAlgorithm)
+    public function setSignatureHashAlgorithm($signatureHashAlgorithm): Certificate
     {
         $this->container['signatureHashAlgorithm'] = $signatureHashAlgorithm;
 
@@ -1135,7 +1138,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getExpire()
+    public function getExpire(): mixed
     {
         return $this->container['expire'];
     }
@@ -1147,7 +1150,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExpire($expire)
+    public function setExpire($expire): Certificate
     {
         $this->container['expire'] = $expire;
 
@@ -1159,7 +1162,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPayable()
+    public function getPayable(): mixed
     {
         return $this->container['payable'];
     }
@@ -1171,7 +1174,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayable($payable)
+    public function setPayable($payable): Certificate
     {
         $this->container['payable'] = $payable;
 
@@ -1183,7 +1186,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ExtendedValidationExtension
      */
-    public function getExtension()
+    public function getExtension(): mixed
     {
         return $this->container['extension'];
     }
@@ -1195,7 +1198,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtension($extension)
+    public function setExtension($extension): Certificate
     {
         $this->container['extension'] = $extension;
 
@@ -1207,7 +1210,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SubjectAlternativeName[]
      */
-    public function getSubjectAlternativeNames()
+    public function getSubjectAlternativeNames(): mixed
     {
         return $this->container['subjectAlternativeNames'];
     }
@@ -1219,7 +1222,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubjectAlternativeNames($subjectAlternativeNames)
+    public function setSubjectAlternativeNames($subjectAlternativeNames): Certificate
     {
         $this->container['subjectAlternativeNames'] = $subjectAlternativeNames;
 
@@ -1231,7 +1234,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CertificateHistory[]
      */
-    public function getHistories()
+    public function getHistories(): mixed
     {
         return $this->container['histories'];
     }
@@ -1243,7 +1246,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHistories($histories)
+    public function setHistories($histories): Certificate
     {
         $this->container['histories'] = $histories;
 
@@ -1255,7 +1258,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CaCertificate[]
      */
-    public function getCertificationAuthority()
+    public function getCertificationAuthority(): mixed
     {
         return $this->container['certificationAuthority'];
     }
@@ -1267,7 +1270,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificationAuthority($certificationAuthority)
+    public function setCertificationAuthority($certificationAuthority): Certificate
     {
         $this->container['certificationAuthority'] = $certificationAuthority;
 
@@ -1279,7 +1282,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPassword()
+    public function getPassword(): mixed
     {
         return $this->container['password'];
     }
@@ -1291,7 +1294,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setPassword($password): Certificate
     {
         $this->container['password'] = $password;
 
@@ -1303,7 +1306,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFirstname()
+    public function getFirstname(): mixed
     {
         return $this->container['firstname'];
     }
@@ -1315,7 +1318,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFirstname($firstname)
+    public function setFirstname($firstname): Certificate
     {
         $this->container['firstname'] = $firstname;
 
@@ -1327,7 +1330,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastname()
+    public function getLastname(): mixed
     {
         return $this->container['lastname'];
     }
@@ -1339,7 +1342,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastname($lastname)
+    public function setLastname($lastname): Certificate
     {
         $this->container['lastname'] = $lastname;
 
@@ -1351,7 +1354,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTechnicalContactEmail()
+    public function getTechnicalContactEmail(): mixed
     {
         return $this->container['technicalContactEmail'];
     }
@@ -1363,7 +1366,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTechnicalContactEmail($technicalContactEmail)
+    public function setTechnicalContactEmail($technicalContactEmail): Certificate
     {
         $this->container['technicalContactEmail'] = $technicalContactEmail;
 
@@ -1375,7 +1378,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganizationUnitName()
+    public function getOrganizationUnitName(): mixed
     {
         return $this->container['organizationUnitName'];
     }
@@ -1387,7 +1390,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganizationUnitName($organizationUnitName)
+    public function setOrganizationUnitName($organizationUnitName): Certificate
     {
         $this->container['organizationUnitName'] = $organizationUnitName;
 
@@ -1399,7 +1402,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CertAuthentication
      */
-    public function getAuthentication()
+    public function getAuthentication(): mixed
     {
         return $this->container['authentication'];
     }
@@ -1411,7 +1414,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthentication($authentication)
+    public function setAuthentication($authentication): Certificate
     {
         $this->container['authentication'] = $authentication;
 
@@ -1423,7 +1426,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getCertificateTransparency()
+    public function getCertificateTransparency(): mixed
     {
         return $this->container['certificateTransparency'];
     }
@@ -1435,7 +1438,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificateTransparency($certificateTransparency)
+    public function setCertificateTransparency($certificateTransparency): Certificate
     {
         $this->container['certificateTransparency'] = $certificateTransparency;
 
@@ -1447,7 +1450,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CertificateTransparencyPrivacyConstants
      */
-    public function getCertificateTransparencyPrivacy()
+    public function getCertificateTransparencyPrivacy(): mixed
     {
         return $this->container['certificateTransparencyPrivacy'];
     }
@@ -1459,7 +1462,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificateTransparencyPrivacy($certificateTransparencyPrivacy)
+    public function setCertificateTransparencyPrivacy($certificateTransparencyPrivacy): Certificate
     {
         $this->container['certificateTransparencyPrivacy'] = $certificateTransparencyPrivacy;
 
@@ -1471,7 +1474,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): mixed
     {
         return $this->container['domain'];
     }
@@ -1483,7 +1486,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setDomain($domain): Certificate
     {
         $this->container['domain'] = $domain;
 
@@ -1495,7 +1498,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getHasCsr()
+    public function getHasCsr(): mixed
     {
         return $this->container['hasCsr'];
     }
@@ -1507,7 +1510,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHasCsr($hasCsr)
+    public function setHasCsr($hasCsr): Certificate
     {
         $this->container['hasCsr'] = $hasCsr;
 
@@ -1519,7 +1522,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getFortify()
+    public function getFortify(): mixed
     {
         return $this->container['fortify'];
     }
@@ -1531,7 +1534,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFortify($fortify)
+    public function setFortify($fortify): Certificate
     {
         $this->container['fortify'] = $fortify;
 
@@ -1543,7 +1546,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -1555,7 +1558,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): Certificate
     {
         $this->container['idn'] = $idn;
 
@@ -1567,7 +1570,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getMultiyear()
+    public function getMultiyear(): mixed
     {
         return $this->container['multiyear'];
     }
@@ -1579,7 +1582,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMultiyear($multiyear)
+    public function setMultiyear($multiyear): Certificate
     {
         $this->container['multiyear'] = $multiyear;
 
@@ -1591,7 +1594,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getReissueRequired()
+    public function getReissueRequired(): mixed
     {
         return $this->container['reissueRequired'];
     }
@@ -1603,7 +1606,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReissueRequired($reissueRequired)
+    public function setReissueRequired($reissueRequired): Certificate
     {
         $this->container['reissueRequired'] = $reissueRequired;
 
@@ -1615,7 +1618,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReissueStatus()
+    public function getReissueStatus(): mixed
     {
         return $this->container['reissueStatus'];
     }
@@ -1627,7 +1630,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReissueStatus($reissueStatus)
+    public function setReissueStatus($reissueStatus): Certificate
     {
         $this->container['reissueStatus'] = $reissueStatus;
 
@@ -1639,7 +1642,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVmcLogo()
+    public function getVmcLogo(): mixed
     {
         return $this->container['vmcLogo'];
     }
@@ -1651,7 +1654,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVmcLogo($vmcLogo)
+    public function setVmcLogo($vmcLogo): Certificate
     {
         $this->container['vmcLogo'] = $vmcLogo;
 
@@ -1663,7 +1666,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVmcTrademarkRegistrationNumber()
+    public function getVmcTrademarkRegistrationNumber(): mixed
     {
         return $this->container['vmcTrademarkRegistrationNumber'];
     }
@@ -1675,7 +1678,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVmcTrademarkRegistrationNumber($vmcTrademarkRegistrationNumber)
+    public function setVmcTrademarkRegistrationNumber($vmcTrademarkRegistrationNumber): Certificate
     {
         $this->container['vmcTrademarkRegistrationNumber'] = $vmcTrademarkRegistrationNumber;
 
@@ -1687,7 +1690,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\VmcTrademarkCountryOrRegion
      */
-    public function getVmcTrademarkCountryOrRegion()
+    public function getVmcTrademarkCountryOrRegion(): mixed
     {
         return $this->container['vmcTrademarkCountryOrRegion'];
     }
@@ -1699,7 +1702,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVmcTrademarkCountryOrRegion($vmcTrademarkCountryOrRegion)
+    public function setVmcTrademarkCountryOrRegion($vmcTrademarkCountryOrRegion): Certificate
     {
         $this->container['vmcTrademarkCountryOrRegion'] = $vmcTrademarkCountryOrRegion;
 
@@ -1711,7 +1714,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getKeyAttestation()
+    public function getKeyAttestation(): mixed
     {
         return $this->container['keyAttestation'];
     }
@@ -1723,7 +1726,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKeyAttestation($keyAttestation)
+    public function setKeyAttestation($keyAttestation): Certificate
     {
         $this->container['keyAttestation'] = $keyAttestation;
 
@@ -1735,7 +1738,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SectigoHsmType
      */
-    public function getHsmType()
+    public function getHsmType(): mixed
     {
         return $this->container['hsmType'];
     }
@@ -1747,7 +1750,7 @@ class Certificate implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHsmType($hsmType)
+    public function setHsmType($hsmType): Certificate
     {
         $this->container['hsmType'] = $hsmType;
 
@@ -1822,23 +1825,22 @@ class Certificate implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1848,7 +1850,7 @@ class Certificate implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

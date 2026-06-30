@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TmchContact Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class TmchContact implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class TmchContact implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class TmchContact implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class TmchContact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TmchMarkHolderConstants
      */
-    public function getEntitlement()
+    public function getEntitlement(): mixed
     {
         return $this->container['entitlement'];
     }
@@ -337,7 +340,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEntitlement($entitlement)
+    public function setEntitlement($entitlement): TmchContact
     {
         $this->container['entitlement'] = $entitlement;
 
@@ -349,7 +352,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -361,7 +364,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): TmchContact
     {
         $this->container['name'] = $name;
 
@@ -373,7 +376,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganization()
+    public function getOrganization(): mixed
     {
         return $this->container['organization'];
     }
@@ -385,7 +388,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setOrganization($organization): TmchContact
     {
         $this->container['organization'] = $organization;
 
@@ -397,7 +400,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStreet()
+    public function getStreet(): mixed
     {
         return $this->container['street'];
     }
@@ -409,7 +412,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStreet($street)
+    public function setStreet($street): TmchContact
     {
         $this->container['street'] = $street;
 
@@ -421,7 +424,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCity()
+    public function getCity(): mixed
     {
         return $this->container['city'];
     }
@@ -433,7 +436,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCity($city)
+    public function setCity($city): TmchContact
     {
         $this->container['city'] = $city;
 
@@ -445,7 +448,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPostalCode()
+    public function getPostalCode(): mixed
     {
         return $this->container['postalCode'];
     }
@@ -457,7 +460,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postalCode): TmchContact
     {
         $this->container['postalCode'] = $postalCode;
 
@@ -469,7 +472,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getState()
+    public function getState(): mixed
     {
         return $this->container['state'];
     }
@@ -481,7 +484,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setState($state)
+    public function setState($state): TmchContact
     {
         $this->container['state'] = $state;
 
@@ -493,7 +496,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -505,7 +508,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): TmchContact
     {
         $this->container['country'] = $country;
 
@@ -517,7 +520,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): mixed
     {
         return $this->container['email'];
     }
@@ -529,7 +532,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setEmail($email): TmchContact
     {
         $this->container['email'] = $email;
 
@@ -541,7 +544,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhone()
+    public function getPhone(): mixed
     {
         return $this->container['phone'];
     }
@@ -553,7 +556,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setPhone($phone): TmchContact
     {
         $this->container['phone'] = $phone;
 
@@ -565,7 +568,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFax()
+    public function getFax(): mixed
     {
         return $this->container['fax'];
     }
@@ -577,7 +580,7 @@ class TmchContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFax($fax)
+    public function setFax($fax): TmchContact
     {
         $this->container['fax'] = $fax;
 
@@ -652,23 +655,22 @@ class TmchContact implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class TmchContact implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

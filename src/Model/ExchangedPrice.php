@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ExchangedPrice Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -356,7 +359,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -367,7 +370,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -386,7 +389,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -411,7 +414,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -427,7 +430,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -439,7 +442,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ExchangedPrice
     {
         $this->container['created'] = $created;
 
@@ -451,7 +454,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -463,7 +466,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ExchangedPrice
     {
         $this->container['updated'] = $updated;
 
@@ -475,7 +478,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -487,7 +490,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): ExchangedPrice
     {
         $this->container['id'] = $id;
 
@@ -499,7 +502,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -511,7 +514,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): ExchangedPrice
     {
         $this->container['owner'] = $owner;
 
@@ -523,7 +526,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -535,7 +538,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): ExchangedPrice
     {
         $this->container['updater'] = $updater;
 
@@ -547,7 +550,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getAmount()
+    public function getAmount(): mixed
     {
         return $this->container['amount'];
     }
@@ -559,7 +562,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setAmount($amount): ExchangedPrice
     {
         $this->container['amount'] = $amount;
 
@@ -571,7 +574,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceTypeConstants
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -583,7 +586,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): ExchangedPrice
     {
         $this->container['type'] = $type;
 
@@ -595,7 +598,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -607,7 +610,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): ExchangedPrice
     {
         $this->container['currency'] = $currency;
 
@@ -619,7 +622,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriorityConstants
      */
-    public function getPriority()
+    public function getPriority(): mixed
     {
         return $this->container['priority'];
     }
@@ -631,7 +634,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriority($priority)
+    public function setPriority($priority): ExchangedPrice
     {
         $this->container['priority'] = $priority;
 
@@ -643,7 +646,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -655,7 +658,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): ExchangedPrice
     {
         $this->container['customer'] = $customer;
 
@@ -667,7 +670,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -679,7 +682,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): ExchangedPrice
     {
         $this->container['period'] = $period;
 
@@ -691,7 +694,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDiscountable()
+    public function getDiscountable(): mixed
     {
         return $this->container['discountable'];
     }
@@ -703,7 +706,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDiscountable($discountable)
+    public function setDiscountable($discountable): ExchangedPrice
     {
         $this->container['discountable'] = $discountable;
 
@@ -715,7 +718,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getLogId()
+    public function getLogId(): mixed
     {
         return $this->container['logId'];
     }
@@ -727,7 +730,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLogId($logId)
+    public function setLogId($logId): ExchangedPrice
     {
         $this->container['logId'] = $logId;
 
@@ -739,7 +742,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getRefund()
+    public function getRefund(): mixed
     {
         return $this->container['refund'];
     }
@@ -751,7 +754,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRefund($refund)
+    public function setRefund($refund): ExchangedPrice
     {
         $this->container['refund'] = $refund;
 
@@ -763,7 +766,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceServiceEntity[]
      */
-    public function getPriceConditions()
+    public function getPriceConditions(): mixed
     {
         return $this->container['priceConditions'];
     }
@@ -775,7 +778,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceConditions($priceConditions)
+    public function setPriceConditions($priceConditions): ExchangedPrice
     {
         $this->container['priceConditions'] = $priceConditions;
 
@@ -787,7 +790,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -799,7 +802,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): ExchangedPrice
     {
         $this->container['comment'] = $comment;
 
@@ -811,7 +814,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTaskComment()
+    public function getTaskComment(): mixed
     {
         return $this->container['taskComment'];
     }
@@ -823,7 +826,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskComment($taskComment)
+    public function setTaskComment($taskComment): ExchangedPrice
     {
         $this->container['taskComment'] = $taskComment;
 
@@ -835,7 +838,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceList
      */
-    public function getPriceList()
+    public function getPriceList(): mixed
     {
         return $this->container['priceList'];
     }
@@ -847,7 +850,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceList($priceList)
+    public function setPriceList($priceList): ExchangedPrice
     {
         $this->container['priceList'] = $priceList;
 
@@ -859,7 +862,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getFrom()
+    public function getFrom(): mixed
     {
         return $this->container['from'];
     }
@@ -871,7 +874,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFrom($from)
+    public function setFrom($from): ExchangedPrice
     {
         $this->container['from'] = $from;
 
@@ -883,7 +886,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUntil()
+    public function getUntil(): mixed
     {
         return $this->container['until'];
     }
@@ -895,7 +898,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUntil($until)
+    public function setUntil($until): ExchangedPrice
     {
         $this->container['until'] = $until;
 
@@ -907,7 +910,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ExchangedPrice
      */
-    public function getNormalPrice()
+    public function getNormalPrice(): mixed
     {
         return $this->container['normalPrice'];
     }
@@ -919,7 +922,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNormalPrice($normalPrice)
+    public function setNormalPrice($normalPrice): ExchangedPrice
     {
         $this->container['normalPrice'] = $normalPrice;
 
@@ -931,7 +934,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ExchangedPrice
      */
-    public function getNewPrice()
+    public function getNewPrice(): mixed
     {
         return $this->container['newPrice'];
     }
@@ -943,7 +946,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNewPrice($newPrice)
+    public function setNewPrice($newPrice): ExchangedPrice
     {
         $this->container['newPrice'] = $newPrice;
 
@@ -955,7 +958,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getValid()
+    public function getValid(): mixed
     {
         return $this->container['valid'];
     }
@@ -967,7 +970,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValid($valid)
+    public function setValid($valid): ExchangedPrice
     {
         $this->container['valid'] = $valid;
 
@@ -979,7 +982,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceChange
      */
-    public function getPriceChange()
+    public function getPriceChange(): mixed
     {
         return $this->container['priceChange'];
     }
@@ -991,7 +994,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceChange($priceChange)
+    public function setPriceChange($priceChange): ExchangedPrice
     {
         $this->container['priceChange'] = $priceChange;
 
@@ -1003,7 +1006,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getVatRate()
+    public function getVatRate(): mixed
     {
         return $this->container['vatRate'];
     }
@@ -1015,7 +1018,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatRate($vatRate)
+    public function setVatRate($vatRate): ExchangedPrice
     {
         $this->container['vatRate'] = $vatRate;
 
@@ -1027,7 +1030,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getVatAmount()
+    public function getVatAmount(): mixed
     {
         return $this->container['vatAmount'];
     }
@@ -1039,7 +1042,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVatAmount($vatAmount)
+    public function setVatAmount($vatAmount): ExchangedPrice
     {
         $this->container['vatAmount'] = $vatAmount;
 
@@ -1051,7 +1054,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getRate()
+    public function getRate(): mixed
     {
         return $this->container['rate'];
     }
@@ -1063,7 +1066,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRate($rate)
+    public function setRate($rate): ExchangedPrice
     {
         $this->container['rate'] = $rate;
 
@@ -1075,7 +1078,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getExchangeFee()
+    public function getExchangeFee(): mixed
     {
         return $this->container['exchangeFee'];
     }
@@ -1087,7 +1090,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExchangeFee($exchangeFee)
+    public function setExchangeFee($exchangeFee): ExchangedPrice
     {
         $this->container['exchangeFee'] = $exchangeFee;
 
@@ -1162,23 +1165,22 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1188,7 +1190,7 @@ class ExchangedPrice implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

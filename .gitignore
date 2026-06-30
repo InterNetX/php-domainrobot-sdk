@@ -4,3 +4,6 @@ vendor
 /node_modules/*
 .vscode
 composer.lock
+.php-cs-fixer.cache
+.php-cs-fixer.dist.php
+.phpactor.json

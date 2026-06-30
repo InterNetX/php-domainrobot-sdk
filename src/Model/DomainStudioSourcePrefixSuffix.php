@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainStudioSourcePrefixSuffix Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DomainEnvelopeSearchService[]
      */
-    public function getServices()
+    public function getServices(): mixed
     {
         return $this->container['services'];
     }
@@ -337,7 +340,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setServices($services)
+    public function setServices($services): DomainStudioSourcePrefixSuffix
     {
         $this->container['services'] = $services;
 
@@ -349,7 +352,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOnlyAvailable()
+    public function getOnlyAvailable(): mixed
     {
         return $this->container['onlyAvailable'];
     }
@@ -361,7 +364,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOnlyAvailable($onlyAvailable)
+    public function setOnlyAvailable($onlyAvailable): DomainStudioSourcePrefixSuffix
     {
         $this->container['onlyAvailable'] = $onlyAvailable;
 
@@ -373,7 +376,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -385,7 +388,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): DomainStudioSourcePrefixSuffix
     {
         $this->container['domains'] = $domains;
 
@@ -397,7 +400,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): mixed
     {
         return $this->container['language'];
     }
@@ -409,7 +412,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setLanguage($language): DomainStudioSourcePrefixSuffix
     {
         $this->container['language'] = $language;
 
@@ -421,7 +424,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMax()
+    public function getMax(): mixed
     {
         return $this->container['max'];
     }
@@ -433,7 +436,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMax($max)
+    public function setMax($max): DomainStudioSourcePrefixSuffix
     {
         $this->container['max'] = $max;
 
@@ -445,7 +448,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getMaxSldLength()
+    public function getMaxSldLength(): mixed
     {
         return $this->container['maxSldLength'];
     }
@@ -457,7 +460,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMaxSldLength($maxSldLength)
+    public function setMaxSldLength($maxSldLength): DomainStudioSourcePrefixSuffix
     {
         $this->container['maxSldLength'] = $maxSldLength;
 
@@ -469,7 +472,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTlds()
+    public function getTlds(): mixed
     {
         return $this->container['tlds'];
     }
@@ -481,7 +484,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTlds($tlds)
+    public function setTlds($tlds): DomainStudioSourcePrefixSuffix
     {
         $this->container['tlds'] = $tlds;
 
@@ -493,7 +496,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getPrefixVocabulary()
+    public function getPrefixVocabulary(): mixed
     {
         return $this->container['prefixVocabulary'];
     }
@@ -505,7 +508,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrefixVocabulary($prefixVocabulary)
+    public function setPrefixVocabulary($prefixVocabulary): DomainStudioSourcePrefixSuffix
     {
         $this->container['prefixVocabulary'] = $prefixVocabulary;
 
@@ -517,7 +520,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getSuffixVocabulary()
+    public function getSuffixVocabulary(): mixed
     {
         return $this->container['suffixVocabulary'];
     }
@@ -529,7 +532,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSuffixVocabulary($suffixVocabulary)
+    public function setSuffixVocabulary($suffixVocabulary): DomainStudioSourcePrefixSuffix
     {
         $this->container['suffixVocabulary'] = $suffixVocabulary;
 
@@ -541,7 +544,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseIdn()
+    public function getUseIdn(): mixed
     {
         return $this->container['useIdn'];
     }
@@ -553,7 +556,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseIdn($useIdn)
+    public function setUseIdn($useIdn): DomainStudioSourcePrefixSuffix
     {
         $this->container['useIdn'] = $useIdn;
 
@@ -565,7 +568,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getUseDash()
+    public function getUseDash(): mixed
     {
         return $this->container['useDash'];
     }
@@ -577,7 +580,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUseDash($useDash)
+    public function setUseDash($useDash): DomainStudioSourcePrefixSuffix
     {
         $this->container['useDash'] = $useDash;
 
@@ -652,23 +655,22 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class DomainStudioSourcePrefixSuffix implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

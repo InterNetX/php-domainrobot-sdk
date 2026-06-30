@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * SslContact Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -302,7 +305,7 @@ class SslContact implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -313,7 +316,7 @@ class SslContact implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -332,7 +335,7 @@ class SslContact implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -357,7 +360,7 @@ class SslContact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -373,7 +376,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -385,7 +388,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): SslContact
     {
         $this->container['created'] = $created;
 
@@ -397,7 +400,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -409,7 +412,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): SslContact
     {
         $this->container['updated'] = $updated;
 
@@ -421,7 +424,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SslContactExtensions
      */
-    public function getExtensions()
+    public function getExtensions(): mixed
     {
         return $this->container['extensions'];
     }
@@ -433,7 +436,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtensions($extensions)
+    public function setExtensions($extensions): SslContact
     {
         $this->container['extensions'] = $extensions;
 
@@ -445,7 +448,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\SslContactReference[]
      */
-    public function getReferences()
+    public function getReferences(): mixed
     {
         return $this->container['references'];
     }
@@ -457,7 +460,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReferences($references)
+    public function setReferences($references): SslContact
     {
         $this->container['references'] = $references;
 
@@ -469,7 +472,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFname()
+    public function getFname(): mixed
     {
         return $this->container['fname'];
     }
@@ -481,7 +484,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFname($fname)
+    public function setFname($fname): SslContact
     {
         $this->container['fname'] = $fname;
 
@@ -493,7 +496,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLname()
+    public function getLname(): mixed
     {
         return $this->container['lname'];
     }
@@ -505,7 +508,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLname($lname)
+    public function setLname($lname): SslContact
     {
         $this->container['lname'] = $lname;
 
@@ -517,7 +520,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhone()
+    public function getPhone(): mixed
     {
         return $this->container['phone'];
     }
@@ -529,7 +532,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setPhone($phone): SslContact
     {
         $this->container['phone'] = $phone;
 
@@ -541,7 +544,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFax()
+    public function getFax(): mixed
     {
         return $this->container['fax'];
     }
@@ -553,7 +556,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFax($fax)
+    public function setFax($fax): SslContact
     {
         $this->container['fax'] = $fax;
 
@@ -565,7 +568,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): mixed
     {
         return $this->container['email'];
     }
@@ -577,7 +580,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setEmail($email): SslContact
     {
         $this->container['email'] = $email;
 
@@ -589,7 +592,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): mixed
     {
         return $this->container['title'];
     }
@@ -601,7 +604,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): SslContact
     {
         $this->container['title'] = $title;
 
@@ -613,7 +616,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganization()
+    public function getOrganization(): mixed
     {
         return $this->container['organization'];
     }
@@ -625,7 +628,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setOrganization($organization): SslContact
     {
         $this->container['organization'] = $organization;
 
@@ -637,7 +640,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getAddress()
+    public function getAddress(): mixed
     {
         return $this->container['address'];
     }
@@ -649,7 +652,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAddress($address)
+    public function setAddress($address): SslContact
     {
         $this->container['address'] = $address;
 
@@ -661,7 +664,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPcode()
+    public function getPcode(): mixed
     {
         return $this->container['pcode'];
     }
@@ -673,7 +676,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPcode($pcode)
+    public function setPcode($pcode): SslContact
     {
         $this->container['pcode'] = $pcode;
 
@@ -685,7 +688,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCity()
+    public function getCity(): mixed
     {
         return $this->container['city'];
     }
@@ -697,7 +700,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCity($city)
+    public function setCity($city): SslContact
     {
         $this->container['city'] = $city;
 
@@ -709,7 +712,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -721,7 +724,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): SslContact
     {
         $this->container['country'] = $country;
 
@@ -733,7 +736,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getState()
+    public function getState(): mixed
     {
         return $this->container['state'];
     }
@@ -745,7 +748,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setState($state)
+    public function setState($state): SslContact
     {
         $this->container['state'] = $state;
 
@@ -757,7 +760,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -769,7 +772,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): SslContact
     {
         $this->container['owner'] = $owner;
 
@@ -781,7 +784,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -793,7 +796,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): SslContact
     {
         $this->container['updater'] = $updater;
 
@@ -805,7 +808,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -817,7 +820,7 @@ class SslContact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): SslContact
     {
         $this->container['id'] = $id;
 
@@ -892,23 +895,22 @@ class SslContact implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -918,7 +920,7 @@ class SslContact implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

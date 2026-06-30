@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * EstimationParametersV1Language Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -218,7 +221,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -229,7 +232,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -248,7 +251,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -273,7 +276,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -289,7 +292,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getEn()
+    public function getEn(): mixed
     {
         return $this->container['en'];
     }
@@ -301,7 +304,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEn($en)
+    public function setEn($en): EstimationParametersV1Language
     {
         $this->container['en'] = $en;
 
@@ -313,7 +316,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getDe()
+    public function getDe(): mixed
     {
         return $this->container['de'];
     }
@@ -325,7 +328,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDe($de)
+    public function setDe($de): EstimationParametersV1Language
     {
         $this->container['de'] = $de;
 
@@ -337,7 +340,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getFr()
+    public function getFr(): mixed
     {
         return $this->container['fr'];
     }
@@ -349,7 +352,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFr($fr)
+    public function setFr($fr): EstimationParametersV1Language
     {
         $this->container['fr'] = $fr;
 
@@ -361,7 +364,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getIt()
+    public function getIt(): mixed
     {
         return $this->container['it'];
     }
@@ -373,7 +376,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIt($it)
+    public function setIt($it): EstimationParametersV1Language
     {
         $this->container['it'] = $it;
 
@@ -385,7 +388,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getEs()
+    public function getEs(): mixed
     {
         return $this->container['es'];
     }
@@ -397,7 +400,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEs($es)
+    public function setEs($es): EstimationParametersV1Language
     {
         $this->container['es'] = $es;
 
@@ -472,23 +475,22 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -498,7 +500,7 @@ class EstimationParametersV1Language implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

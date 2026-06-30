@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BasicUser Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -218,7 +221,7 @@ class BasicUser implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -229,7 +232,7 @@ class BasicUser implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -248,7 +251,7 @@ class BasicUser implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -273,7 +276,7 @@ class BasicUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -289,7 +292,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getContext()
+    public function getContext(): mixed
     {
         return $this->container['context'];
     }
@@ -301,7 +304,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContext($context)
+    public function setContext($context): BasicUser
     {
         $this->container['context'] = $context;
 
@@ -313,7 +316,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPasswordChanged()
+    public function getPasswordChanged(): mixed
     {
         return $this->container['passwordChanged'];
     }
@@ -325,7 +328,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordChanged($passwordChanged)
+    public function setPasswordChanged($passwordChanged): BasicUser
     {
         $this->container['passwordChanged'] = $passwordChanged;
 
@@ -337,7 +340,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPasswordExpires()
+    public function getPasswordExpires(): mixed
     {
         return $this->container['passwordExpires'];
     }
@@ -349,7 +352,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordExpires($passwordExpires)
+    public function setPasswordExpires($passwordExpires): BasicUser
     {
         $this->container['passwordExpires'] = $passwordExpires;
 
@@ -361,7 +364,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUser()
+    public function getUser(): mixed
     {
         return $this->container['user'];
     }
@@ -373,7 +376,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setUser($user): BasicUser
     {
         $this->container['user'] = $user;
 
@@ -385,7 +388,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPasswordExpired()
+    public function getPasswordExpired(): mixed
     {
         return $this->container['passwordExpired'];
     }
@@ -397,7 +400,7 @@ class BasicUser implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPasswordExpired($passwordExpired)
+    public function setPasswordExpired($passwordExpired): BasicUser
     {
         $this->container['passwordExpired'] = $passwordExpired;
 
@@ -472,23 +475,22 @@ class BasicUser implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -498,7 +500,7 @@ class BasicUser implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

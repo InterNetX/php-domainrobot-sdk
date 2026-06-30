@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * ExternalCustomer Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNumber()
+    public function getNumber(): mixed
     {
         return $this->container['number'];
     }
@@ -331,7 +334,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setNumber($number): ExternalCustomer
     {
         $this->container['number'] = $number;
 
@@ -343,7 +346,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getClient()
+    public function getClient(): mixed
     {
         return $this->container['client'];
     }
@@ -355,7 +358,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClient($client)
+    public function setClient($client): ExternalCustomer
     {
         $this->container['client'] = $client;
 
@@ -367,7 +370,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getGroup()
+    public function getGroup(): mixed
     {
         return $this->container['group'];
     }
@@ -379,7 +382,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGroup($group)
+    public function setGroup($group): ExternalCustomer
     {
         $this->container['group'] = $group;
 
@@ -391,7 +394,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getBilling()
+    public function getBilling(): mixed
     {
         return $this->container['billing'];
     }
@@ -403,7 +406,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBilling($billing)
+    public function setBilling($billing): ExternalCustomer
     {
         $this->container['billing'] = $billing;
 
@@ -415,7 +418,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getExternalReference()
+    public function getExternalReference(): mixed
     {
         return $this->container['externalReference'];
     }
@@ -427,7 +430,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExternalReference($externalReference)
+    public function setExternalReference($externalReference): ExternalCustomer
     {
         $this->container['externalReference'] = $externalReference;
 
@@ -439,7 +442,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getCreditLimit()
+    public function getCreditLimit(): mixed
     {
         return $this->container['creditLimit'];
     }
@@ -451,7 +454,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreditLimit($creditLimit)
+    public function setCreditLimit($creditLimit): ExternalCustomer
     {
         $this->container['creditLimit'] = $creditLimit;
 
@@ -463,7 +466,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -475,7 +478,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): ExternalCustomer
     {
         $this->container['created'] = $created;
 
@@ -487,7 +490,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -499,7 +502,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): ExternalCustomer
     {
         $this->container['updated'] = $updated;
 
@@ -511,7 +514,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PriceListEntity[]
      */
-    public function getPriceLists()
+    public function getPriceLists(): mixed
     {
         return $this->container['priceLists'];
     }
@@ -523,7 +526,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceLists($priceLists)
+    public function setPriceLists($priceLists): ExternalCustomer
     {
         $this->container['priceLists'] = $priceLists;
 
@@ -535,7 +538,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicCustomer
      */
-    public function getCustomer()
+    public function getCustomer(): mixed
     {
         return $this->container['customer'];
     }
@@ -547,7 +550,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): ExternalCustomer
     {
         $this->container['customer'] = $customer;
 
@@ -622,23 +625,22 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class ExternalCustomer implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

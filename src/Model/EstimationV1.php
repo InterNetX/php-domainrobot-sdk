@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * EstimationV1 Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -230,7 +233,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -241,7 +244,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -260,7 +263,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -285,7 +288,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -301,7 +304,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): mixed
     {
         return $this->container['domain'];
     }
@@ -313,7 +316,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setDomain($domain): EstimationV1
     {
         $this->container['domain'] = $domain;
 
@@ -325,7 +328,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomainIdn()
+    public function getDomainIdn(): mixed
     {
         return $this->container['domainIdn'];
     }
@@ -337,7 +340,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainIdn($domainIdn)
+    public function setDomainIdn($domainIdn): EstimationV1
     {
         $this->container['domainIdn'] = $domainIdn;
 
@@ -349,7 +352,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -361,7 +364,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): EstimationV1
     {
         $this->container['currency'] = $currency;
 
@@ -373,7 +376,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getExchangerate()
+    public function getExchangerate(): mixed
     {
         return $this->container['exchangerate'];
     }
@@ -385,7 +388,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExchangerate($exchangerate)
+    public function setExchangerate($exchangerate): EstimationV1
     {
         $this->container['exchangerate'] = $exchangerate;
 
@@ -397,7 +400,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getEstimation()
+    public function getEstimation(): mixed
     {
         return $this->container['estimation'];
     }
@@ -409,7 +412,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEstimation($estimation)
+    public function setEstimation($estimation): EstimationV1
     {
         $this->container['estimation'] = $estimation;
 
@@ -421,7 +424,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getQuantity()
+    public function getQuantity(): mixed
     {
         return $this->container['quantity'];
     }
@@ -433,7 +436,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQuantity($quantity)
+    public function setQuantity($quantity): EstimationV1
     {
         $this->container['quantity'] = $quantity;
 
@@ -445,7 +448,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\EstimationParametersV1
      */
-    public function getFeatures()
+    public function getFeatures(): mixed
     {
         return $this->container['features'];
     }
@@ -457,7 +460,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeatures($features)
+    public function setFeatures($features): EstimationV1
     {
         $this->container['features'] = $features;
 
@@ -532,23 +535,22 @@ class EstimationV1 implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -558,7 +560,7 @@ class EstimationV1 implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

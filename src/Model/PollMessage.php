@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * PollMessage Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -254,7 +257,7 @@ class PollMessage implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -265,7 +268,7 @@ class PollMessage implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -284,7 +287,7 @@ class PollMessage implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -309,7 +312,7 @@ class PollMessage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -325,7 +328,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -337,7 +340,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): PollMessage
     {
         $this->container['id'] = $id;
 
@@ -349,7 +352,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -361,7 +364,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): PollMessage
     {
         $this->container['owner'] = $owner;
 
@@ -373,7 +376,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Job
      */
-    public function getJob()
+    public function getJob(): mixed
     {
         return $this->container['job'];
     }
@@ -385,7 +388,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setJob($job)
+    public function setJob($job): PollMessage
     {
         $this->container['job'] = $job;
 
@@ -397,7 +400,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NotifyMessage
      */
-    public function getNotify()
+    public function getNotify(): mixed
     {
         return $this->container['notify'];
     }
@@ -409,7 +412,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNotify($notify)
+    public function setNotify($notify): PollMessage
     {
         $this->container['notify'] = $notify;
 
@@ -421,7 +424,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStid()
+    public function getStid(): mixed
     {
         return $this->container['stid'];
     }
@@ -433,7 +436,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStid($stid)
+    public function setStid($stid): PollMessage
     {
         $this->container['stid'] = $stid;
 
@@ -445,7 +448,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCtid()
+    public function getCtid(): mixed
     {
         return $this->container['ctid'];
     }
@@ -457,7 +460,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCtid($ctid)
+    public function setCtid($ctid): PollMessage
     {
         $this->container['ctid'] = $ctid;
 
@@ -469,7 +472,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Message[]
      */
-    public function getMessages()
+    public function getMessages(): mixed
     {
         return $this->container['messages'];
     }
@@ -481,7 +484,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMessages($messages)
+    public function setMessages($messages): PollMessage
     {
         $this->container['messages'] = $messages;
 
@@ -493,7 +496,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFlags()
+    public function getFlags(): mixed
     {
         return $this->container['flags'];
     }
@@ -505,7 +508,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFlags($flags)
+    public function setFlags($flags): PollMessage
     {
         $this->container['flags'] = $flags;
 
@@ -517,7 +520,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNotice()
+    public function getNotice(): mixed
     {
         return $this->container['notice'];
     }
@@ -529,7 +532,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNotice($notice)
+    public function setNotice($notice): PollMessage
     {
         $this->container['notice'] = $notice;
 
@@ -541,7 +544,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -553,7 +556,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): PollMessage
     {
         $this->container['created'] = $created;
 
@@ -565,7 +568,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ResponseObject
      */
-    public function getObject()
+    public function getObject(): mixed
     {
         return $this->container['object'];
     }
@@ -577,7 +580,7 @@ class PollMessage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setObject($object): PollMessage
     {
         $this->container['object'] = $object;
 
@@ -652,23 +655,22 @@ class PollMessage implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -678,7 +680,7 @@ class PollMessage implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

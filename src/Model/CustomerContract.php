@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * CustomerContract Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -331,7 +334,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): CustomerContract
     {
         $this->container['created'] = $created;
 
@@ -343,7 +346,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -355,7 +358,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): CustomerContract
     {
         $this->container['updated'] = $updated;
 
@@ -367,7 +370,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -379,7 +382,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): CustomerContract
     {
         $this->container['id'] = $id;
 
@@ -391,7 +394,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\GenericLabelEntity
      */
-    public function getContract()
+    public function getContract(): mixed
     {
         return $this->container['contract'];
     }
@@ -403,7 +406,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContract($contract)
+    public function setContract($contract): CustomerContract
     {
         $this->container['contract'] = $contract;
 
@@ -415,7 +418,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AccountManager
      */
-    public function getAccountManager()
+    public function getAccountManager(): mixed
     {
         return $this->container['accountManager'];
     }
@@ -427,7 +430,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAccountManager($accountManager)
+    public function setAccountManager($accountManager): CustomerContract
     {
         $this->container['accountManager'] = $accountManager;
 
@@ -439,7 +442,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getClassification()
+    public function getClassification(): mixed
     {
         return $this->container['classification'];
     }
@@ -451,7 +454,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setClassification($classification)
+    public function setClassification($classification): CustomerContract
     {
         $this->container['classification'] = $classification;
 
@@ -463,7 +466,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getInvoiceNotice()
+    public function getInvoiceNotice(): mixed
     {
         return $this->container['invoiceNotice'];
     }
@@ -475,7 +478,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInvoiceNotice($invoiceNotice)
+    public function setInvoiceNotice($invoiceNotice): CustomerContract
     {
         $this->container['invoiceNotice'] = $invoiceNotice;
 
@@ -487,7 +490,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNotice()
+    public function getNotice(): mixed
     {
         return $this->container['notice'];
     }
@@ -499,7 +502,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNotice($notice)
+    public function setNotice($notice): CustomerContract
     {
         $this->container['notice'] = $notice;
 
@@ -511,7 +514,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTicketNumber()
+    public function getTicketNumber(): mixed
     {
         return $this->container['ticketNumber'];
     }
@@ -523,7 +526,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTicketNumber($ticketNumber)
+    public function setTicketNumber($ticketNumber): CustomerContract
     {
         $this->container['ticketNumber'] = $ticketNumber;
 
@@ -535,7 +538,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getNoSap()
+    public function getNoSap(): mixed
     {
         return $this->container['noSap'];
     }
@@ -547,7 +550,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNoSap($noSap)
+    public function setNoSap($noSap): CustomerContract
     {
         $this->container['noSap'] = $noSap;
 
@@ -622,23 +625,22 @@ class CustomerContract implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class CustomerContract implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

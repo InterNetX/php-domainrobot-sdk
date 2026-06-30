@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TransferOut Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -290,7 +293,7 @@ class TransferOut implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -301,7 +304,7 @@ class TransferOut implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -320,7 +323,7 @@ class TransferOut implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -345,7 +348,7 @@ class TransferOut implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -361,7 +364,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -373,7 +376,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): TransferOut
     {
         $this->container['created'] = $created;
 
@@ -385,7 +388,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -397,7 +400,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): TransferOut
     {
         $this->container['updated'] = $updated;
 
@@ -409,7 +412,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -421,7 +424,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): TransferOut
     {
         $this->container['owner'] = $owner;
 
@@ -433,7 +436,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -445,7 +448,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): TransferOut
     {
         $this->container['updater'] = $updater;
 
@@ -457,7 +460,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): mixed
     {
         return $this->container['domain'];
     }
@@ -469,7 +472,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setDomain($domain): TransferOut
     {
         $this->container['domain'] = $domain;
 
@@ -481,7 +484,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGainingRegistrar()
+    public function getGainingRegistrar(): mixed
     {
         return $this->container['gainingRegistrar'];
     }
@@ -493,7 +496,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGainingRegistrar($gainingRegistrar)
+    public function setGainingRegistrar($gainingRegistrar): TransferOut
     {
         $this->container['gainingRegistrar'] = $gainingRegistrar;
 
@@ -505,7 +508,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLoosingRegistrar()
+    public function getLoosingRegistrar(): mixed
     {
         return $this->container['loosingRegistrar'];
     }
@@ -517,7 +520,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLoosingRegistrar($loosingRegistrar)
+    public function setLoosingRegistrar($loosingRegistrar): TransferOut
     {
         $this->container['loosingRegistrar'] = $loosingRegistrar;
 
@@ -529,7 +532,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getStart()
+    public function getStart(): mixed
     {
         return $this->container['start'];
     }
@@ -541,7 +544,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStart($start)
+    public function setStart($start): TransferOut
     {
         $this->container['start'] = $start;
 
@@ -553,7 +556,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getReminder()
+    public function getReminder(): mixed
     {
         return $this->container['reminder'];
     }
@@ -565,7 +568,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReminder($reminder)
+    public function setReminder($reminder): TransferOut
     {
         $this->container['reminder'] = $reminder;
 
@@ -577,7 +580,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getAutoAck()
+    public function getAutoAck(): mixed
     {
         return $this->container['autoAck'];
     }
@@ -589,7 +592,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoAck($autoAck)
+    public function setAutoAck($autoAck): TransferOut
     {
         $this->container['autoAck'] = $autoAck;
 
@@ -601,7 +604,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getAutoNack()
+    public function getAutoNack(): mixed
     {
         return $this->container['autoNack'];
     }
@@ -613,7 +616,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoNack($autoNack)
+    public function setAutoNack($autoNack): TransferOut
     {
         $this->container['autoNack'] = $autoNack;
 
@@ -625,7 +628,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getEnd()
+    public function getEnd(): mixed
     {
         return $this->container['end'];
     }
@@ -637,7 +640,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEnd($end)
+    public function setEnd($end): TransferOut
     {
         $this->container['end'] = $end;
 
@@ -649,7 +652,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAutoAnswer()
+    public function getAutoAnswer(): mixed
     {
         return $this->container['autoAnswer'];
     }
@@ -661,7 +664,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoAnswer($autoAnswer)
+    public function setAutoAnswer($autoAnswer): TransferOut
     {
         $this->container['autoAnswer'] = $autoAnswer;
 
@@ -673,7 +676,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRecipient()
+    public function getRecipient(): mixed
     {
         return $this->container['recipient'];
     }
@@ -685,7 +688,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRecipient($recipient)
+    public function setRecipient($recipient): TransferOut
     {
         $this->container['recipient'] = $recipient;
 
@@ -697,7 +700,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTransaction()
+    public function getTransaction(): mixed
     {
         return $this->container['transaction'];
     }
@@ -709,7 +712,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTransaction($transaction)
+    public function setTransaction($transaction): TransferOut
     {
         $this->container['transaction'] = $transaction;
 
@@ -721,7 +724,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TransferAnswer
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -733,7 +736,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): TransferOut
     {
         $this->container['type'] = $type;
 
@@ -745,7 +748,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNackReason()
+    public function getNackReason(): mixed
     {
         return $this->container['nackReason'];
     }
@@ -757,7 +760,7 @@ class TransferOut implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNackReason($nackReason)
+    public function setNackReason($nackReason): TransferOut
     {
         $this->container['nackReason'] = $nackReason;
 
@@ -832,23 +835,22 @@ class TransferOut implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -858,7 +860,7 @@ class TransferOut implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

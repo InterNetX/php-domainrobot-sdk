@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * BasicDocument Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -278,7 +281,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -289,7 +292,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -308,7 +311,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -333,7 +336,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -349,7 +352,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -361,7 +364,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): BasicDocument
     {
         $this->container['created'] = $created;
 
@@ -373,7 +376,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -385,7 +388,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): BasicDocument
     {
         $this->container['updated'] = $updated;
 
@@ -397,7 +400,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -409,7 +412,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): BasicDocument
     {
         $this->container['id'] = $id;
 
@@ -421,7 +424,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getComment()
+    public function getComment(): mixed
     {
         return $this->container['comment'];
     }
@@ -433,7 +436,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setComment($comment): BasicDocument
     {
         $this->container['comment'] = $comment;
 
@@ -445,7 +448,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getType()
+    public function getType(): mixed
     {
         return $this->container['type'];
     }
@@ -457,7 +460,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): BasicDocument
     {
         $this->container['type'] = $type;
 
@@ -469,7 +472,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMimeType()
+    public function getMimeType(): mixed
     {
         return $this->container['mimeType'];
     }
@@ -481,7 +484,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMimeType($mimeType)
+    public function setMimeType($mimeType): BasicDocument
     {
         $this->container['mimeType'] = $mimeType;
 
@@ -493,7 +496,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getData()
+    public function getData(): mixed
     {
         return $this->container['data'];
     }
@@ -505,7 +508,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setData($data)
+    public function setData($data): BasicDocument
     {
         $this->container['data'] = $data;
 
@@ -517,7 +520,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getSize()
+    public function getSize(): mixed
     {
         return $this->container['size'];
     }
@@ -529,7 +532,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSize($size)
+    public function setSize($size): BasicDocument
     {
         $this->container['size'] = $size;
 
@@ -541,7 +544,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -553,7 +556,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): BasicDocument
     {
         $this->container['name'] = $name;
 
@@ -565,7 +568,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLink()
+    public function getLink(): mixed
     {
         return $this->container['link'];
     }
@@ -577,7 +580,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLink($link)
+    public function setLink($link): BasicDocument
     {
         $this->container['link'] = $link;
 
@@ -589,7 +592,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUuid()
+    public function getUuid(): mixed
     {
         return $this->container['uuid'];
     }
@@ -601,7 +604,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUuid($uuid)
+    public function setUuid($uuid): BasicDocument
     {
         $this->container['uuid'] = $uuid;
 
@@ -613,7 +616,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAlias()
+    public function getAlias(): mixed
     {
         return $this->container['alias'];
     }
@@ -625,7 +628,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAlias($alias)
+    public function setAlias($alias): BasicDocument
     {
         $this->container['alias'] = $alias;
 
@@ -637,7 +640,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -649,7 +652,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): BasicDocument
     {
         $this->container['owner'] = $owner;
 
@@ -661,7 +664,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -673,7 +676,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): BasicDocument
     {
         $this->container['updater'] = $updater;
 
@@ -685,7 +688,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getExpire()
+    public function getExpire(): mixed
     {
         return $this->container['expire'];
     }
@@ -697,7 +700,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExpire($expire)
+    public function setExpire($expire): BasicDocument
     {
         $this->container['expire'] = $expire;
 
@@ -772,23 +775,22 @@ class BasicDocument implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -798,7 +800,7 @@ class BasicDocument implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

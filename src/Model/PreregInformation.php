@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * PreregInformation Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -291,7 +294,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -307,7 +310,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhase()
+    public function getPhase(): mixed
     {
         return $this->container['phase'];
     }
@@ -319,7 +322,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhase($phase)
+    public function setPhase($phase): PreregInformation
     {
         $this->container['phase'] = $phase;
 
@@ -331,7 +334,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmationStart()
+    public function getConfirmationStart(): mixed
     {
         return $this->container['confirmationStart'];
     }
@@ -343,7 +346,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmationStart($confirmationStart)
+    public function setConfirmationStart($confirmationStart): PreregInformation
     {
         $this->container['confirmationStart'] = $confirmationStart;
 
@@ -355,7 +358,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getConfirmationEnd()
+    public function getConfirmationEnd(): mixed
     {
         return $this->container['confirmationEnd'];
     }
@@ -367,7 +370,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfirmationEnd($confirmationEnd)
+    public function setConfirmationEnd($confirmationEnd): PreregInformation
     {
         $this->container['confirmationEnd'] = $confirmationEnd;
 
@@ -379,7 +382,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPeriodStart()
+    public function getPeriodStart(): mixed
     {
         return $this->container['periodStart'];
     }
@@ -391,7 +394,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriodStart($periodStart)
+    public function setPeriodStart($periodStart): PreregInformation
     {
         $this->container['periodStart'] = $periodStart;
 
@@ -403,7 +406,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPeriodEnd()
+    public function getPeriodEnd(): mixed
     {
         return $this->container['periodEnd'];
     }
@@ -415,7 +418,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriodEnd($periodEnd)
+    public function setPeriodEnd($periodEnd): PreregInformation
     {
         $this->container['periodEnd'] = $periodEnd;
 
@@ -427,7 +430,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCategory()
+    public function getCategory(): mixed
     {
         return $this->container['category'];
     }
@@ -439,7 +442,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCategory($category)
+    public function setCategory($category): PreregInformation
     {
         $this->container['category'] = $category;
 
@@ -451,7 +454,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRegistrationType()
+    public function getRegistrationType(): mixed
     {
         return $this->container['registrationType'];
     }
@@ -463,7 +466,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrationType($registrationType)
+    public function setRegistrationType($registrationType): PreregInformation
     {
         $this->container['registrationType'] = $registrationType;
 
@@ -475,7 +478,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getMinPeriod()
+    public function getMinPeriod(): mixed
     {
         return $this->container['minPeriod'];
     }
@@ -487,7 +490,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinPeriod($minPeriod)
+    public function setMinPeriod($minPeriod): PreregInformation
     {
         $this->container['minPeriod'] = $minPeriod;
 
@@ -562,23 +565,22 @@ class PreregInformation implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -588,7 +590,7 @@ class PreregInformation implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

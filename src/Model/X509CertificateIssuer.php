@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * X509CertificateIssuer Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +227,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -235,7 +238,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -254,7 +257,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -279,7 +282,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -295,7 +298,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCommonName()
+    public function getCommonName(): mixed
     {
         return $this->container['commonName'];
     }
@@ -307,7 +310,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCommonName($commonName)
+    public function setCommonName($commonName): X509CertificateIssuer
     {
         $this->container['commonName'] = $commonName;
 
@@ -319,7 +322,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganization()
+    public function getOrganization(): mixed
     {
         return $this->container['organization'];
     }
@@ -331,7 +334,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setOrganization($organization): X509CertificateIssuer
     {
         $this->container['organization'] = $organization;
 
@@ -343,7 +346,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -355,7 +358,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): X509CertificateIssuer
     {
         $this->container['country'] = $country;
 
@@ -367,7 +370,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrganizationUnit()
+    public function getOrganizationUnit(): mixed
     {
         return $this->container['organizationUnit'];
     }
@@ -379,7 +382,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrganizationUnit($organizationUnit)
+    public function setOrganizationUnit($organizationUnit): X509CertificateIssuer
     {
         $this->container['organizationUnit'] = $organizationUnit;
 
@@ -391,7 +394,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLocality()
+    public function getLocality(): mixed
     {
         return $this->container['locality'];
     }
@@ -403,7 +406,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLocality($locality)
+    public function setLocality($locality): X509CertificateIssuer
     {
         $this->container['locality'] = $locality;
 
@@ -415,7 +418,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getState()
+    public function getState(): mixed
     {
         return $this->container['state'];
     }
@@ -427,7 +430,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setState($state)
+    public function setState($state): X509CertificateIssuer
     {
         $this->container['state'] = $state;
 
@@ -502,23 +505,22 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -528,7 +530,7 @@ class X509CertificateIssuer implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * TldProduct Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -686,7 +689,7 @@ class TldProduct implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -697,7 +700,7 @@ class TldProduct implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -716,7 +719,7 @@ class TldProduct implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -741,7 +744,7 @@ class TldProduct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -757,7 +760,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -769,7 +772,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): TldProduct
     {
         $this->container['id'] = $id;
 
@@ -781,7 +784,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): mixed
     {
         return $this->container['label'];
     }
@@ -793,7 +796,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabel($label): TldProduct
     {
         $this->container['label'] = $label;
 
@@ -805,7 +808,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCharMin()
+    public function getCharMin(): mixed
     {
         return $this->container['charMin'];
     }
@@ -817,7 +820,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCharMin($charMin)
+    public function setCharMin($charMin): TldProduct
     {
         $this->container['charMin'] = $charMin;
 
@@ -829,7 +832,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCharMax()
+    public function getCharMax(): mixed
     {
         return $this->container['charMax'];
     }
@@ -841,7 +844,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCharMax($charMax)
+    public function setCharMax($charMax): TldProduct
     {
         $this->container['charMax'] = $charMax;
 
@@ -853,7 +856,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDnssecMin()
+    public function getDnssecMin(): mixed
     {
         return $this->container['dnssecMin'];
     }
@@ -865,7 +868,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecMin($dnssecMin)
+    public function setDnssecMin($dnssecMin): TldProduct
     {
         $this->container['dnssecMin'] = $dnssecMin;
 
@@ -877,7 +880,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDnssecMax()
+    public function getDnssecMax(): mixed
     {
         return $this->container['dnssecMax'];
     }
@@ -889,7 +892,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecMax($dnssecMax)
+    public function setDnssecMax($dnssecMax): TldProduct
     {
         $this->container['dnssecMax'] = $dnssecMax;
 
@@ -901,7 +904,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int[]
      */
-    public function getDnssecAlgorithms()
+    public function getDnssecAlgorithms(): mixed
     {
         return $this->container['dnssecAlgorithms'];
     }
@@ -913,7 +916,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecAlgorithms($dnssecAlgorithms)
+    public function setDnssecAlgorithms($dnssecAlgorithms): TldProduct
     {
         $this->container['dnssecAlgorithms'] = $dnssecAlgorithms;
 
@@ -925,7 +928,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNserverMin()
+    public function getNserverMin(): mixed
     {
         return $this->container['nserverMin'];
     }
@@ -937,7 +940,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNserverMin($nserverMin)
+    public function setNserverMin($nserverMin): TldProduct
     {
         $this->container['nserverMin'] = $nserverMin;
 
@@ -949,7 +952,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNserverMax()
+    public function getNserverMax(): mixed
     {
         return $this->container['nserverMax'];
     }
@@ -961,7 +964,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNserverMax($nserverMax)
+    public function setNserverMax($nserverMax): TldProduct
     {
         $this->container['nserverMax'] = $nserverMax;
 
@@ -973,7 +976,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv4Min()
+    public function getIpv4Min(): mixed
     {
         return $this->container['ipv4Min'];
     }
@@ -985,7 +988,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv4Min($ipv4Min)
+    public function setIpv4Min($ipv4Min): TldProduct
     {
         $this->container['ipv4Min'] = $ipv4Min;
 
@@ -997,7 +1000,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv4Max()
+    public function getIpv4Max(): mixed
     {
         return $this->container['ipv4Max'];
     }
@@ -1009,7 +1012,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv4Max($ipv4Max)
+    public function setIpv4Max($ipv4Max): TldProduct
     {
         $this->container['ipv4Max'] = $ipv4Max;
 
@@ -1021,7 +1024,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv6Min()
+    public function getIpv6Min(): mixed
     {
         return $this->container['ipv6Min'];
     }
@@ -1033,7 +1036,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv6Min($ipv6Min)
+    public function setIpv6Min($ipv6Min): TldProduct
     {
         $this->container['ipv6Min'] = $ipv6Min;
 
@@ -1045,7 +1048,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getIpv6Max()
+    public function getIpv6Max(): mixed
     {
         return $this->container['ipv6Max'];
     }
@@ -1057,7 +1060,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIpv6Max($ipv6Max)
+    public function setIpv6Max($ipv6Max): TldProduct
     {
         $this->container['ipv6Max'] = $ipv6Max;
 
@@ -1069,7 +1072,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNsentryMin()
+    public function getNsentryMin(): mixed
     {
         return $this->container['nsentryMin'];
     }
@@ -1081,7 +1084,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNsentryMin($nsentryMin)
+    public function setNsentryMin($nsentryMin): TldProduct
     {
         $this->container['nsentryMin'] = $nsentryMin;
 
@@ -1093,7 +1096,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNsentryMax()
+    public function getNsentryMax(): mixed
     {
         return $this->container['nsentryMax'];
     }
@@ -1105,7 +1108,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNsentryMax($nsentryMax)
+    public function setNsentryMax($nsentryMax): TldProduct
     {
         $this->container['nsentryMax'] = $nsentryMax;
 
@@ -1117,7 +1120,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getRootNserver()
+    public function getRootNserver(): mixed
     {
         return $this->container['rootNserver'];
     }
@@ -1129,7 +1132,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRootNserver($rootNserver)
+    public function setRootNserver($rootNserver): TldProduct
     {
         $this->container['rootNserver'] = $rootNserver;
 
@@ -1141,7 +1144,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDnssecRecord()
+    public function getDnssecRecord(): mixed
     {
         return $this->container['dnssecRecord'];
     }
@@ -1153,7 +1156,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnssecRecord($dnssecRecord)
+    public function setDnssecRecord($dnssecRecord): TldProduct
     {
         $this->container['dnssecRecord'] = $dnssecRecord;
 
@@ -1165,7 +1168,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getRestoreArgpPeriod()
+    public function getRestoreArgpPeriod(): mixed
     {
         return $this->container['restoreArgpPeriod'];
     }
@@ -1177,7 +1180,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRestoreArgpPeriod($restoreArgpPeriod)
+    public function setRestoreArgpPeriod($restoreArgpPeriod): TldProduct
     {
         $this->container['restoreArgpPeriod'] = $restoreArgpPeriod;
 
@@ -1189,7 +1192,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getRestoreRgpPeriod()
+    public function getRestoreRgpPeriod(): mixed
     {
         return $this->container['restoreRgpPeriod'];
     }
@@ -1201,7 +1204,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRestoreRgpPeriod($restoreRgpPeriod)
+    public function setRestoreRgpPeriod($restoreRgpPeriod): TldProduct
     {
         $this->container['restoreRgpPeriod'] = $restoreRgpPeriod;
 
@@ -1213,7 +1216,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getCancelationPeriod()
+    public function getCancelationPeriod(): mixed
     {
         return $this->container['cancelationPeriod'];
     }
@@ -1225,7 +1228,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationPeriod($cancelationPeriod)
+    public function setCancelationPeriod($cancelationPeriod): TldProduct
     {
         $this->container['cancelationPeriod'] = $cancelationPeriod;
 
@@ -1237,7 +1240,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskCreate()
+    public function getTaskCreate(): mixed
     {
         return $this->container['taskCreate'];
     }
@@ -1249,7 +1252,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskCreate($taskCreate)
+    public function setTaskCreate($taskCreate): TldProduct
     {
         $this->container['taskCreate'] = $taskCreate;
 
@@ -1261,7 +1264,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskUpdate()
+    public function getTaskUpdate(): mixed
     {
         return $this->container['taskUpdate'];
     }
@@ -1273,7 +1276,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskUpdate($taskUpdate)
+    public function setTaskUpdate($taskUpdate): TldProduct
     {
         $this->container['taskUpdate'] = $taskUpdate;
 
@@ -1285,7 +1288,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskDelete()
+    public function getTaskDelete(): mixed
     {
         return $this->container['taskDelete'];
     }
@@ -1297,7 +1300,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskDelete($taskDelete)
+    public function setTaskDelete($taskDelete): TldProduct
     {
         $this->container['taskDelete'] = $taskDelete;
 
@@ -1309,7 +1312,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskRenew()
+    public function getTaskRenew(): mixed
     {
         return $this->container['taskRenew'];
     }
@@ -1321,7 +1324,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskRenew($taskRenew)
+    public function setTaskRenew($taskRenew): TldProduct
     {
         $this->container['taskRenew'] = $taskRenew;
 
@@ -1333,7 +1336,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskTransfer()
+    public function getTaskTransfer(): mixed
     {
         return $this->container['taskTransfer'];
     }
@@ -1345,7 +1348,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskTransfer($taskTransfer)
+    public function setTaskTransfer($taskTransfer): TldProduct
     {
         $this->container['taskTransfer'] = $taskTransfer;
 
@@ -1357,7 +1360,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskTransit()
+    public function getTaskTransit(): mixed
     {
         return $this->container['taskTransit'];
     }
@@ -1369,7 +1372,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskTransit($taskTransit)
+    public function setTaskTransit($taskTransit): TldProduct
     {
         $this->container['taskTransit'] = $taskTransit;
 
@@ -1381,7 +1384,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskPreack()
+    public function getTaskPreack(): mixed
     {
         return $this->container['taskPreack'];
     }
@@ -1393,7 +1396,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskPreack($taskPreack)
+    public function setTaskPreack($taskPreack): TldProduct
     {
         $this->container['taskPreack'] = $taskPreack;
 
@@ -1405,7 +1408,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskRestore()
+    public function getTaskRestore(): mixed
     {
         return $this->container['taskRestore'];
     }
@@ -1417,7 +1420,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskRestore($taskRestore)
+    public function setTaskRestore($taskRestore): TldProduct
     {
         $this->container['taskRestore'] = $taskRestore;
 
@@ -1429,7 +1432,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskAuthinfoCreate()
+    public function getTaskAuthinfoCreate(): mixed
     {
         return $this->container['taskAuthinfoCreate'];
     }
@@ -1441,7 +1444,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskAuthinfoCreate($taskAuthinfoCreate)
+    public function setTaskAuthinfoCreate($taskAuthinfoCreate): TldProduct
     {
         $this->container['taskAuthinfoCreate'] = $taskAuthinfoCreate;
 
@@ -1453,7 +1456,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskAuthinfoDelete()
+    public function getTaskAuthinfoDelete(): mixed
     {
         return $this->container['taskAuthinfoDelete'];
     }
@@ -1465,7 +1468,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskAuthinfoDelete($taskAuthinfoDelete)
+    public function setTaskAuthinfoDelete($taskAuthinfoDelete): TldProduct
     {
         $this->container['taskAuthinfoDelete'] = $taskAuthinfoDelete;
 
@@ -1477,7 +1480,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskAuthinfo2()
+    public function getTaskAuthinfo2(): mixed
     {
         return $this->container['taskAuthinfo2'];
     }
@@ -1489,7 +1492,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskAuthinfo2($taskAuthinfo2)
+    public function setTaskAuthinfo2($taskAuthinfo2): TldProduct
     {
         $this->container['taskAuthinfo2'] = $taskAuthinfo2;
 
@@ -1501,7 +1504,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskStatusUpdate()
+    public function getTaskStatusUpdate(): mixed
     {
         return $this->container['taskStatusUpdate'];
     }
@@ -1513,7 +1516,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskStatusUpdate($taskStatusUpdate)
+    public function setTaskStatusUpdate($taskStatusUpdate): TldProduct
     {
         $this->container['taskStatusUpdate'] = $taskStatusUpdate;
 
@@ -1525,7 +1528,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTaskOwnerChange()
+    public function getTaskOwnerChange(): mixed
     {
         return $this->container['taskOwnerChange'];
     }
@@ -1537,7 +1540,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaskOwnerChange($taskOwnerChange)
+    public function setTaskOwnerChange($taskOwnerChange): TldProduct
     {
         $this->container['taskOwnerChange'] = $taskOwnerChange;
 
@@ -1549,7 +1552,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getCancelationExpireOnly()
+    public function getCancelationExpireOnly(): mixed
     {
         return $this->container['cancelationExpireOnly'];
     }
@@ -1561,7 +1564,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationExpireOnly($cancelationExpireOnly)
+    public function setCancelationExpireOnly($cancelationExpireOnly): TldProduct
     {
         $this->container['cancelationExpireOnly'] = $cancelationExpireOnly;
 
@@ -1573,7 +1576,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getRegistrarStatus()
+    public function getRegistrarStatus(): mixed
     {
         return $this->container['registrarStatus'];
     }
@@ -1585,7 +1588,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrarStatus($registrarStatus)
+    public function setRegistrarStatus($registrarStatus): TldProduct
     {
         $this->container['registrarStatus'] = $registrarStatus;
 
@@ -1597,7 +1600,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuthInfo1Location[]
      */
-    public function getAuthinfo1Location()
+    public function getAuthinfo1Location(): mixed
     {
         return $this->container['authinfo1Location'];
     }
@@ -1609,7 +1612,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAuthinfo1Location($authinfo1Location)
+    public function setAuthinfo1Location($authinfo1Location): TldProduct
     {
         $this->container['authinfo1Location'] = $authinfo1Location;
 
@@ -1621,7 +1624,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getNumeralDomains()
+    public function getNumeralDomains(): mixed
     {
         return $this->container['numeralDomains'];
     }
@@ -1633,7 +1636,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumeralDomains($numeralDomains)
+    public function setNumeralDomains($numeralDomains): TldProduct
     {
         $this->container['numeralDomains'] = $numeralDomains;
 
@@ -1645,7 +1648,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRealtime()
+    public function getRealtime(): mixed
     {
         return $this->container['realtime'];
     }
@@ -1657,7 +1660,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRealtime($realtime)
+    public function setRealtime($realtime): TldProduct
     {
         $this->container['realtime'] = $realtime;
 
@@ -1669,7 +1672,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Charset[]
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -1681,7 +1684,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): TldProduct
     {
         $this->container['idn'] = $idn;
 
@@ -1693,7 +1696,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTransferConfirmation()
+    public function getTransferConfirmation(): mixed
     {
         return $this->container['transferConfirmation'];
     }
@@ -1705,7 +1708,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTransferConfirmation($transferConfirmation)
+    public function setTransferConfirmation($transferConfirmation): TldProduct
     {
         $this->container['transferConfirmation'] = $transferConfirmation;
 
@@ -1717,7 +1720,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getDnsCheck()
+    public function getDnsCheck(): mixed
     {
         return $this->container['dnsCheck'];
     }
@@ -1729,7 +1732,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDnsCheck($dnsCheck)
+    public function setDnsCheck($dnsCheck): TldProduct
     {
         $this->container['dnsCheck'] = $dnsCheck;
 
@@ -1741,7 +1744,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPremiumDomains()
+    public function getPremiumDomains(): mixed
     {
         return $this->container['premiumDomains'];
     }
@@ -1753,7 +1756,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPremiumDomains($premiumDomains)
+    public function setPremiumDomains($premiumDomains): TldProduct
     {
         $this->container['premiumDomains'] = $premiumDomains;
 
@@ -1765,7 +1768,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getContactExtensions()
+    public function getContactExtensions(): mixed
     {
         return $this->container['contactExtensions'];
     }
@@ -1777,7 +1780,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContactExtensions($contactExtensions)
+    public function setContactExtensions($contactExtensions): TldProduct
     {
         $this->container['contactExtensions'] = $contactExtensions;
 
@@ -1789,7 +1792,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getPrivacy()
+    public function getPrivacy(): mixed
     {
         return $this->container['privacy'];
     }
@@ -1801,7 +1804,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrivacy($privacy)
+    public function setPrivacy($privacy): TldProduct
     {
         $this->container['privacy'] = $privacy;
 
@@ -1813,7 +1816,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTrustee()
+    public function getTrustee(): mixed
     {
         return $this->container['trustee'];
     }
@@ -1825,7 +1828,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrustee($trustee)
+    public function setTrustee($trustee): TldProduct
     {
         $this->container['trustee'] = $trustee;
 
@@ -1837,7 +1840,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getForcedTrustee()
+    public function getForcedTrustee(): mixed
     {
         return $this->container['forcedTrustee'];
     }
@@ -1849,7 +1852,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setForcedTrustee($forcedTrustee)
+    public function setForcedTrustee($forcedTrustee): TldProduct
     {
         $this->container['forcedTrustee'] = $forcedTrustee;
 
@@ -1861,7 +1864,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getThirdLevel()
+    public function getThirdLevel(): mixed
     {
         return $this->container['thirdLevel'];
     }
@@ -1873,7 +1876,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setThirdLevel($thirdLevel)
+    public function setThirdLevel($thirdLevel): TldProduct
     {
         $this->container['thirdLevel'] = $thirdLevel;
 
@@ -1885,7 +1888,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getTransferAuthinfo()
+    public function getTransferAuthinfo(): mixed
     {
         return $this->container['transferAuthinfo'];
     }
@@ -1897,7 +1900,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTransferAuthinfo($transferAuthinfo)
+    public function setTransferAuthinfo($transferAuthinfo): TldProduct
     {
         $this->container['transferAuthinfo'] = $transferAuthinfo;
 
@@ -1909,7 +1912,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getOwnerchangeAuthinfo()
+    public function getOwnerchangeAuthinfo(): mixed
     {
         return $this->container['ownerchangeAuthinfo'];
     }
@@ -1921,7 +1924,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwnerchangeAuthinfo($ownerchangeAuthinfo)
+    public function setOwnerchangeAuthinfo($ownerchangeAuthinfo): TldProduct
     {
         $this->container['ownerchangeAuthinfo'] = $ownerchangeAuthinfo;
 
@@ -1933,7 +1936,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getErrorCodes()
+    public function getErrorCodes(): mixed
     {
         return $this->container['errorCodes'];
     }
@@ -1945,7 +1948,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setErrorCodes($errorCodes)
+    public function setErrorCodes($errorCodes): TldProduct
     {
         $this->container['errorCodes'] = $errorCodes;
 
@@ -1957,7 +1960,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TldType
      */
-    public function getTldType()
+    public function getTldType(): mixed
     {
         return $this->container['tldType'];
     }
@@ -1969,7 +1972,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldType($tldType)
+    public function setTldType($tldType): TldProduct
     {
         $this->container['tldType'] = $tldType;
 
@@ -1981,7 +1984,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TldContinent
      */
-    public function getTldContinent()
+    public function getTldContinent(): mixed
     {
         return $this->container['tldContinent'];
     }
@@ -1993,7 +1996,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldContinent($tldContinent)
+    public function setTldContinent($tldContinent): TldProduct
     {
         $this->container['tldContinent'] = $tldContinent;
 
@@ -2005,7 +2008,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getCategories()
+    public function getCategories(): mixed
     {
         return $this->container['categories'];
     }
@@ -2017,7 +2020,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCategories($categories)
+    public function setCategories($categories): TldProduct
     {
         $this->container['categories'] = $categories;
 
@@ -2029,7 +2032,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getConfluencePageDe()
+    public function getConfluencePageDe(): mixed
     {
         return $this->container['confluencePageDe'];
     }
@@ -2041,7 +2044,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfluencePageDe($confluencePageDe)
+    public function setConfluencePageDe($confluencePageDe): TldProduct
     {
         $this->container['confluencePageDe'] = $confluencePageDe;
 
@@ -2053,7 +2056,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getConfluencePageEn()
+    public function getConfluencePageEn(): mixed
     {
         return $this->container['confluencePageEn'];
     }
@@ -2065,7 +2068,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfluencePageEn($confluencePageEn)
+    public function setConfluencePageEn($confluencePageEn): TldProduct
     {
         $this->container['confluencePageEn'] = $confluencePageEn;
 
@@ -2077,7 +2080,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCommentDe()
+    public function getCommentDe(): mixed
     {
         return $this->container['commentDe'];
     }
@@ -2089,7 +2092,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCommentDe($commentDe)
+    public function setCommentDe($commentDe): TldProduct
     {
         $this->container['commentDe'] = $commentDe;
 
@@ -2101,7 +2104,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCommentEn()
+    public function getCommentEn(): mixed
     {
         return $this->container['commentEn'];
     }
@@ -2113,7 +2116,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCommentEn($commentEn)
+    public function setCommentEn($commentEn): TldProduct
     {
         $this->container['commentEn'] = $commentEn;
 
@@ -2125,7 +2128,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getWhois()
+    public function getWhois(): mixed
     {
         return $this->container['whois'];
     }
@@ -2137,7 +2140,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setWhois($whois)
+    public function setWhois($whois): TldProduct
     {
         $this->container['whois'] = $whois;
 
@@ -2149,7 +2152,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountryIso()
+    public function getCountryIso(): mixed
     {
         return $this->container['countryIso'];
     }
@@ -2161,7 +2164,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountryIso($countryIso)
+    public function setCountryIso($countryIso): TldProduct
     {
         $this->container['countryIso'] = $countryIso;
 
@@ -2173,7 +2176,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGeoPol()
+    public function getGeoPol(): mixed
     {
         return $this->container['geoPol'];
     }
@@ -2185,7 +2188,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGeoPol($geoPol)
+    public function setGeoPol($geoPol): TldProduct
     {
         $this->container['geoPol'] = $geoPol;
 
@@ -2197,7 +2200,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOfficialLanguage()
+    public function getOfficialLanguage(): mixed
     {
         return $this->container['officialLanguage'];
     }
@@ -2209,7 +2212,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOfficialLanguage($officialLanguage)
+    public function setOfficialLanguage($officialLanguage): TldProduct
     {
         $this->container['officialLanguage'] = $officialLanguage;
 
@@ -2221,7 +2224,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getBlockingServices()
+    public function getBlockingServices(): mixed
     {
         return $this->container['blockingServices'];
     }
@@ -2233,7 +2236,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBlockingServices($blockingServices)
+    public function setBlockingServices($blockingServices): TldProduct
     {
         $this->container['blockingServices'] = $blockingServices;
 
@@ -2245,7 +2248,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Condition[]
      */
-    public function getRestrictions()
+    public function getRestrictions(): mixed
     {
         return $this->container['restrictions'];
     }
@@ -2257,7 +2260,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRestrictions($restrictions)
+    public function setRestrictions($restrictions): TldProduct
     {
         $this->container['restrictions'] = $restrictions;
 
@@ -2269,7 +2272,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Country
      */
-    public function getCountry()
+    public function getCountry(): mixed
     {
         return $this->container['country'];
     }
@@ -2281,7 +2284,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): TldProduct
     {
         $this->container['country'] = $country;
 
@@ -2293,7 +2296,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TldDataController[]
      */
-    public function getDataControllers()
+    public function getDataControllers(): mixed
     {
         return $this->container['dataControllers'];
     }
@@ -2305,7 +2308,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDataControllers($dataControllers)
+    public function setDataControllers($dataControllers): TldProduct
     {
         $this->container['dataControllers'] = $dataControllers;
 
@@ -2317,7 +2320,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PreregInformation[]
      */
-    public function getPreregInformation()
+    public function getPreregInformation(): mixed
     {
         return $this->container['preregInformation'];
     }
@@ -2329,7 +2332,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPreregInformation($preregInformation)
+    public function setPreregInformation($preregInformation): TldProduct
     {
         $this->container['preregInformation'] = $preregInformation;
 
@@ -2341,7 +2344,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getRankingLevel()
+    public function getRankingLevel(): mixed
     {
         return $this->container['rankingLevel'];
     }
@@ -2353,7 +2356,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRankingLevel($rankingLevel)
+    public function setRankingLevel($rankingLevel): TldProduct
     {
         $this->container['rankingLevel'] = $rankingLevel;
 
@@ -2365,7 +2368,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TldTask[]
      */
-    public function getTldTasks()
+    public function getTldTasks(): mixed
     {
         return $this->container['tldTasks'];
     }
@@ -2377,7 +2380,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldTasks($tldTasks)
+    public function setTldTasks($tldTasks): TldProduct
     {
         $this->container['tldTasks'] = $tldTasks;
 
@@ -2389,7 +2392,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TldDns
      */
-    public function getTldDns()
+    public function getTldDns(): mixed
     {
         return $this->container['tldDns'];
     }
@@ -2401,7 +2404,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldDns($tldDns)
+    public function setTldDns($tldDns): TldProduct
     {
         $this->container['tldDns'] = $tldDns;
 
@@ -2413,7 +2416,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TldPeriod
      */
-    public function getTldPeriod()
+    public function getTldPeriod(): mixed
     {
         return $this->container['tldPeriod'];
     }
@@ -2425,7 +2428,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTldPeriod($tldPeriod)
+    public function setTldPeriod($tldPeriod): TldProduct
     {
         $this->container['tldPeriod'] = $tldPeriod;
 
@@ -2437,7 +2440,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsManual()
+    public function getIsManual(): mixed
     {
         return $this->container['isManual'];
     }
@@ -2449,7 +2452,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsManual($isManual)
+    public function setIsManual($isManual): TldProduct
     {
         $this->container['isManual'] = $isManual;
 
@@ -2461,7 +2464,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getRequiredFields()
+    public function getRequiredFields(): mixed
     {
         return $this->container['requiredFields'];
     }
@@ -2473,7 +2476,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRequiredFields($requiredFields)
+    public function setRequiredFields($requiredFields): TldProduct
     {
         $this->container['requiredFields'] = $requiredFields;
 
@@ -2485,7 +2488,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactReferenceType[]
      */
-    public function getTransferImportedContacts()
+    public function getTransferImportedContacts(): mixed
     {
         return $this->container['transferImportedContacts'];
     }
@@ -2497,7 +2500,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTransferImportedContacts($transferImportedContacts)
+    public function setTransferImportedContacts($transferImportedContacts): TldProduct
     {
         $this->container['transferImportedContacts'] = $transferImportedContacts;
 
@@ -2509,7 +2512,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getAllowedOcCases()
+    public function getAllowedOcCases(): mixed
     {
         return $this->container['allowedOcCases'];
     }
@@ -2521,7 +2524,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAllowedOcCases($allowedOcCases)
+    public function setAllowedOcCases($allowedOcCases): TldProduct
     {
         $this->container['allowedOcCases'] = $allowedOcCases;
 
@@ -2533,7 +2536,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Registrar[]
      */
-    public function getRegistrars()
+    public function getRegistrars(): mixed
     {
         return $this->container['registrars'];
     }
@@ -2545,7 +2548,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistrars($registrars)
+    public function setRegistrars($registrars): TldProduct
     {
         $this->container['registrars'] = $registrars;
 
@@ -2557,7 +2560,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAutoDelete()
+    public function getAutoDelete(): mixed
     {
         return $this->container['autoDelete'];
     }
@@ -2569,7 +2572,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAutoDelete($autoDelete)
+    public function setAutoDelete($autoDelete): TldProduct
     {
         $this->container['autoDelete'] = $autoDelete;
 
@@ -2581,7 +2584,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Document[]
      */
-    public function getDocuments()
+    public function getDocuments(): mixed
     {
         return $this->container['documents'];
     }
@@ -2593,7 +2596,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDocuments($documents)
+    public function setDocuments($documents): TldProduct
     {
         $this->container['documents'] = $documents;
 
@@ -2605,7 +2608,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRegistryLock()
+    public function getRegistryLock(): mixed
     {
         return $this->container['registryLock'];
     }
@@ -2617,7 +2620,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRegistryLock($registryLock)
+    public function setRegistryLock($registryLock): TldProduct
     {
         $this->container['registryLock'] = $registryLock;
 
@@ -2629,7 +2632,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\ContactReferenceType[]
      */
-    public function getTrusteeTypes()
+    public function getTrusteeTypes(): mixed
     {
         return $this->container['trusteeTypes'];
     }
@@ -2641,7 +2644,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrusteeTypes($trusteeTypes)
+    public function setTrusteeTypes($trusteeTypes): TldProduct
     {
         $this->container['trusteeTypes'] = $trusteeTypes;
 
@@ -2653,7 +2656,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getSldMin()
+    public function getSldMin(): mixed
     {
         return $this->container['sldMin'];
     }
@@ -2665,7 +2668,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSldMin($sldMin)
+    public function setSldMin($sldMin): TldProduct
     {
         $this->container['sldMin'] = $sldMin;
 
@@ -2677,7 +2680,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getSldMax()
+    public function getSldMax(): mixed
     {
         return $this->container['sldMax'];
     }
@@ -2689,7 +2692,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSldMax($sldMax)
+    public function setSldMax($sldMax): TldProduct
     {
         $this->container['sldMax'] = $sldMax;
 
@@ -2701,7 +2704,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getNumeric()
+    public function getNumeric(): mixed
     {
         return $this->container['numeric'];
     }
@@ -2713,7 +2716,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumeric($numeric)
+    public function setNumeric($numeric): TldProduct
     {
         $this->container['numeric'] = $numeric;
 
@@ -2725,7 +2728,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getSedoMls()
+    public function getSedoMls(): mixed
     {
         return $this->container['sedoMls'];
     }
@@ -2737,7 +2740,7 @@ class TldProduct implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSedoMls($sedoMls)
+    public function setSedoMls($sedoMls): TldProduct
     {
         $this->container['sedoMls'] = $sedoMls;
 
@@ -2812,23 +2815,22 @@ class TldProduct implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -2838,7 +2840,7 @@ class TldProduct implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

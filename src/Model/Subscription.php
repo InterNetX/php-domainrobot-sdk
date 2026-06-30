@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * Subscription Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -332,7 +335,7 @@ class Subscription implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -343,7 +346,7 @@ class Subscription implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -362,7 +365,7 @@ class Subscription implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -387,7 +390,7 @@ class Subscription implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -403,7 +406,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -415,7 +418,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): Subscription
     {
         $this->container['created'] = $created;
 
@@ -427,7 +430,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -439,7 +442,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): Subscription
     {
         $this->container['updated'] = $updated;
 
@@ -451,7 +454,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->container['id'];
     }
@@ -463,7 +466,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): Subscription
     {
         $this->container['id'] = $id;
 
@@ -475,7 +478,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -487,7 +490,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): Subscription
     {
         $this->container['owner'] = $owner;
 
@@ -499,7 +502,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -511,7 +514,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): Subscription
     {
         $this->container['updater'] = $updater;
 
@@ -523,7 +526,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BillingStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -535,7 +538,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): Subscription
     {
         $this->container['status'] = $status;
 
@@ -547,7 +550,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getObject()
+    public function getObject(): mixed
     {
         return $this->container['object'];
     }
@@ -559,7 +562,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setObject($object): Subscription
     {
         $this->container['object'] = $object;
 
@@ -571,7 +574,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): mixed
     {
         return $this->container['description'];
     }
@@ -583,7 +586,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setDescription($description): Subscription
     {
         $this->container['description'] = $description;
 
@@ -595,7 +598,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getPeriod()
+    public function getPeriod(): mixed
     {
         return $this->container['period'];
     }
@@ -607,7 +610,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPeriod($period): Subscription
     {
         $this->container['period'] = $period;
 
@@ -619,7 +622,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleTypeLabel()
+    public function getArticleTypeLabel(): mixed
     {
         return $this->container['articleTypeLabel'];
     }
@@ -631,7 +634,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleTypeLabel($articleTypeLabel)
+    public function setArticleTypeLabel($articleTypeLabel): Subscription
     {
         $this->container['articleTypeLabel'] = $articleTypeLabel;
 
@@ -643,7 +646,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getPayable()
+    public function getPayable(): mixed
     {
         return $this->container['payable'];
     }
@@ -655,7 +658,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayable($payable)
+    public function setPayable($payable): Subscription
     {
         $this->container['payable'] = $payable;
 
@@ -667,7 +670,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArticleLabel()
+    public function getArticleLabel(): mixed
     {
         return $this->container['articleLabel'];
     }
@@ -679,7 +682,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArticleLabel($articleLabel)
+    public function setArticleLabel($articleLabel): Subscription
     {
         $this->container['articleLabel'] = $articleLabel;
 
@@ -691,7 +694,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PeriodicBilling[]
      */
-    public function getItem()
+    public function getItem(): mixed
     {
         return $this->container['item'];
     }
@@ -703,7 +706,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItem($item)
+    public function setItem($item): Subscription
     {
         $this->container['item'] = $item;
 
@@ -715,7 +718,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getExpire()
+    public function getExpire(): mixed
     {
         return $this->container['expire'];
     }
@@ -727,7 +730,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExpire($expire)
+    public function setExpire($expire): Subscription
     {
         $this->container['expire'] = $expire;
 
@@ -739,7 +742,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TimePeriod
      */
-    public function getCancelationTerm()
+    public function getCancelationTerm(): mixed
     {
         return $this->container['cancelationTerm'];
     }
@@ -751,7 +754,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationTerm($cancelationTerm)
+    public function setCancelationTerm($cancelationTerm): Subscription
     {
         $this->container['cancelationTerm'] = $cancelationTerm;
 
@@ -763,7 +766,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCancelation()
+    public function getCancelation(): mixed
     {
         return $this->container['cancelation'];
     }
@@ -775,7 +778,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelation($cancelation)
+    public function setCancelation($cancelation): Subscription
     {
         $this->container['cancelation'] = $cancelation;
 
@@ -787,7 +790,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCanceled()
+    public function getCanceled(): mixed
     {
         return $this->container['canceled'];
     }
@@ -799,7 +802,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCanceled($canceled)
+    public function setCanceled($canceled): Subscription
     {
         $this->container['canceled'] = $canceled;
 
@@ -811,7 +814,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BillingObjectLimit[]
      */
-    public function getLimits()
+    public function getLimits(): mixed
     {
         return $this->container['limits'];
     }
@@ -823,7 +826,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLimits($limits)
+    public function setLimits($limits): Subscription
     {
         $this->container['limits'] = $limits;
 
@@ -835,7 +838,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\UserAcl[]
      */
-    public function getAcls()
+    public function getAcls(): mixed
     {
         return $this->container['acls'];
     }
@@ -847,7 +850,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAcls($acls)
+    public function setAcls($acls): Subscription
     {
         $this->container['acls'] = $acls;
 
@@ -859,7 +862,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\UserProfile[]
      */
-    public function getProfiles()
+    public function getProfiles(): mixed
     {
         return $this->container['profiles'];
     }
@@ -871,7 +874,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProfiles($profiles)
+    public function setProfiles($profiles): Subscription
     {
         $this->container['profiles'] = $profiles;
 
@@ -883,7 +886,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCancelationEffective()
+    public function getCancelationEffective(): mixed
     {
         return $this->container['cancelationEffective'];
     }
@@ -895,7 +898,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCancelationEffective($cancelationEffective)
+    public function setCancelationEffective($cancelationEffective): Subscription
     {
         $this->container['cancelationEffective'] = $cancelationEffective;
 
@@ -907,7 +910,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getVariant()
+    public function getVariant(): mixed
     {
         return $this->container['variant'];
     }
@@ -919,7 +922,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVariant($variant)
+    public function setVariant($variant): Subscription
     {
         $this->container['variant'] = $variant;
 
@@ -931,7 +934,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBusinessCase()
+    public function getBusinessCase(): mixed
     {
         return $this->container['businessCase'];
     }
@@ -943,7 +946,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessCase($businessCase)
+    public function setBusinessCase($businessCase): Subscription
     {
         $this->container['businessCase'] = $businessCase;
 
@@ -955,7 +958,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BillingEventExtensions
      */
-    public function getExtensions()
+    public function getExtensions(): mixed
     {
         return $this->container['extensions'];
     }
@@ -967,7 +970,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtensions($extensions)
+    public function setExtensions($extensions): Subscription
     {
         $this->container['extensions'] = $extensions;
 
@@ -1042,23 +1045,22 @@ class Subscription implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -1068,7 +1070,7 @@ class Subscription implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

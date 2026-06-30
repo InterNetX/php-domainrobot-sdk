@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * CertAuthentication Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -248,7 +251,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -259,7 +262,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -278,7 +281,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -303,7 +306,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -319,7 +322,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -331,7 +334,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): CertAuthentication
     {
         $this->container['name'] = $name;
 
@@ -343,7 +346,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuthMethodConstants
      */
-    public function getMethod()
+    public function getMethod(): mixed
     {
         return $this->container['method'];
     }
@@ -355,7 +358,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMethod($method)
+    public function setMethod($method): CertAuthentication
     {
         $this->container['method'] = $method;
 
@@ -367,7 +370,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDns()
+    public function getDns(): mixed
     {
         return $this->container['dns'];
     }
@@ -379,7 +382,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDns($dns)
+    public function setDns($dns): CertAuthentication
     {
         $this->container['dns'] = $dns;
 
@@ -391,7 +394,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFileName()
+    public function getFileName(): mixed
     {
         return $this->container['fileName'];
     }
@@ -403,7 +406,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFileName($fileName)
+    public function setFileName($fileName): CertAuthentication
     {
         $this->container['fileName'] = $fileName;
 
@@ -415,7 +418,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFileContent()
+    public function getFileContent(): mixed
     {
         return $this->container['fileContent'];
     }
@@ -427,7 +430,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFileContent($fileContent)
+    public function setFileContent($fileContent): CertAuthentication
     {
         $this->container['fileContent'] = $fileContent;
 
@@ -439,7 +442,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getApproverEmails()
+    public function getApproverEmails(): mixed
     {
         return $this->container['approverEmails'];
     }
@@ -451,7 +454,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setApproverEmails($approverEmails)
+    public function setApproverEmails($approverEmails): CertAuthentication
     {
         $this->container['approverEmails'] = $approverEmails;
 
@@ -463,7 +466,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getProvisioning()
+    public function getProvisioning(): mixed
     {
         return $this->container['provisioning'];
     }
@@ -475,7 +478,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProvisioning($provisioning)
+    public function setProvisioning($provisioning): CertAuthentication
     {
         $this->container['provisioning'] = $provisioning;
 
@@ -487,7 +490,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CertAuthentication[]
      */
-    public function getDomains()
+    public function getDomains(): mixed
     {
         return $this->container['domains'];
     }
@@ -499,7 +502,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomains($domains)
+    public function setDomains($domains): CertAuthentication
     {
         $this->container['domains'] = $domains;
 
@@ -511,7 +514,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\DcvValidationScope
      */
-    public function getScope()
+    public function getScope(): mixed
     {
         return $this->container['scope'];
     }
@@ -523,7 +526,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setScope($scope)
+    public function setScope($scope): CertAuthentication
     {
         $this->container['scope'] = $scope;
 
@@ -535,7 +538,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\AuthenticateStatus
      */
-    public function getStatus()
+    public function getStatus(): mixed
     {
         return $this->container['status'];
     }
@@ -547,7 +550,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): CertAuthentication
     {
         $this->container['status'] = $status;
 
@@ -622,23 +625,22 @@ class CertAuthentication implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -648,7 +650,7 @@ class CertAuthentication implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

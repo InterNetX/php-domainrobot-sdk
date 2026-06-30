@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * NiccomLog Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -236,7 +239,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -247,7 +250,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -266,7 +269,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -306,7 +309,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -322,7 +325,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getJobId()
+    public function getJobId(): mixed
     {
         return $this->container['jobId'];
     }
@@ -334,7 +337,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setJobId($jobId)
+    public function setJobId($jobId): NiccomLog
     {
         $this->container['jobId'] = $jobId;
 
@@ -346,7 +349,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getVertexId()
+    public function getVertexId(): mixed
     {
         return $this->container['vertexId'];
     }
@@ -358,7 +361,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setVertexId($vertexId)
+    public function setVertexId($vertexId): NiccomLog
     {
         $this->container['vertexId'] = $vertexId;
 
@@ -370,7 +373,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -382,7 +385,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): NiccomLog
     {
         $this->container['name'] = $name;
 
@@ -394,7 +397,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTask()
+    public function getTask(): mixed
     {
         return $this->container['task'];
     }
@@ -406,7 +409,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTask($task)
+    public function setTask($task): NiccomLog
     {
         $this->container['task'] = $task;
 
@@ -418,7 +421,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNicTransactionId()
+    public function getNicTransactionId(): mixed
     {
         return $this->container['nicTransactionId'];
     }
@@ -430,7 +433,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNicTransactionId($nicTransactionId)
+    public function setNicTransactionId($nicTransactionId): NiccomLog
     {
         $this->container['nicTransactionId'] = $nicTransactionId;
 
@@ -442,7 +445,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\NiccomSourceConstants
      */
-    public function getSource()
+    public function getSource(): mixed
     {
         return $this->container['source'];
     }
@@ -454,7 +457,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSource($source)
+    public function setSource($source): NiccomLog
     {
         $this->container['source'] = $source;
 
@@ -466,7 +469,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getText()
+    public function getText(): mixed
     {
         return $this->container['text'];
     }
@@ -478,7 +481,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setText($text)
+    public function setText($text): NiccomLog
     {
         $this->container['text'] = $text;
 
@@ -490,7 +493,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -502,7 +505,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): NiccomLog
     {
         $this->container['created'] = $created;
 
@@ -577,23 +580,22 @@ class NiccomLog implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -603,7 +605,7 @@ class NiccomLog implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

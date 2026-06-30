@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * CertificateInstallCheckData Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -278,7 +281,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -289,7 +292,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -308,7 +311,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -333,7 +336,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -349,7 +352,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIp()
+    public function getIp(): mixed
     {
         return $this->container['ip'];
     }
@@ -361,7 +364,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIp($ip)
+    public function setIp($ip): CertificateInstallCheckData
     {
         $this->container['ip'] = $ip;
 
@@ -373,7 +376,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getSecured()
+    public function getSecured(): mixed
     {
         return $this->container['secured'];
     }
@@ -385,7 +388,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSecured($secured)
+    public function setSecured($secured): CertificateInstallCheckData
     {
         $this->container['secured'] = $secured;
 
@@ -397,7 +400,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRedirect()
+    public function getRedirect(): mixed
     {
         return $this->container['redirect'];
     }
@@ -409,7 +412,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRedirect($redirect)
+    public function setRedirect($redirect): CertificateInstallCheckData
     {
         $this->container['redirect'] = $redirect;
 
@@ -421,7 +424,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getRedirectMatch()
+    public function getRedirectMatch(): mixed
     {
         return $this->container['redirectMatch'];
     }
@@ -433,7 +436,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRedirectMatch($redirectMatch)
+    public function setRedirectMatch($redirectMatch): CertificateInstallCheckData
     {
         $this->container['redirectMatch'] = $redirectMatch;
 
@@ -445,7 +448,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getCaa()
+    public function getCaa(): mixed
     {
         return $this->container['caa'];
     }
@@ -457,7 +460,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCaa($caa)
+    public function setCaa($caa): CertificateInstallCheckData
     {
         $this->container['caa'] = $caa;
 
@@ -469,7 +472,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getMultipleCaa()
+    public function getMultipleCaa(): mixed
     {
         return $this->container['multipleCaa'];
     }
@@ -481,7 +484,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMultipleCaa($multipleCaa)
+    public function setMultipleCaa($multipleCaa): CertificateInstallCheckData
     {
         $this->container['multipleCaa'] = $multipleCaa;
 
@@ -493,7 +496,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getSelfSigned()
+    public function getSelfSigned(): mixed
     {
         return $this->container['selfSigned'];
     }
@@ -505,7 +508,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSelfSigned($selfSigned)
+    public function setSelfSigned($selfSigned): CertificateInstallCheckData
     {
         $this->container['selfSigned'] = $selfSigned;
 
@@ -517,7 +520,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getChainOk()
+    public function getChainOk(): mixed
     {
         return $this->container['chainOk'];
     }
@@ -529,7 +532,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChainOk($chainOk)
+    public function setChainOk($chainOk): CertificateInstallCheckData
     {
         $this->container['chainOk'] = $chainOk;
 
@@ -541,7 +544,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getInventory()
+    public function getInventory(): mixed
     {
         return $this->container['inventory'];
     }
@@ -553,7 +556,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInventory($inventory)
+    public function setInventory($inventory): CertificateInstallCheckData
     {
         $this->container['inventory'] = $inventory;
 
@@ -565,7 +568,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Certificate
      */
-    public function getCertificate()
+    public function getCertificate(): mixed
     {
         return $this->container['certificate'];
     }
@@ -577,7 +580,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificate($certificate)
+    public function setCertificate($certificate): CertificateInstallCheckData
     {
         $this->container['certificate'] = $certificate;
 
@@ -589,7 +592,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\TlsData[]
      */
-    public function getTls()
+    public function getTls(): mixed
     {
         return $this->container['tls'];
     }
@@ -601,7 +604,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTls($tls)
+    public function setTls($tls): CertificateInstallCheckData
     {
         $this->container['tls'] = $tls;
 
@@ -613,7 +616,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\X509CertificateData
      */
-    public function getCertificateData()
+    public function getCertificateData(): mixed
     {
         return $this->container['certificateData'];
     }
@@ -625,7 +628,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCertificateData($certificateData)
+    public function setCertificateData($certificateData): CertificateInstallCheckData
     {
         $this->container['certificateData'] = $certificateData;
 
@@ -637,7 +640,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\X509CertificateData
      */
-    public function getRedirectCertificateData()
+    public function getRedirectCertificateData(): mixed
     {
         return $this->container['redirectCertificateData'];
     }
@@ -649,7 +652,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRedirectCertificateData($redirectCertificateData)
+    public function setRedirectCertificateData($redirectCertificateData): CertificateInstallCheckData
     {
         $this->container['redirectCertificateData'] = $redirectCertificateData;
 
@@ -661,7 +664,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\X509CertificateData[]
      */
-    public function getChain()
+    public function getChain(): mixed
     {
         return $this->container['chain'];
     }
@@ -673,7 +676,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChain($chain)
+    public function setChain($chain): CertificateInstallCheckData
     {
         $this->container['chain'] = $chain;
 
@@ -685,7 +688,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\CertificateInstallCheckNotice[]
      */
-    public function getNotices()
+    public function getNotices(): mixed
     {
         return $this->container['notices'];
     }
@@ -697,7 +700,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNotices($notices)
+    public function setNotices($notices): CertificateInstallCheckData
     {
         $this->container['notices'] = $notices;
 
@@ -772,23 +775,22 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -798,7 +800,7 @@ class CertificateInstallCheckData implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);

@@ -14,29 +14,29 @@ class SDKController
     /**
      * Create a Domain
      *
-     * @return ObjectJob
+     * @return ObjectJob|DomainrobotException
      */
-    public function domainCreate()
+    public function domainCreate(): ObjectJob|DomainrobotException
     {
         $domainrobot = new Domainrobot([
             "url" => "https://api.autodns.com/v1",
             "auth" => new DomainrobotAuth([
                 "user" => "username",
                 "password" => "password",
-                "context" => 4
-            ])
+                "context" => 4,
+            ]),
         ]);
 
         try {
             $domain = new Domain();
-            $domain->setName("php-sdk-test".uniqid().".de");
+            $domain->setName("php-sdk-test" . uniqid() . ".de");
             $domain->setNameServers([
                 new NameServer([
-                    "name" => "ns1.example.com"
+                    "name" => "ns1.example.com",
                 ]),
                 new NameServer([
-                    "name" => "ns2.example.com"
-                ])
+                    "name" => "ns2.example.com",
+                ]),
             ]);
             $contact = $domainrobot->contact->info(23194139);
             $domain->setAdminc($contact);
@@ -44,13 +44,12 @@ class SDKController
             $domain->setTechc($contact);
             $domain->setZonec($contact);
             //$domain->setIgnoreWhois(true);
-            
-            $objectJob = $domainrobot->domain->create($domain);
 
+            $objectJob = $domainrobot->domain->create($domain);
         } catch (DomainrobotException $exception) {
             return $exception;
         }
-        
+
         return $objectJob;
     }
 }

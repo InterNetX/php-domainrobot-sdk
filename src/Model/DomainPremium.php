@@ -36,6 +36,9 @@ use \Domainrobot\ObjectSerializer;
  * DomainPremium Class Doc Comment
  *
  * @category Class
+
+ * @implements ArrayAccess<mixed,mixed>
+
  * @package  Domainrobot
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -278,7 +281,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
         if ($data === null || $property === null) {
             return '';
         }
-        
+
         $swaggerType = self::$swaggerTypes[$property];
 
         preg_match("/([\\\\\w\d]+)(\[\])?/", $swaggerType, $matches);
@@ -289,7 +292,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
                 if (!is_array($data)) {
                     return $data;
                 }
-                
+
                 $reflection = new \ReflectionClass($swaggerType);
                 $reflectionInstance = $reflection->newInstance($data);
 
@@ -308,7 +311,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
                         continue;
                     }
                     $reflection = new \ReflectionClass(str_replace("[]", "", $swaggerType) );
-                    $reflectionInstances[] = $reflection->newInstance($d);                   
+                    $reflectionInstances[] = $reflection->newInstance($d);
                 } catch (\Exception $ex) {
                     return $d;
                 }
@@ -333,7 +336,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Validate all the properties in the 
+     * Validate all the properties in the
      * return true if all passed
      *
      * @return bool True if all properties are valid
@@ -349,7 +352,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getCreated()
+    public function getCreated(): mixed
     {
         return $this->container['created'];
     }
@@ -361,7 +364,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreated($created)
+    public function setCreated($created): DomainPremium
     {
         $this->container['created'] = $created;
 
@@ -373,7 +376,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getUpdated(): mixed
     {
         return $this->container['updated'];
     }
@@ -385,7 +388,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setUpdated($updated): DomainPremium
     {
         $this->container['updated'] = $updated;
 
@@ -397,7 +400,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->container['name'];
     }
@@ -409,7 +412,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): DomainPremium
     {
         $this->container['name'] = $name;
 
@@ -421,7 +424,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdn()
+    public function getIdn(): mixed
     {
         return $this->container['idn'];
     }
@@ -433,7 +436,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdn($idn)
+    public function setIdn($idn): DomainPremium
     {
         $this->container['idn'] = $idn;
 
@@ -445,7 +448,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPriceClass()
+    public function getPriceClass(): mixed
     {
         return $this->container['priceClass'];
     }
@@ -457,7 +460,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceClass($priceClass)
+    public function setPriceClass($priceClass): DomainPremium
     {
         $this->container['priceClass'] = $priceClass;
 
@@ -469,7 +472,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPriceClassRenew()
+    public function getPriceClassRenew(): mixed
     {
         return $this->container['priceClassRenew'];
     }
@@ -481,7 +484,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPriceClassRenew($priceClassRenew)
+    public function setPriceClassRenew($priceClassRenew): DomainPremium
     {
         $this->container['priceClassRenew'] = $priceClassRenew;
 
@@ -493,7 +496,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getPrice()
+    public function getPrice(): mixed
     {
         return $this->container['price'];
     }
@@ -505,7 +508,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPrice($price)
+    public function setPrice($price): DomainPremium
     {
         $this->container['price'] = $price;
 
@@ -517,7 +520,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): mixed
     {
         return $this->container['currency'];
     }
@@ -529,7 +532,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): DomainPremium
     {
         $this->container['currency'] = $currency;
 
@@ -541,7 +544,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProvider()
+    public function getProvider(): mixed
     {
         return $this->container['provider'];
     }
@@ -553,7 +556,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProvider($provider)
+    public function setProvider($provider): DomainPremium
     {
         $this->container['provider'] = $provider;
 
@@ -565,7 +568,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Configuration
      */
-    public function getConfiguration()
+    public function getConfiguration(): mixed
     {
         return $this->container['configuration'];
     }
@@ -577,7 +580,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setConfiguration($configuration)
+    public function setConfiguration($configuration): DomainPremium
     {
         $this->container['configuration'] = $configuration;
 
@@ -589,7 +592,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\Metric
      */
-    public function getMetric()
+    public function getMetric(): mixed
     {
         return $this->container['metric'];
     }
@@ -601,7 +604,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMetric($metric)
+    public function setMetric($metric): DomainPremium
     {
         $this->container['metric'] = $metric;
 
@@ -613,7 +616,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getOwner()
+    public function getOwner(): mixed
     {
         return $this->container['owner'];
     }
@@ -625,7 +628,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOwner($owner)
+    public function setOwner($owner): DomainPremium
     {
         $this->container['owner'] = $owner;
 
@@ -637,7 +640,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\BasicUser
      */
-    public function getUpdater()
+    public function getUpdater(): mixed
     {
         return $this->container['updater'];
     }
@@ -649,7 +652,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUpdater($updater)
+    public function setUpdater($updater): DomainPremium
     {
         $this->container['updater'] = $updater;
 
@@ -661,7 +664,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return double
      */
-    public function getMinPrice()
+    public function getMinPrice(): mixed
     {
         return $this->container['minPrice'];
     }
@@ -673,7 +676,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMinPrice($minPrice)
+    public function setMinPrice($minPrice): DomainPremium
     {
         $this->container['minPrice'] = $minPrice;
 
@@ -685,7 +688,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return \Domainrobot\Model\PremiumStatusConstants
      */
-    public function getPremiumStatus()
+    public function getPremiumStatus(): mixed
     {
         return $this->container['premiumStatus'];
     }
@@ -697,7 +700,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPremiumStatus($premiumStatus)
+    public function setPremiumStatus($premiumStatus): DomainPremium
     {
         $this->container['premiumStatus'] = $premiumStatus;
 
@@ -772,23 +775,22 @@ class DomainPremium implements ModelInterface, ArrayAccess
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
-    
+
     /**
-     * @param boolean $removeEmptyValues [remove all empty values if true]
-     * @param array $retrieveKeys [list of keys to get back in any case]
-     * 
+     * @param bool $retrieveAllValues include empty values when true
+     *
      * Examples:
      * toArray() => returns only non empty values
      * toArray(true) => returns all values
      */
-    public function toArray($retrieveAllValues = false): array
+    public function toArray(bool $retrieveAllValues = false): array
     {
         $container = $this->container;
 
         $cleanContainer = [];
         foreach ($container as $key => &$value) {
             if (
-                $retrieveAllValues === false && 
+                $retrieveAllValues === false &&
                 empty($value) === true &&
                 $value !== false &&
                 $value !== '' &&
@@ -798,7 +800,7 @@ class DomainPremium implements ModelInterface, ArrayAccess
                 unset($container[$key]);
                 continue;
             }
-            
+
             if (gettype($value) === "object") {
                 if(method_exists($value, 'toArray')) {
                     $value = $value->toArray($retrieveAllValues);
